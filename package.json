@@ -31,7 +31,7 @@
     "figma:status": "node scripts/figma-status.mjs",
     "a11y": "npm run build-storybook && npm run a11y:stories",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "storybook build --stats-json",
     "chromatic": "chromatic --build-script-name=build-storybook",
     "a11y:stories": "concurrently -k -s first -n SB,TEST \"http-server storybook-static --port 6006 --silent\" \"wait-on tcp:127.0.0.1:6006 && test-storybook --url http://127.0.0.1:6006\""
   },
