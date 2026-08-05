@@ -4,6 +4,10 @@
   "description": "Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anto-amezquita/design-system.git"
+  },
   "publishConfig": {
     "access": "public"
   },
