@@ -1,0 +1,111 @@
+/*
+  Tokens consumed:
+  --tag-background, --tag-foreground, --tag-border, --tag-border-width, --tag-border-radius
+  --tag-padding-x, --tag-padding-y, --tag-font-size, --tag-font-weight
+  --tag-accent-background, --tag-accent-foreground, --tag-accent-border
+  --tag-muted-background, --tag-muted-foreground, --tag-muted-border
+  --font-family-base, --duration-interaction, --easing-default, --color-border-focus
+  --space-inline-gap
+*/
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  padding: var(--tag-padding-y) var(--tag-padding-x);
+  font-family: var(--font-family-base);
+  font-size: var(--tag-font-size);
+  font-weight: var(--tag-font-weight);
+  line-height: 1;
+  border-radius: var(--tag-border-radius);
+  border: var(--tag-border-width) solid var(--tag-border);
+  background: var(--tag-background);
+  color: var(--tag-foreground);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.tag--accent {
+  background: var(--tag-accent-background);
+  color: var(--tag-accent-foreground);
+  border-color: var(--tag-accent-border);
+}
+
+.tag--muted {
+  background: var(--tag-muted-background);
+  color: var(--tag-muted-foreground);
+  border-color: var(--tag-muted-border);
+}
+
+/* Interactive tag — resets browser button defaults, adds cursor and hover/focus.
+   [role="button"].tag covers the span path rendered when the tag is both clickable
+   and removable (a nested <button> inside makes a <button> invalid HTML). */
+
+button.tag,
+[role="button"].tag {
+  appearance: none;
+  cursor: pointer;
+  transition: opacity var(--duration-interaction) var(--easing-default);
+}
+
+button.tag:hover,
+[role="button"].tag:hover {
+  opacity: 0.8;
+}
+
+button.tag:focus-visible,
+[role="button"].tag:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button.tag,
+  [role="button"].tag {
+    transition: none;
+  }
+}
+
+/* Icon slot */
+
+.tag__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 0.9em;
+}
+
+/* Remove button */
+
+.tag__remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: -2px -2px -2px 0;
+  cursor: pointer;
+  color: currentColor;
+  opacity: 0.6;
+  font-size: 1.1em;
+  line-height: 1;
+  /* Expand tap area without increasing visual size */
+  position: relative;
+}
+
+.tag__remove::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+}
+
+.tag__remove:hover {
+  opacity: 1;
+}
+
+.tag__remove:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: 2px;
+}

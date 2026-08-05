@@ -1,0 +1,26 @@
+{
+  "label-font-size": {
+    "$value": "{font-size.sm}",
+    "$type": "dimension"
+  },
+  "label-font-weight": {
+    "$value": "{font-weight.medium}",
+    "$type": "fontWeight"
+  },
+  "label-color": {
+    "$value": "{color-text-primary}",
+    "$type": "color"
+  },
+  "label-color-disabled": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "label-required-color": {
+    "$value": "{color-feedback-error}",
+    "$type": "color"
+  },
+  "label-gap": {
+    "$value": "{space.2}",
+    "$type": "dimension"
+  }
+}

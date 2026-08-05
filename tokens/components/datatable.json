@@ -1,0 +1,14 @@
+{
+  "datatable-gap": {
+    "$value": "{space.4}",
+    "$type": "dimension"
+  },
+  "datatable-footer-gap": {
+    "$value": "{space.4}",
+    "$type": "dimension"
+  },
+  "datatable-empty-padding": {
+    "$value": "{space.6}",
+    "$type": "dimension"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "button-padding-x": {
+    "$value": "{space.5}",
+    "$type": "dimension"
+  },
+  "button-padding-y": {
+    "$value": "{space.3}",
+    "$type": "dimension"
+  },
+  "button-font-size": {
+    "$value": "{font-size.base}",
+    "$type": "dimension"
+  },
+  "button-font-weight": {
+    "$value": "{font-weight.medium}",
+    "$type": "fontWeight"
+  },
+  "button-border-radius": {
+    "$value": "{border-radius.full}",
+    "$type": "dimension"
+  },
+  "button-border-width": {
+    "$value": "{border-width-interactive}",
+    "$type": "dimension"
+  },
+  "button-outline-border-width": {
+    "$value": "{border-width.medium}",
+    "$type": "dimension"
+  },
+  "button-duration": {
+    "$value": "{duration-interaction}",
+    "$type": "duration"
+  },
+  "button-primary-background": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "button-primary-foreground": {
+    "$value": "{color-accent-foreground}",
+    "$type": "color"
+  },
+  "button-primary-border": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "button-primary-background-hover": {
+    "$value": "{color-accent-hover}",
+    "$type": "color"
+  },
+  "button-secondary-background": {
+    "$value": "transparent",
+    "$type": "color"
+  },
+  "button-secondary-foreground": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "button-secondary-border": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "button-secondary-background-hover": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "button-secondary-foreground-hover": {
+    "$value": "{color-accent-foreground}",
+    "$type": "color"
+  },
+  "button-ghost-background": {
+    "$value": "transparent",
+    "$type": "color"
+  },
+  "button-ghost-foreground": {
+    "$value": "{color-text-primary}",
+    "$type": "color"
+  },
+  "button-ghost-border": {
+    "$value": "transparent",
+    "$type": "color"
+  },
+  "button-ghost-background-hover": {
+    "$value": "{color-surface-secondary}",
+    "$type": "color"
+  },
+  "button-icon-gap": {
+    "$value": "{space.2}",
+    "$type": "dimension"
+  },
+  "button-icon-size": {
+    "$value": "{size-icon-md}",
+    "$type": "dimension"
+  },
+  "button-spinner-duration": {
+    "$value": "750ms",
+    "$type": "duration"
+  },
+  "button-wipe-duration-enter": {
+    "$value": "550ms",
+    "$type": "duration"
+  },
+  "button-wipe-duration-curve": {
+    "$value": "220ms",
+    "$type": "duration"
+  },
+  "button-wipe-duration-exit": {
+    "$value": "400ms",
+    "$type": "duration"
+  },
+  "button-wipe-duration-curve-out": {
+    "$value": "180ms",
+    "$type": "duration"
+  },
+  "button-arrow-nudge": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "button-glow-size": {
+    "$value": "52px",
+    "$type": "dimension"
+  }
+}

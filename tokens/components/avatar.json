@@ -1,0 +1,58 @@
+{
+  "avatar-size-sm": {
+    "$value": "{space.5}",
+    "$type": "other"
+  },
+  "avatar-size-md": {
+    "$value": "{space.6}",
+    "$type": "other"
+  },
+  "avatar-size-lg": {
+    "$value": "40px",
+    "$type": "dimension"
+  },
+  "avatar-size-xl": {
+    "$value": "{space.8}",
+    "$type": "other"
+  },
+  "avatar-border-radius": {
+    "$value": "{border-radius.full}",
+    "$type": "dimension"
+  },
+  "avatar-border": {
+    "$value": "{color-border-default}",
+    "$type": "color"
+  },
+  "avatar-border-width": {
+    "$value": "{border-width.thin}",
+    "$type": "dimension"
+  },
+  "avatar-ring-width": {
+    "$value": "{border-width.medium}",
+    "$type": "dimension"
+  },
+  "avatar-ring-color": {
+    "$value": "{color-border-focus}",
+    "$type": "color"
+  },
+  "avatar-fallback-background": {
+    "$value": "{color-surface-secondary}",
+    "$type": "color"
+  },
+  "avatar-fallback-foreground": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "avatar-fallback-font-size": {
+    "$value": "{font-size.sm}",
+    "$type": "dimension"
+  },
+  "avatar-fallback-font-weight": {
+    "$value": "{font-weight.semibold}",
+    "$type": "fontWeight"
+  },
+  "avatar-group-overlap": {
+    "$value": "-8px",
+    "$type": "dimension"
+  }
+}

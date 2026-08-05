@@ -1,0 +1,78 @@
+{
+  "dialog-background": {
+    "$value": "{color-surface-primary}",
+    "$type": "color"
+  },
+  "dialog-border": {
+    "$value": "{color-border-default}",
+    "$type": "color"
+  },
+  "dialog-border-width": {
+    "$value": "{border-width.thin}",
+    "$type": "dimension"
+  },
+  "dialog-border-radius": {
+    "$value": "{border-radius-component}",
+    "$type": "dimension"
+  },
+  "dialog-padding": {
+    "$value": "{space.7}",
+    "$type": "dimension"
+  },
+  "dialog-gap": {
+    "$value": "{space.4}",
+    "$type": "dimension"
+  },
+  "dialog-max-width": {
+    "$value": "{size.dialog-md}",
+    "$type": "dimension"
+  },
+  "dialog-overlay-color": {
+    "$value": "{color-surface-tertiary}",
+    "$type": "color"
+  },
+  "dialog-title-size": {
+    "$value": "{font-size.lg}",
+    "$type": "dimension"
+  },
+  "dialog-title-weight": {
+    "$value": "{font-weight.bold}",
+    "$type": "other"
+  },
+  "dialog-close-size": {
+    "$value": "{size.icon-interactive}",
+    "$type": "dimension"
+  },
+  "dialog-close-color": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "dialog-close-hover": {
+    "$value": "{color-text-primary}",
+    "$type": "other"
+  },
+  "dialog-max-width-sm": {
+    "$value": "{size.dialog-sm}",
+    "$type": "dimension"
+  },
+  "dialog-max-width-lg": {
+    "$value": "{size.dialog-lg}",
+    "$type": "dimension"
+  },
+  "dialog-max-width-xl": {
+    "$value": "{size.layout-md}",
+    "$type": "dimension"
+  },
+  "dialog-shadow": {
+    "$value": "{shadow-dialog}",
+    "$type": "shadow"
+  },
+  "dialog-z-index": {
+    "$value": "{z-modal}",
+    "$type": "other"
+  },
+  "dialog-entrance-offset": {
+    "$value": "8px",
+    "$type": "dimension"
+  }
+}

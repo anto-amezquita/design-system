@@ -1,0 +1,93 @@
+/*
+  Tokens consumed:
+  --avatar-size-sm, --avatar-size-md, --avatar-size-lg, --avatar-size-xl
+  --avatar-border-radius, --avatar-border, --avatar-border-width
+  --avatar-ring-width, --avatar-ring-color
+  --avatar-fallback-background, --avatar-fallback-foreground
+  --avatar-fallback-font-size, --avatar-fallback-font-weight
+  --avatar-group-overlap
+  --font-family-base
+*/
+
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--avatar-size-md);
+  height: var(--avatar-size-md);
+  border-radius: var(--avatar-border-radius);
+  border: var(--avatar-border-width) solid var(--avatar-border);
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.avatar--sm {
+  width: var(--avatar-size-sm);
+  height: var(--avatar-size-sm);
+}
+
+.avatar--md {
+  width: var(--avatar-size-md);
+  height: var(--avatar-size-md);
+}
+
+.avatar--lg {
+  width: var(--avatar-size-lg);
+  height: var(--avatar-size-lg);
+}
+
+.avatar--xl {
+  width: var(--avatar-size-xl);
+  height: var(--avatar-size-xl);
+}
+
+.avatar:focus-visible {
+  outline: var(--avatar-ring-width) solid var(--avatar-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--avatar-fallback-background);
+  color: var(--avatar-fallback-foreground);
+  font-family: var(--font-family-base);
+  font-size: var(--avatar-fallback-font-size);
+  font-weight: var(--avatar-fallback-font-weight);
+  user-select: none;
+}
+
+/* AvatarGroup */
+
+.avatar-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.avatar-group > * + * {
+  margin-inline-start: var(--avatar-group-overlap);
+}
+
+.avatar-group__overflow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--avatar-fallback-background);
+  color: var(--avatar-fallback-foreground);
+  font-family: var(--font-family-base);
+  font-size: var(--avatar-fallback-font-size);
+  font-weight: var(--avatar-fallback-font-weight);
+  user-select: none;
+  overflow: visible;
+}

@@ -1,0 +1,90 @@
+{
+  "toast-background": {
+    "$value": "{color-surface-primary}",
+    "$type": "color"
+  },
+  "toast-foreground": {
+    "$value": "{color-text-primary}",
+    "$type": "color"
+  },
+  "toast-border": {
+    "$value": "{color-border-default}",
+    "$type": "color"
+  },
+  "toast-border-width": {
+    "$value": "{border-width.thin}",
+    "$type": "dimension"
+  },
+  "toast-border-radius": {
+    "$value": "{border-radius-component}",
+    "$type": "dimension"
+  },
+  "toast-padding-x": {
+    "$value": "{space.5}",
+    "$type": "dimension"
+  },
+  "toast-padding-y": {
+    "$value": "{space.4}",
+    "$type": "dimension"
+  },
+  "toast-gap": {
+    "$value": "{space.3}",
+    "$type": "dimension"
+  },
+  "toast-max-width": {
+    "$value": "380px",
+    "$type": "dimension"
+  },
+  "toast-shadow": {
+    "$value": "{shadow-toast}",
+    "$type": "shadow"
+  },
+  "toast-z-index": {
+    "$value": "{z-toast}",
+    "$type": "other"
+  },
+  "toast-title-weight": {
+    "$value": "{font-weight.semibold}",
+    "$type": "other"
+  },
+  "toast-font-size": {
+    "$value": "{font-size.sm}",
+    "$type": "dimension"
+  },
+  "toast-icon-size": {
+    "$value": "{size-icon-md}",
+    "$type": "dimension"
+  },
+  "toast-accent-width": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "toast-success-border": {
+    "$value": "{color-feedback-success-border}",
+    "$type": "color"
+  },
+  "toast-warning-border": {
+    "$value": "{color-feedback-warning-border}",
+    "$type": "color"
+  },
+  "toast-error-border": {
+    "$value": "{color-feedback-error-border}",
+    "$type": "color"
+  },
+  "toast-info-border": {
+    "$value": "{color-feedback-info-border}",
+    "$type": "color"
+  },
+  "toast-viewport-inset": {
+    "$value": "{space.5}",
+    "$type": "dimension"
+  },
+  "toast-content-gap": {
+    "$value": "{space.1}",
+    "$type": "dimension"
+  },
+  "toast-close-offset": {
+    "$value": "{space.2}",
+    "$type": "dimension"
+  }
+}

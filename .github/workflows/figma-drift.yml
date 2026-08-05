@@ -1,0 +1,69 @@
+name: Figma drift watcher
+
+# Weekly deterministic check: does the current token state still match the
+# last state pushed to Figma (figma/sync-state.json)? On drift, files or
+# updates a single issue labeled `figma-drift` naming the exact
+# reconciliation commands. No AI, no API keys — pure script + gh.
+
+on:
+  schedule:
+    - cron: '0 8 * * 1' # Mondays 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  figma-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # No npm ci: figma-status.mjs and figma-drift-issue.mjs import only
+      # Node builtins (fs, crypto, url) — the job needs no node_modules.
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Check for drift
+        id: drift
+        run: |
+          node scripts/figma-status.mjs --json > drift.json 2> status.log && code=0 || code=$?
+          cat status.log
+          if [ "$code" -eq 0 ]; then
+            echo "drifted=false" >> "$GITHUB_OUTPUT"
+          elif [ "$code" -eq 1 ]; then
+            echo "drifted=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "figma-status.mjs failed with exit $code — not drift; see log above" >&2
+            exit "$code"
+          fi
+
+      - name: Format issue body
+        if: steps.drift.outputs.drifted == 'true'
+        run: node scripts/figma-drift-issue.mjs drift.json > issue-body.md
+
+      - name: File or update the drift issue
+        if: steps.drift.outputs.drifted == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create figma-drift \
+            --description "Figma variables out of sync with token JSON" \
+            --color 15616D --force
+          existing=$(gh issue list --label figma-drift --state open \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --body-file issue-body.md
+            echo "Updated existing issue #$existing"
+          else
+            gh issue create \
+              --title "Figma ↔ code drift detected" \
+              --label figma-drift \
+              --body-file issue-body.md
+          fi
+
+      - name: In sync
+        if: steps.drift.outputs.drifted == 'false'
+        run: echo "✓ Figma and code are in sync — nothing to file."

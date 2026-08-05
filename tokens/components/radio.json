@@ -1,0 +1,58 @@
+{
+  "radio-size": {
+    "$value": "{space.5}",
+    "$type": "dimension"
+  },
+  "radio-background": {
+    "$value": "{color-surface-primary}",
+    "$type": "color"
+  },
+  "radio-background-checked": {
+    "$value": "{color-surface-primary}",
+    "$type": "color"
+  },
+  "radio-background-disabled": {
+    "$value": "{color-surface-secondary}",
+    "$type": "color"
+  },
+  "radio-border": {
+    "$value": "{color-border-strong}",
+    "$type": "color"
+  },
+  "radio-border-width": {
+    "$value": "{border-width.thin}",
+    "$type": "dimension"
+  },
+  "radio-border-hover": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "radio-indicator-color": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "radio-indicator-size": {
+    "$value": "{space.3}",
+    "$type": "dimension"
+  },
+  "radio-label-gap": {
+    "$value": "{space.3}",
+    "$type": "dimension"
+  },
+  "radio-label-size": {
+    "$value": "{font-size.base}",
+    "$type": "dimension"
+  },
+  "radio-label-color": {
+    "$value": "{color-text-primary}",
+    "$type": "color"
+  },
+  "radio-label-color-disabled": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "radio-group-gap": {
+    "$value": "{space.3}",
+    "$type": "dimension"
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+*.tsbuildinfo
+
+*storybook.log
+storybook-static/
+.DS_Store
+
+# CI script output — generated on each run, not committed
+a11y-report.json
+token-violations.json
+contrast-failures.json

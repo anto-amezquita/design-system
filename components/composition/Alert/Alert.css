@@ -1,0 +1,156 @@
+/*
+  Tokens consumed:
+  --alert-padding-x, --alert-padding-y, --alert-gap
+  --alert-border-radius, --alert-border-width, --alert-font-size, --alert-title-weight, --alert-icon-size
+  --alert-content-gap, --alert-close-offset, --alert-exit-distance
+  --alert-success-background, --alert-success-foreground, --alert-success-border
+  --alert-warning-background, --alert-warning-foreground, --alert-warning-border
+  --alert-error-background,   --alert-error-foreground,   --alert-error-border
+  --alert-info-background,    --alert-info-foreground,    --alert-info-border
+  --font-family-base, --line-height-body
+  --border-radius-interactive, --duration-interaction, --easing-default, --color-border-focus
+*/
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--alert-gap);
+  padding: var(--alert-padding-y) var(--alert-padding-x);
+  border-radius: var(--alert-border-radius);
+  border-width: var(--alert-border-width);
+  border-style: solid;
+  font-family: var(--font-family-base);
+  font-size: var(--alert-font-size);
+  line-height: var(--line-height-body);
+}
+
+/* Variant colours */
+
+.alert--success {
+  background: var(--alert-success-background);
+  color: var(--alert-success-foreground);
+  border-color: var(--alert-success-border);
+}
+
+.alert--warning {
+  background: var(--alert-warning-background);
+  color: var(--alert-warning-foreground);
+  border-color: var(--alert-warning-border);
+}
+
+.alert--error {
+  background: var(--alert-error-background);
+  color: var(--alert-error-foreground);
+  border-color: var(--alert-error-border);
+}
+
+.alert--info {
+  background: var(--alert-info-background);
+  color: var(--alert-info-foreground);
+  border-color: var(--alert-info-border);
+}
+
+/* Icon */
+
+.alert__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: var(--alert-icon-size);
+  height: var(--alert-icon-size);
+}
+
+.alert__icon svg {
+  width: var(--alert-icon-size);
+  height: var(--alert-icon-size);
+}
+
+/* Content */
+
+.alert__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--alert-content-gap);
+}
+
+/* Title */
+
+.alert__title {
+  font-weight: var(--alert-title-weight);
+  margin: 0;
+  line-height: var(--line-height-body);
+}
+
+/* Body */
+
+.alert__body {
+  margin: 0;
+}
+
+.alert__body p {
+  margin: 0;
+}
+
+/* Close button — 44×44px touch target via min-width/min-height; negative margins keep
+   the visual icon flush with the alert's right padding and aligned to the first text line */
+
+.alert__close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-touch-target);
+  min-height: var(--size-touch-target);
+  margin-block-start: calc(-1 * var(--alert-close-offset));
+  margin-inline-end: calc(-1 * var(--alert-close-offset));
+  background: none;
+  border: none;
+  border-radius: var(--border-radius-interactive);
+  color: currentColor;
+  opacity: var(--opacity-high);
+  cursor: pointer;
+  padding: 0;
+  transition: opacity var(--duration-interaction) var(--easing-default);
+  outline: none;
+}
+
+.alert__close:hover {
+  opacity: 1;
+}
+
+.alert__close:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+  opacity: 1;
+}
+
+/* Dismiss exit animation */
+
+.alert--dismissing {
+  animation: alert-exit var(--duration-transition) var(--easing-default) forwards;
+  pointer-events: none;
+}
+
+@keyframes alert-exit {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--alert-exit-distance)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alert--dismissing {
+    /* Zero duration so animationend fires immediately — no motion */
+    animation-duration: var(--duration-instant);
+  }
+
+  .alert__close {
+    transition: none;
+  }
+}

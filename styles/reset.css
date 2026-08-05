@@ -1,0 +1,72 @@
+/* Base reset + typography, used by Storybook's preview so components render
+   against the same foundation the consuming app provides. This is a trimmed
+   copy of the portfolio's app/global.css — dropped: the site's layout
+   gutter variable, the .reveal reduced-motion rule, and the page-transition
+   curtain rules, none of which belong to this package. Consuming apps are
+   expected to provide their own equivalent base reset; this file exists
+   only so Storybook has one. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-surface-primary);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-body);
+  min-height: 100svh;
+}
+
+/* Nested mode/expression scopes (demo panels, story wrappers) re-anchor
+   inherited text color. Without this, descendants inherit the color computed
+   on <body> under the page-level mode — var() in a normal property resolves
+   where the property is declared, not where the value is consumed.
+   :where() keeps this rule's specificity at zero, so any component CSS that
+   sets `color` directly on a data-mode-scoped wrapper — even a single plain
+   class — wins the cascade normally instead of silently losing to this
+   global reset regardless of source order. */
+:where(:not(html)[data-mode]) {
+  color: var(--color-text-primary);
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-family-mono);
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}

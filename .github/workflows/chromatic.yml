@@ -1,0 +1,134 @@
+name: Chromatic
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Token linter
+        run: node scripts/lint-tokens.mjs
+
+      - name: Component registry check
+        run: node scripts/check-components-doc.mjs
+
+      - name: Story coverage check
+        run: node scripts/check-stories.mjs
+
+      - name: Build dependency graph
+        run: node scripts/build-dependency-graph.mjs
+
+      - name: Build tokens
+        run: npm run tokens
+
+      - name: Check generated files are in sync
+        run: git diff --exit-code tokens/dependency-graph.json tokens/token-reference.json tokens/component-registry.json styles/brands/
+
+      - name: Check changelog is in sync
+        run: |
+          node -e "
+            const { execSync } = require('child_process');
+            const committed = JSON.parse(execSync('git show HEAD:tokens/changelog.json').toString());
+            const current = JSON.parse(require('fs').readFileSync('tokens/changelog.json', 'utf8'));
+            committed.meta.generatedAt = current.meta.generatedAt = null;
+            if (JSON.stringify(committed) !== JSON.stringify(current)) {
+              console.error('tokens/changelog.json is out of sync with its source (ignoring generatedAt) — run \`npm run tokens\` and commit the result.');
+              process.exit(1);
+            }
+          "
+
+      - name: Contrast check
+        run: node scripts/check-contrast.mjs
+
+      - name: Get installed Playwright version
+        id: playwright-version
+        run: echo "version=$(node -e "console.log(require('./package-lock.json').packages['node_modules/playwright'].version)")" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browser binaries
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
+
+      # Full install (browser download + OS deps) only on a cache miss — a
+      # transient network blip during the ~100-300MB Chromium download no
+      # longer hard-fails every single run. install-deps alone (OS packages,
+      # not cached — ephemeral runners can't persist apt state) still runs on
+      # a cache hit so the cached binary has its system libraries present.
+      - name: Install Playwright browser
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+
+      - name: Install Playwright OS dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      # axe-core against every rendered story (Storybook test-runner).
+      # Contrast rules run here too; token-pair contrast is still enforced
+      # separately by check-contrast.mjs across all mode combinations.
+      - name: A11y audit (axe on rendered stories)
+        run: npm run a11y:stories
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v18
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook-static
+          onlyChanged: true
+          exitZeroOnChanges: true
+          autoAcceptChanges: main
+          exitOnceUploaded: true
+
+  # Regenerates tokens/changelog.json after pushes to main (e.g. merge commits
+  # shift the history the committed artifact was built from). Safe against
+  # loops twice over: [skip ci] stops workflow re-triggering, and the builder
+  # excludes chore-type commits so this job's own commits never appear in the
+  # changelog — a re-run after the bot commit produces identical output.
+  update-changelog:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Rebuild changelog
+        run: node scripts/build-changelog.mjs
+
+      - name: Commit and push if changed
+        run: |
+          if ! git diff --quiet tokens/changelog.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add tokens/changelog.json
+            git commit -m "chore(changelog): regenerate after push to main [skip ci]"
+            git push
+          else
+            echo "changelog.json already in sync"
+          fi

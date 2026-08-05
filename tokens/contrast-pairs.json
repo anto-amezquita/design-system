@@ -1,0 +1,52 @@
+[
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-text-primary",
+    "role": "body-text",
+    "minRatio": 4.5
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-text-secondary",
+    "role": "secondary-text",
+    "minRatio": 4.5
+  },
+  {
+    "bg": "color-surface-secondary",
+    "fg": "color-text-secondary",
+    "role": "secondary-text-on-secondary-surface",
+    "minRatio": 4.5,
+    "note": "Was a silent exclusion at 4.23:1 while color-text-secondary mapped to neutral-500; enforced since the remap to neutral-600 (July 2026)"
+  },
+  {
+    "bg": "color-surface-secondary",
+    "fg": "color-text-primary",
+    "role": "card-text",
+    "minRatio": 4.5
+  },
+  {
+    "bg": "color-surface-tertiary",
+    "fg": "color-text-primary",
+    "role": "divider-text",
+    "minRatio": 4.5
+  },
+  {
+    "bg": "color-surface-inverse",
+    "fg": "color-text-inverse",
+    "role": "inverse-text",
+    "minRatio": 4.5
+  },
+  {
+    "bg": "color-accent-default",
+    "fg": "color-accent-foreground",
+    "role": "button-label",
+    "minRatio": 4.5
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-accent-default",
+    "role": "accent-on-surface",
+    "minRatio": 3.0,
+    "note": "3:1 WCAG AA for large text and UI component boundaries (links, borders, icons)"
+  }
+]

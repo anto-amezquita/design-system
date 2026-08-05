@@ -1,0 +1,161 @@
+/*
+  Tokens consumed:
+  --input-background, --input-background-disabled, --input-foreground
+  --input-border, --input-border-width, --input-border-hover, --input-border-focus, --input-border-error
+  --input-border-radius, --input-padding-x, --input-padding-y, --input-font-size
+  --input-placeholder-color, --input-label-size, --input-label-weight, --input-label-color
+  --input-hint-size, --input-hint-color, --input-error-color
+  --input-prefix-color, --input-suffix-color, --input-clear-color
+  --font-family-base, --duration-interaction, --easing-default
+  --space-element-gap, --space-inline-gap, --opacity-disabled, --border-radius-pill
+  --color-border-focus, --color-text-primary
+*/
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-inline-gap);
+}
+
+.input-field__label {
+  font-family: var(--font-family-base);
+  font-size: var(--input-label-size);
+  font-weight: var(--input-label-weight);
+  color: var(--input-label-color);
+  line-height: 1;
+}
+
+/* Wrapper — owns the border, focus ring, and hover states */
+
+.input-field__wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  padding: var(--input-padding-y) var(--input-padding-x);
+  background: var(--input-background);
+  border: var(--input-border-width) solid var(--input-border);
+  border-radius: var(--input-border-radius);
+  transition: border-color var(--duration-interaction) var(--easing-default);
+  box-sizing: border-box;
+}
+
+.input-field__wrapper:hover:not(.input-field__wrapper--disabled) {
+  border-color: var(--input-border-hover);
+}
+
+.input-field__wrapper:focus-within:not(.input-field__wrapper--disabled) {
+  border-color: var(--input-border-focus);
+  outline: var(--focus-ring-width) solid var(--input-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.input-field__wrapper--disabled {
+  background: var(--input-background-disabled);
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+/* Input element — no border, inherits wrapper styling */
+
+.input-field__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--input-font-size);
+  color: var(--input-foreground);
+  cursor: inherit;
+  width: 100%;
+}
+
+.input-field__input::placeholder {
+  color: var(--input-placeholder-color);
+}
+
+.input-field__input:disabled {
+  cursor: not-allowed;
+}
+
+/* Error state */
+
+.input-field--error .input-field__wrapper {
+  border-color: var(--input-border-error);
+}
+
+.input-field--error .input-field__wrapper:focus-within:not(.input-field__wrapper--disabled) {
+  border-color: var(--input-border-error);
+  outline-color: var(--input-border-error);
+}
+
+/* Hint */
+
+.input-field__hint {
+  font-family: var(--font-family-base);
+  font-size: var(--input-hint-size);
+  color: var(--input-hint-color);
+  line-height: 1.4;
+}
+
+.input-field--error .input-field__hint {
+  color: var(--input-error-color);
+}
+
+/* Prefix and suffix slots */
+
+.input-field__prefix,
+.input-field__suffix {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--input-prefix-color);
+}
+
+.input-field__suffix {
+  color: var(--input-suffix-color);
+}
+
+/* Clear button */
+
+.input-field__clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  background: none;
+  border: none;
+  padding-inline: var(--space-1);
+  margin-inline: calc(var(--space-1) * -1);
+  cursor: pointer;
+  color: var(--input-clear-color);
+  border-radius: var(--border-radius-sm);
+  transition: color var(--duration-interaction) var(--easing-default);
+}
+
+.input-field__clear:hover {
+  color: var(--color-text-primary);
+}
+
+.input-field__clear:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Search modifier — pill border radius */
+
+.input-field--search .input-field__wrapper {
+  border-radius: var(--border-radius-pill);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input-field__wrapper {
+    transition: none;
+  }
+
+  .input-field__clear {
+    transition: none;
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "card-background": {
+    "$value": "{color-surface-primary}",
+    "$type": "color"
+  },
+  "card-background-ghost": {
+    "$value": "{color-surface-secondary}",
+    "$type": "color"
+  },
+  "card-border": {
+    "$value": "{color-border-default}",
+    "$type": "color"
+  },
+  "card-border-width": {
+    "$value": "{border-width.thin}",
+    "$type": "dimension"
+  },
+  "card-border-radius": {
+    "$value": "{border-radius-component}",
+    "$type": "dimension"
+  },
+  "card-padding": {
+    "$value": "{space.6}",
+    "$type": "dimension"
+  },
+  "card-gap": {
+    "$value": "{space.4}",
+    "$type": "dimension"
+  },
+  "card-title-size": {
+    "$value": "{font-size.lg}",
+    "$type": "dimension"
+  },
+  "card-title-weight": {
+    "$value": "{font-weight.bold}",
+    "$type": "other"
+  },
+  "card-description-size": {
+    "$value": "{font-size.base}",
+    "$type": "dimension"
+  },
+  "card-description-color": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "card-shadow": {
+    "$value": "{shadow-card}",
+    "$type": "shadow"
+  },
+  "card-shadow-hover": {
+    "$value": "{shadow-card-hover}",
+    "$type": "shadow"
+  },
+  "card-horizontal-media-width": {
+    "$value": "200px",
+    "$type": "dimension"
+  }
+}

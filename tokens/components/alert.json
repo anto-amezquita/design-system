@@ -1,0 +1,94 @@
+{
+  "alert-padding-x": {
+    "$value": "{space.5}",
+    "$type": "dimension"
+  },
+  "alert-padding-y": {
+    "$value": "{space.4}",
+    "$type": "dimension"
+  },
+  "alert-gap": {
+    "$value": "{space.3}",
+    "$type": "dimension"
+  },
+  "alert-border-radius": {
+    "$value": "{border-radius-component}",
+    "$type": "dimension"
+  },
+  "alert-border-width": {
+    "$value": "{border-width.thin}",
+    "$type": "dimension"
+  },
+  "alert-font-size": {
+    "$value": "{font-size.base}",
+    "$type": "dimension"
+  },
+  "alert-title-weight": {
+    "$value": "{font-weight.semibold}",
+    "$type": "other"
+  },
+  "alert-icon-size": {
+    "$value": "{size-icon-md}",
+    "$type": "dimension"
+  },
+  "alert-content-gap": {
+    "$value": "{space.1}",
+    "$type": "dimension"
+  },
+  "alert-close-offset": {
+    "$value": "{space.2}",
+    "$type": "dimension"
+  },
+  "alert-exit-distance": {
+    "$value": "{space.1}",
+    "$type": "other"
+  },
+  "alert-success-background": {
+    "$value": "{color-feedback-success-background}",
+    "$type": "color"
+  },
+  "alert-success-foreground": {
+    "$value": "{color-feedback-success-foreground}",
+    "$type": "color"
+  },
+  "alert-success-border": {
+    "$value": "{color-feedback-success-border}",
+    "$type": "color"
+  },
+  "alert-warning-background": {
+    "$value": "{color-feedback-warning-background}",
+    "$type": "color"
+  },
+  "alert-warning-foreground": {
+    "$value": "{color-feedback-warning-foreground}",
+    "$type": "color"
+  },
+  "alert-warning-border": {
+    "$value": "{color-feedback-warning-border}",
+    "$type": "color"
+  },
+  "alert-error-background": {
+    "$value": "{color-feedback-error-background}",
+    "$type": "color"
+  },
+  "alert-error-foreground": {
+    "$value": "{color-feedback-error-foreground}",
+    "$type": "color"
+  },
+  "alert-error-border": {
+    "$value": "{color-feedback-error-border}",
+    "$type": "color"
+  },
+  "alert-info-background": {
+    "$value": "{color-feedback-info-background}",
+    "$type": "color"
+  },
+  "alert-info-foreground": {
+    "$value": "{color-feedback-info-foreground}",
+    "$type": "color"
+  },
+  "alert-info-border": {
+    "$value": "{color-feedback-info-border}",
+    "$type": "color"
+  }
+}

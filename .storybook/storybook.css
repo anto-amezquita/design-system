@@ -1,0 +1,8 @@
+/* Storybook-only: sets font-family fallback variables since the fonts here
+   are loaded via preview-head.html's Google Fonts link, not a framework's
+   font-optimization system. */
+:root {
+  --font-family-base: 'Schibsted Grotesk', sans-serif;
+  --font-family-heading: 'Schibsted Grotesk', sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+}

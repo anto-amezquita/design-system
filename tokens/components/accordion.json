@@ -1,0 +1,62 @@
+{
+  "accordion-border-color": {
+    "$value": "{color-border-default}",
+    "$type": "color"
+  },
+  "accordion-border-width": {
+    "$value": "{border-width.thin}",
+    "$type": "dimension"
+  },
+  "accordion-trigger-color": {
+    "$value": "{color-text-primary}",
+    "$type": "color"
+  },
+  "accordion-trigger-hover-background": {
+    "$value": "{color-surface-secondary}",
+    "$type": "color"
+  },
+  "accordion-trigger-padding-x": {
+    "$value": "{space.5}",
+    "$type": "dimension"
+  },
+  "accordion-trigger-padding-y": {
+    "$value": "{space.4}",
+    "$type": "dimension"
+  },
+  "accordion-trigger-font-size": {
+    "$value": "{font-size.base}",
+    "$type": "dimension"
+  },
+  "accordion-trigger-font-weight": {
+    "$value": "{font-weight.medium}",
+    "$type": "fontWeight"
+  },
+  "accordion-content-color": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "accordion-content-padding-x": {
+    "$value": "{space.5}",
+    "$type": "dimension"
+  },
+  "accordion-content-padding-bottom": {
+    "$value": "{space.5}",
+    "$type": "dimension"
+  },
+  "accordion-icon-color": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "accordion-icon-size": {
+    "$value": "{size-icon-md}",
+    "$type": "dimension"
+  },
+  "accordion-duration-expand": {
+    "$value": "{duration.expand}",
+    "$type": "other"
+  },
+  "accordion-duration-collapse": {
+    "$value": "{duration.collapse}",
+    "$type": "other"
+  }
+}

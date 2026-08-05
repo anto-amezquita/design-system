@@ -1,0 +1,190 @@
+/*
+  Tokens consumed:
+  --toast-background, --toast-foreground, --toast-border, --toast-border-width
+  --toast-border-radius, --toast-padding-x, --toast-padding-y
+  --toast-gap, --toast-max-width, --toast-shadow, --toast-z-index
+  --toast-title-weight, --toast-font-size, --toast-icon-size, --toast-accent-width
+  --toast-success-border, --toast-warning-border, --toast-error-border, --toast-info-border
+  --toast-viewport-inset, --toast-content-gap, --toast-close-offset
+  --color-feedback-success-foreground, --color-feedback-warning-foreground
+  --color-feedback-error-foreground, --color-feedback-info-foreground
+  --font-family-base, --line-height-body
+  --border-radius-interactive, --duration-interaction, --duration-transition, --easing-default
+  --color-border-focus, --color-text-secondary, --color-text-primary
+  --size-touch-target
+*/
+
+/* Viewport — fixed top-right.
+   Slide direction (translateX positive = right) is coupled to swipeDirection="right"
+   in Toast.tsx. If either changes, the other must change too. */
+
+.toast__viewport {
+  position: fixed;
+  top: var(--toast-viewport-inset);
+  right: var(--toast-viewport-inset);
+  display: flex;
+  flex-direction: column;
+  gap: var(--toast-gap);
+  width: var(--toast-max-width);
+  max-width: calc(100vw - var(--toast-viewport-inset) * 2);
+  z-index: var(--toast-z-index);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+/* Individual toast */
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--toast-gap);
+  padding: var(--toast-padding-y) var(--toast-padding-x);
+  background: var(--toast-background);
+  border: var(--toast-border-width) solid var(--toast-border);
+  border-radius: var(--toast-border-radius);
+  box-shadow: var(--toast-shadow);
+  font-family: var(--font-family-base);
+  font-size: var(--toast-font-size);
+  line-height: var(--line-height-body);
+  color: var(--toast-foreground);
+  animation: toast-slide-in var(--duration-transition) var(--easing-default);
+  will-change: transform, opacity;
+}
+
+.toast[data-state='closed'] {
+  animation: toast-slide-out var(--duration-transition) var(--easing-default);
+}
+
+/* Swipe-to-dismiss gesture */
+
+.toast[data-swipe='move'] {
+  transform: translateX(var(--radix-toast-swipe-move-x));
+}
+
+.toast[data-swipe='cancel'] {
+  transform: translateX(0);
+  transition: transform var(--duration-transition) var(--easing-default);
+}
+
+.toast[data-swipe='end'] {
+  animation: toast-swipe-out var(--duration-transition) var(--easing-default);
+}
+
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + var(--toast-viewport-inset)));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toast-slide-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(calc(100% + var(--toast-viewport-inset)));
+  }
+}
+
+@keyframes toast-swipe-out {
+  from { transform: translateX(var(--radix-toast-swipe-end-x)); }
+  to   { transform: translateX(calc(100% + var(--toast-viewport-inset))); }
+}
+
+/* Variant: left-border accent strip */
+
+.toast--success { border-left: var(--toast-accent-width) solid var(--toast-success-border); }
+.toast--warning { border-left: var(--toast-accent-width) solid var(--toast-warning-border); }
+.toast--error   { border-left: var(--toast-accent-width) solid var(--toast-error-border); }
+.toast--info    { border-left: var(--toast-accent-width) solid var(--toast-info-border); }
+
+/* Icon */
+
+.toast__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: var(--toast-icon-size);
+  height: var(--toast-icon-size);
+}
+
+.toast__icon svg {
+  width: var(--toast-icon-size);
+  height: var(--toast-icon-size);
+}
+
+.toast--success .toast__icon { color: var(--color-feedback-success-foreground); }
+.toast--warning .toast__icon { color: var(--color-feedback-warning-foreground); }
+.toast--error   .toast__icon { color: var(--color-feedback-error-foreground); }
+.toast--info    .toast__icon { color: var(--color-feedback-info-foreground); }
+
+/* Content */
+
+.toast__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--toast-content-gap);
+}
+
+.toast__title {
+  font-weight: var(--toast-title-weight);
+  margin: 0;
+}
+
+.toast__body {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Close button — 44×44px touch target via min dimensions; negative margins keep
+   the visual icon flush with the toast's padding and aligned to the first text line */
+
+.toast__close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-touch-target);
+  min-height: var(--size-touch-target);
+  margin-block-start: calc(-1 * var(--toast-close-offset));
+  margin-inline-end: calc(-1 * var(--toast-close-offset));
+  background: none;
+  border: none;
+  border-radius: var(--border-radius-interactive);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--duration-interaction) var(--easing-default);
+  outline: none;
+}
+
+.toast__close:hover {
+  color: var(--color-text-primary);
+}
+
+.toast__close:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast,
+  .toast[data-state='closed'],
+  .toast[data-swipe='end'],
+  .toast[data-swipe='cancel'] {
+    /* animation-duration: 0ms keeps animationend firing so onRemove is called;
+       animation: none would swallow the event and leave toasts in state forever */
+    animation-duration: var(--duration-instant);
+    transition: none;
+  }
+}

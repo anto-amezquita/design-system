@@ -1,0 +1,187 @@
+/*
+  Tokens consumed:
+  --card-background, --card-background-ghost
+  --card-border, --card-border-width, --card-border-radius
+  --card-padding, --card-gap
+  --card-title-size, --card-title-weight
+  --card-description-size, --card-description-color
+  --card-shadow, --card-shadow-hover
+  --font-family-heading, --line-height-heading, --line-height-body
+  --letter-spacing-heading, --color-text-primary, --color-text-secondary
+  --color-border-strong, --color-border-focus, --color-accent-default
+  --space-inline-gap, --border-radius-image
+  --duration-interaction, --easing-default
+*/
+
+.card {
+  background: var(--card-background);
+  border: var(--card-border-width) solid var(--card-border);
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card--ghost {
+  background: var(--card-background-ghost);
+  border-color: transparent;
+}
+
+/* Interactive modifier — hover ring and border animation, no cursor change */
+
+.card--interactive {
+  transition:
+    box-shadow var(--duration-interaction) var(--easing-default),
+    border-color var(--duration-interaction) var(--easing-default);
+}
+
+.card--interactive:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Clickable modifier — only added when onClick is provided */
+
+/* Reset native button styles when the card root is a <button> element */
+button.card {
+  appearance: none;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+}
+
+.card--clickable {
+  cursor: pointer;
+}
+
+.card--clickable:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Horizontal modifier — media on the left */
+
+.card--horizontal {
+  flex-direction: row;
+}
+
+.card--horizontal .card__media {
+  width: var(--card-horizontal-media-width);
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 0;
+}
+
+.card--horizontal .card__media img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Compact modifier — reduced padding */
+
+.card--compact .card__header {
+  padding: calc(var(--card-padding) / 2) calc(var(--card-padding) / 2) 0;
+}
+
+.card--compact .card__body {
+  padding: calc(var(--card-gap) / 2);
+}
+
+.card--compact .card__footer {
+  padding: calc(var(--card-gap) / 2) calc(var(--card-padding) / 2) calc(var(--card-padding) / 2);
+}
+
+/* Featured modifier — accent border */
+
+.card--featured {
+  border-color: var(--color-accent-default);
+}
+
+/* Slots */
+
+.card__media {
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: var(--border-radius-image);
+}
+
+.card__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card__header {
+  padding: var(--card-padding) var(--card-padding) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+}
+
+.card__body {
+  padding: var(--card-gap);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+}
+
+.card__body:not(:last-child) {
+  padding-bottom: 0;
+}
+
+.card__footer {
+  padding: var(--card-gap) var(--card-padding) var(--card-padding);
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+}
+
+.card__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--card-title-size);
+  font-weight: var(--card-title-weight);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.card__description {
+  font-size: var(--card-description-size);
+  color: var(--card-description-color);
+  line-height: var(--line-height-body);
+  margin: 0;
+}
+
+@media (max-width: 1199px) {
+  .card__description {
+    display: none;
+  }
+}
+
+/* Dark mode overrides — component tokens compile to static hex */
+[data-mode="dark"] .card {
+  background: var(--color-surface-secondary);
+  border-color: var(--color-border-default);
+}
+
+[data-mode="dark"] .card--ghost {
+  background: var(--color-surface-primary);
+}
+
+[data-mode="dark"] .card__description {
+  color: var(--color-text-secondary);
+}
+
+[data-mode="dark"] .card--featured {
+  border-color: var(--color-accent-default);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card--interactive {
+    transition: none;
+  }
+}

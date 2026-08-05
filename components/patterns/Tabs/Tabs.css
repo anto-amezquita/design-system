@@ -1,0 +1,147 @@
+/*
+  Tokens consumed:
+  --tabs-trigger-color, --tabs-trigger-color-active, --tabs-trigger-color-hover
+  --tabs-trigger-background-hover
+  --tabs-trigger-padding-x, --tabs-trigger-padding-y
+  --tabs-trigger-font-size, --tabs-trigger-font-weight, --tabs-trigger-gap
+  --tabs-indicator-color, --tabs-indicator-height
+  --tabs-list-border-bottom, --tabs-list-border-width
+  --tabs-pill-background-active, --tabs-pill-border-radius, --tabs-pill-gap
+  --tabs-sm-trigger-padding-y, --tabs-sm-trigger-padding-x, --tabs-content-padding-top
+  --tabs-duration
+  --font-family-base, --easing-default, --color-border-focus, --opacity-disabled
+*/
+
+/* Root */
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-base);
+}
+
+/* List */
+
+.tabs__list {
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Line variant list border */
+
+.tabs--line .tabs__list {
+  border-bottom: var(--tabs-list-border-width) solid var(--tabs-list-border-bottom);
+}
+
+/* Pill variant list */
+
+.tabs--pill .tabs__list {
+  gap: var(--tabs-pill-gap);
+}
+
+/* Trigger — base */
+
+.tabs__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tabs-trigger-gap);
+  position: relative;
+  min-height: var(--size-touch-target);
+  padding: var(--tabs-trigger-padding-y) var(--tabs-trigger-padding-x);
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: var(--tabs-trigger-color);
+  font-family: inherit;
+  font-size: var(--tabs-trigger-font-size);
+  font-weight: var(--tabs-trigger-font-weight);
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--tabs-duration) var(--easing-default),
+              background var(--tabs-duration) var(--easing-default);
+  outline: none;
+}
+
+.tabs__trigger:hover {
+  color: var(--tabs-trigger-color-hover);
+  background: var(--tabs-trigger-background-hover);
+}
+
+.tabs__trigger[data-state='active'] {
+  color: var(--tabs-trigger-color-active);
+}
+
+.tabs__trigger[data-disabled] {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.tabs__trigger:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: calc(var(--focus-ring-offset) * -1);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Line variant — animated underline indicator */
+
+.tabs--line .tabs__trigger::after {
+  content: '';
+  position: absolute;
+  bottom: calc(-1 * var(--tabs-list-border-width));
+  left: 0;
+  right: 0;
+  height: var(--tabs-indicator-height);
+  background: var(--tabs-indicator-color);
+  transform: scaleX(0);
+  transition: transform var(--tabs-duration) var(--easing-default);
+}
+
+.tabs--line .tabs__trigger[data-state='active']::after {
+  transform: scaleX(1);
+}
+
+/* Pill variant — filled active state */
+
+.tabs--pill .tabs__trigger {
+  border-radius: var(--tabs-pill-border-radius);
+  background: transparent;
+}
+
+.tabs--pill .tabs__trigger[data-state='active'] {
+  background: var(--tabs-pill-background-active);
+}
+
+/* Size variants */
+
+.tabs--md .tabs__trigger { /* default — no overrides needed */ }
+
+.tabs--sm .tabs__trigger {
+  padding: var(--tabs-sm-trigger-padding-y) var(--tabs-sm-trigger-padding-x);
+  font-size: var(--font-size-sm);
+}
+
+/* Content */
+
+.tabs__content {
+  padding-block-start: var(--tabs-content-padding-top);
+  outline: none;
+}
+
+.tabs__content:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--border-radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabs__trigger {
+    transition: none;
+  }
+
+  .tabs--line .tabs__trigger::after {
+    transition: none;
+  }
+}

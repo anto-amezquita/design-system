@@ -1,0 +1,151 @@
+/*
+  Tokens consumed:
+  --accordion-border-color, --accordion-border-width
+  --accordion-trigger-color, --accordion-trigger-hover-background
+  --accordion-trigger-padding-x, --accordion-trigger-padding-y
+  --accordion-trigger-font-size, --accordion-trigger-font-weight
+  --accordion-content-color
+  --accordion-content-padding-x, --accordion-content-padding-bottom
+  --accordion-icon-color, --accordion-icon-size
+  --accordion-duration-expand, --accordion-duration-collapse
+  --font-family-base, --easing-default, --color-border-focus, --border-radius-sm, --opacity-disabled
+*/
+
+/* Root */
+
+.accordion {
+  width: 100%;
+  font-family: var(--font-family-base);
+}
+
+/* Item */
+
+.accordion__item {
+  border-bottom: var(--accordion-border-width) solid var(--accordion-border-color);
+}
+
+.accordion__item:first-child {
+  border-top: var(--accordion-border-width) solid var(--accordion-border-color);
+}
+
+.accordion__item[data-disabled] {
+  opacity: var(--opacity-disabled);
+  pointer-events: none;
+}
+
+/* Header — reset to block */
+
+.accordion__header {
+  display: flex;
+  margin: 0;
+}
+
+/* Trigger */
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--accordion-trigger-padding-y) var(--accordion-trigger-padding-x);
+  background: none;
+  border: none;
+  color: var(--accordion-trigger-color);
+  font-family: inherit;
+  font-size: var(--accordion-trigger-font-size);
+  font-weight: var(--accordion-trigger-font-weight);
+  line-height: var(--line-height-normal);
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--accordion-duration-collapse) var(--easing-default);
+  outline: none;
+}
+
+.accordion__trigger:hover {
+  background: var(--accordion-trigger-hover-background);
+}
+
+.accordion__trigger:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: calc(var(--focus-ring-offset) * -1);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Trigger label */
+
+.accordion__trigger-label {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Chevron icon — rotates on open */
+
+.accordion__icon {
+  flex-shrink: 0;
+  color: var(--accordion-icon-color);
+  width: var(--accordion-icon-size);
+  height: var(--accordion-icon-size);
+  transition: transform var(--accordion-duration-collapse) var(--easing-default);
+}
+
+.accordion__trigger[data-state='open'] .accordion__icon {
+  transform: rotate(180deg);
+  transition-duration: var(--accordion-duration-expand);
+}
+
+/* Content — animated via Radix --radix-accordion-content-height */
+
+.accordion__content {
+  overflow: hidden;
+  color: var(--accordion-content-color);
+}
+
+/* Gate open animation on data-mounted so items open via defaultValue don't
+   animate from height:0 on initial render. Set by Accordion.tsx useEffect. */
+.accordion[data-mounted] .accordion__content[data-state='open'] {
+  animation: accordion-open var(--accordion-duration-expand) var(--easing-default);
+}
+
+.accordion__content[data-state='closed'] {
+  animation: accordion-close var(--accordion-duration-collapse) var(--easing-default) forwards;
+}
+
+@keyframes accordion-open {
+  from { height: 0; }
+  to   { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-close {
+  from { height: var(--radix-accordion-content-height); }
+  to   { height: 0; }
+}
+
+/* Body — inner padding wrapper */
+
+.accordion__body {
+  padding-inline: var(--accordion-content-padding-x);
+  padding-block-end: var(--accordion-content-padding-bottom);
+  font-size: var(--accordion-trigger-font-size);
+  line-height: var(--line-height-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion__trigger {
+    transition: none;
+  }
+
+  .accordion__icon {
+    transition: none;
+  }
+
+  .accordion[data-mounted] .accordion__content[data-state='open'],
+  .accordion__content[data-state='closed'] {
+    animation: none;
+  }
+
+  /* Without the keyframe, closed items stay at full height until Radix unmounts
+     the node. Set height directly so the collapse is instant, not invisible. */
+  .accordion__content[data-state='closed'] {
+    height: 0;
+  }
+}

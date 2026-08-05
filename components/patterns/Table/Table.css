@@ -1,0 +1,182 @@
+/*
+  Tokens consumed:
+  --table-cell-padding-x, --table-cell-padding-y
+  --table-header-background, --table-header-color
+  --table-header-font-size, --table-header-font-weight
+  --table-body-color, --table-body-font-size
+  --table-row-border, --table-row-border-width
+  --table-row-hover-background, --table-stripe-background
+  --table-sort-icon-color, --table-sort-icon-color-active, --table-sort-icon-gap
+  --table-selected-row-background, --table-border-radius
+  --font-family-base, --duration-interaction, --easing-default
+  --color-border-focus
+*/
+
+.table__wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--table-border-radius);
+  border: var(--table-row-border-width) solid var(--table-row-border);
+}
+
+.table__wrapper:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-family-base);
+  font-size: var(--table-body-font-size);
+  color: var(--table-body-color);
+}
+
+/* Head */
+
+.table__head {
+  background: var(--table-header-background);
+}
+
+.table__header {
+  padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
+  font-size: var(--table-header-font-size);
+  font-weight: var(--table-header-font-weight);
+  color: var(--table-header-color);
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: var(--table-row-border-width) solid var(--table-row-border);
+  vertical-align: middle;
+  user-select: none;
+}
+
+.table__header--sortable {
+  padding: 0;
+}
+
+/* Inner button — inherits all header typography; fills the full cell padding area */
+.table__header-btn {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color var(--duration-interaction) var(--easing-default);
+}
+
+.table__header-btn:hover {
+  color: var(--table-body-color);
+}
+
+.table__header-btn:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: calc(var(--focus-ring-offset) * -1);
+}
+
+.table__header-content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--table-sort-icon-gap);
+}
+
+/* Sort icon — both arrows default to secondary color */
+
+.table__sort-arrow {
+  fill: var(--table-sort-icon-color);
+}
+
+/* Active direction highlights the relevant arrow */
+
+.table__header--sort-asc .table__sort-arrow--up {
+  fill: var(--table-sort-icon-color-active);
+}
+
+.table__header--sort-desc .table__sort-arrow--down {
+  fill: var(--table-sort-icon-color-active);
+}
+
+/* Body */
+
+.table__row {
+  transition: background var(--duration-interaction) var(--easing-default);
+}
+
+.table__body .table__row:not(.table__row--selected):hover {
+  background: var(--table-row-hover-background);
+}
+
+.table__row--selected {
+  background: var(--table-selected-row-background);
+}
+
+.table__cell {
+  padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
+  color: var(--table-body-color);
+  border-bottom: var(--table-row-border-width) solid var(--table-row-border);
+  vertical-align: middle;
+}
+
+.table__body .table__row:last-child .table__cell {
+  border-bottom: none;
+}
+
+/* Foot */
+
+.table__foot .table__cell {
+  color: var(--table-header-color);
+  font-size: var(--table-header-font-size);
+  font-weight: var(--table-header-font-weight);
+  border-top: var(--table-row-border-width) solid var(--table-row-border);
+  border-bottom: none;
+}
+
+/* Caption */
+
+.table__caption {
+  padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
+  font-size: var(--table-header-font-size);
+  color: var(--table-header-color);
+  text-align: left;
+  caption-side: top;
+  padding-inline-start: 0;
+}
+
+/* Striped variant — alternating rows on even children */
+
+.table--striped .table__body .table__row:nth-child(even) {
+  background: var(--table-stripe-background);
+}
+
+.table--striped .table__body .table__row:nth-child(even):hover {
+  background: var(--table-row-hover-background);
+}
+
+/* Bordered variant — all cells get a border */
+
+.table--bordered .table__cell,
+.table--bordered .table__header {
+  border: var(--table-row-border-width) solid var(--table-row-border);
+}
+
+/* Compact variant — tighter cell padding */
+
+.table--compact .table__cell,
+.table--compact .table__header {
+  padding: calc(var(--table-cell-padding-y) / 2) var(--table-cell-padding-x);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .table__row,
+  .table__header-btn {
+    transition: none;
+  }
+}

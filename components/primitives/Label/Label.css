@@ -1,0 +1,27 @@
+/*
+  Tokens consumed:
+  --label-font-size, --label-font-weight, --label-color, --label-color-disabled
+  --label-required-color, --label-gap
+  --font-family-base
+*/
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--label-gap);
+  font-family: var(--font-family-base);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-font-weight);
+  color: var(--label-color);
+  line-height: 1;
+  cursor: default;
+}
+
+.label--required::after {
+  content: '*';
+  color: var(--label-required-color);
+}
+
+.label--disabled {
+  color: var(--label-color-disabled);
+}

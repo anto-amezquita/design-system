@@ -1,0 +1,86 @@
+{
+  "drawer-background": {
+    "$value": "{color-surface-primary}",
+    "$type": "color"
+  },
+  "drawer-border": {
+    "$value": "{color-border-default}",
+    "$type": "color"
+  },
+  "drawer-border-width": {
+    "$value": "{border-width.thin}",
+    "$type": "dimension"
+  },
+  "drawer-shadow": {
+    "$value": "{shadow-dialog}",
+    "$type": "shadow"
+  },
+  "drawer-z-index": {
+    "$value": "{z-modal}",
+    "$type": "other"
+  },
+  "drawer-padding": {
+    "$value": "{space.7}",
+    "$type": "dimension"
+  },
+  "drawer-gap": {
+    "$value": "{space.5}",
+    "$type": "dimension"
+  },
+  "drawer-overlay-color": {
+    "$value": "{color-surface-tertiary}",
+    "$type": "color"
+  },
+  "drawer-title-size": {
+    "$value": "{font-size.lg}",
+    "$type": "dimension"
+  },
+  "drawer-title-weight": {
+    "$value": "{font-weight.bold}",
+    "$type": "other"
+  },
+  "drawer-close-size": {
+    "$value": "{size.icon-interactive}",
+    "$type": "dimension"
+  },
+  "drawer-close-color": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "drawer-close-hover": {
+    "$value": "{color-text-primary}",
+    "$type": "other"
+  },
+  "drawer-max-width-sm": {
+    "$value": "320px",
+    "$type": "dimension"
+  },
+  "drawer-max-width-md": {
+    "$value": "480px",
+    "$type": "dimension"
+  },
+  "drawer-max-width-lg": {
+    "$value": "640px",
+    "$type": "dimension"
+  },
+  "drawer-max-height-sm": {
+    "$value": "40vh",
+    "$type": "dimension"
+  },
+  "drawer-max-height-md": {
+    "$value": "90vh",
+    "$type": "dimension"
+  },
+  "drawer-max-height-lg": {
+    "$value": "75vh",
+    "$type": "dimension"
+  },
+  "drawer-max-height-full": {
+    "$value": "100vh",
+    "$type": "dimension"
+  },
+  "drawer-close-align-offset": {
+    "$value": "2px",
+    "$type": "dimension"
+  }
+}

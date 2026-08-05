@@ -1,0 +1,58 @@
+{
+  "switch-track-width": {
+    "$value": "44px",
+    "$type": "dimension"
+  },
+  "switch-track-height": {
+    "$value": "{space.5}",
+    "$type": "dimension"
+  },
+  "switch-track-background": {
+    "$value": "{color-border-strong}",
+    "$type": "color"
+  },
+  "switch-track-background-checked": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "switch-track-background-disabled": {
+    "$value": "{color-surface-tertiary}",
+    "$type": "color"
+  },
+  "switch-track-border-radius": {
+    "$value": "{border-radius.full}",
+    "$type": "dimension"
+  },
+  "switch-thumb-background": {
+    "$value": "{color-accent-foreground}",
+    "$type": "color"
+  },
+  "switch-thumb-size": {
+    "$value": "{space.4}",
+    "$type": "dimension"
+  },
+  "switch-thumb-border-radius": {
+    "$value": "{border-radius.full}",
+    "$type": "dimension"
+  },
+  "switch-label-gap": {
+    "$value": "{space.3}",
+    "$type": "dimension"
+  },
+  "switch-label-size": {
+    "$value": "{font-size.base}",
+    "$type": "dimension"
+  },
+  "switch-label-color": {
+    "$value": "{color-text-primary}",
+    "$type": "color"
+  },
+  "switch-label-color-disabled": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "switch-duration": {
+    "$value": "{duration-interaction}",
+    "$type": "duration"
+  }
+}

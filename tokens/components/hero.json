@@ -1,0 +1,58 @@
+{
+  "hero-background": {
+    "$value": "{color-surface-primary}",
+    "$type": "color"
+  },
+  "hero-padding-y": {
+    "$value": "{space.9}",
+    "$type": "dimension"
+  },
+  "hero-padding-x": {
+    "$value": "{space.6}",
+    "$type": "dimension"
+  },
+  "hero-gap": {
+    "$value": "{space.5}",
+    "$type": "dimension"
+  },
+  "hero-eyebrow-size": {
+    "$value": "{font-size.sm}",
+    "$type": "dimension"
+  },
+  "hero-eyebrow-weight": {
+    "$value": "{font-weight.semibold}",
+    "$type": "other"
+  },
+  "hero-eyebrow-color": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "hero-eyebrow-spacing": {
+    "$value": "0.01em",
+    "$type": "dimension"
+  },
+  "hero-title-weight": {
+    "$value": "{font-weight.extrabold}",
+    "$type": "other"
+  },
+  "hero-title-color": {
+    "$value": "{color-text-primary}",
+    "$type": "color"
+  },
+  "hero-lead-size": {
+    "$value": "{font-size.emphasis}",
+    "$type": "dimension"
+  },
+  "hero-lead-color": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "hero-max-width": {
+    "$value": "800px",
+    "$type": "dimension"
+  },
+  "hero-lead-max-width": {
+    "$value": "60ch",
+    "$type": "dimension"
+  }
+}

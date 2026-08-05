@@ -1,0 +1,274 @@
+/*
+  Tokens consumed:
+  --button-padding-x, --button-padding-y
+  --button-font-size, --button-font-weight
+  --button-border-radius, --button-border-width, --button-outline-border-width, --button-duration
+  --button-icon-gap, --button-spinner-duration
+  --button-arrow-nudge, --button-glow-size
+  --button-primary-background, --button-primary-foreground, --button-primary-border
+  --button-primary-background-hover
+  --button-secondary-background, --button-secondary-foreground, --button-secondary-border
+  --button-secondary-background-hover, --button-secondary-foreground-hover
+  --button-ghost-background, --button-ghost-foreground, --button-ghost-border
+  --button-ghost-background-hover
+  --color-border-focus, --font-family-base, --easing-default, --opacity-disabled
+*/
+
+.button {
+  --button-glow-color: rgba(255, 255, 255, 0.45);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-padding-y) var(--button-padding-x);
+  font-family: var(--font-family-base);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: 1;
+  border-radius: var(--button-border-radius);
+  border: var(--button-border-width) solid var(--button-primary-border);
+  background: var(--button-primary-background);
+  color: var(--button-primary-foreground);
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    border-color var(--button-duration) var(--easing-default),
+    color var(--button-duration) var(--easing-default);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.button:hover {
+  border-color: var(--button-primary-background-hover);
+}
+
+.button:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.button:disabled,
+.button--disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+/* Label — wraps icon + text + arrow so spinner can overlay cleanly */
+
+.button__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--button-icon-gap);
+  position: relative;
+  z-index: 1;
+}
+
+.button__label--hidden {
+  opacity: 0;
+}
+
+/* Secondary */
+
+.button--secondary {
+  background: var(--button-secondary-background);
+  color: var(--button-secondary-foreground);
+  border-color: var(--button-secondary-border);
+  border-width: var(--button-outline-border-width);
+  transition:
+    border-color var(--button-duration) var(--easing-default),
+    color var(--button-duration) var(--easing-default);
+}
+
+.button--secondary:hover {
+  border-color: var(--button-secondary-background-hover);
+}
+
+.button--secondary.button--hovering {
+  color: var(--button-secondary-foreground-hover);
+}
+
+/* Ghost */
+
+.button--ghost {
+  background: var(--button-ghost-background);
+  color: var(--button-ghost-foreground);
+  border-color: var(--button-ghost-border);
+  border-width: var(--button-outline-border-width);
+}
+
+/* Link variant */
+
+.button--link {
+  background: none;
+  border-color: transparent;
+  color: inherit;
+  padding-inline: 0;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color var(--button-duration) var(--easing-default);
+  overflow: visible;
+}
+
+.button--link:hover {
+  background: none;
+  border-color: transparent;
+  text-decoration-color: currentColor;
+}
+
+/* Full width */
+
+.button--full-width {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Loading state */
+
+.button--loading {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button__spinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.button__spinner-svg {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+  animation: button-spinner-rotate var(--button-spinner-duration) linear infinite;
+}
+
+@keyframes button-spinner-rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* Icon slot */
+
+.button__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+}
+
+/* Trailing arrow */
+
+.button__arrow {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: transform var(--button-duration) var(--easing-default);
+}
+
+.button:hover .button__arrow {
+  transform: translateX(var(--button-arrow-nudge));
+}
+
+/* Origin glow */
+
+.button__glow {
+  position: absolute;
+  width: var(--button-glow-size);
+  height: var(--button-glow-size);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--button-glow-color) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* Wipe fill */
+
+.button__wipe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: visible;
+}
+
+.button__wipe path {
+  fill: var(--button-primary-background-hover);
+}
+
+.button--secondary .button__wipe path {
+  fill: var(--button-secondary-background-hover);
+}
+
+.button--ghost .button__wipe path {
+  fill: var(--button-ghost-background-hover);
+}
+
+@media (hover: none) {
+  .button:active {
+    background: var(--button-primary-background-hover);
+  }
+
+  .button--secondary:active {
+    background: var(--button-secondary-background-hover);
+    color: var(--button-secondary-foreground-hover);
+    border-color: var(--button-secondary-background-hover);
+  }
+
+  .button--ghost:active {
+    background: var(--button-ghost-background-hover);
+  }
+
+  .button--link:active {
+    background: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button__wipe {
+    display: none;
+  }
+
+  .button__spinner-svg {
+    animation: none;
+  }
+
+  .button--link {
+    transition: none;
+  }
+
+  .button {
+    transition:
+      background var(--button-duration) var(--easing-default),
+      border-color var(--button-duration) var(--easing-default),
+      color var(--button-duration) var(--easing-default);
+  }
+
+  .button:hover {
+    background: var(--button-primary-background-hover);
+  }
+
+  .button--secondary:hover {
+    background: var(--button-secondary-background-hover);
+    color: var(--button-secondary-foreground-hover);
+  }
+
+  .button--ghost:hover {
+    background: var(--button-ghost-background-hover);
+  }
+
+  /* Link resets must come after the generic .button:hover rule to win the cascade */
+  .button--link:hover {
+    background: none;
+    border-color: transparent;
+    text-decoration-color: currentColor;
+  }
+}

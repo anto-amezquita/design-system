@@ -1,0 +1,70 @@
+/*
+  Tokens consumed:
+  --badge-font-size, --badge-font-weight, --badge-padding-x, --badge-padding-y
+  --badge-border-radius, --badge-border-width, --badge-gap
+  --badge-neutral-background, --badge-neutral-foreground, --badge-neutral-border
+  --badge-success-background, --badge-success-foreground, --badge-success-border
+  --badge-warning-background, --badge-warning-foreground, --badge-warning-border
+  --badge-error-background, --badge-error-foreground, --badge-error-border
+  --badge-info-background, --badge-info-foreground, --badge-info-border
+  --badge-count-size, --badge-dot-size
+  --font-family-base
+*/
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--badge-gap);
+  font-family: var(--font-family-base);
+  font-size: var(--badge-font-size);
+  font-weight: var(--badge-font-weight);
+  line-height: 1;
+  padding: var(--badge-padding-y) var(--badge-padding-x);
+  border-radius: var(--badge-border-radius);
+  border: var(--badge-border-width) solid var(--badge-neutral-border);
+  background: var(--badge-neutral-background);
+  color: var(--badge-neutral-foreground);
+  white-space: nowrap;
+}
+
+/* Color variants */
+
+.badge--success {
+  background: var(--badge-success-background);
+  color: var(--badge-success-foreground);
+  border-color: var(--badge-success-border);
+}
+
+.badge--warning {
+  background: var(--badge-warning-background);
+  color: var(--badge-warning-foreground);
+  border-color: var(--badge-warning-border);
+}
+
+.badge--error {
+  background: var(--badge-error-background);
+  color: var(--badge-error-foreground);
+  border-color: var(--badge-error-border);
+}
+
+.badge--info {
+  background: var(--badge-info-background);
+  color: var(--badge-info-foreground);
+  border-color: var(--badge-info-border);
+}
+
+/* Shape variants */
+
+.badge--count {
+  min-width: var(--badge-count-size);
+  height: var(--badge-count-size);
+  padding: 0 var(--badge-padding-x);
+  justify-content: center;
+}
+
+.badge--dot {
+  padding: 0;
+  width: var(--badge-dot-size);
+  height: var(--badge-dot-size);
+  border: none;
+}

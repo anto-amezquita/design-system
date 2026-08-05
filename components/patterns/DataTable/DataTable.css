@@ -1,0 +1,38 @@
+/*
+  Tokens consumed:
+  --datatable-gap, --datatable-footer-gap, --datatable-empty-padding
+  --color-text-secondary, --font-size-sm, --font-family-base
+  --size-touch-target
+*/
+
+.data-table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--datatable-gap);
+  font-family: var(--font-family-base);
+}
+
+.data-table__select-col {
+  width: var(--size-touch-target);
+  min-width: var(--size-touch-target);
+}
+
+.data-table__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--datatable-footer-gap);
+  flex-wrap: wrap;
+}
+
+.data-table__count {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.data-table__empty {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  padding-block: var(--datatable-empty-padding);
+}

@@ -1,0 +1,100 @@
+/*
+  Tokens consumed:
+  --switch-track-width, --switch-track-height, --switch-track-background
+  --switch-track-background-checked, --switch-track-background-disabled
+  --switch-track-border-radius
+  --switch-thumb-background, --switch-thumb-size, --switch-thumb-border-radius
+  --switch-label-gap, --switch-label-size, --switch-label-color, --switch-label-color-disabled
+  --switch-duration, --easing-default, --opacity-disabled, --color-border-focus
+*/
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--switch-label-gap);
+  min-height: var(--size-touch-target);
+  cursor: pointer;
+}
+
+.switch--disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.switch__track {
+  all: unset;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: var(--switch-track-width);
+  height: var(--switch-track-height);
+  background: var(--switch-track-background);
+  border-radius: var(--switch-track-border-radius);
+  cursor: pointer;
+  transition: background-color var(--switch-duration) var(--easing-default);
+  box-sizing: border-box;
+}
+
+/* Extends the hit area to 44×44px without affecting layout */
+.switch__track::before {
+  content: '';
+  position: absolute;
+  inset: calc((var(--switch-track-height) - var(--size-touch-target)) / 2);
+}
+
+.switch__track[data-state='checked'] {
+  background: var(--switch-track-background-checked);
+}
+
+.switch__track[data-disabled] {
+  background: var(--switch-track-background-disabled);
+  cursor: not-allowed;
+}
+
+.switch__track:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.switch__thumb {
+  display: block;
+  width: var(--switch-thumb-size);
+  height: var(--switch-thumb-size);
+  background: var(--switch-thumb-background);
+  border-radius: var(--switch-thumb-border-radius);
+  transform: translateX(calc((var(--switch-track-height) - var(--switch-thumb-size)) / 2));
+  transition: transform var(--switch-duration) var(--easing-default);
+  will-change: transform;
+}
+
+.switch__track[data-state='checked'] .switch__thumb {
+  transform: translateX(
+    calc(
+      var(--switch-track-width) - var(--switch-thumb-size) -
+      (var(--switch-track-height) - var(--switch-thumb-size)) / 2
+    )
+  );
+}
+
+.switch__label {
+  font-family: var(--font-family-base);
+  font-size: var(--switch-label-size);
+  color: var(--switch-label-color);
+  cursor: pointer;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.switch--disabled .switch__label {
+  color: var(--switch-label-color-disabled);
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switch__track,
+  .switch__thumb {
+    transition: none;
+  }
+}

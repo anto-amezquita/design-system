@@ -1,0 +1,212 @@
+/*
+  Tokens consumed:
+  --drawer-background, --drawer-border, --drawer-border-width
+  --drawer-shadow, --drawer-z-index, --drawer-padding, --drawer-gap
+  --drawer-overlay-color, --drawer-title-size, --drawer-title-weight
+  --drawer-close-size, --drawer-close-color, --drawer-close-hover
+  --drawer-max-width-sm, --drawer-max-width-md, --drawer-max-width-lg
+  --drawer-max-height-sm, --drawer-max-height-md, --drawer-max-height-lg, --drawer-max-height-full
+  --drawer-close-align-offset
+  --font-family-base, --font-family-heading, --color-text-primary, --color-text-secondary
+  --border-radius-interactive, --duration-transition, --duration-interaction
+  --easing-default, --easing-out, --color-border-focus
+  --line-height-heading, --letter-spacing-heading, --font-size-body, --line-height-body
+  --space-inline-gap
+*/
+
+/* Overlay */
+
+.drawer__overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--drawer-overlay-color);
+  z-index: calc(var(--drawer-z-index) - 1);
+  animation: drawer-overlay-in var(--duration-transition) var(--easing-out);
+}
+
+.drawer__overlay[data-state='closed'] {
+  animation: drawer-overlay-out var(--duration-transition) var(--easing-out);
+}
+
+@keyframes drawer-overlay-in  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes drawer-overlay-out { from { opacity: 1; } to { opacity: 0; } }
+
+/* Content panel — default: right side */
+
+.drawer__content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: var(--drawer-max-width-md);
+  background: var(--drawer-background);
+  border-left: var(--drawer-border-width) solid var(--drawer-border);
+  box-shadow: var(--drawer-shadow);
+  display: flex;
+  flex-direction: column;
+  z-index: var(--drawer-z-index);
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: drawer-right-in var(--duration-transition) var(--easing-out);
+}
+
+.drawer__content[data-state='closed'] {
+  animation: drawer-right-out var(--duration-transition) var(--easing-default);
+}
+
+@keyframes drawer-right-in  { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes drawer-right-out { from { transform: translateX(0); }    to { transform: translateX(100%); } }
+
+/* Left side */
+
+.drawer__content--left {
+  right: auto;
+  left: 0;
+  border-left: none;
+  border-right: var(--drawer-border-width) solid var(--drawer-border);
+  animation-name: drawer-left-in;
+}
+
+.drawer__content--left[data-state='closed'] {
+  animation-name: drawer-left-out;
+}
+
+@keyframes drawer-left-in  { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@keyframes drawer-left-out { from { transform: translateX(0); }     to { transform: translateX(-100%); } }
+
+/* Bottom */
+
+.drawer__content--bottom {
+  top: auto;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: var(--drawer-max-height-md);
+  border-left: none;
+  border-top: var(--drawer-border-width) solid var(--drawer-border);
+  animation-name: drawer-bottom-in;
+}
+
+.drawer__content--bottom[data-state='closed'] {
+  animation-name: drawer-bottom-out;
+}
+
+@keyframes drawer-bottom-in  { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes drawer-bottom-out { from { transform: translateY(0); }    to { transform: translateY(100%); } }
+
+/* Size modifiers — right/left */
+
+.drawer__content--sm   { max-width: var(--drawer-max-width-sm); }
+.drawer__content--lg   { max-width: var(--drawer-max-width-lg); }
+.drawer__content--full { max-width: 100%; }
+
+/* Size modifiers — bottom */
+
+.drawer__content--bottom.drawer__content--sm   { max-height: var(--drawer-max-height-sm); }
+.drawer__content--bottom.drawer__content--lg   { max-height: var(--drawer-max-height-lg); }
+.drawer__content--bottom.drawer__content--full { max-height: var(--drawer-max-height-full); }
+
+/* Header */
+
+.drawer__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-inline-gap);
+  padding: var(--drawer-padding) var(--drawer-padding) 0;
+  flex-shrink: 0;
+}
+
+/* Title */
+
+.drawer__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--drawer-title-size);
+  font-weight: var(--drawer-title-weight);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Description */
+
+.drawer__description {
+  padding: 0 var(--drawer-padding);
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-body);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Body — scrolls independently */
+
+.drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--drawer-gap) var(--drawer-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--drawer-gap);
+}
+
+/* Footer */
+
+.drawer__footer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-inline-gap);
+  padding: var(--drawer-gap) var(--drawer-padding) var(--drawer-padding);
+  border-top: var(--drawer-border-width) solid var(--drawer-border);
+}
+
+/* Close button */
+
+.drawer__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--drawer-close-size);
+  height: var(--drawer-close-size);
+  min-width: var(--size-touch-target);
+  min-height: var(--size-touch-target);
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  border-radius: var(--border-radius-interactive);
+  color: var(--drawer-close-color);
+  cursor: pointer;
+  transition: color var(--duration-interaction) var(--easing-default);
+  outline: none;
+  padding: 0;
+  margin-top: calc(-1 * var(--drawer-close-align-offset));
+}
+
+.drawer__close:hover {
+  color: var(--drawer-close-hover);
+}
+
+.drawer__close:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer__overlay,
+  .drawer__overlay[data-state='closed'],
+  .drawer__content,
+  .drawer__content[data-state='closed'] {
+    animation: none;
+  }
+
+  .drawer__close {
+    transition: none;
+  }
+}

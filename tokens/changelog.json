@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "generatedAt": "2026-08-04"
+  },
+  "versions": [],
+  "unreleased": [],
+  "typeLabels": {
+    "feat": "Features",
+    "fix": "Fixes",
+    "refactor": "Refactoring",
+    "perf": "Performance",
+    "style": "Style",
+    "docs": "Documentation"
+  }
+}

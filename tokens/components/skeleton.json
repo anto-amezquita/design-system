@@ -1,0 +1,30 @@
+{
+  "skeleton-background": {
+    "$value": "{color-skeleton-base}",
+    "$type": "color"
+  },
+  "skeleton-highlight": {
+    "$value": "{color-skeleton-highlight}",
+    "$type": "other"
+  },
+  "skeleton-border-radius": {
+    "$value": "{border-radius.sm}",
+    "$type": "dimension"
+  },
+  "skeleton-duration": {
+    "$value": "{duration-skeleton}",
+    "$type": "duration"
+  },
+  "skeleton-height-text": {
+    "$value": "1em",
+    "$type": "dimension"
+  },
+  "skeleton-height-icon": {
+    "$value": "{size-icon-lg}",
+    "$type": "dimension"
+  },
+  "skeleton-height-rect": {
+    "$value": "{space.7}",
+    "$type": "dimension"
+  }
+}

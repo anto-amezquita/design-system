@@ -1,0 +1,118 @@
+/*
+  Tokens consumed:
+  --radio-size, --radio-background, --radio-background-checked, --radio-background-disabled
+  --radio-border, --radio-border-width, --radio-border-hover
+  --radio-indicator-color, --radio-indicator-size
+  --radio-label-gap, --radio-label-size, --radio-label-color, --radio-label-color-disabled
+  --radio-group-gap
+  --font-family-base, --duration-interaction, --easing-default
+  --opacity-disabled, --color-border-focus
+*/
+
+/* Group container */
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--radio-group-gap);
+}
+
+.radio-group--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Single radio row */
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--radio-label-gap);
+  min-height: var(--size-touch-target);
+  min-width: var(--size-touch-target);
+  cursor: pointer;
+}
+
+.radio--disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Radix item — the visible circle; ::before extends hit area to 44×44 without affecting layout */
+
+.radio__item {
+  all: unset;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--radio-size);
+  height: var(--radio-size);
+  background: var(--radio-background);
+  border: var(--radio-border-width) solid var(--radio-border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-interaction) var(--easing-default),
+    border-color var(--duration-interaction) var(--easing-default);
+  box-sizing: border-box;
+}
+
+.radio__item::before {
+  content: '';
+  position: absolute;
+  inset: calc((var(--radio-size) - var(--size-touch-target)) / 2);
+}
+
+.radio__item:hover:not([disabled]) {
+  border-color: var(--radio-border-hover);
+}
+
+.radio__item:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.radio__item[data-state='checked'] {
+  background: var(--radio-background-checked);
+  border-color: var(--radio-indicator-color);
+}
+
+.radio__item[disabled] {
+  background: var(--radio-background-disabled);
+  cursor: not-allowed;
+}
+
+/* Indicator dot */
+
+.radio__indicator {
+  display: block;
+  width: var(--radio-indicator-size);
+  height: var(--radio-indicator-size);
+  background: var(--radio-indicator-color);
+  border-radius: 50%;
+}
+
+/* Label */
+
+.radio__label {
+  font-family: var(--font-family-base);
+  font-size: var(--radio-label-size);
+  color: var(--radio-label-color);
+  cursor: pointer;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.radio--disabled .radio__label {
+  color: var(--radio-label-color-disabled);
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio__item {
+    transition: none;
+  }
+}

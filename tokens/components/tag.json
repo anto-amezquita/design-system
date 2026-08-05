@@ -1,0 +1,62 @@
+{
+  "tag-background": {
+    "$value": "{color-surface-secondary}",
+    "$type": "color"
+  },
+  "tag-foreground": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "tag-border": {
+    "$value": "{color-border-default}",
+    "$type": "color"
+  },
+  "tag-border-width": {
+    "$value": "{border-width.thin}",
+    "$type": "dimension"
+  },
+  "tag-border-radius": {
+    "$value": "{border-radius-pill}",
+    "$type": "dimension"
+  },
+  "tag-padding-x": {
+    "$value": "{space.3}",
+    "$type": "dimension"
+  },
+  "tag-padding-y": {
+    "$value": "{space.1}",
+    "$type": "dimension"
+  },
+  "tag-font-size": {
+    "$value": "{font-size.xs}",
+    "$type": "dimension"
+  },
+  "tag-font-weight": {
+    "$value": "{font-weight.medium}",
+    "$type": "fontWeight"
+  },
+  "tag-accent-background": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "tag-accent-foreground": {
+    "$value": "{color-accent-foreground}",
+    "$type": "color"
+  },
+  "tag-accent-border": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "tag-muted-background": {
+    "$value": "transparent",
+    "$type": "color"
+  },
+  "tag-muted-foreground": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "tag-muted-border": {
+    "$value": "{color-border-default}",
+    "$type": "color"
+  }
+}

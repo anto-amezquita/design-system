@@ -1,0 +1,98 @@
+{
+  "badge-font-size": {
+    "$value": "{font-size.xs}",
+    "$type": "dimension"
+  },
+  "badge-font-weight": {
+    "$value": "{font-weight.medium}",
+    "$type": "fontWeight"
+  },
+  "badge-padding-x": {
+    "$value": "{space.2}",
+    "$type": "dimension"
+  },
+  "badge-padding-y": {
+    "$value": "{space.1}",
+    "$type": "dimension"
+  },
+  "badge-border-radius": {
+    "$value": "{border-radius.full}",
+    "$type": "dimension"
+  },
+  "badge-border-width": {
+    "$value": "{border-width.thin}",
+    "$type": "dimension"
+  },
+  "badge-gap": {
+    "$value": "{space.1}",
+    "$type": "dimension"
+  },
+  "badge-count-size": {
+    "$value": "20px",
+    "$type": "dimension"
+  },
+  "badge-dot-size": {
+    "$value": "{space.2}",
+    "$type": "dimension"
+  },
+  "badge-neutral-background": {
+    "$value": "{color-surface-secondary}",
+    "$type": "color"
+  },
+  "badge-neutral-foreground": {
+    "$value": "{color-text-secondary}",
+    "$type": "color"
+  },
+  "badge-neutral-border": {
+    "$value": "{color-border-default}",
+    "$type": "color"
+  },
+  "badge-success-background": {
+    "$value": "{color-feedback-success-background}",
+    "$type": "color"
+  },
+  "badge-success-foreground": {
+    "$value": "{color-feedback-success-foreground}",
+    "$type": "color"
+  },
+  "badge-success-border": {
+    "$value": "{color-feedback-success-border}",
+    "$type": "color"
+  },
+  "badge-warning-background": {
+    "$value": "{color-feedback-warning-background}",
+    "$type": "color"
+  },
+  "badge-warning-foreground": {
+    "$value": "{color-feedback-warning-foreground}",
+    "$type": "color"
+  },
+  "badge-warning-border": {
+    "$value": "{color-feedback-warning-border}",
+    "$type": "color"
+  },
+  "badge-error-background": {
+    "$value": "{color-feedback-error-background}",
+    "$type": "color"
+  },
+  "badge-error-foreground": {
+    "$value": "{color-feedback-error-foreground}",
+    "$type": "color"
+  },
+  "badge-error-border": {
+    "$value": "{color-feedback-error-border}",
+    "$type": "color"
+  },
+  "badge-info-background": {
+    "$value": "{color-feedback-info-background}",
+    "$type": "color"
+  },
+  "badge-info-foreground": {
+    "$value": "{color-feedback-info-foreground}",
+    "$type": "color"
+  },
+  "badge-info-border": {
+    "$value": "{color-feedback-info-border}",
+    "$type": "color"
+  }
+}

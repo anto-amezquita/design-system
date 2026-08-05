@@ -1,0 +1,123 @@
+/*
+  Tokens consumed:
+  --checkbox-size, --checkbox-background, --checkbox-background-checked, --checkbox-background-disabled
+  --checkbox-border, --checkbox-border-width, --checkbox-border-hover, --checkbox-border-radius
+  --checkbox-foreground-checked, --checkbox-foreground-indeterminate
+  --checkbox-label-gap, --checkbox-label-size, --checkbox-label-color, --checkbox-label-color-disabled
+  --font-family-base, --duration-interaction, --easing-default
+  --opacity-disabled, --color-border-focus
+*/
+
+/* Wrapper — owns layout and disabled opacity */
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--checkbox-label-gap);
+  min-height: var(--size-touch-target);
+  min-width: var(--size-touch-target);
+  cursor: pointer;
+}
+
+.checkbox--disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Radix root — the visible box; ::before extends hit area to 44×44 without affecting layout */
+
+.checkbox__root {
+  all: unset;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  background: var(--checkbox-background);
+  border: var(--checkbox-border-width) solid var(--checkbox-border);
+  border-radius: var(--checkbox-border-radius);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-interaction) var(--easing-default),
+    border-color var(--duration-interaction) var(--easing-default);
+  box-sizing: border-box;
+}
+
+.checkbox__root::before {
+  content: '';
+  position: absolute;
+  inset: calc((var(--size-touch-target) - var(--checkbox-size)) / -2);
+}
+
+.checkbox__root:hover:not([disabled]) {
+  border-color: var(--checkbox-border-hover);
+}
+
+.checkbox__root:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.checkbox__root[data-state='checked'],
+.checkbox__root[data-state='indeterminate'] {
+  background: var(--checkbox-background-checked);
+  border-color: var(--checkbox-background-checked);
+}
+
+.checkbox__root[disabled] {
+  background: var(--checkbox-background-disabled);
+  cursor: not-allowed;
+}
+
+/* Indicator — hosts both icons, only one shows at a time */
+
+.checkbox__indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Icons — hidden by default, shown based on data-state */
+
+.checkbox__icon {
+  display: none;
+  width: var(--icon-size-xs);
+  height: var(--icon-size-xs);
+  color: var(--checkbox-foreground-checked);
+}
+
+.checkbox__root[data-state='checked'] .checkbox__icon--check {
+  display: block;
+}
+
+.checkbox__root[data-state='indeterminate'] .checkbox__icon--indeterminate {
+  display: block;
+  color: var(--checkbox-foreground-indeterminate);
+}
+
+/* Label */
+
+.checkbox__label {
+  font-family: var(--font-family-base);
+  font-size: var(--checkbox-label-size);
+  color: var(--checkbox-label-color);
+  cursor: pointer;
+  line-height: var(--line-height-body);
+  user-select: none;
+}
+
+.checkbox--disabled .checkbox__label {
+  color: var(--checkbox-label-color-disabled);
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .checkbox__root {
+    transition: none;
+  }
+}
