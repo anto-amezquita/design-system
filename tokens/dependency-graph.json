@@ -1,7 +1,1772 @@
 {
   "meta": {
-    "filesScanned": 0,
-    "tokenCount": 0
+    "filesScanned": 27,
+    "tokenCount": 488
   },
-  "byToken": {}
+  "byToken": {
+    "accordion-border-color": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-border-width": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-content-color": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-content-padding-bottom": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-content-padding-x": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-duration-collapse": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-duration-expand": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-icon-color": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-icon-size": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-trigger-color": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-trigger-font-size": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-trigger-font-weight": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-trigger-hover-background": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-trigger-padding-x": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "accordion-trigger-padding-y": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "alert-border-radius": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-border-width": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-close-offset": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-content-gap": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-error-background": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-error-border": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-error-foreground": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-exit-distance": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-font-size": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-gap": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-icon-size": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-info-background": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-info-border": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-info-foreground": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-padding-x": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-padding-y": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-success-background": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-success-border": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-success-foreground": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-title-weight": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-warning-background": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-warning-border": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "alert-warning-foreground": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "avatar-border": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-border-radius": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-border-width": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-fallback-background": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-fallback-font-size": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-fallback-font-weight": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-fallback-foreground": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-group-overlap": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-ring-color": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-ring-width": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-size-lg": [
+      "components/primitives/Avatar/Avatar.css",
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "avatar-size-md": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-size-sm": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "avatar-size-xl": [
+      "components/primitives/Avatar/Avatar.css"
+    ],
+    "badge-border-radius": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-border-width": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-count-size": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-dot-size": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-error-background": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-error-border": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-error-foreground": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-font-size": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-font-weight": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-gap": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-info-background": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-info-border": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-info-foreground": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-neutral-background": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-neutral-border": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-neutral-foreground": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-padding-x": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-padding-y": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-success-background": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-success-border": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-success-foreground": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-warning-background": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-warning-border": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "badge-warning-foreground": [
+      "components/primitives/Badge/Badge.css"
+    ],
+    "border-radius-component": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Toast/Toast.css",
+      "components/patterns/Table/Table.css",
+      "components/primitives/Select/Select.css"
+    ],
+    "border-radius-full": [
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "border-radius-image": [
+      "components/composition/Card/Card.css"
+    ],
+    "border-radius-interactive": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "border-radius-pill": [
+      "components/primitives/Input/Input.css",
+      "components/primitives/Tag/Tag.css"
+    ],
+    "border-radius-sm": [
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Input/Input.css"
+    ],
+    "border-width-interactive": [
+      "components/primitives/Button/Button.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "breadcrumb-current-color": [
+      "components/patterns/Breadcrumb/Breadcrumb.css"
+    ],
+    "breadcrumb-current-max-width": [
+      "components/patterns/Breadcrumb/Breadcrumb.css"
+    ],
+    "breadcrumb-font-size": [
+      "components/patterns/Breadcrumb/Breadcrumb.css"
+    ],
+    "breadcrumb-gap": [
+      "components/patterns/Breadcrumb/Breadcrumb.css"
+    ],
+    "breadcrumb-item-max-width": [
+      "components/patterns/Breadcrumb/Breadcrumb.css"
+    ],
+    "breadcrumb-link-color": [
+      "components/patterns/Breadcrumb/Breadcrumb.css"
+    ],
+    "breadcrumb-link-color-hover": [
+      "components/patterns/Breadcrumb/Breadcrumb.css"
+    ],
+    "breadcrumb-separator-color": [
+      "components/patterns/Breadcrumb/Breadcrumb.css"
+    ],
+    "button-arrow-nudge": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-border-radius": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-border-width": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-duration": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-font-size": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-font-weight": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-ghost-background": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-ghost-background-hover": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-ghost-border": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-ghost-foreground": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-glow-color": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-glow-size": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-icon-gap": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-outline-border-width": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-padding-x": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-padding-y": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-primary-background": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-primary-background-hover": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-primary-border": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-primary-foreground": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-secondary-background": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-secondary-background-hover": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-secondary-border": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-secondary-foreground": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-secondary-foreground-hover": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-spinner-duration": [
+      "components/primitives/Button/Button.css"
+    ],
+    "card-background": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-background-ghost": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-border": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-border-radius": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-border-width": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-description-color": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-description-size": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-gap": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-horizontal-media-width": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-padding": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-shadow-hover": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-title-size": [
+      "components/composition/Card/Card.css"
+    ],
+    "card-title-weight": [
+      "components/composition/Card/Card.css"
+    ],
+    "checkbox-background": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-background-checked": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-background-disabled": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-border": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-border-hover": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-border-radius": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-border-width": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-foreground-checked": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-foreground-indeterminate": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-label-color": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-label-color-disabled": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-label-gap": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-label-size": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "checkbox-size": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "color-accent-default": [
+      "components/composition/Card/Card.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Tag/Tag.css"
+    ],
+    "color-accent-foreground": [
+      "components/patterns/Pagination/Pagination.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Tag/Tag.css"
+    ],
+    "color-accent-hover": [
+      "components/primitives/Button/Button.css"
+    ],
+    "color-border-default": [
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Avatar/Avatar.css",
+      "components/primitives/Badge/Badge.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "color-border-focus": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Avatar/Avatar.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "color-border-strong": [
+      "components/composition/Card/Card.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "color-feedback-error": [
+      "components/primitives/Input/Input.css",
+      "components/primitives/Label/Label.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "color-feedback-error-background": [
+      "components/composition/Alert/Alert.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-feedback-error-border": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Toast/Toast.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-feedback-error-foreground": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Toast/Toast.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-feedback-info-background": [
+      "components/composition/Alert/Alert.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-feedback-info-border": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Toast/Toast.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-feedback-info-foreground": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Toast/Toast.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-feedback-success-background": [
+      "components/composition/Alert/Alert.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-feedback-success-border": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Toast/Toast.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-feedback-success-foreground": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Toast/Toast.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-feedback-warning-background": [
+      "components/composition/Alert/Alert.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-feedback-warning-border": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Toast/Toast.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-feedback-warning-foreground": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Toast/Toast.css",
+      "components/primitives/Badge/Badge.css"
+    ],
+    "color-skeleton-base": [
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "color-skeleton-highlight": [
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "color-surface-inverse": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "color-surface-primary": [
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "color-surface-secondary": [
+      "components/composition/Card/Card.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Avatar/Avatar.css",
+      "components/primitives/Badge/Badge.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "color-surface-tertiary": [
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/patterns/Table/Table.css",
+      "components/primitives/Switch/Switch.css"
+    ],
+    "color-text-inverse": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "color-text-primary": [
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/patterns/Hero/Hero.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Label/Label.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "color-text-secondary": [
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/DataTable/DataTable.css",
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/patterns/Hero/Hero.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Avatar/Avatar.css",
+      "components/primitives/Badge/Badge.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Label/Label.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "datatable-empty-padding": [
+      "components/patterns/DataTable/DataTable.css"
+    ],
+    "datatable-footer-gap": [
+      "components/patterns/DataTable/DataTable.css"
+    ],
+    "datatable-gap": [
+      "components/patterns/DataTable/DataTable.css"
+    ],
+    "dialog-background": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-border": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-border-radius": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-border-width": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-close-color": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-close-hover": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-close-size": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-entrance-offset": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-gap": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-max-width": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-max-width-lg": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-max-width-sm": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-max-width-xl": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-overlay-color": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-padding": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-title-size": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "dialog-title-weight": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "drawer-background": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-border": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-border-width": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-close-align-offset": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-close-color": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-close-hover": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-close-size": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-gap": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-max-height-full": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-max-height-lg": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-max-height-md": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-max-height-sm": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-max-width-lg": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-max-width-md": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-max-width-sm": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-overlay-color": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-padding": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-shadow": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-title-size": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-title-weight": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "drawer-z-index": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "duration-instant": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Toast/Toast.css"
+    ],
+    "duration-interaction": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/composition/Tooltip/Tooltip.css",
+      "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "duration-skeleton": [
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "duration-spin": [
+      "components/primitives/Spinner/Spinner.css"
+    ],
+    "duration-transition": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css"
+    ],
+    "easing-default": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/composition/Tooltip/Tooltip.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "easing-out": [
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "focus-ring-offset": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Avatar/Avatar.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "focus-ring-width": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "font-family-base": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Toast/Toast.css",
+      "components/composition/Tooltip/Tooltip.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/DataTable/DataTable.css",
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/patterns/Hero/Hero.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Avatar/Avatar.css",
+      "components/primitives/Badge/Badge.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Label/Label.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "font-family-heading": [
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/patterns/Hero/Hero.css"
+    ],
+    "font-size-body": [
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "font-size-h1-fluid": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "font-size-h4": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "font-size-sm": [
+      "components/patterns/DataTable/DataTable.css",
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "font-weight-medium": [
+      "components/patterns/Breadcrumb/Breadcrumb.css"
+    ],
+    "font-weight-semibold": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "hero-background": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-eyebrow-color": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-eyebrow-size": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-eyebrow-spacing": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-eyebrow-weight": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-gap": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-lead-color": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-lead-max-width": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-lead-size": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-max-width": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-padding-x": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-padding-y": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-title-color": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "hero-title-weight": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "icon-size-lg": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "icon-size-sm": [
+      "components/primitives/Button/Button.css"
+    ],
+    "icon-size-xl": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "icon-size-xs": [
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "input-background": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-background-disabled": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-border": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-border-error": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-border-focus": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-border-hover": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-border-radius": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-border-width": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-clear-color": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-error-color": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-font-size": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-foreground": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-hint-color": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-hint-size": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-label-color": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-label-size": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-label-weight": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-padding-x": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-padding-y": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-placeholder-color": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-prefix-color": [
+      "components/primitives/Input/Input.css"
+    ],
+    "input-suffix-color": [
+      "components/primitives/Input/Input.css"
+    ],
+    "label-color": [
+      "components/primitives/Label/Label.css"
+    ],
+    "label-color-disabled": [
+      "components/primitives/Label/Label.css"
+    ],
+    "label-font-size": [
+      "components/primitives/Label/Label.css"
+    ],
+    "label-font-weight": [
+      "components/primitives/Label/Label.css"
+    ],
+    "label-gap": [
+      "components/primitives/Label/Label.css"
+    ],
+    "label-required-color": [
+      "components/primitives/Label/Label.css"
+    ],
+    "letter-spacing-heading": [
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/patterns/Hero/Hero.css"
+    ],
+    "line-height-body": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/Checkbox/Checkbox.css"
+    ],
+    "line-height-display": [
+      "components/patterns/Hero/Hero.css"
+    ],
+    "line-height-heading": [
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "line-height-normal": [
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "line-height-tight": [
+      "components/composition/Tooltip/Tooltip.css",
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "opacity-disabled": [
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "opacity-high": [
+      "components/composition/Alert/Alert.css"
+    ],
+    "pagination-border": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "pagination-border-radius": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "pagination-border-width": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "pagination-button-background": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "pagination-button-background-active": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "pagination-button-background-hover": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "pagination-button-color": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "pagination-button-color-active": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "pagination-button-font-size": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "pagination-button-font-weight": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "pagination-button-size": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "pagination-gap": [
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "radio-background": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-background-checked": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-background-disabled": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-border": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-border-hover": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-border-width": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-group-gap": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-indicator-color": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-indicator-size": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-label-color": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-label-color-disabled": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-label-gap": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-label-size": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radio-size": [
+      "components/primitives/Radio/Radio.css"
+    ],
+    "radix-accordion-content-height": [
+      "components/patterns/Accordion/Accordion.css"
+    ],
+    "radix-select-trigger-width": [
+      "components/primitives/Select/Select.css"
+    ],
+    "radix-toast-swipe-end-x": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "radix-toast-swipe-move-x": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "select-background": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-background-item-hover": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-border": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-border-focus": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-border-hover": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-border-radius": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-border-width": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-content-border-radius": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-content-shadow": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-font-size": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-foreground": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-item-padding-x": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-item-padding-y": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-label-size": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-label-weight": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-padding-x": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-padding-y": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-placeholder-color": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-separator-color": [
+      "components/primitives/Select/Select.css"
+    ],
+    "select-separator-height": [
+      "components/primitives/Select/Select.css"
+    ],
+    "shadow-card-hover": [
+      "components/composition/Card/Card.css"
+    ],
+    "shadow-dialog": [
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "shadow-dropdown": [
+      "components/primitives/Select/Select.css"
+    ],
+    "shadow-toast": [
+      "components/composition/Toast/Toast.css",
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "size-icon-lg": [
+      "components/primitives/Spinner/Spinner.css"
+    ],
+    "size-icon-md": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Toast/Toast.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/primitives/Spinner/Spinner.css"
+    ],
+    "size-icon-sm": [
+      "components/primitives/Spinner/Spinner.css"
+    ],
+    "size-touch-target": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Toast/Toast.css",
+      "components/patterns/DataTable/DataTable.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Switch/Switch.css"
+    ],
+    "skeleton-background": [
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "skeleton-border-radius": [
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "skeleton-duration": [
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "skeleton-height-rect": [
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "skeleton-height-text": [
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "skeleton-highlight": [
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "space-1": [
+      "components/primitives/Input/Input.css"
+    ],
+    "space-2": [
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "space-3": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "space-4": [
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/patterns/Pagination/Pagination.css"
+    ],
+    "space-6": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "space-7": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "space-8": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "space-9": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "space-component-gap": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "space-element-gap": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "space-inline-gap": [
+      "components/composition/Card/Card.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "space-tight-gap": [
+      "components/primitives/Select/Select.css"
+    ],
+    "spinner-duration": [
+      "components/primitives/Spinner/Spinner.css"
+    ],
+    "spinner-size-lg": [
+      "components/primitives/Spinner/Spinner.css"
+    ],
+    "spinner-size-md": [
+      "components/primitives/Spinner/Spinner.css"
+    ],
+    "spinner-size-sm": [
+      "components/primitives/Spinner/Spinner.css"
+    ],
+    "spinner-stroke-width": [
+      "components/primitives/Spinner/Spinner.css"
+    ],
+    "switch-duration": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-label-color": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-label-color-disabled": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-label-gap": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-label-size": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-thumb-background": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-thumb-border-radius": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-thumb-size": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-track-background": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-track-background-checked": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-track-background-disabled": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-track-border-radius": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-track-height": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "switch-track-width": [
+      "components/primitives/Switch/Switch.css"
+    ],
+    "table-body-color": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-body-font-size": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-border-radius": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-cell-padding-x": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-cell-padding-y": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-header-background": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-header-color": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-header-font-size": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-header-font-weight": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-row-border": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-row-border-width": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-row-hover-background": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-selected-row-background": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-sort-icon-color": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-sort-icon-color-active": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-sort-icon-gap": [
+      "components/patterns/Table/Table.css"
+    ],
+    "table-stripe-background": [
+      "components/patterns/Table/Table.css"
+    ],
+    "tabs-content-padding-top": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-duration": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-indicator-color": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-indicator-height": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-list-border-bottom": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-list-border-width": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-pill-background-active": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-pill-border-radius": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-pill-gap": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-sm-trigger-padding-x": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-sm-trigger-padding-y": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-trigger-background-hover": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-trigger-color": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-trigger-color-active": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-trigger-color-hover": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-trigger-font-size": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-trigger-font-weight": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-trigger-gap": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-trigger-padding-x": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tabs-trigger-padding-y": [
+      "components/patterns/Tabs/Tabs.css"
+    ],
+    "tag-accent-background": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-accent-border": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-accent-foreground": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-background": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-border": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-border-radius": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-border-width": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-font-size": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-font-weight": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-foreground": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-muted-background": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-muted-border": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-muted-foreground": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-padding-x": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "tag-padding-y": [
+      "components/primitives/Tag/Tag.css"
+    ],
+    "textarea-background": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-background-disabled": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-border": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-border-error": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-border-focus": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-border-hover": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-border-radius": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-border-width": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-error-color": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-font-size": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-foreground": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-hint-color": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-hint-size": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-label-color": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-label-size": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-label-weight": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-padding-x": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-padding-y": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "textarea-placeholder-color": [
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "toast-accent-width": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-background": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-border": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-border-radius": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-border-width": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-close-offset": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-content-gap": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-error-border": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-font-size": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-foreground": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-gap": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-icon-size": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-info-border": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-max-width": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-padding-x": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-padding-y": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-shadow": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-success-border": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-title-weight": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-viewport-inset": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-warning-border": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "toast-z-index": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "tooltip-arrow-size": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "tooltip-background": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "tooltip-border-radius": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "tooltip-font-size": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "tooltip-font-weight": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "tooltip-foreground": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "tooltip-max-width": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "tooltip-padding-x": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "tooltip-padding-y": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "tooltip-shadow": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "tooltip-z-index": [
+      "components/composition/Tooltip/Tooltip.css"
+    ],
+    "z-dropdown": [
+      "components/primitives/Select/Select.css"
+    ],
+    "z-modal": [
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css"
+    ],
+    "z-overlay": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "z-toast": [
+      "components/composition/Toast/Toast.css"
+    ],
+    "z-tooltip": [
+      "components/composition/Tooltip/Tooltip.css"
+    ]
+  }
 }

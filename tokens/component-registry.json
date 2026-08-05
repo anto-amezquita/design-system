@@ -1,6 +1,526 @@
 {
   "meta": {
-    "componentCount": 0
+    "componentCount": 28
   },
-  "components": []
+  "components": [
+    {
+      "name": "Avatar",
+      "slug": "avatar",
+      "tier": "primitives",
+      "purpose": "User profile picture with fallback to initials when no image is provided",
+      "storybookPath": "Components/Avatar",
+      "storybookTitleId": "components-avatar",
+      "tokenPrefix": "avatar",
+      "stories": [
+        "WithImage",
+        "WithFallback",
+        "WithCustomFallback",
+        "AllSizes",
+        "Group",
+        "GroupWithOverflow",
+        "DarkMode"
+      ],
+      "tokenCount": 14
+    },
+    {
+      "name": "Badge",
+      "slug": "badge",
+      "tier": "primitives",
+      "purpose": "Small status indicator or numeric count overlay attached to another element",
+      "storybookPath": "Components/Badge",
+      "storybookTitleId": "components-badge",
+      "tokenPrefix": "badge",
+      "stories": [
+        "Default",
+        "Count",
+        "Dot",
+        "AllVariants",
+        "AllShapes",
+        "AllVariantsAllShapes",
+        "DarkMode"
+      ],
+      "tokenCount": 24
+    },
+    {
+      "name": "Button",
+      "slug": "button",
+      "tier": "primitives",
+      "purpose": "Trigger for user actions; renders as `<button>` or `<a>` depending on context",
+      "storybookPath": "Components/Button",
+      "storybookTitleId": "components-button",
+      "tokenPrefix": "button",
+      "stories": [
+        "Primary",
+        "Secondary",
+        "Ghost",
+        "Link",
+        "Loading",
+        "LoadingSecondary",
+        "FullWidth",
+        "WithIcon",
+        "Disabled",
+        "AllVariants",
+        "AllStates",
+        "DarkMode"
+      ],
+      "tokenCount": 30
+    },
+    {
+      "name": "Checkbox",
+      "slug": "checkbox",
+      "tier": "primitives",
+      "purpose": "Single boolean selection with an associated label; supports indeterminate state",
+      "storybookPath": "Components/Checkbox",
+      "storybookTitleId": "components-checkbox",
+      "tokenPrefix": "checkbox",
+      "stories": [
+        "Default",
+        "Checked",
+        "Indeterminate",
+        "Disabled",
+        "DisabledChecked",
+        "Controlled",
+        "AllStates",
+        "NoLabel",
+        "DarkMode"
+      ],
+      "tokenCount": 14
+    },
+    {
+      "name": "Input",
+      "slug": "input",
+      "tier": "primitives",
+      "purpose": "Labelled single-line text entry with hint and error states",
+      "storybookPath": "Components/Input",
+      "storybookTitleId": "components-input",
+      "tokenPrefix": "input",
+      "stories": [
+        "Default",
+        "WithHint",
+        "WithError",
+        "Disabled",
+        "NoLabel",
+        "WithPrefix",
+        "WithSuffix",
+        "Clearable",
+        "Search",
+        "AllStates",
+        "DarkMode"
+      ],
+      "tokenCount": 22
+    },
+    {
+      "name": "Label",
+      "slug": "label",
+      "tier": "primitives",
+      "purpose": "Standalone form label element — used when a label must be decoupled from its input",
+      "storybookPath": "Components/Label",
+      "storybookTitleId": "components-label",
+      "tokenPrefix": "label",
+      "stories": [
+        "Default",
+        "Required",
+        "Disabled",
+        "AllVariants",
+        "DarkMode"
+      ],
+      "tokenCount": 6
+    },
+    {
+      "name": "Radio",
+      "slug": "radio",
+      "tier": "primitives",
+      "purpose": "Single-selection control within a mutually exclusive group",
+      "storybookPath": "Components/Radio",
+      "storybookTitleId": "components-radio",
+      "tokenPrefix": "radio",
+      "stories": [
+        "Default",
+        "WithDefault",
+        "Horizontal",
+        "Disabled",
+        "WithDisabledOption",
+        "Controlled",
+        "AllStates",
+        "DarkMode"
+      ],
+      "tokenCount": 14
+    },
+    {
+      "name": "Select",
+      "slug": "select",
+      "tier": "primitives",
+      "purpose": "Dropdown for choosing a single value from a list; supports grouped options",
+      "storybookPath": "Components/Select",
+      "storybookTitleId": "components-select",
+      "tokenPrefix": "select",
+      "stories": [
+        "Default",
+        "WithDefaultValue",
+        "Grouped",
+        "Disabled",
+        "DarkMode"
+      ],
+      "tokenCount": 20
+    },
+    {
+      "name": "Skeleton",
+      "slug": "skeleton",
+      "tier": "primitives",
+      "purpose": "Placeholder loading state that mirrors the geometry of the content it replaces",
+      "storybookPath": "Components/Skeleton",
+      "storybookTitleId": "components-skeleton",
+      "tokenPrefix": "skeleton",
+      "stories": [
+        "Text",
+        "MultiLine",
+        "Circle",
+        "Rect",
+        "CardSkeleton",
+        "DarkMode"
+      ],
+      "tokenCount": 7
+    },
+    {
+      "name": "Spinner",
+      "slug": "spinner",
+      "tier": "primitives",
+      "purpose": "Indeterminate loading indicator for in-progress operations",
+      "storybookPath": "Components/Spinner",
+      "storybookTitleId": "components-spinner",
+      "tokenPrefix": "spinner",
+      "stories": [
+        "Default",
+        "AllSizes",
+        "OnColoredBackground",
+        "DarkMode"
+      ],
+      "tokenCount": 5
+    },
+    {
+      "name": "Switch",
+      "slug": "switch",
+      "tier": "primitives",
+      "purpose": "Binary toggle for on/off settings; renders as a styled checkbox under the hood",
+      "storybookPath": "Components/Switch",
+      "storybookTitleId": "components-switch",
+      "tokenPrefix": "switch",
+      "stories": [
+        "Default",
+        "Checked",
+        "Disabled",
+        "DisabledChecked",
+        "NoLabel",
+        "Controlled",
+        "AllStates",
+        "DarkMode"
+      ],
+      "tokenCount": 14
+    },
+    {
+      "name": "Tag",
+      "slug": "tag",
+      "tier": "primitives",
+      "purpose": "Inline label for categorising or annotating content — non-interactive",
+      "storybookPath": "Components/Tag",
+      "storybookTitleId": "components-tag",
+      "tokenPrefix": "tag",
+      "stories": [
+        "Default",
+        "Accent",
+        "Muted",
+        "WithIcon",
+        "Removable",
+        "AllVariants",
+        "InContext",
+        "DarkMode"
+      ],
+      "tokenCount": 15
+    },
+    {
+      "name": "Textarea",
+      "slug": "textarea",
+      "tier": "primitives",
+      "purpose": "Multi-line text entry with label, hint, and error states — mirrors Input API",
+      "storybookPath": "Components/Textarea",
+      "storybookTitleId": "components-textarea",
+      "tokenPrefix": "textarea",
+      "stories": [
+        "Default",
+        "WithHint",
+        "WithError",
+        "Disabled",
+        "WithCharacterCount",
+        "AllStates",
+        "DarkMode"
+      ],
+      "tokenCount": 19
+    },
+    {
+      "name": "Alert",
+      "slug": "alert",
+      "tier": "composition",
+      "purpose": "Contextual inline feedback message with semantic severity levels (info, success, warning, error)",
+      "storybookPath": "Components/Alert",
+      "storybookTitleId": "components-alert",
+      "tokenPrefix": "alert",
+      "stories": [
+        "Default",
+        "AllVariants",
+        "Dismissible",
+        "NoTitle",
+        "NoIcon",
+        "DarkMode"
+      ],
+      "tokenCount": 23
+    },
+    {
+      "name": "BaseSheet",
+      "slug": "base-sheet",
+      "tier": "composition",
+      "purpose": "Unstyled overlay sheet primitive used internally by Drawer — not consumed directly",
+      "storybookPath": "Components/BaseSheet",
+      "storybookTitleId": "components-basesheet",
+      "tokenPrefix": "basesheet",
+      "stories": [],
+      "tokenCount": 0
+    },
+    {
+      "name": "Card",
+      "slug": "card",
+      "tier": "composition",
+      "purpose": "Compound container for grouped content — composed from named sub-components",
+      "storybookPath": "Components/Card",
+      "storybookTitleId": "components-card",
+      "tokenPrefix": "card",
+      "stories": [
+        "Default",
+        "Ghost",
+        "Interactive",
+        "Horizontal",
+        "Compact",
+        "Featured",
+        "WithBody",
+        "WithMedia",
+        "AllVariants",
+        "DarkMode"
+      ],
+      "tokenCount": 14
+    },
+    {
+      "name": "Dialog",
+      "slug": "dialog",
+      "tier": "composition",
+      "purpose": "Overlay for tasks or information requiring focused attention",
+      "storybookPath": "Components/Dialog",
+      "storybookTitleId": "components-dialog",
+      "tokenPrefix": "dialog",
+      "stories": [
+        "Default",
+        "Small",
+        "Large",
+        "Scrollable",
+        "WithForm",
+        "NoDescription",
+        "AllSizes",
+        "DarkMode"
+      ],
+      "tokenCount": 19
+    },
+    {
+      "name": "Drawer",
+      "slug": "drawer",
+      "tier": "composition",
+      "purpose": "Side-anchored slide-in panel for supplemental content or secondary navigation",
+      "storybookPath": "Components/Drawer",
+      "storybookTitleId": "components-drawer",
+      "tokenPrefix": "drawer",
+      "stories": [
+        "Default",
+        "FilterPanel",
+        "AllSides",
+        "Sizes",
+        "DarkMode"
+      ],
+      "tokenCount": 21
+    },
+    {
+      "name": "Toast",
+      "slug": "toast",
+      "tier": "composition",
+      "purpose": "Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout",
+      "storybookPath": "Components/Toast",
+      "storybookTitleId": "components-toast",
+      "tokenPrefix": "toast",
+      "stories": [
+        "Default",
+        "AllVariants",
+        "TitleOnly",
+        "DarkMode"
+      ],
+      "tokenCount": 22
+    },
+    {
+      "name": "Tooltip",
+      "slug": "tooltip",
+      "tier": "composition",
+      "purpose": "Contextual label revealed on hover or focus — supplements an icon or truncated text",
+      "storybookPath": "Components/Tooltip",
+      "storybookTitleId": "components-tooltip",
+      "tokenPrefix": "tooltip",
+      "stories": [
+        "Default",
+        "AllSides",
+        "IconButtons",
+        "LongContent",
+        "NoDelay",
+        "DarkMode"
+      ],
+      "tokenCount": 13
+    },
+    {
+      "name": "Accordion",
+      "slug": "accordion",
+      "tier": "patterns",
+      "purpose": "Collapsible content sections with animated expand/collapse; supports single or multi-open modes",
+      "storybookPath": "Components/Accordion",
+      "storybookTitleId": "components-accordion",
+      "tokenPrefix": "accordion",
+      "stories": [
+        "Default",
+        "Multiple",
+        "WithDisabledItem",
+        "DefaultOpen",
+        "DarkMode"
+      ],
+      "tokenCount": 15
+    },
+    {
+      "name": "Breadcrumb",
+      "slug": "breadcrumb",
+      "tier": "patterns",
+      "purpose": "Hierarchical page location trail; the last item is the current page (non-linked)",
+      "storybookPath": "Components/Breadcrumb",
+      "storybookTitleId": "components-breadcrumb",
+      "tokenPrefix": "breadcrumb",
+      "stories": [
+        "Default",
+        "TwoLevels",
+        "SingleLevel",
+        "CustomSeparator",
+        "LongLabels",
+        "DarkMode"
+      ],
+      "tokenCount": 8
+    },
+    {
+      "name": "DataTable",
+      "slug": "data-table",
+      "tier": "patterns",
+      "purpose": "Sortable, filterable, paginated table for structured datasets",
+      "storybookPath": "Components/DataTable",
+      "storybookTitleId": "components-datatable",
+      "tokenPrefix": "datatable",
+      "stories": [
+        "Default",
+        "Sortable",
+        "WithSelection",
+        "WithPagination",
+        "WithPaginationAndSelection",
+        "Striped",
+        "Compact",
+        "Empty",
+        "DarkMode"
+      ],
+      "tokenCount": 3
+    },
+    {
+      "name": "EmptyState",
+      "slug": "empty-state",
+      "tier": "patterns",
+      "purpose": "Placeholder for zero-content states — icon, heading, supporting text, and an optional action",
+      "storybookPath": "Components/EmptyState",
+      "storybookTitleId": "components-emptystate",
+      "tokenPrefix": "emptystate",
+      "stories": [
+        "Default",
+        "AllVariants",
+        "Compact",
+        "DarkMode"
+      ],
+      "tokenCount": 0
+    },
+    {
+      "name": "Hero",
+      "slug": "hero",
+      "tier": "patterns",
+      "purpose": "Page-level section header with eyebrow, title, lead text, and an action slot",
+      "storybookPath": "Components/Hero",
+      "storybookTitleId": "components-hero",
+      "tokenPrefix": "hero",
+      "stories": [
+        "Default",
+        "WithEyebrowAndLead",
+        "Centered",
+        "TitleOnly",
+        "PageHeader",
+        "DarkMode"
+      ],
+      "tokenCount": 14
+    },
+    {
+      "name": "Pagination",
+      "slug": "pagination",
+      "tier": "patterns",
+      "purpose": "Page navigation controls for multi-page data sets; exposes current page and total page count",
+      "storybookPath": "Components/Pagination",
+      "storybookTitleId": "components-pagination",
+      "tokenPrefix": "pagination",
+      "stories": [
+        "Default",
+        "EdgeCases",
+        "Compact",
+        "DarkMode"
+      ],
+      "tokenCount": 12
+    },
+    {
+      "name": "Table",
+      "slug": "table",
+      "tier": "patterns",
+      "purpose": "Static data table with semantic header, body, and row structure",
+      "storybookPath": "Components/Table",
+      "storybookTitleId": "components-table",
+      "tokenPrefix": "table",
+      "stories": [
+        "Default",
+        "Striped",
+        "Bordered",
+        "Compact",
+        "AllVariants",
+        "WithCaption",
+        "WithFoot",
+        "HorizontalScroll",
+        "DarkMode"
+      ],
+      "tokenCount": 17
+    },
+    {
+      "name": "Tabs",
+      "slug": "tabs",
+      "tier": "patterns",
+      "purpose": "Segmented view switcher with full keyboard navigation; built on Radix Tabs",
+      "storybookPath": "Components/Tabs",
+      "storybookTitleId": "components-tabs",
+      "tokenPrefix": "tabs",
+      "stories": [
+        "Default",
+        "AllVariants",
+        "Sizes",
+        "WithDisabledTab",
+        "DarkMode"
+      ],
+      "tokenCount": 20
+    }
+  ]
 }
