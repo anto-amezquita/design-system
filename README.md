@@ -28,6 +28,11 @@ import '@amezquita/design-system/styles/brands/portfolio.css'
 
 Peer dependencies: `react` and `react-dom` ^19.
 
+This package ships source `.tsx`/`.css` directly rather than a pre-built bundle, so your bundler needs to be told to process it — most tools skip transforming `node_modules` by default:
+
+- **Next.js**: add `transpilePackages: ['@amezquita/design-system']` to `next.config.js`
+- **Vite**: no config needed for dev, but for a production build add `'@amezquita/design-system'` to `optimizeDeps.include` if you hit a pre-bundling issue
+
 ## Development
 
 ```bash

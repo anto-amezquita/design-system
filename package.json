@@ -4,7 +4,20 @@
   "description": "Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.",
   "type": "module",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "components",
+    "lib",
+    "hooks",
+    "styles/brands",
+    "styles/reset.css"
+  ],
   "scripts": {
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish",
     "tokens": "node scripts/build-dependency-graph.mjs && node sd.config.mjs",
     "tokens:watch": "node --watch sd.config.mjs",
     "tokens:lint": "node scripts/lint-tokens.mjs",
@@ -53,6 +66,7 @@
     "style-dictionary": "^5.4.0",
     "typescript": "^6.0.3",
     "vite": "^6.0.0",
-    "wait-on": "^9.0.10"
+    "wait-on": "^9.0.10",
+    "@changesets/cli": "^2.29.7"
   }
 }
