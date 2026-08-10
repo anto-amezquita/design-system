@@ -50,7 +50,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "212768a",
+      "type": "feat",
+      "scope": null,
+      "message": "exclude internal components from agent-facing output",
+      "date": "2026-08-10",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
