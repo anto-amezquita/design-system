@@ -10,15 +10,18 @@ Execution plan for the machine-facing layer. Rationale, benchmarks, and scope bo
 
 ```
 Last updated:   2026-08-10
-Current phase:  Phase 4 done and live. Portfolio deployed; confirmed against
-                the real production domain — https://amezquita.dk/
-                .well-known/skills/index.json and .../amezquita-design-
-                system/SKILL.md both return 200, and the 4 improved
-                component docs (select, radio, breadcrumb, data-table) are
-                live too. Phases 0–4 are all done and verified live now.
-Next action:    Nothing required. Phase 5 (publish the audit — re-score
-                against both benchmarks, write up what changed, link the
-                commits) is the only remaining optional phase, untouched.
+Current phase:  All six phases (0–5) are done. DS.one 1/5 → 3/5, Kaelig
+                1/10 (+1 partial) → 5/10 shipped, both re-scored against
+                live evidence, not memory. docs/ai-readiness-audit.md is
+                written and committed but not posted anywhere external —
+                that's the one remaining decision, and it's the user's to
+                make, not a task to pick up unprompted.
+Next action:    Nothing required to finish the plan as scoped. If the user
+                wants the audit to do its job (the "evidence" return named
+                in ai-readiness.md §6), the next step is deciding where it
+                gets posted externally (LinkedIn, a portfolio case study
+                page, etc.) — a publishing/positioning decision, not a
+                coding task.
 Blocked on:     nothing
 ```
 
@@ -33,7 +36,7 @@ Blocked on:     nothing
 | 2 | Agent contract + single validate gate | ½ weekend | **Done — 2026-08-10.** Acceptance's fresh-session behavioral test not independently run — see session log. |
 | 3 | shadcn-spec public registry | 1 weekend | **Done — 2026-08-10, live.** `npx shadcn add` verified against the real production URL. |
 | 4 | Agent skill at `/.well-known/skills/` | ½ weekend | **Done — 2026-08-10, live.** Tested twice against genuinely fresh subagents; confirmed against the real production domain. |
-| 5 | Publish the audit | ½ weekend | Optional |
+| 5 | Publish the audit | ½ weekend | **Done — 2026-08-10.** `docs/ai-readiness-audit.md` written; not yet posted anywhere external. |
 
 **Guardrail: do Phases 0–3. Treat 4 and 5 as optional.** The failure mode is building a bigger affordance surface than the system underneath it.
 
@@ -56,6 +59,7 @@ Record where the system stands before changing anything, so the delta is provabl
 |---|---|---|---|
 | 2026-08-10 | **1 / 5** | **1 / 10 shipped, 1 partial** | baseline, pre-Phase 1 |
 | 2026-08-10 | 1 / 5 | **2 / 10 shipped** | after Task 1.0 — v0.1.4 published, token artifacts confirmed in a consumer's `node_modules`. Registry signal moves partial → shipped. DS.one unchanged: its registry signal means a shadcn-spec CLI registry (Phase 3), not machine-readable artifacts. |
+| 2026-08-10 | **3 / 5** | **5 / 10 shipped** | after Phases 1–4, all verified live against the real production domain (`amezquita.dk`), not just present in the repo. DS.one: +llms.txt, +shadcn-spec registry (`npx shadcn add` tested against the live URL, twice — once locally, once for real). Kaelig: +llms.txt, +agent skill (tested against two genuinely fresh subagents, not self-assessed), +repo agent files (`AGENTS.md`/`CLAUDE.md`), registry stays shipped. See both tables below for the per-signal detail and evidence. |
 
 #### DesignSystems.one — five signals
 
@@ -63,28 +67,28 @@ Scoring rule: one point per signal where the maintainer publishes the artifact a
 
 | Signal | Score | Evidence |
 |---|---|---|
-| MCP server | ✗ | No server, no `mcp.json`, no MCP dependency in `package.json`. |
-| llms.txt | ✗ | No `llms*` file in this repo or in the portfolio repo that serves amezquita.dk. Confirmed absent at source, not just unreachable. |
+| MCP server | ✗ | No server, no `mcp.json`, no MCP dependency in `package.json`. Deliberately out of scope — see `ai-readiness.md` §5. |
+| llms.txt | ✓ | `curl https://amezquita.dk/llms.txt` returns real content (`200`) — verified against the live production domain, not just present in the repo. `llms-full.txt`, `tokens.json`, and every public component's `.md` twin (`/design-system/<slug>.md`) are live the same way. |
 | DTCG tokens | ✓ | `tokens/global.json` uses `$value` / `$type` throughout; Style Dictionary resolves them. Public via the GitHub repo. |
-| Component registry | ✗ | `tokens/component-registry.json` exists but is an internal governance artifact, not a shadcn-spec registry, and is not served anywhere. |
-| Figma Code Connect | ✗ | No `*.figma.tsx`, no `figma.config.json`, nothing on a `code-connect` path. |
+| Component registry | ✓ | A real shadcn-spec registry at `https://amezquita.dk/r/<slug>.json` — this signal specifically means a shadcn-spec CLI registry (`ai-readiness.md` line 23), not machine-readable JSON. `npx shadcn add https://amezquita.dk/r/button.json` verified twice against the literal production URL: correct npm dependency added, correct light/dark CSS custom properties injected, a Playwright screenshot confirming the rendered Button is correctly themed. |
+| Figma Code Connect | ✗ | No `*.figma.tsx`, no `figma.config.json`, nothing on a `code-connect` path. Untouched — not attempted this round. |
 
-**Context for this score:** in the 37-system audit, 20 systems scored 0/5, the top score was 3/5, and DTCG was the rarest signal shipped (3 of 37). A 1/5 built on the *hardest* signal is a better starting position than the number suggests.
+**Context for this score:** in the 37-system audit, 20 systems scored 0/5, the top score was 3/5, and DTCG was the rarest signal shipped (3 of 37) while the shadcn-spec registry was a category of one (1/37). **3/5 now matches the top score observed in the original 37-system audit**, built on two of the three hardest signals to ship (DTCG and the shadcn-spec registry) rather than the easiest ones.
 
 #### Kaelig field study — ten affordances
 
 | Affordance | Score | Evidence |
 |---|---|---|
 | MCP server | ✗ | Absent. Deliberately out of scope — see `ai-readiness.md` §5. |
-| llms.txt | ✗ | Absent. |
-| Agent skill | ✗ | No `SKILL.md` anywhere. |
-| Editor rules | ✗ | No `.cursor/`, no `.cursorrules`, no `.github/copilot-instructions.md` or `.github/instructions/`. |
-| Repo agent files | ✗ | No `AGENTS.md`, no `CLAUDE.md` at any depth. |
-| AI docs | ✗ | No consumer-facing "working with AI" page. (`docs/ai-readiness.md` is internal strategy — it does not count.) |
-| Registry | ~ | **Partial.** `component-registry.json` and `token-reference.json` are genuinely machine-readable, comparable to Cloudscape's per-component JSON API definitions — but `tokens/` is not in `package.json` `files`, so they reach no consumer. The artifact exists; the distribution doesn't. |
-| CLI | ✗ | Absent. |
-| Code Connect | ✗ | Absent. |
-| Storybook | ✓ | `.storybook/`, per-component stories, axe run against every story, Chromatic on every build. |
+| llms.txt | ✓ | Live at `https://amezquita.dk/llms.txt` and `/llms-full.txt`, plus the per-component `.md` twins and `/tokens.json` those two files link to — all verified `200` against the real domain, not just committed to the repo. |
+| Agent skill | ✓ | `SKILL.md` + `index.json` live at `https://amezquita.dk/.well-known/skills/`, format verified against a real published example (`nordhealth.design`) before writing it. Tested against two genuinely fresh subagents with no access to this repo's source — the first found and led to fixing a real doc gap, the second confirmed the fix and that the prohibition rules actively prevent a specific hallucination. Not a self-assessment; an actual cold test. |
+| Editor rules | ✗ | No `.cursor/`, no `.cursorrules`, no `.github/copilot-instructions.md` or `.github/instructions/`. Untouched — not attempted this round. |
+| Repo agent files | ✓ | `AGENTS.md` at repo root, `CLAUDE.md` a real symlink to it (`git ls-files` confirms symlink mode `120000`, not a copy). Router-style: never-violate rules, real token prefixes, the 27-component allow-list pulled from the registry, a pointer to `npm run validate`, and a link to this plan's own State block. |
+| AI docs | ✗ | Still no dedicated consumer-facing "working with AI" explainer page — distinct from `AGENTS.md`/`SKILL.md`, which are operational instructions *for* an agent, not a narrative page *about* using AI with this system. `docs/ai-readiness.md`/`ai-readiness-plan.md` remain internal strategy and still don't count, same rule as the baseline. |
+| Registry | ✓ | Shipped and live — same evidence as the DS.one table's Component registry row. Field-study "registry" and DS.one's shadcn-spec signal turned out to be the same underlying thing once actually built. |
+| CLI | ✗ | Absent — `npx shadcn add` uses shadcn's own CLI against this registry, not a project-specific CLI tool. Untouched. |
+| Code Connect | ✗ | Absent. Untouched. |
+| Storybook | ✓ | `.storybook/`, per-component stories, axe run against every story, Chromatic on every build. Unchanged. |
 
 ### Correctness issues found during the audit
 
@@ -204,9 +208,9 @@ Chosen over an MCP server deliberately: a fraction of the maintenance surface, m
 The artifact that converts the work into positioning. Not a launch post for the package — nobody needs another component library. A before/after audit of a real system against two named public benchmarks, with the commits linked.
 
 **Tasks**
-- [ ] 5.1 Re-score against both benchmarks. Record the after-score in the scorecard.
-- [ ] 5.2 Write it up: what scored what, what was fixed, what was deliberately skipped and why.
-- [ ] 5.3 Link the commits. The verifiability is the whole point.
+- [x] 5.1 Re-score against both benchmarks. Record the after-score in the scorecard. **Done 2026-08-10** — DS.one 1/5 → 3/5, Kaelig 1/10 (+1 partial) → 5/10 shipped. Every changed signal re-verified against live evidence before ticking it, not assumed from memory: `llms.txt`/registry/skill all checked with real `curl`/CLI calls against `amezquita.dk`, not "the code exists so it must be shipped." Scorecard, both evidence tables, and the "context for this score" line all updated above.
+- [x] 5.2 Write it up: what scored what, what was fixed, what was deliberately skipped and why. **Done 2026-08-10** — [`docs/ai-readiness-audit.md`](./ai-readiness-audit.md), written as a standalone public-facing piece (not just this working log), in Antonio's established writing voice. Leads with the artifact and the checkable claim, not the argument. Includes the real bugs found along the way (token-reference.json's coverage gap, the bare-name registry bug, the unexpanded-type-alias gap) as evidence, not just the features shipped — the honest version of "shipped" includes what broke. Every number cross-checked against its source in `ai-readiness.md` before publishing (the "3/5 matches the top score in the original audit" claim, the 3/37 and 1/37 rarity figures) rather than trusted from an earlier paraphrase.
+- [x] 5.3 Link the commits. The verifiability is the whole point. **Done 2026-08-10** — 9 commit links in the audit doc, each checked to actually resolve (`curl` against the real GitHub URL, not assumed from the hash alone) before publishing. Deliberately does **not** link portfolio's commits: that repo is private (`github.com/anto-amezquita/portfolio` returns `404` to an anonymous request, confirmed before writing the doc, not assumed) — a broken link would undercut the exact thing this task is for. Named the constraint in the doc instead of silently omitting it or linking something that wouldn't resolve for a reader.
 
 ---
 
@@ -246,3 +250,4 @@ The artifact that converts the work into positioning. Not a launch post for the 
 | 2026-08-10 | 1, 3 | User said to push. Pushed portfolio's `public/` commit; it auto-deploys via Vercel (no committed workflow file, confirmed no `vercel.json`/deploy Action — this is the platform's zero-config GitHub integration). Apex domain redirects to `www.amezquita.dk` first (unrelated pre-existing config, not something this session touched) — `curl -L` follows it transparently. Confirmed **live**, against the real production domain, not a stand-in: `llms.txt`, `llms-full.txt`, `tokens.json`, `/design-system/button.md`, `/r/button.json`, `/r/theme.json`, and `/r/registry.json` all return `200` with correct content and content-type. Re-ran the full Task 3.3 verification a second time in a fresh scratch app against the literal `https://amezquita.dk/r/button.json` URL (not the earlier localhost stand-in) — `npx shadcn add` succeeded again, `package.json` gained `@amezquita/design-system@^0.1.4`, `globals.css` gained the correct light/dark values, matching the local run exactly. That closes every remaining gap Task 3.3's notes had flagged. Did Task 3.4: added a "Use via the component registry" section to the README above the npm install instructions, with the `npx shadcn add` one-liner and a pointer to the existing `transpilePackages` note further down (that requirement was already documented in the README from before this session — the Task 3.3 test re-confirmed a known gotcha, not a new undocumented one). Updated the "not yet live" gate comments in `build-llms-txt.mjs` and `build-registry-manifests.mjs` to say what's actually true now. **Phases 0–3 are now fully done, live, and verified against production — the plan's own guardrail is satisfied.** Phases 4–5 remain untouched and explicitly optional. |
 | 2026-08-10 | 4 | User said to continue with Phase 4. Verified the `/.well-known/skills/` format against a real live example first (`nordhealth.design`), same discipline as Phase 3's shadcn schema check — confirmed `index.json`'s `{skills: [{name, description, files}]}` shape and `SKILL.md`'s frontmatter + progressive-disclosure-table structure from the actual source rather than guessing. New `scripts/build-skill.mjs` generates the skill from real registry/token data, wired into `npm run tokens` and CI. **Task 4.4 done for real**: spawned a genuinely fresh subagent (no memory of this session) with only the skill file and an explicit instruction not to look at any design-system source, gave it a page-building task, and let it actually `npm install` the real package and run a real `npm run build`. It found two real, specific gaps — Select's `groups` prop showed an opaque unexpanded type name (`SelectGroup[]`) with no shape spelled out anywhere reachable, forcing it into `node_modules` source to find the real shape; and the skill's own description of `llms-full.txt` overclaimed what that file contains. Fixed both at the root: `build-component-docs.mjs` gained `expandObjectAliases()`, inlining local object-type aliases referenced inside a prop's type (recursive, handles the generic-alias edge case `Column<T>` hit along the way) — this improved 4 components' docs, not just Select's (`select.md`, `radio.md`, `breadcrumb.md`, `data-table.md`), a direct example of a narrow test finding a systemic fix. Reran against a second fresh subagent on a different task deliberately covering all four newly-fixed props — zero guessing, zero source-diving, build succeeded first try, and separately confirmed the prohibition rules work as designed: the agent reported the "What doesn't exist" section is what stopped it from guessing a T-shirt-sized spacing token, sending it to the real token list instead. That surfaced one more small, genuine gap (no reference page owns page-composition tokens) — closed with one added line rather than left for a third agent to rediscover. Logged two out-of-scope findings rather than fixing them: `Card`'s undocumented `CardBody`/`CardMedia` (a `docs/components.md` completeness gap, needs a content decision) and `Select`'s missing visible `label`/`id` props (a real component API asymmetry, needs a bigger decision than this phase). Copied the finished skill into portfolio's `public/.well-known/skills/` and the 4 improved `.md` twins into `public/design-system/`, verified locally via the portfolio dev server — committed there but **not yet pushed**, same pattern as Tasks 1.5/3.2: ask before deploying to the live site. Phase 4 (all four tasks) is done in design-system; only the portfolio deploy decision remains. |
 | 2026-08-10 | 4 | User said to push. Pushed portfolio's skill commit; confirmed live against the real production domain after the deploy propagated (took ~4 polling attempts, ~1 minute): `https://amezquita.dk/.well-known/skills/index.json` and `.../amezquita-design-system/SKILL.md` both `200`, and `select.md`'s `groups` prop shows the fully-expanded shape live, not the stale `SelectGroup[]`. **Phases 0–4 are all done, live, and verified against production.** Only Phase 5 (optional — publish the audit) remains untouched. |
+| 2026-08-10 | 5 | User said to continue with Phase 5. Re-scored both benchmarks against live evidence, not memory — DS.one 1/5 → 3/5 (+llms.txt, +shadcn-spec registry — matches the top score in the original 37-system audit), Kaelig 1/10 (+1 partial) → 5/10 shipped (+llms.txt, +agent skill, +repo agent files). Wrote `docs/ai-readiness-audit.md`, a standalone piece in Antonio's established voice (checked against the banned-words list and the "not X but Y" ceiling before finalizing) — leads with the checkable claim, includes the real bugs found along the way as evidence, not just the shipped features. Checked one thing before linking commits that would otherwise have quietly undercut the whole point: `github.com/anto-amezquita/portfolio` returns `404` to an anonymous request — that repo is private — so the audit links only design-system's public commits (9, each verified to actually resolve) and names the portfolio constraint explicitly rather than linking something broken. **All six phases (0–5) are now done.** The audit is written but not posted anywhere external — deliberately left as the user's call, not something to do unprompted. |
