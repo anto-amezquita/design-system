@@ -16,12 +16,16 @@
  * a component it may reach for.
  *
  * NOT PUBLISHABLE UNTIL TASK 1.5. The component links point at URLs the docs site does not
- * serve yet. An index of dead links is worse than no index — do not announce or reference
- * llms.txt anywhere until 1.2 and 1.5 have landed.
+ * serve yet — the .md twins themselves exist (Task 1.2, `scripts/build-component-docs.mjs`,
+ * writing to docs/components/) but only in this repo, not at docsBaseUrl. An index of dead
+ * links is worse than no index — do not announce or reference llms.txt anywhere until 1.5
+ * has landed and those links resolve.
  *
- * llms-full.txt inlines everything currently compiled about each component, for a
- * single-fetch agent that can't follow links. Task 1.2 extends this same script to
- * pull in per-component prop tables and usage pairs once the .md twins exist.
+ * llms-full.txt inlines everything currently compiled about each component (purpose, import
+ * path, token prefix + count, storybook path, story names) for a single-fetch agent that
+ * can't follow links. It does not inline the fuller per-component detail (prop tables, token
+ * values, usage examples) that build-component-docs.mjs writes into each .md twin — that
+ * stays link-only, same reasoning as not inlining token-reference.json.
  */
 
 import { readFileSync, writeFileSync } from 'fs'

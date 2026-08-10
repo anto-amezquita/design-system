@@ -265,6 +265,11 @@ buildTokenReference();
 const { buildComponentRegistry } = await import('./scripts/build-component-registry.mjs');
 buildComponentRegistry();
 
+// Depends on component-registry.json and token-reference.json, both already
+// rebuilt above.
+const { buildComponentDocs } = await import('./scripts/build-component-docs.mjs');
+buildComponentDocs();
+
 const { buildChangelog } = await import('./scripts/build-changelog.mjs');
 buildChangelog();
 
