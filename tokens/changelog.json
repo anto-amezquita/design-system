@@ -52,6 +52,14 @@
   ],
   "unreleased": [
     {
+      "sha": "2b0c559",
+      "type": "feat",
+      "scope": null,
+      "message": "agent skill at .well-known/skills/, tested against real fresh agents (Phase 4)",
+      "date": "2026-08-10",
+      "breaking": false
+    },
+    {
       "sha": "8e0ba88",
       "type": "feat",
       "scope": null,
