@@ -262,6 +262,9 @@ console.log('✓ Built bold.css');
 const { buildTokenReference } = await import('./scripts/build-token-reference.mjs');
 buildTokenReference();
 
+const { buildTokensJson } = await import('./scripts/build-tokens-json.mjs');
+buildTokensJson();
+
 const { buildComponentRegistry } = await import('./scripts/build-component-registry.mjs');
 buildComponentRegistry();
 
