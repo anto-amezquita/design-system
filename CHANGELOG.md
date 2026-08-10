@@ -1,5 +1,11 @@
 # @amezquita/design-system
 
+## 0.1.3
+
+### Patch Changes
+
+- 82a353c: fix: convert remaining internal @/ imports to relative paths
+
 ## 0.1.2
 
 ### Patch Changes
