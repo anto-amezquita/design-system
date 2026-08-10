@@ -52,6 +52,14 @@
   ],
   "unreleased": [
     {
+      "sha": "ac73430",
+      "type": "feat",
+      "scope": null,
+      "message": "generate per-component markdown twins (Task 1.2)",
+      "date": "2026-08-10",
+      "breaking": false
+    },
+    {
       "sha": "212768a",
       "type": "feat",
       "scope": null,
