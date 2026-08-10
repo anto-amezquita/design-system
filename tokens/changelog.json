@@ -52,6 +52,14 @@
   ],
   "unreleased": [
     {
+      "sha": "124ea00",
+      "type": "feat",
+      "scope": null,
+      "message": "add token-fabrication and fallback checks to tokens:lint (Task 2.2)",
+      "date": "2026-08-10",
+      "breaking": false
+    },
+    {
       "sha": "dc6e970",
       "type": "fix",
       "scope": null,
