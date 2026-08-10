@@ -1,6 +1,6 @@
 {
   "name": "@amezquita/design-system",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.",
   "type": "module",
   "license": "MIT",
