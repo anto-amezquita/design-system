@@ -155,14 +155,6 @@ Contextual inline feedback message with semantic severity levels (info, success,
 - Storybook: Components/Alert
 - Stories: Default, AllVariants, Dismissible, NoTitle, NoIcon, DarkMode
 
-### BaseSheet
-
-Unstyled overlay sheet primitive used internally by Drawer — not consumed directly
-
-- Import: `import { BaseSheet } from '@amezquita/design-system/components/composition/BaseSheet'`
-- Token prefix: `basesheet-*` (0 tokens)
-- Storybook: Components/BaseSheet
-
 ### Card
 
 Compound container for grouped content — composed from named sub-components

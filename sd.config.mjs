@@ -267,3 +267,8 @@ buildComponentRegistry();
 
 const { buildChangelog } = await import('./scripts/build-changelog.mjs');
 buildChangelog();
+
+// Must run last: llms.txt compiles from component-registry.json and
+// token-reference.json, so both have to exist in their rebuilt form first.
+const { buildLlmsTxt } = await import('./scripts/build-llms-txt.mjs');
+buildLlmsTxt();

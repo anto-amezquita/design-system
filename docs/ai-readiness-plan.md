@@ -11,7 +11,8 @@ Execution plan for the machine-facing layer. Rationale, benchmarks, and scope bo
 ```
 Last updated:   2026-08-10
 Current phase:  Phase 1 — in progress
-Next action:    Task 1.2 — extend build-llms-txt.mjs to emit one .md twin per component
+Next action:    Re-run `npm run tokens` (now also rebuilds llms.txt), confirm the
+                index reads 27 and BaseSheet is gone, then Task 1.2
 Blocked on:     nothing
 ```
 
@@ -90,7 +91,7 @@ The audit surfaced four claims that don't currently match the repo. **Fix these 
 3. ~~**Figma sync detection is scaffolded, not live.**~~ **Resolved 2026-08-10 by rewording.** README now describes what `figma:status` actually does — compares resolved state against a committed snapshot — and says the snapshot is baselined per Figma file, rather than implying a live sync exists. If you later set `FIGMA_FILE_KEY` and baseline it, no README change is needed.
 4. **`tokens/` is not published.** `package.json` `files` ships `components`, `lib`, `hooks`, `styles/brands`, `styles/reset.css` — so the DTCG tokens, the component registry, and the token reference reach nobody who installs the package. This is the cheapest fix on the entire roadmap and it moves the Kaelig registry signal from partial to shipped. It is now Task 1.0. **Closed 2026-08-10 — shipped in v0.1.4.**
 5. **Story count.** README said "176 Chromatic stories"; summing the `stories` arrays in `component-registry.json` gives **184**. **Resolved 2026-08-10** — README now says 184 stories and drops the word "Chromatic" from the count, because a Chromatic snapshot count is not the same thing as a declared-story count and the 8-story gap is unexplained. **Open question:** if Chromatic genuinely renders 176, something is being skipped — worth one look at the dashboard.
-6. **"Each component has full Storybook coverage" was an overclaim.** BaseSheet has zero stories and zero component tokens — it is an internal overlay primitive consumed by Drawer, not a public component. **Resolved 2026-08-10** by saying 27 of 28 and naming the exception. Worth deciding separately whether BaseSheet should be in the public registry and the published package at all, since it is documented as "not consumed directly."
+6. **"Each component has full Storybook coverage" was an overclaim.** BaseSheet has zero stories and zero component tokens — it is an internal overlay primitive consumed by Drawer, not a public component. **Resolved 2026-08-10** by saying 27 of 28 and naming the exception, and by adding the `internal` flag end to end (docs/components.md → registry → llms generator).
 
 ### Package payload note (2026-08-10)
 
@@ -116,8 +117,12 @@ The highest-leverage phase. Everything is generated from sources that already ex
 - [ ] 1.2 Extend it to emit one `.md` twin per component from the registry + prop types + story names: purpose, tier, import path, full prop table with literal unions spelled out, the component's token list, and a correct/incorrect usage pair. **Edge case:** two of the 28 components have no file in `tokens/components/` — BaseSheet (headless, no CSS) and EmptyState (styles straight off the semantic layer). The generator must handle a missing component-token file without crashing or emitting an empty token section.
 - [ ] 1.3 Emit `tokens.json` at a stable public path — the DTCG source, resolved, so an agent can read every token name and value without running a build.
 - [ ] 1.3a **Include all global primitives in `token-reference.json`**, not just the `color.*` group — 83 primitives (spacing, type scale, radii, motion, shadows, sizes, and all `feedback.*` colours) are currently invisible to anything reading the artifact. Then emit a `meta` breakdown (`primitiveCount` / `semanticCount` / `componentCount` / `total`) so the README can quote a generated figure instead of a hand-counted one — the same "compiled, not written" rule that governs the rest of this phase.
-- [ ] 1.4 Wire all of it into `npm run tokens` so it regenerates on every token build, and into CI so a stale artifact fails the build.
+- [ ] 1.4 Wire all of it into `npm run tokens` so it regenerates on every token build, and into CI so a stale artifact fails the build. **Partly done 2026-08-10** — `buildLlmsTxt()` now runs last in `sd.config.mjs`, after the registry and token reference. Remaining: the CI staleness check (rebuild, `git diff --exit-code`, fail if anything changed).
 - [ ] 1.5 Serve the artifacts from the docs site at canonical paths (`/llms.txt`, `/llms-full.txt`, `/design-system/<component>.md`, `/tokens.json`).
+
+**Publish gate:** `llms.txt` links to URLs the docs site does not serve until 1.5. **Do not announce, link, or reference `llms.txt` anywhere — README, case study, LinkedIn — until 1.2 and 1.5 have both landed and the links resolve.** An index of dead links is worse than no index: an agent that fetches it once and gets 404s has no reason to try again. This gate is repeated in the header comment of `build-llms-txt.mjs`.
+
+**Internal components:** components can be flagged `| **Internal** | \`yes\` |` in `docs/components.md`. The registry carries the flag through as `internal: true` and adds `meta.publicComponentCount`; the llms generator excludes them from both files. BaseSheet is the only one today — it ships because Drawer imports it, but an agent should never see it as available. Task 1.2 must apply the same exclusion when generating `.md` twins.
 
 **Acceptance:** `curl https://amezquita.dk/llms.txt` returns content; deleting a component and rebuilding removes it from every artifact with no manual edit; CI fails if artifacts are stale.
 
@@ -197,4 +202,6 @@ The artifact that converts the work into positioning. Not a launch post for the 
 | 2026-08-10 | 1 | v0.1.4 published; token artifacts confirmed in a consumer install. Task 1.0 closed. Kaelig score 1 → 2/10. Next: README reconciliation (issues 2–3), then Task 1.1. |
 | 2026-08-10 | 1 | README reconciled: 28 components, 620 tokens with breakdown, Figma claim reworded to match the checker. Correctness issues 1–3 all closed. Found that `token-reference.json` omits 83 non-`color` primitives — logged as Task 1.3a. Next: Task 1.1. |
 | 2026-08-10 | 1 | Story count reconciled: 184 declared stories, not 176 (issue 5). "Each component has full Storybook coverage" corrected to 27 of 28 — BaseSheet has none (issue 6). Every number in the README is now traced to a generated artifact. Next: Task 1.1. |
-| 2026-08-10 | 1 | Task 1.1 done — `scripts/build-llms-txt.mjs` written, compiling `llms.txt` + `llms-full.txt` from `package.json` + `README.md` + `tokens/component-registry.json` + `tokens/token-reference.json`. Confirmed deterministic across two runs. BaseSheet's zero-token edge case renders without crashing. Links to the `.md` twins and `tokens.json` are forward references — they 404 until Tasks 1.2 and 1.3 ship. Next: Task 1.2. |
+| 2026-08-10 | 1 | Task 1.1 done — `scripts/build-llms-txt.mjs` written, compiling `llms.txt` + `llms-full.txt` from `package.json` + `README.md` + `tokens/component-registry.json` + `tokens/token-reference.json`. Confirmed deterministic across two runs. Links to the `.md` twins and `tokens.json` are forward references — they 404 until Tasks 1.2 and 1.3 ship. |
+| 2026-08-10 | 1 | Post-1.1 follow-ups, before starting 1.2: `internal` flag added end to end (docs/components.md → registry → llms generator; BaseSheet excluded from agent-facing output, `meta.publicComponentCount` added), the "each with a markdown twin" overclaim removed from the generator, and a publish gate recorded here and in the generator header. |
+| 2026-08-10 | 1 | `npm run tokens` confirmed the internal flag works: registry now reports 28 components, 27 public. Caught that `build-llms-txt.mjs` was never wired into the build — llms.txt would have silently drifted from the registry, exactly the failure the "compiled, not written" rule exists to prevent. Added `buildLlmsTxt()` to the end of `sd.config.mjs` (part of Task 1.4). Next: re-run, verify, then Task 1.2. |

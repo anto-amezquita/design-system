@@ -8,8 +8,16 @@
  *   - tokens/token-reference.json     → token counts by category, for the inlined summary in llms-full.txt
  *
  * llms.txt is the lean index: what the system is, how to install it, and links out to
- * every component's markdown twin (shipped by Task 1.2) and the token reference (Task 1.3).
+ * every public component's markdown twin (shipped by Task 1.2) and the token reference (Task 1.3).
  * It deliberately does not inline token-reference.json — 227 kB is a payload, not an index.
+ *
+ * Components flagged `internal` in the registry are excluded from both files. They ship in
+ * the package because something else imports them, but an agent should never see them as
+ * a component it may reach for.
+ *
+ * NOT PUBLISHABLE UNTIL TASK 1.5. The component links point at URLs the docs site does not
+ * serve yet. An index of dead links is worse than no index — do not announce or reference
+ * llms.txt anywhere until 1.2 and 1.5 have landed.
  *
  * llms-full.txt inlines everything currently compiled about each component, for a
  * single-fetch agent that can't follow links. Task 1.2 extends this same script to
@@ -51,6 +59,7 @@ function getSiteUrls() {
 function groupByTier(components) {
   const groups = { primitives: [], composition: [], patterns: [] }
   for (const component of components) {
+    if (component.internal) continue
     groups[component.tier]?.push(component)
   }
   return groups
@@ -64,6 +73,12 @@ function summarizeTokensByCategory(tokens) {
   return Object.entries(counts).sort((a, b) => b[1] - a[1])
 }
 
+// Falls back to the full count for registries built before publicComponentCount existed,
+// so a stale registry produces a wrong-by-one number rather than "undefined components".
+function publicCount(registry) {
+  return registry.meta.publicComponentCount ?? registry.meta.componentCount
+}
+
 // ── llms.txt — lean index ────────────────────────────────────────
 
 function buildIndex({ pkg, registry, siteUrls }) {
@@ -75,7 +90,7 @@ function buildIndex({ pkg, registry, siteUrls }) {
     '',
     `> ${pkg.description}`,
     '',
-    `Extracted from and still powering [amezquita.dk](${rootUrl}). ${registry.meta.componentCount} components across primitives, composition, and pattern tiers, each with a machine-readable markdown twin linked below.`,
+    `Extracted from and still powering [amezquita.dk](${rootUrl}). ${publicCount(registry)} components across primitives, composition, and pattern tiers.`,
     '',
     '## Install',
     '',
@@ -169,7 +184,7 @@ export function buildLlmsTxt() {
   writeFileSync('llms.txt', buildIndex({ pkg, registry, siteUrls }))
   writeFileSync('llms-full.txt', buildFull({ pkg, registry, tokenReference, siteUrls }))
 
-  console.log(`✓ Built llms.txt and llms-full.txt (${registry.meta.componentCount} components)`)
+  console.log(`✓ Built llms.txt and llms-full.txt (${publicCount(registry)} public components)`)
 }
 
 // Run as main

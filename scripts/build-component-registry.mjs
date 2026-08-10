@@ -52,7 +52,13 @@ function parseComponentsMd() {
     const sbMatch = part.match(/\*\*Storybook path\*\*\s*\|\s*`?([^`|\n]+)`?/)
     const storybookPath = sbMatch?.[1]?.trim() ?? `Components/${name}`
 
-    entries.push({ name, purpose, storybookPath })
+    // Extract the optional Internal flag: | **Internal** | `yes` |
+    // Internal components ship in the package (something else imports them) but are
+    // excluded from agent-facing output, so an agent never sees them as available.
+    const internalMatch = part.match(/\*\*Internal\*\*\s*\|\s*`?(\w+)`?/)
+    const internal = internalMatch?.[1]?.trim().toLowerCase() === 'yes'
+
+    entries.push({ name, purpose, storybookPath, internal })
   }
 
   return entries
@@ -184,7 +190,7 @@ export function buildComponentRegistry() {
     }
   }
 
-  for (const { name, purpose, storybookPath } of parsed) {
+  for (const { name, purpose, storybookPath, internal } of parsed) {
     const tier = findTier(name)
     if (!tier) continue // skip non-system components
 
@@ -203,6 +209,7 @@ export function buildComponentRegistry() {
       tokenPrefix,
       stories,
       tokenCount,
+      internal,
     })
   }
 
@@ -217,12 +224,13 @@ export function buildComponentRegistry() {
   const registry = {
     meta: {
       componentCount: components.length,
+      publicComponentCount: components.filter(c => !c.internal).length,
     },
     components,
   }
 
   writeFileSync('tokens/component-registry.json', JSON.stringify(registry, null, 2))
-  console.log(`✓ Built component-registry.json (${components.length} components)`)
+  console.log(`✓ Built component-registry.json (${components.length} components, ${registry.meta.publicComponentCount} public)`)
 }
 
 // Run as main

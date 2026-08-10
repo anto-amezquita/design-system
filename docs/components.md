@@ -19,6 +19,7 @@ Copy this for each new component. Fill in every field before the component ships
 | **Figma name** | Exact name in the Figma component library |
 | **Code name** | `ComponentName` |
 | **Storybook path** | `Components/ComponentName` |
+| **Internal** | `yes` only if this component is not for direct consumption — omit the row otherwise |
 
 **Props / variants**
 - List each prop-driven variant or notable prop
@@ -471,6 +472,9 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 | **Figma name** | `BaseSheet` |
 | **Code name** | `BaseSheet` |
 | **Storybook path** | `Components/BaseSheet` |
+| **Internal** | `yes` |
+
+Marked internal: it ships in the package because Drawer imports it, but it is excluded from agent-facing output (`llms.txt`, `llms-full.txt`, markdown twins) so an agent does not treat it as a component it may reach for.
 
 ---
 
