@@ -1,0 +1,283 @@
+# @amezquita/design-system — full reference
+
+> Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
+
+## Install
+
+```bash
+npm install @amezquita/design-system
+```
+
+## Tokens
+
+537 tokens total, resolved across light/dark × default/bold. Full values: https://amezquita.dk/tokens.json
+
+- component: 405
+- color: 45
+- typography: 28
+- primitive: 18
+- size: 8
+- spacing: 8
+- motion: 7
+- elevation: 6
+- shadow: 5
+- radius: 4
+- opacity: 2
+- border: 1
+
+## Primitives
+
+### Avatar
+
+User profile picture with fallback to initials when no image is provided
+
+- Import: `import { Avatar } from '@amezquita/design-system/components/primitives/Avatar'`
+- Token prefix: `avatar-*` (14 tokens)
+- Storybook: Components/Avatar
+- Stories: WithImage, WithFallback, WithCustomFallback, AllSizes, Group, GroupWithOverflow, DarkMode
+
+### Badge
+
+Small status indicator or numeric count overlay attached to another element
+
+- Import: `import { Badge } from '@amezquita/design-system/components/primitives/Badge'`
+- Token prefix: `badge-*` (24 tokens)
+- Storybook: Components/Badge
+- Stories: Default, Count, Dot, AllVariants, AllShapes, AllVariantsAllShapes, DarkMode
+
+### Button
+
+Trigger for user actions; renders as `<button>` or `<a>` depending on context
+
+- Import: `import { Button } from '@amezquita/design-system/components/primitives/Button'`
+- Token prefix: `button-*` (30 tokens)
+- Storybook: Components/Button
+- Stories: Primary, Secondary, Ghost, Link, Loading, LoadingSecondary, FullWidth, WithIcon, Disabled, AllVariants, AllStates, DarkMode
+
+### Checkbox
+
+Single boolean selection with an associated label; supports indeterminate state
+
+- Import: `import { Checkbox } from '@amezquita/design-system/components/primitives/Checkbox'`
+- Token prefix: `checkbox-*` (14 tokens)
+- Storybook: Components/Checkbox
+- Stories: Default, Checked, Indeterminate, Disabled, DisabledChecked, Controlled, AllStates, NoLabel, DarkMode
+
+### Input
+
+Labelled single-line text entry with hint and error states
+
+- Import: `import { Input } from '@amezquita/design-system/components/primitives/Input'`
+- Token prefix: `input-*` (22 tokens)
+- Storybook: Components/Input
+- Stories: Default, WithHint, WithError, Disabled, NoLabel, WithPrefix, WithSuffix, Clearable, Search, AllStates, DarkMode
+
+### Label
+
+Standalone form label element — used when a label must be decoupled from its input
+
+- Import: `import { Label } from '@amezquita/design-system/components/primitives/Label'`
+- Token prefix: `label-*` (6 tokens)
+- Storybook: Components/Label
+- Stories: Default, Required, Disabled, AllVariants, DarkMode
+
+### Radio
+
+Single-selection control within a mutually exclusive group
+
+- Import: `import { Radio } from '@amezquita/design-system/components/primitives/Radio'`
+- Token prefix: `radio-*` (14 tokens)
+- Storybook: Components/Radio
+- Stories: Default, WithDefault, Horizontal, Disabled, WithDisabledOption, Controlled, AllStates, DarkMode
+
+### Select
+
+Dropdown for choosing a single value from a list; supports grouped options
+
+- Import: `import { Select } from '@amezquita/design-system/components/primitives/Select'`
+- Token prefix: `select-*` (20 tokens)
+- Storybook: Components/Select
+- Stories: Default, WithDefaultValue, Grouped, Disabled, DarkMode
+
+### Skeleton
+
+Placeholder loading state that mirrors the geometry of the content it replaces
+
+- Import: `import { Skeleton } from '@amezquita/design-system/components/primitives/Skeleton'`
+- Token prefix: `skeleton-*` (7 tokens)
+- Storybook: Components/Skeleton
+- Stories: Text, MultiLine, Circle, Rect, CardSkeleton, DarkMode
+
+### Spinner
+
+Indeterminate loading indicator for in-progress operations
+
+- Import: `import { Spinner } from '@amezquita/design-system/components/primitives/Spinner'`
+- Token prefix: `spinner-*` (5 tokens)
+- Storybook: Components/Spinner
+- Stories: Default, AllSizes, OnColoredBackground, DarkMode
+
+### Switch
+
+Binary toggle for on/off settings; renders as a styled checkbox under the hood
+
+- Import: `import { Switch } from '@amezquita/design-system/components/primitives/Switch'`
+- Token prefix: `switch-*` (14 tokens)
+- Storybook: Components/Switch
+- Stories: Default, Checked, Disabled, DisabledChecked, NoLabel, Controlled, AllStates, DarkMode
+
+### Tag
+
+Inline label for categorising or annotating content — non-interactive
+
+- Import: `import { Tag } from '@amezquita/design-system/components/primitives/Tag'`
+- Token prefix: `tag-*` (15 tokens)
+- Storybook: Components/Tag
+- Stories: Default, Accent, Muted, WithIcon, Removable, AllVariants, InContext, DarkMode
+
+### Textarea
+
+Multi-line text entry with label, hint, and error states — mirrors Input API
+
+- Import: `import { Textarea } from '@amezquita/design-system/components/primitives/Textarea'`
+- Token prefix: `textarea-*` (19 tokens)
+- Storybook: Components/Textarea
+- Stories: Default, WithHint, WithError, Disabled, WithCharacterCount, AllStates, DarkMode
+
+## Composition
+
+### Alert
+
+Contextual inline feedback message with semantic severity levels (info, success, warning, error)
+
+- Import: `import { Alert } from '@amezquita/design-system/components/composition/Alert'`
+- Token prefix: `alert-*` (23 tokens)
+- Storybook: Components/Alert
+- Stories: Default, AllVariants, Dismissible, NoTitle, NoIcon, DarkMode
+
+### BaseSheet
+
+Unstyled overlay sheet primitive used internally by Drawer — not consumed directly
+
+- Import: `import { BaseSheet } from '@amezquita/design-system/components/composition/BaseSheet'`
+- Token prefix: `basesheet-*` (0 tokens)
+- Storybook: Components/BaseSheet
+
+### Card
+
+Compound container for grouped content — composed from named sub-components
+
+- Import: `import { Card } from '@amezquita/design-system/components/composition/Card'`
+- Token prefix: `card-*` (14 tokens)
+- Storybook: Components/Card
+- Stories: Default, Ghost, Interactive, Horizontal, Compact, Featured, WithBody, WithMedia, AllVariants, DarkMode
+
+### Dialog
+
+Overlay for tasks or information requiring focused attention
+
+- Import: `import { Dialog } from '@amezquita/design-system/components/composition/Dialog'`
+- Token prefix: `dialog-*` (19 tokens)
+- Storybook: Components/Dialog
+- Stories: Default, Small, Large, Scrollable, WithForm, NoDescription, AllSizes, DarkMode
+
+### Drawer
+
+Side-anchored slide-in panel for supplemental content or secondary navigation
+
+- Import: `import { Drawer } from '@amezquita/design-system/components/composition/Drawer'`
+- Token prefix: `drawer-*` (21 tokens)
+- Storybook: Components/Drawer
+- Stories: Default, FilterPanel, AllSides, Sizes, DarkMode
+
+### Toast
+
+Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout
+
+- Import: `import { Toast } from '@amezquita/design-system/components/composition/Toast'`
+- Token prefix: `toast-*` (22 tokens)
+- Storybook: Components/Toast
+- Stories: Default, AllVariants, TitleOnly, DarkMode
+
+### Tooltip
+
+Contextual label revealed on hover or focus — supplements an icon or truncated text
+
+- Import: `import { Tooltip } from '@amezquita/design-system/components/composition/Tooltip'`
+- Token prefix: `tooltip-*` (13 tokens)
+- Storybook: Components/Tooltip
+- Stories: Default, AllSides, IconButtons, LongContent, NoDelay, DarkMode
+
+## Patterns
+
+### Accordion
+
+Collapsible content sections with animated expand/collapse; supports single or multi-open modes
+
+- Import: `import { Accordion } from '@amezquita/design-system/components/patterns/Accordion'`
+- Token prefix: `accordion-*` (15 tokens)
+- Storybook: Components/Accordion
+- Stories: Default, Multiple, WithDisabledItem, DefaultOpen, DarkMode
+
+### Breadcrumb
+
+Hierarchical page location trail; the last item is the current page (non-linked)
+
+- Import: `import { Breadcrumb } from '@amezquita/design-system/components/patterns/Breadcrumb'`
+- Token prefix: `breadcrumb-*` (8 tokens)
+- Storybook: Components/Breadcrumb
+- Stories: Default, TwoLevels, SingleLevel, CustomSeparator, LongLabels, DarkMode
+
+### DataTable
+
+Sortable, filterable, paginated table for structured datasets
+
+- Import: `import { DataTable } from '@amezquita/design-system/components/patterns/DataTable'`
+- Token prefix: `datatable-*` (3 tokens)
+- Storybook: Components/DataTable
+- Stories: Default, Sortable, WithSelection, WithPagination, WithPaginationAndSelection, Striped, Compact, Empty, DarkMode
+
+### EmptyState
+
+Placeholder for zero-content states — icon, heading, supporting text, and an optional action
+
+- Import: `import { EmptyState } from '@amezquita/design-system/components/patterns/EmptyState'`
+- Token prefix: `emptystate-*` (0 tokens)
+- Storybook: Components/EmptyState
+- Stories: Default, AllVariants, Compact, DarkMode
+
+### Hero
+
+Page-level section header with eyebrow, title, lead text, and an action slot
+
+- Import: `import { Hero } from '@amezquita/design-system/components/patterns/Hero'`
+- Token prefix: `hero-*` (14 tokens)
+- Storybook: Components/Hero
+- Stories: Default, WithEyebrowAndLead, Centered, TitleOnly, PageHeader, DarkMode
+
+### Pagination
+
+Page navigation controls for multi-page data sets; exposes current page and total page count
+
+- Import: `import { Pagination } from '@amezquita/design-system/components/patterns/Pagination'`
+- Token prefix: `pagination-*` (12 tokens)
+- Storybook: Components/Pagination
+- Stories: Default, EdgeCases, Compact, DarkMode
+
+### Table
+
+Static data table with semantic header, body, and row structure
+
+- Import: `import { Table } from '@amezquita/design-system/components/patterns/Table'`
+- Token prefix: `table-*` (17 tokens)
+- Storybook: Components/Table
+- Stories: Default, Striped, Bordered, Compact, AllVariants, WithCaption, WithFoot, HorizontalScroll, DarkMode
+
+### Tabs
+
+Segmented view switcher with full keyboard navigation; built on Radix Tabs
+
+- Import: `import { Tabs } from '@amezquita/design-system/components/patterns/Tabs'`
+- Token prefix: `tabs-*` (20 tokens)
+- Storybook: Components/Tabs
+- Stories: Default, AllVariants, Sizes, WithDisabledTab, DarkMode

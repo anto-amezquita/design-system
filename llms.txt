@@ -1,0 +1,54 @@
+# @amezquita/design-system
+
+> Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
+
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 28 components across primitives, composition, and pattern tiers, each with a machine-readable markdown twin linked below.
+
+## Install
+
+```bash
+npm install @amezquita/design-system
+```
+
+## Reference
+
+- [Token reference](https://amezquita.dk/tokens.json): every token name and resolved value, across all four theme axes
+- [Full docs, single fetch](https://amezquita.dk/llms-full.txt): this index with every component inlined
+- [Live component docs](https://amezquita.dk/design-system): human-facing docs site
+
+## Primitives
+
+- [Avatar](https://amezquita.dk/design-system/avatar.md): User profile picture with fallback to initials when no image is provided
+- [Badge](https://amezquita.dk/design-system/badge.md): Small status indicator or numeric count overlay attached to another element
+- [Button](https://amezquita.dk/design-system/button.md): Trigger for user actions; renders as `<button>` or `<a>` depending on context
+- [Checkbox](https://amezquita.dk/design-system/checkbox.md): Single boolean selection with an associated label; supports indeterminate state
+- [Input](https://amezquita.dk/design-system/input.md): Labelled single-line text entry with hint and error states
+- [Label](https://amezquita.dk/design-system/label.md): Standalone form label element — used when a label must be decoupled from its input
+- [Radio](https://amezquita.dk/design-system/radio.md): Single-selection control within a mutually exclusive group
+- [Select](https://amezquita.dk/design-system/select.md): Dropdown for choosing a single value from a list; supports grouped options
+- [Skeleton](https://amezquita.dk/design-system/skeleton.md): Placeholder loading state that mirrors the geometry of the content it replaces
+- [Spinner](https://amezquita.dk/design-system/spinner.md): Indeterminate loading indicator for in-progress operations
+- [Switch](https://amezquita.dk/design-system/switch.md): Binary toggle for on/off settings; renders as a styled checkbox under the hood
+- [Tag](https://amezquita.dk/design-system/tag.md): Inline label for categorising or annotating content — non-interactive
+- [Textarea](https://amezquita.dk/design-system/textarea.md): Multi-line text entry with label, hint, and error states — mirrors Input API
+
+## Composition
+
+- [Alert](https://amezquita.dk/design-system/alert.md): Contextual inline feedback message with semantic severity levels (info, success, warning, error)
+- [BaseSheet](https://amezquita.dk/design-system/base-sheet.md): Unstyled overlay sheet primitive used internally by Drawer — not consumed directly
+- [Card](https://amezquita.dk/design-system/card.md): Compound container for grouped content — composed from named sub-components
+- [Dialog](https://amezquita.dk/design-system/dialog.md): Overlay for tasks or information requiring focused attention
+- [Drawer](https://amezquita.dk/design-system/drawer.md): Side-anchored slide-in panel for supplemental content or secondary navigation
+- [Toast](https://amezquita.dk/design-system/toast.md): Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout
+- [Tooltip](https://amezquita.dk/design-system/tooltip.md): Contextual label revealed on hover or focus — supplements an icon or truncated text
+
+## Patterns
+
+- [Accordion](https://amezquita.dk/design-system/accordion.md): Collapsible content sections with animated expand/collapse; supports single or multi-open modes
+- [Breadcrumb](https://amezquita.dk/design-system/breadcrumb.md): Hierarchical page location trail; the last item is the current page (non-linked)
+- [DataTable](https://amezquita.dk/design-system/data-table.md): Sortable, filterable, paginated table for structured datasets
+- [EmptyState](https://amezquita.dk/design-system/empty-state.md): Placeholder for zero-content states — icon, heading, supporting text, and an optional action
+- [Hero](https://amezquita.dk/design-system/hero.md): Page-level section header with eyebrow, title, lead text, and an action slot
+- [Pagination](https://amezquita.dk/design-system/pagination.md): Page navigation controls for multi-page data sets; exposes current page and total page count
+- [Table](https://amezquita.dk/design-system/table.md): Static data table with semantic header, body, and row structure
+- [Tabs](https://amezquita.dk/design-system/tabs.md): Segmented view switcher with full keyboard navigation; built on Radix Tabs

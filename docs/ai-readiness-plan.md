@@ -11,7 +11,7 @@ Execution plan for the machine-facing layer. Rationale, benchmarks, and scope bo
 ```
 Last updated:   2026-08-10
 Current phase:  Phase 1 — in progress
-Next action:    Task 1.1 — write scripts/build-llms-txt.mjs
+Next action:    Task 1.2 — extend build-llms-txt.mjs to emit one .md twin per component
 Blocked on:     nothing
 ```
 
@@ -112,7 +112,7 @@ The highest-leverage phase. Everything is generated from sources that already ex
 
 **Tasks**
 - [x] 1.0 Add `tokens` to `package.json` `files` so the DTCG source, component registry, and token reference ship with the package. One line; unblocks everything downstream. **Done 2026-08-10** — narrowed to targeted token paths, published as v0.1.4, verified present in a consumer install.
-- [ ] 1.1 `scripts/build-llms-txt.mjs` — emit `llms.txt` (index: what the system is, install, links to every component's `.md` twin and the token reference) and `llms-full.txt` (everything inlined, for a single-fetch agent).
+- [x] 1.1 `scripts/build-llms-txt.mjs` — emit `llms.txt` (index: what the system is, install, links to every component's `.md` twin and the token reference) and `llms-full.txt` (everything inlined, for a single-fetch agent). **Done 2026-08-10** — reads `package.json`, `README.md`, `tokens/component-registry.json`, and `tokens/token-reference.json`; writes `llms.txt` + `llms-full.txt` at repo root. `llms.txt` links to each component's future `.md` twin at `{docsBaseUrl}/{slug}.md` and to the future `tokens.json` — both paths don't resolve yet (Tasks 1.2 and 1.3), by design; it's a forward index. `llms-full.txt` inlines everything currently compiled per component (purpose, import path, token prefix + count, storybook path, story names) plus a token-count-by-category summary, without pasting the 227 kB `token-reference.json` blob. Verified deterministic: re-running the script twice produces byte-identical output. Not yet wired into `npm run tokens` or CI — that's Task 1.4. Not added to `package.json` `files` — npm distribution wasn't in scope; Phase 1.5 covers web distribution via the docs site.
 - [ ] 1.2 Extend it to emit one `.md` twin per component from the registry + prop types + story names: purpose, tier, import path, full prop table with literal unions spelled out, the component's token list, and a correct/incorrect usage pair. **Edge case:** two of the 28 components have no file in `tokens/components/` — BaseSheet (headless, no CSS) and EmptyState (styles straight off the semantic layer). The generator must handle a missing component-token file without crashing or emitting an empty token section.
 - [ ] 1.3 Emit `tokens.json` at a stable public path — the DTCG source, resolved, so an agent can read every token name and value without running a build.
 - [ ] 1.3a **Include all global primitives in `token-reference.json`**, not just the `color.*` group — 83 primitives (spacing, type scale, radii, motion, shadows, sizes, and all `feedback.*` colours) are currently invisible to anything reading the artifact. Then emit a `meta` breakdown (`primitiveCount` / `semanticCount` / `componentCount` / `total`) so the README can quote a generated figure instead of a hand-counted one — the same "compiled, not written" rule that governs the rest of this phase.
@@ -197,3 +197,4 @@ The artifact that converts the work into positioning. Not a launch post for the 
 | 2026-08-10 | 1 | v0.1.4 published; token artifacts confirmed in a consumer install. Task 1.0 closed. Kaelig score 1 → 2/10. Next: README reconciliation (issues 2–3), then Task 1.1. |
 | 2026-08-10 | 1 | README reconciled: 28 components, 620 tokens with breakdown, Figma claim reworded to match the checker. Correctness issues 1–3 all closed. Found that `token-reference.json` omits 83 non-`color` primitives — logged as Task 1.3a. Next: Task 1.1. |
 | 2026-08-10 | 1 | Story count reconciled: 184 declared stories, not 176 (issue 5). "Each component has full Storybook coverage" corrected to 27 of 28 — BaseSheet has none (issue 6). Every number in the README is now traced to a generated artifact. Next: Task 1.1. |
+| 2026-08-10 | 1 | Task 1.1 done — `scripts/build-llms-txt.mjs` written, compiling `llms.txt` + `llms-full.txt` from `package.json` + `README.md` + `tokens/component-registry.json` + `tokens/token-reference.json`. Confirmed deterministic across two runs. BaseSheet's zero-token edge case renders without crashing. Links to the `.md` twins and `tokens.json` are forward references — they 404 until Tasks 1.2 and 1.3 ship. Next: Task 1.2. |
