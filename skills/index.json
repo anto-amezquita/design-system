@@ -1,0 +1,11 @@
+{
+  "skills": [
+    {
+      "name": "amezquita-design-system",
+      "description": "Build UI with @amezquita/design-system — React components, DTCG design tokens, and a shadcn-spec component registry.",
+      "files": [
+        "SKILL.md"
+      ]
+    }
+  ]
+}

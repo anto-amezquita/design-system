@@ -277,6 +277,10 @@ buildComponentDocs();
 const { buildRegistryManifests } = await import('./scripts/build-registry-manifests.mjs');
 buildRegistryManifests();
 
+// Also depends on component-registry.json and token-reference.json.
+const { buildSkill } = await import('./scripts/build-skill.mjs');
+buildSkill();
+
 const { buildChangelog } = await import('./scripts/build-changelog.mjs');
 buildChangelog();
 

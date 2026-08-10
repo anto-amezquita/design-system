@@ -10,7 +10,7 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `columns` | `Column<T>[]` |  |
+| `columns` | `{ key: keyof T & string; label: string; sortable?: boolean; width?: string; render?: (value: T[keyof T & string], row: T) => React.ReactNode }[]` |  |
 | `data` | `T[]` |  |
 | `dataKey?` | `string` | Explicit key controlling when data resets (sort/selection/page cleared). Pass a stable string (e.g. a query ID or ISO timestamp) to avoid resets when the data array reference changes but the content has not. When omitted, resets on reference inequality — callers should memoize their data array to avoid spurious resets. |
 | `getRowKey?` | `(row: T) => string` | Row identity function — used as the React key. Required when rows have no .id field and the table is sortable, to avoid full row remounts on sort. Falls back to row.id, then to position index (which causes remounts on sort and should be avoided). |

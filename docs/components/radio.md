@@ -12,7 +12,7 @@
 |---|---|---|
 | `id?` | `string` |  |
 | `name?` | `string` |  |
-| `options` | `RadioOption[]` |  |
+| `options` | `{ value: string; label: string; disabled?: boolean }[]` |  |
 | `value?` | `string` |  |
 | `defaultValue?` | `string` |  |
 | `onValueChange?` | `(value: string) => void` |  |

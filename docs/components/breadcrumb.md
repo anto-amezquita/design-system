@@ -10,7 +10,7 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `items` | `BreadcrumbItem[]` |  |
+| `items` | `{ label: string; href?: string }[]` |  |
 | `separator?` | `React.ReactNode` |  |
 | `className?` | `string` |  |
 | `LinkComponent?` | `React.ElementType<{ href: string; className?: string; children?: React.ReactNode }>` | Component to render internal links with — pass your router's Link (e.g. next/link) to get client-side navigation. Defaults to a plain &lt;a&gt;, which works anywhere with a full navigation. |

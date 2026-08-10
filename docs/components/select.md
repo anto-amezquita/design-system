@@ -17,7 +17,7 @@
 | `disabled?` | `boolean` |  |
 | `required?` | `boolean` |  |
 | `name?` | `string` |  |
-| `groups` | `SelectGroup[]` |  |
+| `groups` | `{ label?: string; options: { value: string; label: string; disabled?: boolean }[] }[]` |  |
 | `aria-label` | `string` | Required: the trigger is a combobox, which gets no accessible name from its content — without this, screen readers announce an unnamed control. |
 
 ## Tokens

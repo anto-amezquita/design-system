@@ -290,6 +290,33 @@ function expandLiteralUnions(typeText, literalAliasMap) {
   return result
 }
 
+// A prop like `groups: SelectGroup[]` is useless to a reader if SelectGroup's
+// own shape is never spelled out anywhere on the page — found by testing this
+// exact gap against a real agent building with only the compiled docs: it had
+// to go read the installed package's source to learn SelectGroup was really
+// `{ label?: string; options: SelectOption[] }`. Inlines local object-alias
+// shapes referenced inside a prop's type text, recursively (SelectOption
+// inside SelectGroup) up to a small fixed depth — bounded so a
+// self-referential type (rare, none in this codebase today) can't loop.
+function expandObjectAliases(typeText, objectAliases, depth = 2) {
+  let result = typeText
+  for (let i = 0; i < depth; i++) {
+    let changed = false
+    for (const [name, shape] of objectAliases) {
+      // A generic alias (`Column<T>`) needs its type argument consumed too —
+      // leaving it gives `{...inlined shape...}<T>`, which reads as applying
+      // generic args to an object literal, not what the source meant.
+      const re = new RegExp(`\\b${name}\\b(<[^<>]*>)?`, 'g')
+      if (re.test(result)) {
+        result = result.replace(re, collapseWhitespace(shape))
+        changed = true
+      }
+    }
+    if (!changed) break
+  }
+  return result
+}
+
 // ── Props type → entries ──────────────────────────────────────────
 
 function findPropsTypeName(source, componentName) {
@@ -335,7 +362,7 @@ function decomposeProps(rhs, objectAliases) {
   return { blocks, extras }
 }
 
-function parseObjectBody(blockText, literalAliasMap) {
+function parseObjectBody(blockText, literalAliasMap, objectAliases) {
   const inner = blockText.trim().replace(/^\{/, '').replace(/\}$/, '')
   const entries = []
   let pendingComment = null
@@ -369,6 +396,7 @@ function parseObjectBody(blockText, literalAliasMap) {
     const optional = !!m[5]
     let typeText = m[6].replace(/\/\/.*$/, '').trim()
     typeText = collapseWhitespace(typeText)
+    typeText = expandObjectAliases(typeText, objectAliases)
     typeText = expandLiteralUnions(typeText, literalAliasMap)
 
     entries.push({ name, optional, type: typeText, description: pendingComment || '' })
@@ -403,7 +431,7 @@ function buildPropsSection(source, filePath, propsTypeName) {
   const { blocks, extras } = decomposeProps(rhs, objectAliases)
   if (blocks.length === 0) return null
 
-  const entries = mergeEntries(blocks.map(b => parseObjectBody(b, literalAliasMap)))
+  const entries = mergeEntries(blocks.map(b => parseObjectBody(b, literalAliasMap, objectAliases)))
   if (entries.length === 0) return null
   return { entries, extras }
 }
