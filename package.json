@@ -35,6 +35,8 @@
     "tokens:contrast": "node scripts/check-contrast.mjs",
     "tokens:dtcg": "node scripts/migrate-to-dtcg.mjs",
     "figma:status": "node scripts/figma-status.mjs",
+    "typecheck": "tsc --noEmit",
+    "validate": "npm run tokens:lint && npm run tokens:contrast && node scripts/check-components-doc.mjs && node scripts/check-stories.mjs && npm run typecheck",
     "a11y": "npm run build-storybook && npm run a11y:stories",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --stats-json",
