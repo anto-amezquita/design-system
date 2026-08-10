@@ -52,6 +52,14 @@
   ],
   "unreleased": [
     {
+      "sha": "52b7f8e",
+      "type": "feat",
+      "scope": null,
+      "message": "publish tokens.json at repo root (Task 1.3)",
+      "date": "2026-08-10",
+      "breaking": false
+    },
+    {
       "sha": "ac73430",
       "type": "feat",
       "scope": null,
