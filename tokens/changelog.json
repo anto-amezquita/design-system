@@ -52,6 +52,14 @@
   ],
   "unreleased": [
     {
+      "sha": "8e0ba88",
+      "type": "feat",
+      "scope": null,
+      "message": "generate shadcn-spec registry manifests (Task 3.1)",
+      "date": "2026-08-10",
+      "breaking": false
+    },
+    {
       "sha": "124ea00",
       "type": "feat",
       "scope": null,
