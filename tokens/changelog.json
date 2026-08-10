@@ -52,6 +52,14 @@
   ],
   "unreleased": [
     {
+      "sha": "dc6e970",
+      "type": "fix",
+      "scope": null,
+      "message": "include all global primitives in token-reference.json (Task 1.3a)",
+      "date": "2026-08-10",
+      "breaking": false
+    },
+    {
       "sha": "52b7f8e",
       "type": "feat",
       "scope": null,
