@@ -15,6 +15,16 @@ A single source of truth for tokens and components, designed to be consumed as a
 - **Figma drift detection** — `npm run figma:status` compares the resolved token state against a committed snapshot of what was last pushed to Figma (`figma/sync-state.json`), making staleness detectable offline and reviewable in a diff, with a weekly automated check. The checker is in place; the snapshot is baselined per Figma file via `--baseline`
 - **Agent-safe by design** — every governance script gives specific, actionable failures; nothing here requires a human to interpret vague CI output
 
+## Use via the component registry
+
+```bash
+npx shadcn add https://amezquita.dk/r/button.json
+```
+
+Works with any [shadcn-spec](https://ui.shadcn.com/docs/registry) registry client. Adds `@amezquita/design-system` as a dependency and injects the component's resolved design tokens (light + dark) into your project's CSS — no copy-pasted source, this is the same npm package either way. Swap `button` for any [public component](https://amezquita.dk/design-system/components), or browse the full manifest at [amezquita.dk/r/registry.json](https://amezquita.dk/r/registry.json).
+
+If you're on Next.js, you'll also need the `transpilePackages` config below — the registry installs the dependency, not your bundler config.
+
 ## Install
 
 ```bash

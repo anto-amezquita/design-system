@@ -15,11 +15,11 @@
  * the package because something else imports them, but an agent should never see them as
  * a component it may reach for.
  *
- * NOT PUBLISHABLE UNTIL TASK 1.5. The component links point at URLs the docs site does not
- * serve yet — the .md twins themselves exist (Task 1.2, `scripts/build-component-docs.mjs`,
- * writing to docs/components/) but only in this repo, not at docsBaseUrl. An index of dead
- * links is worse than no index — do not announce or reference llms.txt anywhere until 1.5
- * has landed and those links resolve.
+ * LIVE as of Task 1.5 (2026-08-10): the portfolio repo (the docs site) serves llms.txt,
+ * llms-full.txt, tokens.json, and every component's .md twin at the URLs this file
+ * generates, confirmed with real `curl` checks against the production domain, not just
+ * locally. It's a static snapshot of this repo's generated output, not an automated
+ * pipeline — re-copy there when these files change.
  *
  * llms-full.txt inlines everything currently compiled about each component (purpose, import
  * path, token prefix + count, storybook path, story names) for a single-fetch agent that

@@ -39,10 +39,10 @@
  * *default* shadcn registry (ui.shadcn.com) every time, never the registry the item
  * itself came from — it failed with "item ... was not found" until fixed.
  *
- * NOT LIVE UNTIL TASK 3.2 DEPLOYS. End-to-end mechanics are verified locally (served
- * from a portfolio dev server, installed successfully via the real shadcn CLI into a
- * scratch app) — what's left is deploying portfolio so `https://amezquita.dk/r/*.json`
- * resolves for real, same gate Task 1.1 documented for llms.txt.
+ * LIVE as of Task 3.2 (2026-08-10): the portfolio repo (the docs site) serves these at
+ * `https://amezquita.dk/r/<slug>.json`, verified with a real `npx shadcn add` against
+ * that exact URL, not just locally. It's a static snapshot of this repo's `registry/`
+ * output, not an automated pipeline — re-copy there when these manifests change.
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs'
