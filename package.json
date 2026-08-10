@@ -15,6 +15,12 @@
     "components",
     "lib",
     "hooks",
+    "tokens/global.json",
+    "tokens/brands",
+    "tokens/components",
+    "tokens/component-registry.json",
+    "tokens/token-reference.json",
+    "tokens/changelog.json",
     "styles/brands",
     "styles/reset.css"
   ],
