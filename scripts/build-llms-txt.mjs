@@ -142,7 +142,7 @@ function buildFull({ pkg, registry, tokenReference, siteUrls }) {
     '',
     '## Tokens',
     '',
-    `${tokenReference.meta.tokenCount} tokens total, resolved across light/dark × default/bold. Full values: ${rootUrl}/tokens.json`,
+    `${tokenReference.meta.total} tokens total, resolved across light/dark × default/bold. Full values: ${rootUrl}/tokens.json`,
     '',
   ]
 

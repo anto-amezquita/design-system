@@ -27,7 +27,7 @@ export function buildTokensJson() {
   writeFileSync('tokens.json', source)
 
   const { meta } = JSON.parse(source)
-  console.log(`✓ Built tokens.json (${meta.tokenCount} tokens)`)
+  console.log(`✓ Built tokens.json (${meta.total} tokens)`)
 }
 
 // Run as main

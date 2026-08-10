@@ -55,6 +55,40 @@ function assertKnownCategory(category, tokenName) {
   return category;
 }
 
+// Walks a global.json group to its leaf tokens. Most groups are flat
+// ({ key: { $value, $type } }), but `feedback` mixes flat keys (error-50)
+// with one level of nesting (success.500) — CSS var names join every path
+// segment with a hyphen either way (--feedback-success-500), so the same
+// recursion produces the right name for both shapes without special-casing.
+function flattenPrimitives(node, groupName, pathSegments = []) {
+  const entries = [];
+  for (const [key, value] of Object.entries(node)) {
+    if (!value || typeof value !== 'object') continue;
+    if ('$value' in value || 'value' in value) {
+      const name = [groupName, ...pathSegments, key].join('-');
+      const rawValue = String(value.$value ?? value.value ?? '');
+      entries.push({
+        name,
+        cssVar: `--${name}`,
+        type: value.$type ?? 'unknown',
+        category: 'primitive',
+        rawValue,
+        resolved: {
+          'light-default': rawValue,
+          'light-bold': rawValue,
+          'dark-default': rawValue,
+          'dark-bold': rawValue,
+        },
+        axisAware: false,
+        usedBy: [],
+      });
+    } else {
+      entries.push(...flattenPrimitives(value, groupName, [...pathSegments, key]));
+    }
+  }
+  return entries;
+}
+
 export function buildTokenReference() {
   const globalTokens  = loadJson('tokens/global.json');
   const portfolioTokens = loadJson('tokens/brands/portfolio/tokens.json');
@@ -100,27 +134,13 @@ export function buildTokenReference() {
     Object.entries(AXES).map(([axis, tokens]) => [axis, makeResolver(tokens, globalTokens)])
   );
 
-  // ── Global colour primitives ─────────────────────────────────────────────
-  // These never change across axes; included for completeness in the Primitives section.
+  // ── Global primitives ─────────────────────────────────────────────────────
+  // Every group in global.json (color, space, font-size, radii, motion,
+  // shadows, sizes, feedback colors, …) — not just color, which is the only
+  // group this used to cover. These never change across axes.
   const primitiveEntries = [];
-  const colorPrimitives = globalTokens.color ?? {};
-  for (const [key, token] of Object.entries(colorPrimitives)) {
-    const rawValue = String(token.$value ?? token.value ?? '');
-    primitiveEntries.push({
-      name:     `color-${key}`,
-      cssVar:   `--color-${key}`,
-      type:     token.$type ?? 'color',
-      category: 'primitive',
-      rawValue,
-      resolved: {
-        'light-default': rawValue,
-        'light-bold':    rawValue,
-        'dark-default':  rawValue,
-        'dark-bold':     rawValue,
-      },
-      axisAware: false,
-      usedBy: [],
-    });
+  for (const [groupName, groupTokens] of Object.entries(globalTokens)) {
+    primitiveEntries.push(...flattenPrimitives(groupTokens, groupName));
   }
 
   // ── Semantic + component tokens ──────────────────────────────────────────
@@ -159,12 +179,22 @@ export function buildTokenReference() {
 
   const tokens = [...primitiveEntries, ...semanticEntries];
 
+  // category is 'primitive' for global primitives, 'component' for
+  // component-tier tokens (getCategory()'s fallback), and a value-kind
+  // (color/spacing/typography/…) for everything else — semantic tokens.
+  const meta = {
+    primitiveCount: tokens.filter(t => t.category === 'primitive').length,
+    semanticCount: tokens.filter(t => t.category !== 'primitive' && t.category !== 'component').length,
+    componentCount: tokens.filter(t => t.category === 'component').length,
+    total: tokens.length,
+  };
+
   writeFileSync(
     'tokens/token-reference.json',
-    JSON.stringify({ meta: { tokenCount: tokens.length }, tokens }, null, 2)
+    JSON.stringify({ meta, tokens }, null, 2)
   );
 
-  console.log(`✓ Built token-reference.json (${tokens.length} tokens)`);
+  console.log(`✓ Built token-reference.json (${meta.total} tokens: ${meta.primitiveCount} primitive, ${meta.semanticCount} semantic, ${meta.componentCount} component)`);
 }
 
 // Run as main script
