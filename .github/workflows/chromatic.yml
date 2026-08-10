@@ -31,6 +31,9 @@ jobs:
       - name: Story coverage check
         run: node scripts/check-stories.mjs
 
+      - name: Typecheck
+        run: npm run typecheck
+
       - name: Build dependency graph
         run: node scripts/build-dependency-graph.mjs
 
