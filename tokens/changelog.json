@@ -4,6 +4,22 @@
   },
   "versions": [
     {
+      "tag": "v0.1.2",
+      "date": "2026-08-10",
+      "sha": "d00f123",
+      "entries": [
+        {
+          "sha": "475e59a",
+          "type": "fix",
+          "scope": null,
+          "message": "resolve internal @/ imports to relative paths in Button, EmptyState",
+          "date": "2026-08-10",
+          "breaking": false
+        }
+      ],
+      "entryCount": 1
+    },
+    {
       "tag": "v0.1.1",
       "date": "2026-08-05",
       "sha": "0b48506",
@@ -13,10 +29,10 @@
   ],
   "unreleased": [
     {
-      "sha": "475e59a",
+      "sha": "82a353c",
       "type": "fix",
       "scope": null,
-      "message": "resolve internal @/ imports to relative paths in Button, EmptyState",
+      "message": "convert remaining internal @/ imports to relative paths",
       "date": "2026-08-10",
       "breaking": false
     }
