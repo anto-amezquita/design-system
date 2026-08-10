@@ -8,11 +8,11 @@
     "@amezquita/design-system"
   ],
   "registryDependencies": [
-    "theme",
-    "checkbox",
-    "empty-state",
-    "pagination",
-    "table"
+    "https://amezquita.dk/r/theme.json",
+    "https://amezquita.dk/r/checkbox.json",
+    "https://amezquita.dk/r/empty-state.json",
+    "https://amezquita.dk/r/pagination.json",
+    "https://amezquita.dk/r/table.json"
   ],
   "cssVars": {
     "light": {

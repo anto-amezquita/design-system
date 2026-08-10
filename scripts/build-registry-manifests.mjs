@@ -32,10 +32,17 @@
  * optional and correctly omitted here; a root registry.json needs `name`, `homepage`,
  * and `items` (full registry-item objects, not references).
  *
- * NOT PUBLISHED UNTIL TASK 3.2. These manifests are internally consistent and locally
- * verifiable, but the `dependencies`/`registryDependencies` URLs and the acceptance
- * test (`npx shadcn add https://amezquita.dk/r/button.json`) need the docs site to
- * actually serve them — same gate Task 1.1 documented for llms.txt.
+ * registryDependencies MUST be full URLs, not bare names, for a same-registry
+ * reference — confirmed by actually running `npx shadcn add` against a locally-served
+ * copy of these manifests in a scratch Next.js app (portfolio's dev server + a fresh
+ * `create-next-app`), not assumed from the schema. A bare "theme" resolves against the
+ * *default* shadcn registry (ui.shadcn.com) every time, never the registry the item
+ * itself came from — it failed with "item ... was not found" until fixed.
+ *
+ * NOT LIVE UNTIL TASK 3.2 DEPLOYS. End-to-end mechanics are verified locally (served
+ * from a portfolio dev server, installed successfully via the real shadcn CLI into a
+ * scratch app) — what's left is deploying portfolio so `https://amezquita.dk/r/*.json`
+ * resolves for real, same gate Task 1.1 documented for llms.txt.
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs'
@@ -138,6 +145,13 @@ export function buildRegistryManifests() {
     const ownTokenNames = tokenFile ? Object.keys(loadJson(tokenFile)) : []
     const ownCssVars = cssVarsFor(ownTokenNames, tokenByName)
 
+    // Bare names in registryDependencies always resolve against the default
+    // shadcn registry (ui.shadcn.com), never the same custom registry an
+    // item came from — confirmed by testing against a real scratch app, not
+    // assumed from the schema alone. A same-registry reference needs a full
+    // URL.
+    const registryDependencies = ['theme', ...siblingSlugs].map(dep => `${siteRoot}/r/${dep}.json`)
+
     const item = {
       $schema: 'https://ui.shadcn.com/schema/registry-item.json',
       name: slug,
@@ -145,7 +159,7 @@ export function buildRegistryManifests() {
       title: name,
       description: purpose,
       dependencies: [pkg.name],
-      registryDependencies: ['theme', ...siblingSlugs],
+      registryDependencies,
       cssVars: ownCssVars,
     }
 
