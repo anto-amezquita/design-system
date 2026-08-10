@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-05"
+    "generatedAt": "2026-08-10"
   },
   "versions": [
     {
@@ -11,7 +11,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "475e59a",
+      "type": "fix",
+      "scope": null,
+      "message": "resolve internal @/ imports to relative paths in Button, EmptyState",
+      "date": "2026-08-10",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
