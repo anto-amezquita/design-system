@@ -8,11 +8,11 @@ Token-first, multi-brand design system built and maintained solo — DTCG tokens
 
 A single source of truth for tokens and components, designed to be consumed as a package rather than copy-pasted between projects. The governance model — deterministic linting, contrast checks, story coverage, Figma sync detection — runs the same whether a human or an AI agent is making the change, and every rule that fails does so with a specific fix, not just a red X.
 
-- **DTCG-compliant tokens** (`$value`/`$type`) — three layers: global primitives → semantic tokens → component tokens, resolved through [Style Dictionary](https://styledictionary.com); 630 tokens total
+- **DTCG-compliant tokens** (`$value`/`$type`) — three layers: global primitives → semantic tokens → component tokens, resolved through [Style Dictionary](https://styledictionary.com); 620 tokens total — 101 global primitives and 519 semantic + component tokens, each resolved across all four theme axes
 - **Multi-brand, multi-mode** — light/dark × default/bold, composed independently via a mode/expression token axis, no per-brand forking
-- **29 components** across primitives, composition, and pattern tiers, each with full Storybook coverage including a required dark-mode story — 176 Chromatic stories, zero visual regressions across every build
+- **28 components** across primitives, composition, and pattern tiers — 27 of them with full Storybook coverage including a required dark-mode story (BaseSheet is an internal overlay primitive with no stories of its own); 184 stories, zero visual regressions across every Chromatic build
 - **CI-enforced governance** — a token linter (no raw hex, no primitive leakage, no hardcoded motion/spacing), a WCAG AA contrast checker across all four theme combinations, and a component-registry check that fails the build if a component ships without documentation
-- **Figma sync detection** — a committed manifest (`figma/sync-state.json`) makes drift between the token source and the last Figma push detectable and reviewable in a diff, with a weekly automated check
+- **Figma drift detection** — `npm run figma:status` compares the resolved token state against a committed snapshot of what was last pushed to Figma (`figma/sync-state.json`), making staleness detectable offline and reviewable in a diff, with a weekly automated check. The checker is in place; the snapshot is baselined per Figma file via `--baseline`
 - **Agent-safe by design** — every governance script gives specific, actionable failures; nothing here requires a human to interpret vague CI output
 
 ## Install

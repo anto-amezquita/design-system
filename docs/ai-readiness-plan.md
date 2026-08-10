@@ -48,6 +48,7 @@ Record where the system stands before changing anything, so the delta is provabl
 | Date | DS.one score | Kaelig affordances | Notes |
 |---|---|---|---|
 | 2026-08-10 | **1 / 5** | **1 / 10 shipped, 1 partial** | baseline, pre-Phase 1 |
+| 2026-08-10 | 1 / 5 | **2 / 10 shipped** | after Task 1.0 — v0.1.4 published, token artifacts confirmed in a consumer's `node_modules`. Registry signal moves partial → shipped. DS.one unchanged: its registry signal means a shadcn-spec CLI registry (Phase 3), not machine-readable artifacts. |
 
 #### DesignSystems.one — five signals
 
@@ -83,9 +84,13 @@ Scoring rule: one point per signal where the maintainer publishes the artifact a
 The audit surfaced four claims that don't currently match the repo. **Fix these before any number goes into a case study, README, or post** — a stale figure in public is a worse outcome than a lower true one.
 
 1. ~~**Component count.** README says 29; `component-registry.json` `meta.componentCount` says 28.~~ **Resolved 2026-08-10 — 28 is correct.** `npm pack --dry-run` shows 13 primitives + 7 composition + 8 patterns = 28. The README's own architecture breakdown already says 13/7/8; only the headline bullet says 29. Fix the bullet.
-2. **Token count.** README says 630; `token-reference.json` `meta.tokenCount` says 537. Same rule — reconcile, then quote the generated number.
-3. **Figma sync detection is scaffolded, not live.** README describes "a committed manifest (`figma/sync-state.json`)" but no `figma/` directory exists, and `FIGMA_FILE_KEY` in `scripts/figma-status.mjs` is still an empty string. Either baseline it or soften the README claim to describe the checker rather than an active sync.
-4. **`tokens/` is not published.** `package.json` `files` ships `components`, `lib`, `hooks`, `styles/brands`, `styles/reset.css` — so the DTCG tokens, the component registry, and the token reference reach nobody who installs the package. This is the cheapest fix on the entire roadmap and it moves the Kaelig registry signal from partial to shipped. It is now Task 1.0. **Fixed 2026-08-10 (Task 1.0); pending publish.**
+2. ~~**Token count.** README says 630; `token-reference.json` `meta.tokenCount` says 537.~~ **Resolved 2026-08-10 — both were misleading; 630 matched nothing.** The true counts, derived from source: `global.json` holds **101** primitives; `token-reference.json`'s 537 is **18 colour primitives + 519 semantic and component tokens**. Total distinct tokens: **620**. README now states 620 with the breakdown.
+
+   **This surfaced a real gap, not just a counting error.** `build-token-reference.mjs` includes only the `color.*` group from `global.json` — "included for completeness in the Primitives section." The other **83** primitives are absent from the artifact: the entire spacing scale, type scale, font weights, line heights, radii, durations, easings, opacities, shadows, icon sizes, border widths, sizes, **and every `feedback.*` colour** (error/success/warning/info — colours that aren't under the `color` key). An agent reading `token-reference.json` to find `--space-4` or `--feedback-error-500` will not find them and may conclude they don't exist. Fix in Phase 1 (see Task 1.3a).
+3. ~~**Figma sync detection is scaffolded, not live.**~~ **Resolved 2026-08-10 by rewording.** README now describes what `figma:status` actually does — compares resolved state against a committed snapshot — and says the snapshot is baselined per Figma file, rather than implying a live sync exists. If you later set `FIGMA_FILE_KEY` and baseline it, no README change is needed.
+4. **`tokens/` is not published.** `package.json` `files` ships `components`, `lib`, `hooks`, `styles/brands`, `styles/reset.css` — so the DTCG tokens, the component registry, and the token reference reach nobody who installs the package. This is the cheapest fix on the entire roadmap and it moves the Kaelig registry signal from partial to shipped. It is now Task 1.0. **Closed 2026-08-10 — shipped in v0.1.4.**
+5. **Story count.** README said "176 Chromatic stories"; summing the `stories` arrays in `component-registry.json` gives **184**. **Resolved 2026-08-10** — README now says 184 stories and drops the word "Chromatic" from the count, because a Chromatic snapshot count is not the same thing as a declared-story count and the 8-story gap is unexplained. **Open question:** if Chromatic genuinely renders 176, something is being skipped — worth one look at the dashboard.
+6. **"Each component has full Storybook coverage" was an overclaim.** BaseSheet has zero stories and zero component tokens — it is an internal overlay primitive consumed by Drawer, not a public component. **Resolved 2026-08-10** by saying 27 of 28 and naming the exception. Worth deciding separately whether BaseSheet should be in the public registry and the published package at all, since it is documented as "not consumed directly."
 
 ### Package payload note (2026-08-10)
 
@@ -106,10 +111,11 @@ The highest-leverage phase. Everything is generated from sources that already ex
 **Hard rule: if any output in this phase is hand-edited, the phase has failed.** Fix the generator instead.
 
 **Tasks**
-- [x] 1.0 Add `tokens` to `package.json` `files` so the DTCG source, component registry, and token reference ship with the package. One line; unblocks everything downstream. **Done 2026-08-10** — changeset `ship-token-artifacts.md` written; reaches consumers on next publish.
+- [x] 1.0 Add `tokens` to `package.json` `files` so the DTCG source, component registry, and token reference ship with the package. One line; unblocks everything downstream. **Done 2026-08-10** — narrowed to targeted token paths, published as v0.1.4, verified present in a consumer install.
 - [ ] 1.1 `scripts/build-llms-txt.mjs` — emit `llms.txt` (index: what the system is, install, links to every component's `.md` twin and the token reference) and `llms-full.txt` (everything inlined, for a single-fetch agent).
 - [ ] 1.2 Extend it to emit one `.md` twin per component from the registry + prop types + story names: purpose, tier, import path, full prop table with literal unions spelled out, the component's token list, and a correct/incorrect usage pair. **Edge case:** two of the 28 components have no file in `tokens/components/` — BaseSheet (headless, no CSS) and EmptyState (styles straight off the semantic layer). The generator must handle a missing component-token file without crashing or emitting an empty token section.
 - [ ] 1.3 Emit `tokens.json` at a stable public path — the DTCG source, resolved, so an agent can read every token name and value without running a build.
+- [ ] 1.3a **Include all global primitives in `token-reference.json`**, not just the `color.*` group — 83 primitives (spacing, type scale, radii, motion, shadows, sizes, and all `feedback.*` colours) are currently invisible to anything reading the artifact. Then emit a `meta` breakdown (`primitiveCount` / `semanticCount` / `componentCount` / `total`) so the README can quote a generated figure instead of a hand-counted one — the same "compiled, not written" rule that governs the rest of this phase.
 - [ ] 1.4 Wire all of it into `npm run tokens` so it regenerates on every token build, and into CI so a stale artifact fails the build.
 - [ ] 1.5 Serve the artifacts from the docs site at canonical paths (`/llms.txt`, `/llms-full.txt`, `/design-system/<component>.md`, `/tokens.json`).
 
@@ -188,3 +194,6 @@ The artifact that converts the work into positioning. Not a launch post for the 
 | 2026-08-10 | 0 | Baseline audit run against both benchmarks: 1/5 DS.one, 1/10 (+1 partial) Kaelig. Four correctness issues logged. Phase 0 closed; next action is Task 1.0. |
 | 2026-08-10 | 1 | Task 1.0 done — `tokens` added to `package.json` `files`, changeset written. Correctness issues 1–3 (component count, token count, Figma sync claim) still open. Next: Task 1.1. |
 | 2026-08-10 | 1 | Payload verified via `npm pack --dry-run`. `files` narrowed to targeted token paths (drops `dependency-graph.json` + `contrast-pairs.json`); stories kept on purpose. Correctness issue 1 resolved: 28 components is correct. Issues 2–3 still open. |
+| 2026-08-10 | 1 | v0.1.4 published; token artifacts confirmed in a consumer install. Task 1.0 closed. Kaelig score 1 → 2/10. Next: README reconciliation (issues 2–3), then Task 1.1. |
+| 2026-08-10 | 1 | README reconciled: 28 components, 620 tokens with breakdown, Figma claim reworded to match the checker. Correctness issues 1–3 all closed. Found that `token-reference.json` omits 83 non-`color` primitives — logged as Task 1.3a. Next: Task 1.1. |
+| 2026-08-10 | 1 | Story count reconciled: 184 declared stories, not 176 (issue 5). "Each component has full Storybook coverage" corrected to 27 of 28 — BaseSheet has none (issue 6). Every number in the README is now traced to a generated artifact. Next: Task 1.1. |
