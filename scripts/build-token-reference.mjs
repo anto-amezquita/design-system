@@ -60,7 +60,7 @@ function assertKnownCategory(category, tokenName) {
 // with one level of nesting (success.500) — CSS var names join every path
 // segment with a hyphen either way (--feedback-success-500), so the same
 // recursion produces the right name for both shapes without special-casing.
-function flattenPrimitives(node, groupName, pathSegments = []) {
+export function flattenPrimitives(node, groupName, pathSegments = []) {
   const entries = [];
   for (const [key, value] of Object.entries(node)) {
     if (!value || typeof value !== 'object') continue;

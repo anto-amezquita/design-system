@@ -33,8 +33,10 @@
 }
 
 .skeleton--circle {
-  width: var(--skeleton-circle-size, var(--avatar-size-lg));
-  height: var(--skeleton-circle-size, var(--avatar-size-lg));
+  /* --skeleton-circle-size is a public customization hook for consumers, not
+     a design token — deliberately not registered, deliberately has a fallback. */
+  width: var(--skeleton-circle-size, var(--avatar-size-lg)); /* lint-ignore: no-token-fallback, no-fabricated-token */
+  height: var(--skeleton-circle-size, var(--avatar-size-lg)); /* lint-ignore: no-token-fallback, no-fabricated-token */
   border-radius: var(--border-radius-full);
 }
 

@@ -7,7 +7,7 @@
  * with a reduced rule set; that scope doesn't exist in this standalone
  * package, so it's been dropped here.)
  *
- * Four rules:
+ * Rules:
  *   no-raw-hex                — no hex colour literals; use semantic tokens
  *   no-primitive-tokens       — no --color-warm-*, --color-black, etc.; use semantic tokens
  *   no-hardcoded-motion       — no bare ms timing values; use --duration-* tokens
@@ -15,6 +15,21 @@
  *   no-deep-bem-nesting       — no element-inside-element selectors (.block__el__el)
  *   no-missing-reduced-motion — file-level: any file declaring a transition or
  *                               animation must contain a prefers-reduced-motion block
+ *   no-fabricated-token       — var(--x) where --x doesn't resolve to a real token — not
+ *                               in tokens/global.json, any brand's tokens.json under
+ *                               tokens/brands, or a file under tokens/components; isn't
+ *                               declared elsewhere in the same file (a component-private
+ *                               custom property); and isn't a --radix-* variable set at
+ *                               runtime by Radix Primitives. Reads source files directly
+ *                               rather than the built token-reference.json, so it can't
+ *                               pass on stale data if a real token was added but
+ *                               `npm run tokens` wasn't re-run before linting.
+ *   no-token-fallback          — var(--token, fallback) two-argument form. Fallbacks mask a
+ *                               missing token silently instead of failing loud — this is how
+ *                               27 fabricated tokens shipped undetected in the field study this
+ *                               plan is measured against. A token either exists or it doesn't;
+ *                               a component-private customization hook belongs to
+ *                               no-fabricated-token's allow-list, not a fallback value.
  *
  * To suppress a known legitimate exception on a single line:
  *   padding: 6px;  [lint-ignore: no-hardcoded-spacing]
@@ -27,7 +42,8 @@
  */
 
 import { glob } from 'glob'
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync, readdirSync } from 'fs'
+import { flattenPrimitives } from './build-token-reference.mjs'
 
 // CSS properties that must reference spacing tokens (excludes geometry: width, height, inset, etc.)
 const SPACING_PROPERTIES = new Set([
@@ -49,6 +65,37 @@ const PRIMITIVE_PATTERNS = [
   /var\(--color-white\)/g,
   /var\(--color-teal-[\w-]*\)/g,
 ]
+
+// Radix Primitives sets these on the DOM at runtime (e.g. for animating open/close
+// to a measured size); they're real, just not tokens this system defines.
+const RADIX_VAR_RE = /^--radix-/
+
+// Every name a var(--x) reference is allowed to resolve to, read straight from the
+// DTCG source files rather than tokens/token-reference.json — a built artifact can be
+// stale relative to an uncommitted source edit, and a linter that trusted it could
+// pass a genuinely fabricated token, or fail a real one added in the same change.
+function loadKnownTokenVars() {
+  const names = new Set()
+
+  const globalTokens = JSON.parse(readFileSync('tokens/global.json', 'utf8'))
+  for (const [groupName, groupTokens] of Object.entries(globalTokens)) {
+    for (const entry of flattenPrimitives(groupTokens, groupName)) names.add(entry.name)
+  }
+
+  for (const brand of readdirSync('tokens/brands')) {
+    const path = `tokens/brands/${brand}/tokens.json`
+    for (const key of Object.keys(JSON.parse(readFileSync(path, 'utf8')))) names.add(key)
+  }
+
+  for (const file of readdirSync('tokens/components')) {
+    if (!file.endsWith('.json')) continue
+    for (const key of Object.keys(JSON.parse(readFileSync(`tokens/components/${file}`, 'utf8')))) names.add(key)
+  }
+
+  return new Set([...names].map(name => `--${name}`))
+}
+
+const KNOWN_TOKEN_VARS = loadKnownTokenVars()
 
 // Strips /* ... */ (including comments that span multiple lines) and //
 // line comments from a whole file's content in one pass, preserving every
@@ -181,6 +228,32 @@ const RULES = [
       return matches.length ? matches.map(m => m[0]) : null
     },
   },
+  {
+    id: 'no-token-fallback',
+    description: 'var(--token, fallback) two-argument form — a token either exists or it doesn\'t; a fallback masks the difference. Use no-fabricated-token\'s allow-list for a genuine component-private customization hook.',
+    check(strippedLine) {
+      // Matches up to the first comma after the property name — doesn't need to
+      // parse the fallback expression itself, which may contain its own nested
+      // function calls and commas (var(--x, rgba(0,0,0,0.5))).
+      const matches = [...strippedLine.matchAll(/var\(\s*--[\w-]+\s*,/g)]
+      return matches.length ? matches.map(m => m[0].replace(/,$/, ')')) : null
+    },
+  },
+  {
+    id: 'no-fabricated-token',
+    description: 'var(--x) where --x isn\'t a real token (global.json, any brand\'s tokens.json, or tokens/components/*.json), a --radix-* runtime variable, or declared elsewhere in this same file as a private custom property.',
+    check(strippedLine, fileContext) {
+      const found = []
+      for (const m of strippedLine.matchAll(/var\(\s*(--[\w-]+)/g)) {
+        const name = m[1]
+        if (KNOWN_TOKEN_VARS.has(name)) continue
+        if (RADIX_VAR_RE.test(name)) continue
+        if (fileContext.locallyDeclaredVars.has(name)) continue
+        found.push(name)
+      }
+      return found.length ? found : null
+    },
+  },
 ]
 
 function lintFile(filePath, rules) {
@@ -201,6 +274,18 @@ function lintFile(filePath, rules) {
   const hasReducedMotionBlock = /prefers-reduced-motion/.test(content)
   let motionViolation = null
 
+  // Custom properties this file declares itself (e.g. `--button-glow-color:
+  // rgba(...)`) — a component-private value, not a design token, and
+  // no-fabricated-token shouldn't flag the file referencing its own
+  // declaration. Collected in a first pass so declaration order relative to
+  // usage doesn't matter.
+  const locallyDeclaredVars = new Set()
+  for (const strippedLine of strippedLines) {
+    const pv = parsePropertyValue(strippedLine)
+    if (pv && pv.prop.startsWith('--')) locallyDeclaredVars.add(pv.prop)
+  }
+  const fileContext = { locallyDeclaredVars }
+
   for (let i = 0; i < lines.length; i++) {
     const rawLine = lines[i]
     const strippedLine = strippedLines[i]
@@ -209,7 +294,7 @@ function lintFile(filePath, rules) {
 
     for (const rule of rules) {
       if (ignored.has(rule.id) || ignored.has('all')) continue
-      const found = rule.check(strippedLine)
+      const found = rule.check(strippedLine, fileContext)
       if (found) {
         violations.push({ file: filePath, line: lineNum, rule: rule.id, description: rule.description, found })
       }
