@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-state",
+  "type": "registry:component",
+  "title": "EmptyState",
+  "description": "Placeholder for zero-content states — icon, heading, supporting text, and an optional action",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme",
+    "button"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}

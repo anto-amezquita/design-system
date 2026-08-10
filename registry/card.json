@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card",
+  "type": "registry:component",
+  "title": "Card",
+  "description": "Compound container for grouped content — composed from named sub-components",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "card-background": "#FAFAF9",
+      "card-background-ghost": "#F4F0EB",
+      "card-border": "#E2DDD9",
+      "card-border-width": "1px",
+      "card-border-radius": "8px",
+      "card-padding": "32px",
+      "card-gap": "16px",
+      "card-title-size": "24px",
+      "card-title-weight": "700",
+      "card-description-size": "16px",
+      "card-description-color": "#57534E",
+      "card-shadow": "0 1px 2px 0 rgba(0,0,0,0.05)",
+      "card-shadow-hover": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+      "card-horizontal-media-width": "200px"
+    },
+    "dark": {
+      "card-background": "#1c1917",
+      "card-background-ghost": "#292524",
+      "card-border": "#57534e",
+      "card-border-width": "1px",
+      "card-border-radius": "8px",
+      "card-padding": "32px",
+      "card-gap": "16px",
+      "card-title-size": "24px",
+      "card-title-weight": "700",
+      "card-description-size": "16px",
+      "card-description-color": "#c8c3be",
+      "card-shadow": "0 1px 2px 0 rgba(0,0,0,0.05)",
+      "card-shadow-hover": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+      "card-horizontal-media-width": "200px"
+    }
+  }
+}

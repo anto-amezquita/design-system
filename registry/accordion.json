@@ -1,0 +1,49 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion",
+  "type": "registry:component",
+  "title": "Accordion",
+  "description": "Collapsible content sections with animated expand/collapse; supports single or multi-open modes",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "accordion-border-color": "#E2DDD9",
+      "accordion-border-width": "1px",
+      "accordion-trigger-color": "#0A0A0A",
+      "accordion-trigger-hover-background": "#F4F0EB",
+      "accordion-trigger-padding-x": "24px",
+      "accordion-trigger-padding-y": "16px",
+      "accordion-trigger-font-size": "16px",
+      "accordion-trigger-font-weight": "500",
+      "accordion-content-color": "#57534E",
+      "accordion-content-padding-x": "24px",
+      "accordion-content-padding-bottom": "24px",
+      "accordion-icon-color": "#57534E",
+      "accordion-icon-size": "20px",
+      "accordion-duration-expand": "650ms",
+      "accordion-duration-collapse": "200ms"
+    },
+    "dark": {
+      "accordion-border-color": "#57534e",
+      "accordion-border-width": "1px",
+      "accordion-trigger-color": "#fafaf9",
+      "accordion-trigger-hover-background": "#292524",
+      "accordion-trigger-padding-x": "24px",
+      "accordion-trigger-padding-y": "16px",
+      "accordion-trigger-font-size": "16px",
+      "accordion-trigger-font-weight": "500",
+      "accordion-content-color": "#c8c3be",
+      "accordion-content-padding-x": "24px",
+      "accordion-content-padding-bottom": "24px",
+      "accordion-icon-color": "#c8c3be",
+      "accordion-icon-size": "20px",
+      "accordion-duration-expand": "650ms",
+      "accordion-duration-collapse": "200ms"
+    }
+  }
+}

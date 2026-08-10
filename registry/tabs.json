@@ -1,0 +1,59 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "type": "registry:component",
+  "title": "Tabs",
+  "description": "Segmented view switcher with full keyboard navigation; built on Radix Tabs",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "tabs-trigger-color": "#57534E",
+      "tabs-trigger-color-active": "#0A0A0A",
+      "tabs-trigger-color-hover": "#0A0A0A",
+      "tabs-trigger-background-hover": "#F4F0EB",
+      "tabs-trigger-padding-x": "16px",
+      "tabs-trigger-padding-y": "12px",
+      "tabs-trigger-font-size": "16px",
+      "tabs-trigger-font-weight": "500",
+      "tabs-trigger-gap": "4px",
+      "tabs-indicator-color": "#292524",
+      "tabs-indicator-height": "2px",
+      "tabs-list-border-bottom": "#E2DDD9",
+      "tabs-list-border-width": "1px",
+      "tabs-pill-background-active": "#F4F0EB",
+      "tabs-pill-border-radius": "4px",
+      "tabs-pill-gap": "4px",
+      "tabs-sm-trigger-padding-y": "8px",
+      "tabs-sm-trigger-padding-x": "12px",
+      "tabs-content-padding-top": "16px",
+      "tabs-duration": "200ms"
+    },
+    "dark": {
+      "tabs-trigger-color": "#c8c3be",
+      "tabs-trigger-color-active": "#fafaf9",
+      "tabs-trigger-color-hover": "#fafaf9",
+      "tabs-trigger-background-hover": "#292524",
+      "tabs-trigger-padding-x": "16px",
+      "tabs-trigger-padding-y": "12px",
+      "tabs-trigger-font-size": "16px",
+      "tabs-trigger-font-weight": "500",
+      "tabs-trigger-gap": "4px",
+      "tabs-indicator-color": "#f4f0eb",
+      "tabs-indicator-height": "2px",
+      "tabs-list-border-bottom": "#57534e",
+      "tabs-list-border-width": "1px",
+      "tabs-pill-background-active": "#292524",
+      "tabs-pill-border-radius": "4px",
+      "tabs-pill-gap": "4px",
+      "tabs-sm-trigger-padding-y": "8px",
+      "tabs-sm-trigger-padding-x": "12px",
+      "tabs-content-padding-top": "16px",
+      "tabs-duration": "200ms"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tag",
+  "type": "registry:component",
+  "title": "Tag",
+  "description": "Inline label for categorising or annotating content — non-interactive",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "tag-background": "#F4F0EB",
+      "tag-foreground": "#57534E",
+      "tag-border": "#E2DDD9",
+      "tag-border-width": "1px",
+      "tag-border-radius": "9999px",
+      "tag-padding-x": "12px",
+      "tag-padding-y": "4px",
+      "tag-font-size": "12px",
+      "tag-font-weight": "500",
+      "tag-accent-background": "#292524",
+      "tag-accent-foreground": "#FFFFFF",
+      "tag-accent-border": "#292524",
+      "tag-muted-background": "transparent",
+      "tag-muted-foreground": "#57534E",
+      "tag-muted-border": "#E2DDD9"
+    },
+    "dark": {
+      "tag-background": "#292524",
+      "tag-foreground": "#c8c3be",
+      "tag-border": "#57534e",
+      "tag-border-width": "1px",
+      "tag-border-radius": "9999px",
+      "tag-padding-x": "12px",
+      "tag-padding-y": "4px",
+      "tag-font-size": "12px",
+      "tag-font-weight": "500",
+      "tag-accent-background": "#f4f0eb",
+      "tag-accent-foreground": "#1c1917",
+      "tag-accent-border": "#f4f0eb",
+      "tag-muted-background": "transparent",
+      "tag-muted-foreground": "#c8c3be",
+      "tag-muted-border": "#57534e"
+    }
+  }
+}

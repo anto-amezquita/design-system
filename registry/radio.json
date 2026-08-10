@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio",
+  "type": "registry:component",
+  "title": "Radio",
+  "description": "Single-selection control within a mutually exclusive group",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "radio-size": "24px",
+      "radio-background": "#FAFAF9",
+      "radio-background-checked": "#FAFAF9",
+      "radio-background-disabled": "#F4F0EB",
+      "radio-border": "#A8A29E",
+      "radio-border-width": "1px",
+      "radio-border-hover": "#292524",
+      "radio-indicator-color": "#292524",
+      "radio-indicator-size": "12px",
+      "radio-label-gap": "12px",
+      "radio-label-size": "16px",
+      "radio-label-color": "#0A0A0A",
+      "radio-label-color-disabled": "#57534E",
+      "radio-group-gap": "12px"
+    },
+    "dark": {
+      "radio-size": "24px",
+      "radio-background": "#1c1917",
+      "radio-background-checked": "#1c1917",
+      "radio-background-disabled": "#292524",
+      "radio-border": "#78716c",
+      "radio-border-width": "1px",
+      "radio-border-hover": "#f4f0eb",
+      "radio-indicator-color": "#f4f0eb",
+      "radio-indicator-size": "12px",
+      "radio-label-gap": "12px",
+      "radio-label-size": "16px",
+      "radio-label-color": "#fafaf9",
+      "radio-label-color-disabled": "#c8c3be",
+      "radio-group-gap": "12px"
+    }
+  }
+}

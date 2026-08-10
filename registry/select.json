@@ -1,0 +1,59 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select",
+  "type": "registry:component",
+  "title": "Select",
+  "description": "Dropdown for choosing a single value from a list; supports grouped options",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "select-background": "#FAFAF9",
+      "select-background-item-hover": "#F4F0EB",
+      "select-foreground": "#0A0A0A",
+      "select-border": "#E2DDD9",
+      "select-border-width": "1px",
+      "select-separator-height": "1px",
+      "select-border-focus": "#0A0A0A",
+      "select-border-radius": "4px",
+      "select-padding-x": "16px",
+      "select-padding-y": "12px",
+      "select-font-size": "16px",
+      "select-content-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+      "select-content-border-radius": "8px",
+      "select-placeholder-color": "#57534E",
+      "select-item-padding-x": "16px",
+      "select-item-padding-y": "8px",
+      "select-separator-color": "#E2DDD9",
+      "select-border-hover": "#A8A29E",
+      "select-label-size": "12px",
+      "select-label-weight": "500"
+    },
+    "dark": {
+      "select-background": "#1c1917",
+      "select-background-item-hover": "#292524",
+      "select-foreground": "#fafaf9",
+      "select-border": "#57534e",
+      "select-border-width": "1px",
+      "select-separator-height": "1px",
+      "select-border-focus": "#fafaf9",
+      "select-border-radius": "4px",
+      "select-padding-x": "16px",
+      "select-padding-y": "12px",
+      "select-font-size": "16px",
+      "select-content-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+      "select-content-border-radius": "8px",
+      "select-placeholder-color": "#c8c3be",
+      "select-item-padding-x": "16px",
+      "select-item-padding-y": "8px",
+      "select-separator-color": "#57534e",
+      "select-border-hover": "#78716c",
+      "select-label-size": "12px",
+      "select-label-weight": "500"
+    }
+  }
+}

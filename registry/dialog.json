@@ -1,0 +1,57 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog",
+  "type": "registry:component",
+  "title": "Dialog",
+  "description": "Overlay for tasks or information requiring focused attention",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "dialog-background": "#FAFAF9",
+      "dialog-border": "#E2DDD9",
+      "dialog-border-width": "1px",
+      "dialog-border-radius": "8px",
+      "dialog-padding": "48px",
+      "dialog-gap": "16px",
+      "dialog-max-width": "560px",
+      "dialog-overlay-color": "#E2DDD9",
+      "dialog-title-size": "24px",
+      "dialog-title-weight": "700",
+      "dialog-close-size": "28px",
+      "dialog-close-color": "#57534E",
+      "dialog-close-hover": "#0A0A0A",
+      "dialog-max-width-sm": "480px",
+      "dialog-max-width-lg": "720px",
+      "dialog-max-width-xl": "1024px",
+      "dialog-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+      "dialog-z-index": "400",
+      "dialog-entrance-offset": "8px"
+    },
+    "dark": {
+      "dialog-background": "#1c1917",
+      "dialog-border": "#57534e",
+      "dialog-border-width": "1px",
+      "dialog-border-radius": "8px",
+      "dialog-padding": "48px",
+      "dialog-gap": "16px",
+      "dialog-max-width": "560px",
+      "dialog-overlay-color": "#44403c",
+      "dialog-title-size": "24px",
+      "dialog-title-weight": "700",
+      "dialog-close-size": "28px",
+      "dialog-close-color": "#c8c3be",
+      "dialog-close-hover": "#fafaf9",
+      "dialog-max-width-sm": "480px",
+      "dialog-max-width-lg": "720px",
+      "dialog-max-width-xl": "1024px",
+      "dialog-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+      "dialog-z-index": "400",
+      "dialog-entrance-offset": "8px"
+    }
+  }
+}

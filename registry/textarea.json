@@ -1,0 +1,57 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "type": "registry:component",
+  "title": "Textarea",
+  "description": "Multi-line text entry with label, hint, and error states — mirrors Input API",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "textarea-background": "#FAFAF9",
+      "textarea-background-disabled": "#F4F0EB",
+      "textarea-foreground": "#0A0A0A",
+      "textarea-border": "#E2DDD9",
+      "textarea-border-width": "1px",
+      "textarea-border-hover": "#A8A29E",
+      "textarea-border-focus": "#0A0A0A",
+      "textarea-border-error": "#c0392b",
+      "textarea-border-radius": "4px",
+      "textarea-padding-x": "16px",
+      "textarea-padding-y": "12px",
+      "textarea-font-size": "16px",
+      "textarea-placeholder-color": "#57534E",
+      "textarea-label-size": "14px",
+      "textarea-label-weight": "500",
+      "textarea-label-color": "#0A0A0A",
+      "textarea-hint-size": "12px",
+      "textarea-hint-color": "#57534E",
+      "textarea-error-color": "#c0392b"
+    },
+    "dark": {
+      "textarea-background": "#1c1917",
+      "textarea-background-disabled": "#292524",
+      "textarea-foreground": "#fafaf9",
+      "textarea-border": "#57534e",
+      "textarea-border-width": "1px",
+      "textarea-border-hover": "#78716c",
+      "textarea-border-focus": "#fafaf9",
+      "textarea-border-error": "#f87171",
+      "textarea-border-radius": "4px",
+      "textarea-padding-x": "16px",
+      "textarea-padding-y": "12px",
+      "textarea-font-size": "16px",
+      "textarea-placeholder-color": "#c8c3be",
+      "textarea-label-size": "14px",
+      "textarea-label-weight": "500",
+      "textarea-label-color": "#fafaf9",
+      "textarea-hint-size": "12px",
+      "textarea-hint-color": "#c8c3be",
+      "textarea-error-color": "#f87171"
+    }
+  }
+}

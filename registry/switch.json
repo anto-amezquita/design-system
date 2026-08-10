@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "type": "registry:component",
+  "title": "Switch",
+  "description": "Binary toggle for on/off settings; renders as a styled checkbox under the hood",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "switch-track-width": "44px",
+      "switch-track-height": "24px",
+      "switch-track-background": "#A8A29E",
+      "switch-track-background-checked": "#292524",
+      "switch-track-background-disabled": "#E2DDD9",
+      "switch-track-border-radius": "9999px",
+      "switch-thumb-background": "#FFFFFF",
+      "switch-thumb-size": "16px",
+      "switch-thumb-border-radius": "9999px",
+      "switch-label-gap": "12px",
+      "switch-label-size": "16px",
+      "switch-label-color": "#0A0A0A",
+      "switch-label-color-disabled": "#57534E",
+      "switch-duration": "200ms"
+    },
+    "dark": {
+      "switch-track-width": "44px",
+      "switch-track-height": "24px",
+      "switch-track-background": "#78716c",
+      "switch-track-background-checked": "#f4f0eb",
+      "switch-track-background-disabled": "#44403c",
+      "switch-track-border-radius": "9999px",
+      "switch-thumb-background": "#1c1917",
+      "switch-thumb-size": "16px",
+      "switch-thumb-border-radius": "9999px",
+      "switch-label-gap": "12px",
+      "switch-label-size": "16px",
+      "switch-label-color": "#fafaf9",
+      "switch-label-color-disabled": "#c8c3be",
+      "switch-duration": "200ms"
+    }
+  }
+}

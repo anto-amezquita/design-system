@@ -1,0 +1,63 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "type": "registry:component",
+  "title": "Input",
+  "description": "Labelled single-line text entry with hint and error states",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "input-background": "#FAFAF9",
+      "input-background-disabled": "#F4F0EB",
+      "input-foreground": "#0A0A0A",
+      "input-border": "#E2DDD9",
+      "input-border-width": "1px",
+      "input-border-hover": "#A8A29E",
+      "input-border-focus": "#0A0A0A",
+      "input-border-error": "#c0392b",
+      "input-border-radius": "4px",
+      "input-padding-x": "16px",
+      "input-padding-y": "12px",
+      "input-font-size": "16px",
+      "input-placeholder-color": "#57534E",
+      "input-label-size": "14px",
+      "input-label-weight": "500",
+      "input-label-color": "#0A0A0A",
+      "input-hint-size": "12px",
+      "input-hint-color": "#57534E",
+      "input-error-color": "#c0392b",
+      "input-prefix-color": "#57534E",
+      "input-suffix-color": "#57534E",
+      "input-clear-color": "#57534E"
+    },
+    "dark": {
+      "input-background": "#1c1917",
+      "input-background-disabled": "#292524",
+      "input-foreground": "#fafaf9",
+      "input-border": "#57534e",
+      "input-border-width": "1px",
+      "input-border-hover": "#78716c",
+      "input-border-focus": "#fafaf9",
+      "input-border-error": "#f87171",
+      "input-border-radius": "4px",
+      "input-padding-x": "16px",
+      "input-padding-y": "12px",
+      "input-font-size": "16px",
+      "input-placeholder-color": "#c8c3be",
+      "input-label-size": "14px",
+      "input-label-weight": "500",
+      "input-label-color": "#fafaf9",
+      "input-hint-size": "12px",
+      "input-hint-color": "#c8c3be",
+      "input-error-color": "#f87171",
+      "input-prefix-color": "#c8c3be",
+      "input-suffix-color": "#c8c3be",
+      "input-clear-color": "#c8c3be"
+    }
+  }
+}

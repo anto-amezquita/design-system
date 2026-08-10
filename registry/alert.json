@@ -1,0 +1,65 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "type": "registry:component",
+  "title": "Alert",
+  "description": "Contextual inline feedback message with semantic severity levels (info, success, warning, error)",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "alert-padding-x": "24px",
+      "alert-padding-y": "16px",
+      "alert-gap": "12px",
+      "alert-border-radius": "8px",
+      "alert-border-width": "1px",
+      "alert-font-size": "16px",
+      "alert-title-weight": "600",
+      "alert-icon-size": "20px",
+      "alert-content-gap": "4px",
+      "alert-close-offset": "8px",
+      "alert-exit-distance": "4px",
+      "alert-success-background": "#F0FDF4",
+      "alert-success-foreground": "#15803D",
+      "alert-success-border": "#16A34A",
+      "alert-warning-background": "#FFFBEB",
+      "alert-warning-foreground": "#B45309",
+      "alert-warning-border": "#D97706",
+      "alert-error-background": "#FEF2F2",
+      "alert-error-foreground": "#a93226",
+      "alert-error-border": "#c0392b",
+      "alert-info-background": "#EFF6FF",
+      "alert-info-foreground": "#1D4ED8",
+      "alert-info-border": "#2563EB"
+    },
+    "dark": {
+      "alert-padding-x": "24px",
+      "alert-padding-y": "16px",
+      "alert-gap": "12px",
+      "alert-border-radius": "8px",
+      "alert-border-width": "1px",
+      "alert-font-size": "16px",
+      "alert-title-weight": "600",
+      "alert-icon-size": "20px",
+      "alert-content-gap": "4px",
+      "alert-close-offset": "8px",
+      "alert-exit-distance": "4px",
+      "alert-success-background": "#292524",
+      "alert-success-foreground": "#f0fdf4",
+      "alert-success-border": "#4ade80",
+      "alert-warning-background": "#292524",
+      "alert-warning-foreground": "#fffbeb",
+      "alert-warning-border": "#fcd34d",
+      "alert-error-background": "#292524",
+      "alert-error-foreground": "#f87171",
+      "alert-error-border": "#f87171",
+      "alert-info-background": "#292524",
+      "alert-info-foreground": "#eff6ff",
+      "alert-info-border": "#60a5fa"
+    }
+  }
+}

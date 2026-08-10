@@ -1,0 +1,67 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "type": "registry:component",
+  "title": "Badge",
+  "description": "Small status indicator or numeric count overlay attached to another element",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "badge-font-size": "12px",
+      "badge-font-weight": "500",
+      "badge-padding-x": "8px",
+      "badge-padding-y": "4px",
+      "badge-border-radius": "9999px",
+      "badge-border-width": "1px",
+      "badge-gap": "4px",
+      "badge-count-size": "20px",
+      "badge-dot-size": "8px",
+      "badge-neutral-background": "#F4F0EB",
+      "badge-neutral-foreground": "#57534E",
+      "badge-neutral-border": "#E2DDD9",
+      "badge-success-background": "#F0FDF4",
+      "badge-success-foreground": "#15803D",
+      "badge-success-border": "#16A34A",
+      "badge-warning-background": "#FFFBEB",
+      "badge-warning-foreground": "#B45309",
+      "badge-warning-border": "#D97706",
+      "badge-error-background": "#FEF2F2",
+      "badge-error-foreground": "#a93226",
+      "badge-error-border": "#c0392b",
+      "badge-info-background": "#EFF6FF",
+      "badge-info-foreground": "#1D4ED8",
+      "badge-info-border": "#2563EB"
+    },
+    "dark": {
+      "badge-font-size": "12px",
+      "badge-font-weight": "500",
+      "badge-padding-x": "8px",
+      "badge-padding-y": "4px",
+      "badge-border-radius": "9999px",
+      "badge-border-width": "1px",
+      "badge-gap": "4px",
+      "badge-count-size": "20px",
+      "badge-dot-size": "8px",
+      "badge-neutral-background": "#292524",
+      "badge-neutral-foreground": "#c8c3be",
+      "badge-neutral-border": "#57534e",
+      "badge-success-background": "#292524",
+      "badge-success-foreground": "#f0fdf4",
+      "badge-success-border": "#4ade80",
+      "badge-warning-background": "#292524",
+      "badge-warning-foreground": "#fffbeb",
+      "badge-warning-border": "#fcd34d",
+      "badge-error-background": "#292524",
+      "badge-error-foreground": "#f87171",
+      "badge-error-border": "#f87171",
+      "badge-info-background": "#292524",
+      "badge-info-foreground": "#eff6ff",
+      "badge-info-border": "#60a5fa"
+    }
+  }
+}

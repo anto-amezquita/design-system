@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "type": "registry:component",
+  "title": "Avatar",
+  "description": "User profile picture with fallback to initials when no image is provided",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "avatar-size-sm": "24px",
+      "avatar-size-md": "32px",
+      "avatar-size-lg": "40px",
+      "avatar-size-xl": "64px",
+      "avatar-border-radius": "9999px",
+      "avatar-border": "#E2DDD9",
+      "avatar-border-width": "1px",
+      "avatar-ring-width": "2px",
+      "avatar-ring-color": "#0A0A0A",
+      "avatar-fallback-background": "#F4F0EB",
+      "avatar-fallback-foreground": "#57534E",
+      "avatar-fallback-font-size": "14px",
+      "avatar-fallback-font-weight": "600",
+      "avatar-group-overlap": "-8px"
+    },
+    "dark": {
+      "avatar-size-sm": "24px",
+      "avatar-size-md": "32px",
+      "avatar-size-lg": "40px",
+      "avatar-size-xl": "64px",
+      "avatar-border-radius": "9999px",
+      "avatar-border": "#57534e",
+      "avatar-border-width": "1px",
+      "avatar-ring-width": "2px",
+      "avatar-ring-color": "#fafaf9",
+      "avatar-fallback-background": "#292524",
+      "avatar-fallback-foreground": "#c8c3be",
+      "avatar-fallback-font-size": "14px",
+      "avatar-fallback-font-weight": "600",
+      "avatar-group-overlap": "-8px"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "type": "registry:component",
+  "title": "Checkbox",
+  "description": "Single boolean selection with an associated label; supports indeterminate state",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "checkbox-size": "24px",
+      "checkbox-background": "#FAFAF9",
+      "checkbox-background-checked": "#292524",
+      "checkbox-background-disabled": "#F4F0EB",
+      "checkbox-border": "#A8A29E",
+      "checkbox-border-width": "1px",
+      "checkbox-border-hover": "#292524",
+      "checkbox-border-radius": "4px",
+      "checkbox-foreground-checked": "#FFFFFF",
+      "checkbox-foreground-indeterminate": "#FFFFFF",
+      "checkbox-label-gap": "12px",
+      "checkbox-label-size": "16px",
+      "checkbox-label-color": "#0A0A0A",
+      "checkbox-label-color-disabled": "#57534E"
+    },
+    "dark": {
+      "checkbox-size": "24px",
+      "checkbox-background": "#1c1917",
+      "checkbox-background-checked": "#f4f0eb",
+      "checkbox-background-disabled": "#292524",
+      "checkbox-border": "#78716c",
+      "checkbox-border-width": "1px",
+      "checkbox-border-hover": "#f4f0eb",
+      "checkbox-border-radius": "4px",
+      "checkbox-foreground-checked": "#1c1917",
+      "checkbox-foreground-indeterminate": "#1c1917",
+      "checkbox-label-gap": "12px",
+      "checkbox-label-size": "16px",
+      "checkbox-label-color": "#fafaf9",
+      "checkbox-label-color-disabled": "#c8c3be"
+    }
+  }
+}

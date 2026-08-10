@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero",
+  "type": "registry:component",
+  "title": "Hero",
+  "description": "Page-level section header with eyebrow, title, lead text, and an action slot",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "hero-background": "#FAFAF9",
+      "hero-padding-y": "96px",
+      "hero-padding-x": "32px",
+      "hero-gap": "24px",
+      "hero-eyebrow-size": "14px",
+      "hero-eyebrow-weight": "600",
+      "hero-eyebrow-color": "#57534E",
+      "hero-eyebrow-spacing": "0.01em",
+      "hero-title-weight": "800",
+      "hero-title-color": "#0A0A0A",
+      "hero-lead-size": "20px",
+      "hero-lead-color": "#57534E",
+      "hero-max-width": "800px",
+      "hero-lead-max-width": "60ch"
+    },
+    "dark": {
+      "hero-background": "#1c1917",
+      "hero-padding-y": "96px",
+      "hero-padding-x": "32px",
+      "hero-gap": "24px",
+      "hero-eyebrow-size": "14px",
+      "hero-eyebrow-weight": "600",
+      "hero-eyebrow-color": "#c8c3be",
+      "hero-eyebrow-spacing": "0.01em",
+      "hero-title-weight": "800",
+      "hero-title-color": "#fafaf9",
+      "hero-lead-size": "20px",
+      "hero-lead-color": "#c8c3be",
+      "hero-max-width": "800px",
+      "hero-lead-max-width": "60ch"
+    }
+  }
+}

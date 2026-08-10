@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "type": "registry:component",
+  "title": "Spinner",
+  "description": "Indeterminate loading indicator for in-progress operations",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "spinner-size-sm": "16px",
+      "spinner-size-md": "20px",
+      "spinner-size-lg": "24px",
+      "spinner-stroke-width": "2px",
+      "spinner-duration": "700ms"
+    },
+    "dark": {
+      "spinner-size-sm": "16px",
+      "spinner-size-md": "20px",
+      "spinner-size-lg": "24px",
+      "spinner-stroke-width": "2px",
+      "spinner-duration": "700ms"
+    }
+  }
+}

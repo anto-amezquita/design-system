@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "data-table",
+  "type": "registry:component",
+  "title": "DataTable",
+  "description": "Sortable, filterable, paginated table for structured datasets",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme",
+    "checkbox",
+    "empty-state",
+    "pagination",
+    "table"
+  ],
+  "cssVars": {
+    "light": {
+      "datatable-gap": "16px",
+      "datatable-footer-gap": "16px",
+      "datatable-empty-padding": "32px"
+    },
+    "dark": {
+      "datatable-gap": "16px",
+      "datatable-footer-gap": "16px",
+      "datatable-empty-padding": "32px"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table",
+  "type": "registry:component",
+  "title": "Table",
+  "description": "Static data table with semantic header, body, and row structure",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "table-cell-padding-x": "16px",
+      "table-cell-padding-y": "12px",
+      "table-header-background": "#F4F0EB",
+      "table-header-color": "#57534E",
+      "table-header-font-size": "12px",
+      "table-header-font-weight": "600",
+      "table-body-color": "#0A0A0A",
+      "table-body-font-size": "16px",
+      "table-row-border": "#E2DDD9",
+      "table-row-border-width": "1px",
+      "table-row-hover-background": "#F4F0EB",
+      "table-stripe-background": "#F4F0EB",
+      "table-sort-icon-color": "#57534E",
+      "table-sort-icon-color-active": "#292524",
+      "table-selected-row-background": "#E2DDD9",
+      "table-border-radius": "8px",
+      "table-sort-icon-gap": "4px"
+    },
+    "dark": {
+      "table-cell-padding-x": "16px",
+      "table-cell-padding-y": "12px",
+      "table-header-background": "#292524",
+      "table-header-color": "#c8c3be",
+      "table-header-font-size": "12px",
+      "table-header-font-weight": "600",
+      "table-body-color": "#fafaf9",
+      "table-body-font-size": "16px",
+      "table-row-border": "#57534e",
+      "table-row-border-width": "1px",
+      "table-row-hover-background": "#292524",
+      "table-stripe-background": "#292524",
+      "table-sort-icon-color": "#c8c3be",
+      "table-sort-icon-color-active": "#f4f0eb",
+      "table-selected-row-background": "#44403c",
+      "table-border-radius": "8px",
+      "table-sort-icon-gap": "4px"
+    }
+  }
+}

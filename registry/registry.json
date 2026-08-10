@@ -1,0 +1,1575 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "@amezquita/design-system",
+  "homepage": "https://amezquita.dk",
+  "items": [
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Design tokens",
+      "description": "114 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
+      "cssVars": {
+        "light": {
+          "color-neutral-50": "#FAFAF9",
+          "color-neutral-100": "#F4F0EB",
+          "color-neutral-200": "#E2DDD9",
+          "color-neutral-300": "#C8C3BE",
+          "color-neutral-400": "#A8A29E",
+          "color-neutral-500": "#78716C",
+          "color-neutral-600": "#57534E",
+          "color-neutral-700": "#44403C",
+          "color-neutral-800": "#292524",
+          "color-neutral-900": "#1C1917",
+          "color-surface-primary": "#FAFAF9",
+          "color-surface-secondary": "#F4F0EB",
+          "color-surface-tertiary": "#E2DDD9",
+          "color-surface-inverse": "#1C1917",
+          "color-surface-spotlight": "#1C1917",
+          "color-text-primary": "#0A0A0A",
+          "color-text-secondary": "#57534E",
+          "color-text-inverse": "#FAFAF9",
+          "color-text-frozen-primary": "#1C1917",
+          "color-text-frozen-secondary": "#57534E",
+          "color-accent-default": "#292524",
+          "color-accent-hover": "#1C1917",
+          "color-accent-bold": "#15616D",
+          "color-accent-bold-hover": "#0F4750",
+          "color-accent-foreground": "#FFFFFF",
+          "color-accent-glow": "#15616D33",
+          "color-border-default": "#E2DDD9",
+          "color-border-strong": "#A8A29E",
+          "color-border-focus": "#0A0A0A",
+          "color-curtain": "#C8C3BE",
+          "color-feedback-error": "#c0392b",
+          "color-feedback-error-background": "#FEF2F2",
+          "color-feedback-error-foreground": "#a93226",
+          "color-feedback-error-border": "#c0392b",
+          "color-feedback-success-background": "#F0FDF4",
+          "color-feedback-success-foreground": "#15803D",
+          "color-feedback-success-border": "#16A34A",
+          "color-feedback-warning-background": "#FFFBEB",
+          "color-feedback-warning-foreground": "#B45309",
+          "color-feedback-warning-border": "#D97706",
+          "color-feedback-info-background": "#EFF6FF",
+          "color-feedback-info-foreground": "#1D4ED8",
+          "color-feedback-info-border": "#2563EB",
+          "color-skeleton-base": "#E2DDD9",
+          "color-skeleton-highlight": "#F4F0EB",
+          "duration-skeleton": "400ms",
+          "focus-ring-width": "2px",
+          "focus-ring-offset": "4px",
+          "shadow-card": "0 1px 2px 0 rgba(0,0,0,0.05)",
+          "shadow-card-hover": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+          "shadow-dropdown": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+          "shadow-dialog": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+          "shadow-toast": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+          "z-sticky": "100",
+          "z-dropdown": "200",
+          "z-overlay": "300",
+          "z-modal": "400",
+          "z-toast": "500",
+          "z-tooltip": "600",
+          "size-icon-xs": "12px",
+          "size-icon-sm": "16px",
+          "size-icon-md": "20px",
+          "size-icon-lg": "24px",
+          "size-icon-xl": "32px",
+          "duration-spin": "700ms",
+          "font-family-base": "'Schibsted Grotesk', sans-serif",
+          "font-family-heading": "'Schibsted Grotesk', sans-serif",
+          "font-family-mono": "'JetBrains Mono', monospace",
+          "font-size-body": "18px",
+          "font-size-small": "14px",
+          "font-size-label": "12px",
+          "font-size-micro": "10px",
+          "font-size-lead": "24px",
+          "font-size-h1": "64px",
+          "font-size-display": "clamp(2rem, 0.75rem + 5vw, 5rem)",
+          "font-size-h1-fluid": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
+          "font-size-h2": "48px",
+          "font-size-h2-fluid": "clamp(1.375rem, 0.75rem + 2.5vw, 3rem)",
+          "font-size-h3": "32px",
+          "font-size-h3-fluid": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
+          "font-size-h4": "24px",
+          "font-weight-body": "400",
+          "font-weight-heading": "600",
+          "font-weight-label": "600",
+          "font-weight-display": "600",
+          "line-height-display": "1.1",
+          "line-height-body": "1.5",
+          "line-height-heading": "1.2",
+          "letter-spacing-heading": "-0.02em",
+          "letter-spacing-subheading": "-0.01em",
+          "letter-spacing-body": "0",
+          "letter-spacing-label": "0.01em",
+          "letter-spacing-wide": "0.08em",
+          "space-layout-margin": "clamp(1.25rem, 4vw, 2rem)",
+          "space-section-gap": "clamp(3rem, 8vw, 5rem)",
+          "space-component-gap": "24px",
+          "space-element-gap": "16px",
+          "space-inline-gap": "8px",
+          "space-label-gap": "12px",
+          "border-radius-component": "8px",
+          "border-radius-interactive": "4px",
+          "border-radius-image": "0.75rem",
+          "border-radius-pill": "9999px",
+          "duration-interaction": "200ms",
+          "duration-transition": "400ms",
+          "duration-entrance": "600ms",
+          "duration-reveal": "400ms",
+          "duration-reveal-delay": "300ms",
+          "opacity-overlay": "0.3",
+          "opacity-disabled": "0.1",
+          "space-tight-gap": "4px",
+          "space-layout-max-width": "1200px",
+          "border-width-interactive": "1px",
+          "size-dialog-default": "560px"
+        },
+        "dark": {
+          "color-neutral-50": "#1c1917",
+          "color-neutral-100": "#292524",
+          "color-neutral-200": "#44403c",
+          "color-neutral-300": "#57534e",
+          "color-neutral-400": "#78716c",
+          "color-neutral-500": "#a8a29e",
+          "color-neutral-600": "#c8c3be",
+          "color-neutral-700": "#e2ddd9",
+          "color-neutral-800": "#f4f0eb",
+          "color-neutral-900": "#fafaf9",
+          "color-surface-primary": "#1c1917",
+          "color-surface-secondary": "#292524",
+          "color-surface-tertiary": "#44403c",
+          "color-surface-inverse": "#fafaf9",
+          "color-surface-spotlight": "#0F4750",
+          "color-text-primary": "#fafaf9",
+          "color-text-secondary": "#c8c3be",
+          "color-text-inverse": "#1c1917",
+          "color-text-frozen-primary": "#1C1917",
+          "color-text-frozen-secondary": "#57534E",
+          "color-accent-default": "#f4f0eb",
+          "color-accent-hover": "#fafaf9",
+          "color-accent-bold": "#4FA3B0",
+          "color-accent-bold-hover": "#6FB8C3",
+          "color-accent-foreground": "#1c1917",
+          "color-accent-glow": "#15616D80",
+          "color-border-default": "#57534e",
+          "color-border-strong": "#78716c",
+          "color-border-focus": "#fafaf9",
+          "color-curtain": "#44403c",
+          "color-feedback-error": "#f87171",
+          "color-feedback-error-background": "#292524",
+          "color-feedback-error-foreground": "#f87171",
+          "color-feedback-error-border": "#f87171",
+          "color-feedback-success-background": "#292524",
+          "color-feedback-success-foreground": "#f0fdf4",
+          "color-feedback-success-border": "#4ade80",
+          "color-feedback-warning-background": "#292524",
+          "color-feedback-warning-foreground": "#fffbeb",
+          "color-feedback-warning-border": "#fcd34d",
+          "color-feedback-info-background": "#292524",
+          "color-feedback-info-foreground": "#eff6ff",
+          "color-feedback-info-border": "#60a5fa",
+          "color-skeleton-base": "#44403c",
+          "color-skeleton-highlight": "#292524",
+          "duration-skeleton": "400ms",
+          "focus-ring-width": "2px",
+          "focus-ring-offset": "4px",
+          "shadow-card": "0 1px 2px 0 rgba(0,0,0,0.05)",
+          "shadow-card-hover": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+          "shadow-dropdown": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+          "shadow-dialog": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+          "shadow-toast": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+          "z-sticky": "100",
+          "z-dropdown": "200",
+          "z-overlay": "300",
+          "z-modal": "400",
+          "z-toast": "500",
+          "z-tooltip": "600",
+          "size-icon-xs": "12px",
+          "size-icon-sm": "16px",
+          "size-icon-md": "20px",
+          "size-icon-lg": "24px",
+          "size-icon-xl": "32px",
+          "duration-spin": "700ms",
+          "font-family-base": "'Schibsted Grotesk', sans-serif",
+          "font-family-heading": "'Schibsted Grotesk', sans-serif",
+          "font-family-mono": "'JetBrains Mono', monospace",
+          "font-size-body": "18px",
+          "font-size-small": "14px",
+          "font-size-label": "12px",
+          "font-size-micro": "10px",
+          "font-size-lead": "24px",
+          "font-size-h1": "64px",
+          "font-size-display": "clamp(2rem, 0.75rem + 5vw, 5rem)",
+          "font-size-h1-fluid": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
+          "font-size-h2": "48px",
+          "font-size-h2-fluid": "clamp(1.375rem, 0.75rem + 2.5vw, 3rem)",
+          "font-size-h3": "32px",
+          "font-size-h3-fluid": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
+          "font-size-h4": "24px",
+          "font-weight-body": "400",
+          "font-weight-heading": "600",
+          "font-weight-label": "600",
+          "font-weight-display": "600",
+          "line-height-display": "1.1",
+          "line-height-body": "1.5",
+          "line-height-heading": "1.2",
+          "letter-spacing-heading": "-0.02em",
+          "letter-spacing-subheading": "-0.01em",
+          "letter-spacing-body": "0",
+          "letter-spacing-label": "0.01em",
+          "letter-spacing-wide": "0.08em",
+          "space-layout-margin": "clamp(1.25rem, 4vw, 2rem)",
+          "space-section-gap": "clamp(3rem, 8vw, 5rem)",
+          "space-component-gap": "24px",
+          "space-element-gap": "16px",
+          "space-inline-gap": "8px",
+          "space-label-gap": "12px",
+          "border-radius-component": "8px",
+          "border-radius-interactive": "4px",
+          "border-radius-image": "0.75rem",
+          "border-radius-pill": "9999px",
+          "duration-interaction": "200ms",
+          "duration-transition": "400ms",
+          "duration-entrance": "600ms",
+          "duration-reveal": "400ms",
+          "duration-reveal-delay": "300ms",
+          "opacity-overlay": "0.3",
+          "opacity-disabled": "0.1",
+          "space-tight-gap": "4px",
+          "space-layout-max-width": "1200px",
+          "border-width-interactive": "1px",
+          "size-dialog-default": "560px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "avatar",
+      "type": "registry:component",
+      "title": "Avatar",
+      "description": "User profile picture with fallback to initials when no image is provided",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "avatar-size-sm": "24px",
+          "avatar-size-md": "32px",
+          "avatar-size-lg": "40px",
+          "avatar-size-xl": "64px",
+          "avatar-border-radius": "9999px",
+          "avatar-border": "#E2DDD9",
+          "avatar-border-width": "1px",
+          "avatar-ring-width": "2px",
+          "avatar-ring-color": "#0A0A0A",
+          "avatar-fallback-background": "#F4F0EB",
+          "avatar-fallback-foreground": "#57534E",
+          "avatar-fallback-font-size": "14px",
+          "avatar-fallback-font-weight": "600",
+          "avatar-group-overlap": "-8px"
+        },
+        "dark": {
+          "avatar-size-sm": "24px",
+          "avatar-size-md": "32px",
+          "avatar-size-lg": "40px",
+          "avatar-size-xl": "64px",
+          "avatar-border-radius": "9999px",
+          "avatar-border": "#57534e",
+          "avatar-border-width": "1px",
+          "avatar-ring-width": "2px",
+          "avatar-ring-color": "#fafaf9",
+          "avatar-fallback-background": "#292524",
+          "avatar-fallback-foreground": "#c8c3be",
+          "avatar-fallback-font-size": "14px",
+          "avatar-fallback-font-weight": "600",
+          "avatar-group-overlap": "-8px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "badge",
+      "type": "registry:component",
+      "title": "Badge",
+      "description": "Small status indicator or numeric count overlay attached to another element",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "badge-font-size": "12px",
+          "badge-font-weight": "500",
+          "badge-padding-x": "8px",
+          "badge-padding-y": "4px",
+          "badge-border-radius": "9999px",
+          "badge-border-width": "1px",
+          "badge-gap": "4px",
+          "badge-count-size": "20px",
+          "badge-dot-size": "8px",
+          "badge-neutral-background": "#F4F0EB",
+          "badge-neutral-foreground": "#57534E",
+          "badge-neutral-border": "#E2DDD9",
+          "badge-success-background": "#F0FDF4",
+          "badge-success-foreground": "#15803D",
+          "badge-success-border": "#16A34A",
+          "badge-warning-background": "#FFFBEB",
+          "badge-warning-foreground": "#B45309",
+          "badge-warning-border": "#D97706",
+          "badge-error-background": "#FEF2F2",
+          "badge-error-foreground": "#a93226",
+          "badge-error-border": "#c0392b",
+          "badge-info-background": "#EFF6FF",
+          "badge-info-foreground": "#1D4ED8",
+          "badge-info-border": "#2563EB"
+        },
+        "dark": {
+          "badge-font-size": "12px",
+          "badge-font-weight": "500",
+          "badge-padding-x": "8px",
+          "badge-padding-y": "4px",
+          "badge-border-radius": "9999px",
+          "badge-border-width": "1px",
+          "badge-gap": "4px",
+          "badge-count-size": "20px",
+          "badge-dot-size": "8px",
+          "badge-neutral-background": "#292524",
+          "badge-neutral-foreground": "#c8c3be",
+          "badge-neutral-border": "#57534e",
+          "badge-success-background": "#292524",
+          "badge-success-foreground": "#f0fdf4",
+          "badge-success-border": "#4ade80",
+          "badge-warning-background": "#292524",
+          "badge-warning-foreground": "#fffbeb",
+          "badge-warning-border": "#fcd34d",
+          "badge-error-background": "#292524",
+          "badge-error-foreground": "#f87171",
+          "badge-error-border": "#f87171",
+          "badge-info-background": "#292524",
+          "badge-info-foreground": "#eff6ff",
+          "badge-info-border": "#60a5fa"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "button",
+      "type": "registry:component",
+      "title": "Button",
+      "description": "Trigger for user actions; renders as `<button>` or `<a>` depending on context",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme",
+        "spinner"
+      ],
+      "cssVars": {
+        "light": {
+          "button-padding-x": "24px",
+          "button-padding-y": "12px",
+          "button-font-size": "16px",
+          "button-font-weight": "500",
+          "button-border-radius": "9999px",
+          "button-border-width": "1px",
+          "button-outline-border-width": "2px",
+          "button-duration": "200ms",
+          "button-primary-background": "#292524",
+          "button-primary-foreground": "#FFFFFF",
+          "button-primary-border": "#292524",
+          "button-primary-background-hover": "#1C1917",
+          "button-secondary-background": "transparent",
+          "button-secondary-foreground": "#292524",
+          "button-secondary-border": "#292524",
+          "button-secondary-background-hover": "#292524",
+          "button-secondary-foreground-hover": "#FFFFFF",
+          "button-ghost-background": "transparent",
+          "button-ghost-foreground": "#0A0A0A",
+          "button-ghost-border": "transparent",
+          "button-ghost-background-hover": "#F4F0EB",
+          "button-icon-gap": "8px",
+          "button-icon-size": "20px",
+          "button-spinner-duration": "750ms",
+          "button-wipe-duration-enter": "550ms",
+          "button-wipe-duration-curve": "220ms",
+          "button-wipe-duration-exit": "400ms",
+          "button-wipe-duration-curve-out": "180ms",
+          "button-arrow-nudge": "2px",
+          "button-glow-size": "52px"
+        },
+        "dark": {
+          "button-padding-x": "24px",
+          "button-padding-y": "12px",
+          "button-font-size": "16px",
+          "button-font-weight": "500",
+          "button-border-radius": "9999px",
+          "button-border-width": "1px",
+          "button-outline-border-width": "2px",
+          "button-duration": "200ms",
+          "button-primary-background": "#f4f0eb",
+          "button-primary-foreground": "#1c1917",
+          "button-primary-border": "#f4f0eb",
+          "button-primary-background-hover": "#fafaf9",
+          "button-secondary-background": "transparent",
+          "button-secondary-foreground": "#a8a29e",
+          "button-secondary-border": "#a8a29e",
+          "button-secondary-background-hover": "#a8a29e",
+          "button-secondary-foreground-hover": "#1c1917",
+          "button-ghost-background": "transparent",
+          "button-ghost-foreground": "#fafaf9",
+          "button-ghost-border": "transparent",
+          "button-ghost-background-hover": "#292524",
+          "button-icon-gap": "8px",
+          "button-icon-size": "20px",
+          "button-spinner-duration": "750ms",
+          "button-wipe-duration-enter": "550ms",
+          "button-wipe-duration-curve": "220ms",
+          "button-wipe-duration-exit": "400ms",
+          "button-wipe-duration-curve-out": "180ms",
+          "button-arrow-nudge": "2px",
+          "button-glow-size": "52px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "checkbox",
+      "type": "registry:component",
+      "title": "Checkbox",
+      "description": "Single boolean selection with an associated label; supports indeterminate state",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "checkbox-size": "24px",
+          "checkbox-background": "#FAFAF9",
+          "checkbox-background-checked": "#292524",
+          "checkbox-background-disabled": "#F4F0EB",
+          "checkbox-border": "#A8A29E",
+          "checkbox-border-width": "1px",
+          "checkbox-border-hover": "#292524",
+          "checkbox-border-radius": "4px",
+          "checkbox-foreground-checked": "#FFFFFF",
+          "checkbox-foreground-indeterminate": "#FFFFFF",
+          "checkbox-label-gap": "12px",
+          "checkbox-label-size": "16px",
+          "checkbox-label-color": "#0A0A0A",
+          "checkbox-label-color-disabled": "#57534E"
+        },
+        "dark": {
+          "checkbox-size": "24px",
+          "checkbox-background": "#1c1917",
+          "checkbox-background-checked": "#f4f0eb",
+          "checkbox-background-disabled": "#292524",
+          "checkbox-border": "#78716c",
+          "checkbox-border-width": "1px",
+          "checkbox-border-hover": "#f4f0eb",
+          "checkbox-border-radius": "4px",
+          "checkbox-foreground-checked": "#1c1917",
+          "checkbox-foreground-indeterminate": "#1c1917",
+          "checkbox-label-gap": "12px",
+          "checkbox-label-size": "16px",
+          "checkbox-label-color": "#fafaf9",
+          "checkbox-label-color-disabled": "#c8c3be"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "input",
+      "type": "registry:component",
+      "title": "Input",
+      "description": "Labelled single-line text entry with hint and error states",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "input-background": "#FAFAF9",
+          "input-background-disabled": "#F4F0EB",
+          "input-foreground": "#0A0A0A",
+          "input-border": "#E2DDD9",
+          "input-border-width": "1px",
+          "input-border-hover": "#A8A29E",
+          "input-border-focus": "#0A0A0A",
+          "input-border-error": "#c0392b",
+          "input-border-radius": "4px",
+          "input-padding-x": "16px",
+          "input-padding-y": "12px",
+          "input-font-size": "16px",
+          "input-placeholder-color": "#57534E",
+          "input-label-size": "14px",
+          "input-label-weight": "500",
+          "input-label-color": "#0A0A0A",
+          "input-hint-size": "12px",
+          "input-hint-color": "#57534E",
+          "input-error-color": "#c0392b",
+          "input-prefix-color": "#57534E",
+          "input-suffix-color": "#57534E",
+          "input-clear-color": "#57534E"
+        },
+        "dark": {
+          "input-background": "#1c1917",
+          "input-background-disabled": "#292524",
+          "input-foreground": "#fafaf9",
+          "input-border": "#57534e",
+          "input-border-width": "1px",
+          "input-border-hover": "#78716c",
+          "input-border-focus": "#fafaf9",
+          "input-border-error": "#f87171",
+          "input-border-radius": "4px",
+          "input-padding-x": "16px",
+          "input-padding-y": "12px",
+          "input-font-size": "16px",
+          "input-placeholder-color": "#c8c3be",
+          "input-label-size": "14px",
+          "input-label-weight": "500",
+          "input-label-color": "#fafaf9",
+          "input-hint-size": "12px",
+          "input-hint-color": "#c8c3be",
+          "input-error-color": "#f87171",
+          "input-prefix-color": "#c8c3be",
+          "input-suffix-color": "#c8c3be",
+          "input-clear-color": "#c8c3be"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "label",
+      "type": "registry:component",
+      "title": "Label",
+      "description": "Standalone form label element — used when a label must be decoupled from its input",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "label-font-size": "14px",
+          "label-font-weight": "500",
+          "label-color": "#0A0A0A",
+          "label-color-disabled": "#57534E",
+          "label-required-color": "#c0392b",
+          "label-gap": "8px"
+        },
+        "dark": {
+          "label-font-size": "14px",
+          "label-font-weight": "500",
+          "label-color": "#fafaf9",
+          "label-color-disabled": "#c8c3be",
+          "label-required-color": "#f87171",
+          "label-gap": "8px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "radio",
+      "type": "registry:component",
+      "title": "Radio",
+      "description": "Single-selection control within a mutually exclusive group",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "radio-size": "24px",
+          "radio-background": "#FAFAF9",
+          "radio-background-checked": "#FAFAF9",
+          "radio-background-disabled": "#F4F0EB",
+          "radio-border": "#A8A29E",
+          "radio-border-width": "1px",
+          "radio-border-hover": "#292524",
+          "radio-indicator-color": "#292524",
+          "radio-indicator-size": "12px",
+          "radio-label-gap": "12px",
+          "radio-label-size": "16px",
+          "radio-label-color": "#0A0A0A",
+          "radio-label-color-disabled": "#57534E",
+          "radio-group-gap": "12px"
+        },
+        "dark": {
+          "radio-size": "24px",
+          "radio-background": "#1c1917",
+          "radio-background-checked": "#1c1917",
+          "radio-background-disabled": "#292524",
+          "radio-border": "#78716c",
+          "radio-border-width": "1px",
+          "radio-border-hover": "#f4f0eb",
+          "radio-indicator-color": "#f4f0eb",
+          "radio-indicator-size": "12px",
+          "radio-label-gap": "12px",
+          "radio-label-size": "16px",
+          "radio-label-color": "#fafaf9",
+          "radio-label-color-disabled": "#c8c3be",
+          "radio-group-gap": "12px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "select",
+      "type": "registry:component",
+      "title": "Select",
+      "description": "Dropdown for choosing a single value from a list; supports grouped options",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "select-background": "#FAFAF9",
+          "select-background-item-hover": "#F4F0EB",
+          "select-foreground": "#0A0A0A",
+          "select-border": "#E2DDD9",
+          "select-border-width": "1px",
+          "select-separator-height": "1px",
+          "select-border-focus": "#0A0A0A",
+          "select-border-radius": "4px",
+          "select-padding-x": "16px",
+          "select-padding-y": "12px",
+          "select-font-size": "16px",
+          "select-content-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+          "select-content-border-radius": "8px",
+          "select-placeholder-color": "#57534E",
+          "select-item-padding-x": "16px",
+          "select-item-padding-y": "8px",
+          "select-separator-color": "#E2DDD9",
+          "select-border-hover": "#A8A29E",
+          "select-label-size": "12px",
+          "select-label-weight": "500"
+        },
+        "dark": {
+          "select-background": "#1c1917",
+          "select-background-item-hover": "#292524",
+          "select-foreground": "#fafaf9",
+          "select-border": "#57534e",
+          "select-border-width": "1px",
+          "select-separator-height": "1px",
+          "select-border-focus": "#fafaf9",
+          "select-border-radius": "4px",
+          "select-padding-x": "16px",
+          "select-padding-y": "12px",
+          "select-font-size": "16px",
+          "select-content-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+          "select-content-border-radius": "8px",
+          "select-placeholder-color": "#c8c3be",
+          "select-item-padding-x": "16px",
+          "select-item-padding-y": "8px",
+          "select-separator-color": "#57534e",
+          "select-border-hover": "#78716c",
+          "select-label-size": "12px",
+          "select-label-weight": "500"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "skeleton",
+      "type": "registry:component",
+      "title": "Skeleton",
+      "description": "Placeholder loading state that mirrors the geometry of the content it replaces",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "skeleton-background": "#E2DDD9",
+          "skeleton-highlight": "#F4F0EB",
+          "skeleton-border-radius": "4px",
+          "skeleton-duration": "400ms",
+          "skeleton-height-text": "1em",
+          "skeleton-height-icon": "24px",
+          "skeleton-height-rect": "48px"
+        },
+        "dark": {
+          "skeleton-background": "#44403c",
+          "skeleton-highlight": "#292524",
+          "skeleton-border-radius": "4px",
+          "skeleton-duration": "400ms",
+          "skeleton-height-text": "1em",
+          "skeleton-height-icon": "24px",
+          "skeleton-height-rect": "48px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "spinner",
+      "type": "registry:component",
+      "title": "Spinner",
+      "description": "Indeterminate loading indicator for in-progress operations",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "spinner-size-sm": "16px",
+          "spinner-size-md": "20px",
+          "spinner-size-lg": "24px",
+          "spinner-stroke-width": "2px",
+          "spinner-duration": "700ms"
+        },
+        "dark": {
+          "spinner-size-sm": "16px",
+          "spinner-size-md": "20px",
+          "spinner-size-lg": "24px",
+          "spinner-stroke-width": "2px",
+          "spinner-duration": "700ms"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "switch",
+      "type": "registry:component",
+      "title": "Switch",
+      "description": "Binary toggle for on/off settings; renders as a styled checkbox under the hood",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "switch-track-width": "44px",
+          "switch-track-height": "24px",
+          "switch-track-background": "#A8A29E",
+          "switch-track-background-checked": "#292524",
+          "switch-track-background-disabled": "#E2DDD9",
+          "switch-track-border-radius": "9999px",
+          "switch-thumb-background": "#FFFFFF",
+          "switch-thumb-size": "16px",
+          "switch-thumb-border-radius": "9999px",
+          "switch-label-gap": "12px",
+          "switch-label-size": "16px",
+          "switch-label-color": "#0A0A0A",
+          "switch-label-color-disabled": "#57534E",
+          "switch-duration": "200ms"
+        },
+        "dark": {
+          "switch-track-width": "44px",
+          "switch-track-height": "24px",
+          "switch-track-background": "#78716c",
+          "switch-track-background-checked": "#f4f0eb",
+          "switch-track-background-disabled": "#44403c",
+          "switch-track-border-radius": "9999px",
+          "switch-thumb-background": "#1c1917",
+          "switch-thumb-size": "16px",
+          "switch-thumb-border-radius": "9999px",
+          "switch-label-gap": "12px",
+          "switch-label-size": "16px",
+          "switch-label-color": "#fafaf9",
+          "switch-label-color-disabled": "#c8c3be",
+          "switch-duration": "200ms"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "tag",
+      "type": "registry:component",
+      "title": "Tag",
+      "description": "Inline label for categorising or annotating content — non-interactive",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "tag-background": "#F4F0EB",
+          "tag-foreground": "#57534E",
+          "tag-border": "#E2DDD9",
+          "tag-border-width": "1px",
+          "tag-border-radius": "9999px",
+          "tag-padding-x": "12px",
+          "tag-padding-y": "4px",
+          "tag-font-size": "12px",
+          "tag-font-weight": "500",
+          "tag-accent-background": "#292524",
+          "tag-accent-foreground": "#FFFFFF",
+          "tag-accent-border": "#292524",
+          "tag-muted-background": "transparent",
+          "tag-muted-foreground": "#57534E",
+          "tag-muted-border": "#E2DDD9"
+        },
+        "dark": {
+          "tag-background": "#292524",
+          "tag-foreground": "#c8c3be",
+          "tag-border": "#57534e",
+          "tag-border-width": "1px",
+          "tag-border-radius": "9999px",
+          "tag-padding-x": "12px",
+          "tag-padding-y": "4px",
+          "tag-font-size": "12px",
+          "tag-font-weight": "500",
+          "tag-accent-background": "#f4f0eb",
+          "tag-accent-foreground": "#1c1917",
+          "tag-accent-border": "#f4f0eb",
+          "tag-muted-background": "transparent",
+          "tag-muted-foreground": "#c8c3be",
+          "tag-muted-border": "#57534e"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "textarea",
+      "type": "registry:component",
+      "title": "Textarea",
+      "description": "Multi-line text entry with label, hint, and error states — mirrors Input API",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "textarea-background": "#FAFAF9",
+          "textarea-background-disabled": "#F4F0EB",
+          "textarea-foreground": "#0A0A0A",
+          "textarea-border": "#E2DDD9",
+          "textarea-border-width": "1px",
+          "textarea-border-hover": "#A8A29E",
+          "textarea-border-focus": "#0A0A0A",
+          "textarea-border-error": "#c0392b",
+          "textarea-border-radius": "4px",
+          "textarea-padding-x": "16px",
+          "textarea-padding-y": "12px",
+          "textarea-font-size": "16px",
+          "textarea-placeholder-color": "#57534E",
+          "textarea-label-size": "14px",
+          "textarea-label-weight": "500",
+          "textarea-label-color": "#0A0A0A",
+          "textarea-hint-size": "12px",
+          "textarea-hint-color": "#57534E",
+          "textarea-error-color": "#c0392b"
+        },
+        "dark": {
+          "textarea-background": "#1c1917",
+          "textarea-background-disabled": "#292524",
+          "textarea-foreground": "#fafaf9",
+          "textarea-border": "#57534e",
+          "textarea-border-width": "1px",
+          "textarea-border-hover": "#78716c",
+          "textarea-border-focus": "#fafaf9",
+          "textarea-border-error": "#f87171",
+          "textarea-border-radius": "4px",
+          "textarea-padding-x": "16px",
+          "textarea-padding-y": "12px",
+          "textarea-font-size": "16px",
+          "textarea-placeholder-color": "#c8c3be",
+          "textarea-label-size": "14px",
+          "textarea-label-weight": "500",
+          "textarea-label-color": "#fafaf9",
+          "textarea-hint-size": "12px",
+          "textarea-hint-color": "#c8c3be",
+          "textarea-error-color": "#f87171"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "alert",
+      "type": "registry:component",
+      "title": "Alert",
+      "description": "Contextual inline feedback message with semantic severity levels (info, success, warning, error)",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "alert-padding-x": "24px",
+          "alert-padding-y": "16px",
+          "alert-gap": "12px",
+          "alert-border-radius": "8px",
+          "alert-border-width": "1px",
+          "alert-font-size": "16px",
+          "alert-title-weight": "600",
+          "alert-icon-size": "20px",
+          "alert-content-gap": "4px",
+          "alert-close-offset": "8px",
+          "alert-exit-distance": "4px",
+          "alert-success-background": "#F0FDF4",
+          "alert-success-foreground": "#15803D",
+          "alert-success-border": "#16A34A",
+          "alert-warning-background": "#FFFBEB",
+          "alert-warning-foreground": "#B45309",
+          "alert-warning-border": "#D97706",
+          "alert-error-background": "#FEF2F2",
+          "alert-error-foreground": "#a93226",
+          "alert-error-border": "#c0392b",
+          "alert-info-background": "#EFF6FF",
+          "alert-info-foreground": "#1D4ED8",
+          "alert-info-border": "#2563EB"
+        },
+        "dark": {
+          "alert-padding-x": "24px",
+          "alert-padding-y": "16px",
+          "alert-gap": "12px",
+          "alert-border-radius": "8px",
+          "alert-border-width": "1px",
+          "alert-font-size": "16px",
+          "alert-title-weight": "600",
+          "alert-icon-size": "20px",
+          "alert-content-gap": "4px",
+          "alert-close-offset": "8px",
+          "alert-exit-distance": "4px",
+          "alert-success-background": "#292524",
+          "alert-success-foreground": "#f0fdf4",
+          "alert-success-border": "#4ade80",
+          "alert-warning-background": "#292524",
+          "alert-warning-foreground": "#fffbeb",
+          "alert-warning-border": "#fcd34d",
+          "alert-error-background": "#292524",
+          "alert-error-foreground": "#f87171",
+          "alert-error-border": "#f87171",
+          "alert-info-background": "#292524",
+          "alert-info-foreground": "#eff6ff",
+          "alert-info-border": "#60a5fa"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "card",
+      "type": "registry:component",
+      "title": "Card",
+      "description": "Compound container for grouped content — composed from named sub-components",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "card-background": "#FAFAF9",
+          "card-background-ghost": "#F4F0EB",
+          "card-border": "#E2DDD9",
+          "card-border-width": "1px",
+          "card-border-radius": "8px",
+          "card-padding": "32px",
+          "card-gap": "16px",
+          "card-title-size": "24px",
+          "card-title-weight": "700",
+          "card-description-size": "16px",
+          "card-description-color": "#57534E",
+          "card-shadow": "0 1px 2px 0 rgba(0,0,0,0.05)",
+          "card-shadow-hover": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+          "card-horizontal-media-width": "200px"
+        },
+        "dark": {
+          "card-background": "#1c1917",
+          "card-background-ghost": "#292524",
+          "card-border": "#57534e",
+          "card-border-width": "1px",
+          "card-border-radius": "8px",
+          "card-padding": "32px",
+          "card-gap": "16px",
+          "card-title-size": "24px",
+          "card-title-weight": "700",
+          "card-description-size": "16px",
+          "card-description-color": "#c8c3be",
+          "card-shadow": "0 1px 2px 0 rgba(0,0,0,0.05)",
+          "card-shadow-hover": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+          "card-horizontal-media-width": "200px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "dialog",
+      "type": "registry:component",
+      "title": "Dialog",
+      "description": "Overlay for tasks or information requiring focused attention",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "dialog-background": "#FAFAF9",
+          "dialog-border": "#E2DDD9",
+          "dialog-border-width": "1px",
+          "dialog-border-radius": "8px",
+          "dialog-padding": "48px",
+          "dialog-gap": "16px",
+          "dialog-max-width": "560px",
+          "dialog-overlay-color": "#E2DDD9",
+          "dialog-title-size": "24px",
+          "dialog-title-weight": "700",
+          "dialog-close-size": "28px",
+          "dialog-close-color": "#57534E",
+          "dialog-close-hover": "#0A0A0A",
+          "dialog-max-width-sm": "480px",
+          "dialog-max-width-lg": "720px",
+          "dialog-max-width-xl": "1024px",
+          "dialog-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+          "dialog-z-index": "400",
+          "dialog-entrance-offset": "8px"
+        },
+        "dark": {
+          "dialog-background": "#1c1917",
+          "dialog-border": "#57534e",
+          "dialog-border-width": "1px",
+          "dialog-border-radius": "8px",
+          "dialog-padding": "48px",
+          "dialog-gap": "16px",
+          "dialog-max-width": "560px",
+          "dialog-overlay-color": "#44403c",
+          "dialog-title-size": "24px",
+          "dialog-title-weight": "700",
+          "dialog-close-size": "28px",
+          "dialog-close-color": "#c8c3be",
+          "dialog-close-hover": "#fafaf9",
+          "dialog-max-width-sm": "480px",
+          "dialog-max-width-lg": "720px",
+          "dialog-max-width-xl": "1024px",
+          "dialog-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+          "dialog-z-index": "400",
+          "dialog-entrance-offset": "8px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "drawer",
+      "type": "registry:component",
+      "title": "Drawer",
+      "description": "Side-anchored slide-in panel for supplemental content or secondary navigation",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "drawer-background": "#FAFAF9",
+          "drawer-border": "#E2DDD9",
+          "drawer-border-width": "1px",
+          "drawer-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+          "drawer-z-index": "400",
+          "drawer-padding": "48px",
+          "drawer-gap": "24px",
+          "drawer-overlay-color": "#E2DDD9",
+          "drawer-title-size": "24px",
+          "drawer-title-weight": "700",
+          "drawer-close-size": "28px",
+          "drawer-close-color": "#57534E",
+          "drawer-close-hover": "#0A0A0A",
+          "drawer-max-width-sm": "320px",
+          "drawer-max-width-md": "480px",
+          "drawer-max-width-lg": "640px",
+          "drawer-max-height-sm": "40vh",
+          "drawer-max-height-md": "90vh",
+          "drawer-max-height-lg": "75vh",
+          "drawer-max-height-full": "100vh",
+          "drawer-close-align-offset": "2px"
+        },
+        "dark": {
+          "drawer-background": "#1c1917",
+          "drawer-border": "#57534e",
+          "drawer-border-width": "1px",
+          "drawer-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+          "drawer-z-index": "400",
+          "drawer-padding": "48px",
+          "drawer-gap": "24px",
+          "drawer-overlay-color": "#44403c",
+          "drawer-title-size": "24px",
+          "drawer-title-weight": "700",
+          "drawer-close-size": "28px",
+          "drawer-close-color": "#c8c3be",
+          "drawer-close-hover": "#fafaf9",
+          "drawer-max-width-sm": "320px",
+          "drawer-max-width-md": "480px",
+          "drawer-max-width-lg": "640px",
+          "drawer-max-height-sm": "40vh",
+          "drawer-max-height-md": "90vh",
+          "drawer-max-height-lg": "75vh",
+          "drawer-max-height-full": "100vh",
+          "drawer-close-align-offset": "2px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "toast",
+      "type": "registry:component",
+      "title": "Toast",
+      "description": "Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "toast-background": "#FAFAF9",
+          "toast-foreground": "#0A0A0A",
+          "toast-border": "#E2DDD9",
+          "toast-border-width": "1px",
+          "toast-border-radius": "8px",
+          "toast-padding-x": "24px",
+          "toast-padding-y": "16px",
+          "toast-gap": "12px",
+          "toast-max-width": "380px",
+          "toast-shadow": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+          "toast-z-index": "500",
+          "toast-title-weight": "600",
+          "toast-font-size": "14px",
+          "toast-icon-size": "20px",
+          "toast-accent-width": "4px",
+          "toast-success-border": "#16A34A",
+          "toast-warning-border": "#D97706",
+          "toast-error-border": "#c0392b",
+          "toast-info-border": "#2563EB",
+          "toast-viewport-inset": "24px",
+          "toast-content-gap": "4px",
+          "toast-close-offset": "8px"
+        },
+        "dark": {
+          "toast-background": "#1c1917",
+          "toast-foreground": "#fafaf9",
+          "toast-border": "#57534e",
+          "toast-border-width": "1px",
+          "toast-border-radius": "8px",
+          "toast-padding-x": "24px",
+          "toast-padding-y": "16px",
+          "toast-gap": "12px",
+          "toast-max-width": "380px",
+          "toast-shadow": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+          "toast-z-index": "500",
+          "toast-title-weight": "600",
+          "toast-font-size": "14px",
+          "toast-icon-size": "20px",
+          "toast-accent-width": "4px",
+          "toast-success-border": "#4ade80",
+          "toast-warning-border": "#fcd34d",
+          "toast-error-border": "#f87171",
+          "toast-info-border": "#60a5fa",
+          "toast-viewport-inset": "24px",
+          "toast-content-gap": "4px",
+          "toast-close-offset": "8px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "tooltip",
+      "type": "registry:component",
+      "title": "Tooltip",
+      "description": "Contextual label revealed on hover or focus — supplements an icon or truncated text",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "tooltip-background": "#1C1917",
+          "tooltip-foreground": "#FAFAF9",
+          "tooltip-padding-x": "12px",
+          "tooltip-padding-y": "8px",
+          "tooltip-font-size": "12px",
+          "tooltip-font-weight": "500",
+          "tooltip-border-radius": "4px",
+          "tooltip-shadow": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+          "tooltip-z-index": "600",
+          "tooltip-max-width": "260px",
+          "tooltip-arrow-size": "8px",
+          "tooltip-delay-duration": "400",
+          "tooltip-side-offset": "6"
+        },
+        "dark": {
+          "tooltip-background": "#fafaf9",
+          "tooltip-foreground": "#1c1917",
+          "tooltip-padding-x": "12px",
+          "tooltip-padding-y": "8px",
+          "tooltip-font-size": "12px",
+          "tooltip-font-weight": "500",
+          "tooltip-border-radius": "4px",
+          "tooltip-shadow": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+          "tooltip-z-index": "600",
+          "tooltip-max-width": "260px",
+          "tooltip-arrow-size": "8px",
+          "tooltip-delay-duration": "400",
+          "tooltip-side-offset": "6"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "accordion",
+      "type": "registry:component",
+      "title": "Accordion",
+      "description": "Collapsible content sections with animated expand/collapse; supports single or multi-open modes",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "accordion-border-color": "#E2DDD9",
+          "accordion-border-width": "1px",
+          "accordion-trigger-color": "#0A0A0A",
+          "accordion-trigger-hover-background": "#F4F0EB",
+          "accordion-trigger-padding-x": "24px",
+          "accordion-trigger-padding-y": "16px",
+          "accordion-trigger-font-size": "16px",
+          "accordion-trigger-font-weight": "500",
+          "accordion-content-color": "#57534E",
+          "accordion-content-padding-x": "24px",
+          "accordion-content-padding-bottom": "24px",
+          "accordion-icon-color": "#57534E",
+          "accordion-icon-size": "20px",
+          "accordion-duration-expand": "650ms",
+          "accordion-duration-collapse": "200ms"
+        },
+        "dark": {
+          "accordion-border-color": "#57534e",
+          "accordion-border-width": "1px",
+          "accordion-trigger-color": "#fafaf9",
+          "accordion-trigger-hover-background": "#292524",
+          "accordion-trigger-padding-x": "24px",
+          "accordion-trigger-padding-y": "16px",
+          "accordion-trigger-font-size": "16px",
+          "accordion-trigger-font-weight": "500",
+          "accordion-content-color": "#c8c3be",
+          "accordion-content-padding-x": "24px",
+          "accordion-content-padding-bottom": "24px",
+          "accordion-icon-color": "#c8c3be",
+          "accordion-icon-size": "20px",
+          "accordion-duration-expand": "650ms",
+          "accordion-duration-collapse": "200ms"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "breadcrumb",
+      "type": "registry:component",
+      "title": "Breadcrumb",
+      "description": "Hierarchical page location trail; the last item is the current page (non-linked)",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "breadcrumb-link-color": "#57534E",
+          "breadcrumb-link-color-hover": "#0A0A0A",
+          "breadcrumb-current-color": "#0A0A0A",
+          "breadcrumb-separator-color": "#57534E",
+          "breadcrumb-font-size": "14px",
+          "breadcrumb-gap": "8px",
+          "breadcrumb-item-max-width": "200px",
+          "breadcrumb-current-max-width": "240px"
+        },
+        "dark": {
+          "breadcrumb-link-color": "#c8c3be",
+          "breadcrumb-link-color-hover": "#fafaf9",
+          "breadcrumb-current-color": "#fafaf9",
+          "breadcrumb-separator-color": "#c8c3be",
+          "breadcrumb-font-size": "14px",
+          "breadcrumb-gap": "8px",
+          "breadcrumb-item-max-width": "200px",
+          "breadcrumb-current-max-width": "240px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "data-table",
+      "type": "registry:component",
+      "title": "DataTable",
+      "description": "Sortable, filterable, paginated table for structured datasets",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme",
+        "checkbox",
+        "empty-state",
+        "pagination",
+        "table"
+      ],
+      "cssVars": {
+        "light": {
+          "datatable-gap": "16px",
+          "datatable-footer-gap": "16px",
+          "datatable-empty-padding": "32px"
+        },
+        "dark": {
+          "datatable-gap": "16px",
+          "datatable-footer-gap": "16px",
+          "datatable-empty-padding": "32px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "empty-state",
+      "type": "registry:component",
+      "title": "EmptyState",
+      "description": "Placeholder for zero-content states — icon, heading, supporting text, and an optional action",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme",
+        "button"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "hero",
+      "type": "registry:component",
+      "title": "Hero",
+      "description": "Page-level section header with eyebrow, title, lead text, and an action slot",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "hero-background": "#FAFAF9",
+          "hero-padding-y": "96px",
+          "hero-padding-x": "32px",
+          "hero-gap": "24px",
+          "hero-eyebrow-size": "14px",
+          "hero-eyebrow-weight": "600",
+          "hero-eyebrow-color": "#57534E",
+          "hero-eyebrow-spacing": "0.01em",
+          "hero-title-weight": "800",
+          "hero-title-color": "#0A0A0A",
+          "hero-lead-size": "20px",
+          "hero-lead-color": "#57534E",
+          "hero-max-width": "800px",
+          "hero-lead-max-width": "60ch"
+        },
+        "dark": {
+          "hero-background": "#1c1917",
+          "hero-padding-y": "96px",
+          "hero-padding-x": "32px",
+          "hero-gap": "24px",
+          "hero-eyebrow-size": "14px",
+          "hero-eyebrow-weight": "600",
+          "hero-eyebrow-color": "#c8c3be",
+          "hero-eyebrow-spacing": "0.01em",
+          "hero-title-weight": "800",
+          "hero-title-color": "#fafaf9",
+          "hero-lead-size": "20px",
+          "hero-lead-color": "#c8c3be",
+          "hero-max-width": "800px",
+          "hero-lead-max-width": "60ch"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "pagination",
+      "type": "registry:component",
+      "title": "Pagination",
+      "description": "Page navigation controls for multi-page data sets; exposes current page and total page count",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "pagination-button-size": "48px",
+          "pagination-button-background": "transparent",
+          "pagination-button-background-active": "#292524",
+          "pagination-button-background-hover": "#F4F0EB",
+          "pagination-button-color": "#57534E",
+          "pagination-button-color-active": "#FFFFFF",
+          "pagination-button-font-size": "14px",
+          "pagination-button-font-weight": "500",
+          "pagination-border": "#E2DDD9",
+          "pagination-border-width": "1px",
+          "pagination-border-radius": "4px",
+          "pagination-gap": "8px"
+        },
+        "dark": {
+          "pagination-button-size": "48px",
+          "pagination-button-background": "transparent",
+          "pagination-button-background-active": "#f4f0eb",
+          "pagination-button-background-hover": "#292524",
+          "pagination-button-color": "#c8c3be",
+          "pagination-button-color-active": "#1c1917",
+          "pagination-button-font-size": "14px",
+          "pagination-button-font-weight": "500",
+          "pagination-border": "#57534e",
+          "pagination-border-width": "1px",
+          "pagination-border-radius": "4px",
+          "pagination-gap": "8px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "table",
+      "type": "registry:component",
+      "title": "Table",
+      "description": "Static data table with semantic header, body, and row structure",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "table-cell-padding-x": "16px",
+          "table-cell-padding-y": "12px",
+          "table-header-background": "#F4F0EB",
+          "table-header-color": "#57534E",
+          "table-header-font-size": "12px",
+          "table-header-font-weight": "600",
+          "table-body-color": "#0A0A0A",
+          "table-body-font-size": "16px",
+          "table-row-border": "#E2DDD9",
+          "table-row-border-width": "1px",
+          "table-row-hover-background": "#F4F0EB",
+          "table-stripe-background": "#F4F0EB",
+          "table-sort-icon-color": "#57534E",
+          "table-sort-icon-color-active": "#292524",
+          "table-selected-row-background": "#E2DDD9",
+          "table-border-radius": "8px",
+          "table-sort-icon-gap": "4px"
+        },
+        "dark": {
+          "table-cell-padding-x": "16px",
+          "table-cell-padding-y": "12px",
+          "table-header-background": "#292524",
+          "table-header-color": "#c8c3be",
+          "table-header-font-size": "12px",
+          "table-header-font-weight": "600",
+          "table-body-color": "#fafaf9",
+          "table-body-font-size": "16px",
+          "table-row-border": "#57534e",
+          "table-row-border-width": "1px",
+          "table-row-hover-background": "#292524",
+          "table-stripe-background": "#292524",
+          "table-sort-icon-color": "#c8c3be",
+          "table-sort-icon-color-active": "#f4f0eb",
+          "table-selected-row-background": "#44403c",
+          "table-border-radius": "8px",
+          "table-sort-icon-gap": "4px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "tabs",
+      "type": "registry:component",
+      "title": "Tabs",
+      "description": "Segmented view switcher with full keyboard navigation; built on Radix Tabs",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "theme"
+      ],
+      "cssVars": {
+        "light": {
+          "tabs-trigger-color": "#57534E",
+          "tabs-trigger-color-active": "#0A0A0A",
+          "tabs-trigger-color-hover": "#0A0A0A",
+          "tabs-trigger-background-hover": "#F4F0EB",
+          "tabs-trigger-padding-x": "16px",
+          "tabs-trigger-padding-y": "12px",
+          "tabs-trigger-font-size": "16px",
+          "tabs-trigger-font-weight": "500",
+          "tabs-trigger-gap": "4px",
+          "tabs-indicator-color": "#292524",
+          "tabs-indicator-height": "2px",
+          "tabs-list-border-bottom": "#E2DDD9",
+          "tabs-list-border-width": "1px",
+          "tabs-pill-background-active": "#F4F0EB",
+          "tabs-pill-border-radius": "4px",
+          "tabs-pill-gap": "4px",
+          "tabs-sm-trigger-padding-y": "8px",
+          "tabs-sm-trigger-padding-x": "12px",
+          "tabs-content-padding-top": "16px",
+          "tabs-duration": "200ms"
+        },
+        "dark": {
+          "tabs-trigger-color": "#c8c3be",
+          "tabs-trigger-color-active": "#fafaf9",
+          "tabs-trigger-color-hover": "#fafaf9",
+          "tabs-trigger-background-hover": "#292524",
+          "tabs-trigger-padding-x": "16px",
+          "tabs-trigger-padding-y": "12px",
+          "tabs-trigger-font-size": "16px",
+          "tabs-trigger-font-weight": "500",
+          "tabs-trigger-gap": "4px",
+          "tabs-indicator-color": "#f4f0eb",
+          "tabs-indicator-height": "2px",
+          "tabs-list-border-bottom": "#57534e",
+          "tabs-list-border-width": "1px",
+          "tabs-pill-background-active": "#292524",
+          "tabs-pill-border-radius": "4px",
+          "tabs-pill-gap": "4px",
+          "tabs-sm-trigger-padding-y": "8px",
+          "tabs-sm-trigger-padding-x": "12px",
+          "tabs-content-padding-top": "16px",
+          "tabs-duration": "200ms"
+        }
+      }
+    }
+  ]
+}

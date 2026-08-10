@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "type": "registry:component",
+  "title": "Label",
+  "description": "Standalone form label element — used when a label must be decoupled from its input",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "label-font-size": "14px",
+      "label-font-weight": "500",
+      "label-color": "#0A0A0A",
+      "label-color-disabled": "#57534E",
+      "label-required-color": "#c0392b",
+      "label-gap": "8px"
+    },
+    "dark": {
+      "label-font-size": "14px",
+      "label-font-weight": "500",
+      "label-color": "#fafaf9",
+      "label-color-disabled": "#c8c3be",
+      "label-required-color": "#f87171",
+      "label-gap": "8px"
+    }
+  }
+}

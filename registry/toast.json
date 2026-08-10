@@ -1,0 +1,63 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast",
+  "type": "registry:component",
+  "title": "Toast",
+  "description": "Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "toast-background": "#FAFAF9",
+      "toast-foreground": "#0A0A0A",
+      "toast-border": "#E2DDD9",
+      "toast-border-width": "1px",
+      "toast-border-radius": "8px",
+      "toast-padding-x": "24px",
+      "toast-padding-y": "16px",
+      "toast-gap": "12px",
+      "toast-max-width": "380px",
+      "toast-shadow": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+      "toast-z-index": "500",
+      "toast-title-weight": "600",
+      "toast-font-size": "14px",
+      "toast-icon-size": "20px",
+      "toast-accent-width": "4px",
+      "toast-success-border": "#16A34A",
+      "toast-warning-border": "#D97706",
+      "toast-error-border": "#c0392b",
+      "toast-info-border": "#2563EB",
+      "toast-viewport-inset": "24px",
+      "toast-content-gap": "4px",
+      "toast-close-offset": "8px"
+    },
+    "dark": {
+      "toast-background": "#1c1917",
+      "toast-foreground": "#fafaf9",
+      "toast-border": "#57534e",
+      "toast-border-width": "1px",
+      "toast-border-radius": "8px",
+      "toast-padding-x": "24px",
+      "toast-padding-y": "16px",
+      "toast-gap": "12px",
+      "toast-max-width": "380px",
+      "toast-shadow": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+      "toast-z-index": "500",
+      "toast-title-weight": "600",
+      "toast-font-size": "14px",
+      "toast-icon-size": "20px",
+      "toast-accent-width": "4px",
+      "toast-success-border": "#4ade80",
+      "toast-warning-border": "#fcd34d",
+      "toast-error-border": "#f87171",
+      "toast-info-border": "#60a5fa",
+      "toast-viewport-inset": "24px",
+      "toast-content-gap": "4px",
+      "toast-close-offset": "8px"
+    }
+  }
+}

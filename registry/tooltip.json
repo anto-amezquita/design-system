@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip",
+  "type": "registry:component",
+  "title": "Tooltip",
+  "description": "Contextual label revealed on hover or focus — supplements an icon or truncated text",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "tooltip-background": "#1C1917",
+      "tooltip-foreground": "#FAFAF9",
+      "tooltip-padding-x": "12px",
+      "tooltip-padding-y": "8px",
+      "tooltip-font-size": "12px",
+      "tooltip-font-weight": "500",
+      "tooltip-border-radius": "4px",
+      "tooltip-shadow": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+      "tooltip-z-index": "600",
+      "tooltip-max-width": "260px",
+      "tooltip-arrow-size": "8px",
+      "tooltip-delay-duration": "400",
+      "tooltip-side-offset": "6"
+    },
+    "dark": {
+      "tooltip-background": "#fafaf9",
+      "tooltip-foreground": "#1c1917",
+      "tooltip-padding-x": "12px",
+      "tooltip-padding-y": "8px",
+      "tooltip-font-size": "12px",
+      "tooltip-font-weight": "500",
+      "tooltip-border-radius": "4px",
+      "tooltip-shadow": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+      "tooltip-z-index": "600",
+      "tooltip-max-width": "260px",
+      "tooltip-arrow-size": "8px",
+      "tooltip-delay-duration": "400",
+      "tooltip-side-offset": "6"
+    }
+  }
+}

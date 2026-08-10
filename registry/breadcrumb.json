@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb",
+  "type": "registry:component",
+  "title": "Breadcrumb",
+  "description": "Hierarchical page location trail; the last item is the current page (non-linked)",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "theme"
+  ],
+  "cssVars": {
+    "light": {
+      "breadcrumb-link-color": "#57534E",
+      "breadcrumb-link-color-hover": "#0A0A0A",
+      "breadcrumb-current-color": "#0A0A0A",
+      "breadcrumb-separator-color": "#57534E",
+      "breadcrumb-font-size": "14px",
+      "breadcrumb-gap": "8px",
+      "breadcrumb-item-max-width": "200px",
+      "breadcrumb-current-max-width": "240px"
+    },
+    "dark": {
+      "breadcrumb-link-color": "#c8c3be",
+      "breadcrumb-link-color-hover": "#fafaf9",
+      "breadcrumb-current-color": "#fafaf9",
+      "breadcrumb-separator-color": "#c8c3be",
+      "breadcrumb-font-size": "14px",
+      "breadcrumb-gap": "8px",
+      "breadcrumb-item-max-width": "200px",
+      "breadcrumb-current-max-width": "240px"
+    }
+  }
+}
