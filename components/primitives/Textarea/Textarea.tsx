@@ -1,8 +1,8 @@
 'use client'
 
 import { useId } from 'react'
-import { useUncontrolledValue } from '@/lib/useUncontrolledValue'
-import { cn } from '@/lib/cn'
+import { useUncontrolledValue } from '../../../lib/useUncontrolledValue'
+import { cn } from '../../../lib/cn'
 import './Textarea.css'
 
 type TextareaProps = {

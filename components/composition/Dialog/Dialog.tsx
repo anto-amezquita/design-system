@@ -1,7 +1,7 @@
 'use client'
 
-import { cn } from '@/lib/cn'
-import { useSheetFocusRestore } from '@/hooks/useSheetFocusRestore'
+import { cn } from '../../../lib/cn'
+import { useSheetFocusRestore } from '../../../hooks/useSheetFocusRestore'
 import { BaseSheet } from '../BaseSheet'
 import './Dialog.css'
 

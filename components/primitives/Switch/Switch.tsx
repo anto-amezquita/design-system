@@ -2,7 +2,7 @@
 
 import { useId } from 'react'
 import * as RadixSwitch from '@radix-ui/react-switch'
-import { cn } from '@/lib/cn'
+import { cn } from '../../../lib/cn'
 import './Switch.css'
 
 type SwitchProps = {

@@ -1,7 +1,7 @@
 'use client'
 
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react'
-import { cn } from '@/lib/cn'
+import { cn } from '../../../lib/cn'
 import './Pagination.css'
 
 type PaginationProps = {

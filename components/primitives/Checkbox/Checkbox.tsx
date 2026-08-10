@@ -2,7 +2,7 @@
 
 import { useId } from 'react'
 import * as RadixCheckbox from '@radix-ui/react-checkbox'
-import { cn } from '@/lib/cn'
+import { cn } from '../../../lib/cn'
 import './Checkbox.css'
 
 type CheckedState = boolean | 'indeterminate'

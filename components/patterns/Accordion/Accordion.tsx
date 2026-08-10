@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react'
 import * as RadixAccordion from '@radix-ui/react-accordion'
 import { CaretDownIcon } from '@phosphor-icons/react'
-import { cn } from '@/lib/cn'
+import { cn } from '../../../lib/cn'
 import './Accordion.css'
 
 type AccordionSingleProps = {

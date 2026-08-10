@@ -1,7 +1,7 @@
 'use client'
 
 import * as RadixTabs from '@radix-ui/react-tabs'
-import { cn } from '@/lib/cn'
+import { cn } from '../../../lib/cn'
 import './Tabs.css'
 
 type TabsProps = React.ComponentPropsWithoutRef<typeof RadixTabs.Root> & {

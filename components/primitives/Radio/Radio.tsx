@@ -2,7 +2,7 @@
 
 import { useId } from 'react'
 import * as RadixRadioGroup from '@radix-ui/react-radio-group'
-import { cn } from '@/lib/cn'
+import { cn } from '../../../lib/cn'
 import './Radio.css'
 
 type RadioOption = {

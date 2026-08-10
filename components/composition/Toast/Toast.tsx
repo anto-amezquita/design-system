@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useState, useCallback, useRef, useEffect, memo } from 'react'
 import * as RadixToast from '@radix-ui/react-toast'
 import { XIcon } from '@phosphor-icons/react'
-import { feedbackIcons, type FeedbackVariant } from '@/lib/feedbackIcons'
+import { feedbackIcons, type FeedbackVariant } from '../../../lib/feedbackIcons'
 import './Toast.css'
 
 // Swipe direction is 'right' (matches Toast.css slide-in/out keyframes direction).

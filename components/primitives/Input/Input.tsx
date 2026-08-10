@@ -2,8 +2,8 @@
 
 import { useId } from 'react'
 import { MagnifyingGlassIcon, XIcon } from '@phosphor-icons/react'
-import { useUncontrolledValue } from '@/lib/useUncontrolledValue'
-import { cn } from '@/lib/cn'
+import { useUncontrolledValue } from '../../../lib/useUncontrolledValue'
+import { cn } from '../../../lib/cn'
 import './Input.css'
 
 type InputProps = Omit<

@@ -1,5 +1,5 @@
 import { Button } from '../../primitives/Button'
-import { cn } from '@/lib/cn'
+import { cn } from '../../../lib/cn'
 import './EmptyState.css'
 
 type EmptyStateProps = {

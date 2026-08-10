@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useId } from 'react'
 import { XIcon } from '@phosphor-icons/react'
-import { feedbackIcons, type FeedbackVariant } from '@/lib/feedbackIcons'
+import { feedbackIcons, type FeedbackVariant } from '../../../lib/feedbackIcons'
 import './Alert.css'
 
 type AlertVariant = FeedbackVariant

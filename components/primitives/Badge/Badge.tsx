@@ -1,4 +1,4 @@
-import { cn } from '@/lib/cn'
+import { cn } from '../../../lib/cn'
 import './Badge.css'
 
 type BadgeVariant = 'neutral' | 'success' | 'warning' | 'error' | 'info'
