@@ -2,10 +2,10 @@
 
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { ease } from '@/lib/motion'
+import { ease } from '../../../lib/motion'
 import { ArrowRightIcon } from '@phosphor-icons/react'
-import { Spinner } from '@/components/primitives/Spinner'
-import { cn } from '@/lib/cn'
+import { Spinner } from '../Spinner'
+import { cn } from '../../../lib/cn'
 import './Button.css'
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'link'
