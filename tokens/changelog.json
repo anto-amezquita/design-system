@@ -4,6 +4,22 @@
   },
   "versions": [
     {
+      "tag": "v0.1.3",
+      "date": "2026-08-10",
+      "sha": "52baf0c",
+      "entries": [
+        {
+          "sha": "82a353c",
+          "type": "fix",
+          "scope": null,
+          "message": "convert remaining internal @/ imports to relative paths",
+          "date": "2026-08-10",
+          "breaking": false
+        }
+      ],
+      "entryCount": 1
+    },
+    {
       "tag": "v0.1.2",
       "date": "2026-08-10",
       "sha": "d00f123",
@@ -27,16 +43,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "82a353c",
-      "type": "fix",
-      "scope": null,
-      "message": "convert remaining internal @/ imports to relative paths",
-      "date": "2026-08-10",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
