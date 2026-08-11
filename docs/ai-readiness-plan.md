@@ -222,6 +222,30 @@ The artifact that converts the work into positioning. Not a launch post for the 
 4. Before ending: update State (phase, next action, blockers), add a Session log line, commit.
 5. If a task turns out to be wrong, delete it and write down why — do not leave dead tasks ticked or silently abandoned.
 
+## Token architecture backlog
+
+Opened 2026-08-10, outside the six phases. Not blocking anything; recorded so the finding isn't rediscovered from scratch.
+
+Run `npm run tokens:audit` (`scripts/audit-tokens.mjs`) for current figures. As of the first run, of 405 component tokens:
+
+| Class | Count | Verdict |
+|---|---|---|
+| Pass-through to a semantic token, identical in all 4 modes | 196 | Collapse candidate |
+| Chain-skip to a primitive, identical in all 4 modes | 164 | Collapse candidate + tier violation |
+| Literal (no reference) | 37 | Keep — component-specific geometry and motion |
+| Resolves differently from its referent somewhere | 8 | Keep — the only theming work in the tier |
+
+**45 of 405 component tokens do work.** Collapsing the rest would land the system at ~260 tokens.
+
+Three things follow, in priority order:
+
+1. **Bold-brand visual coverage — deferred by decision, 2026-08-10.** Chromatic covers light-default and dark-default only. `bold.css` scopes to `[data-expression="bold"]`, and no story or decorator ever sets that attribute, so the bold brand has never been visually tested in either mode. This means the four dark-bold token divergences below **cannot currently be verified by looking** — nothing renders that combination. Deferred deliberately: bold is not used on any live site yet, so the coverage is not worth its Chromatic cost until it is. Revisit when bold ships somewhere real. **Do not describe Chromatic coverage as spanning all four theme combinations** — it spans two.
+2. **The four dark-bold divergences, pending the above.** `checkbox-background-checked`, `checkbox-border-hover`, `radio-border-hover`, and `radio-indicator-color` track `color-accent-default` in dark-default but not dark-bold, where they hold the neutral `#f4f0eb` while the accent moves to `#4FA3B0`. Following the accent in one dark variant but not the other is hard to read as intent. The three `button-secondary-*` tokens are different — they diverge in *both* dark modes, consistently, which reads as a deliberate "secondary buttons stay neutral in dark" choice. `button-border-radius` (pill in default, 6px in bold) is unambiguously intentional.
+3. **Stop the growth, which is free.** A new component token should be literal, or resolve differently from its referent in at least one mode. Everything else references the semantic or primitive directly. Enforceable as a `tokens:lint` rule reusing the audit's classification — that freezes the count without touching a single existing token.
+4. **Collapse opportunistically, not as a sweep.** 360 tokens is a large refactor, and by this plan's own ROI reasoning a system with one consumer shouldn't fund it as a project. It is also **less safe than first assumed** — the regression net is 184 stories × 2 theme axes, not 4. Do it per component while already editing that component. Take the 196 semantic pass-throughs first; leave the 164 chain-skips until there's a decision on whether to name spacing and typography semantic roles (the semantic layer is colour-dominant and has none) or let components reference primitives directly, as Polaris does.
+
+---
+
 ## Session log
 
 | Date | Phase | What changed |

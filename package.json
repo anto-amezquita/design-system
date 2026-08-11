@@ -32,6 +32,7 @@
     "tokens:watch": "node --watch sd.config.mjs",
     "tokens:lint": "node scripts/lint-tokens.mjs",
     "tokens:graph": "node scripts/build-dependency-graph.mjs",
+    "tokens:audit": "node scripts/audit-tokens.mjs",
     "tokens:contrast": "node scripts/check-contrast.mjs",
     "tokens:dtcg": "node scripts/migrate-to-dtcg.mjs",
     "figma:status": "node scripts/figma-status.mjs",
