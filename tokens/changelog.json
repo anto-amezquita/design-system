@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-20"
+    "generatedAt": "2026-08-23"
   },
   "versions": [
     {
@@ -114,7 +114,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "591f055",
+      "type": "feat",
+      "scope": null,
+      "message": "add AlertDialog, extend Dialog with triggerRef",
+      "date": "2026-08-23",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
