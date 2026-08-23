@@ -155,6 +155,15 @@ Contextual inline feedback message with semantic severity levels (info, success,
 - Storybook: Components/Alert
 - Stories: Default, AllVariants, Dismissible, NoTitle, NoIcon, DarkMode
 
+### AlertDialog
+
+Confirmation gate for an action the user must explicitly accept or decline — real `alertdialog` role, no outside-click/close-button dismiss, unlike Dialog
+
+- Import: `import { AlertDialog } from '@amezquita/design-system/components/composition/AlertDialog'`
+- Token prefix: `alertdialog-*` (0 tokens)
+- Storybook: Components/AlertDialog
+- Stories: Default, WithBody, NoDescription, AllSizes, DarkMode
+
 ### Card
 
 Compound container for grouped content — composed from named sub-components

@@ -1,8 +1,72 @@
 {
   "meta": {
-    "generatedAt": "2026-08-12"
+    "generatedAt": "2026-08-20"
   },
   "versions": [
+    {
+      "tag": "v0.2.0",
+      "date": "2026-08-12",
+      "sha": "15aa603",
+      "entries": [
+        {
+          "sha": "2b0c559",
+          "type": "feat",
+          "scope": null,
+          "message": "agent skill at .well-known/skills/, tested against real fresh agents (Phase 4)",
+          "date": "2026-08-10",
+          "breaking": false
+        },
+        {
+          "sha": "8e0ba88",
+          "type": "feat",
+          "scope": null,
+          "message": "generate shadcn-spec registry manifests (Task 3.1)",
+          "date": "2026-08-10",
+          "breaking": false
+        },
+        {
+          "sha": "124ea00",
+          "type": "feat",
+          "scope": null,
+          "message": "add token-fabrication and fallback checks to tokens:lint (Task 2.2)",
+          "date": "2026-08-10",
+          "breaking": false
+        },
+        {
+          "sha": "dc6e970",
+          "type": "fix",
+          "scope": null,
+          "message": "include all global primitives in token-reference.json (Task 1.3a)",
+          "date": "2026-08-10",
+          "breaking": false
+        },
+        {
+          "sha": "52b7f8e",
+          "type": "feat",
+          "scope": null,
+          "message": "publish tokens.json at repo root (Task 1.3)",
+          "date": "2026-08-10",
+          "breaking": false
+        },
+        {
+          "sha": "ac73430",
+          "type": "feat",
+          "scope": null,
+          "message": "generate per-component markdown twins (Task 1.2)",
+          "date": "2026-08-10",
+          "breaking": false
+        },
+        {
+          "sha": "212768a",
+          "type": "feat",
+          "scope": null,
+          "message": "exclude internal components from agent-facing output",
+          "date": "2026-08-10",
+          "breaking": false
+        }
+      ],
+      "entryCount": 7
+    },
     {
       "tag": "v0.1.4",
       "date": "2026-08-10",
@@ -50,64 +114,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "2b0c559",
-      "type": "feat",
-      "scope": null,
-      "message": "agent skill at .well-known/skills/, tested against real fresh agents (Phase 4)",
-      "date": "2026-08-10",
-      "breaking": false
-    },
-    {
-      "sha": "8e0ba88",
-      "type": "feat",
-      "scope": null,
-      "message": "generate shadcn-spec registry manifests (Task 3.1)",
-      "date": "2026-08-10",
-      "breaking": false
-    },
-    {
-      "sha": "124ea00",
-      "type": "feat",
-      "scope": null,
-      "message": "add token-fabrication and fallback checks to tokens:lint (Task 2.2)",
-      "date": "2026-08-10",
-      "breaking": false
-    },
-    {
-      "sha": "dc6e970",
-      "type": "fix",
-      "scope": null,
-      "message": "include all global primitives in token-reference.json (Task 1.3a)",
-      "date": "2026-08-10",
-      "breaking": false
-    },
-    {
-      "sha": "52b7f8e",
-      "type": "feat",
-      "scope": null,
-      "message": "publish tokens.json at repo root (Task 1.3)",
-      "date": "2026-08-10",
-      "breaking": false
-    },
-    {
-      "sha": "ac73430",
-      "type": "feat",
-      "scope": null,
-      "message": "generate per-component markdown twins (Task 1.2)",
-      "date": "2026-08-10",
-      "breaking": false
-    },
-    {
-      "sha": "212768a",
-      "type": "feat",
-      "scope": null,
-      "message": "exclude internal components from agent-facing output",
-      "date": "2026-08-10",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",

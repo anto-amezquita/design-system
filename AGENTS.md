@@ -24,10 +24,10 @@ Component tokens follow `--<component-slug>-*` (e.g. `--button-padding-x`, `--di
 
 ## Components that exist
 
-27 public components. Anything not on this list is provably invented — check `tokens/component-registry.json` if this list is ever stale.
+28 public components. Anything not on this list is provably invented — check `tokens/component-registry.json` if this list is ever stale.
 
 - **Primitives (13):** Avatar, Badge, Button, Checkbox, Input, Label, Radio, Select, Skeleton, Spinner, Switch, Tag, Textarea
-- **Composition (6):** Alert, Card, Dialog, Drawer, Toast, Tooltip
+- **Composition (7):** Alert, AlertDialog, Card, Dialog, Drawer, Toast, Tooltip
 - **Patterns (8):** Accordion, Breadcrumb, DataTable, EmptyState, Hero, Pagination, Table, Tabs
 
 (`BaseSheet` also ships in the package but is internal — Drawer's overlay primitive, not something to reach for directly.)

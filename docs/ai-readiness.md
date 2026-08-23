@@ -24,7 +24,7 @@ What it competes on is a different axis: **being a fully governed, machine-consu
 
 Top score in the entire audit is 3/5 (shadcn/ui). Nobody scores 4 or 5. Brand and enterprise systems lag the open-source React libraries by 12–24 months on every signal except llms.txt.
 
-**Kaelig Deloumeau-Prigent, State of AI in Design Systems (data gathered 26–28 July 2026, 20 systems):** among systems already investing in this, MCP server 19/20, agent skill 18/20, repo agent files 15/20, llms.txt 14/20, registry 11/20, Code Connect 2/20.
+**Kaelig Deloumeau-Prigent, State of AI in Design Systems (data gathered 26–28 July 2026, 20 systems):** among systems already investing in this, MCP server 19/20 (17/20 counting official servers only — use the qualifier whenever quoting this figure), agent skill 18/20, repo agent files 15/20, llms.txt 14/20, registry 11/20, Code Connect 2/20.
 
 The two studies do not contradict each other — they sample different populations. **Table stakes among the leaders is not table stakes across the field.** The leader set is the bar to be judged against; the field set is what most systems actually clear.
 
@@ -41,6 +41,11 @@ From the field study's synthesis, the state of the art has moved through three g
 3. **Structural coercion** — redesigning the task so the model cannot go off-system even if it wants to. Tool-gating, registries that resolve real artifacts, validation loops that must pass.
 
 > Instruction hopes the model complies. Structure checks.
+
+*(Kaelig Deloumeau-Prigent's words, from the field study's synthesis
+essay — https://state-of-ai-in-design-systems.netlify.app/insights.
+Quote and credit it; don't restate it as this project's own reading.
+The three-generation framing above is his too.)*
 
 Two rules follow, and both are load-bearing for everything in the plan:
 

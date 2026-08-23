@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 27 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 28 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 27 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across light/dark × default/bold, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 28 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across light/dark × default/bold, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -49,11 +49,12 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Tag | [tag](https://amezquita.dk/design-system/tag.md) — Inline label for categorising or annotating content — non-interactive |
 | Textarea | [textarea](https://amezquita.dk/design-system/textarea.md) — Multi-line text entry with label, hint, and error states — mirrors Input API |
 
-### Composition (6)
+### Composition (7)
 
 | Component | Reference |
 |---|---|
 | Alert | [alert](https://amezquita.dk/design-system/alert.md) — Contextual inline feedback message with semantic severity levels (info, success, warning, error) |
+| AlertDialog | [alert-dialog](https://amezquita.dk/design-system/alert-dialog.md) — Confirmation gate for an action the user must explicitly accept or decline — real `alertdialog` role, no outside-click/close-button dismiss, unlike Dialog |
 | Card | [card](https://amezquita.dk/design-system/card.md) — Compound container for grouped content — composed from named sub-components |
 | Dialog | [dialog](https://amezquita.dk/design-system/dialog.md) — Overlay for tasks or information requiring focused attention |
 | Drawer | [drawer](https://amezquita.dk/design-system/drawer.md) — Side-anchored slide-in panel for supplemental content or secondary navigation |

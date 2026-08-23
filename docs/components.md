@@ -202,6 +202,7 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 **Props / variants**
 - No size variants — one max-width controlled by `--dialog-max-width` (resolves to `--size-dialog-default`, 560px)
 - `trigger`: any React node — wrapped in `RadixDialog.Trigger asChild`
+- `triggerRef`: optional external ref onto the trigger's DOM node, merged with Dialog's own internal one. For when a consumer needs the trigger element after this Dialog's own lifecycle ends — e.g. restoring focus there once a follow-up `AlertDialog` (opened after this Dialog already closed) finishes.
 - `title` (required), `description` (optional), `footer` (optional slot for action buttons)
 - `open` + `onOpenChange` for controlled mode
 
@@ -232,6 +233,44 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 
 **Chromatic stories**
 - `Default`, `WithForm`, `NoDescription`
+
+---
+
+### AlertDialog
+
+| Field | Value |
+|---|---|
+| **Purpose** | Confirmation gate for an action the user must explicitly accept or decline — real `alertdialog` role, no outside-click/close-button dismiss, unlike Dialog |
+| **Figma name** | `AlertDialog` |
+| **Code name** | `AlertDialog` |
+| **Storybook path** | `Components/AlertDialog` |
+
+Built on `@radix-ui/react-alert-dialog` — do not replace the Radix primitive. Deliberately reuses Dialog's own CSS classes and tokens rather than duplicating them; visually the same box as Dialog, different behavioral contract underneath. See Dialog's entry above for the token list — nothing new is consumed here.
+
+**Props / variants**
+- No size variants beyond `sm | md | lg`, same scale as Dialog (minus `xl` — alert dialogs are confirmation-sized, not layout-sized)
+- `title` (required), `description` (optional string), `children` (optional — richer body content beyond a plain description, e.g. a list of items to review)
+- `cancel` and `action` (both required `React.ReactElement`) — rendered inside `AlertDialog.Cancel`/`AlertDialog.Action` (`asChild`) respectively. Must be real DOM elements forwarding a ref (Radix auto-focuses `cancel` on open) — do not pass this design system's own `Button` component here, it does not forward a ref; use a plain `<button>` (see Storybook source)
+- `open` + `onOpenChange` — controlled only, no uncontrolled/`defaultOpen` mode and no `trigger` prop; real usage opens this from application logic (a risky state transition, a locked-setting change), not a direct click
+- `onCloseAutoFocus` — forwarded to Radix; needed when this AlertDialog is a follow-up confirmation opened after a separate Dialog already closed, since Radix's own default focus restore has nothing useful to return to in that case (pair with Dialog's `triggerRef` prop)
+
+**Required states**
+- [x] open (enter animation, shared with Dialog)
+- [x] with body content (`WithBody`)
+- [x] without description (`NoDescription`)
+
+**Tokens consumed**
+- None new — reuses Dialog's full token set (see Dialog's entry above)
+
+**Accessibility**
+- Built on `@radix-ui/react-alert-dialog` — do not replace the Radix primitive, and do not substitute Dialog for it even though they look identical; the `alertdialog` role and the lack of outside-click dismiss are the entire reason this component exists
+- Focus trap: Radix handles this; do not disable it
+- Radix auto-focuses `cancel` on open — the least-destructive choice gets focus by default
+- `Escape` closes via Cancel's path; do not override
+- No close button in the header — the user must choose Cancel or Action, never dismiss silently
+
+**Chromatic stories**
+- `Default`, `WithBody`, `NoDescription`
 
 ---
 

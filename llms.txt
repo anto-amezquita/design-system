@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 27 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 28 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -35,6 +35,7 @@ npm install @amezquita/design-system
 ## Composition
 
 - [Alert](https://amezquita.dk/design-system/alert.md): Contextual inline feedback message with semantic severity levels (info, success, warning, error)
+- [AlertDialog](https://amezquita.dk/design-system/alert-dialog.md): Confirmation gate for an action the user must explicitly accept or decline — real `alertdialog` role, no outside-click/close-button dismiss, unlike Dialog
 - [Card](https://amezquita.dk/design-system/card.md): Compound container for grouped content — composed from named sub-components
 - [Dialog](https://amezquita.dk/design-system/dialog.md): Overlay for tasks or information requiring focused attention
 - [Drawer](https://amezquita.dk/design-system/drawer.md): Side-anchored slide-in panel for supplemental content or secondary navigation

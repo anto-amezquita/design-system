@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 28,
-    "publicComponentCount": 27
+    "componentCount": 29,
+    "publicComponentCount": 28
   },
   "components": [
     {
@@ -287,6 +287,24 @@
         "DarkMode"
       ],
       "tokenCount": 23,
+      "internal": false
+    },
+    {
+      "name": "AlertDialog",
+      "slug": "alert-dialog",
+      "tier": "composition",
+      "purpose": "Confirmation gate for an action the user must explicitly accept or decline — real `alertdialog` role, no outside-click/close-button dismiss, unlike Dialog",
+      "storybookPath": "Components/AlertDialog",
+      "storybookTitleId": "components-alertdialog",
+      "tokenPrefix": "alertdialog",
+      "stories": [
+        "Default",
+        "WithBody",
+        "NoDescription",
+        "AllSizes",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {
