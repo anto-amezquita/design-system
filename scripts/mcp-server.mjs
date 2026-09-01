@@ -123,7 +123,7 @@ server.registerTool(
   {
     title: "List components",
     description:
-      "List every public component in the design system, optionally filtered by tier (primitives, composition, patterns). Excludes internal-only components (e.g. BaseSheet).",
+      "List every public component in the design system, optionally filtered by tier (primitives, composition, patterns). Excludes internal-only components (e.g. BaseSheet). tokenCount 0 means the component has no component-scoped tokens of its own (it styles entirely through inherited semantic tokens) — not that its tokens are unindexed.",
     inputSchema: {
       tier: z.enum(TIERS).optional().describe("Filter to one tier. Omit for all public components."),
     },
