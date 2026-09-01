@@ -12,39 +12,36 @@ Local-first, read-only. Exposes what the repo already generates, live, instead o
 
 ```
 Last updated:   2026-09-01
-Current phase:  Phase 3 done. search_tokens, get_token, validate_token
-                registered. The first two are pure reads of
-                tokens/token-reference.json (categories and tiers both
-                derived from the data at startup, same pattern as Phase 2's
-                TIERS — not hand-typed). validate_token is the one tool
-                with real logic, and per this spec's Architecture section
-                it had to reuse lint-tokens.mjs's actual predicates, not
-                reimplement them — lint-tokens.mjs wasn't a module before
-                this (it ran its full lint + process.exit() unconditionally
-                on load), so it was refactored first: loadKnownTokenVars,
-                findTokenFallbacks, and isKnownTokenVar are now exported,
-                the CLI runner is guarded behind an entrypoint check (the
-                same pattern build-token-reference.mjs already used), and
-                loadKnownTokenVars takes an explicit rootDir instead of
-                reading paths relative to process.cwd() — required since
-                mcp-server.mjs can be spawned from anywhere. The linter's
-                own no-token-fallback/no-fabricated-token RULES now call
-                these same exported functions instead of duplicating the
-                logic inline, so there is exactly one implementation both
-                the lint script and the MCP tool run. Verified against a
-                real MCP client: search by substring and category, get by
-                exact name (both "space-4" and "--space-4" forms), and
-                validate_token's six shapes (valid var()/bare/name forms,
-                the fallback form, a fabricated name, and both violations
-                at once) all resolved correctly. npm run validate passes,
-                and npm run tokens:lint (the actual linter, not just the
-                tool wrapping it) still passes after the refactor.
-Next action:    Task 4.1/4.2 — get_registry_item, get_skill. Both are pure
-                reads (registry/<slug>.json, skills/amezquita-design-system/
-                SKILL.md) — get_registry_item should reuse get_component's
-                slug-matching approach (normalizeForMatch/isPublic) rather
-                than writing a third copy, per the altitude concern already
-                raised once in Phase 2's review.
+Current phase:  Phase 4 done — all seven tools from the Tools table now
+                exist: list_components, get_component, search_tokens,
+                get_token, validate_token, get_registry_item, get_skill.
+                get_registry_item and get_component now share one
+                findPublicComponent(slugOrName) lookup instead of a second
+                inline copy — the exact altitude concern Phase 2's review
+                raised pre-emptively, addressed before a third copy could
+                exist. get_skill reads its path from skills/index.json
+                (skill name + its declared files[0]) rather than
+                hardcoding skills/amezquita-design-system/SKILL.md a
+                second time, so a skill rename stays correct without a
+                separate edit here. Verified against a real MCP client:
+                get_registry_item by slug and by spaced name ("Alert
+                Dialog"), BaseSheet correctly excluded, an unknown slug
+                errors cleanly, EmptyState's registry item (empty cssVars,
+                same edge case as its missing token file) resolves without
+                crashing; get_skill returns the real, current SKILL.md
+                content. Code review (medium effort) found zero issues —
+                first clean pass across all four phases so far. npm run
+                validate passes.
+Next action:    Phase 5 — the mandatory consolidated review gate, formally:
+                a single read-through of all seven tools together (not
+                per-phase, which is what's happened so far) checking
+                specifically for stale-data reads, crashes on the named
+                edge cases, and reuse-vs-reimplementation, with a written
+                reviewer note per tool. Then Phase 6, the cold test — a
+                fresh subagent, zero memory of this repo, given only the
+                MCP tools and a real task. Both are bigger than the
+                per-phase reviews already done; don't skip them just
+                because the incremental reviews came back clean.
 Blocked on:     Confirming the `claude mcp list` connection claim against a
                 real Claude Code session with a PATH that includes the
                 `claude` binary — still open from Phase 1, still not
@@ -107,7 +104,7 @@ Re-run once after fixing whatever the first pass finds, same as Phase 4 did twic
 | 1 | Scaffold: server process, zero tools, connects to Claude Code locally | `claude mcp list` (or equivalent) shows it connected — **done 2026-09-01, verified via a real MCP client handshake; `claude mcp list` itself not run, see State block** |
 | 2 | `list_components`, `get_component` | A cold-test agent can name every public component and its real props without opening a `.tsx` file — **tools shipped and reviewed 2026-09-01; the cold test itself is deferred to Phase 6, run once against the full tool set** |
 | 3 | `search_tokens`, `get_token`, `validate_token` | Same agent building a component correctly rejects a fabricated token name it's asked to use, citing the real one instead — **tools shipped and reviewed 2026-09-01; the cold test itself is still deferred to Phase 6** |
-| 4 | `get_registry_item`, `get_skill` | Agent can decide "install via registry vs. hand-write" using only tool output |
+| 4 | `get_registry_item`, `get_skill` | Agent can decide "install via registry vs. hand-write" using only tool output — **tools shipped and reviewed 2026-09-01; the cold test itself is still deferred to Phase 6** |
 | 5 | **Mandatory review gate.** Before any tool goes into the cold test, a full read-through of its code against the actual generator it wraps — not a skim. Check each tool for the specific failure modes this project has already hit once elsewhere: stale data (a tool answering from a cached read instead of the live file), a crash on a known edge case (EmptyState's missing token file, Toast's missing props type — both must degrade to "omit the section," not throw), and logic re-implemented instead of reused (`validate_token` must call into `lint-tokens.mjs`'s real functions, not a second copy of the fabrication rules that can drift from the first). Run `npm run validate` alongside this — a clean exit is necessary but not sufficient; the read-through is what catches the things a type-check can't. | Every tool has a written reviewer note (what was checked, what broke, what got fixed) — reviewing only after the cold test is too late, since a cold test finds behavioral gaps, not correctness bugs sitting quietly in a code path the test happened not to exercise |
 | 6 | Cold test (see above), fix findings, re-test | Two consecutive clean runs on different tasks, same bar Phase 4 used |
 | 7 | Document: one section in `AGENTS.md` pointing at the MCP tools as an alternative to reading files directly | `AGENTS.md` still reads as a short router, not a rulebook — trim something else if this pushes it long |
@@ -138,3 +135,4 @@ Not scoped here — recorded so the next session doesn't have to re-derive it. I
 | 2026-09-01 | 1 | Scaffold shipped: `scripts/mcp-server.mjs` (`McpServer` + `StdioServerTransport`, zero tools, `name`/`version` from `package.json`), `.mcp.json` registering it, `@modelcontextprotocol/sdk` added as a devDependency. Verified with a real MCP client handshake (SDK's own `Client` + `StdioClientTransport` from a throwaway script, not committed) — server reports its identity correctly and declares zero capabilities, matching the zero-tools scope; `claude mcp list` itself wasn't run since the `claude` binary isn't on this environment's `PATH`. `npm run validate` passes. Ran a three-agent parallel code review (cleanup, altitude/conventions, correctness) before calling this done, per this spec's own Phase-5 review-gate discipline — even though Phase 5 formally applies to the tool-bearing phases, the same "don't self-assess" instinct applied here. Two real, confirmed issues found and fixed: this spec's own State block still said "not started" while the scaffold it describes had already shipped in the same diff (fixed here); `docs/docs-site-spec.md` hand-typed "27 public components," stale against `AGENTS.md`'s current 28 (fixed to point at the generated count instead of hand-typing a new stale number). One reviewer note accepted without a behavior change: `mcp-server.mjs` resolves `package.json` via `fileURLToPath(import.meta.url)` instead of the `readFileSync('package.json')`-from-cwd pattern every other `scripts/` generator uses — deliberate, since an MCP client may spawn this process with a different working directory than repo root (unlike the other scripts, which only ever run via `npm run` from repo root); added a comment explaining it instead of leaving the divergence silent. Next: Phase 2 (`list_components`, `get_component`).
 | 2026-09-01 | 2 | `list_components` and `get_component` shipped as pure reads of `component-registry.json`/`docs/components/<slug>.md`, `zod` added as a direct devDependency (was previously only a transitive install via the SDK). Verified against a real MCP client (throwaway script, not committed): 28 public components returned, BaseSheet excluded from both tools, tier filter and a deliberately bad tier value both handled, unknown slug/name returns the tool's own error text rather than a generic one, both known Task-1.2 edge cases (EmptyState's missing token file, Toast's missing props type) resolve without crashing. Ran a parallel code review before calling this done (multiple finder angles — line-by-line, altitude, simplification, reuse, efficiency, conventions, cross-file trace, removed-behavior). One real, confirmed bug: `get_component`'s slug/name matching only trimmed and lowercased, so a natural two-word query like `"Alert Dialog"` or `"data table"` matched neither the hyphenated slug nor the space-free name — an agent asking for a real component by its plain name would get a false "doesn't exist." Fixed by normalizing both sides (strip spaces and hyphens, not just case) before comparing; re-verified `"Alert Dialog"` and `"data table"` now resolve correctly, exact slug/PascalCase-name lookups still work, and a genuinely made-up name still correctly errors. Three smaller reviewer notes acted on: `readComponentRegistry()` and the final `get_component` doc read both gained a `try/catch` with the same actionable-error style the file already used for the "not found"/"doc missing" branches, instead of surfacing a raw Node error on a build-time race (`npm run tokens` regenerating these files concurrently); the duplicated `{isError, content}` response shape became a `toolError()` helper and the duplicated `!c.internal` check became `isPublic()`, both because the spec's own Tools table forecasts four more tools that will need the identical shape; `TIERS` changed from a hand-typed array to one derived from the registry at server startup (a single one-time read to build the zod enum, not a per-call read — doesn't conflict with the "fresh read per tool call" rule, which is about tool *execution*, not schema construction). Re-tested all of the above plus the original Phase 1/2 smoke tests after the fixes; `npm run validate` still passes. **Process note, not a code finding:** the review's finder agents got into an unproductive cross-agent messaging loop (one agent re-pinging others for already-delivered results, several rounds deep) before converging — no security concern, but it burned meaningfully more tokens than the review needed; worth a lighter review invocation next phase if the same pattern recurs. Next: Phase 3 (`search_tokens`, `get_token`, `validate_token`) — `validate_token` is the one tool this spec requires reuse logic for; check whether `lint-tokens.mjs`'s fabrication-rule predicates are already exported before assuming a refactor is needed.
 | 2026-09-01 | 3 | `search_tokens` and `get_token` shipped as pure reads of `token-reference.json`, categories derived from the data at startup like Phase 2's `TIERS`. `validate_token` required the reuse refactor the spec's Architecture section mandates: `lint-tokens.mjs`'s fabrication-rule predicates weren't exported yet, and the file wasn't safely importable at all — it ran its full lint (including `process.exit()`) as an unconditional side effect of module load, which would have crashed the MCP server the instant it imported the file. Fixed by extracting `findTokenFallbacks`/`isKnownTokenVar`/`RADIX_VAR_RE` as exports the linter's own `RULES` now call (one implementation, not two), and guarding the CLI runner behind the same `process.argv[1] === fileURLToPath(import.meta.url)` entrypoint check `build-token-reference.mjs` already used — `npm run tokens:lint` re-verified clean after the refactor, not just the new tool. Also had to parameterize `loadKnownTokenVars(rootDir)`, which previously read `tokens/global.json` etc. relative to `process.cwd()` — invisible when the linter's only caller was `npm run` from repo root, but would have broken `mcp-server.mjs`'s own cwd-independence guarantee (an MCP client can spawn it from anywhere) the moment a client did that. Verified against a real MCP client: substring + category search, exact lookup by both `"space-4"` and `"--space-4"` forms, and `validate_token` across six input shapes (valid var()/bare-var/bare-name forms, the fallback form, a fabricated name, and a token that's both fabricated and has a fallback at once — correctly reports both violations, not just the first one found). Ran a lighter code review this time (`medium` instead of the prior phase's `high`, after the process note logged for Phase 2) — found one real, confirmed bug: `findTokenFallbacks`'s match is deliberately abbreviated to the token's own `var(--x)` form (sufficient for the linter, where the real fallback is visible on the source line right above it in console output), but reused verbatim as `validate_token`'s sole evidence with no source line for context, it made an invalid two-argument input look like it was echoing back a *valid* one-argument form. Fixed by quoting the caller's actual input string instead of the abbreviated match. `npm run validate` passes. Next: Phase 4 (`get_registry_item`, `get_skill`).
+| 2026-09-01 | 4 | `get_registry_item` and `get_skill` shipped, completing all seven tools in the spec's Tools table. `get_registry_item` deliberately reuses `get_component`'s lookup instead of writing a third inline `!c.internal`/slug-matching copy — extracted both call sites into one `findPublicComponent(slugOrName)` helper first, addressing the exact altitude concern Phase 2's review raised speculatively ("a third tool will need this") before a third copy actually existed. `get_skill` reads `skills/index.json` to find the skill's declared file path rather than hardcoding `skills/amezquita-design-system/SKILL.md` a second time (the first hardcoding is in `scripts/build-skill.mjs` itself) — a skill rename stays correct without touching this file. Verified against a real MCP client: `get_registry_item` by exact slug and by a spaced name (`"Alert Dialog"`, reusing the same normalization Phase 2 fixed), `BaseSheet` correctly excluded, an unmatched slug errors the same way `get_component` does, `EmptyState`'s registry item (empty `cssVars`, the same missing-component-token-file case as its doc twin) resolves without crashing; `get_skill` returns the real, current `SKILL.md` content byte-for-byte. Ran a `medium`-effort code review — first phase so far with zero findings, not because the review was skipped but because reusing `findPublicComponent` and `skills/index.json` closed off the failure modes the last two reviews actually found (name-matching drift, hand-typed paths). `npm run validate` passes. All seven tools exist now, but per this spec's own rule nothing is "done" on the strength of tools existing — next is Phase 5 (a single consolidated review across all seven together, not per-phase) and Phase 6 (the real cold test, a fresh subagent with zero memory of this repo).
