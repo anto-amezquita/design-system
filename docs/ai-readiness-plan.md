@@ -226,7 +226,7 @@ The artifact that converts the work into positioning. Not a launch post for the 
 
 Opened 2026-09-01, outside the six phases. Not a priority, not scheduled — recorded so the idea isn't lost. Spec'd in [`docs/docs-site-spec.md`](./docs-site-spec.md).
 
-Storybook and the MCP server (see [`docs/mcp-server-spec.md`](./mcp-server-spec.md)) both serve developers and agents. Neither serves the other players a design system actually needs to win over inside an org — PMs deciding whether to adopt it, designers checking intent survived translation, stakeholders who want the story, not a prop table. Portfolio already has a single `/design-system` overview page (case-study style, see the Aug 12 session-log entry above for its known staleness issue); the sketch here is a proper four-section site — pitch, foundations, component gallery, guidelines — built on the same generated artifacts the MCP server and Storybook already read, so it can't drift out of sync with them.
+Full rationale (why Storybook and the MCP server don't cover this audience) lives in the spec itself, not repeated here. Portfolio already has a single `/design-system` overview page (case-study style, see the Aug 12 session-log entry below for its known staleness issue) — the sketch is a proper four-section site built on the same generated artifacts the MCP server and Storybook already read, so it can't drift out of sync with them.
 
 Status: spec only, not started.
 

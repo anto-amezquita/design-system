@@ -59,7 +59,7 @@ Next.js + MDX — matches the stack already in use (portfolio is Next.js), so no
 | 1 | Fix the stale `token-reference.json` import on the existing `/design-system` page (blocking — see State above) | Page's numbers match this repo's canonical `token-reference.json`, not a stale local copy |
 | 2 | Landing / pitch page | Numbers traced to a generated artifact, no hand-typed stats |
 | 3 | Foundations page | Color + type + spacing rendered visually from `token-reference.json` |
-| 4 | Component gallery | All 27 public components listed, grouped, each with a one-line human-written "when to use this" |
+| 4 | Component gallery | All public components listed (pull the count from `component-registry.json`'s `meta.publicComponentCount` at build time — don't hand-type it, it's already drifted once), grouped, each with a one-line human-written "when to use this" |
 | 5 | Guidelines page | Links to `AGENTS.md`, the skill, and the MCP server (if built by then) resolve |
 
 ## Local → hosted

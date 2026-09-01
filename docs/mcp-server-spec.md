@@ -12,11 +12,30 @@ Local-first, read-only. Exposes what the repo already generates, live, instead o
 
 ```
 Last updated:   2026-09-01
-Current phase:  Not started. Spec only.
-Next action:    Task 1.1 — scaffold the server process and confirm it connects
-                to a local MCP client (Claude Code) with zero tools before
-                adding any.
-Blocked on:     nothing
+Current phase:  Phase 1 done. scripts/mcp-server.mjs scaffolded (McpServer +
+                StdioServerTransport, zero tools, version read from
+                package.json) and registered in .mcp.json. Connection
+                verified with a real MCP client handshake (SDK's Client +
+                StdioClientTransport, not just "the process doesn't crash"):
+                server reports its name/version correctly and declares zero
+                capabilities, matching the zero-tools scaffold scope. Not
+                yet verified against Claude Code's own `claude mcp list` —
+                the `claude` binary isn't on PATH in this environment; the
+                protocol-level handshake is the evidence this session could
+                actually produce. npm run validate passes with the new
+                devDependency in place. Code review run (three parallel
+                finders: cleanup, altitude/conventions, correctness) before
+                calling this done — two real issues found and fixed (see
+                Session log), one accepted as a deliberate, spec-consistent
+                choice (cwd-independent path resolution, now commented).
+Next action:    Task 2.1/2.2 — list_components, get_component. Read Task
+                1.2's design note in ai-readiness-plan.md before starting:
+                the same "don't source props from docs/components.md, parse
+                the .tsx" lesson applies here since get_component just
+                serves the already-compiled .md twin, not a new read.
+Blocked on:     Confirming the `claude mcp list` connection claim against a
+                real Claude Code session with a PATH that includes the
+                `claude` binary — worth doing once, not blocking Phase 2.
 ```
 
 ---
@@ -72,7 +91,7 @@ Re-run once after fixing whatever the first pass finds, same as Phase 4 did twic
 
 | Phase | Task | Acceptance |
 |---|---|---|
-| 1 | Scaffold: server process, zero tools, connects to Claude Code locally | `claude mcp list` (or equivalent) shows it connected |
+| 1 | Scaffold: server process, zero tools, connects to Claude Code locally | `claude mcp list` (or equivalent) shows it connected — **done 2026-09-01, verified via a real MCP client handshake; `claude mcp list` itself not run, see State block** |
 | 2 | `list_components`, `get_component` | A cold-test agent can name every public component and its real props without opening a `.tsx` file |
 | 3 | `search_tokens`, `get_token`, `validate_token` | Same agent building a component correctly rejects a fabricated token name it's asked to use, citing the real one instead |
 | 4 | `get_registry_item`, `get_skill` | Agent can decide "install via registry vs. hand-write" using only tool output |
@@ -95,3 +114,12 @@ Not scoped here — recorded so the next session doesn't have to re-derive it. I
 - **Write tools.** No `add_component`, no `update_token`. This is a read-only reference surface, matching the rest of the AI-readiness work's scope discipline.
 - **A second data layer.** If a fact isn't already in `component-registry.json`, `token-reference.json`, `registry/*.json`, or the compiled `.md` twins, this spec doesn't add a new generator to produce it — that's a separate roadmap item, not part of this one.
 - **CLI or editor-rules integration.** Same as `ai-readiness-plan.md`'s Phase-4 framing — not attempted this round.
+
+---
+
+## Session log
+
+| Date | Phase | What changed |
+|---|---|---|
+| 2026-09-01 | — | Spec written. |
+| 2026-09-01 | 1 | Scaffold shipped: `scripts/mcp-server.mjs` (`McpServer` + `StdioServerTransport`, zero tools, `name`/`version` from `package.json`), `.mcp.json` registering it, `@modelcontextprotocol/sdk` added as a devDependency. Verified with a real MCP client handshake (SDK's own `Client` + `StdioClientTransport` from a throwaway script, not committed) — server reports its identity correctly and declares zero capabilities, matching the zero-tools scope; `claude mcp list` itself wasn't run since the `claude` binary isn't on this environment's `PATH`. `npm run validate` passes. Ran a three-agent parallel code review (cleanup, altitude/conventions, correctness) before calling this done, per this spec's own Phase-5 review-gate discipline — even though Phase 5 formally applies to the tool-bearing phases, the same "don't self-assess" instinct applied here. Two real, confirmed issues found and fixed: this spec's own State block still said "not started" while the scaffold it describes had already shipped in the same diff (fixed here); `docs/docs-site-spec.md` hand-typed "27 public components," stale against `AGENTS.md`'s current 28 (fixed to point at the generated count instead of hand-typing a new stale number). One reviewer note accepted without a behavior change: `mcp-server.mjs` resolves `package.json` via `fileURLToPath(import.meta.url)` instead of the `readFileSync('package.json')`-from-cwd pattern every other `scripts/` generator uses — deliberate, since an MCP client may spawn this process with a different working directory than repo root (unlike the other scripts, which only ever run via `npm run` from repo root); added a comment explaining it instead of leaving the divergence silent. Next: Phase 2 (`list_components`, `get_component`).

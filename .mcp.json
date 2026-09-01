@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "amezquita-design-system": {
+      "command": "node",
+      "args": ["scripts/mcp-server.mjs"]
+    }
+  }
+}
