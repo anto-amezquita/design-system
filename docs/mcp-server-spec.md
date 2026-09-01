@@ -12,51 +12,39 @@ Local-first, read-only. Exposes what the repo already generates, live, instead o
 
 ```
 Last updated:   2026-09-01
-Current phase:  Phase 6 done — the actual cold test, two fresh subagents
-                with zero memory of this repo, real build tasks, only the
-                MCP tools as a source of truth (enforced via an explicit
-                "don't read repo source" rule, since the harness can't
-                give a subagent the MCP server as a native tool mid-session
-                — .mcp.json only connects at session start, and the
-                `claude` binary isn't on this environment's PATH to work
-                around that; documented as a real constraint, not glossed
-                over). Both runs clean at the level this phase actually
-                gates: zero MCP-layer bugs, no crashes, no guessed props
-                or tokens, tool errors were clean and actionable both
-                times a made-up component name was tried. Run 2 (not told
-                to validate anything) called validate_token on a token it
-                found via search_tokens before writing it into the file,
-                unprompted — the one behavior this phase most needed to
-                see actually happen live, not asserted. Two real findings
-                surfaced, both confirmed and both out of MCP-server scope:
-                Card's compound sub-components (CardHeader etc.) have no
-                tool-reachable prop data since they aren't independently
-                registered — the same underlying gap as the already-logged
-                CardBody/CardMedia issue, now confirmed to also block the
-                *documented* sub-components, not just undocumented ones;
-                and Table's compiled usage example is a literal
-                <SampleTable /> reference to a story-local helper, not
-                real anatomy — same class of problem Task 1.2's
-                expandObjectAliases() already solved once for prop types,
-                not yet applied to usage examples. Both logged in
-                ai-readiness-plan.md's backlog for whoever picks up the
-                docs generator next, not fixed here — root cause is
-                upstream of what this MCP server wraps. One small in-scope
-                fix made along the way: list_components' tokenCount: 0
-                was ambiguous (genuinely tokenless vs. unindexed) —
-                description now states what it actually means. Full
-                per-run notes in the new "Phase 6 cold-test notes" section.
-                npm run validate passes.
-Next action:    Phase 7 — one section in AGENTS.md pointing at the MCP
-                tools as an alternative to reading files directly. Keep it
-                short; AGENTS.md is a router, not a rulebook, and this
-                spec's own acceptance criterion for Phase 7 says trim
-                something else if this pushes it long.
+Current phase:  All seven phases done. Phase 7: added a "Prefer the MCP
+                tools when connected" section to AGENTS.md (4 lines: what
+                the 7 tools cover, the spec pointer, and an explicit
+                graceful-fallback note — "not connected? nothing here is
+                MCP-only" — since this session was never able to confirm
+                `claude mcp list` actually shows it connected, see
+                Blocked on). Verified every tool name in that section
+                against scripts/mcp-server.mjs's real registerTool() calls
+                (grepped, not typed from memory) — all seven match
+                exactly. File grew from 41 to 45 lines; the acceptance
+                criterion's "trim something else if this pushes it long"
+                wasn't triggered — 45 lines is the same order of size as
+                the original ~45-line write logged in Task 2.3, and every
+                section (this one included) is still a single pointer, not
+                inlined detail. CLAUDE.md's symlink (mode 120000) to
+                AGENTS.md confirmed intact after the edit. npm run
+                validate passes.
+Next action:    None required to finish this spec as scoped. If a second
+                real consumer (a team, not just this solo maintainer)
+                materializes, read "Local → hosted" above before doing
+                anything — swapping stdio for HTTP/SSE and adding auth are
+                the two changes that scenario needs, and neither is
+                started.
 Blocked on:     Confirming the `claude mcp list` connection claim against a
                 real Claude Code session with a PATH that includes the
-                `claude` binary — still open from Phase 1. Phase 6 worked
-                around this rather than resolving it (see Phase 6 notes);
-                still worth doing once, still not blocking Phase 7.
+                `claude` binary. Open since Phase 1, worked around (not
+                resolved) for Phase 6's cold test, and still true here —
+                nothing in this spec's seven phases required resolving it,
+                but a real session should confirm `claude mcp list` shows
+                this server connected before calling the whole thing
+                proven end-to-end, the same "verified against live
+                evidence, not memory" bar ai-readiness-plan.md holds
+                itself to.
 ```
 
 ---
@@ -118,7 +106,7 @@ Re-run once after fixing whatever the first pass finds, same as Phase 4 did twic
 | 4 | `get_registry_item`, `get_skill` | Agent can decide "install via registry vs. hand-write" using only tool output — **tools shipped and reviewed 2026-09-01; the cold test itself is still deferred to Phase 6** |
 | 5 | **Mandatory review gate.** Before any tool goes into the cold test, a full read-through of its code against the actual generator it wraps — not a skim. Check each tool for the specific failure modes this project has already hit once elsewhere: stale data (a tool answering from a cached read instead of the live file), a crash on a known edge case (EmptyState's missing token file, Toast's missing props type — both must degrade to "omit the section," not throw), and logic re-implemented instead of reused (`validate_token` must call into `lint-tokens.mjs`'s real functions, not a second copy of the fabrication rules that can drift from the first). Run `npm run validate` alongside this — a clean exit is necessary but not sufficient; the read-through is what catches the things a type-check can't. | Every tool has a written reviewer note (what was checked, what broke, what got fixed) — reviewing only after the cold test is too late, since a cold test finds behavioral gaps, not correctness bugs sitting quietly in a code path the test happened not to exercise — **done 2026-09-01, see the Phase 5 reviewer notes section below** |
 | 6 | Cold test (see above), fix findings, re-test | Two consecutive clean runs on different tasks, same bar Phase 4 used — **done 2026-09-01, see the Phase 6 cold-test notes below. "Clean" scoped to the MCP layer specifically: both runs found real, confirmed findings, but both traced to pre-existing upstream generator gaps the tools correctly and transparently surface rather than mask — zero bugs in the MCP wrapper itself across both runs** |
-| 7 | Document: one section in `AGENTS.md` pointing at the MCP tools as an alternative to reading files directly | `AGENTS.md` still reads as a short router, not a rulebook — trim something else if this pushes it long |
+| 7 | Document: one section in `AGENTS.md` pointing at the MCP tools as an alternative to reading files directly | `AGENTS.md` still reads as a short router, not a rulebook — trim something else if this pushes it long — **done 2026-09-01, 41 → 45 lines, no trim needed; see State block** |
 
 Phases 1–4 are additive and can land as separate commits/changesets. Phase 5 is the correctness gate; Phase 6 is the behavioral acceptance gate on top of it — together they mirror `npm run validate`'s own logic (automated checks) plus Phase 4's cold-testing discipline (a real, adversarial look, not a self-assessment). Nothing here is "done" on the strength of the tools existing, same rule the rest of this roadmap holds itself to.
 
@@ -179,3 +167,4 @@ Not scoped here — recorded so the next session doesn't have to re-derive it. I
 | 2026-09-01 | 4 | `get_registry_item` and `get_skill` shipped, completing all seven tools in the spec's Tools table. `get_registry_item` deliberately reuses `get_component`'s lookup instead of writing a third inline `!c.internal`/slug-matching copy — extracted both call sites into one `findPublicComponent(slugOrName)` helper first, addressing the exact altitude concern Phase 2's review raised speculatively ("a third tool will need this") before a third copy actually existed. `get_skill` reads `skills/index.json` to find the skill's declared file path rather than hardcoding `skills/amezquita-design-system/SKILL.md` a second time (the first hardcoding is in `scripts/build-skill.mjs` itself) — a skill rename stays correct without touching this file. Verified against a real MCP client: `get_registry_item` by exact slug and by a spaced name (`"Alert Dialog"`, reusing the same normalization Phase 2 fixed), `BaseSheet` correctly excluded, an unmatched slug errors the same way `get_component` does, `EmptyState`'s registry item (empty `cssVars`, the same missing-component-token-file case as its doc twin) resolves without crashing; `get_skill` returns the real, current `SKILL.md` content byte-for-byte. Ran a `medium`-effort code review — first phase so far with zero findings, not because the review was skipped but because reusing `findPublicComponent` and `skills/index.json` closed off the failure modes the last two reviews actually found (name-matching drift, hand-typed paths). `npm run validate` passes. All seven tools exist now, but per this spec's own rule nothing is "done" on the strength of tools existing — next is Phase 5 (a single consolidated review across all seven together, not per-phase) and Phase 6 (the real cold test, a fresh subagent with zero memory of this repo).
 | 2026-09-01 | 5 | The mandatory consolidated review gate, run for the first time across all seven tools together rather than one phase's diff at a time. Eight parallel finder angles plus, separately, direct fault injection — deliberately corrupting each of the three JSON files this server reads (`tokens/component-registry.json`, `tokens/token-reference.json`, `skills/index.json`) one at a time against a live MCP client, observing the real failure mode, then restoring from a backup and checksum-verifying the restore before moving to the next file. That combination is what the four prior per-phase reviews structurally couldn't do — a diff-based review of one phase's new code has no way to notice a startup-time interaction across the whole accumulated file, which is exactly what the most interesting finding of this pass was. **Six real issues found and fixed; full detail per-tool in the new "Phase 5 reviewer notes" section above** (this entry summarizes, that section is the actual artifact the acceptance criterion asks for). Highlights: `validate_token`'s own description overclaimed lint-pass equivalence — confirmed live that `var(--color-warm-500)` (a primitive) validates `true` here but fails the real `no-primitive-tokens` rule in `npm run tokens:lint`; fixed by rewriting the description to state its actual, narrower scope instead of quietly leaving the gap. `search_tokens` accepted a whitespace-only query and matched all 620 tokens instead of erroring (`z.string().min(1)` only guards the raw string's length, not the post-trim result) — fixed with `.trim().min(1, ...)` in the schema itself. `CATEGORIES` was independently re-derived from `token-reference.json`'s live data instead of importing `lib/token-categories.mjs`'s canonical `TOKEN_CATEGORIES` — the exact third-source-of-truth drift that file's own header comment warns against — fixed by importing it directly, which also removed one of the two startup-time JSON reads entirely. The fault-injection testing (not any of the eight automated angles) found that a malformed `component-registry.json` at MCP-client-connection time crashed the whole server with a raw stack trace and an opaque "Connection closed" on the client side, since `TIERS` is necessarily read before `server.connect()` (zod's schema has no per-call hook) — fixed with a `try/catch` that prints one clean line and exits, rather than an unhandled exception; confirmed by the same fault-injection method that `skills/index.json` corruption, by contrast, degrades gracefully (it's read inside `get_skill`'s own handler, not at module load) and leaves every other tool unaffected. Two smaller fixes: `get_skill`'s `index.skills[0]` had no bounds check (currently unreachable, but the one path in the file without this file's own established actionable-error style); `get_component`/`get_registry_item`'s identical "No public component matches" string was hand-typed twice, now a shared `noSuchComponentError()`. `npm run validate` passes; every fix re-verified live against a real MCP client afterward, not assumed correct from reading the diff. Next: Phase 6 — the actual cold test. Nothing up to this point, including this phase, has substituted for it: every review so far, however rigorous, has been this same continuous session reading its own code.
 | 2026-09-01 | 6 | The actual cold test — two fresh subagents (Agent tool, `general-purpose`), each with zero memory of this session, given a real build task and told not to read any file in this repo other than a throwaway MCP-client CLI (`.mcp-cli.mjs`, deleted after use — the harness can't give a mid-session subagent the newly-added `.mcp.json` server as a native tool, and the `claude` binary isn't on this environment's `PATH` to work around it with a fresh real session; documented as a genuine constraint rather than silently substituted for). **Run 1** (`SettingsPanel.tsx` using `Card`/`Switch`/`EmptyState`): zero guessed props, `Switch`'s real `onCheckedChange` and `EmptyState`'s required `title` both looked up rather than assumed. Found `Card`'s compound sub-components (`CardHeader`/`CardTitle`/`CardDescription`/`CardFooter`) have no tool-reachable prop data — `get_component` correctly errors "doesn't exist" for each, since they aren't independently registered, but that leaves an agent following the "don't guess" rule with no path to their real prop shapes even though `Card`'s own usage example requires them. Same underlying gap as the `CardBody`/`CardMedia` finding already logged in `ai-readiness-plan.md`'s Phase 4, now confirmed to also block the *documented* sub-components. **Run 2** (`ComparisonTable.tsx` using `Table`/`Tag`, custom spacing via a real token, deliberately *not* told to validate anything): called `search_tokens` to find real spacing-token candidates, picked `--space-component-gap` by its documented semantic role over 7 alternatives, then called `validate_token` on it **unprompted** before writing it into the file — confirmed live, not asserted, the exact behavior this phase most needed to see. Found `get_component({slug:"Table"})`'s usage example is a literal `<SampleTable />` — a reference to a helper defined in `Table.stories.tsx`, not real anatomy; confirmed the root cause directly (`Table.stories.tsx:21`, `Default` story's `render: () => <SampleTable />`) — same class of problem Task 1.2's `expandObjectAliases()` already solved once for prop types, not yet applied to usage examples. Both findings logged in `ai-readiness-plan.md`'s backlog, not fixed here: root cause is `build-component-docs.mjs`, upstream of what this MCP server wraps, and per this spec's own "no new generators" scope discipline, fixing a docs generator is a separate, bigger change with its own testing surface. One small in-scope fix made along the way: `list_components`' `tokenCount: 0` was ambiguous between "genuinely no component-scoped tokens" and "not indexed" — description now states which it is. **Verdict: both runs clean at the level this phase's acceptance criterion actually gates** — zero MCP-layer bugs across either run, every tool call returned well-formed data or a clean actionable error, nothing crashed, nothing was guessed past. The two findings being real but out-of-scope is itself a positive signal about this layer, not a failure of it — it means the tools are transparently surfacing upstream gaps instead of masking or crashing on them. `npm run validate` passes. Next: Phase 7 — one short section in `AGENTS.md` pointing at the MCP tools.
+| 2026-09-01 | 7 | Added a "Prefer the MCP tools when connected" section to `AGENTS.md` — 4 lines: what the 7 tools cover (grouped by kind, not just listed), the `docs/mcp-server-spec.md` pointer, and an explicit "not connected? nothing here is MCP-only" fallback note, since this session was never able to confirm `claude mcp list` actually shows the server connected (still open, see State block). Verified all seven tool names against `scripts/mcp-server.mjs`'s real `registerTool()` calls via `grep`, not typed from memory — exact match. File grew 41 → 45 lines; didn't trigger the acceptance criterion's "trim something else if this pushes it long" — 45 lines matches the order of size Task 2.3 originally shipped, and the new section is a pointer like every other section, not inlined detail. Confirmed `CLAUDE.md`'s symlink to `AGENTS.md` (mode `120000`) survived the edit. `npm run validate` passes. **All seven phases of this spec are now done.** The one thing genuinely left open across the whole spec is the same one logged since Phase 1: confirming `claude mcp list` shows this server connected in a real Claude Code session with the `claude` binary on `PATH` — this sandbox never had that available, so every phase's "connected" claim rests on a direct MCP-SDK client handshake instead, which is real evidence but not the exact path a live session takes. Worth doing once; nothing in this spec depended on it being done first.

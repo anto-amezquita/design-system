@@ -4,6 +4,10 @@ Router, not a rulebook. Read this, then follow the links — don't try to hold t
 
 Adding or changing a component? Read its compiled twin first: `docs/components/<slug>.md` (real prop table, real tokens, a real usage example — generated from source, not hand-maintained). If the twin doesn't exist yet, `npm run tokens` regenerates it after you add the component to `docs/components.md`.
 
+## Prefer the MCP tools when connected
+
+If the `amezquita-design-system` MCP server is connected (check `claude mcp list`), its tools are the same data as the files below, one call instead of a path to remember: `list_components`/`get_component` for props and usage, `search_tokens`/`get_token`/`validate_token` for tokens, `get_registry_item` for the shadcn-spec manifest, `get_skill` for this system's agent skill. Not connected? Nothing here is MCP-only — every file pointer in this document still works. Spec: [`docs/mcp-server-spec.md`](docs/mcp-server-spec.md).
+
 ## Never violate
 
 - No raw hex colors in component CSS (`#0A0A0A`) — use a semantic token.
