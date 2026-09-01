@@ -13,6 +13,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { z } from "zod";
 import { loadKnownTokenVars, findTokenFallbacks, isKnownTokenVar, RADIX_VAR_RE } from "./lint-tokens.mjs";
+import { TOKEN_CATEGORIES } from "../lib/token-categories.mjs";
 
 // Resolved from this file's own location, not process.cwd() — unlike the other
 // scripts/ generators (always invoked via `npm run` from repo root), an MCP
@@ -63,14 +64,40 @@ function findPublicComponent(slugOrName) {
   );
 }
 
-// Derived once at startup from the registry itself, not hand-typed — if a
-// tier is ever renamed or added upstream, this stays correct without a
-// separate edit here.
-const TIERS = [...new Set(readComponentRegistry().components.map((c) => c.tier))];
+const noSuchComponentError = (slugOrName) =>
+  toolError(
+    `No public component matches "${slugOrName}". Call list_components for the real list — this name doesn't exist in tokens/component-registry.json.`
+  );
 
-// Same reasoning as TIERS: derived from token-reference.json's real category
-// values (primitive, color, motion, spacing, ... ) rather than hand-typed.
-const CATEGORIES = [...new Set(readTokenReference().tokens.map((t) => t.category))];
+// CATEGORIES comes from lib/token-categories.mjs — the same canonical list
+// build-token-reference.mjs's getCategory() and the docs site's TokenTable.tsx
+// filter pills already use (its own header comment says as much: "the two
+// can never drift out of sync"). Deriving this from whatever categories
+// happen to appear in the currently-built token-reference.json instead would
+// have been a third, independent source that could drift from the other two
+// — e.g. a category added upstream with no token using it yet.
+const CATEGORIES = TOKEN_CATEGORIES.map((c) => c.value);
+
+// TIERS, unlike CATEGORIES, has no equivalent shared constant anywhere in the
+// repo, so it's still derived from the registry itself rather than hand-typed
+// — if a tier is ever renamed or added upstream, this stays correct without
+// a separate edit here. Unlike every tool's own per-call reads, this has to
+// run once at module load, because registerTool()'s zod inputSchema must
+// exist before the transport connects — there's no per-call hook to defer
+// it to. That means a malformed or mid-rewrite tokens/component-registry.json
+// at startup (e.g. an MCP client connecting while npm run tokens is
+// regenerating it) fails the whole connection, not just one tool call —
+// correct, fail-fast behavior, since a broken schema can't be registered at
+// all, but the raw thrown error makes an ugly stack trace where every other
+// failure in this file produces a clean, actionable one-liner. Catch it here
+// so a broken startup at least reads the same way.
+let TIERS;
+try {
+  TIERS = [...new Set(readComponentRegistry().components.map((c) => c.tier))];
+} catch (err) {
+  console.error(`amezquita-design-system MCP server failed to start: ${err.message}`);
+  process.exit(1);
+}
 
 // Accepts "space-4", "--space-4", "var(--space-4)", or "var(--space-4, foo)"
 // and returns the bare "--space-4" cssVar form, or null if the input isn't
@@ -137,9 +164,7 @@ server.registerTool(
     const component = findPublicComponent(slug);
 
     if (!component) {
-      return toolError(
-        `No public component matches "${slug}". Call list_components for the real list — this name doesn't exist in tokens/component-registry.json.`
-      );
+      return noSuchComponentError(slug);
     }
 
     const docPath = join(repoRoot, "docs", "components", `${component.slug}.md`);
@@ -171,13 +196,17 @@ server.registerTool(
     description:
       "Search all design tokens (primitive, semantic, and component-scoped) by a substring match on name or CSS variable, optionally narrowed to one category. Returns name, cssVar, type, and the resolved value on each of the 4 theme axes (light-default, light-bold, dark-default, dark-bold).",
     inputSchema: {
-      query: z.string().min(1).describe('Substring to match against token name/cssVar, e.g. "space" or "accent".'),
+      query: z
+        .string()
+        .trim()
+        .min(1, "query cannot be empty or only whitespace")
+        .describe('Substring to match against token name/cssVar, e.g. "space" or "accent".'),
       category: z.enum(CATEGORIES).optional().describe("Narrow to one token category."),
     },
   },
   async ({ query, category }) => {
     const { tokens } = readTokenReference();
-    const q = query.trim().toLowerCase();
+    const q = query.toLowerCase(); // already trimmed and non-empty per inputSchema
     const matches = tokens
       .filter((t) => (!category || t.category === category) && (t.name.toLowerCase().includes(q) || t.cssVar.toLowerCase().includes(q)))
       .map((t) => ({ name: t.name, cssVar: t.cssVar, type: t.type, resolved: t.resolved }));
@@ -200,8 +229,12 @@ server.registerTool(
   },
   async ({ name }) => {
     const { tokens } = readTokenReference();
+    // extractTokenVarName normalizes "space-4" -> "--space-4"; every real token name
+    // is a plain kebab-case string, so a normalized "--x" also correctly matches the
+    // un-prefixed t.name field once the leading "--" is stripped back off.
     const varName = extractTokenVarName(name) ?? name;
-    const token = tokens.find((t) => t.cssVar === varName || t.name === name);
+    const bareName = varName.replace(/^--/, "");
+    const token = tokens.find((t) => t.cssVar === varName || t.name === bareName);
 
     if (!token) {
       return toolError(
@@ -220,7 +253,7 @@ server.registerTool(
   {
     title: "Validate token",
     description:
-      "Check whether a var(--x) reference or bare token name is real, before using it in CSS. Reuses this repo's actual lint rules (no-fabricated-token, no-token-fallback) from scripts/lint-tokens.mjs — the same checks npm run validate enforces — so a tool pass here means the lint pass will also be clean.",
+      'Check whether a var(--x) reference or bare token name is real, before using it in CSS. Reuses two of this repo\'s actual lint rules from scripts/lint-tokens.mjs — no-fabricated-token and no-token-fallback, the same checks npm run validate enforces for those two rules specifically. Does NOT check no-primitive-tokens (a primitive like --color-warm-500 is a real token and validates true here, but is still banned in component CSS — call get_component or check tokens/global.json\'s "primitive" category if you need that distinction) or any of the other CSS-structural lint rules (no-raw-hex, hardcoded motion/spacing, etc.), and can\'t see a CSS file\'s own locally-declared custom properties (a legitimate component-private value like --button-glow-color reads as fabricated here, same as it would to no-fabricated-token run without that file\'s context).',
     inputSchema: {
       token: z.string().describe('e.g. "var(--space-4)", "--space-4", "space-4", or the invalid "var(--space-4, 16px)".'),
     },
@@ -239,31 +272,26 @@ server.registerTool(
 
     const varName = extractTokenVarName(token);
     if (!varName) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: JSON.stringify(
-              {
-                valid: false,
-                reason: `"${token}" isn't a recognized token reference — expected var(--x), a bare --x custom property, or a bare token name like "space-4".`,
-              },
-              null,
-              2
-            ),
-          },
-        ],
-      };
+      // Still report a collected fallback reason (if any) instead of discarding it —
+      // "var(--space-4, 16px) foo" has trailing content extractTokenVarName can't
+      // parse into a name, but its fallback problem was already detected above and
+      // shouldn't disappear behind a generic "not recognized" message.
+      reasons.push(
+        `"${token}" isn't a recognized token reference — expected var(--x), a bare --x custom property, or a bare token name like "space-4".`
+      );
+      const result = { valid: false, reason: reasons.join(" ") };
+      return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
     }
 
+    const isRadix = RADIX_VAR_RE.test(varName);
     const knownTokenVars = loadKnownTokenVars(repoRoot);
-    if (!isKnownTokenVar(varName, knownTokenVars)) {
+    if (!isRadix && !isKnownTokenVar(varName, knownTokenVars)) {
       reasons.push(
-        `${varName} isn't a real token — not in tokens/global.json, any brand's tokens.json, or tokens/components/*.json, and not a --radix-* runtime variable (no-fabricated-token). Call search_tokens to find the real one.`
+        `${varName} isn't a real token — not in tokens/global.json, any brand's tokens.json, or tokens/components/*.json, and not a --radix-* runtime variable (no-fabricated-token). It's still possible this is a legitimate custom property declared elsewhere in the same CSS file it's used in (this tool has no file to check that against) — if so, search_tokens won't find it either, since it was never meant to be a registered token.`
       );
     }
 
-    const validReason = RADIX_VAR_RE.test(varName)
+    const validReason = isRadix
       ? `${varName} is a Radix Primitives runtime variable, not a design token — allowed, but won't resolve to a value in tokens/token-reference.json.`
       : `${varName} is a real token.`;
     const result = reasons.length > 0 ? { valid: false, reason: reasons.join(" ") } : { valid: true, reason: validReason };
@@ -290,9 +318,7 @@ server.registerTool(
     const component = findPublicComponent(slug);
 
     if (!component) {
-      return toolError(
-        `No public component matches "${slug}". Call list_components for the real list — this name doesn't exist in tokens/component-registry.json.`
-      );
+      return noSuchComponentError(slug);
     }
 
     const itemPath = join(repoRoot, "registry", `${component.slug}.json`);
@@ -333,7 +359,14 @@ server.registerTool(
       throw new Error(`Could not read or parse skills/index.json (${err.message}). Run "npm run tokens" to regenerate it.`);
     }
 
+    // This system publishes exactly one skill, per skills/build-skill.mjs — indexed
+    // positionally rather than by name because there's nothing to select between yet.
+    // If a second skill is ever added, this needs a selector input, not a silent [0].
     const skill = index.skills[0];
+    if (!skill) {
+      return toolError(`skills/index.json declares no skills. Run "npm run tokens" to regenerate it — this is a build gap.`);
+    }
+
     const skillPath = join(repoRoot, "skills", skill.name, skill.files[0]);
     if (!existsSync(skillPath)) {
       return toolError(
