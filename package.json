@@ -82,6 +82,7 @@
     "style-dictionary": "^5.4.0",
     "typescript": "^6.0.3",
     "vite": "^6.0.0",
-    "wait-on": "^9.0.10"
+    "wait-on": "^9.0.10",
+    "zod": "^3.25.76"
   }
 }
