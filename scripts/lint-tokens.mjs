@@ -43,6 +43,8 @@
 
 import { glob } from 'glob'
 import { readFileSync, writeFileSync, readdirSync } from 'fs'
+import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { flattenPrimitives } from './build-token-reference.mjs'
 
 // CSS properties that must reference spacing tokens (excludes geometry: width, height, inset, etc.)
@@ -68,34 +70,38 @@ const PRIMITIVE_PATTERNS = [
 
 // Radix Primitives sets these on the DOM at runtime (e.g. for animating open/close
 // to a measured size); they're real, just not tokens this system defines.
-const RADIX_VAR_RE = /^--radix-/
+export const RADIX_VAR_RE = /^--radix-/
 
 // Every name a var(--x) reference is allowed to resolve to, read straight from the
 // DTCG source files rather than tokens/token-reference.json — a built artifact can be
 // stale relative to an uncommitted source edit, and a linter that trusted it could
 // pass a genuinely fabricated token, or fail a real one added in the same change.
-function loadKnownTokenVars() {
+// rootDir defaults to process.cwd() (correct for this script's own CLI use, always
+// invoked via `npm run` from repo root) but is overridable — a caller that imports
+// this function without controlling its own cwd (e.g. scripts/mcp-server.mjs, which
+// an MCP client can spawn from anywhere) must pass its own resolved repo root.
+export function loadKnownTokenVars(rootDir = process.cwd()) {
   const names = new Set()
 
-  const globalTokens = JSON.parse(readFileSync('tokens/global.json', 'utf8'))
+  const globalTokens = JSON.parse(readFileSync(join(rootDir, 'tokens/global.json'), 'utf8'))
   for (const [groupName, groupTokens] of Object.entries(globalTokens)) {
     for (const entry of flattenPrimitives(groupTokens, groupName)) names.add(entry.name)
   }
 
-  for (const brand of readdirSync('tokens/brands')) {
-    const path = `tokens/brands/${brand}/tokens.json`
+  const brandsDir = join(rootDir, 'tokens/brands')
+  for (const brand of readdirSync(brandsDir)) {
+    const path = join(brandsDir, brand, 'tokens.json')
     for (const key of Object.keys(JSON.parse(readFileSync(path, 'utf8')))) names.add(key)
   }
 
-  for (const file of readdirSync('tokens/components')) {
+  const componentsDir = join(rootDir, 'tokens/components')
+  for (const file of readdirSync(componentsDir)) {
     if (!file.endsWith('.json')) continue
-    for (const key of Object.keys(JSON.parse(readFileSync(`tokens/components/${file}`, 'utf8')))) names.add(key)
+    for (const key of Object.keys(JSON.parse(readFileSync(join(componentsDir, file), 'utf8')))) names.add(key)
   }
 
   return new Set([...names].map(name => `--${name}`))
 }
-
-const KNOWN_TOKEN_VARS = loadKnownTokenVars()
 
 // Strips /* ... */ (including comments that span multiple lines) and //
 // line comments from a whole file's content in one pass, preserving every
@@ -175,6 +181,32 @@ function parseIgnoreDirective(rawLine) {
   return new Set(match[1].split(',').map(s => s.trim()).filter(Boolean))
 }
 
+// Shared predicates — the linter's own RULES below call these, and
+// scripts/mcp-server.mjs's validate_token tool imports them directly, so
+// there is exactly one implementation of each check, not a second copy an
+// MCP tool could drift from. See this file's header comment for what each
+// rule means; these two functions are the reusable core of no-token-fallback
+// and no-fabricated-token respectively.
+
+// Matches a var(--x, ...) two-argument (fallback) form. Only needs to find
+// the comma after the property name, not parse the fallback expression
+// itself, which may contain its own nested function calls and commas
+// (var(--x, rgba(0,0,0,0.5))).
+export function findTokenFallbacks(text) {
+  const matches = [...text.matchAll(/var\(\s*--[\w-]+\s*,/g)]
+  return matches.length ? matches.map(m => m[0].replace(/,$/, ')')) : null
+}
+
+// Whether a `--x` custom-property name resolves to a real token: present in
+// knownTokenVars (see loadKnownTokenVars), or a --radix-* runtime variable.
+// Deliberately excludes the linter's file-local "declared elsewhere in this
+// same CSS file" exception (component-private custom properties) — that's a
+// CSS-authoring escape hatch with no meaning outside a specific file, and
+// isn't part of what this predicate can decide from a bare token name alone.
+export function isKnownTokenVar(name, knownTokenVars) {
+  return knownTokenVars.has(name) || RADIX_VAR_RE.test(name)
+}
+
 const RULES = [
   {
     id: 'no-raw-hex',
@@ -232,11 +264,7 @@ const RULES = [
     id: 'no-token-fallback',
     description: 'var(--token, fallback) two-argument form — a token either exists or it doesn\'t; a fallback masks the difference. Use no-fabricated-token\'s allow-list for a genuine component-private customization hook.',
     check(strippedLine) {
-      // Matches up to the first comma after the property name — doesn't need to
-      // parse the fallback expression itself, which may contain its own nested
-      // function calls and commas (var(--x, rgba(0,0,0,0.5))).
-      const matches = [...strippedLine.matchAll(/var\(\s*--[\w-]+\s*,/g)]
-      return matches.length ? matches.map(m => m[0].replace(/,$/, ')')) : null
+      return findTokenFallbacks(strippedLine)
     },
   },
   {
@@ -246,8 +274,7 @@ const RULES = [
       const found = []
       for (const m of strippedLine.matchAll(/var\(\s*(--[\w-]+)/g)) {
         const name = m[1]
-        if (KNOWN_TOKEN_VARS.has(name)) continue
-        if (RADIX_VAR_RE.test(name)) continue
+        if (isKnownTokenVar(name, fileContext.knownTokenVars)) continue
         if (fileContext.locallyDeclaredVars.has(name)) continue
         found.push(name)
       }
@@ -256,7 +283,7 @@ const RULES = [
   },
 ]
 
-function lintFile(filePath, rules) {
+function lintFile(filePath, rules, knownTokenVars) {
   const content = readFileSync(filePath, 'utf8')
   const lines = content.split('\n')
   // Comment-free view, computed once for the whole file so a multi-line block
@@ -284,7 +311,7 @@ function lintFile(filePath, rules) {
     const pv = parsePropertyValue(strippedLine)
     if (pv && pv.prop.startsWith('--')) locallyDeclaredVars.add(pv.prop)
   }
-  const fileContext = { locallyDeclaredVars }
+  const fileContext = { locallyDeclaredVars, knownTokenVars }
 
   for (let i = 0; i < lines.length; i++) {
     const rawLine = lines[i]
@@ -328,40 +355,51 @@ function lintFile(filePath, rules) {
   return violations
 }
 
-const systemFiles = (await glob([
-  'components/primitives/**/*.css',
-  'components/composition/**/*.css',
-  'components/patterns/**/*.css',
-], { cwd: process.cwd() })).sort()
+async function runLinter() {
+  const knownTokenVars = loadKnownTokenVars()
 
-const allViolations = []
-for (const file of systemFiles) {
-  allViolations.push(...lintFile(file, RULES))
-}
+  const systemFiles = (await glob([
+    'components/primitives/**/*.css',
+    'components/composition/**/*.css',
+    'components/patterns/**/*.css',
+  ], { cwd: process.cwd() })).sort()
 
-if (allViolations.length === 0) {
-  console.log(`✓ Token linter passed — ${systemFiles.length} files checked, 0 violations`)
-  process.exit(0)
-}
-
-// Group by file for readable output (Object.groupBy requires Node ≥ 21 — use explicit loop for compatibility)
-const byFile = {}
-for (const v of allViolations) {
-  if (!byFile[v.file]) byFile[v.file] = []
-  byFile[v.file].push(v)
-}
-
-console.error(`\n✗ Token linter: ${allViolations.length} violation(s) across ${Object.keys(byFile).length} file(s)\n`)
-for (const [file, violations] of Object.entries(byFile)) {
-  console.error(`  ${file}`)
-  for (const v of violations) {
-    console.error(`    ${String(v.line).padStart(4)}  [${v.rule}]  ${v.found.join(', ')}`)
-    console.error(`         ${v.description}`)
-    console.error(`         Suppress: /* lint-ignore: ${v.rule} */`)
+  const allViolations = []
+  for (const file of systemFiles) {
+    allViolations.push(...lintFile(file, RULES, knownTokenVars))
   }
-  console.error('')
+
+  if (allViolations.length === 0) {
+    console.log(`✓ Token linter passed — ${systemFiles.length} files checked, 0 violations`)
+    process.exit(0)
+  }
+
+  // Group by file for readable output (Object.groupBy requires Node ≥ 21 — use explicit loop for compatibility)
+  const byFile = {}
+  for (const v of allViolations) {
+    if (!byFile[v.file]) byFile[v.file] = []
+    byFile[v.file].push(v)
+  }
+
+  console.error(`\n✗ Token linter: ${allViolations.length} violation(s) across ${Object.keys(byFile).length} file(s)\n`)
+  for (const [file, violations] of Object.entries(byFile)) {
+    console.error(`  ${file}`)
+    for (const v of violations) {
+      console.error(`    ${String(v.line).padStart(4)}  [${v.rule}]  ${v.found.join(', ')}`)
+      console.error(`         ${v.description}`)
+      console.error(`         Suppress: /* lint-ignore: ${v.rule} */`)
+    }
+    console.error('')
+  }
+
+  writeFileSync('token-violations.json', JSON.stringify(allViolations, null, 2))
+  console.error(`  Full report written to token-violations.json`)
+  process.exit(1)
 }
 
-writeFileSync('token-violations.json', JSON.stringify(allViolations, null, 2))
-console.error(`  Full report written to token-violations.json`)
-process.exit(1)
+// Run as main script — guarded so scripts/mcp-server.mjs (and anything else)
+// can import loadKnownTokenVars/findTokenFallbacks/isKnownTokenVar from this
+// file without triggering a full lint run and its process.exit() calls.
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  await runLinter()
+}
