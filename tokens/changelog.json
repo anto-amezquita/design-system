@@ -132,6 +132,14 @@
   ],
   "unreleased": [
     {
+      "sha": "0f1ca7d",
+      "type": "feat",
+      "scope": null,
+      "message": "add column-level filtering and a toolbar slot to DataTable",
+      "date": "2026-09-02",
+      "breaking": false
+    },
+    {
       "sha": "1ea498c",
       "type": "fix",
       "scope": null,
