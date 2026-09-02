@@ -2,7 +2,7 @@
  * Token reference builder — generates tokens/token-reference.json.
  *
  * Resolves every semantic + component token to its concrete value across all
- * four axis combinations: light/default, light/bold, dark/default, dark/bold.
+ * four theme axes: base-light, base-dark, portfolio-light, portfolio-dark.
  *
  * The resolved values are pre-computed (not CSS-variable-at-runtime) so the
  * docs UI can show real color swatches for every axis without mounting four
@@ -74,10 +74,10 @@ export function flattenPrimitives(node, groupName, pathSegments = []) {
         category: 'primitive',
         rawValue,
         resolved: {
-          'light-default': rawValue,
-          'light-bold': rawValue,
-          'dark-default': rawValue,
-          'dark-bold': rawValue,
+          'base-light': rawValue,
+          'base-dark': rawValue,
+          'portfolio-light': rawValue,
+          'portfolio-dark': rawValue,
         },
         axisAware: false,
         usedBy: [],
@@ -91,9 +91,13 @@ export function flattenPrimitives(node, groupName, pathSegments = []) {
 
 export function buildTokenReference() {
   const globalTokens  = loadJson('tokens/global.json');
-  const portfolioTokens = loadJson('tokens/brands/portfolio/tokens.json');
-  const darkOverrides = loadJson('tokens/brands/dark/tokens.json');
-  const boldOverrides = loadJson('tokens/brands/bold/tokens.json');
+  const baseLightTokens = loadJson('tokens/brands/base/light.json');
+  const baseDarkOverrides = loadJson('tokens/brands/base/dark.json');
+  const portfolioLightOverrides = loadJson('tokens/brands/portfolio/tokens.json');
+  const portfolioDarkOverrides = loadJson('tokens/brands/portfolio/dark.json');
+  // Every semantic token that can appear as a source key on any layer —
+  // used only for the component-token collision check below.
+  const semanticNamespace = { ...baseLightTokens, ...portfolioLightOverrides };
 
   // Load all component tokens into a single flat map
   const componentFiles = readdirSync('tokens/components').filter(f => f.endsWith('.json'));
@@ -104,8 +108,8 @@ export function buildTokenReference() {
       if (key in componentTokens) {
         throw new Error(`Duplicate token key "${key}" in tokens/components/${file} — already defined by another component token file.`);
       }
-      if (key in portfolioTokens) {
-        throw new Error(`Token key "${key}" in tokens/components/${file} collides with an existing semantic token in tokens/brands/portfolio/tokens.json.`);
+      if (key in semanticNamespace) {
+        throw new Error(`Token key "${key}" in tokens/components/${file} collides with an existing semantic token in tokens/brands/base/light.json or tokens/brands/portfolio/tokens.json.`);
       }
     }
     Object.assign(componentTokens, fileTokens);
@@ -120,14 +124,15 @@ export function buildTokenReference() {
     console.warn(`⚠ Could not load tokens/dependency-graph.json (${err.message}) — usedBy will be empty for every token. Run "npm run tokens:graph" first.`);
   }
 
-  // The four axis combinations.
-  // Load order mirrors app/layout.tsx: portfolio.css < dark.css < bold.css
-  // so bold wins over dark for conflicting tokens (accent colours).
+  // The four theme axes.
+  // Load order mirrors the CSS cascade: base-light < base-dark < portfolio-light
+  // < portfolio-dark, so portfolio's overrides win over base for conflicting
+  // tokens (palette, accent, typography).
   const AXES = {
-    'light-default': { ...portfolioTokens, ...componentTokens },
-    'light-bold':    { ...portfolioTokens, ...componentTokens, ...boldOverrides },
-    'dark-default':  { ...portfolioTokens, ...componentTokens, ...darkOverrides },
-    'dark-bold':     { ...portfolioTokens, ...componentTokens, ...darkOverrides, ...boldOverrides },
+    'base-light':      { ...baseLightTokens, ...componentTokens },
+    'base-dark':       { ...baseLightTokens, ...componentTokens, ...baseDarkOverrides },
+    'portfolio-light': { ...baseLightTokens, ...componentTokens, ...portfolioLightOverrides },
+    'portfolio-dark':  { ...baseLightTokens, ...componentTokens, ...baseDarkOverrides, ...portfolioLightOverrides, ...portfolioDarkOverrides },
   };
 
   const resolvers = Object.fromEntries(
@@ -144,7 +149,10 @@ export function buildTokenReference() {
   }
 
   // ── Semantic + component tokens ──────────────────────────────────────────
-  const sourceTokens = { ...portfolioTokens, ...componentTokens };
+  // Light-layer definitions only (base + portfolio's overrides on top) — dark
+  // overrides never introduce a token name that doesn't already exist here,
+  // they only change what it resolves to on the dark axes above.
+  const sourceTokens = { ...baseLightTokens, ...portfolioLightOverrides, ...componentTokens };
   const semanticEntries = Object.entries(sourceTokens).map(([name, token]) => {
     const raw = token.$value ?? token.value;
 

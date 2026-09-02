@@ -3,11 +3,11 @@
  * pairs defined in tokens/contrast-pairs.json (semantic brand tokens and
  * component tokens from tokens/components/*.json alike).
  *
- * Checks four theme modes independently:
- *   light    — components + tokens/brands/portfolio/tokens.json (base)
- *   dark     — base + tokens/brands/dark/tokens.json overrides
- *   bold     — base + tokens/brands/bold/tokens.json overrides
- *   darkBold — base + dark + bold overrides (bold wins the cascade)
+ * Checks four theme layers independently:
+ *   base-light      — components + tokens/brands/base/light.json
+ *   base-dark       — base-light + tokens/brands/base/dark.json overrides
+ *   portfolio-light — base-light + tokens/brands/portfolio/tokens.json overrides
+ *   portfolio-dark  — base-light + base-dark + portfolio-light + tokens/brands/portfolio/dark.json overrides
  *
  * Exit codes: 0 = all pairs pass, 1 = one or more failures.
  * On failure, writes contrast-failures.json for downstream processing.
@@ -91,18 +91,19 @@ function loadComponentTokens() {
 
 const globalTokens = loadJson('tokens/global.json')
 const componentTokens = loadComponentTokens()
-const lightTokens  = loadJson('tokens/brands/portfolio/tokens.json')
-const darkOverrides = loadJson('tokens/brands/dark/tokens.json')
-const boldOverrides = loadJson('tokens/brands/bold/tokens.json')
+const baseLight = loadJson('tokens/brands/base/light.json')
+const baseDark = loadJson('tokens/brands/base/dark.json')
+const portfolioLight = loadJson('tokens/brands/portfolio/tokens.json')
+const portfolioDark = loadJson('tokens/brands/portfolio/dark.json')
 const pairs = loadJson('tokens/contrast-pairs.json')
 
 const modes = {
-  light: { ...componentTokens, ...lightTokens },
-  dark:  { ...componentTokens, ...lightTokens, ...darkOverrides },
-  bold:  { ...componentTokens, ...lightTokens, ...boldOverrides },
-  // The combined axis state — bold wins the cascade over dark (loads last),
-  // so its accent must also pass on dark surfaces.
-  darkBold: { ...componentTokens, ...lightTokens, ...darkOverrides, ...boldOverrides },
+  'base-light': { ...componentTokens, ...baseLight },
+  'base-dark': { ...componentTokens, ...baseLight, ...baseDark },
+  'portfolio-light': { ...componentTokens, ...baseLight, ...portfolioLight },
+  // The combined layer state — portfolio wins the cascade over base (loads
+  // last), so its overrides must also pass on top of base-dark.
+  'portfolio-dark': { ...componentTokens, ...baseLight, ...baseDark, ...portfolioLight, ...portfolioDark },
 }
 
 const failures = []
@@ -143,7 +144,7 @@ const modeCount  = Object.keys(modes).length
 
 if (failures.length === 0) {
   console.log(
-    `✓ Contrast check passed — ${totalPairs} pairs checked across ${modeCount} modes (light, dark, bold, darkBold)`
+    `✓ Contrast check passed — ${totalPairs} pairs checked across ${modeCount} modes (base-light, base-dark, portfolio-light, portfolio-dark)`
   )
   process.exit(0)
 }

@@ -26,7 +26,7 @@
 | `--card-background` | color | `#FAFAF9` † |
 | `--card-background-ghost` | color | `#F4F0EB` † |
 | `--card-border` | color | `#E2DDD9` † |
-| `--card-border-radius` | dimension | `8px` † |
+| `--card-border-radius` | dimension | `8px` |
 | `--card-border-width` | dimension | `1px` |
 | `--card-description-color` | color | `#57534E` † |
 | `--card-description-size` | dimension | `16px` |
@@ -38,7 +38,7 @@
 | `--card-title-size` | dimension | `24px` |
 | `--card-title-weight` | other | `700` |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

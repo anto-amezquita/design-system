@@ -4,7 +4,7 @@
  *
  * Why a manifest instead of reading Figma: the Component collection mixes
  * alias-bound variables (which cascade from Semantic automatically and can
- * never go stale) with concrete values (dark/bold mode overrides and
+ * never go stale) with concrete values (dark mode overrides and
  * non-reference fallbacks, which silently go stale whenever the tokens they
  * were resolved from change). Comparing the current resolved state against a
  * committed snapshot of what was pushed makes staleness detectable offline,
@@ -14,7 +14,7 @@
  *   node scripts/figma-status.mjs                    report drift; exit 1 if any
  *   node scripts/figma-status.mjs Button Tag         limit component report
  *   node scripts/figma-status.mjs --json             machine-readable report
- *   node scripts/figma-status.mjs --overrides        print dark/bold override classification
+ *   node scripts/figma-status.mjs --overrides        print dark override classification
  *   node scripts/figma-status.mjs --baseline         snapshot collections + all components
  *   node scripts/figma-status.mjs --baseline Button  snapshot collections + one component
  *
@@ -30,7 +30,7 @@ import { makeResolver } from '../lib/resolve-token.mjs';
 const MANIFEST_PATH = 'figma/sync-state.json';
 const FIGMA_FILE_KEY = ''; // set this to your Figma file key once connected
 const TIERS = ['components/primitives', 'components/composition', 'components/patterns'];
-const AXIS_NAMES = ['light-default', 'light-bold', 'dark-default', 'dark-bold'];
+const AXIS_NAMES = ['base-light', 'base-dark', 'portfolio-light', 'portfolio-dark'];
 
 function loadJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'));
@@ -39,9 +39,10 @@ function loadJson(path) {
 // ── Load sources ────────────────────────────────────────────────────────────
 
 const globalTokens = loadJson('tokens/global.json');
+const baseLightTokens = loadJson('tokens/brands/base/light.json');
+const baseDarkOverrides = loadJson('tokens/brands/base/dark.json');
 const portfolioTokens = loadJson('tokens/brands/portfolio/tokens.json');
-const darkOverrides = loadJson('tokens/brands/dark/tokens.json');
-const boldOverrides = loadJson('tokens/brands/bold/tokens.json');
+const portfolioDarkOverrides = loadJson('tokens/brands/portfolio/dark.json');
 
 const componentFiles = readdirSync('tokens/components').filter(f => f.endsWith('.json')).sort();
 const componentTokensByFile = {};
@@ -53,9 +54,11 @@ for (const file of componentFiles) {
 }
 
 // ── Override classification (replaces the old hardcoded prefix list) ────────
-// A dark/bold token is component-level iff its exact name is defined in a
+// An override token is component-level iff its exact name is defined in a
 // component token file. Everything else must be a semantic token — anything
 // unmatched is a contract violation.
+
+const semanticNamespace = { ...baseLightTokens, ...portfolioTokens };
 
 function classifyOverrides(overrides, sourceName) {
   const component = {};
@@ -63,31 +66,36 @@ function classifyOverrides(overrides, sourceName) {
   const unknown = [];
   for (const [key, token] of Object.entries(overrides)) {
     if (key in allComponentTokens) component[key] = token;
-    else if (key in portfolioTokens) semantic[key] = token;
+    else if (key in semanticNamespace) semantic[key] = token;
     else unknown.push(key);
   }
   if (unknown.length) {
     throw new Error(
-      `tokens/brands/${sourceName}/tokens.json contains keys that are neither semantic nor component tokens: ${unknown.join(', ')}`
+      `${sourceName} contains keys that are neither semantic nor component tokens: ${unknown.join(', ')}`
     );
   }
   return { component, semantic };
 }
 
-const darkClass = classifyOverrides(darkOverrides, 'dark');
-const boldClass = classifyOverrides(boldOverrides, 'bold');
+const baseDarkClass = classifyOverrides(baseDarkOverrides, 'tokens/brands/base/dark.json');
+const portfolioLightClass = classifyOverrides(portfolioTokens, 'tokens/brands/portfolio/tokens.json');
+const portfolioDarkClass = classifyOverrides(portfolioDarkOverrides, 'tokens/brands/portfolio/dark.json');
 
-// Modes each override source applies to (bold wins over dark in dark-bold
-// because it is spread last in AXES)
-const OVERRIDE_MODES = { dark: ['dark-default', 'dark-bold'], bold: ['light-bold', 'dark-bold'] };
+// Modes each override source applies to (later layers win the cascade —
+// portfolio over base, dark over light — because they're spread last in AXES)
+const OVERRIDE_MODES = {
+  baseDark: ['base-dark', 'portfolio-dark'],
+  portfolioLight: ['portfolio-light', 'portfolio-dark'],
+  portfolioDark: ['portfolio-dark'],
+};
 
 // ── Axis resolvers (same construction as build-token-reference.mjs) ─────────
 
 const AXES = {
-  'light-default': { ...portfolioTokens, ...allComponentTokens },
-  'light-bold':    { ...portfolioTokens, ...allComponentTokens, ...boldOverrides },
-  'dark-default':  { ...portfolioTokens, ...allComponentTokens, ...darkOverrides },
-  'dark-bold':     { ...portfolioTokens, ...allComponentTokens, ...darkOverrides, ...boldOverrides },
+  'base-light':      { ...baseLightTokens, ...allComponentTokens },
+  'base-dark':       { ...baseLightTokens, ...allComponentTokens, ...baseDarkOverrides },
+  'portfolio-light': { ...baseLightTokens, ...allComponentTokens, ...portfolioTokens },
+  'portfolio-dark':  { ...baseLightTokens, ...allComponentTokens, ...baseDarkOverrides, ...portfolioTokens, ...portfolioDarkOverrides },
 };
 const resolvers = Object.fromEntries(
   Object.entries(AXES).map(([axis, tokens]) => [axis, makeResolver(tokens, globalTokens)])
@@ -109,7 +117,7 @@ function snapshotPrimitives() {
 
 function snapshotSemantic() {
   const out = {};
-  for (const name of Object.keys(portfolioTokens).sort()) {
+  for (const name of Object.keys(semanticNamespace).sort()) {
     out[name] = Object.fromEntries(AXIS_NAMES.map(axis => [axis, resolvers[axis](name)]));
   }
   return out;
@@ -146,11 +154,12 @@ function snapshotComponent(baseName) {
     const entry = {};
 
     if (refMatch) entry.alias = refMatch[1];
-    else entry.concrete = resolvers['light-default'](name);
+    else entry.concrete = resolvers['portfolio-light'](name);
 
     const overrideModes = new Set();
-    if (name in darkClass.component) OVERRIDE_MODES.dark.forEach(m => overrideModes.add(m));
-    if (name in boldClass.component) OVERRIDE_MODES.bold.forEach(m => overrideModes.add(m));
+    if (name in baseDarkClass.component) OVERRIDE_MODES.baseDark.forEach(m => overrideModes.add(m));
+    if (name in portfolioLightClass.component) OVERRIDE_MODES.portfolioLight.forEach(m => overrideModes.add(m));
+    if (name in portfolioDarkClass.component) OVERRIDE_MODES.portfolioDark.forEach(m => overrideModes.add(m));
     if (overrideModes.size) {
       entry.overrides = Object.fromEntries(
         [...overrideModes].sort().map(mode => [mode, resolvers[mode](name)])
@@ -217,8 +226,9 @@ if (nameArgs.length && !selected.length) {
 
 if (flags.has('--overrides')) {
   console.log(JSON.stringify({
-    dark: { component: Object.keys(darkClass.component), semantic: Object.keys(darkClass.semantic) },
-    bold: { component: Object.keys(boldClass.component), semantic: Object.keys(boldClass.semantic) },
+    baseDark: { component: Object.keys(baseDarkClass.component), semantic: Object.keys(baseDarkClass.semantic) },
+    portfolioLight: { component: Object.keys(portfolioLightClass.component), semantic: Object.keys(portfolioLightClass.semantic) },
+    portfolioDark: { component: Object.keys(portfolioDarkClass.component), semantic: Object.keys(portfolioDarkClass.semantic) },
   }, null, 2));
   process.exit(0);
 }

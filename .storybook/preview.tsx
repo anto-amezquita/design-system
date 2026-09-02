@@ -1,9 +1,10 @@
 import type { Preview, Decorator } from '@storybook/react-vite'
 import { TooltipProvider } from '@/components/composition/Tooltip'
 import { ToastProvider } from '@/components/composition/Toast'
-import '../styles/brands/portfolio.css'
-import '../styles/brands/dark.css'
-import '../styles/brands/bold.css'
+import '../styles/brands/base-light.css'
+import '../styles/brands/base-dark.css'
+import '../styles/brands/portfolio-light.css'
+import '../styles/brands/portfolio-dark.css'
 import '../styles/reset.css'
 import './storybook.css'
 

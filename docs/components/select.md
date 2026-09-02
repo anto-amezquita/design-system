@@ -29,9 +29,9 @@
 | `--select-border` | color | `#E2DDD9` † |
 | `--select-border-focus` | color | `#0A0A0A` † |
 | `--select-border-hover` | color | `#A8A29E` † |
-| `--select-border-radius` | dimension | `4px` † |
+| `--select-border-radius` | dimension | `4px` |
 | `--select-border-width` | dimension | `1px` |
-| `--select-content-border-radius` | dimension | `8px` † |
+| `--select-content-border-radius` | dimension | `8px` |
 | `--select-content-shadow` | shadow | `0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)` |
 | `--select-font-size` | dimension | `16px` |
 | `--select-foreground` | color | `#0A0A0A` † |
@@ -45,7 +45,7 @@
 | `--select-separator-color` | color | `#E2DDD9` † |
 | `--select-separator-height` | dimension | `1px` |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

@@ -79,14 +79,6 @@
     "$value": "#fafaf9",
     "$type": "color"
   },
-  "color-accent-bold": {
-    "$value": "{color.teal-300}",
-    "$type": "color"
-  },
-  "color-accent-bold-hover": {
-    "$value": "{color.teal-200}",
-    "$type": "color"
-  },
   "color-accent-foreground": {
     "$value": "#1c1917",
     "$type": "color"

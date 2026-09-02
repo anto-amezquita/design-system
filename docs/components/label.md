@@ -27,7 +27,7 @@
 | `--label-gap` | dimension | `8px` |
 | `--label-required-color` | color | `#c0392b` † |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

@@ -194,7 +194,7 @@ server.registerTool(
   {
     title: "Search tokens",
     description:
-      "Search all design tokens (primitive, semantic, and component-scoped) by a substring match on name or CSS variable, optionally narrowed to one category. Returns name, cssVar, type, and the resolved value on each of the 4 theme axes (light-default, light-bold, dark-default, dark-bold).",
+      "Search all design tokens (primitive, semantic, and component-scoped) by a substring match on name or CSS variable, optionally narrowed to one category. Returns name, cssVar, type, and the resolved value on each of the 4 theme axes (base-light, base-dark, portfolio-light, portfolio-dark).",
     inputSchema: {
       query: z
         .string()

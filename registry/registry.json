@@ -8,7 +8,7 @@
       "name": "theme",
       "type": "registry:theme",
       "title": "Design tokens",
-      "description": "115 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
+      "description": "113 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
       "cssVars": {
         "light": {
           "color-neutral-50": "#FAFAF9",
@@ -25,18 +25,12 @@
           "color-surface-secondary": "#F4F0EB",
           "color-surface-tertiary": "#E2DDD9",
           "color-surface-inverse": "#1C1917",
-          "color-surface-spotlight": "#1C1917",
           "color-text-primary": "#0A0A0A",
           "color-text-secondary": "#57534E",
           "color-text-inverse": "#FAFAF9",
-          "color-text-frozen-primary": "#1C1917",
-          "color-text-frozen-secondary": "#57534E",
           "color-accent-default": "#292524",
           "color-accent-hover": "#1C1917",
-          "color-accent-bold": "#15616D",
-          "color-accent-bold-hover": "#0F4750",
           "color-accent-foreground": "#FFFFFF",
-          "color-accent-glow": "#15616D33",
           "color-border-default": "#E2DDD9",
           "color-border-strong": "#A8A29E",
           "color-border-focus": "#0A0A0A",
@@ -125,7 +119,11 @@
           "space-tight-gap": "4px",
           "space-layout-max-width": "1200px",
           "border-width-interactive": "1px",
-          "size-dialog-default": "560px"
+          "size-dialog-default": "560px",
+          "color-surface-spotlight": "#1C1917",
+          "color-text-frozen-primary": "#1C1917",
+          "color-text-frozen-secondary": "#57534E",
+          "color-accent-glow": "#15616D33"
         },
         "dark": {
           "color-neutral-50": "#1c1917",
@@ -142,18 +140,12 @@
           "color-surface-secondary": "#292524",
           "color-surface-tertiary": "#44403c",
           "color-surface-inverse": "#fafaf9",
-          "color-surface-spotlight": "#0F4750",
           "color-text-primary": "#fafaf9",
           "color-text-secondary": "#c8c3be",
           "color-text-inverse": "#1c1917",
-          "color-text-frozen-primary": "#1C1917",
-          "color-text-frozen-secondary": "#57534E",
           "color-accent-default": "#f4f0eb",
           "color-accent-hover": "#fafaf9",
-          "color-accent-bold": "#4FA3B0",
-          "color-accent-bold-hover": "#6FB8C3",
           "color-accent-foreground": "#1c1917",
-          "color-accent-glow": "#15616D80",
           "color-border-default": "#57534e",
           "color-border-strong": "#78716c",
           "color-border-focus": "#fafaf9",
@@ -242,7 +234,11 @@
           "space-tight-gap": "4px",
           "space-layout-max-width": "1200px",
           "border-width-interactive": "1px",
-          "size-dialog-default": "560px"
+          "size-dialog-default": "560px",
+          "color-surface-spotlight": "#0F4750",
+          "color-text-frozen-primary": "#1C1917",
+          "color-text-frozen-secondary": "#57534E",
+          "color-accent-glow": "#15616D80"
         }
       }
     },

@@ -48,6 +48,46 @@
       "$value": "#1C1917",
       "$type": "color"
     },
+    "gray-50": {
+      "$value": "#FAFAFA",
+      "$type": "color"
+    },
+    "gray-100": {
+      "$value": "#F5F5F5",
+      "$type": "color"
+    },
+    "gray-200": {
+      "$value": "#E5E5E5",
+      "$type": "color"
+    },
+    "gray-300": {
+      "$value": "#D4D4D4",
+      "$type": "color"
+    },
+    "gray-400": {
+      "$value": "#A3A3A3",
+      "$type": "color"
+    },
+    "gray-500": {
+      "$value": "#737373",
+      "$type": "color"
+    },
+    "gray-600": {
+      "$value": "#525252",
+      "$type": "color"
+    },
+    "gray-700": {
+      "$value": "#404040",
+      "$type": "color"
+    },
+    "gray-800": {
+      "$value": "#262626",
+      "$type": "color"
+    },
+    "gray-900": {
+      "$value": "#171717",
+      "$type": "color"
+    },
     "teal-50": {
       "$value": "#EBF4F6",
       "$type": "color"

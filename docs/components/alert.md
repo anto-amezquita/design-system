@@ -22,7 +22,7 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--alert-border-radius` | dimension | `8px` † |
+| `--alert-border-radius` | dimension | `8px` |
 | `--alert-border-width` | dimension | `1px` |
 | `--alert-close-offset` | dimension | `8px` |
 | `--alert-content-gap` | dimension | `4px` |
@@ -46,7 +46,7 @@
 | `--alert-warning-border` | color | `#D97706` † |
 | `--alert-warning-foreground` | color | `#B45309` † |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

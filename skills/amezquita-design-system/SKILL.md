@@ -6,7 +6,7 @@ metadata:
   homepage: https://amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 28 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across light/dark × default/bold, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 28 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -80,7 +80,7 @@ Every token this system defines, resolved across all four theme axes: https://am
 
 Real semantic token families:
 
-- **color** (45): `--color-accent-*`, `--color-border-*`, `--color-curtain-*`, `--color-feedback-*`, `--color-neutral-*`, `--color-skeleton-*`, `--color-surface-*`, `--color-text-*`
+- **color** (43): `--color-accent-*`, `--color-border-*`, `--color-curtain-*`, `--color-feedback-*`, `--color-neutral-*`, `--color-skeleton-*`, `--color-surface-*`, `--color-text-*`
 - **typography** (29): `--font-family-*`, `--font-size-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
 - **size** (8): `--focus-ring-*`, `--size-dialog-*`, `--size-icon-*`
 - **spacing** (8): `--space-component-*`, `--space-element-*`, `--space-inline-*`, `--space-label-*`, `--space-layout-*`, `--space-section-*`, `--space-tight-*`

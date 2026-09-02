@@ -691,13 +691,13 @@ function buildComponentMd(component, ctx) {
       lines.push('', '## Tokens', '', '| Token | Type | Value |', '|---|---|---|')
       let anyAxisAware = false
       for (const entry of rows) {
-        const value = entry.resolved?.['light-default'] ?? entry.rawValue
+        const value = entry.resolved?.['portfolio-light'] ?? entry.rawValue
         const note = entry.axisAware ? ' †' : ''
         if (entry.axisAware) anyAxisAware = true
         lines.push(`| \`--${entry.name}\` | ${entry.type} | \`${value}\`${note} |`)
       }
       if (anyAxisAware) {
-        lines.push('', '† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.')
+        lines.push('', '† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.')
       }
     }
   }

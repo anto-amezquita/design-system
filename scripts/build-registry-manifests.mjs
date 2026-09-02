@@ -94,8 +94,8 @@ function cssVarsFor(tokenNames, tokenByName) {
   for (const name of tokenNames) {
     const entry = tokenByName.get(name)
     if (!entry) continue
-    light[entry.name] = entry.resolved['light-default']
-    dark[entry.name] = entry.resolved['dark-default']
+    light[entry.name] = entry.resolved['portfolio-light']
+    dark[entry.name] = entry.resolved['portfolio-dark']
   }
   return { light, dark }
 }

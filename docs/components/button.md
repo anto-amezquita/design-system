@@ -30,7 +30,7 @@
 | Token | Type | Value |
 |---|---|---|
 | `--button-arrow-nudge` | dimension | `2px` |
-| `--button-border-radius` | dimension | `9999px` † |
+| `--button-border-radius` | dimension | `9999px` |
 | `--button-border-width` | dimension | `1px` |
 | `--button-duration` | duration | `200ms` |
 | `--button-font-size` | dimension | `16px` |
@@ -60,7 +60,7 @@
 | `--button-wipe-duration-enter` | duration | `550ms` |
 | `--button-wipe-duration-exit` | duration | `400ms` |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Accessibility
 

@@ -1,0 +1,274 @@
+{
+  "color-neutral-50": {
+    "$value": "{color.gray-900}",
+    "$type": "color"
+  },
+  "color-neutral-100": {
+    "$value": "{color.gray-800}",
+    "$type": "color"
+  },
+  "color-neutral-200": {
+    "$value": "{color.gray-700}",
+    "$type": "color"
+  },
+  "color-neutral-300": {
+    "$value": "{color.gray-600}",
+    "$type": "color"
+  },
+  "color-neutral-400": {
+    "$value": "{color.gray-500}",
+    "$type": "color"
+  },
+  "color-neutral-500": {
+    "$value": "{color.gray-400}",
+    "$type": "color"
+  },
+  "color-neutral-600": {
+    "$value": "{color.gray-300}",
+    "$type": "color"
+  },
+  "color-neutral-700": {
+    "$value": "{color.gray-200}",
+    "$type": "color"
+  },
+  "color-neutral-800": {
+    "$value": "{color.gray-100}",
+    "$type": "color"
+  },
+  "color-neutral-900": {
+    "$value": "{color.gray-50}",
+    "$type": "color"
+  },
+  "color-surface-primary": {
+    "$value": "{color-neutral-50}",
+    "$type": "color"
+  },
+  "color-surface-secondary": {
+    "$value": "{color-neutral-100}",
+    "$type": "color"
+  },
+  "color-surface-tertiary": {
+    "$value": "{color-neutral-200}",
+    "$type": "color"
+  },
+  "color-surface-inverse": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "color-text-primary": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "color-text-secondary": {
+    "$value": "{color-neutral-600}",
+    "$type": "color"
+  },
+  "color-text-inverse": {
+    "$value": "{color-neutral-50}",
+    "$type": "color"
+  },
+  "color-accent-default": {
+    "$value": "{color-neutral-800}",
+    "$type": "color"
+  },
+  "color-accent-hover": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "color-accent-foreground": {
+    "$value": "{color-neutral-50}",
+    "$type": "color"
+  },
+  "color-border-default": {
+    "$value": "{color-neutral-200}",
+    "$type": "color"
+  },
+  "color-border-strong": {
+    "$value": "{color-neutral-400}",
+    "$type": "color"
+  },
+  "color-border-focus": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "color-curtain": {
+    "$value": "{color-neutral-300}",
+    "$type": "color"
+  },
+  "color-feedback-error": {
+    "$value": "#f87171",
+    "$type": "color"
+  },
+  "color-feedback-error-background": {
+    "$value": "{color-neutral-100}",
+    "$type": "color"
+  },
+  "color-feedback-error-foreground": {
+    "$value": "#f87171",
+    "$type": "color"
+  },
+  "color-feedback-error-border": {
+    "$value": "#f87171",
+    "$type": "color"
+  },
+  "color-feedback-success-background": {
+    "$value": "{color-neutral-100}",
+    "$type": "color"
+  },
+  "color-feedback-success-foreground": {
+    "$value": "#f0fdf4",
+    "$type": "color"
+  },
+  "color-feedback-success-border": {
+    "$value": "#4ade80",
+    "$type": "color"
+  },
+  "color-feedback-warning-background": {
+    "$value": "{color-neutral-100}",
+    "$type": "color"
+  },
+  "color-feedback-warning-foreground": {
+    "$value": "#fffbeb",
+    "$type": "color"
+  },
+  "color-feedback-warning-border": {
+    "$value": "#fcd34d",
+    "$type": "color"
+  },
+  "color-feedback-info-background": {
+    "$value": "{color-neutral-100}",
+    "$type": "color"
+  },
+  "color-feedback-info-foreground": {
+    "$value": "#eff6ff",
+    "$type": "color"
+  },
+  "color-feedback-info-border": {
+    "$value": "#60a5fa",
+    "$type": "color"
+  },
+  "button-secondary-foreground": {
+    "$value": "{color-neutral-500}",
+    "$type": "color"
+  },
+  "button-secondary-border": {
+    "$value": "{color-neutral-500}",
+    "$type": "color"
+  },
+  "button-secondary-background-hover": {
+    "$value": "{color-neutral-500}",
+    "$type": "color"
+  },
+  "checkbox-background": {
+    "$value": "{color-neutral-50}",
+    "$type": "color"
+  },
+  "checkbox-background-checked": {
+    "$value": "{color-neutral-800}",
+    "$type": "color"
+  },
+  "checkbox-background-disabled": {
+    "$value": "{color-neutral-100}",
+    "$type": "color"
+  },
+  "checkbox-border": {
+    "$value": "{color-neutral-400}",
+    "$type": "color"
+  },
+  "checkbox-border-hover": {
+    "$value": "{color-neutral-800}",
+    "$type": "color"
+  },
+  "checkbox-foreground-checked": {
+    "$value": "{color-neutral-50}",
+    "$type": "color"
+  },
+  "checkbox-foreground-indeterminate": {
+    "$value": "{color-neutral-50}",
+    "$type": "color"
+  },
+  "checkbox-label-color": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "checkbox-label-color-disabled": {
+    "$value": "{color-neutral-600}",
+    "$type": "color"
+  },
+  "radio-background": {
+    "$value": "{color-neutral-50}",
+    "$type": "color"
+  },
+  "radio-background-checked": {
+    "$value": "{color-neutral-50}",
+    "$type": "color"
+  },
+  "radio-background-disabled": {
+    "$value": "{color-neutral-100}",
+    "$type": "color"
+  },
+  "radio-border": {
+    "$value": "{color-neutral-400}",
+    "$type": "color"
+  },
+  "radio-border-hover": {
+    "$value": "{color-neutral-800}",
+    "$type": "color"
+  },
+  "radio-indicator-color": {
+    "$value": "{color-neutral-800}",
+    "$type": "color"
+  },
+  "radio-label-color": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "radio-label-color-disabled": {
+    "$value": "{color-neutral-600}",
+    "$type": "color"
+  },
+  "textarea-background": {
+    "$value": "{color-neutral-50}",
+    "$type": "color"
+  },
+  "textarea-background-disabled": {
+    "$value": "{color-neutral-100}",
+    "$type": "color"
+  },
+  "textarea-foreground": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "textarea-border": {
+    "$value": "{color-neutral-300}",
+    "$type": "color"
+  },
+  "textarea-border-hover": {
+    "$value": "{color-neutral-400}",
+    "$type": "color"
+  },
+  "textarea-border-focus": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "textarea-border-error": {
+    "$value": "#f87171",
+    "$type": "color"
+  },
+  "textarea-placeholder-color": {
+    "$value": "{color-neutral-600}",
+    "$type": "color"
+  },
+  "textarea-label-color": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "textarea-hint-color": {
+    "$value": "{color-neutral-600}",
+    "$type": "color"
+  },
+  "textarea-error-color": {
+    "$value": "#f87171",
+    "$type": "color"
+  }
+}

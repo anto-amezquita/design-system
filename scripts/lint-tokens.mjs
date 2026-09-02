@@ -95,8 +95,11 @@ export function loadKnownTokenVars(rootDir = process.cwd()) {
 
   const brandsDir = join(rootDir, 'tokens/brands')
   for (const brand of readdirSync(brandsDir)) {
-    const path = join(brandsDir, brand, 'tokens.json')
-    for (const key of Object.keys(JSON.parse(readFileSync(path, 'utf8')))) names.add(key)
+    const brandDir = join(brandsDir, brand)
+    for (const file of readdirSync(brandDir)) {
+      if (!file.endsWith('.json')) continue
+      for (const key of Object.keys(JSON.parse(readFileSync(join(brandDir, file), 'utf8')))) names.add(key)
+    }
   }
 
   const componentsDir = join(rootDir, 'tokens/components')

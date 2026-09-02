@@ -36,7 +36,7 @@ Also accepts all props of: `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'o
 | `--input-border-error` | color | `#c0392b` † |
 | `--input-border-focus` | color | `#0A0A0A` † |
 | `--input-border-hover` | color | `#A8A29E` † |
-| `--input-border-radius` | dimension | `4px` † |
+| `--input-border-radius` | dimension | `4px` |
 | `--input-border-width` | dimension | `1px` |
 | `--input-clear-color` | color | `#57534E` † |
 | `--input-error-color` | color | `#c0392b` † |
@@ -53,7 +53,7 @@ Also accepts all props of: `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'o
 | `--input-prefix-color` | color | `#57534E` † |
 | `--input-suffix-color` | color | `#57534E` † |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

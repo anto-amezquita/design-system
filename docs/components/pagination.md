@@ -34,7 +34,7 @@
 | `--pagination-button-size` | dimension | `48px` |
 | `--pagination-gap` | dimension | `8px` |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

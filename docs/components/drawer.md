@@ -50,7 +50,7 @@
 | `--drawer-title-weight` | other | `700` |
 | `--drawer-z-index` | other | `400` |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

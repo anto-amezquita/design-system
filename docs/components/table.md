@@ -23,7 +23,7 @@
 |---|---|---|
 | `--table-body-color` | color | `#0A0A0A` † |
 | `--table-body-font-size` | dimension | `16px` |
-| `--table-border-radius` | dimension | `8px` † |
+| `--table-border-radius` | dimension | `8px` |
 | `--table-cell-padding-x` | dimension | `16px` |
 | `--table-cell-padding-y` | dimension | `12px` |
 | `--table-header-background` | color | `#F4F0EB` † |
@@ -39,7 +39,7 @@
 | `--table-sort-icon-gap` | dimension | `4px` |
 | `--table-stripe-background` | color | `#F4F0EB` † |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

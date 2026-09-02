@@ -27,7 +27,7 @@
 | `--tag-accent-foreground` | color | `#FFFFFF` † |
 | `--tag-background` | color | `#F4F0EB` † |
 | `--tag-border` | color | `#E2DDD9` † |
-| `--tag-border-radius` | dimension | `9999px` † |
+| `--tag-border-radius` | dimension | `9999px` |
 | `--tag-border-width` | dimension | `1px` |
 | `--tag-font-size` | dimension | `12px` |
 | `--tag-font-weight` | fontWeight | `500` |
@@ -38,7 +38,7 @@
 | `--tag-padding-x` | dimension | `12px` |
 | `--tag-padding-y` | dimension | `4px` |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

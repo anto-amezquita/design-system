@@ -39,7 +39,7 @@
 | `--accordion-trigger-padding-x` | dimension | `24px` |
 | `--accordion-trigger-padding-y` | dimension | `16px` |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

@@ -40,7 +40,7 @@
 | `--switch-track-height` | dimension | `24px` |
 | `--switch-track-width` | dimension | `44px` |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

@@ -13,7 +13,7 @@
 | `--toast-accent-width` | dimension | `4px` |
 | `--toast-background` | color | `#FAFAF9` † |
 | `--toast-border` | color | `#E2DDD9` † |
-| `--toast-border-radius` | dimension | `8px` † |
+| `--toast-border-radius` | dimension | `8px` |
 | `--toast-border-width` | dimension | `1px` |
 | `--toast-close-offset` | dimension | `8px` |
 | `--toast-content-gap` | dimension | `4px` |
@@ -33,7 +33,7 @@
 | `--toast-warning-border` | color | `#D97706` † |
 | `--toast-z-index` | other | `500` |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

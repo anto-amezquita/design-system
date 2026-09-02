@@ -34,4 +34,4 @@
 | `--avatar-size-sm` | other | `24px` |
 | `--avatar-size-xl` | other | `64px` |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.

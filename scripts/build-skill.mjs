@@ -107,7 +107,7 @@ function buildSkillMd({ pkg, registry, tokenReference, siteUrls }) {
     `  homepage: ${rootUrl}`,
     '---',
     '',
-    `${pkg.name} is a token-first, multi-brand React component library — ${publicCount} public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across light/dark × default/bold, and a real npm package. Not copy-paste source: components are imported, not vendored.`,
+    `${pkg.name} is a token-first, multi-brand React component library — ${publicCount} public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.`,
     '',
     '## Install',
     '',

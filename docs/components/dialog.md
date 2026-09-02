@@ -31,7 +31,7 @@
 |---|---|---|
 | `--dialog-background` | color | `#FAFAF9` † |
 | `--dialog-border` | color | `#E2DDD9` † |
-| `--dialog-border-radius` | dimension | `8px` † |
+| `--dialog-border-radius` | dimension | `8px` |
 | `--dialog-border-width` | dimension | `1px` |
 | `--dialog-close-color` | color | `#57534E` † |
 | `--dialog-close-hover` | other | `#0A0A0A` † |
@@ -49,7 +49,7 @@
 | `--dialog-title-weight` | other | `700` |
 | `--dialog-z-index` | other | `400` |
 
-† resolves differently across light/dark and default/bold themes — see `tokens.json` for all four values.
+† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 
