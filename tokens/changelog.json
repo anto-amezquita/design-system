@@ -132,6 +132,14 @@
   ],
   "unreleased": [
     {
+      "sha": "7370c95",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "extend no-primitive-tokens lint to space/font-size/line-height",
+      "date": "2026-09-02",
+      "breaking": false
+    },
+    {
       "sha": "814f430",
       "type": "fix",
       "scope": null,
