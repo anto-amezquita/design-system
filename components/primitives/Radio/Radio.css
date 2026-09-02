@@ -102,7 +102,7 @@
   font-size: var(--radio-label-size);
   color: var(--radio-label-color);
   cursor: pointer;
-  line-height: 1.4;
+  line-height: var(--line-height-body);
   user-select: none;
 }
 

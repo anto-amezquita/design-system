@@ -13,6 +13,11 @@
  *                               --font-size-{2xs..3xl}, no raw --line-height-{tighter,tight,normal,loose,fixed-*};
  *                               use a semantic token, or a Tier-3 component token that itself binds to the primitive
  *   no-hardcoded-motion       — no bare ms timing values; use --duration-* tokens
+ *   no-hardcoded-line-height  — no raw line-height values; use --line-height-* tokens. Bare
+ *                               `1` remains valid — the established convention for tight
+ *                               single-line UI controls (buttons, badges, tags, pagination).
+ *                               Bare `0` also remains valid — collapses the line box on
+ *                               icon-only controls (Pagination's nav buttons).
  *   no-hardcoded-spacing      — no px values in spacing properties; use --space-* tokens
  *   no-deep-bem-nesting       — no element-inside-element selectors (.block__el__el)
  *   no-missing-reduced-motion — file-level: any file declaring a transition or
@@ -245,6 +250,17 @@ const RULES = [
       // Match any non-zero ms value (0ms is valid — used to disable animations)
       const matches = [...pv.value.matchAll(/\b([1-9]\d*)ms\b/g)]
       return matches.length ? matches.map(m => m[0]) : null
+    },
+  },
+  {
+    id: 'no-hardcoded-line-height',
+    description: 'Hardcoded line-height value — replace with a line-height token (--line-height-heading, --line-height-body, --line-height-display, --line-height-label). Bare `1` remains valid for tight single-line UI controls (buttons, badges, tags, pagination); bare `0` remains valid for icon-only controls that collapse the line box.',
+    check(strippedLine) {
+      const pv = parsePropertyValue(strippedLine)
+      if (!pv || pv.prop !== 'line-height') return null
+      if (/^var\(--line-height-[\w-]+\)$/.test(pv.value)) return null
+      if (pv.value === '1' || pv.value === '0') return null
+      return [pv.value]
     },
   },
   {

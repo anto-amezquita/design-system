@@ -96,7 +96,7 @@
   font-family: var(--font-family-base);
   font-size: var(--input-hint-size);
   color: var(--input-hint-color);
-  line-height: 1.4;
+  line-height: var(--line-height-body);
 }
 
 .input-field--error .input-field__hint {

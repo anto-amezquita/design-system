@@ -1126,7 +1126,11 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
-      "components/primitives/Checkbox/Checkbox.css"
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Textarea/Textarea.css"
     ],
     "line-height-display": [
       "components/patterns/Hero/Hero.css"
