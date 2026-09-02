@@ -130,6 +130,24 @@ function extractTypeAliasRhs(source, typeName) {
   return scanBalancedType(source.slice(start)).trim()
 }
 
+// A generic component's own type-parameter clause (e.g. `<T extends Record<string,
+// unknown>>` on DataTable) lives on the exported function declaration, not the Props
+// type alias buildPropsSection reads — so it's otherwise invisible to the compiled
+// docs even though a prop whose type references T (DataTable's `render`) silently
+// resolves to `unknown` for a caller whose own type argument doesn't already satisfy
+// it. `[^=\n]*` in extractTypeAliasRhs's own declRe already discards the identical
+// clause on the Props alias itself for the same reason — this reads it from the
+// function declaration instead, where every generic component actually declares it.
+function findGenericConstraint(source, componentName) {
+  const declRe = new RegExp(`export\\s+function\\s+${componentName}\\s*<`)
+  const m = declRe.exec(source)
+  if (!m) return null
+  const openIdx = m.index + m[0].length - 1
+  const closeIdx = findMatchingClose(source, openIdx, '<', '>')
+  if (closeIdx <= openIdx) return null
+  return collapseWhitespace(source.slice(openIdx + 1, closeIdx).trim())
+}
+
 // Splits `text` at top-level (depth 0) occurrences of any char in `ops`,
 // ignoring occurrences inside comments.
 function splitTopLevel(text, ops) {
@@ -638,6 +656,16 @@ function buildComponentMd(component, ctx) {
     `- Storybook: \`${storybookPath}\``,
     `- Import: \`import { ${usageComponentName} } from '${importPath}'\``,
   )
+
+  // Only the top-level component itself is ever generic in this codebase today — a
+  // sub-component's own name won't match the export-function regex inside its
+  // parent's file, so this degrades to null (no line added) rather than a false hit.
+  const genericConstraint = source ? findGenericConstraint(source, name) : null
+  if (genericConstraint) {
+    lines.push(
+      `- Generic parameter: \`<${genericConstraint}>\` — the type argument you supply must satisfy this constraint, or prop types that reference it resolve to \`unknown\` instead of your real shape.`,
+    )
+  }
 
   if (propsSection && (propsSection.entries.length > 0 || propsSection.extras.length > 0)) {
     if (propsSection.entries.length > 0) {

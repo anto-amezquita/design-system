@@ -5,6 +5,7 @@
 - Tier: patterns
 - Storybook: `Components/DataTable`
 - Import: `import { DataTable } from '@amezquita/design-system/components/patterns/DataTable'`
+- Generic parameter: `<T extends Record<string, unknown>>` — the type argument you supply must satisfy this constraint, or prop types that reference it resolve to `unknown` instead of your real shape.
 
 ## Props
 

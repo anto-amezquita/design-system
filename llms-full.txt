@@ -236,7 +236,7 @@ Sortable, filterable, paginated table for structured datasets
 - Import: `import { DataTable } from '@amezquita/design-system/components/patterns/DataTable'`
 - Token prefix: `datatable-*` (4 tokens)
 - Storybook: Components/DataTable
-- Stories: Default, Sortable, WithSelection, WithPagination, WithPaginationAndSelection, Striped, Compact, Empty, DarkMode
+- Stories: Default, Sortable, WithSelection, WithPagination, WithPaginationAndSelection, WithColumnFilters, WithToolbarAndFilters, WithFiltersAndSelection, Striped, Compact, Empty, DarkMode
 
 ### EmptyState
 
