@@ -1,6 +1,7 @@
 /*
   Tokens consumed:
   --datatable-gap, --datatable-footer-gap, --datatable-empty-padding
+  --datatable-filter-cell-padding-y
   --color-text-secondary, --font-size-sm, --font-family-base
   --size-touch-target
 */
@@ -28,6 +29,18 @@
 .data-table__count {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
+}
+
+.data-table__toolbar {
+  display: flex;
+  align-items: center;
+}
+
+/* Filter row's <th> cells hold an Input/Select, which brings its own border and
+   height — the default header cell padding (sized for plain text) reads as too
+   much extra air around a form control, so only the vertical padding is tightened. */
+.data-table__filter-cell {
+  padding-block: var(--datatable-filter-cell-padding-y);
 }
 
 .data-table__empty {

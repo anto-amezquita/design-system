@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 
 /**
- * Bridges controlled and uncontrolled modes for text inputs.
+ * Bridges controlled and uncontrolled modes for a single piece of state — text inputs by
+ * default, but generic so a dual-mode object value (e.g. DataTable's `filters`) can reuse
+ * the same controlled/uncontrolled dance instead of a parallel hand-rolled version.
  *
  * Initialised from `value` (when present at mount) so that a controlled → uncontrolled
  * switch does not revert to `defaultValue`. For components that need to switch modes
@@ -9,19 +11,21 @@ import { useState, useEffect, useRef } from 'react'
  *
  * Returns [currentValue, isControlled, setInternalValue]
  */
-export function useUncontrolledValue(
-  value: string | undefined,
-  defaultValue?: string
-): [string, boolean, (v: string) => void] {
-  const [internalValue, setInternalValue] = useState(value ?? defaultValue ?? '')
+export function useUncontrolledValue<T = string>(
+  value: T | undefined,
+  defaultValue?: T,
+  empty: T = '' as T
+): [T, boolean, (v: T) => void] {
+  const [internalValue, setInternalValue] = useState(value ?? defaultValue ?? empty)
   const isControlled = value !== undefined
-  const currentValue = isControlled ? (value ?? '') : internalValue
+  const currentValue = isControlled ? (value ?? empty) : internalValue
 
   useEffect(() => {
     if (isControlled) {
-      const next = value ?? ''
+      const next = value ?? empty
       setInternalValue(prev => (prev === next ? prev : next))
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, isControlled])
 
   const prevIsControlledRef = useRef(isControlled)

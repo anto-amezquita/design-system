@@ -2,8 +2,8 @@
   "meta": {
     "primitiveCount": 101,
     "semanticCount": 114,
-    "componentCount": 405,
-    "total": 620
+    "componentCount": 406,
+    "total": 621
   },
   "tokens": [
     {
@@ -6071,6 +6071,23 @@
         "light-bold": "32px",
         "dark-default": "32px",
         "dark-bold": "32px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "DataTable"
+      ]
+    },
+    {
+      "name": "datatable-filter-cell-padding-y",
+      "cssVar": "--datatable-filter-cell-padding-y",
+      "type": "dimension",
+      "category": "component",
+      "rawValue": "{space.2}",
+      "resolved": {
+        "light-default": "8px",
+        "light-bold": "8px",
+        "dark-default": "8px",
+        "dark-bold": "8px"
       },
       "axisAware": false,
       "usedBy": [

@@ -248,6 +248,7 @@
   --datatable-gap: 16px;
   --datatable-footer-gap: 16px;
   --datatable-empty-padding: 32px;
+  --datatable-filter-cell-padding-y: 8px;
   --dialog-background: var(--color-surface-primary);
   --dialog-border: var(--color-border-default);
   --dialog-border-width: 1px;

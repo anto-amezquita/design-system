@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 27,
-    "tokenCount": 488
+    "tokenCount": 489
   },
   "byToken": {
     "accordion-border-color": [
@@ -673,6 +673,9 @@
       "components/primitives/Textarea/Textarea.css"
     ],
     "datatable-empty-padding": [
+      "components/patterns/DataTable/DataTable.css"
+    ],
+    "datatable-filter-cell-padding-y": [
       "components/patterns/DataTable/DataTable.css"
     ],
     "datatable-footer-gap": [

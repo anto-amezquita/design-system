@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useState } from 'react'
 import { DataTable } from './DataTable'
 import type { Column } from './DataTable'
+import { Input } from '../../primitives/Input'
 
 const meta: Meta<typeof DataTable> = {
   title: 'Patterns/DataTable',
@@ -23,6 +24,26 @@ const columns: Column<Person>[] = [
   { key: 'name', label: 'Name', sortable: true },
   { key: 'role', label: 'Role', sortable: true },
   { key: 'department', label: 'Department', sortable: true },
+  { key: 'status', label: 'Status' },
+  { key: 'joined', label: 'Joined', sortable: true },
+]
+
+const filterableColumns: Column<Person>[] = [
+  { key: 'name', label: 'Name', sortable: true, filterable: true, filterType: 'text' },
+  { key: 'role', label: 'Role', sortable: true },
+  {
+    key: 'department',
+    label: 'Department',
+    sortable: true,
+    filterable: true,
+    filterType: 'select',
+    filterOptions: [
+      { value: 'Product', label: 'Product' },
+      { value: 'Engineering', label: 'Engineering' },
+      { value: 'Design', label: 'Design' },
+      { value: 'Marketing', label: 'Marketing' },
+    ],
+  },
   { key: 'status', label: 'Status' },
   { key: 'joined', label: 'Joined', sortable: true },
 ]
@@ -123,6 +144,83 @@ export const WithPaginationAndSelection: Story = {
         />
         <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)' }}>
           {selected.length} row{selected.length !== 1 ? 's' : ''} selected across all pages
+        </p>
+      </div>
+    )
+  },
+}
+
+export const WithColumnFilters: Story = {
+  name: 'Column filters',
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+        Type in the Name filter or pick a Department to narrow the rows. Sort still works
+        on the filtered result, and the row count updates to match.
+      </p>
+      <DataTable<Person>
+        columns={filterableColumns}
+        data={generateRows(24)}
+        pageSize={6}
+      />
+    </div>
+  ),
+}
+
+export const WithToolbarAndFilters: Story = {
+  name: 'Toolbar slot + column filters',
+  render: () => {
+    const [globalQuery, setGlobalQuery] = useState('')
+    const rows = generateRows(24).filter(row =>
+      globalQuery === '' || row.role.toLowerCase().includes(globalQuery.toLowerCase())
+    )
+    return (
+      <DataTable<Person>
+        columns={filterableColumns}
+        data={rows}
+        pageSize={6}
+        renderToolbar={(filteredCount, totalCount) => (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', width: '100%' }}>
+            <div style={{ maxWidth: '240px', flex: '1 1 auto' }}>
+              <Input
+                search
+                clearable
+                aria-label="Search by role"
+                placeholder="Search role…"
+                value={globalQuery}
+                onChange={setGlobalQuery}
+              />
+            </div>
+            <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+              {filteredCount} of {totalCount}
+            </span>
+          </div>
+        )}
+      />
+    )
+  },
+}
+
+export const WithFiltersAndSelection: Story = {
+  name: 'Filters + selection persistence',
+  render: () => {
+    const [selected, setSelected] = useState<Person[]>([])
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+          Select a row, then filter it out of view with the Department filter — it stays
+          selected. Clear the filter and it reappears checked.
+        </p>
+        <DataTable<Person>
+          columns={filterableColumns}
+          data={data}
+          selectable
+          onSelectionChange={setSelected}
+        />
+        <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+          {selected.length === 0
+            ? 'No rows selected'
+            : `Selected: ${selected.map(r => r.name).join(', ')}`}
         </p>
       </div>
     )

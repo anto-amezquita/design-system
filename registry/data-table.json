@@ -11,19 +11,23 @@
     "https://amezquita.dk/r/theme.json",
     "https://amezquita.dk/r/checkbox.json",
     "https://amezquita.dk/r/empty-state.json",
+    "https://amezquita.dk/r/input.json",
     "https://amezquita.dk/r/pagination.json",
+    "https://amezquita.dk/r/select.json",
     "https://amezquita.dk/r/table.json"
   ],
   "cssVars": {
     "light": {
       "datatable-gap": "16px",
       "datatable-footer-gap": "16px",
-      "datatable-empty-padding": "32px"
+      "datatable-empty-padding": "32px",
+      "datatable-filter-cell-padding-y": "8px"
     },
     "dark": {
       "datatable-gap": "16px",
       "datatable-footer-gap": "16px",
-      "datatable-empty-padding": "32px"
+      "datatable-empty-padding": "32px",
+      "datatable-filter-cell-padding-y": "8px"
     }
   }
 }

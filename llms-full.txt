@@ -10,9 +10,9 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-620 tokens total, resolved across light/dark × default/bold. Full values: https://amezquita.dk/tokens.json
+621 tokens total, resolved across light/dark × default/bold. Full values: https://amezquita.dk/tokens.json
 
-- component: 405
+- component: 406
 - primitive: 101
 - color: 45
 - typography: 28
@@ -234,7 +234,7 @@ Hierarchical page location trail; the last item is the current page (non-linked)
 Sortable, filterable, paginated table for structured datasets
 
 - Import: `import { DataTable } from '@amezquita/design-system/components/patterns/DataTable'`
-- Token prefix: `datatable-*` (3 tokens)
+- Token prefix: `datatable-*` (4 tokens)
 - Storybook: Components/DataTable
 - Stories: Default, Sortable, WithSelection, WithPagination, WithPaginationAndSelection, Striped, Compact, Empty, DarkMode
 
