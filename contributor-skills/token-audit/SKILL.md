@@ -15,7 +15,7 @@ The repeatable technique behind the 2026-09-02 duration audit (found zero violat
 
 ## Workflow
 
-1. **Get the real file list.** Don't assume — enumerate every file in the scope (`components/primitives/*/*.css`, `components/composition/*/*.css`, `components/patterns/*/*.css`). The 2026-09-02 audits covered all 26 component CSS files, not a sample.
+1. **Get the real file list.** Don't assume — enumerate every file in the scope (`components/primitives/*/*.css`, `components/composition/*/*.css`, `components/patterns/*/*.css`). The 2026-09-02 audits covered all component CSS files, not a sample — 27 today (`npm run tokens:lint` reports the current count; don't hardcode a number here, it drifts as components are added).
 2. **Know what the existing lint rule already catches vs. misses.** Read `scripts/lint-tokens.mjs`'s rule descriptions (`docs/quality.md` §2 has the current list) before auditing — don't re-find what's already enforced. The line-height gap existed specifically because the rule only checked `var(--line-height-*)` misuse, not bare numbers like `1.4`.
 3. **Scan for the raw pattern**, not just the token reference — a hardcoded value doesn't announce itself as a violation. For durations: bare `ms`/`s` values in `transition`/`animation` declarations. For line-heights: any `line-height:` not using `var(--line-height-*)`.
 4. **Classify each hit before fixing anything.** Some raw values are intentional and shouldn't become violations — e.g. bare `line-height: 1` for tight single-line controls (Button, Badge, Tag) and bare `line-height: 0` for icon-only controls collapsing the line box. Check for an existing established pattern before assuming a hit is a bug.

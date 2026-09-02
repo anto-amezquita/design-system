@@ -26,7 +26,7 @@ npm run validate = tokens:lint && tokens:contrast && check-components-doc.mjs &&
 
 | Step | What it checks | Script |
 |---|---|---|
-| `tokens:lint` | 8 rules against component CSS (below) | `scripts/lint-tokens.mjs` |
+| `tokens:lint` | 9 rules against component CSS (below) | `scripts/lint-tokens.mjs` |
 | `tokens:contrast` | Color contrast across all 4 brand/mode combinations | `scripts/check-contrast.mjs` |
 | `check-components-doc.mjs` | Every component in `tokens/component-registry.json` has a `docs/components.md` entry | — |
 | `check-stories.mjs` | Every public component has a Storybook story | — |
@@ -34,7 +34,7 @@ npm run validate = tokens:lint && tokens:contrast && check-components-doc.mjs &&
 
 `&&`-chained: it stops and exits non-zero at the first failure. Not composition-only in spirit either — read the failing step's own error, it names the fix.
 
-### The 8 token-lint rules (`scripts/lint-tokens.mjs`)
+### The 9 token-lint rules (`scripts/lint-tokens.mjs`)
 
 | Rule | Enforces |
 |---|---|

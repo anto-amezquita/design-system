@@ -19,7 +19,7 @@ If the `amezquita-design-system` MCP server is connected (check `claude mcp list
 - No hardcoded spacing (`padding: 16px`) — use a `--space-*` token.
 - No hardcoded `line-height` values (bare `1`/`0` excepted for tight single-line/icon-only controls) — use a `--line-height-*` token.
 
-`npm run tokens:lint` enforces all six, plus `no-fabricated-token` (any `var(--x)` that doesn't resolve to something real in `tokens/`), `no-deep-bem-nesting`, and `no-missing-reduced-motion` — 8 rules total, itemized in [`docs/quality.md`](docs/quality.md) §2. Read the errors — they tell you the fix and how to suppress a genuine exception (`/* lint-ignore: rule-id */`, with a one-line reason), which is different from working around a real one.
+`npm run tokens:lint` enforces all six, plus `no-fabricated-token` (any `var(--x)` that doesn't resolve to something real in `tokens/`), `no-deep-bem-nesting`, and `no-missing-reduced-motion` — 9 rules total, itemized in [`docs/quality.md`](docs/quality.md) §2. Read the errors — they tell you the fix and how to suppress a genuine exception (`/* lint-ignore: rule-id */`, with a one-line reason), which is different from working around a real one.
 
 ## Do not
 
