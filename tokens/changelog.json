@@ -130,7 +130,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "1ea498c",
+      "type": "fix",
+      "scope": null,
+      "message": "register compound sub-components and fix placeholder usage examples",
+      "date": "2026-09-02",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
