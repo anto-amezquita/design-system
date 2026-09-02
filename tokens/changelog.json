@@ -132,6 +132,14 @@
   ],
   "unreleased": [
     {
+      "sha": "eb27890",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "split token architecture into brand-agnostic base + portfolio skin",
+      "date": "2026-09-02",
+      "breaking": false
+    },
+    {
       "sha": "7370c95",
       "type": "feat",
       "scope": "tokens",
