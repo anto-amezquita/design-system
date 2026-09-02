@@ -132,6 +132,14 @@
   ],
   "unreleased": [
     {
+      "sha": "814f430",
+      "type": "fix",
+      "scope": null,
+      "message": "surface a generic component's type-parameter constraint in compiled docs",
+      "date": "2026-09-02",
+      "breaking": false
+    },
+    {
       "sha": "0f1ca7d",
       "type": "feat",
       "scope": null,
