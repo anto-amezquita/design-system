@@ -1,0 +1,121 @@
+# architecture.md
+
+## Purpose
+
+This file defines the stable technical rules of this design system. Feature work belongs in `/specs`; this file is what stays true across all of it.
+
+Adapted from the ai-product-starter-kit's `architecture.md` template — sections that assume a full product with a backend (auth, data architecture, API conventions, deployment environments) are marked **N/A** rather than left as unfilled brackets: this repo is a component-library package with no server, no database, and no deploy target beyond `npm publish` and a static docs snapshot in the portfolio repo.
+
+---
+
+## 1. Stack
+
+- **Language:** TypeScript, `tsc --noEmit` as the type-check gate (no build step emits JS for consumers beyond what Vite/Storybook need).
+- **Components:** React 19 (peer dependency), Radix UI primitives (Accordion, AlertDialog, Avatar, Checkbox, Dialog, RadioGroup, Select, Switch, Tabs, Toast, Tooltip) for behavior/accessibility; this repo owns styling and composition on top.
+- **Styling:** CSS custom properties driven by a four-tier token system (see §3) — no CSS-in-JS, no Tailwind in component source.
+- **Tokens:** DTCG format (`$value`/`$type`) in `tokens/*.json`, compiled by Style Dictionary (`sd.config.mjs`) into CSS files per brand/mode.
+- **Animation:** GSAP where component motion needs it beyond CSS transitions.
+- **Docs/dev:** Storybook 10 (stories double as the visual-regression corpus and the "correct usage" source for compiled docs).
+- **Package manager:** npm. **Versioning/publish:** Changesets (`npm run changeset` / `version` / `release`).
+- **Testing:** no unit-test framework — see §10.
+- **CI/visual regression:** GitHub Actions (`chromatic.yml`) + Chromatic.
+
+## 2. Repository structure
+
+```
+components/
+  primitives/     — 13 components: Avatar, Badge, Button, Checkbox, Input, Label,
+                     Radio, Select, Skeleton, Spinner, Switch, Tag, Textarea
+  composition/     — 7 components: Alert, AlertDialog, Card, Dialog, Drawer, Toast, Tooltip
+  patterns/        — 8 components: Accordion, Breadcrumb, DataTable, EmptyState,
+                     Hero, Pagination, Table, Tabs
+lib/, hooks/       — shared utilities and hooks (e.g. useUncontrolledValue)
+tokens/
+  global.json           — Tier 1: primitives
+  brands/<name>/*.json  — Tier 2: semantic, per brand (base, portfolio) and mode (light/dark)
+  components/<name>.json — Tier 3: component-scoped tokens
+  component-registry.json, token-reference.json, changelog.json — generated, do not hand-edit
+styles/brands/     — compiled CSS output (generated)
+scripts/           — all build/lint/audit/generator scripts (see §9)
+docs/components/   — compiled per-component doc twins (generated, do not hand-edit)
+registry/          — shadcn-spec CLI registry manifests (generated)
+skills/            — this repo's own agent skill (generated) + workflow skills (hand-authored, see /skills/README.md)
+specs/             — feature specs, one file per body of work
+decisions/         — ADRs, one file per significant architectural choice
+docs/              — roadmap/rationale docs that aren't tied to one feature (ai-readiness-plan.md is the session anchor)
+```
+
+### Structure rules
+
+- A token belongs to exactly one tier (§3) — never skip a tier from component CSS to a primitive.
+- Anything in `docs/components/`, `tokens/token-reference.json`, `tokens/component-registry.json`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, and `skills/amezquita-design-system/` is **generated**. If it's wrong, fix the generator (`scripts/build-*.mjs`), never hand-edit the output — `npm run tokens` regenerates all of it and CI fails the build if a regenerate produces a diff (staleness check in `chromatic.yml`).
+- A new component gets a `.tsx`, a `.css`, a `.stories.tsx`, and an entry in `docs/components.md` (the hand-maintained index `npm run tokens` reads to build the registry) — not a hand-written `docs/components/<slug>.md` twin.
+
+## 3. Token architecture
+
+Three tiers, strictly layered — no skipping:
+
+1. **Primitive** (`tokens/global.json`) — raw values: `color-*`, `space-*`, `font-size-*`, `font-weight-*`, `line-height-*`, `border-radius-*`, `duration-*`, `easing-*`, `opacity-*`, `feedback-*`, `shadow-*`, `icon-size-*`, `border-width-*`, `size-*`. Never referenced directly from component CSS.
+2. **Semantic** (`tokens/brands/<brand>/*.json`) — per-brand, per-mode meaning (`color-accent-default`, `line-height-body`). This is the brand/theme layer — see §4.
+3. **Component** (`tokens/components/<name>.json`) — component-scoped (`--button-padding-x`), resolving to a semantic or (rarely, when justified — see the token-architecture backlog in `docs/ai-readiness-plan.md`) directly to a primitive for literal geometry/motion values.
+
+**If a token isn't in `tokens/token-reference.json`, it doesn't exist.** Add it at the right tier and run `npm run tokens` — don't reference a name that isn't there (enforced by the `no-fabricated-token` lint rule, see `docs/quality.md`).
+
+## 4. Multi-brand / theming
+
+Two brands today, each with light + dark: `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)) and `portfolio` (thin override skin on top of `base`). `sd.config.mjs` outputs four CSS files: `base-light.css`, `base-dark.css`, `portfolio-light.css`, `portfolio-dark.css`. A third brand would follow the same shape as `portfolio` — a thin skin, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
+
+## 5. Code conventions
+
+- **Naming:** components PascalCase, one folder per component under its tier (`components/primitives/Button/Button.tsx` + `Button.css` + `Button.stories.tsx`). Component tokens follow `--<component-slug>-*`.
+- **Type safety:** every public component has a named `<Component>Props` type alias (not an inline type) — the doc generator parses this directly; an inline or `Omit<...>`/`ComponentPropsWithoutRef<...>`-only type falls back to a prose note in compiled docs instead of a real prop table.
+- **CSS:** BEM-ish class naming, no more than one level of element nesting (`no-deep-bem-nesting` lint rule) — `.card__header`, not `.card__header__title`.
+- **Comments:** a `/* lint-ignore: rule-id */` on a suppressed lint violation must carry a one-line reason, not just the suppression.
+
+## 6. Accessibility
+
+Baseline, enforced by tooling not just review: axe run against every Storybook story (`addon-a11y`, `a11y:stories` script), `no-missing-reduced-motion` lint rule (any file with a transition/animation must have a `prefers-reduced-motion` guard), and contrast checked programmatically across all 4 theme combinations (`tokens:contrast`, `scripts/check-contrast.mjs`) — not eyeballed.
+
+## 7. Testing strategy
+
+**No unit-test framework in this repo** — a deliberate choice, not an oversight (see the layered-filtering spec's session log for the reasoning: Playwright against a throwaway dev server substitutes for interaction assertions when needed). Coverage instead comes from:
+
+- **Visual regression:** Chromatic on every push, across brand/mode combinations that have stories.
+- **Story coverage:** `check-stories.mjs` — every public component must have a story.
+- **Accessibility:** `addon-a11y` + `test-storybook` against every story.
+- **Interaction correctness for stateful logic** (e.g. DataTable's filter/sort/selection interplay): a throwaway Playwright script against a real dev server, written for that piece of work, not a persisted suite.
+- **Cold-test verification for agent-facing artifacts:** a fresh subagent with no memory of the session, given only the compiled docs/skill, attempting a real task — this is how doc-generator gaps get found (see `docs/ai-readiness-plan.md` Phase 4/6 findings).
+
+## 8. Machine-facing / agent-readiness architecture
+
+This system deliberately ships a compiled, machine-readable layer alongside the human-facing one — the *why* lives in `docs/ai-readiness.md`, execution history in `docs/ai-readiness-plan.md`. The pieces:
+
+- `llms.txt` / `llms-full.txt` — agent-facing index and full inline reference.
+- `docs/components/<slug>.md` — one compiled twin per public component (props, tokens, real usage example) — the thing an agent should read instead of guessing from source.
+- `tokens.json` — the resolved DTCG source, agent-readable without a build.
+- `registry/` — shadcn-spec CLI-installable manifests.
+- `skills/amezquita-design-system/SKILL.md` + `index.json` — agent skill at `/.well-known/skills/` when deployed.
+- MCP server (`scripts/mcp-server.mjs`, spec at [`specs/mcp-server-spec.md`](../specs/mcp-server-spec.md)) — thin read-only wrappers over the above, live rather than a snapshot.
+
+**Hard rule carried from Phase 1 of the AI-readiness plan: if any of the above is hand-edited, the generator is broken — fix the generator, not the output.**
+
+## 9. Build pipeline
+
+`npm run tokens` runs, in dependency order: `buildTokenReference` → `buildTokensJson` → `buildComponentRegistry` → `buildComponentDocs` → `buildChangelog` → `buildLlmsTxt` → registry manifests → skill. Every generated artifact in §2 comes from this one chain (`sd.config.mjs`). CI (`chromatic.yml`) rebuilds and diffs against the committed tree (with `git add -N` first, so new untracked files count too) — a stale artifact fails the build.
+
+## 10. Preferred patterns
+
+- Reuse an existing mechanism before inventing one (e.g. `useUncontrolledValue` generalized to generic rather than a new controlled/uncontrolled hook for DataTable's filters).
+- Omit a doc/prop-table section rather than emit an empty one — an empty table reads as "this has none," a missing section reads as "not documented," and only one is ever true.
+- When a generator can't resolve something structurally (`Omit<...>`, a native `ComponentPropsWithoutRef<...>`), fall back to a prose note, never a guess.
+
+## 11. Patterns to avoid
+
+- A second semantic tier of tokens per brand (ADR 0001 — the original portfolio/base coupling).
+- `var(--token, fallback)` — a token either exists or it doesn't (`no-token-fallback` lint rule).
+- Hand-editing anything under `docs/components/`, `registry/`, `tokens/token-reference.json`, `tokens/component-registry.json`, `llms*.txt`, `tokens.json`, or `skills/amezquita-design-system/`.
+- Installing an external convention/library wholesale when only its *technique* is needed (ADR 0002 — transitions.dev).
+
+## Not applicable to this repo
+
+Backend architecture, data architecture, API conventions, auth, deployment environments/rollback, and analytics/observability sections from the starter-kit template don't apply — this package has no server or database. If a hosted MCP server (see `specs/mcp-server-spec.md`'s "Local → hosted" section) or a docs site with its own backend ever ships, add those sections here rather than leaving this note stale.

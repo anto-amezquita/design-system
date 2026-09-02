@@ -1,6 +1,6 @@
 # MCP server — specification
 
-Local-first, read-only. Exposes what the repo already generates, live, instead of as a static snapshot. Companion to [`ai-readiness-plan.md`](./ai-readiness-plan.md) — that plan intentionally skipped this (Phase 0/5: "deliberately out of scope"); this file is the spec for picking it back up.
+Local-first, read-only. Exposes what the repo already generates, live, instead of as a static snapshot. Companion to [`ai-readiness-plan.md`](../docs/ai-readiness-plan.md) — that plan intentionally skipped this (Phase 0/5: "deliberately out of scope"); this file is the spec for picking it back up.
 
 **Why now:** solo maintainer today, so a static snapshot (`llms.txt`, the skill file) never goes stale between reads. The trigger for building this anyway is a possible near-term shift to a team — a second consumer whose agent needs current state, not a snapshot from the last `npm run tokens`. Building it locally, unhosted, costs nothing and means the shape already exists if that shift happens.
 

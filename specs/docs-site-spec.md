@@ -1,6 +1,6 @@
 # Human-facing docs site — specification
 
-Storybook and the [MCP server](./mcp-server-spec.md) both serve developers and agents. Neither speaks to the other people a design system needs to win over inside an org — PMs deciding whether to adopt it, designers checking their intent survived translation, stakeholders who just want the story. This is the spec for that surface. Companion to [`ai-readiness-plan.md`](./ai-readiness-plan.md)'s backlog entry — deliberately out of scope there; this file is the spec for picking it up.
+Storybook and the [MCP server](./mcp-server-spec.md) both serve developers and agents. Neither speaks to the other people a design system needs to win over inside an org — PMs deciding whether to adopt it, designers checking their intent survived translation, stakeholders who just want the story. This is the spec for that surface. Companion to [`ai-readiness-plan.md`](../docs/ai-readiness-plan.md)'s backlog entry — deliberately out of scope there; this file is the spec for picking it up.
 
 **Why not just Storybook:** Storybook is built for poking at a component in isolation. It has no narrative, no "why this exists," no foundations page, no adoption pitch. A non-technical stakeholder opening it gets a component tree, not an argument for why the org should standardize on this.
 

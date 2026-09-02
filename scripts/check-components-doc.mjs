@@ -29,6 +29,17 @@ const documentedHeadings = new Set(
   [...registry.matchAll(/^### (.+)$/gm)].map(m => m[1].trim())
 )
 
+// Count headings whose entry table has an `**Internal** | `yes`` row, so the
+// summary line can distinguish "documented" (all directories) from "public"
+// (what AGENTS.md / architecture.md / the token registry quote) instead of
+// printing one raw number that reads as contradicting the others.
+const entryBlocks = registry.split(/^### /m).slice(1)
+const internalHeadings = new Set(
+  entryBlocks
+    .filter(block => /\*\*Internal\*\*\s*\|\s*`yes`/.test(block))
+    .map(block => block.split('\n')[0].trim())
+)
+
 const missing = []
 
 for (const tier of TIERS) {
@@ -41,8 +52,14 @@ for (const tier of TIERS) {
 }
 
 if (missing.length === 0) {
-  const totalChecked = TIERS.flatMap(getComponentDirs).length
-  console.log(`✓ Component registry check passed — ${totalChecked} components documented`)
+  const allDirs = TIERS.flatMap(getComponentDirs)
+  const totalChecked = allDirs.length
+  const internalCount = allDirs.filter(name => internalHeadings.has(name)).length
+  const publicCount = totalChecked - internalCount
+  const breakdown = internalCount > 0
+    ? ` (${publicCount} public + ${internalCount} internal)`
+    : ''
+  console.log(`✓ Component registry check passed — ${totalChecked} directories documented${breakdown}`)
   process.exit(0)
 }
 
