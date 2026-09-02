@@ -29,6 +29,7 @@ If the `amezquita-design-system` MCP server is connected (check `claude mcp list
 - Adopt an external library or convention wholesale for one technique you need from it — see ADR [`0002`](decisions/0002-reject-transitions-dev-library-adopt-audit-technique.md).
 - Make an architectural change (new token tier, new brand, changed component model, changed package structure) without writing an ADR in `/decisions`.
 - Consider a change done because `npm run tokens` and `npm run validate` pass locally but you haven't checked whether generated artifacts are stale — CI's staleness check (`git add -N` + diff) is the real gate; reproduce it locally if unsure.
+- Edit `AGENTS.md`, `docs/architecture.md`, `docs/quality.md`, or add/edit an ADR or spec without running [`contributor-skills/governance-audit`](contributor-skills/governance-audit/SKILL.md) first — `npm run validate` doesn't catch contradictions between documents, only between code and docs (see that skill's origin note for what it caught here on 2026-09-02).
 
 ## Real token prefixes
 
