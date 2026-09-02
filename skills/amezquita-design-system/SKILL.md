@@ -81,7 +81,7 @@ Every token this system defines, resolved across all four theme axes: https://am
 Real semantic token families:
 
 - **color** (45): `--color-accent-*`, `--color-border-*`, `--color-curtain-*`, `--color-feedback-*`, `--color-neutral-*`, `--color-skeleton-*`, `--color-surface-*`, `--color-text-*`
-- **typography** (28): `--font-family-*`, `--font-size-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
+- **typography** (29): `--font-family-*`, `--font-size-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
 - **size** (8): `--focus-ring-*`, `--size-dialog-*`, `--size-icon-*`
 - **spacing** (8): `--space-component-*`, `--space-element-*`, `--space-inline-*`, `--space-label-*`, `--space-layout-*`, `--space-section-*`, `--space-tight-*`
 - **motion** (7): `--duration-entrance-*`, `--duration-interaction-*`, `--duration-reveal-*`, `--duration-skeleton-*`, `--duration-spin-*`, `--duration-transition-*`

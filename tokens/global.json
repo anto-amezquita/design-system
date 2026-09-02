@@ -186,11 +186,11 @@
   },
   "line-height": {
     "tighter": {
-      "$value": "1.1",
+      "$value": "1.125",
       "$type": "number"
     },
     "tight": {
-      "$value": "1.2",
+      "$value": "1.25",
       "$type": "number"
     },
     "normal": {
@@ -198,8 +198,13 @@
       "$type": "number"
     },
     "loose": {
-      "$value": "1.8",
+      "$value": "1.75",
       "$type": "number"
+    },
+    "fixed-16": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Strict-4px-grid line-height for static (non-fluid) single-line UI text — pairs with a fixed font-size, not a clamp() one. Unitless tighter/tight/normal/loose remain the right choice for fluid, clamp()-scaled headings, where a fixed px value would break proportional scaling."
     }
   },
   "border-radius": {

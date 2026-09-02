@@ -54,7 +54,7 @@
   font-family: inherit;
   font-size: var(--accordion-trigger-font-size);
   font-weight: var(--accordion-trigger-font-weight);
-  line-height: var(--line-height-normal);
+  line-height: var(--line-height-body);
   text-align: left;
   cursor: pointer;
   transition: background var(--accordion-duration-collapse) var(--easing-default);

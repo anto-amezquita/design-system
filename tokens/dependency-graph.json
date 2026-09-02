@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 27,
-    "tokenCount": 489
+    "tokenCount": 488
   },
   "byToken": {
     "accordion-border-color": [
@@ -859,6 +859,27 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css"
     ],
+    "emptystate-gap": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "emptystate-gap-compact": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "emptystate-icon-margin": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "emptystate-padding-x": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "emptystate-padding-x-compact": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "emptystate-padding-y": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "emptystate-padding-y-compact": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
     "focus-ring-offset": [
       "components/composition/Alert/Alert.css",
       "components/composition/Card/Card.css",
@@ -941,7 +962,7 @@
     "font-size-h4": [
       "components/patterns/EmptyState/EmptyState.css"
     ],
-    "font-size-sm": [
+    "font-size-small": [
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Tabs/Tabs.css"
@@ -1103,6 +1124,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
       "components/primitives/Checkbox/Checkbox.css"
     ],
@@ -1112,15 +1134,12 @@
     "line-height-heading": [
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
-      "components/composition/Drawer/Drawer.css"
-    ],
-    "line-height-normal": [
-      "components/patterns/Accordion/Accordion.css",
-      "components/patterns/EmptyState/EmptyState.css"
-    ],
-    "line-height-tight": [
+      "components/composition/Drawer/Drawer.css",
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/EmptyState/EmptyState.css"
+    ],
+    "line-height-label": [
+      "components/primitives/Label/Label.css"
     ],
     "opacity-disabled": [
       "components/patterns/Accordion/Accordion.css",
@@ -1341,49 +1360,31 @@
     "skeleton-highlight": [
       "components/primitives/Skeleton/Skeleton.css"
     ],
-    "space-1": [
-      "components/primitives/Input/Input.css"
-    ],
-    "space-2": [
-      "components/patterns/EmptyState/EmptyState.css",
-      "components/primitives/Skeleton/Skeleton.css"
-    ],
-    "space-3": [
-      "components/patterns/EmptyState/EmptyState.css"
-    ],
-    "space-4": [
-      "components/patterns/EmptyState/EmptyState.css",
-      "components/patterns/Pagination/Pagination.css"
-    ],
-    "space-6": [
-      "components/patterns/EmptyState/EmptyState.css"
-    ],
-    "space-7": [
-      "components/patterns/EmptyState/EmptyState.css"
-    ],
-    "space-8": [
-      "components/patterns/EmptyState/EmptyState.css"
-    ],
-    "space-9": [
-      "components/patterns/EmptyState/EmptyState.css"
-    ],
     "space-component-gap": [
       "components/composition/Dialog/Dialog.css"
     ],
     "space-element-gap": [
-      "components/composition/Dialog/Dialog.css"
+      "components/composition/Dialog/Dialog.css",
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/patterns/Pagination/Pagination.css"
     ],
     "space-inline-gap": [
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/Skeleton/Skeleton.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
     ],
+    "space-label-gap": [
+      "components/patterns/EmptyState/EmptyState.css"
+    ],
     "space-tight-gap": [
+      "components/primitives/Input/Input.css",
       "components/primitives/Select/Select.css"
     ],
     "spinner-duration": [

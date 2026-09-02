@@ -1,0 +1,31 @@
+{
+  "emptystate-padding-y": {
+    "$value": "{space.9}",
+    "$type": "dimension",
+    "$description": "Literal component geometry — no reusable semantic role exists yet for a section-level inset this large."
+  },
+  "emptystate-padding-x": {
+    "$value": "{space.8}",
+    "$type": "dimension"
+  },
+  "emptystate-gap": {
+    "$value": "{space-element-gap}",
+    "$type": "dimension"
+  },
+  "emptystate-icon-margin": {
+    "$value": "{space-inline-gap}",
+    "$type": "dimension"
+  },
+  "emptystate-padding-y-compact": {
+    "$value": "{space.7}",
+    "$type": "dimension"
+  },
+  "emptystate-padding-x-compact": {
+    "$value": "{space.6}",
+    "$type": "dimension"
+  },
+  "emptystate-gap-compact": {
+    "$value": "{space-label-gap}",
+    "$type": "dimension"
+  }
+}

@@ -18,6 +18,18 @@
 | `compact?` | `boolean` |  |
 | `className?` | `string` |  |
 
+## Tokens
+
+| Token | Type | Value |
+|---|---|---|
+| `--emptystate-gap` | dimension | `16px` |
+| `--emptystate-gap-compact` | dimension | `12px` |
+| `--emptystate-icon-margin` | dimension | `8px` |
+| `--emptystate-padding-x` | dimension | `64px` |
+| `--emptystate-padding-x-compact` | dimension | `32px` |
+| `--emptystate-padding-y` | dimension | `96px` |
+| `--emptystate-padding-y-compact` | dimension | `48px` |
+
 ## Usage example
 
 ```tsx

@@ -10,12 +10,12 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-621 tokens total, resolved across light/dark × default/bold. Full values: https://amezquita.dk/tokens.json
+630 tokens total, resolved across light/dark × default/bold. Full values: https://amezquita.dk/tokens.json
 
-- component: 406
-- primitive: 101
+- component: 413
+- primitive: 102
 - color: 45
-- typography: 28
+- typography: 29
 - size: 8
 - spacing: 8
 - motion: 7
@@ -243,7 +243,7 @@ Sortable, filterable, paginated table for structured datasets
 Placeholder for zero-content states — icon, heading, supporting text, and an optional action
 
 - Import: `import { EmptyState } from '@amezquita/design-system/components/patterns/EmptyState'`
-- Token prefix: `emptystate-*` (0 tokens)
+- Token prefix: `emptystate-*` (7 tokens)
 - Storybook: Components/EmptyState
 - Stories: Default, AllVariants, Compact, DarkMode
 

@@ -12,7 +12,23 @@
     "https://amezquita.dk/r/button.json"
   ],
   "cssVars": {
-    "light": {},
-    "dark": {}
+    "light": {
+      "emptystate-padding-y": "96px",
+      "emptystate-padding-x": "64px",
+      "emptystate-gap": "16px",
+      "emptystate-icon-margin": "8px",
+      "emptystate-padding-y-compact": "48px",
+      "emptystate-padding-x-compact": "32px",
+      "emptystate-gap-compact": "12px"
+    },
+    "dark": {
+      "emptystate-padding-y": "96px",
+      "emptystate-padding-x": "64px",
+      "emptystate-gap": "16px",
+      "emptystate-icon-margin": "8px",
+      "emptystate-padding-y-compact": "48px",
+      "emptystate-padding-x-compact": "32px",
+      "emptystate-gap-compact": "12px"
+    }
   }
 }

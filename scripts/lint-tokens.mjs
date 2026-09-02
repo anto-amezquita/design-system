@@ -9,7 +9,9 @@
  *
  * Rules:
  *   no-raw-hex                — no hex colour literals; use semantic tokens
- *   no-primitive-tokens       — no --color-warm-*, --color-black, etc.; use semantic tokens
+ *   no-primitive-tokens       — no --color-warm-*, --color-black, etc., no raw --space-N, no raw
+ *                               --font-size-{2xs..3xl}, no raw --line-height-{tighter,tight,normal,loose,fixed-*};
+ *                               use a semantic token, or a Tier-3 component token that itself binds to the primitive
  *   no-hardcoded-motion       — no bare ms timing values; use --duration-* tokens
  *   no-hardcoded-spacing      — no px values in spacing properties; use --space-* tokens
  *   no-deep-bem-nesting       — no element-inside-element selectors (.block__el__el)
@@ -66,6 +68,9 @@ const PRIMITIVE_PATTERNS = [
   /var\(--color-black\)/g,
   /var\(--color-white\)/g,
   /var\(--color-teal-[\w-]*\)/g,
+  /var\(--space-\d+\)/g,
+  /var\(--font-size-(2xs|xs|sm|base|md|emphasis|lg|xl|2xl|3xl)\)/g,
+  /var\(--line-height-(tighter|tight|normal|loose|fixed-\d+)\)/g,
 ]
 
 // Radix Primitives sets these on the DOM at runtime (e.g. for animating open/close
@@ -222,7 +227,7 @@ const RULES = [
   },
   {
     id: 'no-primitive-tokens',
-    description: 'Primitive token reference — replace with a semantic token (--color-text-*, --color-surface-*, --color-accent-*)',
+    description: 'Primitive token reference — replace with a semantic token (color: --color-text-*/--color-surface-*/--color-accent-*; spacing: --space-inline-gap/--space-element-gap/etc.; typography: --font-size-body/--font-size-small/etc., --line-height-heading/--line-height-body/etc.) or, for a genuinely component-specific value, a Tier-3 component token that itself binds to the primitive',
     check(strippedLine) {
       const matches = PRIMITIVE_PATTERNS.flatMap(pattern => [...strippedLine.matchAll(pattern)].map(m => m[0]))
       return matches.length ? matches : null

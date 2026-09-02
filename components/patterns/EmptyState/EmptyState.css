@@ -1,10 +1,12 @@
 /*
   Tokens consumed:
   --color-text-primary, --color-text-secondary
-  --font-family-base, --font-size-body, --font-size-h4
+  --font-family-base, --font-size-body, --font-size-h4, --font-size-small
   --font-weight-semibold
-  --space-2, --space-3, --space-4, --space-5, --space-6, --space-8, --space-9
+  --emptystate-padding-y, --emptystate-padding-x, --emptystate-gap, --emptystate-icon-margin
+  --emptystate-padding-y-compact, --emptystate-padding-x-compact, --emptystate-gap-compact
   --icon-size-xl, --icon-size-lg
+  --line-height-heading, --line-height-body
 */
 
 .empty-state {
@@ -13,14 +15,14 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--space-9) var(--space-8);
-  gap: var(--space-4);
+  padding: var(--emptystate-padding-y) var(--emptystate-padding-x);
+  gap: var(--emptystate-gap);
   font-family: var(--font-family-base);
 }
 
 .empty-state--compact {
-  padding: var(--space-7) var(--space-6);
-  gap: var(--space-3);
+  padding: var(--emptystate-padding-y-compact) var(--emptystate-padding-x-compact);
+  gap: var(--emptystate-gap-compact);
 }
 
 .empty-state__icon {
@@ -30,7 +32,7 @@
   width: var(--icon-size-xl);
   height: var(--icon-size-xl);
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--emptystate-icon-margin);
 }
 
 .empty-state--compact .empty-state__icon {
@@ -44,7 +46,7 @@
   font-size: var(--font-size-h4);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
-  line-height: var(--line-height-tight);
+  line-height: var(--line-height-heading);
 }
 
 .empty-state--compact .empty-state__title {
@@ -55,14 +57,14 @@
   margin: 0;
   font-size: var(--font-size-body);
   color: var(--color-text-secondary);
-  line-height: var(--line-height-normal);
+  line-height: var(--line-height-body);
   max-width: 400px;
 }
 
 .empty-state--compact .empty-state__body {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-small);
 }
 
 .empty-state__action {
-  margin-top: var(--space-2);
+  margin-top: var(--emptystate-icon-margin);
 }

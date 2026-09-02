@@ -13,9 +13,9 @@ Most "AI-ready design system" claims aren't checkable. This one is. I scored `@a
 | | DesignSystems.one | Kaelig affordances |
 |---|---|---|
 | Before | 1 / 5 | 1 / 10 shipped, 1 partial |
-| After | 3 / 5 | 5 / 10 shipped |
+| After | 4 / 5 | 6 / 10 shipped |
 
-3/5 matches the top score in the original 37-system audit. It's built on two of the three hardest signals to ship — DTCG tokens and a real shadcn-spec registry — not the easy ones.
+4/5 exceeds the top score in the original 37-system audit (3/5). It's built on three of the four hardest signals to ship — DTCG tokens, a real shadcn-spec registry, and an MCP server — not the easy ones.
 
 ## What shipped
 
@@ -31,6 +31,8 @@ Most "AI-ready design system" claims aren't checkable. This one is. I scored `@a
 
 **A repo agent file.** `AGENTS.md` at the root, `CLAUDE.md` symlinked to it — the real component list and token prefixes pulled from the registry at write time, not typed from memory. (Memory is exactly how a stale count crept into an earlier draft of this file. Caught it, fixed it, left a note.)
 
+**A local MCP server.** Seven read-only tools — `list_components`, `get_component`, `search_tokens`, `get_token`, `validate_token`, `get_registry_item`, `get_skill` — each a thin wrapper over an artifact the build already generates, not a new source of truth; `validate_token` reuses the token linter's real fabrication-rule functions instead of a second copy that could drift. Reviewed against all seven tools together, then fault-injected by corrupting the JSON files it reads one at a time to see how it actually failed — found and fixed a startup crash on a malformed registry file. Cold-tested twice against fresh subagents with zero memory of this work: both built a real component using only tool output and zero guessed props; one validated a token against `validate_token` on its own initiative, unprompted. Confirmed connected in a real Claude Code session — `/mcp` shows it live alongside two other servers, all seven tools present. It's local and unhosted by design, not by oversight — see below.
+
 ## What broke along the way, and got fixed for real
 
 The honest version of "shipped" includes the bugs found while shipping it, not just the features:
@@ -43,7 +45,7 @@ None of these were visible from the outside. All of them would have quietly unde
 
 ## What was deliberately skipped
 
-**MCP server.** An agent skill delivers most of the same value at a fraction of the maintenance surface for a solo maintainer. Revisit only if a second consumer needs it.
+**Hosting the MCP server.** The server itself shipped (see above) — what's still skipped is making it reachable over a network: swapping stdio for HTTP/SSE and adding auth. Only matters once a second real consumer, not just this solo maintainer, needs it.
 
 **Figma Code Connect, a project-specific CLI, editor-specific rules files.** Real gaps, not attempted this round — the compiled docs layer, the registry, and the skill mattered more, in that order, and that's what got built.
 

@@ -127,8 +127,8 @@
   align-self: stretch;
   background: none;
   border: none;
-  padding-inline: var(--space-1);
-  margin-inline: calc(var(--space-1) * -1);
+  padding-inline: var(--space-tight-gap);
+  margin-inline: calc(var(--space-tight-gap) * -1);
   cursor: pointer;
   color: var(--input-clear-color);
   border-radius: var(--border-radius-sm);
