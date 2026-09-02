@@ -123,7 +123,7 @@ server.registerTool(
   {
     title: "List components",
     description:
-      "List every public component in the design system, optionally filtered by tier (primitives, composition, patterns). Excludes internal-only components (e.g. BaseSheet). tokenCount 0 means the component has no component-scoped tokens of its own (it styles entirely through inherited semantic tokens) — not that its tokens are unindexed.",
+      "List every public component in the design system, optionally filtered by tier (primitives, composition, patterns). Excludes internal-only components (e.g. BaseSheet) and compound sub-components (e.g. CardHeader) — those ride along with their parent's own usage example and resolve individually via get_component/get_registry_item by name (e.g. \"CardHeader\"), but aren't separate top-level components in their own right. tokenCount 0 means the component has no component-scoped tokens of its own (it styles entirely through inherited semantic tokens) — not that its tokens are unindexed.",
     inputSchema: {
       tier: z.enum(TIERS).optional().describe("Filter to one tier. Omit for all public components."),
     },
@@ -131,7 +131,7 @@ server.registerTool(
   async ({ tier }) => {
     const registry = readComponentRegistry();
     const components = registry.components
-      .filter((c) => isPublic(c) && (!tier || c.tier === tier))
+      .filter((c) => isPublic(c) && !c.parent && (!tier || c.tier === tier))
       .map((c) => ({
         name: c.name,
         slug: c.slug,
@@ -151,7 +151,7 @@ server.registerTool(
   {
     title: "Get component",
     description:
-      "Get the compiled documentation for one public component — full prop table with literal unions expanded, its token list, and a usage example. Reads docs/components/<slug>.md, the same artifact generated for and served to agents elsewhere in this system.",
+      "Get the compiled documentation for one public component — full prop table with literal unions expanded, its token list, and a usage example. Also resolves a compound sub-component directly by its own name (e.g. \"CardHeader\", \"TableCell\") even though list_components doesn't enumerate those separately — its doc twin points back to the parent's usage example rather than repeating one. Reads docs/components/<slug>.md, the same artifact generated for and served to agents elsewhere in this system.",
     inputSchema: {
       slug: z
         .string()
@@ -319,6 +319,16 @@ server.registerTool(
 
     if (!component) {
       return noSuchComponentError(slug);
+    }
+
+    // A compound sub-component (CardHeader) has no independent shadcn manifest
+    // — it isn't installable on its own, only ever alongside its parent — so
+    // "run npm run tokens" below would be a false promise. Point at the parent
+    // instead of pretending this is a regenerable build gap.
+    if (component.parent) {
+      return toolError(
+        `"${component.name}" is a sub-component of "${component.parent}" and has no independent registry item — it isn't installed on its own. Call get_registry_item("${component.parent}") instead.`
+      );
     }
 
     const itemPath = join(repoRoot, "registry", `${component.slug}.json`);

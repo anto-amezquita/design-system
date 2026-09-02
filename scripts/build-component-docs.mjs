@@ -319,8 +319,14 @@ function expandObjectAliases(typeText, objectAliases, depth = 2) {
 
 // ── Props type → entries ──────────────────────────────────────────
 
-function findPropsTypeName(source, componentName) {
+// `strict` skips the fallback scan below — needed for a sub-component read out
+// of its parent's shared file (CardHeader out of Card.tsx), where the file
+// has several `<Fn>Props` types and the fallback's "first one that matches
+// any exported function" would silently grab a sibling's props (e.g. Card's
+// own CardProps) instead of reporting that this one genuinely has none.
+function findPropsTypeName(source, componentName, { strict = false } = {}) {
   if (new RegExp(`\\btype\\s+${componentName}Props\\b`).test(source)) return `${componentName}Props`
+  if (strict) return null
   const fnRe = /export\s+function\s+([A-Z]\w*)\s*\(/g
   let m
   while ((m = fnRe.exec(source))) {
@@ -429,10 +435,13 @@ function buildPropsSection(source, filePath, propsTypeName) {
   const { objectAliases, rawAliases } = collectTypeAliases(source)
   const literalAliasMap = buildLiteralAliasMap(source, filePath, rawAliases)
   const { blocks, extras } = decomposeProps(rhs, objectAliases)
-  if (blocks.length === 0) return null
-
-  const entries = mergeEntries(blocks.map(b => parseObjectBody(b, literalAliasMap, objectAliases)))
-  if (entries.length === 0) return null
+  const entries = blocks.length > 0
+    ? mergeEntries(blocks.map(b => parseObjectBody(b, literalAliasMap, objectAliases)))
+    : []
+  // A pure passthrough alias (`type TableHeadProps = React.ComponentPropsWithoutRef<'thead'>`)
+  // resolves to zero own entries but a real extras note — that note is the
+  // whole content worth telling an agent, so it must survive even with no table.
+  if (entries.length === 0 && extras.length === 0) return null
   return { entries, extras }
 }
 
@@ -450,11 +459,24 @@ function extractRenderJsx(objectInner) {
   let i = m.index + m[0].length
 
   const arrowMatch = /^\(([^)]*)\)\s*=>\s*/.exec(objectInner.slice(i))
+  const arrowHeader = arrowMatch ? arrowMatch[0] : ''
   if (arrowMatch) i += arrowMatch[0].length
 
   if (objectInner[i] === '(') {
     const end = findMatchingClose(objectInner, i, '(', ')')
     return dedent(objectInner.slice(i + 1, end).trim())
+  }
+
+  // A block-bodied render (`() => { const [x] = useState(...); return (...) }`,
+  // needed whenever the story sets up local state before returning JSX) isn't
+  // meaningful on its own without the arrow header — unlike a bare JSX
+  // expression, `{ ...statements... }` alone doesn't read as a function body.
+  // Keeping the header is what makes AlertDialog/Pagination/Toast's real,
+  // stateful Default stories (see docs/compound-component-docs-spec.md
+  // Problem 2) copy-pasteable rather than a floating, headerless block.
+  if (objectInner[i] === '{' && arrowHeader) {
+    const end = findMatchingClose(objectInner, i, '{', '}')
+    return dedent(arrowHeader + objectInner.slice(i, end + 1))
   }
 
   // A `render:` value always starts at depth 0 in objectInner's own
@@ -582,22 +604,33 @@ function parseAccessibilitySections() {
 // ── Assembling one component's .md twin ────────────────────────────
 
 function buildComponentMd(component, ctx) {
-  const { pkg, tokenByName, a11ySections } = ctx
-  const { name, tier, purpose, storybookPath } = component
-  const filePath = `components/${tier}/${name}/${name}.tsx`
+  const { pkg, tokenByName, a11ySections, componentsBySlug } = ctx
+  const { name, tier, purpose, storybookPath, parent } = component
+
+  // A sub-component (CardHeader) lives inside its parent's file and directory
+  // (Card.tsx) — everything file-path-shaped reads off the parent, but props/
+  // token/usage lookups still key on this entry's own name. Falls back to
+  // treating it as its own file if the parent slug doesn't resolve (shouldn't
+  // happen — degrade instead of crashing on a bad registry entry).
+  const owner = parent ? componentsBySlug.get(parent) : null
+  const ownerName = owner ? owner.name : name
+  const filePath = `components/${tier}/${ownerName}/${ownerName}.tsx`
   const source = existsSync(filePath) ? readFileSync(filePath, 'utf8') : ''
 
   let usageComponentName = name
   let propsSection = null
   if (source) {
-    const propsTypeName = findPropsTypeName(source, name)
+    // Strict for sub-components: a shared file has several `<Fn>Props` types,
+    // and the top-level fallback scan (for a name/export mismatch like Radio/
+    // RadioGroup) would otherwise grab a sibling sub-component's props first.
+    const propsTypeName = findPropsTypeName(source, name, { strict: !!parent })
     if (propsTypeName) {
       usageComponentName = propsTypeName.replace(/Props$/, '')
       propsSection = buildPropsSection(source, filePath, propsTypeName)
     }
   }
 
-  const importPath = `${pkg.name}/components/${tier}/${name}`
+  const importPath = `${pkg.name}/components/${tier}/${ownerName}`
   const lines = [`# ${name}`, '']
   if (purpose) lines.push(`> ${purpose}`, '')
   lines.push(
@@ -606,12 +639,14 @@ function buildComponentMd(component, ctx) {
     `- Import: \`import { ${usageComponentName} } from '${importPath}'\``,
   )
 
-  if (propsSection && propsSection.entries.length > 0) {
-    lines.push('', '## Props', '', '| Prop | Type | Description |', '|---|---|---|')
-    for (const e of propsSection.entries) {
-      const propCol = `\`${e.name}${e.optional ? '?' : ''}\``
-      const typeCol = `\`${escapeCell(e.type)}\``
-      lines.push(`| ${propCol} | ${typeCol} | ${escapeProse(e.description)} |`)
+  if (propsSection && (propsSection.entries.length > 0 || propsSection.extras.length > 0)) {
+    if (propsSection.entries.length > 0) {
+      lines.push('', '## Props', '', '| Prop | Type | Description |', '|---|---|---|')
+      for (const e of propsSection.entries) {
+        const propCol = `\`${e.name}${e.optional ? '?' : ''}\``
+        const typeCol = `\`${escapeCell(e.type)}\``
+        lines.push(`| ${propCol} | ${typeCol} | ${escapeProse(e.description)} |`)
+      }
     }
     if (propsSection.extras.length > 0) {
       lines.push('', `Also accepts all props of: ${propsSection.extras.map(x => `\`${x}\``).join(', ')}`)
@@ -639,10 +674,17 @@ function buildComponentMd(component, ctx) {
     }
   }
 
-  const storyPath = `components/${tier}/${name}/${name}.stories.tsx`
-  const usage = buildUsageExample(storyPath, usageComponentName)
-  if (usage) {
-    lines.push('', '## Usage example', '', '```tsx', usage, '```')
+  // Sub-components have no Default story of their own — they appear inside
+  // the parent's. Pointing agents there (rather than guessing at a usage
+  // example) is more honest than inventing one.
+  if (parent) {
+    lines.push('', '## Usage example', '', `See \`${owner ? owner.name : ownerName}\`'s own usage example — ${name} is one of its sub-components, not used standalone.`)
+  } else {
+    const storyPath = `components/${tier}/${name}/${name}.stories.tsx`
+    const usage = buildUsageExample(storyPath, usageComponentName)
+    if (usage) {
+      lines.push('', '## Usage example', '', '```tsx', usage, '```')
+    }
   }
 
   const a11y = a11ySections.get(name)
@@ -661,6 +703,7 @@ export function buildComponentDocs() {
   const tokenReference = loadJson('tokens/token-reference.json')
   const tokenByName = new Map(tokenReference.tokens.map(t => [t.name, t]))
   const a11ySections = parseAccessibilitySections()
+  const componentsBySlug = new Map(registry.components.map(c => [c.slug, c]))
 
   if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true })
 
@@ -668,7 +711,7 @@ export function buildComponentDocs() {
   let written = 0
   for (const component of registry.components) {
     if (component.internal) continue
-    const md = buildComponentMd(component, { pkg, tokenByName, a11ySections })
+    const md = buildComponentMd(component, { pkg, tokenByName, a11ySections, componentsBySlug })
     const fileName = `${component.slug}.md`
     writeFileSync(join(OUTPUT_DIR, fileName), md)
     expectedFiles.add(fileName)

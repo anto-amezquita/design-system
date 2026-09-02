@@ -63,7 +63,11 @@ function getSiteUrls() {
 function groupByTier(components) {
   const groups = { primitives: [], composition: [], patterns: [] }
   for (const component of components) {
-    if (component.internal) continue
+    // Compound sub-components (CardHeader, TableCell, ...) ride along with
+    // their parent's own usage example and aren't independently reachable
+    // components in their own right — same exclusion as `internal`, so this
+    // stays the real, top-level component list (matches list_components).
+    if (component.internal || component.parent) continue
     groups[component.tier]?.push(component)
   }
   return groups

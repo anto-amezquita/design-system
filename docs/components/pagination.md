@@ -39,5 +39,15 @@
 ## Usage example
 
 ```tsx
-<PaginationDemo totalPages={10} initialPage={5} />
+() => {
+  const [page, setPage] = useState(5)
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'flex-start' }}>
+      <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+        Page {page} of 10
+      </p>
+      <Pagination currentPage={page} totalPages={10} onPageChange={setPage} />
+    </div>
+  )
+}
 ```

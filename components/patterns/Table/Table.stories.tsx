@@ -38,7 +38,22 @@ function SampleTable({ striped = false, bordered = false, compact = false, scrol
 }
 
 export const Default: Story = {
-  render: () => <SampleTable />,
+  render: () => (
+    <Table>
+      <TableHead>
+        <TableRow>
+          {sampleHeaders.map(h => <TableHeader key={h}>{h}</TableHeader>)}
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {sampleRows.map(row => (
+          <TableRow key={row[0]}>
+            {row.map((cell, i) => <TableCell key={i}>{cell}</TableCell>)}
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  ),
 }
 
 export const Striped: Story = {

@@ -50,7 +50,24 @@ function Demo({ size }: { size?: 'sm' | 'md' | 'lg' }) {
 }
 
 export const Default: Story = {
-  render: () => <Demo />,
+  render: () => {
+    const [open, setOpen] = useState(false)
+    return (
+      <>
+        <button type="button" onClick={() => setOpen(true)}>
+          Delete item
+        </button>
+        <AlertDialog
+          open={open}
+          onOpenChange={setOpen}
+          title="Delete this item?"
+          description="This action cannot be undone."
+          cancel={<button type="button">Cancel</button>}
+          action={<button type="button" onClick={() => setOpen(false)}>Delete</button>}
+        />
+      </>
+    )
+  },
 }
 
 export const WithBody: Story = {

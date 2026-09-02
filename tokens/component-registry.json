@@ -1,7 +1,8 @@
 {
   "meta": {
-    "componentCount": 29,
-    "publicComponentCount": 28
+    "componentCount": 50,
+    "publicComponentCount": 28,
+    "subComponentCount": 21
   },
   "components": [
     {
@@ -23,6 +24,19 @@
       ],
       "tokenCount": 14,
       "internal": false
+    },
+    {
+      "name": "AvatarGroup",
+      "slug": "avatar-group",
+      "tier": "primitives",
+      "purpose": "Sub-component of Avatar.",
+      "storybookPath": "Components/Avatar",
+      "storybookTitleId": "components-avatar",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "avatar"
     },
     {
       "name": "Badge",
@@ -343,6 +357,84 @@
       "internal": false
     },
     {
+      "name": "CardBody",
+      "slug": "card-body",
+      "tier": "composition",
+      "purpose": "Sub-component of Card.",
+      "storybookPath": "Components/Card",
+      "storybookTitleId": "components-card",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "card"
+    },
+    {
+      "name": "CardDescription",
+      "slug": "card-description",
+      "tier": "composition",
+      "purpose": "Sub-component of Card.",
+      "storybookPath": "Components/Card",
+      "storybookTitleId": "components-card",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "card"
+    },
+    {
+      "name": "CardFooter",
+      "slug": "card-footer",
+      "tier": "composition",
+      "purpose": "Sub-component of Card.",
+      "storybookPath": "Components/Card",
+      "storybookTitleId": "components-card",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "card"
+    },
+    {
+      "name": "CardHeader",
+      "slug": "card-header",
+      "tier": "composition",
+      "purpose": "Sub-component of Card.",
+      "storybookPath": "Components/Card",
+      "storybookTitleId": "components-card",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "card"
+    },
+    {
+      "name": "CardMedia",
+      "slug": "card-media",
+      "tier": "composition",
+      "purpose": "Sub-component of Card.",
+      "storybookPath": "Components/Card",
+      "storybookTitleId": "components-card",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "card"
+    },
+    {
+      "name": "CardTitle",
+      "slug": "card-title",
+      "tier": "composition",
+      "purpose": "Sub-component of Card.",
+      "storybookPath": "Components/Card",
+      "storybookTitleId": "components-card",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "card"
+    },
+    {
       "name": "Dialog",
       "slug": "dialog",
       "tier": "composition",
@@ -418,6 +510,19 @@
       "internal": false
     },
     {
+      "name": "TooltipProvider",
+      "slug": "tooltip-provider",
+      "tier": "composition",
+      "purpose": "Sub-component of Tooltip.",
+      "storybookPath": "Components/Tooltip",
+      "storybookTitleId": "components-tooltip",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "tooltip"
+    },
+    {
       "name": "Accordion",
       "slug": "accordion",
       "tier": "patterns",
@@ -434,6 +539,45 @@
       ],
       "tokenCount": 15,
       "internal": false
+    },
+    {
+      "name": "AccordionContent",
+      "slug": "accordion-content",
+      "tier": "patterns",
+      "purpose": "Sub-component of Accordion.",
+      "storybookPath": "Components/Accordion",
+      "storybookTitleId": "components-accordion",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "accordion"
+    },
+    {
+      "name": "AccordionItem",
+      "slug": "accordion-item",
+      "tier": "patterns",
+      "purpose": "Sub-component of Accordion.",
+      "storybookPath": "Components/Accordion",
+      "storybookTitleId": "components-accordion",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "accordion"
+    },
+    {
+      "name": "AccordionTrigger",
+      "slug": "accordion-trigger",
+      "tier": "patterns",
+      "purpose": "Sub-component of Accordion.",
+      "storybookPath": "Components/Accordion",
+      "storybookTitleId": "components-accordion",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "accordion"
     },
     {
       "name": "Breadcrumb",
@@ -552,6 +696,97 @@
       "internal": false
     },
     {
+      "name": "TableBody",
+      "slug": "table-body",
+      "tier": "patterns",
+      "purpose": "Sub-component of Table.",
+      "storybookPath": "Components/Table",
+      "storybookTitleId": "components-table",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "table"
+    },
+    {
+      "name": "TableCaption",
+      "slug": "table-caption",
+      "tier": "patterns",
+      "purpose": "Sub-component of Table.",
+      "storybookPath": "Components/Table",
+      "storybookTitleId": "components-table",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "table"
+    },
+    {
+      "name": "TableCell",
+      "slug": "table-cell",
+      "tier": "patterns",
+      "purpose": "Sub-component of Table.",
+      "storybookPath": "Components/Table",
+      "storybookTitleId": "components-table",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "table"
+    },
+    {
+      "name": "TableFoot",
+      "slug": "table-foot",
+      "tier": "patterns",
+      "purpose": "Sub-component of Table.",
+      "storybookPath": "Components/Table",
+      "storybookTitleId": "components-table",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "table"
+    },
+    {
+      "name": "TableHead",
+      "slug": "table-head",
+      "tier": "patterns",
+      "purpose": "Sub-component of Table.",
+      "storybookPath": "Components/Table",
+      "storybookTitleId": "components-table",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "table"
+    },
+    {
+      "name": "TableHeader",
+      "slug": "table-header",
+      "tier": "patterns",
+      "purpose": "Sub-component of Table.",
+      "storybookPath": "Components/Table",
+      "storybookTitleId": "components-table",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "table"
+    },
+    {
+      "name": "TableRow",
+      "slug": "table-row",
+      "tier": "patterns",
+      "purpose": "Sub-component of Table.",
+      "storybookPath": "Components/Table",
+      "storybookTitleId": "components-table",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "table"
+    },
+    {
       "name": "Tabs",
       "slug": "tabs",
       "tier": "patterns",
@@ -568,6 +803,45 @@
       ],
       "tokenCount": 20,
       "internal": false
+    },
+    {
+      "name": "TabsContent",
+      "slug": "tabs-content",
+      "tier": "patterns",
+      "purpose": "Sub-component of Tabs.",
+      "storybookPath": "Components/Tabs",
+      "storybookTitleId": "components-tabs",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "tabs"
+    },
+    {
+      "name": "TabsList",
+      "slug": "tabs-list",
+      "tier": "patterns",
+      "purpose": "Sub-component of Tabs.",
+      "storybookPath": "Components/Tabs",
+      "storybookTitleId": "components-tabs",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "tabs"
+    },
+    {
+      "name": "TabsTrigger",
+      "slug": "tabs-trigger",
+      "tier": "patterns",
+      "purpose": "Sub-component of Tabs.",
+      "storybookPath": "Components/Tabs",
+      "storybookTitleId": "components-tabs",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "tabs"
     }
   ]
 }

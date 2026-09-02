@@ -58,7 +58,10 @@ function getSiteUrls() {
 function groupByTier(components) {
   const groups = { primitives: [], composition: [], patterns: [] }
   for (const c of components) {
-    if (c.internal) continue
+    // Same exclusion build-llms-txt.mjs and list_components use — a compound
+    // sub-component isn't a top-level component an agent reaches for on its
+    // own, it rides along inside its parent's own usage example.
+    if (c.internal || c.parent) continue
     groups[c.tier]?.push(c)
   }
   return groups

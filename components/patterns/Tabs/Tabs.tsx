@@ -15,7 +15,9 @@ export function Tabs({ variant = 'line', size = 'md', className, ...props }: Tab
   return <RadixTabs.Root className={cls} {...props} />
 }
 
-export function TabsList({ className, ...props }: React.ComponentPropsWithoutRef<typeof RadixTabs.List>) {
+type TabsListProps = React.ComponentPropsWithoutRef<typeof RadixTabs.List>
+
+export function TabsList({ className, ...props }: TabsListProps) {
   return (
     <RadixTabs.List
       className={cn('tabs__list', className)}
@@ -24,7 +26,9 @@ export function TabsList({ className, ...props }: React.ComponentPropsWithoutRef
   )
 }
 
-export function TabsTrigger({ className, ...props }: React.ComponentPropsWithoutRef<typeof RadixTabs.Trigger>) {
+type TabsTriggerProps = React.ComponentPropsWithoutRef<typeof RadixTabs.Trigger>
+
+export function TabsTrigger({ className, ...props }: TabsTriggerProps) {
   return (
     <RadixTabs.Trigger
       className={cn('tabs__trigger', className)}
@@ -33,7 +37,9 @@ export function TabsTrigger({ className, ...props }: React.ComponentPropsWithout
   )
 }
 
-export function TabsContent({ className, ...props }: React.ComponentPropsWithoutRef<typeof RadixTabs.Content>) {
+type TabsContentProps = React.ComponentPropsWithoutRef<typeof RadixTabs.Content>
+
+export function TabsContent({ className, ...props }: TabsContentProps) {
   return (
     <RadixTabs.Content
       className={cn('tabs__content', className)}

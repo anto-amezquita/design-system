@@ -107,7 +107,12 @@ export function buildRegistryManifests() {
   const tokenByName = new Map(tokenReference.tokens.map(t => [t.name, t]))
   const siteRoot = getSiteRoot()
 
-  const publicComponents = registry.components.filter(c => !c.internal)
+  // Compound sub-components (CardHeader, TableCell, ...) aren't independently
+  // installable — they only ever ship alongside their parent — so they get no
+  // registry-item.json of their own; get_registry_item points callers at the
+  // parent slug instead. Excluding them here keeps this generator's output
+  // exactly the real, installable component set, same as before this field existed.
+  const publicComponents = registry.components.filter(c => !c.internal && !c.parent)
   const publicNames = new Set(publicComponents.map(c => c.name))
 
   const OUTPUT_DIR = 'registry'

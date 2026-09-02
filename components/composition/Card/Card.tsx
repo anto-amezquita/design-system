@@ -61,19 +61,27 @@ export function Card({ variant = 'default', interactive, horizontal, compact, fe
   )
 }
 
-export function CardMedia({ children }: { children: React.ReactNode }) {
+type CardMediaProps = { children: React.ReactNode }
+
+export function CardMedia({ children }: CardMediaProps) {
   return <div className="card__media">{children}</div>
 }
 
-export function CardHeader({ children }: { children: React.ReactNode }) {
+type CardHeaderProps = { children: React.ReactNode }
+
+export function CardHeader({ children }: CardHeaderProps) {
   return <div className="card__header">{children}</div>
 }
 
-export function CardBody({ children }: { children: React.ReactNode }) {
+type CardBodyProps = { children: React.ReactNode }
+
+export function CardBody({ children }: CardBodyProps) {
   return <div className="card__body">{children}</div>
 }
 
-export function CardFooter({ children }: { children: React.ReactNode }) {
+type CardFooterProps = { children: React.ReactNode }
+
+export function CardFooter({ children }: CardFooterProps) {
   return <div className="card__footer">{children}</div>
 }
 
@@ -81,6 +89,8 @@ export function CardTitle({ children, as: Tag = 'h3' }: CardTitleProps) {
   return <Tag className="card__title">{children}</Tag>
 }
 
-export function CardDescription({ children }: { children: React.ReactNode }) {
+type CardDescriptionProps = { children: React.ReactNode }
+
+export function CardDescription({ children }: CardDescriptionProps) {
   return <p className="card__description">{children}</p>
 }

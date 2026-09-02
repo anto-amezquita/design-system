@@ -44,5 +44,18 @@
 ## Usage example
 
 ```tsx
-<SampleTable />
+<Table>
+  <TableHead>
+    <TableRow>
+      {sampleHeaders.map(h => <TableHeader key={h}>{h}</TableHeader>)}
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    {sampleRows.map(row => (
+      <TableRow key={row[0]}>
+        {row.map((cell, i) => <TableCell key={i}>{cell}</TableCell>)}
+      </TableRow>
+    ))}
+  </TableBody>
+</Table>
 ```

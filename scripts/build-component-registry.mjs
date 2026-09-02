@@ -87,6 +87,34 @@ function getStories(tier, name) {
   return matches.map(m => m[1])
 }
 
+// ── Compound sub-components ───────────────────────────────────
+// A component's own .tsx file often exports more than one public component
+// (Card.tsx also exports CardHeader/CardTitle/...) — these have no directory
+// of their own, so findTier/listComponentDirs never see them. Walked here
+// instead: any additional `export function Name(` / `export const Name = `
+// in the parent's file, beyond the parent's own name, is registered as its
+// own entry with a `parent` slug — see docs/compound-component-docs-spec.md.
+//
+// Only fires when the parent's own registered name is *itself* found as an
+// export in the file. Some registered names have no matching export at all
+// (Radio's real component is RadioGroup, Toast is used only via useToast() +
+// ToastProvider) — that's a name-mismatch build-component-docs.mjs already
+// resolves via its own fallback scan, not a compound family, and treating
+// the lone export as a "sub-component of" itself would be registry drift:
+// a component doesn't have itself as a child.
+function findSubComponentNames(source, parentName) {
+  const parentRe = new RegExp(`export\\s+(?:function|const)\\s+${parentName}\\s*[=(]`)
+  if (!parentRe.test(source)) return []
+
+  const names = []
+  const re = /export\s+(?:function|const)\s+([A-Z]\w*)\s*[=(]/g
+  let m
+  while ((m = re.exec(source))) {
+    if (m[1] !== parentName && !names.includes(m[1])) names.push(m[1])
+  }
+  return names
+}
+
 // ── Resolve token file + prefix for a component name ─────────
 // Token files use name.toLowerCase() (e.g. "datatable.json"), not kebab
 // (e.g. "data-table.json"). We try lowercase first, then kebab as fallback.
@@ -211,6 +239,31 @@ export function buildComponentRegistry() {
       tokenCount,
       internal,
     })
+
+    // Sub-components ride along under the parent's tier/storybookPath — they're
+    // shown in situ inside the parent's own story and usage example, not on
+    // their own page, so there's nothing more specific to point at.
+    if (!internal) {
+      const componentFile = join('components', tier, name, `${name}.tsx`)
+      if (existsSync(componentFile)) {
+        const source = readFileSync(componentFile, 'utf8')
+        for (const subName of findSubComponentNames(source, name)) {
+          components.push({
+            name: subName,
+            slug: toKebab(subName),
+            tier,
+            purpose: `Sub-component of ${name}.`,
+            storybookPath,
+            storybookTitleId,
+            tokenPrefix: null,
+            stories: [],
+            tokenCount: 0,
+            internal: false,
+            parent: slug,
+          })
+        }
+      }
+    }
   }
 
   assertNoPrefixCollisions(components)
@@ -224,13 +277,19 @@ export function buildComponentRegistry() {
   const registry = {
     meta: {
       componentCount: components.length,
-      publicComponentCount: components.filter(c => !c.internal).length,
+      // A compound sub-component (parent set) isn't a top-level component in
+      // its own right — it rides along inside its parent's own usage example
+      // — so it's excluded here the same way `internal` is, keeping this the
+      // real top-level count every consumer (list_components, llms.txt,
+      // SKILL.md, AGENTS.md's own "28 public components") agrees on.
+      publicComponentCount: components.filter(c => !c.internal && !c.parent).length,
+      subComponentCount: components.filter(c => c.parent).length,
     },
     components,
   }
 
   writeFileSync('tokens/component-registry.json', JSON.stringify(registry, null, 2))
-  console.log(`✓ Built component-registry.json (${components.length} components, ${registry.meta.publicComponentCount} public)`)
+  console.log(`✓ Built component-registry.json (${components.length} components, ${registry.meta.publicComponentCount} public, ${registry.meta.subComponentCount} sub-components)`)
 }
 
 // Run as main

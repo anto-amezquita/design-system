@@ -55,7 +55,7 @@
 ## Usage example
 
 ```tsx
-{
+() => {
   const [open, setOpen] = useState(false)
   return (
     <Drawer

@@ -46,7 +46,9 @@ export function Table({ striped = false, bordered = false, compact = false, clas
   )
 }
 
-export function TableHead({ className, ...props }: React.ComponentPropsWithoutRef<'thead'>) {
+type TableHeadProps = React.ComponentPropsWithoutRef<'thead'>
+
+export function TableHead({ className, ...props }: TableHeadProps) {
   return (
     <thead
       className={cn('table__head', className)}
@@ -55,7 +57,9 @@ export function TableHead({ className, ...props }: React.ComponentPropsWithoutRe
   )
 }
 
-export function TableBody({ className, ...props }: React.ComponentPropsWithoutRef<'tbody'>) {
+type TableBodyProps = React.ComponentPropsWithoutRef<'tbody'>
+
+export function TableBody({ className, ...props }: TableBodyProps) {
   return (
     <tbody
       className={cn('table__body', className)}
@@ -64,7 +68,9 @@ export function TableBody({ className, ...props }: React.ComponentPropsWithoutRe
   )
 }
 
-export function TableFoot({ className, ...props }: React.ComponentPropsWithoutRef<'tfoot'>) {
+type TableFootProps = React.ComponentPropsWithoutRef<'tfoot'>
+
+export function TableFoot({ className, ...props }: TableFootProps) {
   return (
     <tfoot
       className={cn('table__foot', className)}
@@ -73,7 +79,9 @@ export function TableFoot({ className, ...props }: React.ComponentPropsWithoutRe
   )
 }
 
-export function TableRow({ className, ...props }: React.ComponentPropsWithoutRef<'tr'>) {
+type TableRowProps = React.ComponentPropsWithoutRef<'tr'>
+
+export function TableRow({ className, ...props }: TableRowProps) {
   return (
     <tr
       className={cn('table__row', className)}
@@ -147,7 +155,9 @@ export function TableHeader({
   )
 }
 
-export function TableCell({ className, ...props }: React.ComponentPropsWithoutRef<'td'>) {
+type TableCellProps = React.ComponentPropsWithoutRef<'td'>
+
+export function TableCell({ className, ...props }: TableCellProps) {
   return (
     <td
       className={cn('table__cell', className)}
@@ -156,7 +166,9 @@ export function TableCell({ className, ...props }: React.ComponentPropsWithoutRe
   )
 }
 
-export function TableCaption({ className, ...props }: React.ComponentPropsWithoutRef<'caption'>) {
+type TableCaptionProps = React.ComponentPropsWithoutRef<'caption'>
+
+export function TableCaption({ className, ...props }: TableCaptionProps) {
   return (
     <caption
       className={cn('table__caption', className)}

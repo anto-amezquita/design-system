@@ -38,10 +38,24 @@
 ## Usage example
 
 ```tsx
-<ToastTrigger
-  title="Changes saved"
-  description="Your settings have been updated."
-  variant="neutral"
-  label="Show toast"
-/>
+() => {
+  const { toast } = useToast()
+  return (
+    <button
+      type="button"
+      onClick={() => toast({ title: 'Changes saved', description: 'Your settings have been updated.', variant: 'neutral' })}
+      style={{
+        padding: '8px 16px',
+        border: '1px solid var(--color-border-default)',
+        borderRadius: 'var(--border-radius-component)',
+        background: 'var(--color-surface-secondary)',
+        color: 'var(--color-text-primary)',
+        font: 'inherit',
+        cursor: 'pointer',
+      }}
+    >
+      Show toast
+    </button>
+  )
+}
 ```
