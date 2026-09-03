@@ -33,7 +33,7 @@
 | `--drawer-border-width` | dimension | `1px` |
 | `--drawer-close-align-offset` | dimension | `2px` |
 | `--drawer-close-color` | color | `#57534E` † |
-| `--drawer-close-hover` | other | `#0A0A0A` † |
+| `--drawer-close-hover` | color | `#0A0A0A` † |
 | `--drawer-close-size` | dimension | `28px` |
 | `--drawer-gap` | dimension | `24px` |
 | `--drawer-max-height-full` | dimension | `100vh` |
@@ -47,8 +47,8 @@
 | `--drawer-padding` | dimension | `48px` |
 | `--drawer-shadow` | shadow | `0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)` |
 | `--drawer-title-size` | dimension | `24px` |
-| `--drawer-title-weight` | other | `700` |
-| `--drawer-z-index` | other | `400` |
+| `--drawer-title-weight` | fontWeight | `700` |
+| `--drawer-z-index` | number | `400` |
 
 † resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 

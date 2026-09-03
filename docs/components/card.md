@@ -36,7 +36,7 @@
 | `--card-shadow` | shadow | `0 1px 2px 0 rgba(0,0,0,0.05)` |
 | `--card-shadow-hover` | shadow | `0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)` |
 | `--card-title-size` | dimension | `24px` |
-| `--card-title-weight` | other | `700` |
+| `--card-title-weight` | fontWeight | `700` |
 
 † resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 

@@ -28,10 +28,10 @@
 | `--toast-padding-y` | dimension | `16px` |
 | `--toast-shadow` | shadow | `0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)` |
 | `--toast-success-border` | color | `#16A34A` † |
-| `--toast-title-weight` | other | `600` |
+| `--toast-title-weight` | fontWeight | `600` |
 | `--toast-viewport-inset` | dimension | `24px` |
 | `--toast-warning-border` | color | `#D97706` † |
-| `--toast-z-index` | other | `500` |
+| `--toast-z-index` | number | `500` |
 
 † resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 

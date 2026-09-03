@@ -153,7 +153,7 @@
   --textarea-background: var(--color-neutral-50);
   --textarea-background-disabled: var(--color-neutral-100);
   --textarea-foreground: var(--color-neutral-900);
-  --textarea-border: var(--color-neutral-300);
+  --textarea-border: var(--color-border-default);
   --textarea-border-hover: var(--color-neutral-400);
   --textarea-border-focus: var(--color-neutral-900);
   --textarea-border-error: #f87171;

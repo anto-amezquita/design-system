@@ -81,15 +81,15 @@ Every token this system defines, resolved across all four theme axes: https://am
 Real semantic token families:
 
 - **color** (43): `--color-accent-*`, `--color-border-*`, `--color-curtain-*`, `--color-feedback-*`, `--color-neutral-*`, `--color-skeleton-*`, `--color-surface-*`, `--color-text-*`
-- **typography** (29): `--font-family-*`, `--font-size-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
+- **typography** (32): `--font-family-*`, `--font-size-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
+- **spacing** (16): `--space-compact-*`, `--space-component-*`, `--space-container-*`, `--space-control-*`, `--space-element-*`, `--space-inline-*`, `--space-label-*`, `--space-layout-*`, `--space-prominent-*`, `--space-section-*`, `--space-tight-*`
 - **size** (8): `--focus-ring-*`, `--size-dialog-*`, `--size-icon-*`
-- **spacing** (8): `--space-component-*`, `--space-element-*`, `--space-inline-*`, `--space-label-*`, `--space-layout-*`, `--space-section-*`, `--space-tight-*`
 - **motion** (7): `--duration-entrance-*`, `--duration-interaction-*`, `--duration-reveal-*`, `--duration-skeleton-*`, `--duration-spin-*`, `--duration-transition-*`
 - **elevation** (6): `--z-dropdown-*`, `--z-modal-*`, `--z-overlay-*`, `--z-sticky-*`, `--z-toast-*`, `--z-tooltip-*`
 - **shadow** (5): `--shadow-card-*`, `--shadow-dialog-*`, `--shadow-dropdown-*`, `--shadow-toast-*`
 - **radius** (4): `--border-radius-*`
 - **opacity** (2): `--opacity-disabled-*`, `--opacity-overlay-*`
-- **border** (1): `--border-width-*`
+- **border** (2): `--border-width-*`
 
 Component-scoped tokens follow `--<component-slug>-*` (e.g. `--button-padding-x`) — each component's own reference page (above) lists its real ones.
 

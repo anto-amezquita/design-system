@@ -22,7 +22,7 @@ Also accepts all props of: `React.ComponentPropsWithoutRef<typeof RadixTabs.Root
 | `--tabs-content-padding-top` | dimension | `16px` |
 | `--tabs-duration` | duration | `200ms` |
 | `--tabs-indicator-color` | color | `#292524` † |
-| `--tabs-indicator-height` | color | `2px` |
+| `--tabs-indicator-height` | dimension | `2px` |
 | `--tabs-list-border-bottom` | color | `#E2DDD9` † |
 | `--tabs-list-border-width` | dimension | `1px` |
 | `--tabs-pill-background-active` | color | `#F4F0EB` † |

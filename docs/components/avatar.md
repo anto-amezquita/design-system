@@ -30,8 +30,8 @@
 | `--avatar-ring-color` | color | `#0A0A0A` † |
 | `--avatar-ring-width` | dimension | `2px` |
 | `--avatar-size-lg` | dimension | `40px` |
-| `--avatar-size-md` | other | `32px` |
-| `--avatar-size-sm` | other | `24px` |
-| `--avatar-size-xl` | other | `64px` |
+| `--avatar-size-md` | dimension | `32px` |
+| `--avatar-size-sm` | dimension | `24px` |
+| `--avatar-size-xl` | dimension | `64px` |
 
 † resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.

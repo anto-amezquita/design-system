@@ -25,7 +25,7 @@
 | `--tooltip-arrow-size` | dimension | `8px` |
 | `--tooltip-background` | color | `#1C1917` † |
 | `--tooltip-border-radius` | dimension | `4px` |
-| `--tooltip-delay-duration` | other | `400` |
+| `--tooltip-delay-duration` | number | `400` |
 | `--tooltip-font-size` | dimension | `12px` |
 | `--tooltip-font-weight` | fontWeight | `500` |
 | `--tooltip-foreground` | color | `#FAFAF9` † |
@@ -33,8 +33,8 @@
 | `--tooltip-padding-x` | dimension | `12px` |
 | `--tooltip-padding-y` | dimension | `8px` |
 | `--tooltip-shadow` | shadow | `0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)` |
-| `--tooltip-side-offset` | other | `6` |
-| `--tooltip-z-index` | other | `600` |
+| `--tooltip-side-offset` | number | `6` |
+| `--tooltip-z-index` | number | `600` |
 
 † resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 

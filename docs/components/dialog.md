@@ -34,7 +34,7 @@
 | `--dialog-border-radius` | dimension | `8px` |
 | `--dialog-border-width` | dimension | `1px` |
 | `--dialog-close-color` | color | `#57534E` † |
-| `--dialog-close-hover` | other | `#0A0A0A` † |
+| `--dialog-close-hover` | color | `#0A0A0A` † |
 | `--dialog-close-size` | dimension | `28px` |
 | `--dialog-entrance-offset` | dimension | `8px` |
 | `--dialog-gap` | dimension | `16px` |
@@ -46,8 +46,8 @@
 | `--dialog-padding` | dimension | `48px` |
 | `--dialog-shadow` | shadow | `0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)` |
 | `--dialog-title-size` | dimension | `24px` |
-| `--dialog-title-weight` | other | `700` |
-| `--dialog-z-index` | other | `400` |
+| `--dialog-title-weight` | fontWeight | `700` |
+| `--dialog-z-index` | number | `400` |
 
 † resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 

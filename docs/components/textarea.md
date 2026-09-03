@@ -44,7 +44,7 @@
 | `--textarea-hint-size` | dimension | `12px` |
 | `--textarea-label-color` | color | `#0A0A0A` † |
 | `--textarea-label-size` | dimension | `14px` |
-| `--textarea-label-weight` | other | `500` |
+| `--textarea-label-weight` | fontWeight | `500` |
 | `--textarea-padding-x` | dimension | `16px` |
 | `--textarea-padding-y` | dimension | `12px` |
 | `--textarea-placeholder-color` | color | `#57534E` † |

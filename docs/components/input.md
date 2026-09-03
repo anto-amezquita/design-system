@@ -46,7 +46,7 @@ Also accepts all props of: `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'o
 | `--input-hint-size` | dimension | `12px` |
 | `--input-label-color` | color | `#0A0A0A` † |
 | `--input-label-size` | dimension | `14px` |
-| `--input-label-weight` | other | `500` |
+| `--input-label-weight` | fontWeight | `500` |
 | `--input-padding-x` | dimension | `16px` |
 | `--input-padding-y` | dimension | `12px` |
 | `--input-placeholder-color` | color | `#57534E` † |

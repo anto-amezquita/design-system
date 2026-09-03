@@ -28,8 +28,8 @@
 | `--accordion-content-color` | color | `#57534E` † |
 | `--accordion-content-padding-bottom` | dimension | `24px` |
 | `--accordion-content-padding-x` | dimension | `24px` |
-| `--accordion-duration-collapse` | other | `200ms` |
-| `--accordion-duration-expand` | other | `650ms` |
+| `--accordion-duration-collapse` | duration | `200ms` |
+| `--accordion-duration-expand` | duration | `650ms` |
 | `--accordion-icon-color` | color | `#57534E` † |
 | `--accordion-icon-size` | dimension | `20px` |
 | `--accordion-trigger-color` | color | `#0A0A0A` † |

@@ -38,7 +38,7 @@
 | `--select-item-padding-x` | dimension | `16px` |
 | `--select-item-padding-y` | dimension | `8px` |
 | `--select-label-size` | dimension | `12px` |
-| `--select-label-weight` | other | `500` |
+| `--select-label-weight` | fontWeight | `500` |
 | `--select-padding-x` | dimension | `16px` |
 | `--select-padding-y` | dimension | `12px` |
 | `--select-placeholder-color` | color | `#57534E` † |

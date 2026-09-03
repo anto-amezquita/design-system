@@ -29,7 +29,7 @@
 | `--alert-error-background` | color | `#FEF2F2` † |
 | `--alert-error-border` | color | `#c0392b` † |
 | `--alert-error-foreground` | color | `#a93226` † |
-| `--alert-exit-distance` | other | `4px` |
+| `--alert-exit-distance` | dimension | `4px` |
 | `--alert-font-size` | dimension | `16px` |
 | `--alert-gap` | dimension | `12px` |
 | `--alert-icon-size` | dimension | `20px` |
@@ -41,7 +41,7 @@
 | `--alert-success-background` | color | `#F0FDF4` † |
 | `--alert-success-border` | color | `#16A34A` † |
 | `--alert-success-foreground` | color | `#15803D` † |
-| `--alert-title-weight` | other | `600` |
+| `--alert-title-weight` | fontWeight | `600` |
 | `--alert-warning-background` | color | `#FFFBEB` † |
 | `--alert-warning-border` | color | `#D97706` † |
 | `--alert-warning-foreground` | color | `#B45309` † |

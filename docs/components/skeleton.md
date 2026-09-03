@@ -26,6 +26,6 @@
 | `--skeleton-height-icon` | dimension | `24px` |
 | `--skeleton-height-rect` | dimension | `48px` |
 | `--skeleton-height-text` | dimension | `1em` |
-| `--skeleton-highlight` | other | `#F4F0EB` † |
+| `--skeleton-highlight` | color | `#F4F0EB` † |
 
 † resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
