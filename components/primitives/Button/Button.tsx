@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react'
 import gsap from 'gsap'
 import { ease } from '../../../lib/motion'
 import { ArrowRightIcon } from '@phosphor-icons/react'
@@ -29,7 +29,7 @@ type ButtonProps = {
 }
 
 
-export function Button({
+export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(function Button({
   variant = 'primary',
   children,
   onClick,
@@ -44,10 +44,12 @@ export function Button({
   href,
   curtainColor,
   onNavigate,
-}: ButtonProps) {
+}, ref) {
   const svgRef = useRef<SVGSVGElement>(null)
   const pathRef = useRef<SVGPathElement>(null)
   const glowRef = useRef<HTMLSpanElement>(null)
+  const elementRef = useRef<HTMLButtonElement & HTMLAnchorElement>(null)
+  useImperativeHandle(ref, () => elementRef.current as HTMLButtonElement | HTMLAnchorElement)
 
   const isLink = variant === 'link'
   const isDisabled = disabled || loading
@@ -193,6 +195,7 @@ export function Button({
     const internal = href.startsWith('/') && !href.startsWith('//') && !href.includes('#') && !/^(https?:\/\/|mailto:|tel:)/.test(href)
     return (
       <a
+        ref={elementRef}
         className={className}
         href={isDisabled ? undefined : href}
         tabIndex={isDisabled ? -1 : undefined}
@@ -214,6 +217,7 @@ export function Button({
 
   return (
     <button
+      ref={elementRef}
       className={className}
       onClick={onClick}
       disabled={isDisabled}
@@ -224,4 +228,6 @@ export function Button({
       {content}
     </button>
   )
-}
+})
+
+Button.displayName = 'Button'
