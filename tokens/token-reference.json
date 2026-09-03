@@ -10118,7 +10118,7 @@
       "rawValue": "{color-border-default}",
       "resolved": {
         "base-light": "#E5E5E5",
-        "base-dark": "#525252",
+        "base-dark": "#404040",
         "portfolio-light": "#E2DDD9",
         "portfolio-dark": "#57534e"
       },

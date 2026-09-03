@@ -239,10 +239,6 @@
     "$value": "{color-neutral-900}",
     "$type": "color"
   },
-  "textarea-border": {
-    "$value": "{color-neutral-300}",
-    "$type": "color"
-  },
   "textarea-border-hover": {
     "$value": "{color-neutral-400}",
     "$type": "color"
