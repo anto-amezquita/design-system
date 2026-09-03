@@ -132,6 +132,14 @@
   ],
   "unreleased": [
     {
+      "sha": "133c77d",
+      "type": "fix",
+      "scope": "button",
+      "message": "forward ref to underlying element",
+      "date": "2026-09-03",
+      "breaking": false
+    },
+    {
       "sha": "eb27890",
       "type": "feat",
       "scope": "tokens",
