@@ -20,11 +20,11 @@
     "$type": "dimension"
   },
   "badge-border-width": {
-    "$value": "{border-width.thin}",
+    "$value": "{border-width-default}",
     "$type": "dimension"
   },
   "badge-gap": {
-    "$value": "{space.1}",
+    "$value": "{space-tight-gap}",
     "$type": "dimension"
   },
   "badge-count-size": {

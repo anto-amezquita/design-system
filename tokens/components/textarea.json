@@ -44,7 +44,7 @@
     "$type": "dimension"
   },
   "textarea-font-size": {
-    "$value": "{font-size.base}",
+    "$value": "{font-size-control}",
     "$type": "dimension"
   },
   "textarea-placeholder-color": {

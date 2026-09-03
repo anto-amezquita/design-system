@@ -16,11 +16,11 @@
     "$type": "color"
   },
   "select-border-width": {
-    "$value": "{border-width.thin}",
+    "$value": "{border-width-interactive}",
     "$type": "dimension"
   },
   "select-separator-height": {
-    "$value": "{border-width.thin}",
+    "$value": "{border-width-default}",
     "$type": "dimension"
   },
   "select-border-focus": {
@@ -40,7 +40,7 @@
     "$type": "dimension"
   },
   "select-font-size": {
-    "$value": "{font-size.base}",
+    "$value": "{font-size-control}",
     "$type": "dimension"
   },
   "select-content-shadow": {

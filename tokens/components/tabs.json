@@ -24,7 +24,7 @@
     "$type": "dimension"
   },
   "tabs-trigger-font-size": {
-    "$value": "{font-size.base}",
+    "$value": "{font-size-control}",
     "$type": "dimension"
   },
   "tabs-trigger-font-weight": {
@@ -32,7 +32,7 @@
     "$type": "fontWeight"
   },
   "tabs-trigger-gap": {
-    "$value": "{space.1}",
+    "$value": "{space-tight-gap}",
     "$type": "dimension"
   },
   "tabs-indicator-color": {
@@ -48,7 +48,7 @@
     "$type": "color"
   },
   "tabs-list-border-width": {
-    "$value": "{border-width.thin}",
+    "$value": "{border-width-default}",
     "$type": "dimension"
   },
   "tabs-pill-background-active": {
@@ -60,7 +60,7 @@
     "$type": "dimension"
   },
   "tabs-pill-gap": {
-    "$value": "{space.1}",
+    "$value": "{space-tight-gap}",
     "$type": "dimension"
   },
   "tabs-sm-trigger-padding-y": {

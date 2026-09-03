@@ -20,7 +20,7 @@
     "$type": "color"
   },
   "radio-border-width": {
-    "$value": "{border-width.thin}",
+    "$value": "{border-width-interactive}",
     "$type": "dimension"
   },
   "radio-border-hover": {
@@ -36,11 +36,11 @@
     "$type": "dimension"
   },
   "radio-label-gap": {
-    "$value": "{space.3}",
+    "$value": "{space-label-gap}",
     "$type": "dimension"
   },
   "radio-label-size": {
-    "$value": "{font-size.base}",
+    "$value": "{font-size-control}",
     "$type": "dimension"
   },
   "radio-label-color": {
@@ -52,7 +52,7 @@
     "$type": "color"
   },
   "radio-group-gap": {
-    "$value": "{space.3}",
+    "$value": "{space-label-gap}",
     "$type": "dimension"
   }
 }

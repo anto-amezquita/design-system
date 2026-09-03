@@ -36,11 +36,11 @@
     "$type": "dimension"
   },
   "switch-label-gap": {
-    "$value": "{space.3}",
+    "$value": "{space-label-gap}",
     "$type": "dimension"
   },
   "switch-label-size": {
-    "$value": "{font-size.base}",
+    "$value": "{font-size-control}",
     "$type": "dimension"
   },
   "switch-label-color": {

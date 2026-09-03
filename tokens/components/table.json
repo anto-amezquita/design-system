@@ -28,7 +28,7 @@
     "$type": "color"
   },
   "table-body-font-size": {
-    "$value": "{font-size.base}",
+    "$value": "{font-size-control}",
     "$type": "dimension"
   },
   "table-row-border": {
@@ -36,7 +36,7 @@
     "$type": "color"
   },
   "table-row-border-width": {
-    "$value": "{border-width.thin}",
+    "$value": "{border-width-default}",
     "$type": "dimension"
   },
   "table-row-hover-background": {
@@ -64,7 +64,7 @@
     "$type": "dimension"
   },
   "table-sort-icon-gap": {
-    "$value": "{space.1}",
+    "$value": "{space-tight-gap}",
     "$type": "dimension"
   }
 }

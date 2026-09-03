@@ -12,7 +12,7 @@
     "$type": "color"
   },
   "card-border-width": {
-    "$value": "{border-width.thin}",
+    "$value": "{border-width-default}",
     "$type": "dimension"
   },
   "card-border-radius": {
@@ -24,19 +24,19 @@
     "$type": "dimension"
   },
   "card-gap": {
-    "$value": "{space.4}",
+    "$value": "{space-element-gap}",
     "$type": "dimension"
   },
   "card-title-size": {
-    "$value": "{font-size.lg}",
+    "$value": "{font-size-lead}",
     "$type": "dimension"
   },
   "card-title-weight": {
-    "$value": "{font-weight.bold}",
+    "$value": "{font-weight-title}",
     "$type": "other"
   },
   "card-description-size": {
-    "$value": "{font-size.base}",
+    "$value": "{font-size-control}",
     "$type": "dimension"
   },
   "card-description-color": {

@@ -251,6 +251,11 @@
     "$value": "{font-size.md}",
     "$type": "dimension"
   },
+  "font-size-control": {
+    "$value": "{font-size.base}",
+    "$type": "dimension",
+    "$description": "Default text size for form controls and interactive components (inputs, buttons, tabs). Distinct from font-size-body (prose). See decisions/0004."
+  },
   "font-size-small": {
     "$value": "{font-size.sm}",
     "$type": "dimension"
@@ -314,6 +319,11 @@
   "font-weight-display": {
     "$value": "{font-weight.semibold}",
     "$type": "fontWeight"
+  },
+  "font-weight-title": {
+    "$value": "{font-weight.bold}",
+    "$type": "fontWeight",
+    "$description": "Title weight for card/dialog/drawer-style container headers. See decisions/0004."
   },
   "line-height-display": {
     "$value": "{line-height.tighter}",
@@ -432,6 +442,11 @@
   "border-width-interactive": {
     "$value": "{border-width.thin}",
     "$type": "dimension"
+  },
+  "border-width-default": {
+    "$value": "{border-width.thin}",
+    "$type": "dimension",
+    "$description": "Static, non-interactive borders (cards, dialogs, dividers, badges). See decisions/0004."
   },
   "size-dialog-default": {
     "$value": "{size.dialog-md}",

@@ -1,9 +1,9 @@
 {
   "meta": {
     "primitiveCount": 112,
-    "semanticCount": 113,
+    "semanticCount": 116,
     "componentCount": 413,
-    "total": 638
+    "total": 641
   },
   "tokens": [
     {
@@ -2927,6 +2927,21 @@
       ]
     },
     {
+      "name": "font-size-control",
+      "cssVar": "--font-size-control",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{font-size.base}",
+      "resolved": {
+        "base-light": "16px",
+        "base-dark": "16px",
+        "portfolio-light": "16px",
+        "portfolio-dark": "16px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
       "name": "font-size-small",
       "cssVar": "--font-size-small",
       "type": "dimension",
@@ -3170,6 +3185,21 @@
         "base-dark": "600",
         "portfolio-light": "600",
         "portfolio-dark": "600"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "font-weight-title",
+      "cssVar": "--font-weight-title",
+      "type": "fontWeight",
+      "category": "typography",
+      "rawValue": "{font-weight.bold}",
+      "resolved": {
+        "base-light": "700",
+        "base-dark": "700",
+        "portfolio-light": "700",
+        "portfolio-dark": "700"
       },
       "axisAware": false,
       "usedBy": []
@@ -3719,6 +3749,21 @@
       ]
     },
     {
+      "name": "border-width-default",
+      "cssVar": "--border-width-default",
+      "type": "dimension",
+      "category": "border",
+      "rawValue": "{border-width.thin}",
+      "resolved": {
+        "base-light": "1px",
+        "base-dark": "1px",
+        "portfolio-light": "1px",
+        "portfolio-dark": "1px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
       "name": "size-dialog-default",
       "cssVar": "--size-dialog-default",
       "type": "dimension",
@@ -3815,7 +3860,7 @@
       "cssVar": "--accordion-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -3900,7 +3945,7 @@
       "cssVar": "--accordion-trigger-font-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -4087,7 +4132,7 @@
       "cssVar": "--alert-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.3}",
+      "rawValue": "{space-label-gap}",
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
@@ -4121,7 +4166,7 @@
       "cssVar": "--alert-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -4138,7 +4183,7 @@
       "cssVar": "--alert-font-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -4547,7 +4592,7 @@
       "cssVar": "--avatar-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -4768,7 +4813,7 @@
       "cssVar": "--badge-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -4785,7 +4830,7 @@
       "cssVar": "--badge-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.1}",
+      "rawValue": "{space-tight-gap}",
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
@@ -5176,7 +5221,7 @@
       "cssVar": "--breadcrumb-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.2}",
+      "rawValue": "{space-inline-gap}",
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
@@ -5261,7 +5306,7 @@
       "cssVar": "--button-font-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -5584,7 +5629,7 @@
       "cssVar": "--button-icon-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.2}",
+      "rawValue": "{space-inline-gap}",
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
@@ -5778,7 +5823,7 @@
       "cssVar": "--card-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -5829,7 +5874,7 @@
       "cssVar": "--card-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.4}",
+      "rawValue": "{space-element-gap}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -5846,7 +5891,7 @@
       "cssVar": "--card-title-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.lg}",
+      "rawValue": "{font-size-lead}",
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
@@ -5863,7 +5908,7 @@
       "cssVar": "--card-title-weight",
       "type": "other",
       "category": "component",
-      "rawValue": "{font-weight.bold}",
+      "rawValue": "{font-weight-title}",
       "resolved": {
         "base-light": "700",
         "base-dark": "700",
@@ -5880,7 +5925,7 @@
       "cssVar": "--card-description-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -6048,7 +6093,7 @@
       "cssVar": "--checkbox-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-interactive}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -6133,7 +6178,7 @@
       "cssVar": "--checkbox-label-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.3}",
+      "rawValue": "{space-label-gap}",
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
@@ -6150,7 +6195,7 @@
       "cssVar": "--checkbox-label-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -6303,7 +6348,7 @@
       "cssVar": "--dialog-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -6354,7 +6399,7 @@
       "cssVar": "--dialog-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.4}",
+      "rawValue": "{space-element-gap}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -6405,7 +6450,7 @@
       "cssVar": "--dialog-title-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.lg}",
+      "rawValue": "{font-size-lead}",
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
@@ -6422,7 +6467,7 @@
       "cssVar": "--dialog-title-weight",
       "type": "other",
       "category": "component",
-      "rawValue": "{font-weight.bold}",
+      "rawValue": "{font-weight-title}",
       "resolved": {
         "base-light": "700",
         "base-dark": "700",
@@ -6622,7 +6667,7 @@
       "cssVar": "--drawer-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -6690,7 +6735,7 @@
       "cssVar": "--drawer-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.5}",
+      "rawValue": "{space-component-gap}",
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
@@ -6724,7 +6769,7 @@
       "cssVar": "--drawer-title-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.lg}",
+      "rawValue": "{font-size-lead}",
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
@@ -6741,7 +6786,7 @@
       "cssVar": "--drawer-title-weight",
       "type": "other",
       "category": "component",
-      "rawValue": "{font-weight.bold}",
+      "rawValue": "{font-weight-title}",
       "resolved": {
         "base-light": "700",
         "base-dark": "700",
@@ -7115,7 +7160,7 @@
       "cssVar": "--hero-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.5}",
+      "rawValue": "{space-component-gap}",
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
@@ -7370,7 +7415,7 @@
       "cssVar": "--input-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-interactive}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -7489,7 +7534,7 @@
       "cssVar": "--input-font-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -7761,7 +7806,7 @@
       "cssVar": "--label-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.2}",
+      "rawValue": "{space-inline-gap}",
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
@@ -7931,7 +7976,7 @@
       "cssVar": "--pagination-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -7965,7 +8010,7 @@
       "cssVar": "--pagination-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.2}",
+      "rawValue": "{space-inline-gap}",
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
@@ -8067,7 +8112,7 @@
       "cssVar": "--radio-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-interactive}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -8135,7 +8180,7 @@
       "cssVar": "--radio-label-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.3}",
+      "rawValue": "{space-label-gap}",
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
@@ -8152,7 +8197,7 @@
       "cssVar": "--radio-label-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -8203,7 +8248,7 @@
       "cssVar": "--radio-group-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.3}",
+      "rawValue": "{space-label-gap}",
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
@@ -8288,7 +8333,7 @@
       "cssVar": "--select-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-interactive}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -8305,7 +8350,7 @@
       "cssVar": "--select-separator-height",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -8390,7 +8435,7 @@
       "cssVar": "--select-font-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -8915,7 +8960,7 @@
       "cssVar": "--switch-label-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.3}",
+      "rawValue": "{space-label-gap}",
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
@@ -8932,7 +8977,7 @@
       "cssVar": "--switch-label-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -9119,7 +9164,7 @@
       "cssVar": "--table-body-font-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -9153,7 +9198,7 @@
       "cssVar": "--table-row-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -9272,7 +9317,7 @@
       "cssVar": "--table-sort-icon-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.1}",
+      "rawValue": "{space-tight-gap}",
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
@@ -9391,7 +9436,7 @@
       "cssVar": "--tabs-trigger-font-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -9425,7 +9470,7 @@
       "cssVar": "--tabs-trigger-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.1}",
+      "rawValue": "{space-tight-gap}",
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
@@ -9493,7 +9538,7 @@
       "cssVar": "--tabs-list-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -9544,7 +9589,7 @@
       "cssVar": "--tabs-pill-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.1}",
+      "rawValue": "{space-tight-gap}",
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
@@ -9680,7 +9725,7 @@
       "cssVar": "--tag-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -10071,7 +10116,7 @@
       "cssVar": "--textarea-font-size",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{font-size.base}",
+      "rawValue": "{font-size-control}",
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
@@ -10258,7 +10303,7 @@
       "cssVar": "--toast-border-width",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width-default}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
@@ -10326,7 +10371,7 @@
       "cssVar": "--toast-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.3}",
+      "rawValue": "{space-label-gap}",
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
@@ -10547,7 +10592,7 @@
       "cssVar": "--toast-content-gap",
       "type": "dimension",
       "category": "component",
-      "rawValue": "{space.1}",
+      "rawValue": "{space-tight-gap}",
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",

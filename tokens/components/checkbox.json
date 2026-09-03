@@ -20,7 +20,7 @@
     "$type": "color"
   },
   "checkbox-border-width": {
-    "$value": "{border-width.thin}",
+    "$value": "{border-width-interactive}",
     "$type": "dimension"
   },
   "checkbox-border-hover": {
@@ -40,11 +40,11 @@
     "$type": "color"
   },
   "checkbox-label-gap": {
-    "$value": "{space.3}",
+    "$value": "{space-label-gap}",
     "$type": "dimension"
   },
   "checkbox-label-size": {
-    "$value": "{font-size.base}",
+    "$value": "{font-size-control}",
     "$type": "dimension"
   },
   "checkbox-label-color": {

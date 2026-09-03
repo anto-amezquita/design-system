@@ -8,7 +8,7 @@
     "$type": "dimension"
   },
   "button-font-size": {
-    "$value": "{font-size.base}",
+    "$value": "{font-size-control}",
     "$type": "dimension"
   },
   "button-font-weight": {
@@ -84,7 +84,7 @@
     "$type": "color"
   },
   "button-icon-gap": {
-    "$value": "{space.2}",
+    "$value": "{space-inline-gap}",
     "$type": "dimension"
   },
   "button-icon-size": {

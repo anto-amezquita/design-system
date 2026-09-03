@@ -20,7 +20,7 @@
     "$type": "dimension"
   },
   "breadcrumb-gap": {
-    "$value": "{space.2}",
+    "$value": "{space-inline-gap}",
     "$type": "dimension"
   },
   "breadcrumb-item-max-width": {

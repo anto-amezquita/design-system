@@ -12,7 +12,7 @@
     "$type": "dimension"
   },
   "hero-gap": {
-    "$value": "{space.5}",
+    "$value": "{space-component-gap}",
     "$type": "dimension"
   },
   "hero-eyebrow-size": {
