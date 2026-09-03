@@ -33,7 +33,7 @@
   },
   "card-title-weight": {
     "$value": "{font-weight-title}",
-    "$type": "other"
+    "$type": "fontWeight"
   },
   "card-description-size": {
     "$value": "{font-size-control}",

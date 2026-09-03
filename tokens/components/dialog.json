@@ -37,7 +37,7 @@
   },
   "dialog-title-weight": {
     "$value": "{font-weight-title}",
-    "$type": "other"
+    "$type": "fontWeight"
   },
   "dialog-close-size": {
     "$value": "{size.icon-interactive}",

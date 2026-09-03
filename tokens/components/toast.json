@@ -45,7 +45,7 @@
   },
   "toast-title-weight": {
     "$value": "{font-weight.semibold}",
-    "$type": "other"
+    "$type": "fontWeight"
   },
   "toast-font-size": {
     "$value": "{font-size.sm}",

@@ -37,7 +37,7 @@
   },
   "drawer-title-weight": {
     "$value": "{font-weight-title}",
-    "$type": "other"
+    "$type": "fontWeight"
   },
   "drawer-close-size": {
     "$value": "{size.icon-interactive}",

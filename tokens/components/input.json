@@ -57,7 +57,7 @@
   },
   "input-label-weight": {
     "$value": "{font-weight-label}",
-    "$type": "other"
+    "$type": "fontWeight"
   },
   "input-label-color": {
     "$value": "{color-text-primary}",

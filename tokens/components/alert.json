@@ -25,7 +25,7 @@
   },
   "alert-title-weight": {
     "$value": "{font-weight.semibold}",
-    "$type": "other"
+    "$type": "fontWeight"
   },
   "alert-icon-size": {
     "$value": "{size-icon-md}",
@@ -41,7 +41,7 @@
   },
   "alert-exit-distance": {
     "$value": "{space.1}",
-    "$type": "other"
+    "$type": "dimension"
   },
   "alert-success-background": {
     "$value": "{color-feedback-success-background}",

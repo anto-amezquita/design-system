@@ -21,7 +21,7 @@
   },
   "hero-eyebrow-weight": {
     "$value": "{font-weight.semibold}",
-    "$type": "other"
+    "$type": "fontWeight"
   },
   "hero-eyebrow-color": {
     "$value": "{color-text-secondary}",
@@ -33,7 +33,7 @@
   },
   "hero-title-weight": {
     "$value": "{font-weight.extrabold}",
-    "$type": "other"
+    "$type": "fontWeight"
   },
   "hero-title-color": {
     "$value": "{color-text-primary}",

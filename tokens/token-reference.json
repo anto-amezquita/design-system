@@ -4333,7 +4333,7 @@
     {
       "name": "alert-title-weight",
       "cssVar": "--alert-title-weight",
-      "type": "other",
+      "type": "fontWeight",
       "category": "component",
       "rawValue": "{font-weight.semibold}",
       "resolved": {
@@ -4401,7 +4401,7 @@
     {
       "name": "alert-exit-distance",
       "cssVar": "--alert-exit-distance",
-      "type": "other",
+      "type": "dimension",
       "category": "component",
       "rawValue": "{space.1}",
       "resolved": {
@@ -6041,7 +6041,7 @@
     {
       "name": "card-title-weight",
       "cssVar": "--card-title-weight",
-      "type": "other",
+      "type": "fontWeight",
       "category": "component",
       "rawValue": "{font-weight-title}",
       "resolved": {
@@ -6600,7 +6600,7 @@
     {
       "name": "dialog-title-weight",
       "cssVar": "--dialog-title-weight",
-      "type": "other",
+      "type": "fontWeight",
       "category": "component",
       "rawValue": "{font-weight-title}",
       "resolved": {
@@ -6919,7 +6919,7 @@
     {
       "name": "drawer-title-weight",
       "cssVar": "--drawer-title-weight",
-      "type": "other",
+      "type": "fontWeight",
       "category": "component",
       "rawValue": "{font-weight-title}",
       "resolved": {
@@ -7327,7 +7327,7 @@
     {
       "name": "hero-eyebrow-weight",
       "cssVar": "--hero-eyebrow-weight",
-      "type": "other",
+      "type": "fontWeight",
       "category": "component",
       "rawValue": "{font-weight.semibold}",
       "resolved": {
@@ -7378,7 +7378,7 @@
     {
       "name": "hero-title-weight",
       "cssVar": "--hero-title-weight",
-      "type": "other",
+      "type": "fontWeight",
       "category": "component",
       "rawValue": "{font-weight.extrabold}",
       "resolved": {
@@ -7718,7 +7718,7 @@
     {
       "name": "input-label-weight",
       "cssVar": "--input-label-weight",
-      "type": "other",
+      "type": "fontWeight",
       "category": "component",
       "rawValue": "{font-weight-label}",
       "resolved": {
@@ -8721,7 +8721,7 @@
     {
       "name": "select-label-weight",
       "cssVar": "--select-label-weight",
-      "type": "other",
+      "type": "fontWeight",
       "category": "component",
       "rawValue": "{font-weight-label}",
       "resolved": {
@@ -10300,7 +10300,7 @@
     {
       "name": "textarea-label-weight",
       "cssVar": "--textarea-label-weight",
-      "type": "other",
+      "type": "fontWeight",
       "category": "component",
       "rawValue": "{font-weight-label}",
       "resolved": {
@@ -10572,7 +10572,7 @@
     {
       "name": "toast-title-weight",
       "cssVar": "--toast-title-weight",
-      "type": "other",
+      "type": "fontWeight",
       "category": "component",
       "rawValue": "{font-weight.semibold}",
       "resolved": {
