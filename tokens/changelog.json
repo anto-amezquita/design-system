@@ -132,6 +132,14 @@
   ],
   "unreleased": [
     {
+      "sha": "2885f14",
+      "type": "fix",
+      "scope": "tokens",
+      "message": "correct $type mismatches on 17 remaining \"other\" tokens",
+      "date": "2026-09-03",
+      "breaking": false
+    },
+    {
       "sha": "062219a",
       "type": "fix",
       "scope": "tokens",
