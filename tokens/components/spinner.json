@@ -1,15 +1,15 @@
 {
   "spinner-size-sm": {
     "$value": "{size-icon-sm}",
-    "$type": "other"
+    "$type": "dimension"
   },
   "spinner-size-md": {
     "$value": "{size-icon-md}",
-    "$type": "other"
+    "$type": "dimension"
   },
   "spinner-size-lg": {
     "$value": "{size-icon-lg}",
-    "$type": "other"
+    "$type": "dimension"
   },
   "spinner-stroke-width": {
     "$value": "{border-width.medium}",

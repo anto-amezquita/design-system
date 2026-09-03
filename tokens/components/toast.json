@@ -41,7 +41,7 @@
   },
   "toast-z-index": {
     "$value": "{z-toast}",
-    "$type": "other"
+    "$type": "number"
   },
   "toast-title-weight": {
     "$value": "{font-weight.semibold}",

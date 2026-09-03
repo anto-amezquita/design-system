@@ -33,7 +33,7 @@
   },
   "tooltip-z-index": {
     "$value": "{z-tooltip}",
-    "$type": "other"
+    "$type": "number"
   },
   "tooltip-max-width": {
     "$value": "260px",
@@ -45,10 +45,10 @@
   },
   "tooltip-delay-duration": {
     "$value": "400",
-    "$type": "other"
+    "$type": "number"
   },
   "tooltip-side-offset": {
     "$value": "6",
-    "$type": "other"
+    "$type": "number"
   }
 }

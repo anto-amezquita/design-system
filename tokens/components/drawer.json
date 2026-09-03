@@ -17,7 +17,7 @@
   },
   "drawer-z-index": {
     "$value": "{z-modal}",
-    "$type": "other"
+    "$type": "number"
   },
   "drawer-padding": {
     "$value": "{space-container-padding-lg}",
@@ -49,7 +49,7 @@
   },
   "drawer-close-hover": {
     "$value": "{color-text-primary}",
-    "$type": "other"
+    "$type": "color"
   },
   "drawer-max-width-sm": {
     "$value": "320px",

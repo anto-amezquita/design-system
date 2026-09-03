@@ -1,11 +1,11 @@
 {
   "avatar-size-sm": {
     "$value": "{space.5}",
-    "$type": "other"
+    "$type": "dimension"
   },
   "avatar-size-md": {
     "$value": "{space.6}",
-    "$type": "other"
+    "$type": "dimension"
   },
   "avatar-size-lg": {
     "$value": "40px",
@@ -13,7 +13,7 @@
   },
   "avatar-size-xl": {
     "$value": "{space.8}",
-    "$type": "other"
+    "$type": "dimension"
   },
   "avatar-border-radius": {
     "$value": "{border-radius-pill}",

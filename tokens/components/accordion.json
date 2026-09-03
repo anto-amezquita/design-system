@@ -53,10 +53,10 @@
   },
   "accordion-duration-expand": {
     "$value": "{duration.expand}",
-    "$type": "other"
+    "$type": "duration"
   },
   "accordion-duration-collapse": {
     "$value": "{duration.collapse}",
-    "$type": "other"
+    "$type": "duration"
   }
 }

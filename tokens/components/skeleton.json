@@ -5,7 +5,7 @@
   },
   "skeleton-highlight": {
     "$value": "{color-skeleton-highlight}",
-    "$type": "other"
+    "$type": "color"
   },
   "skeleton-border-radius": {
     "$value": "{border-radius.sm}",

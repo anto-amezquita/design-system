@@ -49,7 +49,7 @@
   },
   "dialog-close-hover": {
     "$value": "{color-text-primary}",
-    "$type": "other"
+    "$type": "color"
   },
   "dialog-max-width-sm": {
     "$value": "{size.dialog-sm}",
@@ -69,7 +69,7 @@
   },
   "dialog-z-index": {
     "$value": "{z-modal}",
-    "$type": "other"
+    "$type": "number"
   },
   "dialog-entrance-offset": {
     "$value": "8px",
