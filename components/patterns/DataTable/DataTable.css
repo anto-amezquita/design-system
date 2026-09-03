@@ -36,9 +36,11 @@
   align-items: center;
 }
 
-/* Filter row's <th> cells hold an Input/Select, which brings its own border and
-   height — the default header cell padding (sized for plain text) reads as too
-   much extra air around a form control, so only the vertical padding is tightened. */
+/* Filter row's <td> cells hold an Input/Select, which brings its own border and
+   height — the default cell padding (sized for plain text) reads as too
+   much extra air around a form control, so only the vertical padding is tightened.
+   Deliberately <td>, not <th> — this row holds filter controls, not column names, and
+   an empty <th scope="col"> (non-filterable columns) fails axe's empty-table-header rule. */
 .data-table__filter-cell {
   padding-block: var(--datatable-filter-cell-padding-y);
 }

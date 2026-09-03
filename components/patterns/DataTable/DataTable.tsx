@@ -350,11 +350,11 @@ export function DataTable<T extends Record<string, unknown>>({
           </TableRow>
           {hasFilters && (
             <TableRow className="data-table__filter-row">
-              {selectable && <TableHeader className="data-table__select-col" />}
+              {selectable && <TableCell className="data-table__select-col" />}
               {columns.map(col => (
-                <TableHeader key={col.key} className="data-table__filter-cell">
+                <TableCell key={col.key} className="data-table__filter-cell">
                   {col.filterable ? renderFilterControl(col) : null}
-                </TableHeader>
+                </TableCell>
               ))}
             </TableRow>
           )}
