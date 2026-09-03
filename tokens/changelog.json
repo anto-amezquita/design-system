@@ -132,6 +132,14 @@
   ],
   "unreleased": [
     {
+      "sha": "50852ff",
+      "type": "fix",
+      "scope": "datatable",
+      "message": "use <td> instead of empty <th scope=col> in filter row",
+      "date": "2026-09-03",
+      "breaking": false
+    },
+    {
       "sha": "2885f14",
       "type": "fix",
       "scope": "tokens",
