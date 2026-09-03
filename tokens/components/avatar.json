@@ -16,7 +16,7 @@
     "$type": "other"
   },
   "avatar-border-radius": {
-    "$value": "{border-radius.full}",
+    "$value": "{border-radius-pill}",
     "$type": "dimension"
   },
   "avatar-border": {

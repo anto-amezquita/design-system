@@ -20,7 +20,7 @@
     "$type": "other"
   },
   "drawer-padding": {
-    "$value": "{space.7}",
+    "$value": "{space-container-padding-lg}",
     "$type": "dimension"
   },
   "drawer-gap": {

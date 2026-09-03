@@ -16,11 +16,11 @@
     "$type": "color"
   },
   "accordion-trigger-padding-x": {
-    "$value": "{space.5}",
+    "$value": "{space-prominent-padding-x}",
     "$type": "dimension"
   },
   "accordion-trigger-padding-y": {
-    "$value": "{space.4}",
+    "$value": "{space-prominent-padding-y}",
     "$type": "dimension"
   },
   "accordion-trigger-font-size": {
@@ -28,7 +28,7 @@
     "$type": "dimension"
   },
   "accordion-trigger-font-weight": {
-    "$value": "{font-weight.medium}",
+    "$value": "{font-weight-control}",
     "$type": "fontWeight"
   },
   "accordion-content-color": {

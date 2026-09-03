@@ -32,11 +32,11 @@
     "$type": "dimension"
   },
   "select-padding-x": {
-    "$value": "{space.4}",
+    "$value": "{space-control-padding-x}",
     "$type": "dimension"
   },
   "select-padding-y": {
-    "$value": "{space.3}",
+    "$value": "{space-control-padding-y}",
     "$type": "dimension"
   },
   "select-font-size": {
@@ -76,7 +76,7 @@
     "$type": "dimension"
   },
   "select-label-weight": {
-    "$value": "{font-weight.medium}",
+    "$value": "{font-weight-label}",
     "$type": "other"
   }
 }

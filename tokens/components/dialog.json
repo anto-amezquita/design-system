@@ -16,7 +16,7 @@
     "$type": "dimension"
   },
   "dialog-padding": {
-    "$value": "{space.7}",
+    "$value": "{space-container-padding-lg}",
     "$type": "dimension"
   },
   "dialog-gap": {

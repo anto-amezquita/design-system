@@ -8,7 +8,7 @@
     "$type": "dimension"
   },
   "hero-padding-x": {
-    "$value": "{space.6}",
+    "$value": "{space-container-padding}",
     "$type": "dimension"
   },
   "hero-gap": {

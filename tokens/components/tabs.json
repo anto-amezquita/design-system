@@ -16,11 +16,11 @@
     "$type": "color"
   },
   "tabs-trigger-padding-x": {
-    "$value": "{space.4}",
+    "$value": "{space-control-padding-x}",
     "$type": "dimension"
   },
   "tabs-trigger-padding-y": {
-    "$value": "{space.3}",
+    "$value": "{space-control-padding-y}",
     "$type": "dimension"
   },
   "tabs-trigger-font-size": {
@@ -28,7 +28,7 @@
     "$type": "dimension"
   },
   "tabs-trigger-font-weight": {
-    "$value": "{font-weight.medium}",
+    "$value": "{font-weight-control}",
     "$type": "fontWeight"
   },
   "tabs-trigger-gap": {
@@ -41,7 +41,7 @@
   },
   "tabs-indicator-height": {
     "$value": "{border-width.medium}",
-    "$type": "color"
+    "$type": "dimension"
   },
   "tabs-list-border-bottom": {
     "$value": "{color-border-default}",
@@ -56,7 +56,7 @@
     "$type": "color"
   },
   "tabs-pill-border-radius": {
-    "$value": "{border-radius.sm}",
+    "$value": "{border-radius-interactive}",
     "$type": "dimension"
   },
   "tabs-pill-gap": {
@@ -64,11 +64,11 @@
     "$type": "dimension"
   },
   "tabs-sm-trigger-padding-y": {
-    "$value": "{space.2}",
+    "$value": "{space-compact-padding-y}",
     "$type": "dimension"
   },
   "tabs-sm-trigger-padding-x": {
-    "$value": "{space.3}",
+    "$value": "{space-compact-padding-x}",
     "$type": "dimension"
   },
   "tabs-content-padding-top": {

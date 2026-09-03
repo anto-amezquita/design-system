@@ -20,7 +20,7 @@
     "$type": "dimension"
   },
   "card-padding": {
-    "$value": "{space.6}",
+    "$value": "{space-container-padding}",
     "$type": "dimension"
   },
   "card-gap": {

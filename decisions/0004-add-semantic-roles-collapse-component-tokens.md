@@ -1,8 +1,10 @@
-# 0004 — Add three semantic roles (`border-width-default`, `font-size-control`, `font-weight-title`); collapse 30 component tokens; fix border-width role misuse in four form controls
+# 0004 — Collapse component token chain-skips into a closed semantic-role vocabulary (MD3-style)
 
 ## Status
 
 Accepted
+
+**Final state (all rounds):** chain-skip component tokens down from 164 to 74 (90 collapsed). 9 new semantic roles added (`border-width-default`, `font-size-control`, `font-weight-title`, `font-weight-control`, `space-control-padding-x/y`, `space-prominent-padding-x/y`, `space-compact-padding-x/y`, `space-container-padding`, `space-container-padding-lg`), plus 1 existing role corrected (`font-weight-label`, was pointing at the wrong value). Zero regressions throughout — `npm run validate` stayed green after every round. Remaining 74 chain-skips are genuinely scattered one-off values (`font-size-sm`/`.xs` across unrelated small text, `font-weight-semibold` across 5 different functions) that don't share a real function under the 3+-component rule below, not roles left unnamed.
 
 ## Context
 
@@ -39,6 +41,43 @@ A second `tokens:audit` pass (after rebuilding `tokens/token-reference.json`, wh
 
 Padding (`space.4`/`space.3` control, `space.5`/`space.4` prominent, `space.3`/`space.2` compact — 24 tokens) and `font-weight.medium` (11 tokens) followed the same grep-and-group pass but need new roles rather than reuse of existing ones. Held for a separate decision, same reasoning as the container-padding split above.
 
+## Follow-up: padding roles, with two real outliers
+
+Re-checked the padding groups against actual token values (not just the earlier grouping) and found the three groups hold cleanly, but two tokens don't actually fit either group they'd been provisionally assigned to:
+
+- **Control** (`space.4`/`space.3`, 16px/12px): Input, Select, Table-cell, Tabs-trigger, Textarea — 5 components, 10 tokens, clean match.
+- **Prominent** (`space.5`/`space.4`, 24px/16px): Accordion-trigger, Alert, Toast — 3 components, 6 tokens, clean match.
+- **Compact** (`space.3`/`space.2`, 12px/8px): Tooltip, Tabs-sm-trigger — 2 components, 4 tokens, clean match.
+
+Added 6 new roles to `light.json`: `space-control-padding-x/y`, `space-prominent-padding-x/y`, `space-compact-padding-x/y`. Collapsed the 20 tokens above to them.
+
+**Left as raw primitives, deliberately not collapsed:**
+- `button-padding-x/y` is `space.5`/`space.3` (24px/12px) — x matches Prominent but y is 12px, not 16px. Button doesn't actually share Prominent's shape; it only looked like it did before checking real values.
+- `select-item-padding-x/y` is `space.4`/`space.2` (16px/8px) — x matches Control, y matches Compact. A genuine mixed case, not a fourth group (only one component has this shape).
+
+Per the 3+-shared-value rule, neither outlier gets a role of its own. They stay on raw primitives until a third component turns up with the same shape.
+
+## Follow-up: border-radius-full adoption, and a second unnamed-role bug
+
+Collapsed five more free-match tokens (same pattern as the round-2 spacing adoptions — an existing role, `border-radius-pill` → `border-radius.full`, used only by Tag): Avatar, Badge, Switch (track + thumb), Button all referenced the raw primitive directly. No new role needed.
+
+Investigating the `font-weight.medium` chain-skip (11 uses, the largest remaining target) surfaced a second instance of the round-1 `font-size-body` bug: the semantic role `font-weight-label` already existed but was set to `font-weight.semibold` (600), while every actual label-shaped component — `input-label-weight`, `select-label-weight`, `textarea-label-weight`, `label-font-weight` — used `font-weight.medium` (500) directly. The role and the components it was named for disagreed, and nothing referenced the role as written. Corrected `font-weight-label` to `{font-weight.medium}` and adopted it across those 4 components.
+
+The remaining `font-weight.medium` uses split by function rather than one shared role: added `font-weight-control` (`{font-weight.medium}`, pairs with `font-size-control`) for Button, Tabs-trigger, and Accordion-trigger — the same 3 components that already share `font-size-control`. Tooltip, Badge, Pagination-button, and Tag also use `font-weight.medium` but don't share a single function or paired size with each other or the control group, so left on the raw primitive rather than forcing a role. `font-weight.semibold` (5 uses: Table-header, Alert-title, Toast-title, Avatar-fallback, Hero-eyebrow) has the same problem — same value, five different functions — and is also left open.
+
+## Follow-up: border-radius-interactive adoption, same split pattern
+
+`border-radius.sm` (5 uses) had the same shape as the padding groups: an existing role (`border-radius-interactive`, already `{border-radius.sm}`, previously only used by Input/Select/Textarea) fit some of the uses but not all. Checkbox, Pagination-button, and Tabs-pill are genuinely interactive elements — adopted the role there. Skeleton and Tooltip share the same value but aren't interactive components; left on the raw primitive rather than stretch the role's meaning to cover them.
+
+## Follow-up: container padding resolved (closes the round-1 held-back item)
+
+Checked the actual `space.6`/`space.7` values behind the round-1 container-padding question. Two clean groups, though shaped differently from the earlier control/prominent/compact groups — these are mostly single-value all-around padding, not matched x/y pairs:
+
+- **32px** (`space.6`): `card-padding`, `hero-padding-x`, `datatable-empty-padding`, `emptystate-padding-x-compact` → new role `space-container-padding`
+- **48px** (`space.7`): `dialog-padding`, `drawer-padding`, `emptystate-padding-y-compact` → new role `space-container-padding-lg`
+
+EmptyState's compact-variant x and y padding land on two different roles since the component is genuinely asymmetric (32px horizontal, 48px vertical) — not a matched pair like the control-group tokens. Hero's y-padding (`space.9`) isn't part of either group and was left untouched; only its x-padding matched. This closes the item held back at the end of round 1.
+
 ## Alternatives considered
 
 - Add a token per stuck component value instead of a shared role — rejected, this is exactly the Polaris/Primer pattern (semantic layer for color only) rather than the MD3-style closed role vocabulary this system is following elsewhere; it would also not have caught the Checkbox/Radio/Input/Select inconsistency.
@@ -48,15 +87,16 @@ Padding (`space.4`/`space.3` control, `space.5`/`space.4` prominent, `space.3`/`
 ## Consequences
 
 ### Positive
-- Component chain-skip count drops from 164: ~30 tokens now resolve through a named role instead of a raw primitive.
-- Fixes a real cross-component inconsistency (Checkbox/Radio/Input/Select border-width) rather than just renaming it.
-- Establishes the reuse bar for future semantic roles: a role needs 3+ components sharing the same function before it's added, not one component's stuck value.
+- Component chain-skip count drops from 164 to 74 across five rounds (90 tokens now resolve through a named role instead of a raw primitive).
+- Fixes two real cross-component inconsistencies rather than just renaming them: the Checkbox/Radio/Input/Select border-width drift, and the `font-weight-label` role pointing at the wrong value (semibold instead of medium) while being unused by any actual label component.
+- Establishes the reuse bar for future semantic roles: a role needs 3+ components sharing the same function before it's added, not one component's stuck value — confirmed by three separate cases (Button padding, Select-item padding, Tooltip/Skeleton border-radius) that were checked against this bar and correctly left uncollapsed.
+- Container-padding split (the item originally held back) is resolved: `space-container-padding` (32px) and `space-container-padding-lg` (48px).
 
 ### Negative
-- Container padding chain-skips (6 components) remain unresolved pending a value decision.
 - `border-width-default` and `border-width-interactive` currently resolve to the same primitive (`border-width.thin`) — no visual change yet, but the two roles now exist as distinct hooks if interactive and static borders ever need to diverge.
+- The remaining 74 chain-skips (`font-size-sm`/`.xs`, `font-weight-semibold`, and similar) are deliberately left as raw primitives rather than forced into roles, since none clears the 3+-shared-function bar. Revisit only if a third component genuinely shares one of these shapes.
 
 ## Related files
 
 - `tokens/brands/base/light.json`
-- `tokens/components/card.json`, `dialog.json`, `drawer.json`, `accordion.json`, `alert.json`, `avatar.json`, `checkbox.json`, `radio.json`, `input.json`, `select.json`, `textarea.json`, `button.json`, `switch.json`, `table.json`, `tabs.json`, `tag.json`, `toast.json`, `pagination.json`
+- `tokens/components/card.json`, `dialog.json`, `drawer.json`, `accordion.json`, `alert.json`, `avatar.json`, `checkbox.json`, `radio.json`, `input.json`, `select.json`, `textarea.json`, `button.json`, `switch.json`, `table.json`, `tabs.json`, `tag.json`, `toast.json`, `pagination.json`, `breadcrumb.json`, `label.json`, `badge.json`, `hero.json`, `tooltip.json`, `datatable.json`, `empty-state.json`

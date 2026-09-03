@@ -36,11 +36,11 @@
     "$type": "dimension"
   },
   "input-padding-x": {
-    "$value": "{space.4}",
+    "$value": "{space-control-padding-x}",
     "$type": "dimension"
   },
   "input-padding-y": {
-    "$value": "{space.3}",
+    "$value": "{space-control-padding-y}",
     "$type": "dimension"
   },
   "input-font-size": {
@@ -56,7 +56,7 @@
     "$type": "dimension"
   },
   "input-label-weight": {
-    "$value": "{font-weight.medium}",
+    "$value": "{font-weight-label}",
     "$type": "other"
   },
   "input-label-color": {

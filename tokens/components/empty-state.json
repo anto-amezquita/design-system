@@ -17,11 +17,11 @@
     "$type": "dimension"
   },
   "emptystate-padding-y-compact": {
-    "$value": "{space.7}",
+    "$value": "{space-container-padding-lg}",
     "$type": "dimension"
   },
   "emptystate-padding-x-compact": {
-    "$value": "{space.6}",
+    "$value": "{space-container-padding}",
     "$type": "dimension"
   },
   "emptystate-gap-compact": {

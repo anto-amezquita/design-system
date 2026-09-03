@@ -1,10 +1,10 @@
 {
   "alert-padding-x": {
-    "$value": "{space.5}",
+    "$value": "{space-prominent-padding-x}",
     "$type": "dimension"
   },
   "alert-padding-y": {
-    "$value": "{space.4}",
+    "$value": "{space-prominent-padding-y}",
     "$type": "dimension"
   },
   "alert-gap": {

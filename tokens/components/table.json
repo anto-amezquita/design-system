@@ -1,10 +1,10 @@
 {
   "table-cell-padding-x": {
-    "$value": "{space.4}",
+    "$value": "{space-control-padding-x}",
     "$type": "dimension"
   },
   "table-cell-padding-y": {
-    "$value": "{space.3}",
+    "$value": "{space-control-padding-y}",
     "$type": "dimension"
   },
   "table-header-background": {

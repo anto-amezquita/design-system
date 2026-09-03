@@ -12,11 +12,11 @@
     "$type": "dimension"
   },
   "button-font-weight": {
-    "$value": "{font-weight.medium}",
+    "$value": "{font-weight-control}",
     "$type": "fontWeight"
   },
   "button-border-radius": {
-    "$value": "{border-radius.full}",
+    "$value": "{border-radius-pill}",
     "$type": "dimension"
   },
   "button-border-width": {

@@ -4,7 +4,7 @@
     "$type": "dimension"
   },
   "label-font-weight": {
-    "$value": "{font-weight.medium}",
+    "$value": "{font-weight-label}",
     "$type": "fontWeight"
   },
   "label-color": {

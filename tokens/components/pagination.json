@@ -40,7 +40,7 @@
     "$type": "dimension"
   },
   "pagination-border-radius": {
-    "$value": "{border-radius.sm}",
+    "$value": "{border-radius-interactive}",
     "$type": "dimension"
   },
   "pagination-gap": {

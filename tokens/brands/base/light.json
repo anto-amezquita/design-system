@@ -313,8 +313,9 @@
     "$type": "fontWeight"
   },
   "font-weight-label": {
-    "$value": "{font-weight.semibold}",
-    "$type": "fontWeight"
+    "$value": "{font-weight.medium}",
+    "$type": "fontWeight",
+    "$description": "Weight for form-field labels (input, select, textarea, standalone Label). Corrected from semibold to medium, Sep 2026 — the role existed but was set to the wrong value and unused by any label component. See decisions/0004."
   },
   "font-weight-display": {
     "$value": "{font-weight.semibold}",
@@ -324,6 +325,11 @@
     "$value": "{font-weight.bold}",
     "$type": "fontWeight",
     "$description": "Title weight for card/dialog/drawer-style container headers. See decisions/0004."
+  },
+  "font-weight-control": {
+    "$value": "{font-weight.medium}",
+    "$type": "fontWeight",
+    "$description": "Default text weight for interactive controls (button, tabs trigger, accordion trigger). Pairs with font-size-control. See decisions/0004."
   },
   "line-height-display": {
     "$value": "{line-height.tighter}",
@@ -434,6 +440,46 @@
   "space-tight-gap": {
     "$value": "{space.1}",
     "$type": "dimension"
+  },
+  "space-control-padding-x": {
+    "$value": "{space.4}",
+    "$type": "dimension",
+    "$description": "Horizontal padding for default-size form controls and interactive components (input, select, table cell, tabs trigger, textarea). See decisions/0004."
+  },
+  "space-control-padding-y": {
+    "$value": "{space.3}",
+    "$type": "dimension",
+    "$description": "Vertical padding for default-size form controls and interactive components (input, select, table cell, tabs trigger, textarea). See decisions/0004."
+  },
+  "space-prominent-padding-x": {
+    "$value": "{space.5}",
+    "$type": "dimension",
+    "$description": "Horizontal padding for prominent container-style components (accordion trigger, alert, toast). See decisions/0004."
+  },
+  "space-prominent-padding-y": {
+    "$value": "{space.4}",
+    "$type": "dimension",
+    "$description": "Vertical padding for prominent container-style components (accordion trigger, alert, toast). See decisions/0004."
+  },
+  "space-compact-padding-x": {
+    "$value": "{space.3}",
+    "$type": "dimension",
+    "$description": "Horizontal padding for compact/small-size controls (tooltip, tabs small trigger). See decisions/0004."
+  },
+  "space-compact-padding-y": {
+    "$value": "{space.2}",
+    "$type": "dimension",
+    "$description": "Vertical padding for compact/small-size controls (tooltip, tabs small trigger). See decisions/0004."
+  },
+  "space-container-padding": {
+    "$value": "{space.6}",
+    "$type": "dimension",
+    "$description": "All-around padding for standard container-style components (card, hero, datatable empty state, empty-state compact horizontal). See decisions/0004."
+  },
+  "space-container-padding-lg": {
+    "$value": "{space.7}",
+    "$type": "dimension",
+    "$description": "All-around padding for larger overlay-style containers (dialog, drawer, empty-state compact vertical). See decisions/0004."
   },
   "space-layout-max-width": {
     "$value": "{size.layout-lg}",

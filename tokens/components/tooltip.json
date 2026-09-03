@@ -8,11 +8,11 @@
     "$type": "color"
   },
   "tooltip-padding-x": {
-    "$value": "{space.3}",
+    "$value": "{space-compact-padding-x}",
     "$type": "dimension"
   },
   "tooltip-padding-y": {
-    "$value": "{space.2}",
+    "$value": "{space-compact-padding-y}",
     "$type": "dimension"
   },
   "tooltip-font-size": {

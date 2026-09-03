@@ -36,11 +36,11 @@
     "$type": "dimension"
   },
   "textarea-padding-x": {
-    "$value": "{space.4}",
+    "$value": "{space-control-padding-x}",
     "$type": "dimension"
   },
   "textarea-padding-y": {
-    "$value": "{space.3}",
+    "$value": "{space-control-padding-y}",
     "$type": "dimension"
   },
   "textarea-font-size": {
@@ -56,7 +56,7 @@
     "$type": "dimension"
   },
   "textarea-label-weight": {
-    "$value": "{font-weight.medium}",
+    "$value": "{font-weight-label}",
     "$type": "other"
   },
   "textarea-label-color": {
