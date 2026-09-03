@@ -132,6 +132,14 @@
   ],
   "unreleased": [
     {
+      "sha": "062219a",
+      "type": "fix",
+      "scope": "tokens",
+      "message": "remove stray textarea-border override in base-dark",
+      "date": "2026-09-03",
+      "breaking": false
+    },
+    {
       "sha": "133c77d",
       "type": "fix",
       "scope": "button",
