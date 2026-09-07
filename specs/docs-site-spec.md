@@ -1,12 +1,12 @@
 # Human-facing docs site — specification
 
-Storybook and the [MCP server](./mcp-server-spec.md) both serve developers and agents. Neither speaks to the other people a design system needs to win over inside an org — PMs deciding whether to adopt it, designers checking their intent survived translation, stakeholders who just want the story. This is the spec for that surface. Companion to [`ai-readiness-plan.md`](../docs/ai-readiness-plan.md)'s backlog entry — deliberately out of scope there; this file is the spec for picking it up.
+Storybook and the [MCP server](./mcp-server-spec.md) both serve developers and agents. Neither speaks to the other people a design system needs to win over inside an org — PMs deciding whether to adopt it, designers checking their intent survived translation, stakeholders who just want the story. This is the spec for that surface. Companion to [`roadmap.md`](../docs/roadmap.md)'s backlog entry — deliberately out of scope there; this file is the spec for picking it up.
 
 **Why not just Storybook:** Storybook is built for poking at a component in isolation. It has no narrative, no "why this exists," no foundations page, no adoption pitch. A non-technical stakeholder opening it gets a component tree, not an argument for why the org should standardize on this.
 
 **Scope discipline, same as the MCP spec:** no new data source. Every page reads the same generated artifacts the MCP server and Storybook already read (`tokens/token-reference.json`, `tokens/component-registry.json`, `docs/components/<slug>.md`) — so the docs site can't drift out of sync with the components themselves. It adds narrative and layout, not a second source of truth.
 
-**Existing groundwork:** portfolio already has a single `/design-system` page (case-study style). That page has a known staleness issue — it imports a local, stale copy of `token-reference.json` instead of the published package (logged in `ai-readiness-plan.md`'s 2026-08-12 entry, held pending job search). This spec doesn't fix that; a real build of this site would need to fix it first, since a docs site that quotes a wrong number undermines the whole point.
+**Existing groundwork:** portfolio already has a single `/design-system` page (case-study style). That page has a known staleness issue — it imports a local, stale copy of `token-reference.json` instead of the published package (logged in `roadmap.md`'s 2026-08-12 entry, held pending job search). This spec doesn't fix that; a real build of this site would need to fix it first, since a docs site that quotes a wrong number undermines the whole point.
 
 ---
 

@@ -64,7 +64,7 @@ Enforced, not just reviewed:
 
 - Tokens used instead of arbitrary values — enforced by `tokens:lint` (§2), not a review step.
 - Every push runs Chromatic; a PR with unreviewed visual changes doesn't merge clean.
-- Cross-brand/mode consistency: currently `portfolio-light`/`portfolio-dark` have story-level Chromatic coverage; `base-light`/`base-dark` do not yet (same gap `bold` had before it was removed — noted in `docs/ai-readiness-plan.md`'s token-architecture backlog). Don't claim 4-mode visual coverage until this is closed.
+- Cross-brand/mode consistency: currently `portfolio-light`/`portfolio-dark` have story-level Chromatic coverage; `base-light`/`base-dark` do not yet (same gap `bold` had before it was removed — noted in `docs/roadmap.md`'s token-architecture backlog). Don't claim 4-mode visual coverage until this is closed.
 
 ## 5. Technical quality
 
@@ -79,7 +79,7 @@ No unit-test framework in this repo (see `architecture.md` §7 for why). What ac
 - **Visual regression** — Chromatic, every push.
 - **Story coverage** — `check-stories.mjs`.
 - **Stateful/interaction logic** (sort+filter+selection interplay, etc.) — a throwaway Playwright script against a real dev server, written for that piece of work. Not persisted as a suite; written fresh, run, deleted or kept per the spec's own call.
-- **Agent-facing artifacts** (compiled docs, the skill file, the MCP server) — a cold test: a fresh subagent with zero memory of the session, given only the compiled artifact, attempting a real task. This is the only way doc-generator gaps have actually been found (see `docs/ai-readiness-plan.md` Phase 4 and Phase 6 findings) — a self-assessment doesn't substitute for it.
+- **Agent-facing artifacts** (compiled docs, the skill file, the MCP server) — a cold test: a fresh subagent with zero memory of the session, given only the compiled artifact, attempting a real task. This is the only way doc-generator gaps have actually been found (see `docs/roadmap.md` Phase 4 and Phase 6 findings) — a self-assessment doesn't substitute for it.
 
 ## 7. Release checklist
 
@@ -92,7 +92,7 @@ No unit-test framework in this repo (see `architecture.md` §7 for why). What ac
 
 ## 8. Post-release checks
 
-- [ ] `npm run tokens:audit` if component tokens were added — check they resolve differently from their referent in at least one mode, or are literal; a pass-through/chain-skip token is a collapse candidate, not new precedent (see the token-architecture backlog in `docs/ai-readiness-plan.md`)
+- [ ] `npm run tokens:audit` if component tokens were added — check they resolve differently from their referent in at least one mode, or are literal; a pass-through/chain-skip token is a collapse candidate, not new precedent (see the token-architecture backlog in `docs/roadmap.md`)
 - [ ] If published, confirm the version lands in a real consumer install before considering distribution done (this repo's own precedent: v0.1.4 was checked in a real `node_modules`, not assumed from the changelog)
 
 ## Not applicable to this repo

@@ -24,7 +24,7 @@ If the `amezquita-design-system` MCP server is connected (check `claude mcp list
 ## Do not
 
 - Hand-edit anything generated (`docs/components/`, `tokens/token-reference.json`, `tokens/component-registry.json`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, `skills/amezquita-design-system/`) — fix the generator in `scripts/` and run `npm run tokens`.
-- Add a component token that's a pass-through or chain-skip to its referent in all 4 modes without a reason — it's a collapse candidate on day one, not free (see the token-architecture backlog in `docs/ai-readiness-plan.md`).
+- Add a component token that's a pass-through or chain-skip to its referent in all 4 modes without a reason — it's a collapse candidate on day one, not free (see the token-architecture backlog in `docs/roadmap.md`).
 - Introduce a second full semantic token tier for a new brand — a brand is a thin override skin on `base` (see ADR [`0001`](decisions/0001-white-label-base-portfolio-brand-split.md)), never its own complete color/type/spacing tier.
 - Adopt an external library or convention wholesale for one technique you need from it — see ADR [`0002`](decisions/0002-reject-transitions-dev-library-adopt-audit-technique.md).
 - Make an architectural change (new token tier, new brand, changed component model, changed package structure) without writing an ADR in `/decisions`.
@@ -55,4 +55,4 @@ Component tokens follow `--<component-slug>-*` (e.g. `--button-padding-x`, `--di
 
 ## Roadmap
 
-This system's AI-readiness roadmap — what's shipped, what's in progress, why — lives in [`docs/ai-readiness-plan.md`](docs/ai-readiness-plan.md). Read its State block before starting unrelated work here; it names the current phase and the next action, so a session doesn't have to be told.
+This system's AI-readiness roadmap — what's shipped, what's in progress, why — lives in [`docs/roadmap.md`](docs/roadmap.md). Read its State block before starting unrelated work here; it names the current phase and the next action, so a session doesn't have to be told.

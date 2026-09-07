@@ -49,7 +49,7 @@ contributor-skills/ — workflow skills for people developing THIS repo (hand-
                      so npm run tokens can never touch it.
 specs/             — feature specs, one file per body of work
 decisions/         — ADRs, one file per significant architectural choice
-docs/              — roadmap/rationale docs that aren't tied to one feature (ai-readiness-plan.md is the session anchor)
+docs/              — roadmap/rationale docs that aren't tied to one feature (roadmap.md is the session anchor)
 ```
 
 ### A note on component counts — three different, all correct
@@ -74,7 +74,7 @@ Three tiers, strictly layered — no skipping:
 
 1. **Primitive** (`tokens/global.json`) — raw values: `color-*`, `space-*`, `font-size-*`, `font-weight-*`, `line-height-*`, `border-radius-*`, `duration-*`, `easing-*`, `opacity-*`, `feedback-*`, `shadow-*`, `icon-size-*`, `border-width-*`, `size-*`. Never referenced directly from component CSS.
 2. **Semantic** (`tokens/brands/<brand>/*.json`) — per-brand, per-mode meaning (`color-accent-default`, `line-height-body`). This is the brand/theme layer — see §4.
-3. **Component** (`tokens/components/<name>.json`) — component-scoped (`--button-padding-x`), resolving to a semantic or (rarely, when justified — see the token-architecture backlog in `docs/ai-readiness-plan.md`) directly to a primitive for literal geometry/motion values.
+3. **Component** (`tokens/components/<name>.json`) — component-scoped (`--button-padding-x`), resolving to a semantic or (rarely, when justified — see the token-architecture backlog in `docs/roadmap.md`) directly to a primitive for literal geometry/motion values.
 
 **If a token isn't in `tokens/token-reference.json`, it doesn't exist.** Add it at the right tier and run `npm run tokens` — don't reference a name that isn't there (enforced by the `no-fabricated-token` lint rule, see `docs/quality.md`).
 
@@ -101,11 +101,11 @@ Baseline, enforced by tooling not just review: axe run against every Storybook s
 - **Story coverage:** `check-stories.mjs` — every public component must have a story.
 - **Accessibility:** `addon-a11y` + `test-storybook` against every story.
 - **Interaction correctness for stateful logic** (e.g. DataTable's filter/sort/selection interplay): a throwaway Playwright script against a real dev server, written for that piece of work, not a persisted suite.
-- **Cold-test verification for agent-facing artifacts:** a fresh subagent with no memory of the session, given only the compiled docs/skill, attempting a real task — this is how doc-generator gaps get found (see `docs/ai-readiness-plan.md` Phase 4/6 findings).
+- **Cold-test verification for agent-facing artifacts:** a fresh subagent with no memory of the session, given only the compiled docs/skill, attempting a real task — this is how doc-generator gaps get found (see `docs/roadmap.md` Phase 4/6 findings).
 
 ## 8. Machine-facing / agent-readiness architecture
 
-This system deliberately ships a compiled, machine-readable layer alongside the human-facing one — the *why* lives in `docs/ai-readiness.md`, execution history in `docs/ai-readiness-plan.md`. The pieces:
+This system deliberately ships a compiled, machine-readable layer alongside the human-facing one — the *why* lives in `docs/ai-readiness.md`, execution history in `docs/roadmap.md`. The pieces:
 
 - `llms.txt` / `llms-full.txt` — agent-facing index and full inline reference.
 - `docs/components/<slug>.md` — one compiled twin per public component (props, tokens, real usage example) — the thing an agent should read instead of guessing from source.

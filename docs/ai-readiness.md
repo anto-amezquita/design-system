@@ -2,7 +2,7 @@
 
 Why this system invests in a machine-facing layer, what that layer is, and — just as important — what it deliberately will not become.
 
-Companion document: [`ai-readiness-plan.md`](./ai-readiness-plan.md) is the execution plan and the file to open first in any working session.
+Companion document: [`roadmap.md`](./roadmap.md) is the execution plan and the file to open first in any working session.
 
 ---
 
@@ -68,7 +68,7 @@ Assessed honestly, the foundation is further along than the benchmarks' median:
 
 ## 4. What is missing
 
-Most of the distribution layer shipped after this document was first written — `llms.txt` + per-component markdown twins, `AGENTS.md`, a single validate entrypoint, the agent skill, the shadcn-spec registry, and now a local MCP server are all live. See `docs/ai-readiness-plan.md` for the build log and `docs/ai-readiness-audit.md` for the audited before/after. What's left:
+Most of the distribution layer shipped after this document was first written — `llms.txt` + per-component markdown twins, `AGENTS.md`, a single validate entrypoint, the agent skill, the shadcn-spec registry, and now a local MCP server are all live. See `docs/roadmap.md` for the build log and `docs/ai-readiness-audit.md` for the audited before/after. What's left:
 
 | Gap | Benchmark context |
 |---|---|
