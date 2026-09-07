@@ -24,7 +24,7 @@ If the `amezquita-design-system` MCP server is connected (check `claude mcp list
 ## Do not
 
 - Hand-edit anything generated (`docs/components/`, `tokens/token-reference.json`, `tokens/component-registry.json`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, `skills/amezquita-design-system/`) — fix the generator in `scripts/` and run `npm run tokens`.
-- Add a component token that's a pass-through or chain-skip to its referent in all 4 modes without a reason — it's a collapse candidate on day one, not free (see the token-architecture backlog in `docs/roadmap.md`).
+- Add a component token that's a pass-through or chain-skip to its referent in all 4 modes without a reason — it's a collapse candidate on day one, not free (see the token-architecture backlog in `docs/backlog.md`).
 - Introduce a second full semantic token tier for a new brand — a brand is a thin override skin on `base` (see ADR [`0001`](decisions/0001-white-label-base-portfolio-brand-split.md)), never its own complete color/type/spacing tier.
 - Adopt an external library or convention wholesale for one technique you need from it — see ADR [`0002`](decisions/0002-reject-transitions-dev-library-adopt-audit-technique.md).
 - Make an architectural change (new token tier, new brand, changed component model, changed package structure) without writing an ADR in `/decisions`.
@@ -53,6 +53,8 @@ Component tokens follow `--<component-slug>-*` (e.g. `--button-padding-x`, `--di
 
 `npm run validate` exits `0`. It chains the token linter, the contrast checker, the component-registry check, the story-coverage check, and `tsc --noEmit` — full detail and rationale in [`docs/quality.md`](docs/quality.md). A non-zero exit on any of them means the change isn't finished — fix the underlying issue, don't route around the check.
 
-## Roadmap
+## Roadmap and backlog
 
-This system's AI-readiness roadmap — what's shipped, what's in progress, why — lives in [`docs/roadmap.md`](docs/roadmap.md). Read its State block before starting unrelated work here; it names the current phase and the next action, so a session doesn't have to be told.
+**Start here for any new session:** [`docs/backlog.md`](docs/backlog.md) — the live, actionable work list. If it's empty, there's nothing open.
+
+What's already shipped, and why, lives in [`docs/roadmap.md`](docs/roadmap.md) (condensed) and [`docs/roadmap-archive.md`](docs/roadmap-archive.md) (full detail) — read these for context, not for a task to pick up.

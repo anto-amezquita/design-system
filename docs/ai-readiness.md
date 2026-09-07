@@ -2,7 +2,7 @@
 
 Why this system invests in a machine-facing layer, what that layer is, and — just as important — what it deliberately will not become.
 
-Companion document: [`roadmap.md`](./roadmap.md) is the execution plan and the file to open first in any working session.
+Companion documents: [`backlog.md`](./backlog.md) is the live work list and the file to open first in any working session; [`roadmap.md`](./roadmap.md) is the execution history.
 
 ---
 

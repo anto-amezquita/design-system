@@ -2,7 +2,7 @@
 
 Collects component ideas surfaced from outside sources (competitor audits, pattern libraries, feature requests from a consuming project) before any of them get built. This file exists so a good idea doesn't either get lost or get built on the strength of "seemed useful" alone.
 
-**Governing rule, same one `decisions/0026`'s AlertDialog addition already followed:** a component gets built when a real, current consumer needs it — not speculatively, no matter how well-reasoned the source pattern is. An entry moves from this file into an actual build only once that trigger exists. Until then it just sits here as a candidate.
+**Governing rule, same one AlertDialog's addition already followed:** a component gets built when a real, current consumer needs it — not speculatively, no matter how well-reasoned the source pattern is. An entry moves from this file into an actual build only once that trigger exists. Until then it just sits here as a candidate.
 
 ---
 

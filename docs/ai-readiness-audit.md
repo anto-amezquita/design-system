@@ -67,4 +67,4 @@ Every commit below is public and checkable, on [`github.com/anto-amezquita/desig
 
 The live artifacts: [`amezquita.dk/llms.txt`](https://amezquita.dk/llms.txt), [`amezquita.dk/tokens.json`](https://amezquita.dk/tokens.json), [`amezquita.dk/r/registry.json`](https://amezquita.dk/r/registry.json), [`amezquita.dk/.well-known/skills/index.json`](https://amezquita.dk/.well-known/skills/index.json). The docs site that serves them lives in a private repo — its deploy history isn't independently linkable, but every artifact it serves is live at the URL above, right now, checkable by anyone.
 
-The full task-by-task record — every decision, every dead end, every "not done yet and here's why" — is in [`docs/roadmap.md`](./roadmap.md).
+The full task-by-task record — every decision, every dead end, every "not done yet and here's why" — is in [`docs/roadmap-archive.md`](./roadmap-archive.md).

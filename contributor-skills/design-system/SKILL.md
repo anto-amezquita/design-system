@@ -22,7 +22,7 @@ Adapted from the ai-product-starter-kit's `design-system` skill — trimmed to d
 - Prefer reusable system decisions over duplicated one-offs.
 - Do not over-systematise a premature idea — a one-off that hasn't repeated yet stays a one-off.
 - Favour semantic tokens over raw values; primitives are never referenced directly from component CSS.
-- Require a clear reason before adding a new token, variant, or pattern — every component token that's a pass-through or chain-skip to its referent in all 4 modes is a collapse candidate, not free (see the token-architecture backlog in `docs/roadmap.md`).
+- Require a clear reason before adding a new token, variant, or pattern — every component token that's a pass-through or chain-skip to its referent in all 4 modes is a collapse candidate, not free (see the token-architecture backlog in `docs/backlog.md`).
 - Make trade-offs explicit — write an ADR (`/decisions`) when the decision materially changes token architecture, theming strategy, the component model, or package structure.
 
 ## Decide what kind of thing it is

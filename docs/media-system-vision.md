@@ -82,11 +82,11 @@ Evidence this is real and current, not speculative:
   codebase — three brands across three formats — with a single
   tokens file as the source of truth.** Structurally close to this
   system's own four-combination token architecture (light/dark ×
-  default/bold), applied to video instead of a page.
+  base/portfolio), applied to video instead of a page.
 - **remocn** — a shadcn-style component registry, specifically for
   Remotion, distributed the same way: `/r/[name]`, install via a CLI
   command. A near-exact parallel to this repo's own Phase 3 registry
-  (`docs/ai-readiness-plan.md`), built independently, for the motion
+  (`docs/roadmap.md`), built independently, for the motion
   side of the same problem.
 - **chuk-mcp-remotion** exposes an explicit "Design Token System" for
   MCP-driven video generation — colour, typography, and motion

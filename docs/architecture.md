@@ -49,7 +49,7 @@ contributor-skills/ — workflow skills for people developing THIS repo (hand-
                      so npm run tokens can never touch it.
 specs/             — feature specs, one file per body of work
 decisions/         — ADRs, one file per significant architectural choice
-docs/              — roadmap/rationale docs that aren't tied to one feature (roadmap.md is the session anchor)
+docs/              — roadmap/rationale docs that aren't tied to one feature (backlog.md is the session anchor; roadmap.md is history)
 ```
 
 ### A note on component counts — three different, all correct
@@ -74,7 +74,7 @@ Three tiers, strictly layered — no skipping:
 
 1. **Primitive** (`tokens/global.json`) — raw values: `color-*`, `space-*`, `font-size-*`, `font-weight-*`, `line-height-*`, `border-radius-*`, `duration-*`, `easing-*`, `opacity-*`, `feedback-*`, `shadow-*`, `icon-size-*`, `border-width-*`, `size-*`. Never referenced directly from component CSS.
 2. **Semantic** (`tokens/brands/<brand>/*.json`) — per-brand, per-mode meaning (`color-accent-default`, `line-height-body`). This is the brand/theme layer — see §4.
-3. **Component** (`tokens/components/<name>.json`) — component-scoped (`--button-padding-x`), resolving to a semantic or (rarely, when justified — see the token-architecture backlog in `docs/roadmap.md`) directly to a primitive for literal geometry/motion values.
+3. **Component** (`tokens/components/<name>.json`) — component-scoped (`--button-padding-x`), resolving to a semantic or (rarely, when justified — see the token-architecture backlog in `docs/backlog.md`) directly to a primitive for literal geometry/motion values.
 
 **If a token isn't in `tokens/token-reference.json`, it doesn't exist.** Add it at the right tier and run `npm run tokens` — don't reference a name that isn't there (enforced by the `no-fabricated-token` lint rule, see `docs/quality.md`).
 
