@@ -1,8 +1,88 @@
 {
   "meta": {
-    "generatedAt": "2026-09-03"
+    "generatedAt": "2026-09-07"
   },
   "versions": [
+    {
+      "tag": "v0.3.1",
+      "date": "2026-09-03",
+      "sha": "5902a07",
+      "entries": [
+        {
+          "sha": "50852ff",
+          "type": "fix",
+          "scope": "datatable",
+          "message": "use <td> instead of empty <th scope=col> in filter row",
+          "date": "2026-09-03",
+          "breaking": false
+        },
+        {
+          "sha": "2885f14",
+          "type": "fix",
+          "scope": "tokens",
+          "message": "correct $type mismatches on 17 remaining \"other\" tokens",
+          "date": "2026-09-03",
+          "breaking": false
+        },
+        {
+          "sha": "062219a",
+          "type": "fix",
+          "scope": "tokens",
+          "message": "remove stray textarea-border override in base-dark",
+          "date": "2026-09-03",
+          "breaking": false
+        },
+        {
+          "sha": "133c77d",
+          "type": "fix",
+          "scope": "button",
+          "message": "forward ref to underlying element",
+          "date": "2026-09-03",
+          "breaking": false
+        },
+        {
+          "sha": "eb27890",
+          "type": "feat",
+          "scope": "tokens",
+          "message": "split token architecture into brand-agnostic base + portfolio skin",
+          "date": "2026-09-02",
+          "breaking": false
+        },
+        {
+          "sha": "7370c95",
+          "type": "feat",
+          "scope": "tokens",
+          "message": "extend no-primitive-tokens lint to space/font-size/line-height",
+          "date": "2026-09-02",
+          "breaking": false
+        },
+        {
+          "sha": "814f430",
+          "type": "fix",
+          "scope": null,
+          "message": "surface a generic component's type-parameter constraint in compiled docs",
+          "date": "2026-09-02",
+          "breaking": false
+        },
+        {
+          "sha": "0f1ca7d",
+          "type": "feat",
+          "scope": null,
+          "message": "add column-level filtering and a toolbar slot to DataTable",
+          "date": "2026-09-02",
+          "breaking": false
+        },
+        {
+          "sha": "1ea498c",
+          "type": "fix",
+          "scope": null,
+          "message": "register compound sub-components and fix placeholder usage examples",
+          "date": "2026-09-02",
+          "breaking": false
+        }
+      ],
+      "entryCount": 9
+    },
     {
       "tag": "v0.3.0",
       "date": "2026-08-23",
@@ -130,80 +210,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "50852ff",
-      "type": "fix",
-      "scope": "datatable",
-      "message": "use <td> instead of empty <th scope=col> in filter row",
-      "date": "2026-09-03",
-      "breaking": false
-    },
-    {
-      "sha": "2885f14",
-      "type": "fix",
-      "scope": "tokens",
-      "message": "correct $type mismatches on 17 remaining \"other\" tokens",
-      "date": "2026-09-03",
-      "breaking": false
-    },
-    {
-      "sha": "062219a",
-      "type": "fix",
-      "scope": "tokens",
-      "message": "remove stray textarea-border override in base-dark",
-      "date": "2026-09-03",
-      "breaking": false
-    },
-    {
-      "sha": "133c77d",
-      "type": "fix",
-      "scope": "button",
-      "message": "forward ref to underlying element",
-      "date": "2026-09-03",
-      "breaking": false
-    },
-    {
-      "sha": "eb27890",
-      "type": "feat",
-      "scope": "tokens",
-      "message": "split token architecture into brand-agnostic base + portfolio skin",
-      "date": "2026-09-02",
-      "breaking": false
-    },
-    {
-      "sha": "7370c95",
-      "type": "feat",
-      "scope": "tokens",
-      "message": "extend no-primitive-tokens lint to space/font-size/line-height",
-      "date": "2026-09-02",
-      "breaking": false
-    },
-    {
-      "sha": "814f430",
-      "type": "fix",
-      "scope": null,
-      "message": "surface a generic component's type-parameter constraint in compiled docs",
-      "date": "2026-09-02",
-      "breaking": false
-    },
-    {
-      "sha": "0f1ca7d",
-      "type": "feat",
-      "scope": null,
-      "message": "add column-level filtering and a toolbar slot to DataTable",
-      "date": "2026-09-02",
-      "breaking": false
-    },
-    {
-      "sha": "1ea498c",
-      "type": "fix",
-      "scope": null,
-      "message": "register compound sub-components and fix placeholder usage examples",
-      "date": "2026-09-02",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
