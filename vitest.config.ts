@@ -14,12 +14,23 @@ const dirname =
 // optional here: several components touch real browser APIs at mount (Button's
 // wipe animation reads window.matchMedia unguarded), so jsdom would throw
 // before any assertion ran and report a red test for the wrong reason.
-const browser = {
-  enabled: true,
-  headless: true,
-  provider: playwright({}),
-  instances: [{ browser: 'chromium' }],
-} as const;
+//
+// Each project needs its own `instances[].name` — a known Vitest/addon-vitest
+// issue (storybookjs/storybook#30363, #32427): two projects both defaulting to
+// an unnamed `{ browser: 'chromium' }` instance collide on Vitest's internally
+// derived project name once both run together (fine in isolation, e.g.
+// `--project unit` alone, which is why this didn't surface until `npm run
+// validate` ran the full `vitest run` for the first time). Takes the project
+// name as a parameter specifically so the two calls below can't accidentally
+// share one and reintroduce the collision.
+function browserFor(instanceName: string) {
+  return {
+    enabled: true,
+    headless: true,
+    provider: playwright({}),
+    instances: [{ browser: 'chromium', name: instanceName }],
+  } as const;
+}
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
@@ -34,7 +45,7 @@ export default defineConfig({
         ],
         test: {
           name: 'storybook',
-          browser: { ...browser },
+          browser: browserFor('storybook-chromium'),
         },
       },
       // Contract tests that aren't visual states. A story is a catalogue entry
@@ -52,7 +63,7 @@ export default defineConfig({
             'hooks/**/*.test.{ts,tsx}',
           ],
           setupFiles: ['./vitest.setup.ts'],
-          browser: { ...browser },
+          browser: browserFor('unit-chromium'),
         },
       },
     ],
