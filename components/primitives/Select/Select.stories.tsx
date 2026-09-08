@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { within, userEvent, waitFor } from 'storybook/test'
 import { Select } from './Select'
 import { darkModeDecorator } from '@/lib/storybook'
 
@@ -73,6 +74,28 @@ export const Grouped: Story = {
       <Select placeholder="Select a technology…" groups={groupedOptions} aria-label="Technology" />
     </div>
   ),
+}
+
+export const GroupedOpen: Story = {
+  name: 'Grouped (open)',
+  // .select__label (group headings like "Frontend"/"Backend") only renders
+  // inside Radix's portal-mounted dropdown content, which no other story
+  // exercises since none of them open the select — Chromatic was silently
+  // never snapshotting that markup. This story opens it via a play function
+  // so the label styling (font-size-label, decisions/0005 rounds 24-25) is
+  // actually under visual test.
+  render: () => (
+    <div style={{ maxWidth: '280px' }}>
+      <Select placeholder="Select a technology…" groups={groupedOptions} aria-label="Technology" />
+    </div>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const trigger = canvas.getByRole('combobox', { name: 'Technology' })
+    await userEvent.click(trigger)
+    const body = within(canvasElement.ownerDocument.body)
+    await waitFor(() => body.getByText('Frontend'))
+  },
 }
 
 export const Disabled: Story = {
