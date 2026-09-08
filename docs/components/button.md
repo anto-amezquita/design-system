@@ -12,7 +12,7 @@
 |---|---|---|
 | `variant?` | `'primary' \| 'secondary' \| 'ghost' \| 'link'` |  |
 | `children` | `React.ReactNode` |  |
-| `onClick?` | `() => void` |  |
+| `onClick?` | `(event: React.MouseEvent<HTMLButtonElement \| HTMLAnchorElement>) => void` |  |
 | `disabled?` | `boolean` |  |
 | `loading?` | `boolean` |  |
 | `fullWidth?` | `boolean` |  |
@@ -24,6 +24,8 @@
 | `href?` | `string` |  |
 | `curtainColor?` | `string` |  |
 | `onNavigate?` | `(href: string, curtainColor?: string) => void` | Called instead of a plain navigation when set and the link is internal — lets host apps inject route-transition behavior (e.g. a page-curtain animation) without Button depending on any specific router or transition system. Omit for a plain internal navigation. |
+
+Also accepts all props of: `Omit<React.HTMLAttributes<HTMLElement>, 'onClick' | 'type'>`
 
 ## Tokens
 
