@@ -12,11 +12,9 @@
   ],
   "cssVars": {
     "light": {
-      "input-label-size": "14px",
       "input-hint-size": "12px"
     },
     "dark": {
-      "input-label-size": "14px",
       "input-hint-size": "12px"
     }
   }

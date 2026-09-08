@@ -1,7 +1,11 @@
 {
   "skeleton-border-radius": {
     "$value": "{border-radius.sm}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "Shares value with border-radius-interactive but isn't an interactive component — deliberately left, see decisions/0004."
+    }
   },
   "skeleton-height-text": {
     "$value": "1em",
@@ -9,6 +13,10 @@
   },
   "skeleton-height-rect": {
     "$value": "{space.7}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   }
 }

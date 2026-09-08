@@ -76,7 +76,7 @@
           "font-size-body": "18px",
           "font-size-control": "16px",
           "font-size-small": "14px",
-          "font-size-label": "12px",
+          "font-size-label": "14px",
           "font-size-micro": "10px",
           "font-size-lead": "24px",
           "font-size-h1": "64px",
@@ -203,7 +203,7 @@
           "font-size-body": "18px",
           "font-size-control": "16px",
           "font-size-small": "14px",
-          "font-size-label": "12px",
+          "font-size-label": "14px",
           "font-size-micro": "10px",
           "font-size-lead": "24px",
           "font-size-h1": "64px",
@@ -419,11 +419,9 @@
       ],
       "cssVars": {
         "light": {
-          "input-label-size": "14px",
           "input-hint-size": "12px"
         },
         "dark": {
-          "input-label-size": "14px",
           "input-hint-size": "12px"
         }
       }
@@ -441,12 +439,8 @@
         "https://amezquita.dk/r/theme.json"
       ],
       "cssVars": {
-        "light": {
-          "label-font-size": "14px"
-        },
-        "dark": {
-          "label-font-size": "14px"
-        }
+        "light": {},
+        "dark": {}
       }
     },
     {
@@ -487,13 +481,11 @@
       "cssVars": {
         "light": {
           "select-item-padding-x": "16px",
-          "select-item-padding-y": "8px",
-          "select-label-size": "12px"
+          "select-item-padding-y": "8px"
         },
         "dark": {
           "select-item-padding-x": "16px",
-          "select-item-padding-y": "8px",
-          "select-label-size": "12px"
+          "select-item-padding-y": "8px"
         }
       }
     },
@@ -611,11 +603,9 @@
       ],
       "cssVars": {
         "light": {
-          "textarea-label-size": "14px",
           "textarea-hint-size": "12px"
         },
         "dark": {
-          "textarea-label-size": "14px",
           "textarea-hint-size": "12px"
         }
       }

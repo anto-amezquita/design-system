@@ -1,10 +1,10 @@
 {
-  "input-label-size": {
-    "$value": "{font-size.sm}",
-    "$type": "dimension"
-  },
   "input-hint-size": {
     "$value": "{font-size.xs}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   }
 }

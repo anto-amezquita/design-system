@@ -112,7 +112,7 @@
       "purpose": "Labelled single-line text entry with hint and error states",
       "storybookPath": "Components/Input",
       "storybookTitleId": "components-input",
-      "tokenPrefix": "input",
+      "tokenPrefix": "input-hint",
       "stories": [
         "Default",
         "WithHint",
@@ -126,7 +126,7 @@
         "AllStates",
         "DarkMode"
       ],
-      "tokenCount": 2,
+      "tokenCount": 1,
       "internal": false
     },
     {
@@ -136,7 +136,7 @@
       "purpose": "Standalone form label element — used when a label must be decoupled from its input",
       "storybookPath": "Components/Label",
       "storybookTitleId": "components-label",
-      "tokenPrefix": "label-font",
+      "tokenPrefix": "label",
       "stories": [
         "Default",
         "Required",
@@ -144,7 +144,7 @@
         "AllVariants",
         "DarkMode"
       ],
-      "tokenCount": 1,
+      "tokenCount": 0,
       "internal": false
     },
     {
@@ -175,7 +175,7 @@
       "purpose": "Dropdown for choosing a single value from a list; supports grouped options",
       "storybookPath": "Components/Select",
       "storybookTitleId": "components-select",
-      "tokenPrefix": "select",
+      "tokenPrefix": "select-item-padding",
       "stories": [
         "Default",
         "WithDefaultValue",
@@ -183,7 +183,7 @@
         "Disabled",
         "DarkMode"
       ],
-      "tokenCount": 3,
+      "tokenCount": 2,
       "internal": false
     },
     {
@@ -271,7 +271,7 @@
       "purpose": "Multi-line text entry with label, hint, and error states — mirrors Input API",
       "storybookPath": "Components/Textarea",
       "storybookTitleId": "components-textarea",
-      "tokenPrefix": "textarea",
+      "tokenPrefix": "textarea-hint",
       "stories": [
         "Default",
         "WithHint",
@@ -281,7 +281,7 @@
         "AllStates",
         "DarkMode"
       ],
-      "tokenCount": 2,
+      "tokenCount": 1,
       "internal": false
     },
     {

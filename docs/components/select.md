@@ -26,7 +26,6 @@
 |---|---|---|
 | `--select-item-padding-x` | dimension | `16px` |
 | `--select-item-padding-y` | dimension | `8px` |
-| `--select-label-size` | dimension | `12px` |
 
 ## Usage example
 

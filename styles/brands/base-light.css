@@ -185,9 +185,7 @@
   --hero-lead-size: 20px;
   --hero-max-width: 800px;
   --hero-lead-max-width: 60ch;
-  --input-label-size: 14px;
   --input-hint-size: 12px;
-  --label-font-size: 14px;
   --pagination-button-size: 48px;
   --pagination-button-background: rgba(0, 0, 0, 0);
   --pagination-button-font-size: 14px;
@@ -196,7 +194,6 @@
   --radio-indicator-size: 12px;
   --select-item-padding-x: 16px;
   --select-item-padding-y: 8px;
-  --select-label-size: 12px;
   --skeleton-border-radius: 4px;
   --skeleton-height-text: 1em;
   --skeleton-height-rect: 48px;
@@ -213,7 +210,6 @@
   --tag-font-size: 12px;
   --tag-font-weight: 500;
   --tag-muted-background: rgba(0, 0, 0, 0);
-  --textarea-label-size: 14px;
   --textarea-hint-size: 12px;
   --toast-max-width: 380px;
   --toast-title-weight: 600;
@@ -293,7 +289,7 @@
   --font-size-body: 18px;
   --font-size-control: 16px;
   --font-size-small: 14px;
-  --font-size-label: 12px;
+  --font-size-label: 14px;
   --font-size-micro: 10px;
   --font-size-lead: 24px;
   --font-size-h1: 64px;

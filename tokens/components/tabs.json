@@ -1,10 +1,18 @@
 {
   "tabs-indicator-height": {
     "$value": "{border-width.medium}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "tabs-content-padding-top": {
     "$value": "{space.4}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   }
 }

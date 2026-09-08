@@ -12,11 +12,9 @@
   ],
   "cssVars": {
     "light": {
-      "textarea-label-size": "14px",
       "textarea-hint-size": "12px"
     },
     "dark": {
-      "textarea-label-size": "14px",
       "textarea-hint-size": "12px"
     }
   }

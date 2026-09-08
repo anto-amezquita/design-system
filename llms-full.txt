@@ -10,10 +10,10 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-351 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+347 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
 
-- component: 114
 - primitive: 112
+- component: 110
 - color: 43
 - typography: 32
 - spacing: 16
@@ -68,7 +68,7 @@ Single boolean selection with an associated label; supports indeterminate state
 Labelled single-line text entry with hint and error states
 
 - Import: `import { Input } from '@amezquita/design-system/components/primitives/Input'`
-- Token prefix: `input-*` (2 tokens)
+- Token prefix: `input-hint-*` (1 tokens)
 - Storybook: Components/Input
 - Stories: Default, WithHint, WithError, Disabled, NoLabel, WithPrefix, WithSuffix, Clearable, Search, AllStates, DarkMode
 
@@ -77,7 +77,7 @@ Labelled single-line text entry with hint and error states
 Standalone form label element — used when a label must be decoupled from its input
 
 - Import: `import { Label } from '@amezquita/design-system/components/primitives/Label'`
-- Token prefix: `label-font-*` (1 tokens)
+- Token prefix: `label-*` (0 tokens)
 - Storybook: Components/Label
 - Stories: Default, Required, Disabled, AllVariants, DarkMode
 
@@ -95,7 +95,7 @@ Single-selection control within a mutually exclusive group
 Dropdown for choosing a single value from a list; supports grouped options
 
 - Import: `import { Select } from '@amezquita/design-system/components/primitives/Select'`
-- Token prefix: `select-*` (3 tokens)
+- Token prefix: `select-item-padding-*` (2 tokens)
 - Storybook: Components/Select
 - Stories: Default, WithDefaultValue, Grouped, Disabled, DarkMode
 
@@ -140,7 +140,7 @@ Inline label for categorising or annotating content — non-interactive
 Multi-line text entry with label, hint, and error states — mirrors Input API
 
 - Import: `import { Textarea } from '@amezquita/design-system/components/primitives/Textarea'`
-- Token prefix: `textarea-*` (2 tokens)
+- Token prefix: `textarea-hint-*` (1 tokens)
 - Storybook: Components/Textarea
 - Stories: Default, WithHint, WithError, Disabled, WithCharacterCount, AllStates, DarkMode
 

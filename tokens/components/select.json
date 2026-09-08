@@ -1,14 +1,18 @@
 {
   "select-item-padding-x": {
     "$value": "{space.4}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "Genuine mixed case (x matches Control, y matches Compact) — deliberately left, see decisions/0004."
+    }
   },
   "select-item-padding-y": {
     "$value": "{space.2}",
-    "$type": "dimension"
-  },
-  "select-label-size": {
-    "$value": "{font-size.xs}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "Genuine mixed case (x matches Control, y matches Compact) — deliberately left, see decisions/0004."
+    }
   }
 }

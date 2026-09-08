@@ -1,19 +1,35 @@
 {
   "badge-font-size": {
     "$value": "{font-size.xs}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "badge-font-weight": {
     "$value": "{font-weight.medium}",
-    "$type": "fontWeight"
+    "$type": "fontWeight",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "Doesn't share function with the font-weight-control group, see decisions/0004."
+    }
   },
   "badge-padding-x": {
     "$value": "{space.2}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "badge-padding-y": {
     "$value": "{space.1}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "badge-count-size": {
     "$value": "20px",
@@ -21,6 +37,10 @@
   },
   "badge-dot-size": {
     "$value": "{space.2}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   }
 }

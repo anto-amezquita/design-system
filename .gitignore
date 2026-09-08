@@ -8,5 +8,6 @@ storybook-static/
 # CI script output — generated on each run, not committed
 a11y-report.json
 token-violations.json
+token-architecture-violations.json
 contrast-failures.json
 docs/token-audit.json

@@ -16,12 +16,6 @@
 | `children` | `React.ReactNode` |  |
 | `className?` | `string` |  |
 
-## Tokens
-
-| Token | Type | Value |
-|---|---|---|
-| `--label-font-size` | dimension | `14px` |
-
 ## Usage example
 
 ```tsx

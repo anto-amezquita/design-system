@@ -2,8 +2,8 @@
   "meta": {
     "primitiveCount": 112,
     "semanticCount": 125,
-    "componentCount": 114,
-    "total": 351
+    "componentCount": 110,
+    "total": 347
   },
   "tokens": [
     {
@@ -2978,15 +2978,20 @@
       "cssVar": "--font-size-label",
       "type": "dimension",
       "category": "typography",
-      "rawValue": "{font-size.xs}",
+      "rawValue": "{font-size.sm}",
       "resolved": {
-        "base-light": "12px",
-        "base-dark": "12px",
-        "portfolio-light": "12px",
-        "portfolio-dark": "12px"
+        "base-light": "14px",
+        "base-dark": "14px",
+        "portfolio-light": "14px",
+        "portfolio-dark": "14px"
       },
       "axisAware": false,
-      "usedBy": []
+      "usedBy": [
+        "Input",
+        "Label",
+        "Select",
+        "Textarea"
+      ]
     },
     {
       "name": "font-size-micro",
@@ -5280,23 +5285,6 @@
       ]
     },
     {
-      "name": "input-label-size",
-      "cssVar": "--input-label-size",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{font-size.sm}",
-      "resolved": {
-        "base-light": "14px",
-        "base-dark": "14px",
-        "portfolio-light": "14px",
-        "portfolio-dark": "14px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Input"
-      ]
-    },
-    {
       "name": "input-hint-size",
       "cssVar": "--input-hint-size",
       "type": "dimension",
@@ -5311,23 +5299,6 @@
       "axisAware": false,
       "usedBy": [
         "Input"
-      ]
-    },
-    {
-      "name": "label-font-size",
-      "cssVar": "--label-font-size",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{font-size.sm}",
-      "resolved": {
-        "base-light": "14px",
-        "base-dark": "14px",
-        "portfolio-light": "14px",
-        "portfolio-dark": "14px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Label"
       ]
     },
     {
@@ -5460,23 +5431,6 @@
         "base-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Select"
-      ]
-    },
-    {
-      "name": "select-label-size",
-      "cssVar": "--select-label-size",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{font-size.xs}",
-      "resolved": {
-        "base-light": "12px",
-        "base-dark": "12px",
-        "portfolio-light": "12px",
-        "portfolio-dark": "12px"
       },
       "axisAware": false,
       "usedBy": [
@@ -5753,23 +5707,6 @@
       "axisAware": false,
       "usedBy": [
         "Tag"
-      ]
-    },
-    {
-      "name": "textarea-label-size",
-      "cssVar": "--textarea-label-size",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{font-size.sm}",
-      "resolved": {
-        "base-light": "14px",
-        "base-dark": "14px",
-        "portfolio-light": "14px",
-        "portfolio-dark": "14px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Textarea"
       ]
     },
     {

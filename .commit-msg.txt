@@ -1,0 +1,22 @@
+Add token architecture lint rule, gate new pass-throughs/chain-skips
+
+- scripts/lint-token-architecture.mjs: new npm run tokens:lint-architecture,
+  wired into validate. Gates new component tokens that don't do work (alias
+  a semantic/primitive token identically in all 4 modes), per the backlog
+  item in docs/backlog.md.
+- Fixed font-size-label (decisions/0005 round 24): existed since 0004 but
+  was unused and set to the wrong value (xs instead of sm), same bug shape
+  as font-weight-label before 0004 fixed it.
+- Collapsed input-label-size, label-font-size, textarea-label-size,
+  select-label-size into font-size-label (decisions/0005 rounds 24-25) -
+  all four form-label components now share one role for both size and
+  weight.
+- Tagged the 71 remaining chain-skip tokens 0004 deliberately left below
+  its 3+-shared-function bar with amezquita.lint-ignore extensions, citing
+  the specific reason for each.
+- Hardened resolveGlobalPath to follow chained primitive references
+  instead of stopping one level deep.
+- Regenerated tokens (npm run tokens) and confirmed npm run validate clean.
+
+Still open: Chromatic check for Input/Label/Select/Textarea (Select's
+label size change is a real, expected visual diff).

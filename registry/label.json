@@ -11,11 +11,7 @@
     "https://amezquita.dk/r/theme.json"
   ],
   "cssVars": {
-    "light": {
-      "label-font-size": "14px"
-    },
-    "dark": {
-      "label-font-size": "14px"
-    }
+    "light": {},
+    "dark": {}
   }
 }

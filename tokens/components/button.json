@@ -1,15 +1,27 @@
 {
   "button-padding-x": {
     "$value": "{space.5}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "x matches Prominent but y doesn't (12px, not 16px) — genuine outlier, deliberately left, see decisions/0004."
+    }
   },
   "button-padding-y": {
     "$value": "{space.3}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "x matches Prominent but y doesn't (12px, not 16px) — genuine outlier, deliberately left, see decisions/0004."
+    }
   },
   "button-outline-border-width": {
     "$value": "{border-width.medium}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "button-secondary-background": {
     "$value": "transparent",

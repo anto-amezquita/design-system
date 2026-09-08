@@ -1,6 +1,10 @@
 {
   "checkbox-size": {
     "$value": "{space.5}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   }
 }

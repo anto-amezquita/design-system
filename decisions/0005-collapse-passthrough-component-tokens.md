@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted — complete. Verified via a fresh `npm run tokens:audit` after round 23: `"passthrough": 0`. Every pass-through this decision set out to collapse is gone; what remains (37 literals, 3 correctly-kept variance tokens, 74 chain-skips) is out of scope for this decision — chain-skips are decision 0004's territory, not this one's.
+Accepted — complete for the original 299-token scope, verified via a fresh `npm run tokens:audit` after round 23: `"passthrough": 0`. Reopened for two small follow-up rounds (24–25, see below) after unrelated work elsewhere created one new passthrough; both rounds are done except for a pending Chromatic check. Every pass-through this decision set out to collapse is gone; what remains (37 literals, 3 correctly-kept variance tokens, 74 chain-skips) is out of scope for this decision — chain-skips are decision 0004's territory, not this one's.
 
 ## Context
 
@@ -225,6 +225,16 @@ This closes the last of the three round-21 planned batches. Every component orig
 `npm run tokens && npm run validate` run clean after round 23: 369 → 351 tokens (exactly the 18 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean. A fresh `npm run tokens:audit --json` afterward confirms `"passthrough": 0` — the authoritative check that nothing was missed. Component tokens: 413 (start of this decision) → 114 (end), primarily via passthrough removal but including decision 0004's earlier chain-skip work too.
 
 **Chromatic visual check (2026-09), covering rounds 21–23 (all 17 touched components, 192 stories, 28 components total, commit `9c91499`):** `npm run chromatic` build 51 passed with **no visual changes found**. This closes the last open item — every round of this decision, all 23 of them, is now visually confirmed clean, not just token-count-correct. Combined with builds 44, 46, and 50, the entire 299-token collapse across the full effort has been verified with zero visual regressions.
+
+**Round 24 (2026-09), reopened for a new passthrough:** unrelated work fixing `light.json`'s `font-size-label` role (existed since decision 0004's era, but was unused and set to the wrong value — `font-size.xs` instead of `font-size.sm`, same bug shape as `font-weight-label`'s original mistake) surfaced a fresh 3-token passthrough group once the role's value was corrected and adopted: `input-label-size`, `label-font-size`, `textarea-label-size` all resolved identically to `font-size-label` in every mode. Same mechanism as every prior round: removed all 3 from their token files (`input.json`, `label.json` — now empty, `textarea.json`), repointed `Input.css`/`Label.css`/`Textarea.css` to `var(--font-size-label)` directly, updated each file's header comment. `select-label-size` was deliberately left out of this round — its value (`font-size.xs`) happened to match the role's old, wrong value, which read as a possible fourth instance of the same bug rather than an obvious passthrough; flagged for a separate decision.
+
+`npm run tokens && npm run validate` run clean after this round.
+
+**Round 25 (2026-09), resolves the round-24 flag:** decided `select-label-size` is the same bug, not a deliberate design choice — matched it to `font-size-label` (sm) like the other three form-label components, rather than leaving Select's label smaller than Input/Label/Textarea's. Removed `select-label-size` from `select.json`, repointed `Select.css` to `var(--font-size-label)` directly, updated its header comment. All four form-label components (Input, Label, Select, Textarea) now share one role for both weight (`font-weight-label`, decisions/0004) and size (`font-size-label`, this decision).
+
+`npm run tokens:lint-architecture` clean, 0 violations.
+
+**Not yet done for rounds 24–25:** `npm run tokens && npm run validate` after round 25's edit specifically, and a Chromatic check for Input, Label, Select, and Textarea.
 
 ## Alternatives considered
 

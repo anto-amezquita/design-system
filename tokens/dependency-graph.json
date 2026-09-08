@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 27,
-    "tokenCount": 208
+    "tokenCount": 205
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -624,6 +624,12 @@
     "font-size-h4": [
       "components/patterns/EmptyState/EmptyState.css"
     ],
+    "font-size-label": [
+      "components/primitives/Input/Input.css",
+      "components/primitives/Label/Label.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
     "font-size-lead": [
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
@@ -694,12 +700,6 @@
     ],
     "input-hint-size": [
       "components/primitives/Input/Input.css"
-    ],
-    "input-label-size": [
-      "components/primitives/Input/Input.css"
-    ],
-    "label-font-size": [
-      "components/primitives/Label/Label.css"
     ],
     "letter-spacing-heading": [
       "components/composition/Card/Card.css",
@@ -784,9 +784,6 @@
       "components/primitives/Select/Select.css"
     ],
     "select-item-padding-y": [
-      "components/primitives/Select/Select.css"
-    ],
-    "select-label-size": [
       "components/primitives/Select/Select.css"
     ],
     "shadow-card-hover": [
@@ -960,9 +957,6 @@
       "components/primitives/Tag/Tag.css"
     ],
     "textarea-hint-size": [
-      "components/primitives/Textarea/Textarea.css"
-    ],
-    "textarea-label-size": [
       "components/primitives/Textarea/Textarea.css"
     ],
     "toast-accent-width": [

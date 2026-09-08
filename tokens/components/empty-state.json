@@ -2,10 +2,18 @@
   "emptystate-padding-y": {
     "$value": "{space.9}",
     "$type": "dimension",
-    "$description": "Literal component geometry — no reusable semantic role exists yet for a section-level inset this large."
+    "$description": "Literal component geometry — no reusable semantic role exists yet for a section-level inset this large.",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar. Note: $description above calls this literal, but $value is actually a {space.9} reference — worth a follow-up fix."
+    }
   },
   "emptystate-padding-x": {
     "$value": "{space.8}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   }
 }

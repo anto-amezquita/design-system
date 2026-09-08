@@ -30,7 +30,6 @@
 | Token | Type | Value |
 |---|---|---|
 | `--textarea-hint-size` | dimension | `12px` |
-| `--textarea-label-size` | dimension | `14px` |
 
 ## Usage example
 

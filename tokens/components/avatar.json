@@ -1,11 +1,19 @@
 {
   "avatar-size-sm": {
     "$value": "{space.5}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "avatar-size-md": {
     "$value": "{space.6}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "avatar-size-lg": {
     "$value": "40px",
@@ -13,19 +21,35 @@
   },
   "avatar-size-xl": {
     "$value": "{space.8}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "avatar-ring-width": {
     "$value": "{border-width.medium}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "avatar-fallback-font-size": {
     "$value": "{font-size.sm}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "avatar-fallback-font-weight": {
     "$value": "{font-weight.semibold}",
-    "$type": "fontWeight"
+    "$type": "fontWeight",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One of 5 semibold uses across different functions, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "avatar-group-overlap": {
     "$value": "-8px",

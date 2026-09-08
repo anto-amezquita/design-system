@@ -1,15 +1,27 @@
 {
   "hero-padding-y": {
     "$value": "{space.9}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "Not part of either container-padding group — held out and explicitly left untouched, see decisions/0004."
+    }
   },
   "hero-eyebrow-size": {
     "$value": "{font-size.sm}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "hero-eyebrow-weight": {
     "$value": "{font-weight.semibold}",
-    "$type": "fontWeight"
+    "$type": "fontWeight",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One of 5 semibold uses across different functions, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "hero-eyebrow-spacing": {
     "$value": "0.01em",
@@ -17,11 +29,19 @@
   },
   "hero-title-weight": {
     "$value": "{font-weight.extrabold}",
-    "$type": "fontWeight"
+    "$type": "fontWeight",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "hero-lead-size": {
     "$value": "{font-size.emphasis}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "hero-max-width": {
     "$value": "800px",

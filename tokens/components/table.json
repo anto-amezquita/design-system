@@ -1,10 +1,18 @@
 {
   "table-header-font-size": {
     "$value": "{font-size.xs}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "table-header-font-weight": {
     "$value": "{font-weight.semibold}",
-    "$type": "fontWeight"
+    "$type": "fontWeight",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One of 5 semibold uses across different functions, below decisions/0004's 3+-shared-function bar."
+    }
   }
 }

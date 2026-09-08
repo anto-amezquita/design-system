@@ -31,7 +31,6 @@ Also accepts all props of: `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'o
 | Token | Type | Value |
 |---|---|---|
 | `--input-hint-size` | dimension | `12px` |
-| `--input-label-size` | dimension | `14px` |
 
 ## Usage example
 

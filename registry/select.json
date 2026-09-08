@@ -13,13 +13,11 @@
   "cssVars": {
     "light": {
       "select-item-padding-x": "16px",
-      "select-item-padding-y": "8px",
-      "select-label-size": "12px"
+      "select-item-padding-y": "8px"
     },
     "dark": {
       "select-item-padding-x": "16px",
-      "select-item-padding-y": "8px",
-      "select-label-size": "12px"
+      "select-item-padding-y": "8px"
     }
   }
 }

@@ -1,19 +1,35 @@
 {
   "tag-padding-x": {
     "$value": "{space.3}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "tag-padding-y": {
     "$value": "{space.1}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "tag-font-size": {
     "$value": "{font-size.xs}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
   },
   "tag-font-weight": {
     "$value": "{font-weight.medium}",
-    "$type": "fontWeight"
+    "$type": "fontWeight",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "Doesn't share function with the font-weight-control group, see decisions/0004."
+    }
   },
   "tag-muted-background": {
     "$value": "transparent",
