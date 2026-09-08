@@ -224,7 +224,7 @@ This closes the last of the three round-21 planned batches. Every component orig
 
 `npm run tokens && npm run validate` run clean after round 23: 369 → 351 tokens (exactly the 18 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean. A fresh `npm run tokens:audit --json` afterward confirms `"passthrough": 0` — the authoritative check that nothing was missed. Component tokens: 413 (start of this decision) → 114 (end), primarily via passthrough removal but including decision 0004's earlier chain-skip work too.
 
-**Not yet done for round 23:** a Chromatic check covering rounds 21–23.
+**Chromatic visual check (2026-09), covering rounds 21–23 (all 17 touched components, 192 stories, 28 components total, commit `9c91499`):** `npm run chromatic` build 51 passed with **no visual changes found**. This closes the last open item — every round of this decision, all 23 of them, is now visually confirmed clean, not just token-count-correct. Combined with builds 44, 46, and 50, the entire 299-token collapse across the full effort has been verified with zero visual regressions.
 
 ## Alternatives considered
 
@@ -241,8 +241,8 @@ This closes the last of the three round-21 planned batches. Every component orig
 - Round 23 applied both process lessons from earlier rounds (tier-check before editing, from round 21; no shortcuts on double-checking file state, from round 4) and had no issues, the third consecutive clean round.
 
 ### Negative
-- Chromatic visual check still outstanding for round 21's Card/Drawer/Switch/Tooltip, round 22's EmptyState/Table/Radio/Skeleton/Spinner, and round 23's 8 components (rounds 1–20 confirmed clean across builds 44, 46, and 50). This is the one open item before the effort can be called fully verified end to end, not just token-count-correct.
-- Round 4 included one caught-and-fixed editing mistake (a corrupted token file, see Decision), and round 21 included a second (three chain-skip tokens mistakenly collapsed, caught by the linter and reverted before commit). Rounds 22–23 both applied the tier-check discipline that came out of round 21 and had no issues — two consecutive clean rounds to close.
+- Round 4 included one caught-and-fixed editing mistake (a corrupted token file, see Decision), and round 21 included a second (three chain-skip tokens mistakenly collapsed, caught by the linter and reverted before commit). Rounds 22–23 both applied the tier-check discipline that came out of round 21 and had no issues.
+- The mechanism required touching all 26 original component CSS/JSON file pairs, plus regenerating every downstream generated artifact (docs, registry, brand CSS, `llms.txt`, etc.) 23 times — real but expected cost of a repo-wide token architecture change, not a surprise.
 
 ## Related files
 
