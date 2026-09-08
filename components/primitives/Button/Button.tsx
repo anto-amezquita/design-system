@@ -10,10 +10,10 @@ import './Button.css'
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'link'
 
-type ButtonProps = {
+type ButtonOwnProps = {
   variant?: ButtonVariant
   children: React.ReactNode
-  onClick?: () => void
+  onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
   disabled?: boolean
   loading?: boolean
   fullWidth?: boolean
@@ -28,6 +28,18 @@ type ButtonProps = {
   onNavigate?: (href: string, curtainColor?: string) => void
 }
 
+// `HTMLAttributes<HTMLElement>` rather than `ButtonHTMLAttributes` /
+// `AnchorHTMLAttributes` on purpose: Button renders either a <button> or an
+// <a> depending on `href`, so an element-specific attribute type would be
+// wrong for one branch or the other. HTMLAttributes covers what both
+// branches actually need to receive from Radix's Slot when composed via
+// asChild — aria-*, data-*, id, and the event handlers a Trigger injects —
+// without claiming support for anchor- or button-only attributes this
+// component doesn't forward 1:1 (e.g. `type`, which Button narrows itself).
+// `onClick` and `type` are own props with narrower signatures than the
+// native ones, so they're omitted here to avoid a collision; see Input.tsx
+// for the same pattern applied to a single-element component.
+type ButtonProps = Omit<React.HTMLAttributes<HTMLElement>, 'onClick' | 'type'> & ButtonOwnProps
 
 export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(function Button({
   variant = 'primary',
@@ -44,6 +56,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
   href,
   curtainColor,
   onNavigate,
+  ...rest
 }, ref) {
   const svgRef = useRef<SVGSVGElement>(null)
   const pathRef = useRef<SVGPathElement>(null)
@@ -195,6 +208,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     const internal = href.startsWith('/') && !href.startsWith('//') && !href.includes('#') && !/^(https?:\/\/|mailto:|tel:)/.test(href)
     return (
       <a
+        {...rest}
         ref={elementRef}
         className={className}
         href={isDisabled ? undefined : href}
@@ -207,7 +221,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
             ? (e) => e.preventDefault()
             : internal && onNavigate
               ? (e) => { e.preventDefault(); onNavigate(href, curtainColor) }
-              : undefined
+              : onClick
         }
       >
         {content}
@@ -217,6 +231,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
 
   return (
     <button
+      {...rest}
       ref={elementRef}
       className={className}
       onClick={onClick}
