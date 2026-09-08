@@ -1,25 +1,26 @@
 /*
   Tokens consumed:
-  --tooltip-background, --tooltip-foreground
-  --tooltip-padding-x, --tooltip-padding-y
-  --tooltip-font-size, --tooltip-font-weight
-  --tooltip-border-radius, --tooltip-shadow
-  --tooltip-z-index, --tooltip-max-width, --tooltip-arrow-size
+  --tooltip-font-size, --tooltip-font-weight, --tooltip-border-radius
+  --tooltip-max-width, --tooltip-arrow-size
   --font-family-base, --duration-interaction, --easing-default
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-surface-inverse, --color-text-inverse, --space-compact-padding-x, --space-compact-padding-y
+  --shadow-toast, --z-tooltip
 */
 
 .tooltip {
-  background: var(--tooltip-background);
-  color: var(--tooltip-foreground);
-  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+  padding: var(--space-compact-padding-y) var(--space-compact-padding-x);
   font-family: var(--font-family-base);
   font-size: var(--tooltip-font-size);
   font-weight: var(--tooltip-font-weight);
   line-height: var(--line-height-heading);
   border-radius: var(--tooltip-border-radius);
-  box-shadow: var(--tooltip-shadow);
+  box-shadow: var(--shadow-toast);
   max-width: var(--tooltip-max-width);
-  z-index: var(--tooltip-z-index);
+  z-index: var(--z-tooltip);
   animation: tooltip-in var(--duration-interaction) var(--easing-default);
   will-change: transform, opacity;
 }
@@ -64,7 +65,7 @@
 }
 
 .tooltip__arrow {
-  fill: var(--tooltip-background);
+  fill: var(--color-surface-inverse);
   width: var(--tooltip-arrow-size);
   height: calc(var(--tooltip-arrow-size) * 0.5);
 }

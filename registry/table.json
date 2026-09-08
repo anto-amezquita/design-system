@@ -12,22 +12,12 @@
   ],
   "cssVars": {
     "light": {
-      "table-cell-padding-x": "16px",
-      "table-cell-padding-y": "12px",
       "table-header-font-size": "12px",
-      "table-header-font-weight": "600",
-      "table-selected-row-background": "#E2DDD9",
-      "table-border-radius": "8px",
-      "table-sort-icon-gap": "4px"
+      "table-header-font-weight": "600"
     },
     "dark": {
-      "table-cell-padding-x": "16px",
-      "table-cell-padding-y": "12px",
       "table-header-font-size": "12px",
-      "table-header-font-weight": "600",
-      "table-selected-row-background": "#44403c",
-      "table-border-radius": "8px",
-      "table-sort-icon-gap": "4px"
+      "table-header-font-weight": "600"
     }
   }
 }

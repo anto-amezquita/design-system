@@ -14,24 +14,12 @@
     "light": {
       "switch-track-width": "44px",
       "switch-track-height": "24px",
-      "switch-track-background": "#A8A29E",
-      "switch-track-background-disabled": "#E2DDD9",
-      "switch-track-border-radius": "9999px",
-      "switch-thumb-size": "16px",
-      "switch-thumb-border-radius": "9999px",
-      "switch-label-gap": "12px",
-      "switch-duration": "200ms"
+      "switch-thumb-size": "16px"
     },
     "dark": {
       "switch-track-width": "44px",
       "switch-track-height": "24px",
-      "switch-track-background": "#78716c",
-      "switch-track-background-disabled": "#44403c",
-      "switch-track-border-radius": "9999px",
-      "switch-thumb-size": "16px",
-      "switch-thumb-border-radius": "9999px",
-      "switch-label-gap": "12px",
-      "switch-duration": "200ms"
+      "switch-thumb-size": "16px"
     }
   }
 }

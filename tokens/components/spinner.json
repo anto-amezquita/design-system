@@ -1,22 +1,6 @@
 {
-  "spinner-size-sm": {
-    "$value": "{size-icon-sm}",
-    "$type": "dimension"
-  },
-  "spinner-size-md": {
-    "$value": "{size-icon-md}",
-    "$type": "dimension"
-  },
-  "spinner-size-lg": {
-    "$value": "{size-icon-lg}",
-    "$type": "dimension"
-  },
   "spinner-stroke-width": {
     "$value": "{border-width.medium}",
     "$type": "dimension"
-  },
-  "spinner-duration": {
-    "$value": "{duration-spin}",
-    "$type": "duration"
   }
 }

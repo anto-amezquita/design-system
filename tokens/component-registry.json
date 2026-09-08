@@ -22,7 +22,7 @@
         "GroupWithOverflow",
         "DarkMode"
       ],
-      "tokenCount": 9,
+      "tokenCount": 8,
       "internal": false
     },
     {
@@ -102,7 +102,7 @@
         "NoLabel",
         "DarkMode"
       ],
-      "tokenCount": 5,
+      "tokenCount": 1,
       "internal": false
     },
     {
@@ -136,7 +136,7 @@
       "purpose": "Standalone form label element — used when a label must be decoupled from its input",
       "storybookPath": "Components/Label",
       "storybookTitleId": "components-label",
-      "tokenPrefix": "label",
+      "tokenPrefix": "label-font",
       "stories": [
         "Default",
         "Required",
@@ -144,7 +144,7 @@
         "AllVariants",
         "DarkMode"
       ],
-      "tokenCount": 4,
+      "tokenCount": 1,
       "internal": false
     },
     {
@@ -165,7 +165,7 @@
         "AllStates",
         "DarkMode"
       ],
-      "tokenCount": 6,
+      "tokenCount": 2,
       "internal": false
     },
     {
@@ -202,7 +202,7 @@
         "CardSkeleton",
         "DarkMode"
       ],
-      "tokenCount": 7,
+      "tokenCount": 3,
       "internal": false
     },
     {
@@ -212,14 +212,14 @@
       "purpose": "Indeterminate loading indicator for in-progress operations",
       "storybookPath": "Components/Spinner",
       "storybookTitleId": "components-spinner",
-      "tokenPrefix": "spinner",
+      "tokenPrefix": "spinner-stroke",
       "stories": [
         "Default",
         "AllSizes",
         "OnColoredBackground",
         "DarkMode"
       ],
-      "tokenCount": 5,
+      "tokenCount": 1,
       "internal": false
     },
     {
@@ -240,7 +240,7 @@
         "AllStates",
         "DarkMode"
       ],
-      "tokenCount": 9,
+      "tokenCount": 3,
       "internal": false
     },
     {
@@ -261,7 +261,7 @@
         "InContext",
         "DarkMode"
       ],
-      "tokenCount": 6,
+      "tokenCount": 5,
       "internal": false
     },
     {
@@ -340,7 +340,7 @@
       "purpose": "Compound container for grouped content — composed from named sub-components",
       "storybookPath": "Components/Card",
       "storybookTitleId": "components-card",
-      "tokenPrefix": "card",
+      "tokenPrefix": "card-horizontal-media",
       "stories": [
         "Default",
         "Ghost",
@@ -353,7 +353,7 @@
         "AllVariants",
         "DarkMode"
       ],
-      "tokenCount": 8,
+      "tokenCount": 1,
       "internal": false
     },
     {
@@ -470,7 +470,7 @@
         "Sizes",
         "DarkMode"
       ],
-      "tokenCount": 16,
+      "tokenCount": 9,
       "internal": false
     },
     {
@@ -506,7 +506,7 @@
         "NoDelay",
         "DarkMode"
       ],
-      "tokenCount": 13,
+      "tokenCount": 7,
       "internal": false
     },
     {
@@ -537,7 +537,7 @@
         "DefaultOpen",
         "DarkMode"
       ],
-      "tokenCount": 8,
+      "tokenCount": 4,
       "internal": false
     },
     {
@@ -620,7 +620,7 @@
         "Empty",
         "DarkMode"
       ],
-      "tokenCount": 4,
+      "tokenCount": 3,
       "internal": false
     },
     {
@@ -630,14 +630,14 @@
       "purpose": "Placeholder for zero-content states — icon, heading, supporting text, and an optional action",
       "storybookPath": "Components/EmptyState",
       "storybookTitleId": "components-emptystate",
-      "tokenPrefix": "emptystate",
+      "tokenPrefix": "emptystate-padding",
       "stories": [
         "Default",
         "AllVariants",
         "Compact",
         "DarkMode"
       ],
-      "tokenCount": 7,
+      "tokenCount": 2,
       "internal": false
     },
     {
@@ -656,7 +656,7 @@
         "PageHeader",
         "DarkMode"
       ],
-      "tokenCount": 10,
+      "tokenCount": 8,
       "internal": false
     },
     {
@@ -666,14 +666,14 @@
       "purpose": "Page navigation controls for multi-page data sets; exposes current page and total page count",
       "storybookPath": "Components/Pagination",
       "storybookTitleId": "components-pagination",
-      "tokenPrefix": "pagination",
+      "tokenPrefix": "pagination-button",
       "stories": [
         "Default",
         "EdgeCases",
         "Compact",
         "DarkMode"
       ],
-      "tokenCount": 6,
+      "tokenCount": 4,
       "internal": false
     },
     {
@@ -683,7 +683,7 @@
       "purpose": "Static data table with semantic header, body, and row structure",
       "storybookPath": "Components/Table",
       "storybookTitleId": "components-table",
-      "tokenPrefix": "table",
+      "tokenPrefix": "table-header-font",
       "stories": [
         "Default",
         "Striped",
@@ -695,7 +695,7 @@
         "HorizontalScroll",
         "DarkMode"
       ],
-      "tokenCount": 7,
+      "tokenCount": 2,
       "internal": false
     },
     {

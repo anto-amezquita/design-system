@@ -1,26 +1,10 @@
 {
-  "accordion-trigger-padding-x": {
-    "$value": "{space-prominent-padding-x}",
-    "$type": "dimension"
-  },
-  "accordion-trigger-padding-y": {
-    "$value": "{space-prominent-padding-y}",
-    "$type": "dimension"
-  },
-  "accordion-trigger-font-weight": {
-    "$value": "{font-weight-control}",
-    "$type": "fontWeight"
-  },
   "accordion-content-padding-x": {
     "$value": "{space.5}",
     "$type": "dimension"
   },
   "accordion-content-padding-bottom": {
     "$value": "{space.5}",
-    "$type": "dimension"
-  },
-  "accordion-icon-size": {
-    "$value": "{size-icon-md}",
     "$type": "dimension"
   },
   "accordion-duration-expand": {

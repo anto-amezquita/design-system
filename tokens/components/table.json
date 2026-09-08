@@ -1,12 +1,4 @@
 {
-  "table-cell-padding-x": {
-    "$value": "{space-control-padding-x}",
-    "$type": "dimension"
-  },
-  "table-cell-padding-y": {
-    "$value": "{space-control-padding-y}",
-    "$type": "dimension"
-  },
   "table-header-font-size": {
     "$value": "{font-size.xs}",
     "$type": "dimension"
@@ -14,17 +6,5 @@
   "table-header-font-weight": {
     "$value": "{font-weight.semibold}",
     "$type": "fontWeight"
-  },
-  "table-selected-row-background": {
-    "$value": "{color-surface-tertiary}",
-    "$type": "color"
-  },
-  "table-border-radius": {
-    "$value": "{border-radius-component}",
-    "$type": "dimension"
-  },
-  "table-sort-icon-gap": {
-    "$value": "{space-tight-gap}",
-    "$type": "dimension"
   }
 }

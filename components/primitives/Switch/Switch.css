@@ -1,20 +1,21 @@
 /*
   Tokens consumed:
-  --switch-track-width, --switch-track-height, --switch-track-background
-  --switch-track-background-disabled
-  --switch-track-border-radius
-  --switch-thumb-size, --switch-thumb-border-radius
+  --switch-track-width, --switch-track-height
+
+
+  --switch-thumb-size
   --switch-label-gap
-  --switch-duration, --easing-default, --opacity-disabled, --color-border-focus
+  --easing-default, --opacity-disabled, --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --font-size-control, --color-accent-default, --color-accent-foreground
+  --color-border-strong, --color-surface-tertiary, --border-radius-pill, --space-label-gap, --duration-interaction
 */
 
 .switch {
   display: inline-flex;
   align-items: center;
-  gap: var(--switch-label-gap);
+  gap: var(--space-label-gap);
   min-height: var(--size-touch-target);
   cursor: pointer;
 }
@@ -33,10 +34,10 @@
   flex-shrink: 0;
   width: var(--switch-track-width);
   height: var(--switch-track-height);
-  background: var(--switch-track-background);
-  border-radius: var(--switch-track-border-radius);
+  background: var(--color-border-strong);
+  border-radius: var(--border-radius-pill);
   cursor: pointer;
-  transition: background-color var(--switch-duration) var(--easing-default);
+  transition: background-color var(--duration-interaction) var(--easing-default);
   box-sizing: border-box;
 }
 
@@ -52,7 +53,7 @@
 }
 
 .switch__track[data-disabled] {
-  background: var(--switch-track-background-disabled);
+  background: var(--color-surface-tertiary);
   cursor: not-allowed;
 }
 
@@ -66,9 +67,9 @@
   width: var(--switch-thumb-size);
   height: var(--switch-thumb-size);
   background: var(--color-accent-foreground);
-  border-radius: var(--switch-thumb-border-radius);
+  border-radius: var(--border-radius-pill);
   transform: translateX(calc((var(--switch-track-height) - var(--switch-thumb-size)) / 2));
-  transition: transform var(--switch-duration) var(--easing-default);
+  transition: transform var(--duration-interaction) var(--easing-default);
   will-change: transform;
 }
 

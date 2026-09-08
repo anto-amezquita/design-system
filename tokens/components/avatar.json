@@ -15,10 +15,6 @@
     "$value": "{space.8}",
     "$type": "dimension"
   },
-  "avatar-border-radius": {
-    "$value": "{border-radius-pill}",
-    "$type": "dimension"
-  },
   "avatar-ring-width": {
     "$value": "{border-width.medium}",
     "$type": "dimension"

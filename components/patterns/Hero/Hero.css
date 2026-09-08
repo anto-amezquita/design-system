@@ -1,6 +1,6 @@
 /*
   Tokens consumed:
-  --hero-padding-y, --hero-padding-x, --hero-gap
+  --hero-padding-y
   --hero-eyebrow-size, --hero-eyebrow-weight, --hero-eyebrow-spacing
   --hero-title-weight
   --hero-lead-size, --hero-max-width, --hero-lead-max-width
@@ -9,18 +9,19 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-primary
+  --space-container-padding, --space-component-gap
 */
 
 .hero {
   background: var(--color-surface-primary);
-  padding: var(--hero-padding-y) var(--hero-padding-x);
+  padding: var(--hero-padding-y) var(--space-container-padding);
 }
 
 .hero__inner {
   max-width: var(--hero-max-width);
   display: flex;
   flex-direction: column;
-  gap: var(--hero-gap);
+  gap: var(--space-component-gap);
 }
 
 .hero--centered .hero__inner {

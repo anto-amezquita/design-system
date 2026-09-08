@@ -7,10 +7,6 @@
     "$value": "{space.4}",
     "$type": "dimension"
   },
-  "datatable-empty-padding": {
-    "$value": "{space-container-padding}",
-    "$type": "dimension"
-  },
   "datatable-filter-cell-padding-y": {
     "$value": "{space.2}",
     "$type": "dimension"

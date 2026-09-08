@@ -12,13 +12,6 @@
   ],
   "cssVars": {
     "light": {
-      "drawer-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
-      "drawer-z-index": "400",
-      "drawer-padding": "48px",
-      "drawer-gap": "24px",
-      "drawer-overlay-color": "#E2DDD9",
-      "drawer-title-size": "24px",
-      "drawer-title-weight": "700",
       "drawer-close-size": "28px",
       "drawer-max-width-sm": "320px",
       "drawer-max-width-md": "480px",
@@ -30,13 +23,6 @@
       "drawer-close-align-offset": "2px"
     },
     "dark": {
-      "drawer-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
-      "drawer-z-index": "400",
-      "drawer-padding": "48px",
-      "drawer-gap": "24px",
-      "drawer-overlay-color": "#44403c",
-      "drawer-title-size": "24px",
-      "drawer-title-weight": "700",
       "drawer-close-size": "28px",
       "drawer-max-width-sm": "320px",
       "drawer-max-width-md": "480px",

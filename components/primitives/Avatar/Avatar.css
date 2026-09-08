@@ -1,7 +1,7 @@
 /*
   Tokens consumed:
   --avatar-size-sm, --avatar-size-md, --avatar-size-lg, --avatar-size-xl
-  --avatar-border-radius
+
   --avatar-ring-width
   --avatar-fallback-font-size, --avatar-fallback-font-weight
   --avatar-group-overlap
@@ -9,7 +9,7 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-border-default, --border-width-default, --color-border-focus
-  --color-surface-secondary, --color-text-secondary
+  --color-surface-secondary, --color-text-secondary, --border-radius-pill
 */
 
 .avatar {
@@ -20,7 +20,7 @@
   flex-shrink: 0;
   width: var(--avatar-size-md);
   height: var(--avatar-size-md);
-  border-radius: var(--avatar-border-radius);
+  border-radius: var(--border-radius-pill);
   border: var(--border-width-default) solid var(--color-border-default);
   overflow: hidden;
   vertical-align: middle;

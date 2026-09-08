@@ -20,13 +20,11 @@
     "light": {
       "datatable-gap": "16px",
       "datatable-footer-gap": "16px",
-      "datatable-empty-padding": "32px",
       "datatable-filter-cell-padding-y": "8px"
     },
     "dark": {
       "datatable-gap": "16px",
       "datatable-footer-gap": "16px",
-      "datatable-empty-padding": "32px",
       "datatable-filter-cell-padding-y": "8px"
     }
   }

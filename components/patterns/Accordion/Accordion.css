@@ -1,14 +1,15 @@
 /*
   Tokens consumed:
-  --accordion-trigger-padding-x, --accordion-trigger-padding-y
-  --accordion-trigger-font-weight
+
+
   --accordion-content-padding-x, --accordion-content-padding-bottom
-  --accordion-icon-size
+
   --accordion-duration-expand, --accordion-duration-collapse
   --font-family-base, --easing-default, --color-border-focus, --border-radius-sm, --opacity-disabled
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control
+  --space-prominent-padding-x, --space-prominent-padding-y, --font-weight-control, --size-icon-md
 */
 
 /* Root */
@@ -47,13 +48,13 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: var(--accordion-trigger-padding-y) var(--accordion-trigger-padding-x);
+  padding: var(--space-prominent-padding-y) var(--space-prominent-padding-x);
   background: none;
   border: none;
   color: var(--color-text-primary);
   font-family: inherit;
   font-size: var(--font-size-control);
-  font-weight: var(--accordion-trigger-font-weight);
+  font-weight: var(--font-weight-control);
   line-height: var(--line-height-body);
   text-align: left;
   cursor: pointer;
@@ -83,8 +84,8 @@
 .accordion__icon {
   flex-shrink: 0;
   color: var(--color-text-secondary);
-  width: var(--accordion-icon-size);
-  height: var(--accordion-icon-size);
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
   transition: transform var(--accordion-duration-collapse) var(--easing-default);
 }
 

@@ -6,16 +6,6 @@
   --button-secondary-foreground: #a8a29e;
   --button-secondary-border: #a8a29e;
   --button-secondary-background-hover: #a8a29e;
-  --checkbox-border: #78716c;
-  --drawer-overlay-color: var(--color-surface-tertiary);
-  --radio-border: #78716c;
-  --skeleton-background: var(--color-skeleton-base);
-  --skeleton-highlight: var(--color-skeleton-highlight);
-  --switch-track-background: var(--color-border-strong);
-  --switch-track-background-disabled: var(--color-surface-tertiary);
-  --table-selected-row-background: var(--color-surface-tertiary);
-  --tooltip-background: var(--color-surface-inverse);
-  --tooltip-foreground: var(--color-text-inverse);
   --color-neutral-50: #1c1917;
   --color-neutral-100: #292524;
   --color-neutral-200: #44403c;
@@ -58,6 +48,7 @@
   --checkbox-background: #1c1917;
   --checkbox-background-checked: #f4f0eb;
   --checkbox-background-disabled: #292524;
+  --checkbox-border: #78716c;
   --checkbox-border-hover: #f4f0eb;
   --checkbox-foreground-checked: #1c1917;
   --checkbox-foreground-indeterminate: #1c1917;
@@ -66,6 +57,7 @@
   --radio-background: #1c1917;
   --radio-background-checked: #1c1917;
   --radio-background-disabled: #292524;
+  --radio-border: #78716c;
   --radio-border-hover: #f4f0eb;
   --radio-indicator-color: #f4f0eb;
   --radio-label-color: #fafaf9;

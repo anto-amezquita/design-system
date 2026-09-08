@@ -6,17 +6,6 @@
   --button-secondary-foreground: var(--color-neutral-500);
   --button-secondary-border: var(--color-neutral-500);
   --button-secondary-background-hover: var(--color-neutral-500);
-  --checkbox-border: var(--color-neutral-400);
-  --drawer-overlay-color: var(--color-surface-tertiary);
-  --label-required-color: var(--color-feedback-error);
-  --radio-border: var(--color-neutral-400);
-  --skeleton-background: var(--color-skeleton-base);
-  --skeleton-highlight: var(--color-skeleton-highlight);
-  --switch-track-background: var(--color-border-strong);
-  --switch-track-background-disabled: var(--color-surface-tertiary);
-  --table-selected-row-background: var(--color-surface-tertiary);
-  --tooltip-background: var(--color-surface-inverse);
-  --tooltip-foreground: var(--color-text-inverse);
   --color-neutral-50: #171717;
   --color-neutral-100: #262626;
   --color-neutral-200: #404040;
@@ -59,6 +48,7 @@
   --checkbox-background: var(--color-neutral-50);
   --checkbox-background-checked: var(--color-neutral-800);
   --checkbox-background-disabled: var(--color-neutral-100);
+  --checkbox-border: var(--color-neutral-400);
   --checkbox-border-hover: var(--color-neutral-800);
   --checkbox-foreground-checked: var(--color-neutral-50);
   --checkbox-foreground-indeterminate: var(--color-neutral-50);
@@ -67,6 +57,7 @@
   --radio-background: var(--color-neutral-50);
   --radio-background-checked: var(--color-neutral-50);
   --radio-background-disabled: var(--color-neutral-100);
+  --radio-border: var(--color-neutral-400);
   --radio-border-hover: var(--color-neutral-800);
   --radio-indicator-color: var(--color-neutral-800);
   --radio-label-color: var(--color-neutral-900);

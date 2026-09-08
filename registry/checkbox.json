@@ -12,18 +12,10 @@
   ],
   "cssVars": {
     "light": {
-      "checkbox-size": "24px",
-      "checkbox-border": "#A8A29E",
-      "checkbox-border-width": "1px",
-      "checkbox-border-radius": "4px",
-      "checkbox-label-gap": "12px"
+      "checkbox-size": "24px"
     },
     "dark": {
-      "checkbox-size": "24px",
-      "checkbox-border": "#78716c",
-      "checkbox-border-width": "1px",
-      "checkbox-border-radius": "4px",
-      "checkbox-label-gap": "12px"
+      "checkbox-size": "24px"
     }
   }
 }

@@ -1,15 +1,16 @@
 /*
   Tokens consumed:
   --radio-size
-  --radio-border, --radio-border-width
+
   --radio-indicator-size
-  --radio-label-gap
-  --radio-group-gap
+
+
   --font-family-base, --duration-interaction, --easing-default
   --opacity-disabled, --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-surface-primary
+  --color-border-strong, --border-width-interactive, --space-label-gap
 */
 
 /* Group container */
@@ -17,7 +18,7 @@
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: var(--radio-group-gap);
+  gap: var(--space-label-gap);
 }
 
 .radio-group--horizontal {
@@ -30,7 +31,7 @@
 .radio {
   display: inline-flex;
   align-items: center;
-  gap: var(--radio-label-gap);
+  gap: var(--space-label-gap);
   min-height: var(--size-touch-target);
   min-width: var(--size-touch-target);
   cursor: pointer;
@@ -54,7 +55,7 @@
   width: var(--radio-size);
   height: var(--radio-size);
   background: var(--color-surface-primary);
-  border: var(--radio-border-width) solid var(--radio-border);
+  border: var(--border-width-interactive) solid var(--color-border-strong);
   border-radius: 50%;
   cursor: pointer;
   transition:

@@ -1,14 +1,14 @@
 /*
   Tokens consumed:
   --checkbox-size
-  --checkbox-border, --checkbox-border-width, --checkbox-border-radius
 
-  --checkbox-label-gap
+
   --font-family-base, --duration-interaction, --easing-default
   --opacity-disabled, --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-surface-primary, --color-accent-foreground
+  --color-border-strong, --border-width-interactive, --border-radius-interactive, --space-label-gap
 */
 
 /* Wrapper — owns layout and disabled opacity */
@@ -16,7 +16,7 @@
 .checkbox {
   display: inline-flex;
   align-items: center;
-  gap: var(--checkbox-label-gap);
+  gap: var(--space-label-gap);
   min-height: var(--size-touch-target);
   min-width: var(--size-touch-target);
   cursor: pointer;
@@ -40,8 +40,8 @@
   width: var(--checkbox-size);
   height: var(--checkbox-size);
   background: var(--color-surface-primary);
-  border: var(--checkbox-border-width) solid var(--checkbox-border);
-  border-radius: var(--checkbox-border-radius);
+  border: var(--border-width-interactive) solid var(--color-border-strong);
+  border-radius: var(--border-radius-interactive);
   cursor: pointer;
   transition:
     background-color var(--duration-interaction) var(--easing-default),

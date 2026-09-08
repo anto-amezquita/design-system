@@ -12,18 +12,10 @@
   ],
   "cssVars": {
     "light": {
-      "spinner-size-sm": "16px",
-      "spinner-size-md": "20px",
-      "spinner-size-lg": "24px",
-      "spinner-stroke-width": "2px",
-      "spinner-duration": "700ms"
+      "spinner-stroke-width": "2px"
     },
     "dark": {
-      "spinner-size-sm": "16px",
-      "spinner-size-md": "20px",
-      "spinner-size-lg": "24px",
-      "spinner-stroke-width": "2px",
-      "spinner-duration": "700ms"
+      "spinner-stroke-width": "2px"
     }
   }
 }

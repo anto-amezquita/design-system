@@ -1,9 +1,12 @@
 /*
   Tokens consumed:
-  --datatable-gap, --datatable-footer-gap, --datatable-empty-padding
+  --datatable-gap, --datatable-footer-gap
   --datatable-filter-cell-padding-y
   --color-text-secondary, --font-size-small, --font-family-base
   --size-touch-target
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --space-container-padding
 */
 
 .data-table {
@@ -49,5 +52,5 @@
   text-align: center;
   color: var(--color-text-secondary);
   font-size: var(--font-size-small);
-  padding-block: var(--datatable-empty-padding);
+  padding-block: var(--space-container-padding);
 }

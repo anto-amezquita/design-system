@@ -25,14 +25,8 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--radio-border` | color | `#A8A29E` † |
-| `--radio-border-width` | dimension | `1px` |
-| `--radio-group-gap` | dimension | `12px` |
 | `--radio-indicator-size` | dimension | `12px` |
-| `--radio-label-gap` | dimension | `12px` |
 | `--radio-size` | dimension | `24px` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

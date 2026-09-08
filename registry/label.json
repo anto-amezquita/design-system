@@ -12,16 +12,10 @@
   ],
   "cssVars": {
     "light": {
-      "label-font-size": "14px",
-      "label-font-weight": "500",
-      "label-required-color": "#c0392b",
-      "label-gap": "8px"
+      "label-font-size": "14px"
     },
     "dark": {
-      "label-font-size": "14px",
-      "label-font-weight": "500",
-      "label-required-color": "#f87171",
-      "label-gap": "8px"
+      "label-font-size": "14px"
     }
   }
 }

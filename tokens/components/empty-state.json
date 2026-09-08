@@ -7,25 +7,5 @@
   "emptystate-padding-x": {
     "$value": "{space.8}",
     "$type": "dimension"
-  },
-  "emptystate-gap": {
-    "$value": "{space-element-gap}",
-    "$type": "dimension"
-  },
-  "emptystate-icon-margin": {
-    "$value": "{space-inline-gap}",
-    "$type": "dimension"
-  },
-  "emptystate-padding-y-compact": {
-    "$value": "{space-container-padding-lg}",
-    "$type": "dimension"
-  },
-  "emptystate-padding-x-compact": {
-    "$value": "{space-container-padding}",
-    "$type": "dimension"
-  },
-  "emptystate-gap-compact": {
-    "$value": "{space-label-gap}",
-    "$type": "dimension"
   }
 }

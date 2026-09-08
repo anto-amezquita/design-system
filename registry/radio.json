@@ -13,19 +13,11 @@
   "cssVars": {
     "light": {
       "radio-size": "24px",
-      "radio-border": "#A8A29E",
-      "radio-border-width": "1px",
-      "radio-indicator-size": "12px",
-      "radio-label-gap": "12px",
-      "radio-group-gap": "12px"
+      "radio-indicator-size": "12px"
     },
     "dark": {
       "radio-size": "24px",
-      "radio-border": "#78716c",
-      "radio-border-width": "1px",
-      "radio-indicator-size": "12px",
-      "radio-label-gap": "12px",
-      "radio-group-gap": "12px"
+      "radio-indicator-size": "12px"
     }
   }
 }

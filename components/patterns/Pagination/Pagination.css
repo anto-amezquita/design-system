@@ -5,18 +5,19 @@
 
   --pagination-button-font-size, --pagination-button-font-weight
 
-  --pagination-border-radius, --pagination-gap
+
   --font-family-base, --duration-interaction, --easing-default
   --color-border-focus, --opacity-disabled
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-surface-secondary, --color-border-default, --border-width-default, --color-accent-default, --color-accent-foreground
+  --border-radius-interactive, --space-inline-gap
 */
 
 .pagination {
   display: flex;
   align-items: center;
-  gap: var(--pagination-gap);
+  gap: var(--space-inline-gap);
   font-family: var(--font-family-base);
 }
 
@@ -30,7 +31,7 @@
   background: var(--pagination-button-background);
   color: var(--color-text-secondary);
   border: var(--border-width-default) solid var(--color-border-default);
-  border-radius: var(--pagination-border-radius);
+  border-radius: var(--border-radius-interactive);
   font-family: inherit;
   font-size: var(--pagination-button-font-size);
   font-weight: var(--pagination-button-font-weight);

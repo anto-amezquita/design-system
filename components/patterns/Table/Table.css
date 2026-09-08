@@ -1,22 +1,22 @@
 /*
   Tokens consumed:
-  --table-cell-padding-x, --table-cell-padding-y
+
   --table-header-font-size, --table-header-font-weight
 
 
-  --table-sort-icon-gap
-  --table-selected-row-background, --table-border-radius
+
   --font-family-base, --duration-interaction, --easing-default
   --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-accent-default
+  --space-control-padding-x, --space-control-padding-y, --color-surface-tertiary, --border-radius-component, --space-tight-gap
 */
 
 .table__wrapper {
   width: 100%;
   overflow-x: auto;
-  border-radius: var(--table-border-radius);
+  border-radius: var(--border-radius-component);
   border: var(--border-width-default) solid var(--color-border-default);
 }
 
@@ -40,7 +40,7 @@
 }
 
 .table__header {
-  padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
+  padding: var(--space-control-padding-y) var(--space-control-padding-x);
   font-size: var(--table-header-font-size);
   font-weight: var(--table-header-font-weight);
   color: var(--color-text-secondary);
@@ -61,7 +61,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
+  padding: var(--space-control-padding-y) var(--space-control-padding-x);
   background: none;
   border: none;
   font-family: inherit;
@@ -86,7 +86,7 @@
 .table__header-content {
   display: inline-flex;
   align-items: center;
-  gap: var(--table-sort-icon-gap);
+  gap: var(--space-tight-gap);
 }
 
 /* Sort icon — both arrows default to secondary color */
@@ -116,11 +116,11 @@
 }
 
 .table__row--selected {
-  background: var(--table-selected-row-background);
+  background: var(--color-surface-tertiary);
 }
 
 .table__cell {
-  padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
+  padding: var(--space-control-padding-y) var(--space-control-padding-x);
   color: var(--color-text-primary);
   border-bottom: var(--border-width-default) solid var(--color-border-default);
   vertical-align: middle;
@@ -143,7 +143,7 @@
 /* Caption */
 
 .table__caption {
-  padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
+  padding: var(--space-control-padding-y) var(--space-control-padding-x);
   font-size: var(--table-header-font-size);
   color: var(--color-text-secondary);
   text-align: left;
@@ -172,7 +172,7 @@
 
 .table--compact .table__cell,
 .table--compact .table__header {
-  padding: calc(var(--table-cell-padding-y) / 2) var(--table-cell-padding-x);
+  padding: calc(var(--space-control-padding-y) / 2) var(--space-control-padding-x);
 }
 
 @media (prefers-reduced-motion: reduce) {

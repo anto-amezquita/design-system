@@ -1,7 +1,10 @@
 /*
   Tokens consumed:
-  --spinner-size-sm, --spinner-size-md, --spinner-size-lg
-  --spinner-stroke-width, --spinner-duration
+
+  --spinner-stroke-width
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --size-icon-sm, --size-icon-md, --size-icon-lg, --duration-spin
 */
 
 @keyframes spinner-rotate {
@@ -12,30 +15,30 @@
 
 .spinner {
   display: inline-flex;
-  width: var(--spinner-size-md);
-  height: var(--spinner-size-md);
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
   flex-shrink: 0;
 }
 
 .spinner--sm {
-  width: var(--spinner-size-sm);
-  height: var(--spinner-size-sm);
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
 }
 
 .spinner--md {
-  width: var(--spinner-size-md);
-  height: var(--spinner-size-md);
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
 }
 
 .spinner--lg {
-  width: var(--spinner-size-lg);
-  height: var(--spinner-size-lg);
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
 }
 
 .spinner__svg {
   width: 100%;
   height: 100%;
-  animation: spinner-rotate var(--spinner-duration) linear infinite;
+  animation: spinner-rotate var(--duration-spin) linear infinite;
 }
 
 /* Track — full circle, low opacity */

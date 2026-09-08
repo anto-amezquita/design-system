@@ -3,24 +3,8 @@
     "$value": "{space.5}",
     "$type": "dimension"
   },
-  "radio-border": {
-    "$value": "{color-border-strong}",
-    "$type": "color"
-  },
-  "radio-border-width": {
-    "$value": "{border-width-interactive}",
-    "$type": "dimension"
-  },
   "radio-indicator-size": {
     "$value": "{space.3}",
-    "$type": "dimension"
-  },
-  "radio-label-gap": {
-    "$value": "{space-label-gap}",
-    "$type": "dimension"
-  },
-  "radio-group-gap": {
-    "$value": "{space-label-gap}",
     "$type": "dimension"
   }
 }

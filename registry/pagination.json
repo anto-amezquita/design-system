@@ -15,17 +15,13 @@
       "pagination-button-size": "48px",
       "pagination-button-background": "transparent",
       "pagination-button-font-size": "14px",
-      "pagination-button-font-weight": "500",
-      "pagination-border-radius": "4px",
-      "pagination-gap": "8px"
+      "pagination-button-font-weight": "500"
     },
     "dark": {
       "pagination-button-size": "48px",
       "pagination-button-background": "transparent",
       "pagination-button-font-size": "14px",
-      "pagination-button-font-weight": "500",
-      "pagination-border-radius": "4px",
-      "pagination-gap": "8px"
+      "pagination-button-font-weight": "500"
     }
   }
 }

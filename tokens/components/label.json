@@ -2,17 +2,5 @@
   "label-font-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension"
-  },
-  "label-font-weight": {
-    "$value": "{font-weight-label}",
-    "$type": "fontWeight"
-  },
-  "label-required-color": {
-    "$value": "{color-feedback-error}",
-    "$type": "color"
-  },
-  "label-gap": {
-    "$value": "{space-inline-gap}",
-    "$type": "dimension"
   }
 }

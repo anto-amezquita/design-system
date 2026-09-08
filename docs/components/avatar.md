@@ -19,7 +19,6 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--avatar-border-radius` | dimension | `9999px` |
 | `--avatar-fallback-font-size` | dimension | `14px` |
 | `--avatar-fallback-font-weight` | fontWeight | `600` |
 | `--avatar-group-overlap` | dimension | `-8px` |

@@ -3,14 +3,6 @@
     "$value": "{space.9}",
     "$type": "dimension"
   },
-  "hero-padding-x": {
-    "$value": "{space-container-padding}",
-    "$type": "dimension"
-  },
-  "hero-gap": {
-    "$value": "{space-component-gap}",
-    "$type": "dimension"
-  },
   "hero-eyebrow-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension"

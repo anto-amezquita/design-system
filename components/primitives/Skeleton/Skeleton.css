@@ -1,8 +1,11 @@
 /*
   Tokens consumed:
-  --skeleton-background, --skeleton-highlight, --skeleton-border-radius
-  --skeleton-duration, --skeleton-height-text, --skeleton-height-rect
+  --skeleton-border-radius
+  --skeleton-height-text, --skeleton-height-rect
   --skeleton-circle-size (falls back to --avatar-size-lg if not set)
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-skeleton-base, --color-skeleton-highlight, --duration-skeleton
 */
 
 @keyframes skeleton-shimmer {
@@ -18,12 +21,12 @@
   display: block;
   background: linear-gradient(
     90deg,
-    var(--skeleton-background) 25%,
-    var(--skeleton-highlight) 50%,
-    var(--skeleton-background) 75%
+    var(--color-skeleton-base) 25%,
+    var(--color-skeleton-highlight) 50%,
+    var(--color-skeleton-base) 75%
   );
   background-size: 400% 100%;
-  animation: skeleton-shimmer calc(var(--skeleton-duration) * 3) linear infinite;
+  animation: skeleton-shimmer calc(var(--duration-skeleton) * 3) linear infinite;
   border-radius: var(--skeleton-border-radius);
 }
 
@@ -65,6 +68,6 @@
 @media (prefers-reduced-motion: reduce) {
   .skeleton {
     animation: none;
-    background: var(--skeleton-background);
+    background: var(--color-skeleton-base);
   }
 }

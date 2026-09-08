@@ -1,32 +1,4 @@
 {
-  "card-border-radius": {
-    "$value": "{border-radius-component}",
-    "$type": "dimension"
-  },
-  "card-padding": {
-    "$value": "{space-container-padding}",
-    "$type": "dimension"
-  },
-  "card-gap": {
-    "$value": "{space-element-gap}",
-    "$type": "dimension"
-  },
-  "card-title-size": {
-    "$value": "{font-size-lead}",
-    "$type": "dimension"
-  },
-  "card-title-weight": {
-    "$value": "{font-weight-title}",
-    "$type": "fontWeight"
-  },
-  "card-shadow": {
-    "$value": "{shadow-card}",
-    "$type": "shadow"
-  },
-  "card-shadow-hover": {
-    "$value": "{shadow-card-hover}",
-    "$type": "shadow"
-  },
   "card-horizontal-media-width": {
     "$value": "200px",
     "$type": "dimension"

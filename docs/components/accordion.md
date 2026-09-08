@@ -27,10 +27,6 @@
 | `--accordion-content-padding-x` | dimension | `24px` |
 | `--accordion-duration-collapse` | duration | `200ms` |
 | `--accordion-duration-expand` | duration | `650ms` |
-| `--accordion-icon-size` | dimension | `20px` |
-| `--accordion-trigger-font-weight` | fontWeight | `500` |
-| `--accordion-trigger-padding-x` | dimension | `24px` |
-| `--accordion-trigger-padding-y` | dimension | `16px` |
 
 ## Usage example
 

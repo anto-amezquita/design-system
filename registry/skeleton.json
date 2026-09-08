@@ -12,21 +12,13 @@
   ],
   "cssVars": {
     "light": {
-      "skeleton-background": "#E2DDD9",
-      "skeleton-highlight": "#F4F0EB",
       "skeleton-border-radius": "4px",
-      "skeleton-duration": "400ms",
       "skeleton-height-text": "1em",
-      "skeleton-height-icon": "24px",
       "skeleton-height-rect": "48px"
     },
     "dark": {
-      "skeleton-background": "#44403c",
-      "skeleton-highlight": "#292524",
       "skeleton-border-radius": "4px",
-      "skeleton-duration": "400ms",
       "skeleton-height-text": "1em",
-      "skeleton-height-icon": "24px",
       "skeleton-height-rect": "48px"
     }
   }

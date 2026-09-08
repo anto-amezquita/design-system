@@ -24,11 +24,9 @@
 | `--hero-eyebrow-size` | dimension | `14px` |
 | `--hero-eyebrow-spacing` | dimension | `0.01em` |
 | `--hero-eyebrow-weight` | fontWeight | `600` |
-| `--hero-gap` | dimension | `24px` |
 | `--hero-lead-max-width` | dimension | `60ch` |
 | `--hero-lead-size` | dimension | `20px` |
 | `--hero-max-width` | dimension | `800px` |
-| `--hero-padding-x` | dimension | `32px` |
 | `--hero-padding-y` | dimension | `96px` |
 | `--hero-title-weight` | fontWeight | `800` |
 

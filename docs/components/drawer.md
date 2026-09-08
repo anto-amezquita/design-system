@@ -30,7 +30,6 @@
 |---|---|---|
 | `--drawer-close-align-offset` | dimension | `2px` |
 | `--drawer-close-size` | dimension | `28px` |
-| `--drawer-gap` | dimension | `24px` |
 | `--drawer-max-height-full` | dimension | `100vh` |
 | `--drawer-max-height-lg` | dimension | `75vh` |
 | `--drawer-max-height-md` | dimension | `90vh` |
@@ -38,14 +37,6 @@
 | `--drawer-max-width-lg` | dimension | `640px` |
 | `--drawer-max-width-md` | dimension | `480px` |
 | `--drawer-max-width-sm` | dimension | `320px` |
-| `--drawer-overlay-color` | color | `#E2DDD9` † |
-| `--drawer-padding` | dimension | `48px` |
-| `--drawer-shadow` | shadow | `0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)` |
-| `--drawer-title-size` | dimension | `24px` |
-| `--drawer-title-weight` | fontWeight | `700` |
-| `--drawer-z-index` | number | `400` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

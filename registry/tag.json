@@ -12,7 +12,6 @@
   ],
   "cssVars": {
     "light": {
-      "tag-border-radius": "9999px",
       "tag-padding-x": "12px",
       "tag-padding-y": "4px",
       "tag-font-size": "12px",
@@ -20,7 +19,6 @@
       "tag-muted-background": "transparent"
     },
     "dark": {
-      "tag-border-radius": "9999px",
       "tag-padding-x": "12px",
       "tag-padding-y": "4px",
       "tag-font-size": "12px",

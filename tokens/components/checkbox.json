@@ -2,21 +2,5 @@
   "checkbox-size": {
     "$value": "{space.5}",
     "$type": "dimension"
-  },
-  "checkbox-border": {
-    "$value": "{color-border-strong}",
-    "$type": "color"
-  },
-  "checkbox-border-width": {
-    "$value": "{border-width-interactive}",
-    "$type": "dimension"
-  },
-  "checkbox-border-radius": {
-    "$value": "{border-radius-interactive}",
-    "$type": "dimension"
-  },
-  "checkbox-label-gap": {
-    "$value": "{space-label-gap}",
-    "$type": "dimension"
   }
 }

@@ -32,7 +32,6 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--datatable-empty-padding` | dimension | `32px` |
 | `--datatable-filter-cell-padding-y` | dimension | `8px` |
 | `--datatable-footer-gap` | dimension | `16px` |
 | `--datatable-gap` | dimension | `16px` |

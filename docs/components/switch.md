@@ -25,17 +25,9 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--switch-duration` | duration | `200ms` |
-| `--switch-label-gap` | dimension | `12px` |
-| `--switch-thumb-border-radius` | dimension | `9999px` |
 | `--switch-thumb-size` | dimension | `16px` |
-| `--switch-track-background` | color | `#A8A29E` † |
-| `--switch-track-background-disabled` | color | `#E2DDD9` † |
-| `--switch-track-border-radius` | dimension | `9999px` |
 | `--switch-track-height` | dimension | `24px` |
 | `--switch-track-width` | dimension | `44px` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

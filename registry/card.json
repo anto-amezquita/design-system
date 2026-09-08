@@ -12,23 +12,9 @@
   ],
   "cssVars": {
     "light": {
-      "card-border-radius": "8px",
-      "card-padding": "32px",
-      "card-gap": "16px",
-      "card-title-size": "24px",
-      "card-title-weight": "700",
-      "card-shadow": "0 1px 2px 0 rgba(0,0,0,0.05)",
-      "card-shadow-hover": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
       "card-horizontal-media-width": "200px"
     },
     "dark": {
-      "card-border-radius": "8px",
-      "card-padding": "32px",
-      "card-gap": "16px",
-      "card-title-size": "24px",
-      "card-title-weight": "700",
-      "card-shadow": "0 1px 2px 0 rgba(0,0,0,0.05)",
-      "card-shadow-hover": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
       "card-horizontal-media-width": "200px"
     }
   }

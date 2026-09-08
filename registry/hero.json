@@ -13,8 +13,6 @@
   "cssVars": {
     "light": {
       "hero-padding-y": "96px",
-      "hero-padding-x": "32px",
-      "hero-gap": "24px",
       "hero-eyebrow-size": "14px",
       "hero-eyebrow-weight": "600",
       "hero-eyebrow-spacing": "0.01em",
@@ -25,8 +23,6 @@
     },
     "dark": {
       "hero-padding-y": "96px",
-      "hero-padding-x": "32px",
-      "hero-gap": "24px",
       "hero-eyebrow-size": "14px",
       "hero-eyebrow-weight": "600",
       "hero-eyebrow-spacing": "0.01em",

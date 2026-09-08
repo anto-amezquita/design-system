@@ -10,9 +10,9 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-417 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+351 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
 
-- component: 180
+- component: 114
 - primitive: 112
 - color: 43
 - typography: 32
@@ -32,7 +32,7 @@ npm install @amezquita/design-system
 User profile picture with fallback to initials when no image is provided
 
 - Import: `import { Avatar } from '@amezquita/design-system/components/primitives/Avatar'`
-- Token prefix: `avatar-*` (9 tokens)
+- Token prefix: `avatar-*` (8 tokens)
 - Storybook: Components/Avatar
 - Stories: WithImage, WithFallback, WithCustomFallback, AllSizes, Group, GroupWithOverflow, DarkMode
 
@@ -59,7 +59,7 @@ Trigger for user actions; renders as `<button>` or `<a>` depending on context
 Single boolean selection with an associated label; supports indeterminate state
 
 - Import: `import { Checkbox } from '@amezquita/design-system/components/primitives/Checkbox'`
-- Token prefix: `checkbox-*` (5 tokens)
+- Token prefix: `checkbox-*` (1 tokens)
 - Storybook: Components/Checkbox
 - Stories: Default, Checked, Indeterminate, Disabled, DisabledChecked, Controlled, AllStates, NoLabel, DarkMode
 
@@ -77,7 +77,7 @@ Labelled single-line text entry with hint and error states
 Standalone form label element — used when a label must be decoupled from its input
 
 - Import: `import { Label } from '@amezquita/design-system/components/primitives/Label'`
-- Token prefix: `label-*` (4 tokens)
+- Token prefix: `label-font-*` (1 tokens)
 - Storybook: Components/Label
 - Stories: Default, Required, Disabled, AllVariants, DarkMode
 
@@ -86,7 +86,7 @@ Standalone form label element — used when a label must be decoupled from its i
 Single-selection control within a mutually exclusive group
 
 - Import: `import { Radio } from '@amezquita/design-system/components/primitives/Radio'`
-- Token prefix: `radio-*` (6 tokens)
+- Token prefix: `radio-*` (2 tokens)
 - Storybook: Components/Radio
 - Stories: Default, WithDefault, Horizontal, Disabled, WithDisabledOption, Controlled, AllStates, DarkMode
 
@@ -104,7 +104,7 @@ Dropdown for choosing a single value from a list; supports grouped options
 Placeholder loading state that mirrors the geometry of the content it replaces
 
 - Import: `import { Skeleton } from '@amezquita/design-system/components/primitives/Skeleton'`
-- Token prefix: `skeleton-*` (7 tokens)
+- Token prefix: `skeleton-*` (3 tokens)
 - Storybook: Components/Skeleton
 - Stories: Text, MultiLine, Circle, Rect, CardSkeleton, DarkMode
 
@@ -113,7 +113,7 @@ Placeholder loading state that mirrors the geometry of the content it replaces
 Indeterminate loading indicator for in-progress operations
 
 - Import: `import { Spinner } from '@amezquita/design-system/components/primitives/Spinner'`
-- Token prefix: `spinner-*` (5 tokens)
+- Token prefix: `spinner-stroke-*` (1 tokens)
 - Storybook: Components/Spinner
 - Stories: Default, AllSizes, OnColoredBackground, DarkMode
 
@@ -122,7 +122,7 @@ Indeterminate loading indicator for in-progress operations
 Binary toggle for on/off settings; renders as a styled checkbox under the hood
 
 - Import: `import { Switch } from '@amezquita/design-system/components/primitives/Switch'`
-- Token prefix: `switch-*` (9 tokens)
+- Token prefix: `switch-*` (3 tokens)
 - Storybook: Components/Switch
 - Stories: Default, Checked, Disabled, DisabledChecked, NoLabel, Controlled, AllStates, DarkMode
 
@@ -131,7 +131,7 @@ Binary toggle for on/off settings; renders as a styled checkbox under the hood
 Inline label for categorising or annotating content — non-interactive
 
 - Import: `import { Tag } from '@amezquita/design-system/components/primitives/Tag'`
-- Token prefix: `tag-*` (6 tokens)
+- Token prefix: `tag-*` (5 tokens)
 - Storybook: Components/Tag
 - Stories: Default, Accent, Muted, WithIcon, Removable, AllVariants, InContext, DarkMode
 
@@ -169,7 +169,7 @@ Confirmation gate for an action the user must explicitly accept or decline — r
 Compound container for grouped content — composed from named sub-components
 
 - Import: `import { Card } from '@amezquita/design-system/components/composition/Card'`
-- Token prefix: `card-*` (8 tokens)
+- Token prefix: `card-horizontal-media-*` (1 tokens)
 - Storybook: Components/Card
 - Stories: Default, Ghost, Interactive, Horizontal, Compact, Featured, WithBody, WithMedia, AllVariants, DarkMode
 
@@ -187,7 +187,7 @@ Overlay for tasks or information requiring focused attention
 Side-anchored slide-in panel for supplemental content or secondary navigation
 
 - Import: `import { Drawer } from '@amezquita/design-system/components/composition/Drawer'`
-- Token prefix: `drawer-*` (16 tokens)
+- Token prefix: `drawer-*` (9 tokens)
 - Storybook: Components/Drawer
 - Stories: Default, FilterPanel, AllSides, Sizes, DarkMode
 
@@ -205,7 +205,7 @@ Ephemeral notification pushed to a corner of the viewport; auto-dismisses after 
 Contextual label revealed on hover or focus — supplements an icon or truncated text
 
 - Import: `import { Tooltip } from '@amezquita/design-system/components/composition/Tooltip'`
-- Token prefix: `tooltip-*` (13 tokens)
+- Token prefix: `tooltip-*` (7 tokens)
 - Storybook: Components/Tooltip
 - Stories: Default, AllSides, IconButtons, LongContent, NoDelay, DarkMode
 
@@ -216,7 +216,7 @@ Contextual label revealed on hover or focus — supplements an icon or truncated
 Collapsible content sections with animated expand/collapse; supports single or multi-open modes
 
 - Import: `import { Accordion } from '@amezquita/design-system/components/patterns/Accordion'`
-- Token prefix: `accordion-*` (8 tokens)
+- Token prefix: `accordion-*` (4 tokens)
 - Storybook: Components/Accordion
 - Stories: Default, Multiple, WithDisabledItem, DefaultOpen, DarkMode
 
@@ -234,7 +234,7 @@ Hierarchical page location trail; the last item is the current page (non-linked)
 Sortable, filterable, paginated table for structured datasets
 
 - Import: `import { DataTable } from '@amezquita/design-system/components/patterns/DataTable'`
-- Token prefix: `datatable-*` (4 tokens)
+- Token prefix: `datatable-*` (3 tokens)
 - Storybook: Components/DataTable
 - Stories: Default, Sortable, WithSelection, WithPagination, WithPaginationAndSelection, WithColumnFilters, WithToolbarAndFilters, WithFiltersAndSelection, Striped, Compact, Empty, DarkMode
 
@@ -243,7 +243,7 @@ Sortable, filterable, paginated table for structured datasets
 Placeholder for zero-content states — icon, heading, supporting text, and an optional action
 
 - Import: `import { EmptyState } from '@amezquita/design-system/components/patterns/EmptyState'`
-- Token prefix: `emptystate-*` (7 tokens)
+- Token prefix: `emptystate-padding-*` (2 tokens)
 - Storybook: Components/EmptyState
 - Stories: Default, AllVariants, Compact, DarkMode
 
@@ -252,7 +252,7 @@ Placeholder for zero-content states — icon, heading, supporting text, and an o
 Page-level section header with eyebrow, title, lead text, and an action slot
 
 - Import: `import { Hero } from '@amezquita/design-system/components/patterns/Hero'`
-- Token prefix: `hero-*` (10 tokens)
+- Token prefix: `hero-*` (8 tokens)
 - Storybook: Components/Hero
 - Stories: Default, WithEyebrowAndLead, Centered, TitleOnly, PageHeader, DarkMode
 
@@ -261,7 +261,7 @@ Page-level section header with eyebrow, title, lead text, and an action slot
 Page navigation controls for multi-page data sets; exposes current page and total page count
 
 - Import: `import { Pagination } from '@amezquita/design-system/components/patterns/Pagination'`
-- Token prefix: `pagination-*` (6 tokens)
+- Token prefix: `pagination-button-*` (4 tokens)
 - Storybook: Components/Pagination
 - Stories: Default, EdgeCases, Compact, DarkMode
 
@@ -270,7 +270,7 @@ Page navigation controls for multi-page data sets; exposes current page and tota
 Static data table with semantic header, body, and row structure
 
 - Import: `import { Table } from '@amezquita/design-system/components/patterns/Table'`
-- Token prefix: `table-*` (7 tokens)
+- Token prefix: `table-header-font-*` (2 tokens)
 - Storybook: Components/Table
 - Stories: Default, Striped, Bordered, Compact, AllVariants, WithCaption, WithFoot, HorizontalScroll, DarkMode
 

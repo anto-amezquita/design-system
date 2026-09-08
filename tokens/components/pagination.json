@@ -14,13 +14,5 @@
   "pagination-button-font-weight": {
     "$value": "{font-weight.medium}",
     "$type": "fontWeight"
-  },
-  "pagination-border-radius": {
-    "$value": "{border-radius-interactive}",
-    "$type": "dimension"
-  },
-  "pagination-gap": {
-    "$value": "{space-inline-gap}",
-    "$type": "dimension"
   }
 }

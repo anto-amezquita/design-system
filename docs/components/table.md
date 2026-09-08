@@ -21,15 +21,8 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--table-border-radius` | dimension | `8px` |
-| `--table-cell-padding-x` | dimension | `16px` |
-| `--table-cell-padding-y` | dimension | `12px` |
 | `--table-header-font-size` | dimension | `12px` |
 | `--table-header-font-weight` | fontWeight | `600` |
-| `--table-selected-row-background` | color | `#E2DDD9` † |
-| `--table-sort-icon-gap` | dimension | `4px` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

@@ -17,10 +17,6 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--spinner-duration` | duration | `700ms` |
-| `--spinner-size-lg` | dimension | `24px` |
-| `--spinner-size-md` | dimension | `20px` |
-| `--spinner-size-sm` | dimension | `16px` |
 | `--spinner-stroke-width` | dimension | `2px` |
 
 ## Usage example

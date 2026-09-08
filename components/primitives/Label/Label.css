@@ -1,20 +1,21 @@
 /*
   Tokens consumed:
-  --label-font-size, --label-font-weight
-  --label-required-color, --label-gap, --line-height-label
+  --label-font-size
+  --line-height-label
   --font-family-base
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary
+  --font-weight-label, --color-feedback-error, --space-inline-gap
 */
 
 .label {
   display: inline-flex;
   align-items: center;
-  gap: var(--label-gap);
+  gap: var(--space-inline-gap);
   font-family: var(--font-family-base);
   font-size: var(--label-font-size);
-  font-weight: var(--label-font-weight);
+  font-weight: var(--font-weight-label);
   color: var(--color-text-primary);
   line-height: var(--line-height-label);
   cursor: default;
@@ -22,7 +23,7 @@
 
 .label--required::after {
   content: '*';
-  color: var(--label-required-color);
+  color: var(--color-feedback-error);
 }
 
 .label--disabled {

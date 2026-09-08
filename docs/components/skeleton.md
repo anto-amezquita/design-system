@@ -20,12 +20,6 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--skeleton-background` | color | `#E2DDD9` † |
 | `--skeleton-border-radius` | dimension | `4px` |
-| `--skeleton-duration` | duration | `400ms` |
-| `--skeleton-height-icon` | dimension | `24px` |
 | `--skeleton-height-rect` | dimension | `48px` |
 | `--skeleton-height-text` | dimension | `1em` |
-| `--skeleton-highlight` | color | `#F4F0EB` † |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.

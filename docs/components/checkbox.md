@@ -25,13 +25,7 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--checkbox-border` | color | `#A8A29E` † |
-| `--checkbox-border-radius` | dimension | `4px` |
-| `--checkbox-border-width` | dimension | `1px` |
-| `--checkbox-label-gap` | dimension | `12px` |
 | `--checkbox-size` | dimension | `24px` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

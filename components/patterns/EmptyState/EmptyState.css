@@ -3,10 +3,13 @@
   --color-text-primary, --color-text-secondary
   --font-family-base, --font-size-body, --font-size-h4, --font-size-small
   --font-weight-semibold
-  --emptystate-padding-y, --emptystate-padding-x, --emptystate-gap, --emptystate-icon-margin
-  --emptystate-padding-y-compact, --emptystate-padding-x-compact, --emptystate-gap-compact
+  --emptystate-padding-y, --emptystate-padding-x
+
   --icon-size-xl, --icon-size-lg
   --line-height-heading, --line-height-body
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --space-element-gap, --space-inline-gap, --space-container-padding-lg, --space-container-padding, --space-label-gap
 */
 
 .empty-state {
@@ -16,13 +19,13 @@
   justify-content: center;
   text-align: center;
   padding: var(--emptystate-padding-y) var(--emptystate-padding-x);
-  gap: var(--emptystate-gap);
+  gap: var(--space-element-gap);
   font-family: var(--font-family-base);
 }
 
 .empty-state--compact {
-  padding: var(--emptystate-padding-y-compact) var(--emptystate-padding-x-compact);
-  gap: var(--emptystate-gap-compact);
+  padding: var(--space-container-padding-lg) var(--space-container-padding);
+  gap: var(--space-label-gap);
 }
 
 .empty-state__icon {
@@ -32,7 +35,7 @@
   width: var(--icon-size-xl);
   height: var(--icon-size-xl);
   color: var(--color-text-secondary);
-  margin-bottom: var(--emptystate-icon-margin);
+  margin-bottom: var(--space-inline-gap);
 }
 
 .empty-state--compact .empty-state__icon {
@@ -66,5 +69,5 @@
 }
 
 .empty-state__action {
-  margin-top: var(--emptystate-icon-margin);
+  margin-top: var(--space-inline-gap);
 }

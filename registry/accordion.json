@@ -12,22 +12,14 @@
   ],
   "cssVars": {
     "light": {
-      "accordion-trigger-padding-x": "24px",
-      "accordion-trigger-padding-y": "16px",
-      "accordion-trigger-font-weight": "500",
       "accordion-content-padding-x": "24px",
       "accordion-content-padding-bottom": "24px",
-      "accordion-icon-size": "20px",
       "accordion-duration-expand": "650ms",
       "accordion-duration-collapse": "200ms"
     },
     "dark": {
-      "accordion-trigger-padding-x": "24px",
-      "accordion-trigger-padding-y": "16px",
-      "accordion-trigger-font-weight": "500",
       "accordion-content-padding-x": "24px",
       "accordion-content-padding-bottom": "24px",
-      "accordion-icon-size": "20px",
       "accordion-duration-expand": "650ms",
       "accordion-duration-collapse": "200ms"
     }

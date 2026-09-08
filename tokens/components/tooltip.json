@@ -1,20 +1,4 @@
 {
-  "tooltip-background": {
-    "$value": "{color-surface-inverse}",
-    "$type": "color"
-  },
-  "tooltip-foreground": {
-    "$value": "{color-text-inverse}",
-    "$type": "color"
-  },
-  "tooltip-padding-x": {
-    "$value": "{space-compact-padding-x}",
-    "$type": "dimension"
-  },
-  "tooltip-padding-y": {
-    "$value": "{space-compact-padding-y}",
-    "$type": "dimension"
-  },
   "tooltip-font-size": {
     "$value": "{font-size.xs}",
     "$type": "dimension"
@@ -26,14 +10,6 @@
   "tooltip-border-radius": {
     "$value": "{border-radius.sm}",
     "$type": "dimension"
-  },
-  "tooltip-shadow": {
-    "$value": "{shadow-toast}",
-    "$type": "shadow"
-  },
-  "tooltip-z-index": {
-    "$value": "{z-tooltip}",
-    "$type": "number"
   },
   "tooltip-max-width": {
     "$value": "260px",

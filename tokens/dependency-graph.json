@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 27,
-    "tokenCount": 272
+    "tokenCount": 208
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -16,18 +16,6 @@
     "accordion-duration-expand": [
       "components/patterns/Accordion/Accordion.css"
     ],
-    "accordion-icon-size": [
-      "components/patterns/Accordion/Accordion.css"
-    ],
-    "accordion-trigger-font-weight": [
-      "components/patterns/Accordion/Accordion.css"
-    ],
-    "accordion-trigger-padding-x": [
-      "components/patterns/Accordion/Accordion.css"
-    ],
-    "accordion-trigger-padding-y": [
-      "components/patterns/Accordion/Accordion.css"
-    ],
     "alert-close-offset": [
       "components/composition/Alert/Alert.css"
     ],
@@ -39,9 +27,6 @@
     ],
     "alert-title-weight": [
       "components/composition/Alert/Alert.css"
-    ],
-    "avatar-border-radius": [
-      "components/primitives/Avatar/Avatar.css"
     ],
     "avatar-fallback-font-size": [
       "components/primitives/Avatar/Avatar.css"
@@ -197,38 +182,8 @@
     "button-spinner-duration": [
       "components/primitives/Button/Button.css"
     ],
-    "card-border-radius": [
-      "components/composition/Card/Card.css"
-    ],
-    "card-gap": [
-      "components/composition/Card/Card.css"
-    ],
     "card-horizontal-media-width": [
       "components/composition/Card/Card.css"
-    ],
-    "card-padding": [
-      "components/composition/Card/Card.css"
-    ],
-    "card-shadow-hover": [
-      "components/composition/Card/Card.css"
-    ],
-    "card-title-size": [
-      "components/composition/Card/Card.css"
-    ],
-    "card-title-weight": [
-      "components/composition/Card/Card.css"
-    ],
-    "checkbox-border": [
-      "components/primitives/Checkbox/Checkbox.css"
-    ],
-    "checkbox-border-radius": [
-      "components/primitives/Checkbox/Checkbox.css"
-    ],
-    "checkbox-border-width": [
-      "components/primitives/Checkbox/Checkbox.css"
-    ],
-    "checkbox-label-gap": [
-      "components/primitives/Checkbox/Checkbox.css"
     ],
     "checkbox-size": [
       "components/primitives/Checkbox/Checkbox.css"
@@ -452,9 +407,6 @@
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
     ],
-    "datatable-empty-padding": [
-      "components/patterns/DataTable/DataTable.css"
-    ],
     "datatable-filter-cell-padding-y": [
       "components/patterns/DataTable/DataTable.css"
     ],
@@ -488,9 +440,6 @@
     "drawer-close-size": [
       "components/composition/Drawer/Drawer.css"
     ],
-    "drawer-gap": [
-      "components/composition/Drawer/Drawer.css"
-    ],
     "drawer-max-height-full": [
       "components/composition/Drawer/Drawer.css"
     ],
@@ -510,24 +459,6 @@
       "components/composition/Drawer/Drawer.css"
     ],
     "drawer-max-width-sm": [
-      "components/composition/Drawer/Drawer.css"
-    ],
-    "drawer-overlay-color": [
-      "components/composition/Drawer/Drawer.css"
-    ],
-    "drawer-padding": [
-      "components/composition/Drawer/Drawer.css"
-    ],
-    "drawer-shadow": [
-      "components/composition/Drawer/Drawer.css"
-    ],
-    "drawer-title-size": [
-      "components/composition/Drawer/Drawer.css"
-    ],
-    "drawer-title-weight": [
-      "components/composition/Drawer/Drawer.css"
-    ],
-    "drawer-z-index": [
       "components/composition/Drawer/Drawer.css"
     ],
     "duration-instant": [
@@ -591,25 +522,10 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css"
     ],
-    "emptystate-gap": [
-      "components/patterns/EmptyState/EmptyState.css"
-    ],
-    "emptystate-gap-compact": [
-      "components/patterns/EmptyState/EmptyState.css"
-    ],
-    "emptystate-icon-margin": [
-      "components/patterns/EmptyState/EmptyState.css"
-    ],
     "emptystate-padding-x": [
       "components/patterns/EmptyState/EmptyState.css"
     ],
-    "emptystate-padding-x-compact": [
-      "components/patterns/EmptyState/EmptyState.css"
-    ],
     "emptystate-padding-y": [
-      "components/patterns/EmptyState/EmptyState.css"
-    ],
-    "emptystate-padding-y-compact": [
       "components/patterns/EmptyState/EmptyState.css"
     ],
     "focus-ring-offset": [
@@ -749,9 +665,6 @@
     "hero-eyebrow-weight": [
       "components/patterns/Hero/Hero.css"
     ],
-    "hero-gap": [
-      "components/patterns/Hero/Hero.css"
-    ],
     "hero-lead-max-width": [
       "components/patterns/Hero/Hero.css"
     ],
@@ -759,9 +672,6 @@
       "components/patterns/Hero/Hero.css"
     ],
     "hero-max-width": [
-      "components/patterns/Hero/Hero.css"
-    ],
-    "hero-padding-x": [
       "components/patterns/Hero/Hero.css"
     ],
     "hero-padding-y": [
@@ -789,15 +699,6 @@
       "components/primitives/Input/Input.css"
     ],
     "label-font-size": [
-      "components/primitives/Label/Label.css"
-    ],
-    "label-font-weight": [
-      "components/primitives/Label/Label.css"
-    ],
-    "label-gap": [
-      "components/primitives/Label/Label.css"
-    ],
-    "label-required-color": [
       "components/primitives/Label/Label.css"
     ],
     "letter-spacing-heading": [
@@ -849,9 +750,6 @@
     "opacity-high": [
       "components/composition/Alert/Alert.css"
     ],
-    "pagination-border-radius": [
-      "components/patterns/Pagination/Pagination.css"
-    ],
     "pagination-button-background": [
       "components/patterns/Pagination/Pagination.css"
     ],
@@ -864,22 +762,7 @@
     "pagination-button-size": [
       "components/patterns/Pagination/Pagination.css"
     ],
-    "pagination-gap": [
-      "components/patterns/Pagination/Pagination.css"
-    ],
-    "radio-border": [
-      "components/primitives/Radio/Radio.css"
-    ],
-    "radio-border-width": [
-      "components/primitives/Radio/Radio.css"
-    ],
-    "radio-group-gap": [
-      "components/primitives/Radio/Radio.css"
-    ],
     "radio-indicator-size": [
-      "components/primitives/Radio/Radio.css"
-    ],
-    "radio-label-gap": [
       "components/primitives/Radio/Radio.css"
     ],
     "radio-size": [
@@ -942,22 +825,13 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/Switch/Switch.css"
     ],
-    "skeleton-background": [
-      "components/primitives/Skeleton/Skeleton.css"
-    ],
     "skeleton-border-radius": [
-      "components/primitives/Skeleton/Skeleton.css"
-    ],
-    "skeleton-duration": [
       "components/primitives/Skeleton/Skeleton.css"
     ],
     "skeleton-height-rect": [
       "components/primitives/Skeleton/Skeleton.css"
     ],
     "skeleton-height-text": [
-      "components/primitives/Skeleton/Skeleton.css"
-    ],
-    "skeleton-highlight": [
       "components/primitives/Skeleton/Skeleton.css"
     ],
     "space-compact-padding-x": [
@@ -1046,40 +920,10 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Select/Select.css"
     ],
-    "spinner-duration": [
-      "components/primitives/Spinner/Spinner.css"
-    ],
-    "spinner-size-lg": [
-      "components/primitives/Spinner/Spinner.css"
-    ],
-    "spinner-size-md": [
-      "components/primitives/Spinner/Spinner.css"
-    ],
-    "spinner-size-sm": [
-      "components/primitives/Spinner/Spinner.css"
-    ],
     "spinner-stroke-width": [
       "components/primitives/Spinner/Spinner.css"
     ],
-    "switch-duration": [
-      "components/primitives/Switch/Switch.css"
-    ],
-    "switch-label-gap": [
-      "components/primitives/Switch/Switch.css"
-    ],
-    "switch-thumb-border-radius": [
-      "components/primitives/Switch/Switch.css"
-    ],
     "switch-thumb-size": [
-      "components/primitives/Switch/Switch.css"
-    ],
-    "switch-track-background": [
-      "components/primitives/Switch/Switch.css"
-    ],
-    "switch-track-background-disabled": [
-      "components/primitives/Switch/Switch.css"
-    ],
-    "switch-track-border-radius": [
       "components/primitives/Switch/Switch.css"
     ],
     "switch-track-height": [
@@ -1088,25 +932,10 @@
     "switch-track-width": [
       "components/primitives/Switch/Switch.css"
     ],
-    "table-border-radius": [
-      "components/patterns/Table/Table.css"
-    ],
-    "table-cell-padding-x": [
-      "components/patterns/Table/Table.css"
-    ],
-    "table-cell-padding-y": [
-      "components/patterns/Table/Table.css"
-    ],
     "table-header-font-size": [
       "components/patterns/Table/Table.css"
     ],
     "table-header-font-weight": [
-      "components/patterns/Table/Table.css"
-    ],
-    "table-selected-row-background": [
-      "components/patterns/Table/Table.css"
-    ],
-    "table-sort-icon-gap": [
       "components/patterns/Table/Table.css"
     ],
     "tabs-content-padding-top": [
@@ -1114,9 +943,6 @@
     ],
     "tabs-indicator-height": [
       "components/patterns/Tabs/Tabs.css"
-    ],
-    "tag-border-radius": [
-      "components/primitives/Tag/Tag.css"
     ],
     "tag-font-size": [
       "components/primitives/Tag/Tag.css"
@@ -1160,9 +986,6 @@
     "tooltip-arrow-size": [
       "components/composition/Tooltip/Tooltip.css"
     ],
-    "tooltip-background": [
-      "components/composition/Tooltip/Tooltip.css"
-    ],
     "tooltip-border-radius": [
       "components/composition/Tooltip/Tooltip.css"
     ],
@@ -1172,22 +995,7 @@
     "tooltip-font-weight": [
       "components/composition/Tooltip/Tooltip.css"
     ],
-    "tooltip-foreground": [
-      "components/composition/Tooltip/Tooltip.css"
-    ],
     "tooltip-max-width": [
-      "components/composition/Tooltip/Tooltip.css"
-    ],
-    "tooltip-padding-x": [
-      "components/composition/Tooltip/Tooltip.css"
-    ],
-    "tooltip-padding-y": [
-      "components/composition/Tooltip/Tooltip.css"
-    ],
-    "tooltip-shadow": [
-      "components/composition/Tooltip/Tooltip.css"
-    ],
-    "tooltip-z-index": [
       "components/composition/Tooltip/Tooltip.css"
     ],
     "z-dropdown": [

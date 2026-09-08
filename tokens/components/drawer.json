@@ -1,32 +1,4 @@
 {
-  "drawer-shadow": {
-    "$value": "{shadow-dialog}",
-    "$type": "shadow"
-  },
-  "drawer-z-index": {
-    "$value": "{z-modal}",
-    "$type": "number"
-  },
-  "drawer-padding": {
-    "$value": "{space-container-padding-lg}",
-    "$type": "dimension"
-  },
-  "drawer-gap": {
-    "$value": "{space-component-gap}",
-    "$type": "dimension"
-  },
-  "drawer-overlay-color": {
-    "$value": "{color-surface-tertiary}",
-    "$type": "color"
-  },
-  "drawer-title-size": {
-    "$value": "{font-size-lead}",
-    "$type": "dimension"
-  },
-  "drawer-title-weight": {
-    "$value": "{font-weight-title}",
-    "$type": "fontWeight"
-  },
   "drawer-close-size": {
     "$value": "{size.icon-interactive}",
     "$type": "dimension"

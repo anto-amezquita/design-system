@@ -23,14 +23,7 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--card-border-radius` | dimension | `8px` |
-| `--card-gap` | dimension | `16px` |
 | `--card-horizontal-media-width` | dimension | `200px` |
-| `--card-padding` | dimension | `32px` |
-| `--card-shadow` | shadow | `0 1px 2px 0 rgba(0,0,0,0.05)` |
-| `--card-shadow-hover` | shadow | `0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)` |
-| `--card-title-size` | dimension | `24px` |
-| `--card-title-weight` | fontWeight | `700` |
 
 ## Usage example
 

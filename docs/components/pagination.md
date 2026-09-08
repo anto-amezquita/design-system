@@ -21,12 +21,10 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--pagination-border-radius` | dimension | `4px` |
 | `--pagination-button-background` | color | `transparent` |
 | `--pagination-button-font-size` | dimension | `14px` |
 | `--pagination-button-font-weight` | fontWeight | `500` |
 | `--pagination-button-size` | dimension | `48px` |
-| `--pagination-gap` | dimension | `8px` |
 
 ## Usage example
 

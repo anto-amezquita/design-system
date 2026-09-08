@@ -2,8 +2,8 @@
   "meta": {
     "primitiveCount": 112,
     "semanticCount": 125,
-    "componentCount": 180,
-    "total": 417
+    "componentCount": 114,
+    "total": 351
   },
   "tokens": [
     {
@@ -4080,57 +4080,6 @@
       "usedBy": []
     },
     {
-      "name": "accordion-trigger-padding-x",
-      "cssVar": "--accordion-trigger-padding-x",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-prominent-padding-x}",
-      "resolved": {
-        "base-light": "24px",
-        "base-dark": "24px",
-        "portfolio-light": "24px",
-        "portfolio-dark": "24px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Accordion"
-      ]
-    },
-    {
-      "name": "accordion-trigger-padding-y",
-      "cssVar": "--accordion-trigger-padding-y",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-prominent-padding-y}",
-      "resolved": {
-        "base-light": "16px",
-        "base-dark": "16px",
-        "portfolio-light": "16px",
-        "portfolio-dark": "16px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Accordion"
-      ]
-    },
-    {
-      "name": "accordion-trigger-font-weight",
-      "cssVar": "--accordion-trigger-font-weight",
-      "type": "fontWeight",
-      "category": "component",
-      "rawValue": "{font-weight-control}",
-      "resolved": {
-        "base-light": "500",
-        "base-dark": "500",
-        "portfolio-light": "500",
-        "portfolio-dark": "500"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Accordion"
-      ]
-    },
-    {
       "name": "accordion-content-padding-x",
       "cssVar": "--accordion-content-padding-x",
       "type": "dimension",
@@ -4158,23 +4107,6 @@
         "base-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Accordion"
-      ]
-    },
-    {
-      "name": "accordion-icon-size",
-      "cssVar": "--accordion-icon-size",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{size-icon-md}",
-      "resolved": {
-        "base-light": "20px",
-        "base-dark": "20px",
-        "portfolio-light": "20px",
-        "portfolio-dark": "20px"
       },
       "axisAware": false,
       "usedBy": [
@@ -4346,23 +4278,6 @@
         "base-dark": "64px",
         "portfolio-light": "64px",
         "portfolio-dark": "64px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Avatar"
-      ]
-    },
-    {
-      "name": "avatar-border-radius",
-      "cssVar": "--avatar-border-radius",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{border-radius-pill}",
-      "resolved": {
-        "base-light": "9999px",
-        "base-dark": "9999px",
-        "portfolio-light": "9999px",
-        "portfolio-dark": "9999px"
       },
       "axisAware": false,
       "usedBy": [
@@ -4855,123 +4770,6 @@
       ]
     },
     {
-      "name": "card-border-radius",
-      "cssVar": "--card-border-radius",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{border-radius-component}",
-      "resolved": {
-        "base-light": "8px",
-        "base-dark": "8px",
-        "portfolio-light": "8px",
-        "portfolio-dark": "8px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Card"
-      ]
-    },
-    {
-      "name": "card-padding",
-      "cssVar": "--card-padding",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-container-padding}",
-      "resolved": {
-        "base-light": "32px",
-        "base-dark": "32px",
-        "portfolio-light": "32px",
-        "portfolio-dark": "32px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Card"
-      ]
-    },
-    {
-      "name": "card-gap",
-      "cssVar": "--card-gap",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-element-gap}",
-      "resolved": {
-        "base-light": "16px",
-        "base-dark": "16px",
-        "portfolio-light": "16px",
-        "portfolio-dark": "16px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Card"
-      ]
-    },
-    {
-      "name": "card-title-size",
-      "cssVar": "--card-title-size",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{font-size-lead}",
-      "resolved": {
-        "base-light": "24px",
-        "base-dark": "24px",
-        "portfolio-light": "24px",
-        "portfolio-dark": "24px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Card"
-      ]
-    },
-    {
-      "name": "card-title-weight",
-      "cssVar": "--card-title-weight",
-      "type": "fontWeight",
-      "category": "component",
-      "rawValue": "{font-weight-title}",
-      "resolved": {
-        "base-light": "700",
-        "base-dark": "700",
-        "portfolio-light": "700",
-        "portfolio-dark": "700"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Card"
-      ]
-    },
-    {
-      "name": "card-shadow",
-      "cssVar": "--card-shadow",
-      "type": "shadow",
-      "category": "component",
-      "rawValue": "{shadow-card}",
-      "resolved": {
-        "base-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
-        "base-dark": "0 1px 2px 0 rgba(0,0,0,0.05)",
-        "portfolio-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
-        "portfolio-dark": "0 1px 2px 0 rgba(0,0,0,0.05)"
-      },
-      "axisAware": false,
-      "usedBy": []
-    },
-    {
-      "name": "card-shadow-hover",
-      "cssVar": "--card-shadow-hover",
-      "type": "shadow",
-      "category": "component",
-      "rawValue": "{shadow-card-hover}",
-      "resolved": {
-        "base-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
-        "base-dark": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
-        "portfolio-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
-        "portfolio-dark": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Card"
-      ]
-    },
-    {
       "name": "card-horizontal-media-width",
       "cssVar": "--card-horizontal-media-width",
       "type": "dimension",
@@ -5006,74 +4804,6 @@
       ]
     },
     {
-      "name": "checkbox-border",
-      "cssVar": "--checkbox-border",
-      "type": "color",
-      "category": "component",
-      "rawValue": "{color-border-strong}",
-      "resolved": {
-        "base-light": "#A3A3A3",
-        "base-dark": "#737373",
-        "portfolio-light": "#A8A29E",
-        "portfolio-dark": "#78716c"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Checkbox"
-      ]
-    },
-    {
-      "name": "checkbox-border-width",
-      "cssVar": "--checkbox-border-width",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{border-width-interactive}",
-      "resolved": {
-        "base-light": "1px",
-        "base-dark": "1px",
-        "portfolio-light": "1px",
-        "portfolio-dark": "1px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Checkbox"
-      ]
-    },
-    {
-      "name": "checkbox-border-radius",
-      "cssVar": "--checkbox-border-radius",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{border-radius-interactive}",
-      "resolved": {
-        "base-light": "4px",
-        "base-dark": "4px",
-        "portfolio-light": "4px",
-        "portfolio-dark": "4px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Checkbox"
-      ]
-    },
-    {
-      "name": "checkbox-label-gap",
-      "cssVar": "--checkbox-label-gap",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-label-gap}",
-      "resolved": {
-        "base-light": "12px",
-        "base-dark": "12px",
-        "portfolio-light": "12px",
-        "portfolio-dark": "12px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Checkbox"
-      ]
-    },
-    {
       "name": "datatable-gap",
       "cssVar": "--datatable-gap",
       "type": "dimension",
@@ -5101,23 +4831,6 @@
         "base-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "DataTable"
-      ]
-    },
-    {
-      "name": "datatable-empty-padding",
-      "cssVar": "--datatable-empty-padding",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-container-padding}",
-      "resolved": {
-        "base-light": "32px",
-        "base-dark": "32px",
-        "portfolio-light": "32px",
-        "portfolio-dark": "32px"
       },
       "axisAware": false,
       "usedBy": [
@@ -5241,125 +4954,6 @@
       "axisAware": false,
       "usedBy": [
         "Dialog"
-      ]
-    },
-    {
-      "name": "drawer-shadow",
-      "cssVar": "--drawer-shadow",
-      "type": "shadow",
-      "category": "component",
-      "rawValue": "{shadow-dialog}",
-      "resolved": {
-        "base-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
-        "base-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
-        "portfolio-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
-        "portfolio-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Drawer"
-      ]
-    },
-    {
-      "name": "drawer-z-index",
-      "cssVar": "--drawer-z-index",
-      "type": "number",
-      "category": "component",
-      "rawValue": "{z-modal}",
-      "resolved": {
-        "base-light": "400",
-        "base-dark": "400",
-        "portfolio-light": "400",
-        "portfolio-dark": "400"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Drawer"
-      ]
-    },
-    {
-      "name": "drawer-padding",
-      "cssVar": "--drawer-padding",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-container-padding-lg}",
-      "resolved": {
-        "base-light": "48px",
-        "base-dark": "48px",
-        "portfolio-light": "48px",
-        "portfolio-dark": "48px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Drawer"
-      ]
-    },
-    {
-      "name": "drawer-gap",
-      "cssVar": "--drawer-gap",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-component-gap}",
-      "resolved": {
-        "base-light": "24px",
-        "base-dark": "24px",
-        "portfolio-light": "24px",
-        "portfolio-dark": "24px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Drawer"
-      ]
-    },
-    {
-      "name": "drawer-overlay-color",
-      "cssVar": "--drawer-overlay-color",
-      "type": "color",
-      "category": "component",
-      "rawValue": "{color-surface-tertiary}",
-      "resolved": {
-        "base-light": "#E5E5E5",
-        "base-dark": "#404040",
-        "portfolio-light": "#E2DDD9",
-        "portfolio-dark": "#44403c"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Drawer"
-      ]
-    },
-    {
-      "name": "drawer-title-size",
-      "cssVar": "--drawer-title-size",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{font-size-lead}",
-      "resolved": {
-        "base-light": "24px",
-        "base-dark": "24px",
-        "portfolio-light": "24px",
-        "portfolio-dark": "24px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Drawer"
-      ]
-    },
-    {
-      "name": "drawer-title-weight",
-      "cssVar": "--drawer-title-weight",
-      "type": "fontWeight",
-      "category": "component",
-      "rawValue": "{font-weight-title}",
-      "resolved": {
-        "base-light": "700",
-        "base-dark": "700",
-        "portfolio-light": "700",
-        "portfolio-dark": "700"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Drawer"
       ]
     },
     {
@@ -5550,91 +5144,6 @@
       ]
     },
     {
-      "name": "emptystate-gap",
-      "cssVar": "--emptystate-gap",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-element-gap}",
-      "resolved": {
-        "base-light": "16px",
-        "base-dark": "16px",
-        "portfolio-light": "16px",
-        "portfolio-dark": "16px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "EmptyState"
-      ]
-    },
-    {
-      "name": "emptystate-icon-margin",
-      "cssVar": "--emptystate-icon-margin",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-inline-gap}",
-      "resolved": {
-        "base-light": "8px",
-        "base-dark": "8px",
-        "portfolio-light": "8px",
-        "portfolio-dark": "8px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "EmptyState"
-      ]
-    },
-    {
-      "name": "emptystate-padding-y-compact",
-      "cssVar": "--emptystate-padding-y-compact",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-container-padding-lg}",
-      "resolved": {
-        "base-light": "48px",
-        "base-dark": "48px",
-        "portfolio-light": "48px",
-        "portfolio-dark": "48px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "EmptyState"
-      ]
-    },
-    {
-      "name": "emptystate-padding-x-compact",
-      "cssVar": "--emptystate-padding-x-compact",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-container-padding}",
-      "resolved": {
-        "base-light": "32px",
-        "base-dark": "32px",
-        "portfolio-light": "32px",
-        "portfolio-dark": "32px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "EmptyState"
-      ]
-    },
-    {
-      "name": "emptystate-gap-compact",
-      "cssVar": "--emptystate-gap-compact",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-label-gap}",
-      "resolved": {
-        "base-light": "12px",
-        "base-dark": "12px",
-        "portfolio-light": "12px",
-        "portfolio-dark": "12px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "EmptyState"
-      ]
-    },
-    {
       "name": "hero-padding-y",
       "cssVar": "--hero-padding-y",
       "type": "dimension",
@@ -5645,40 +5154,6 @@
         "base-dark": "96px",
         "portfolio-light": "96px",
         "portfolio-dark": "96px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Hero"
-      ]
-    },
-    {
-      "name": "hero-padding-x",
-      "cssVar": "--hero-padding-x",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-container-padding}",
-      "resolved": {
-        "base-light": "32px",
-        "base-dark": "32px",
-        "portfolio-light": "32px",
-        "portfolio-dark": "32px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Hero"
-      ]
-    },
-    {
-      "name": "hero-gap",
-      "cssVar": "--hero-gap",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-component-gap}",
-      "resolved": {
-        "base-light": "24px",
-        "base-dark": "24px",
-        "portfolio-light": "24px",
-        "portfolio-dark": "24px"
       },
       "axisAware": false,
       "usedBy": [
@@ -5856,57 +5331,6 @@
       ]
     },
     {
-      "name": "label-font-weight",
-      "cssVar": "--label-font-weight",
-      "type": "fontWeight",
-      "category": "component",
-      "rawValue": "{font-weight-label}",
-      "resolved": {
-        "base-light": "500",
-        "base-dark": "500",
-        "portfolio-light": "500",
-        "portfolio-dark": "500"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Label"
-      ]
-    },
-    {
-      "name": "label-required-color",
-      "cssVar": "--label-required-color",
-      "type": "color",
-      "category": "component",
-      "rawValue": "{color-feedback-error}",
-      "resolved": {
-        "base-light": "#c0392b",
-        "base-dark": "#f87171",
-        "portfolio-light": "#c0392b",
-        "portfolio-dark": "#f87171"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Label"
-      ]
-    },
-    {
-      "name": "label-gap",
-      "cssVar": "--label-gap",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-inline-gap}",
-      "resolved": {
-        "base-light": "8px",
-        "base-dark": "8px",
-        "portfolio-light": "8px",
-        "portfolio-dark": "8px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Label"
-      ]
-    },
-    {
       "name": "pagination-button-size",
       "cssVar": "--pagination-button-size",
       "type": "dimension",
@@ -5975,40 +5399,6 @@
       ]
     },
     {
-      "name": "pagination-border-radius",
-      "cssVar": "--pagination-border-radius",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{border-radius-interactive}",
-      "resolved": {
-        "base-light": "4px",
-        "base-dark": "4px",
-        "portfolio-light": "4px",
-        "portfolio-dark": "4px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Pagination"
-      ]
-    },
-    {
-      "name": "pagination-gap",
-      "cssVar": "--pagination-gap",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-inline-gap}",
-      "resolved": {
-        "base-light": "8px",
-        "base-dark": "8px",
-        "portfolio-light": "8px",
-        "portfolio-dark": "8px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Pagination"
-      ]
-    },
-    {
       "name": "radio-size",
       "cssVar": "--radio-size",
       "type": "dimension",
@@ -6026,79 +5416,11 @@
       ]
     },
     {
-      "name": "radio-border",
-      "cssVar": "--radio-border",
-      "type": "color",
-      "category": "component",
-      "rawValue": "{color-border-strong}",
-      "resolved": {
-        "base-light": "#A3A3A3",
-        "base-dark": "#737373",
-        "portfolio-light": "#A8A29E",
-        "portfolio-dark": "#78716c"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Radio"
-      ]
-    },
-    {
-      "name": "radio-border-width",
-      "cssVar": "--radio-border-width",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{border-width-interactive}",
-      "resolved": {
-        "base-light": "1px",
-        "base-dark": "1px",
-        "portfolio-light": "1px",
-        "portfolio-dark": "1px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Radio"
-      ]
-    },
-    {
       "name": "radio-indicator-size",
       "cssVar": "--radio-indicator-size",
       "type": "dimension",
       "category": "component",
       "rawValue": "{space.3}",
-      "resolved": {
-        "base-light": "12px",
-        "base-dark": "12px",
-        "portfolio-light": "12px",
-        "portfolio-dark": "12px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Radio"
-      ]
-    },
-    {
-      "name": "radio-label-gap",
-      "cssVar": "--radio-label-gap",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-label-gap}",
-      "resolved": {
-        "base-light": "12px",
-        "base-dark": "12px",
-        "portfolio-light": "12px",
-        "portfolio-dark": "12px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Radio"
-      ]
-    },
-    {
-      "name": "radio-group-gap",
-      "cssVar": "--radio-group-gap",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-label-gap}",
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
@@ -6162,40 +5484,6 @@
       ]
     },
     {
-      "name": "skeleton-background",
-      "cssVar": "--skeleton-background",
-      "type": "color",
-      "category": "component",
-      "rawValue": "{color-skeleton-base}",
-      "resolved": {
-        "base-light": "#E5E5E5",
-        "base-dark": "#404040",
-        "portfolio-light": "#E2DDD9",
-        "portfolio-dark": "#44403c"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Skeleton"
-      ]
-    },
-    {
-      "name": "skeleton-highlight",
-      "cssVar": "--skeleton-highlight",
-      "type": "color",
-      "category": "component",
-      "rawValue": "{color-skeleton-highlight}",
-      "resolved": {
-        "base-light": "#F5F5F5",
-        "base-dark": "#262626",
-        "portfolio-light": "#F4F0EB",
-        "portfolio-dark": "#292524"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Skeleton"
-      ]
-    },
-    {
       "name": "skeleton-border-radius",
       "cssVar": "--skeleton-border-radius",
       "type": "dimension",
@@ -6206,23 +5494,6 @@
         "base-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Skeleton"
-      ]
-    },
-    {
-      "name": "skeleton-duration",
-      "cssVar": "--skeleton-duration",
-      "type": "duration",
-      "category": "component",
-      "rawValue": "{duration-skeleton}",
-      "resolved": {
-        "base-light": "400ms",
-        "base-dark": "400ms",
-        "portfolio-light": "400ms",
-        "portfolio-dark": "400ms"
       },
       "axisAware": false,
       "usedBy": [
@@ -6247,21 +5518,6 @@
       ]
     },
     {
-      "name": "skeleton-height-icon",
-      "cssVar": "--skeleton-height-icon",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{size-icon-lg}",
-      "resolved": {
-        "base-light": "24px",
-        "base-dark": "24px",
-        "portfolio-light": "24px",
-        "portfolio-dark": "24px"
-      },
-      "axisAware": false,
-      "usedBy": []
-    },
-    {
       "name": "skeleton-height-rect",
       "cssVar": "--skeleton-height-rect",
       "type": "dimension",
@@ -6279,57 +5535,6 @@
       ]
     },
     {
-      "name": "spinner-size-sm",
-      "cssVar": "--spinner-size-sm",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{size-icon-sm}",
-      "resolved": {
-        "base-light": "16px",
-        "base-dark": "16px",
-        "portfolio-light": "16px",
-        "portfolio-dark": "16px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Spinner"
-      ]
-    },
-    {
-      "name": "spinner-size-md",
-      "cssVar": "--spinner-size-md",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{size-icon-md}",
-      "resolved": {
-        "base-light": "20px",
-        "base-dark": "20px",
-        "portfolio-light": "20px",
-        "portfolio-dark": "20px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Spinner"
-      ]
-    },
-    {
-      "name": "spinner-size-lg",
-      "cssVar": "--spinner-size-lg",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{size-icon-lg}",
-      "resolved": {
-        "base-light": "24px",
-        "base-dark": "24px",
-        "portfolio-light": "24px",
-        "portfolio-dark": "24px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Spinner"
-      ]
-    },
-    {
       "name": "spinner-stroke-width",
       "cssVar": "--spinner-stroke-width",
       "type": "dimension",
@@ -6340,23 +5545,6 @@
         "base-dark": "2px",
         "portfolio-light": "2px",
         "portfolio-dark": "2px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Spinner"
-      ]
-    },
-    {
-      "name": "spinner-duration",
-      "cssVar": "--spinner-duration",
-      "type": "duration",
-      "category": "component",
-      "rawValue": "{duration-spin}",
-      "resolved": {
-        "base-light": "700ms",
-        "base-dark": "700ms",
-        "portfolio-light": "700ms",
-        "portfolio-dark": "700ms"
       },
       "axisAware": false,
       "usedBy": [
@@ -6398,57 +5586,6 @@
       ]
     },
     {
-      "name": "switch-track-background",
-      "cssVar": "--switch-track-background",
-      "type": "color",
-      "category": "component",
-      "rawValue": "{color-border-strong}",
-      "resolved": {
-        "base-light": "#A3A3A3",
-        "base-dark": "#737373",
-        "portfolio-light": "#A8A29E",
-        "portfolio-dark": "#78716c"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Switch"
-      ]
-    },
-    {
-      "name": "switch-track-background-disabled",
-      "cssVar": "--switch-track-background-disabled",
-      "type": "color",
-      "category": "component",
-      "rawValue": "{color-surface-tertiary}",
-      "resolved": {
-        "base-light": "#E5E5E5",
-        "base-dark": "#404040",
-        "portfolio-light": "#E2DDD9",
-        "portfolio-dark": "#44403c"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Switch"
-      ]
-    },
-    {
-      "name": "switch-track-border-radius",
-      "cssVar": "--switch-track-border-radius",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{border-radius-pill}",
-      "resolved": {
-        "base-light": "9999px",
-        "base-dark": "9999px",
-        "portfolio-light": "9999px",
-        "portfolio-dark": "9999px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Switch"
-      ]
-    },
-    {
       "name": "switch-thumb-size",
       "cssVar": "--switch-thumb-size",
       "type": "dimension",
@@ -6463,91 +5600,6 @@
       "axisAware": false,
       "usedBy": [
         "Switch"
-      ]
-    },
-    {
-      "name": "switch-thumb-border-radius",
-      "cssVar": "--switch-thumb-border-radius",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{border-radius-pill}",
-      "resolved": {
-        "base-light": "9999px",
-        "base-dark": "9999px",
-        "portfolio-light": "9999px",
-        "portfolio-dark": "9999px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Switch"
-      ]
-    },
-    {
-      "name": "switch-label-gap",
-      "cssVar": "--switch-label-gap",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-label-gap}",
-      "resolved": {
-        "base-light": "12px",
-        "base-dark": "12px",
-        "portfolio-light": "12px",
-        "portfolio-dark": "12px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Switch"
-      ]
-    },
-    {
-      "name": "switch-duration",
-      "cssVar": "--switch-duration",
-      "type": "duration",
-      "category": "component",
-      "rawValue": "{duration-interaction}",
-      "resolved": {
-        "base-light": "200ms",
-        "base-dark": "200ms",
-        "portfolio-light": "200ms",
-        "portfolio-dark": "200ms"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Switch"
-      ]
-    },
-    {
-      "name": "table-cell-padding-x",
-      "cssVar": "--table-cell-padding-x",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-control-padding-x}",
-      "resolved": {
-        "base-light": "16px",
-        "base-dark": "16px",
-        "portfolio-light": "16px",
-        "portfolio-dark": "16px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Table"
-      ]
-    },
-    {
-      "name": "table-cell-padding-y",
-      "cssVar": "--table-cell-padding-y",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-control-padding-y}",
-      "resolved": {
-        "base-light": "12px",
-        "base-dark": "12px",
-        "portfolio-light": "12px",
-        "portfolio-dark": "12px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Table"
       ]
     },
     {
@@ -6578,57 +5630,6 @@
         "base-dark": "600",
         "portfolio-light": "600",
         "portfolio-dark": "600"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Table"
-      ]
-    },
-    {
-      "name": "table-selected-row-background",
-      "cssVar": "--table-selected-row-background",
-      "type": "color",
-      "category": "component",
-      "rawValue": "{color-surface-tertiary}",
-      "resolved": {
-        "base-light": "#E5E5E5",
-        "base-dark": "#404040",
-        "portfolio-light": "#E2DDD9",
-        "portfolio-dark": "#44403c"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Table"
-      ]
-    },
-    {
-      "name": "table-border-radius",
-      "cssVar": "--table-border-radius",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{border-radius-component}",
-      "resolved": {
-        "base-light": "8px",
-        "base-dark": "8px",
-        "portfolio-light": "8px",
-        "portfolio-dark": "8px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Table"
-      ]
-    },
-    {
-      "name": "table-sort-icon-gap",
-      "cssVar": "--table-sort-icon-gap",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-tight-gap}",
-      "resolved": {
-        "base-light": "4px",
-        "base-dark": "4px",
-        "portfolio-light": "4px",
-        "portfolio-dark": "4px"
       },
       "axisAware": false,
       "usedBy": [
@@ -6667,23 +5668,6 @@
       "axisAware": false,
       "usedBy": [
         "Tabs"
-      ]
-    },
-    {
-      "name": "tag-border-radius",
-      "cssVar": "--tag-border-radius",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{border-radius-pill}",
-      "resolved": {
-        "base-light": "9999px",
-        "base-dark": "9999px",
-        "portfolio-light": "9999px",
-        "portfolio-dark": "9999px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Tag"
       ]
     },
     {
@@ -6908,74 +5892,6 @@
       ]
     },
     {
-      "name": "tooltip-background",
-      "cssVar": "--tooltip-background",
-      "type": "color",
-      "category": "component",
-      "rawValue": "{color-surface-inverse}",
-      "resolved": {
-        "base-light": "#171717",
-        "base-dark": "#FAFAFA",
-        "portfolio-light": "#1C1917",
-        "portfolio-dark": "#fafaf9"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Tooltip"
-      ]
-    },
-    {
-      "name": "tooltip-foreground",
-      "cssVar": "--tooltip-foreground",
-      "type": "color",
-      "category": "component",
-      "rawValue": "{color-text-inverse}",
-      "resolved": {
-        "base-light": "#FAFAFA",
-        "base-dark": "#171717",
-        "portfolio-light": "#FAFAF9",
-        "portfolio-dark": "#1c1917"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Tooltip"
-      ]
-    },
-    {
-      "name": "tooltip-padding-x",
-      "cssVar": "--tooltip-padding-x",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-compact-padding-x}",
-      "resolved": {
-        "base-light": "12px",
-        "base-dark": "12px",
-        "portfolio-light": "12px",
-        "portfolio-dark": "12px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Tooltip"
-      ]
-    },
-    {
-      "name": "tooltip-padding-y",
-      "cssVar": "--tooltip-padding-y",
-      "type": "dimension",
-      "category": "component",
-      "rawValue": "{space-compact-padding-y}",
-      "resolved": {
-        "base-light": "8px",
-        "base-dark": "8px",
-        "portfolio-light": "8px",
-        "portfolio-dark": "8px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Tooltip"
-      ]
-    },
-    {
       "name": "tooltip-font-size",
       "cssVar": "--tooltip-font-size",
       "type": "dimension",
@@ -7020,40 +5936,6 @@
         "base-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Tooltip"
-      ]
-    },
-    {
-      "name": "tooltip-shadow",
-      "cssVar": "--tooltip-shadow",
-      "type": "shadow",
-      "category": "component",
-      "rawValue": "{shadow-toast}",
-      "resolved": {
-        "base-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
-        "base-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
-        "portfolio-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
-        "portfolio-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Tooltip"
-      ]
-    },
-    {
-      "name": "tooltip-z-index",
-      "cssVar": "--tooltip-z-index",
-      "type": "number",
-      "category": "component",
-      "rawValue": "{z-tooltip}",
-      "resolved": {
-        "base-light": "600",
-        "base-dark": "600",
-        "portfolio-light": "600",
-        "portfolio-dark": "600"
       },
       "axisAware": false,
       "usedBy": [

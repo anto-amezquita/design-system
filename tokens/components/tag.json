@@ -1,8 +1,4 @@
 {
-  "tag-border-radius": {
-    "$value": "{border-radius-pill}",
-    "$type": "dimension"
-  },
   "tag-padding-x": {
     "$value": "{space.3}",
     "$type": "dimension"

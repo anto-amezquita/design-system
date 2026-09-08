@@ -7,32 +7,8 @@
     "$value": "{space.5}",
     "$type": "dimension"
   },
-  "switch-track-background": {
-    "$value": "{color-border-strong}",
-    "$type": "color"
-  },
-  "switch-track-background-disabled": {
-    "$value": "{color-surface-tertiary}",
-    "$type": "color"
-  },
-  "switch-track-border-radius": {
-    "$value": "{border-radius-pill}",
-    "$type": "dimension"
-  },
   "switch-thumb-size": {
     "$value": "{space.4}",
     "$type": "dimension"
-  },
-  "switch-thumb-border-radius": {
-    "$value": "{border-radius-pill}",
-    "$type": "dimension"
-  },
-  "switch-label-gap": {
-    "$value": "{space-label-gap}",
-    "$type": "dimension"
-  },
-  "switch-duration": {
-    "$value": "{duration-interaction}",
-    "$type": "duration"
   }
 }

@@ -21,11 +21,6 @@
 | Token | Type | Value |
 |---|---|---|
 | `--label-font-size` | dimension | `14px` |
-| `--label-font-weight` | fontWeight | `500` |
-| `--label-gap` | dimension | `8px` |
-| `--label-required-color` | color | `#c0392b` † |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

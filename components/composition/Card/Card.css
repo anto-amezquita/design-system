@@ -1,11 +1,10 @@
 /*
   Tokens consumed:
 
-  --card-border-radius
-  --card-padding, --card-gap
-  --card-title-size, --card-title-weight
 
-  --card-shadow, --card-shadow-hover
+
+
+
   --font-family-heading, --line-height-heading, --line-height-body
   --letter-spacing-heading, --color-text-primary, --color-text-secondary
   --color-border-strong, --color-border-focus, --color-accent-default
@@ -14,12 +13,13 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-surface-primary
+  --border-radius-component, --space-container-padding, --space-element-gap, --font-size-lead, --font-weight-title, --shadow-card-hover
 */
 
 .card {
   background: var(--color-surface-primary);
   border: var(--border-width-default) solid var(--color-border-default);
-  border-radius: var(--card-border-radius);
+  border-radius: var(--border-radius-component);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@
 
 .card--interactive:hover {
   border-color: var(--color-border-strong);
-  box-shadow: var(--card-shadow-hover);
+  box-shadow: var(--shadow-card-hover);
 }
 
 /* Clickable modifier — only added when onClick is provided */
@@ -84,15 +84,15 @@ button.card {
 /* Compact modifier — reduced padding */
 
 .card--compact .card__header {
-  padding: calc(var(--card-padding) / 2) calc(var(--card-padding) / 2) 0;
+  padding: calc(var(--space-container-padding) / 2) calc(var(--space-container-padding) / 2) 0;
 }
 
 .card--compact .card__body {
-  padding: calc(var(--card-gap) / 2);
+  padding: calc(var(--space-element-gap) / 2);
 }
 
 .card--compact .card__footer {
-  padding: calc(var(--card-gap) / 2) calc(var(--card-padding) / 2) calc(var(--card-padding) / 2);
+  padding: calc(var(--space-element-gap) / 2) calc(var(--space-container-padding) / 2) calc(var(--space-container-padding) / 2);
 }
 
 /* Featured modifier — accent border */
@@ -117,18 +117,18 @@ button.card {
 }
 
 .card__header {
-  padding: var(--card-padding) var(--card-padding) 0;
+  padding: var(--space-container-padding) var(--space-container-padding) 0;
   display: flex;
   flex-direction: column;
-  gap: var(--card-gap);
+  gap: var(--space-element-gap);
 }
 
 .card__body {
-  padding: var(--card-gap);
+  padding: var(--space-element-gap);
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--card-gap);
+  gap: var(--space-element-gap);
 }
 
 .card__body:not(:last-child) {
@@ -136,7 +136,7 @@ button.card {
 }
 
 .card__footer {
-  padding: var(--card-gap) var(--card-padding) var(--card-padding);
+  padding: var(--space-element-gap) var(--space-container-padding) var(--space-container-padding);
   display: flex;
   align-items: center;
   gap: var(--space-inline-gap);
@@ -144,8 +144,8 @@ button.card {
 
 .card__title {
   font-family: var(--font-family-heading);
-  font-size: var(--card-title-size);
-  font-weight: var(--card-title-weight);
+  font-size: var(--font-size-lead);
+  font-weight: var(--font-weight-title);
   line-height: var(--line-height-heading);
   letter-spacing: var(--letter-spacing-heading);
   color: var(--color-text-primary);
