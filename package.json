@@ -38,12 +38,11 @@
     "tokens:dtcg": "node scripts/migrate-to-dtcg.mjs",
     "figma:status": "node scripts/figma-status.mjs",
     "typecheck": "tsc --noEmit",
-    "validate": "npm run tokens:lint && npm run tokens:lint-architecture && npm run tokens:contrast && node scripts/check-components-doc.mjs && node scripts/check-stories.mjs && npm run typecheck",
-    "a11y": "npm run build-storybook && npm run a11y:stories",
+    "test": "vitest run",
+    "validate": "npm run tokens:lint && npm run tokens:lint-architecture && npm run tokens:contrast && node scripts/check-components-doc.mjs && node scripts/check-stories.mjs && npm run typecheck && npm run test",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --stats-json",
-    "chromatic": "chromatic --build-script-name=build-storybook",
-    "a11y:stories": "concurrently -k -s first -n SB,TEST \"http-server storybook-static --port 6006 --silent\" \"wait-on tcp:127.0.0.1:6006 && test-storybook --url http://127.0.0.1:6006\""
+    "chromatic": "chromatic --build-script-name=build-storybook"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -71,17 +70,15 @@
     "@storybook/addon-docs": "^10.3.6",
     "@storybook/addon-vitest": "^10.6.0",
     "@storybook/react-vite": "^10.3.6",
-    "@storybook/test-runner": "^0.24.4",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
+    "@types/node": "latest",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitest/browser-playwright": "latest",
     "@vitest/coverage-v8": "latest",
     "chromatic": "^18.0.1",
-    "concurrently": "^10.0.3",
     "glob": "^11.0.0",
-    "http-server": "^14.1.1",
     "playwright": "latest",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
@@ -90,7 +87,6 @@
     "typescript": "^6.0.3",
     "vite": "^6.0.0",
     "vitest": "latest",
-    "wait-on": "^9.0.10",
     "zod": "^3.25.76"
   }
 }

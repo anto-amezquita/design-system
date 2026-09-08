@@ -92,11 +92,14 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
-      # axe-core against every rendered story (Storybook test-runner).
-      # Contrast rules run here too; token-pair contrast is still enforced
-      # separately by check-contrast.mjs across all mode combinations.
-      - name: A11y audit (axe on rendered stories)
-        run: npm run a11y:stories
+      # Runs both Vitest projects: the addon-vitest "storybook" project (every
+      # story as a browser test, axe a11y checks via addon-a11y running through
+      # the same pipeline, ADR 0006) and the "unit" project (composed-trigger
+      # and other owned-behavior contracts not tied to a visual state, e.g.
+      # Button.slot.test.tsx). Runs against source via Vite, not the built
+      # Storybook output above, so it doesn't depend on the previous step.
+      - name: Run tests (Storybook stories + unit contracts)
+        run: npm run test
 
       - name: Publish to Chromatic
         uses: chromaui/action@v18
