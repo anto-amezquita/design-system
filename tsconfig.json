@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["components", "lib", "hooks", "scripts", ".storybook"],
+  "include": ["components", "lib", "hooks", "scripts", ".storybook", "vitest.setup.ts"],
   "exclude": ["node_modules", "storybook-static"]
 }
