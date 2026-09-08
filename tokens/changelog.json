@@ -212,6 +212,14 @@
   ],
   "unreleased": [
     {
+      "sha": "95b55e8",
+      "type": "fix",
+      "scope": "alert-dialog",
+      "message": "verify and switch to Button for cancel/action",
+      "date": "2026-09-08",
+      "breaking": false
+    },
+    {
       "sha": "a05de97",
       "type": "fix",
       "scope": "button",
