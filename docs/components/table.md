@@ -21,23 +21,13 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--table-body-color` | color | `#0A0A0A` † |
-| `--table-body-font-size` | dimension | `16px` |
 | `--table-border-radius` | dimension | `8px` |
 | `--table-cell-padding-x` | dimension | `16px` |
 | `--table-cell-padding-y` | dimension | `12px` |
-| `--table-header-background` | color | `#F4F0EB` † |
-| `--table-header-color` | color | `#57534E` † |
 | `--table-header-font-size` | dimension | `12px` |
 | `--table-header-font-weight` | fontWeight | `600` |
-| `--table-row-border` | color | `#E2DDD9` † |
-| `--table-row-border-width` | dimension | `1px` |
-| `--table-row-hover-background` | color | `#F4F0EB` † |
 | `--table-selected-row-background` | color | `#E2DDD9` † |
-| `--table-sort-icon-color` | color | `#57534E` † |
-| `--table-sort-icon-color-active` | color | `#292524` † |
 | `--table-sort-icon-gap` | dimension | `4px` |
-| `--table-stripe-background` | color | `#F4F0EB` † |
 
 † resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 

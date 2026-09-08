@@ -22,19 +22,11 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--tag-accent-background` | color | `#292524` † |
-| `--tag-accent-border` | color | `#292524` † |
 | `--tag-accent-foreground` | color | `#FFFFFF` † |
-| `--tag-background` | color | `#F4F0EB` † |
-| `--tag-border` | color | `#E2DDD9` † |
 | `--tag-border-radius` | dimension | `9999px` |
-| `--tag-border-width` | dimension | `1px` |
 | `--tag-font-size` | dimension | `12px` |
 | `--tag-font-weight` | fontWeight | `500` |
-| `--tag-foreground` | color | `#57534E` † |
 | `--tag-muted-background` | color | `transparent` |
-| `--tag-muted-border` | color | `#E2DDD9` † |
-| `--tag-muted-foreground` | color | `#57534E` † |
 | `--tag-padding-x` | dimension | `12px` |
 | `--tag-padding-y` | dimension | `4px` |
 

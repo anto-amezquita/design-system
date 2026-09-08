@@ -1,11 +1,14 @@
 /*
   Tokens consumed:
-  --tag-background, --tag-foreground, --tag-border, --tag-border-width, --tag-border-radius
+  --tag-border-radius
   --tag-padding-x, --tag-padding-y, --tag-font-size, --tag-font-weight
-  --tag-accent-background, --tag-accent-foreground, --tag-accent-border
-  --tag-muted-background, --tag-muted-foreground, --tag-muted-border
+  --tag-accent-foreground
+  --tag-muted-background
   --font-family-base, --duration-interaction, --easing-default, --color-border-focus
   --space-inline-gap
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-surface-secondary, --color-border-default, --border-width-default, --color-accent-default
 */
 
 .tag {
@@ -18,23 +21,23 @@
   font-weight: var(--tag-font-weight);
   line-height: 1;
   border-radius: var(--tag-border-radius);
-  border: var(--tag-border-width) solid var(--tag-border);
-  background: var(--tag-background);
-  color: var(--tag-foreground);
+  border: var(--border-width-default) solid var(--color-border-default);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
   white-space: nowrap;
   user-select: none;
 }
 
 .tag--accent {
-  background: var(--tag-accent-background);
+  background: var(--color-accent-default);
   color: var(--tag-accent-foreground);
-  border-color: var(--tag-accent-border);
+  border-color: var(--color-accent-default);
 }
 
 .tag--muted {
   background: var(--tag-muted-background);
-  color: var(--tag-muted-foreground);
-  border-color: var(--tag-muted-border);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border-default);
 }
 
 /* Interactive tag — resets browser button defaults, adds cursor and hover/focus.

@@ -1,17 +1,19 @@
 /*
   Tokens consumed:
   --button-padding-x, --button-padding-y
-  --button-font-size, --button-font-weight
+  --button-font-weight
   --button-border-radius, --button-border-width, --button-outline-border-width, --button-duration
   --button-icon-gap, --button-spinner-duration
   --button-arrow-nudge, --button-glow-size
-  --button-primary-background, --button-primary-foreground, --button-primary-border
+  --button-primary-foreground
   --button-primary-background-hover
   --button-secondary-background, --button-secondary-foreground, --button-secondary-border
   --button-secondary-background-hover, --button-secondary-foreground-hover
-  --button-ghost-background, --button-ghost-foreground, --button-ghost-border
-  --button-ghost-background-hover
+  --button-ghost-background, --button-ghost-border
   --color-border-focus, --font-family-base, --easing-default, --opacity-disabled
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default
 */
 
 .button {
@@ -21,12 +23,12 @@
   justify-content: center;
   padding: var(--button-padding-y) var(--button-padding-x);
   font-family: var(--font-family-base);
-  font-size: var(--button-font-size);
+  font-size: var(--font-size-control);
   font-weight: var(--button-font-weight);
   line-height: 1;
   border-radius: var(--button-border-radius);
-  border: var(--button-border-width) solid var(--button-primary-border);
-  background: var(--button-primary-background);
+  border: var(--button-border-width) solid var(--color-accent-default);
+  background: var(--color-accent-default);
   color: var(--button-primary-foreground);
   text-decoration: none;
   cursor: pointer;
@@ -93,7 +95,7 @@
 
 .button--ghost {
   background: var(--button-ghost-background);
-  color: var(--button-ghost-foreground);
+  color: var(--color-text-primary);
   border-color: var(--button-ghost-border);
   border-width: var(--button-outline-border-width);
 }
@@ -209,7 +211,7 @@
 }
 
 .button--ghost .button__wipe path {
-  fill: var(--button-ghost-background-hover);
+  fill: var(--color-surface-secondary);
 }
 
 @media (hover: none) {
@@ -224,7 +226,7 @@
   }
 
   .button--ghost:active {
-    background: var(--button-ghost-background-hover);
+    background: var(--color-surface-secondary);
   }
 
   .button--link:active {
@@ -262,7 +264,7 @@
   }
 
   .button--ghost:hover {
-    background: var(--button-ghost-background-hover);
+    background: var(--color-surface-secondary);
   }
 
   /* Link resets must come after the generic .button:hover rule to win the cascade */

@@ -7,14 +7,6 @@
     "$value": "{space-control-padding-y}",
     "$type": "dimension"
   },
-  "table-header-background": {
-    "$value": "{color-surface-secondary}",
-    "$type": "color"
-  },
-  "table-header-color": {
-    "$value": "{color-text-secondary}",
-    "$type": "color"
-  },
   "table-header-font-size": {
     "$value": "{font-size.xs}",
     "$type": "dimension"
@@ -22,38 +14,6 @@
   "table-header-font-weight": {
     "$value": "{font-weight.semibold}",
     "$type": "fontWeight"
-  },
-  "table-body-color": {
-    "$value": "{color-text-primary}",
-    "$type": "color"
-  },
-  "table-body-font-size": {
-    "$value": "{font-size-control}",
-    "$type": "dimension"
-  },
-  "table-row-border": {
-    "$value": "{color-border-default}",
-    "$type": "color"
-  },
-  "table-row-border-width": {
-    "$value": "{border-width-default}",
-    "$type": "dimension"
-  },
-  "table-row-hover-background": {
-    "$value": "{color-surface-secondary}",
-    "$type": "color"
-  },
-  "table-stripe-background": {
-    "$value": "{color-surface-secondary}",
-    "$type": "color"
-  },
-  "table-sort-icon-color": {
-    "$value": "{color-text-secondary}",
-    "$type": "color"
-  },
-  "table-sort-icon-color-active": {
-    "$value": "{color-accent-default}",
-    "$type": "color"
   },
   "table-selected-row-background": {
     "$value": "{color-surface-tertiary}",

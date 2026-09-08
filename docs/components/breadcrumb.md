@@ -19,16 +19,9 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--breadcrumb-current-color` | color | `#0A0A0A` † |
 | `--breadcrumb-current-max-width` | dimension | `240px` |
 | `--breadcrumb-font-size` | dimension | `14px` |
-| `--breadcrumb-gap` | dimension | `8px` |
 | `--breadcrumb-item-max-width` | dimension | `200px` |
-| `--breadcrumb-link-color` | color | `#57534E` † |
-| `--breadcrumb-link-color-hover` | color | `#0A0A0A` † |
-| `--breadcrumb-separator-color` | color | `#57534E` † |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

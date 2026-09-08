@@ -1,20 +1,4 @@
 {
-  "input-background": {
-    "$value": "{color-surface-primary}",
-    "$type": "color"
-  },
-  "input-background-disabled": {
-    "$value": "{color-surface-secondary}",
-    "$type": "color"
-  },
-  "input-foreground": {
-    "$value": "{color-text-primary}",
-    "$type": "color"
-  },
-  "input-border": {
-    "$value": "{color-border-default}",
-    "$type": "color"
-  },
   "input-border-width": {
     "$value": "{border-width-interactive}",
     "$type": "dimension"
@@ -43,14 +27,6 @@
     "$value": "{space-control-padding-y}",
     "$type": "dimension"
   },
-  "input-font-size": {
-    "$value": "{font-size-control}",
-    "$type": "dimension"
-  },
-  "input-placeholder-color": {
-    "$value": "{color-text-secondary}",
-    "$type": "color"
-  },
   "input-label-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension"
@@ -59,32 +35,12 @@
     "$value": "{font-weight-label}",
     "$type": "fontWeight"
   },
-  "input-label-color": {
-    "$value": "{color-text-primary}",
-    "$type": "color"
-  },
   "input-hint-size": {
     "$value": "{font-size.xs}",
     "$type": "dimension"
   },
-  "input-hint-color": {
-    "$value": "{color-text-secondary}",
-    "$type": "color"
-  },
   "input-error-color": {
     "$value": "{color-feedback-error}",
-    "$type": "color"
-  },
-  "input-prefix-color": {
-    "$value": "{color-text-secondary}",
-    "$type": "color"
-  },
-  "input-suffix-color": {
-    "$value": "{color-text-secondary}",
-    "$type": "color"
-  },
-  "input-clear-color": {
-    "$value": "{color-text-secondary}",
     "$type": "color"
   }
 }

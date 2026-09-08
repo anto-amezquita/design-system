@@ -1,12 +1,15 @@
 /*
   Tokens consumed:
-  --textarea-background, --textarea-background-disabled, --textarea-foreground
-  --textarea-border, --textarea-border-width, --textarea-border-hover, --textarea-border-focus, --textarea-border-error
-  --textarea-border-radius, --textarea-padding-x, --textarea-padding-y, --textarea-font-size
-  --textarea-placeholder-color, --textarea-label-size, --textarea-label-weight, --textarea-label-color
-  --textarea-hint-size, --textarea-hint-color, --textarea-error-color
+
+  --textarea-border-width, --textarea-border-hover, --textarea-border-focus, --textarea-border-error
+  --textarea-border-radius, --textarea-padding-x, --textarea-padding-y
+  --textarea-label-size, --textarea-label-weight
+  --textarea-hint-size, --textarea-error-color
   --font-family-base, --duration-interaction, --easing-default
-  --space-inline-gap, --opacity-disabled, --color-border-focus, --color-text-secondary, --font-size-xs
+  --space-inline-gap, --opacity-disabled, --color-border-focus, --font-size-xs
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --font-size-control, --color-surface-primary
 */
 
 .textarea-field {
@@ -19,14 +22,14 @@
   font-family: var(--font-family-base);
   font-size: var(--textarea-label-size);
   font-weight: var(--textarea-label-weight);
-  color: var(--textarea-label-color);
+  color: var(--color-text-primary);
   line-height: 1;
 }
 
 .textarea-field__wrapper {
   display: flex;
-  background: var(--textarea-background);
-  border: var(--textarea-border-width) solid var(--textarea-border);
+  background: var(--color-surface-primary);
+  border: var(--textarea-border-width) solid var(--color-border-default);
   border-radius: var(--textarea-border-radius);
   transition: border-color var(--duration-interaction) var(--easing-default);
   box-sizing: border-box;
@@ -43,7 +46,7 @@
 }
 
 .textarea-field__wrapper--disabled {
-  background: var(--textarea-background-disabled);
+  background: var(--color-surface-secondary);
   opacity: var(--opacity-disabled);
   cursor: not-allowed;
 }
@@ -56,8 +59,8 @@
   background: transparent;
   outline: none;
   font-family: var(--font-family-base);
-  font-size: var(--textarea-font-size);
-  color: var(--textarea-foreground);
+  font-size: var(--font-size-control);
+  color: var(--color-text-primary);
   resize: vertical;
   cursor: inherit;
   box-sizing: border-box;
@@ -65,7 +68,7 @@
 }
 
 .textarea-field__textarea::placeholder {
-  color: var(--textarea-placeholder-color);
+  color: var(--color-text-secondary);
 }
 
 .textarea-field__textarea:disabled {
@@ -88,7 +91,7 @@
 .textarea-field__hint {
   font-family: var(--font-family-base);
   font-size: var(--textarea-hint-size);
-  color: var(--textarea-hint-color);
+  color: var(--color-text-secondary);
   line-height: var(--line-height-body);
 }
 
@@ -101,7 +104,7 @@
 .textarea-field__count {
   font-family: var(--font-family-base);
   font-size: var(--textarea-hint-size);
-  color: var(--textarea-hint-color);
+  color: var(--color-text-secondary);
   text-align: right;
   line-height: 1;
 }

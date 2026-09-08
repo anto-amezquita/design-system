@@ -1,14 +1,14 @@
 /*
   Tokens consumed:
-  --accordion-border-color, --accordion-border-width
-  --accordion-trigger-color, --accordion-trigger-hover-background
   --accordion-trigger-padding-x, --accordion-trigger-padding-y
-  --accordion-trigger-font-size, --accordion-trigger-font-weight
-  --accordion-content-color
+  --accordion-trigger-font-weight
   --accordion-content-padding-x, --accordion-content-padding-bottom
-  --accordion-icon-color, --accordion-icon-size
+  --accordion-icon-size
   --accordion-duration-expand, --accordion-duration-collapse
   --font-family-base, --easing-default, --color-border-focus, --border-radius-sm, --opacity-disabled
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control
 */
 
 /* Root */
@@ -21,11 +21,11 @@
 /* Item */
 
 .accordion__item {
-  border-bottom: var(--accordion-border-width) solid var(--accordion-border-color);
+  border-bottom: var(--border-width-default) solid var(--color-border-default);
 }
 
 .accordion__item:first-child {
-  border-top: var(--accordion-border-width) solid var(--accordion-border-color);
+  border-top: var(--border-width-default) solid var(--color-border-default);
 }
 
 .accordion__item[data-disabled] {
@@ -50,9 +50,9 @@
   padding: var(--accordion-trigger-padding-y) var(--accordion-trigger-padding-x);
   background: none;
   border: none;
-  color: var(--accordion-trigger-color);
+  color: var(--color-text-primary);
   font-family: inherit;
-  font-size: var(--accordion-trigger-font-size);
+  font-size: var(--font-size-control);
   font-weight: var(--accordion-trigger-font-weight);
   line-height: var(--line-height-body);
   text-align: left;
@@ -62,7 +62,7 @@
 }
 
 .accordion__trigger:hover {
-  background: var(--accordion-trigger-hover-background);
+  background: var(--color-surface-secondary);
 }
 
 .accordion__trigger:focus-visible {
@@ -82,7 +82,7 @@
 
 .accordion__icon {
   flex-shrink: 0;
-  color: var(--accordion-icon-color);
+  color: var(--color-text-secondary);
   width: var(--accordion-icon-size);
   height: var(--accordion-icon-size);
   transition: transform var(--accordion-duration-collapse) var(--easing-default);
@@ -97,7 +97,7 @@
 
 .accordion__content {
   overflow: hidden;
-  color: var(--accordion-content-color);
+  color: var(--color-text-secondary);
 }
 
 /* Gate open animation on data-mounted so items open via defaultValue don't
@@ -125,7 +125,7 @@
 .accordion__body {
   padding-inline: var(--accordion-content-padding-x);
   padding-block-end: var(--accordion-content-padding-bottom);
-  font-size: var(--accordion-trigger-font-size);
+  font-size: var(--font-size-control);
   line-height: var(--line-height-body);
 }
 

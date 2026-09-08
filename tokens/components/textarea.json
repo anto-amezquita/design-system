@@ -1,20 +1,4 @@
 {
-  "textarea-background": {
-    "$value": "{color-surface-primary}",
-    "$type": "color"
-  },
-  "textarea-background-disabled": {
-    "$value": "{color-surface-secondary}",
-    "$type": "color"
-  },
-  "textarea-foreground": {
-    "$value": "{color-text-primary}",
-    "$type": "color"
-  },
-  "textarea-border": {
-    "$value": "{color-border-default}",
-    "$type": "color"
-  },
   "textarea-border-width": {
     "$value": "{border-width-interactive}",
     "$type": "dimension"
@@ -43,14 +27,6 @@
     "$value": "{space-control-padding-y}",
     "$type": "dimension"
   },
-  "textarea-font-size": {
-    "$value": "{font-size-control}",
-    "$type": "dimension"
-  },
-  "textarea-placeholder-color": {
-    "$value": "{color-text-secondary}",
-    "$type": "color"
-  },
   "textarea-label-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension"
@@ -59,17 +35,9 @@
     "$value": "{font-weight-label}",
     "$type": "fontWeight"
   },
-  "textarea-label-color": {
-    "$value": "{color-text-primary}",
-    "$type": "color"
-  },
   "textarea-hint-size": {
     "$value": "{font-size.xs}",
     "$type": "dimension"
-  },
-  "textarea-hint-color": {
-    "$value": "{color-text-secondary}",
-    "$type": "color"
   },
   "textarea-error-color": {
     "$value": "{color-feedback-error}",

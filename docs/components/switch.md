@@ -26,15 +26,11 @@
 | Token | Type | Value |
 |---|---|---|
 | `--switch-duration` | duration | `200ms` |
-| `--switch-label-color` | color | `#0A0A0A` † |
-| `--switch-label-color-disabled` | color | `#57534E` † |
 | `--switch-label-gap` | dimension | `12px` |
-| `--switch-label-size` | dimension | `16px` |
 | `--switch-thumb-background` | color | `#FFFFFF` † |
 | `--switch-thumb-border-radius` | dimension | `9999px` |
 | `--switch-thumb-size` | dimension | `16px` |
 | `--switch-track-background` | color | `#A8A29E` † |
-| `--switch-track-background-checked` | color | `#292524` † |
 | `--switch-track-background-disabled` | color | `#E2DDD9` † |
 | `--switch-track-border-radius` | dimension | `9999px` |
 | `--switch-track-height` | dimension | `24px` |

@@ -29,25 +29,17 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--textarea-background` | color | `#FAFAF9` † |
-| `--textarea-background-disabled` | color | `#F4F0EB` † |
-| `--textarea-border` | color | `#E2DDD9` † |
 | `--textarea-border-error` | color | `#c0392b` † |
 | `--textarea-border-focus` | color | `#0A0A0A` † |
 | `--textarea-border-hover` | color | `#A8A29E` † |
 | `--textarea-border-radius` | dimension | `4px` |
 | `--textarea-border-width` | dimension | `1px` |
 | `--textarea-error-color` | color | `#c0392b` † |
-| `--textarea-font-size` | dimension | `16px` |
-| `--textarea-foreground` | color | `#0A0A0A` † |
-| `--textarea-hint-color` | color | `#57534E` † |
 | `--textarea-hint-size` | dimension | `12px` |
-| `--textarea-label-color` | color | `#0A0A0A` † |
 | `--textarea-label-size` | dimension | `14px` |
 | `--textarea-label-weight` | fontWeight | `500` |
 | `--textarea-padding-x` | dimension | `16px` |
 | `--textarea-padding-y` | dimension | `12px` |
-| `--textarea-placeholder-color` | color | `#57534E` † |
 
 † resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 

@@ -12,10 +12,6 @@
   ],
   "cssVars": {
     "light": {
-      "toast-background": "#FAFAF9",
-      "toast-foreground": "#0A0A0A",
-      "toast-border": "#E2DDD9",
-      "toast-border-width": "1px",
       "toast-border-radius": "8px",
       "toast-padding-x": "24px",
       "toast-padding-y": "16px",
@@ -36,10 +32,6 @@
       "toast-close-offset": "8px"
     },
     "dark": {
-      "toast-background": "#1c1917",
-      "toast-foreground": "#fafaf9",
-      "toast-border": "#57534e",
-      "toast-border-width": "1px",
       "toast-border-radius": "8px",
       "toast-padding-x": "24px",
       "toast-padding-y": "16px",

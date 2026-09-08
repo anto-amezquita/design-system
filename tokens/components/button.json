@@ -7,10 +7,6 @@
     "$value": "{space.3}",
     "$type": "dimension"
   },
-  "button-font-size": {
-    "$value": "{font-size-control}",
-    "$type": "dimension"
-  },
   "button-font-weight": {
     "$value": "{font-weight-control}",
     "$type": "fontWeight"
@@ -31,16 +27,8 @@
     "$value": "{duration-interaction}",
     "$type": "duration"
   },
-  "button-primary-background": {
-    "$value": "{color-accent-default}",
-    "$type": "color"
-  },
   "button-primary-foreground": {
     "$value": "{color-accent-foreground}",
-    "$type": "color"
-  },
-  "button-primary-border": {
-    "$value": "{color-accent-default}",
     "$type": "color"
   },
   "button-primary-background-hover": {
@@ -71,16 +59,8 @@
     "$value": "transparent",
     "$type": "color"
   },
-  "button-ghost-foreground": {
-    "$value": "{color-text-primary}",
-    "$type": "color"
-  },
   "button-ghost-border": {
     "$value": "transparent",
-    "$type": "color"
-  },
-  "button-ghost-background-hover": {
-    "$value": "{color-surface-secondary}",
     "$type": "color"
   },
   "button-icon-gap": {

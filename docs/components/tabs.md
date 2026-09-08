@@ -21,26 +21,15 @@ Also accepts all props of: `React.ComponentPropsWithoutRef<typeof RadixTabs.Root
 |---|---|---|
 | `--tabs-content-padding-top` | dimension | `16px` |
 | `--tabs-duration` | duration | `200ms` |
-| `--tabs-indicator-color` | color | `#292524` † |
 | `--tabs-indicator-height` | dimension | `2px` |
-| `--tabs-list-border-bottom` | color | `#E2DDD9` † |
-| `--tabs-list-border-width` | dimension | `1px` |
-| `--tabs-pill-background-active` | color | `#F4F0EB` † |
 | `--tabs-pill-border-radius` | dimension | `4px` |
 | `--tabs-pill-gap` | dimension | `4px` |
 | `--tabs-sm-trigger-padding-x` | dimension | `12px` |
 | `--tabs-sm-trigger-padding-y` | dimension | `8px` |
-| `--tabs-trigger-background-hover` | color | `#F4F0EB` † |
-| `--tabs-trigger-color` | color | `#57534E` † |
-| `--tabs-trigger-color-active` | color | `#0A0A0A` † |
-| `--tabs-trigger-color-hover` | color | `#0A0A0A` † |
-| `--tabs-trigger-font-size` | dimension | `16px` |
 | `--tabs-trigger-font-weight` | fontWeight | `500` |
 | `--tabs-trigger-gap` | dimension | `4px` |
 | `--tabs-trigger-padding-x` | dimension | `16px` |
 | `--tabs-trigger-padding-y` | dimension | `12px` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

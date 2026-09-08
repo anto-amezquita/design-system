@@ -20,7 +20,6 @@
 | Token | Type | Value |
 |---|---|---|
 | `--badge-border-radius` | dimension | `9999px` |
-| `--badge-border-width` | dimension | `1px` |
 | `--badge-count-size` | dimension | `20px` |
 | `--badge-dot-size` | dimension | `8px` |
 | `--badge-error-background` | color | `#FEF2F2` † |
@@ -32,9 +31,6 @@
 | `--badge-info-background` | color | `#EFF6FF` † |
 | `--badge-info-border` | color | `#2563EB` † |
 | `--badge-info-foreground` | color | `#1D4ED8` † |
-| `--badge-neutral-background` | color | `#F4F0EB` † |
-| `--badge-neutral-border` | color | `#E2DDD9` † |
-| `--badge-neutral-foreground` | color | `#57534E` † |
 | `--badge-padding-x` | dimension | `8px` |
 | `--badge-padding-y` | dimension | `4px` |
 | `--badge-success-background` | color | `#F0FDF4` † |

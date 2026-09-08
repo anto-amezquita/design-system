@@ -28,12 +28,7 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--drawer-background` | color | `#FAFAF9` † |
-| `--drawer-border` | color | `#E2DDD9` † |
-| `--drawer-border-width` | dimension | `1px` |
 | `--drawer-close-align-offset` | dimension | `2px` |
-| `--drawer-close-color` | color | `#57534E` † |
-| `--drawer-close-hover` | color | `#0A0A0A` † |
 | `--drawer-close-size` | dimension | `28px` |
 | `--drawer-gap` | dimension | `24px` |
 | `--drawer-max-height-full` | dimension | `100vh` |

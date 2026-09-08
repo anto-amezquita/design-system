@@ -23,23 +23,14 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--accordion-border-color` | color | `#E2DDD9` † |
-| `--accordion-border-width` | dimension | `1px` |
-| `--accordion-content-color` | color | `#57534E` † |
 | `--accordion-content-padding-bottom` | dimension | `24px` |
 | `--accordion-content-padding-x` | dimension | `24px` |
 | `--accordion-duration-collapse` | duration | `200ms` |
 | `--accordion-duration-expand` | duration | `650ms` |
-| `--accordion-icon-color` | color | `#57534E` † |
 | `--accordion-icon-size` | dimension | `20px` |
-| `--accordion-trigger-color` | color | `#0A0A0A` † |
-| `--accordion-trigger-font-size` | dimension | `16px` |
 | `--accordion-trigger-font-weight` | fontWeight | `500` |
-| `--accordion-trigger-hover-background` | color | `#F4F0EB` † |
 | `--accordion-trigger-padding-x` | dimension | `24px` |
 | `--accordion-trigger-padding-y` | dimension | `16px` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

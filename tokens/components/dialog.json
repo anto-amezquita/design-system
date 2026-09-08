@@ -1,16 +1,4 @@
 {
-  "dialog-background": {
-    "$value": "{color-surface-primary}",
-    "$type": "color"
-  },
-  "dialog-border": {
-    "$value": "{color-border-default}",
-    "$type": "color"
-  },
-  "dialog-border-width": {
-    "$value": "{border-width-default}",
-    "$type": "dimension"
-  },
   "dialog-border-radius": {
     "$value": "{border-radius-component}",
     "$type": "dimension"
@@ -42,14 +30,6 @@
   "dialog-close-size": {
     "$value": "{size.icon-interactive}",
     "$type": "dimension"
-  },
-  "dialog-close-color": {
-    "$value": "{color-text-secondary}",
-    "$type": "color"
-  },
-  "dialog-close-hover": {
-    "$value": "{color-text-primary}",
-    "$type": "color"
   },
   "dialog-max-width-sm": {
     "$value": "{size.dialog-sm}",

@@ -15,14 +15,6 @@
     "$value": "{border-radius-component}",
     "$type": "dimension"
   },
-  "alert-border-width": {
-    "$value": "{border-width-default}",
-    "$type": "dimension"
-  },
-  "alert-font-size": {
-    "$value": "{font-size-control}",
-    "$type": "dimension"
-  },
   "alert-title-weight": {
     "$value": "{font-weight.semibold}",
     "$type": "fontWeight"

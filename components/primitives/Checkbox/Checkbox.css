@@ -1,11 +1,14 @@
 /*
   Tokens consumed:
-  --checkbox-size, --checkbox-background, --checkbox-background-checked, --checkbox-background-disabled
-  --checkbox-border, --checkbox-border-width, --checkbox-border-hover, --checkbox-border-radius
+  --checkbox-size
+  --checkbox-border, --checkbox-border-width, --checkbox-border-radius
   --checkbox-foreground-checked, --checkbox-foreground-indeterminate
-  --checkbox-label-gap, --checkbox-label-size, --checkbox-label-color, --checkbox-label-color-disabled
+  --checkbox-label-gap
   --font-family-base, --duration-interaction, --easing-default
   --opacity-disabled, --color-border-focus
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-surface-primary
 */
 
 /* Wrapper — owns layout and disabled opacity */
@@ -36,7 +39,7 @@
   flex-shrink: 0;
   width: var(--checkbox-size);
   height: var(--checkbox-size);
-  background: var(--checkbox-background);
+  background: var(--color-surface-primary);
   border: var(--checkbox-border-width) solid var(--checkbox-border);
   border-radius: var(--checkbox-border-radius);
   cursor: pointer;
@@ -53,7 +56,7 @@
 }
 
 .checkbox__root:hover:not([disabled]) {
-  border-color: var(--checkbox-border-hover);
+  border-color: var(--color-accent-default);
 }
 
 .checkbox__root:focus-visible {
@@ -63,12 +66,12 @@
 
 .checkbox__root[data-state='checked'],
 .checkbox__root[data-state='indeterminate'] {
-  background: var(--checkbox-background-checked);
-  border-color: var(--checkbox-background-checked);
+  background: var(--color-accent-default);
+  border-color: var(--color-accent-default);
 }
 
 .checkbox__root[disabled] {
-  background: var(--checkbox-background-disabled);
+  background: var(--color-surface-secondary);
   cursor: not-allowed;
 }
 
@@ -104,15 +107,15 @@
 
 .checkbox__label {
   font-family: var(--font-family-base);
-  font-size: var(--checkbox-label-size);
-  color: var(--checkbox-label-color);
+  font-size: var(--font-size-control);
+  color: var(--color-text-primary);
   cursor: pointer;
   line-height: var(--line-height-body);
   user-select: none;
 }
 
 .checkbox--disabled .checkbox__label {
-  color: var(--checkbox-label-color-disabled);
+  color: var(--color-text-secondary);
   cursor: not-allowed;
 }
 

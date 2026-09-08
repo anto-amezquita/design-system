@@ -9,3 +9,4 @@ storybook-static/
 a11y-report.json
 token-violations.json
 contrast-failures.json
+docs/token-audit.json

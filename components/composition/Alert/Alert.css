@@ -1,7 +1,7 @@
 /*
   Tokens consumed:
   --alert-padding-x, --alert-padding-y, --alert-gap
-  --alert-border-radius, --alert-border-width, --alert-font-size, --alert-title-weight, --alert-icon-size
+  --alert-border-radius, --alert-title-weight, --alert-icon-size
   --alert-content-gap, --alert-close-offset, --alert-exit-distance
   --alert-success-background, --alert-success-foreground, --alert-success-border
   --alert-warning-background, --alert-warning-foreground, --alert-warning-border
@@ -9,6 +9,9 @@
   --alert-info-background,    --alert-info-foreground,    --alert-info-border
   --font-family-base, --line-height-body
   --border-radius-interactive, --duration-interaction, --easing-default, --color-border-focus
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --border-width-default, --font-size-control
 */
 
 .alert {
@@ -17,10 +20,10 @@
   gap: var(--alert-gap);
   padding: var(--alert-padding-y) var(--alert-padding-x);
   border-radius: var(--alert-border-radius);
-  border-width: var(--alert-border-width);
+  border-width: var(--border-width-default);
   border-style: solid;
   font-family: var(--font-family-base);
-  font-size: var(--alert-font-size);
+  font-size: var(--font-size-control);
   line-height: var(--line-height-body);
 }
 

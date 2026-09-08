@@ -1,8 +1,11 @@
 /*
   Tokens consumed:
-  --label-font-size, --label-font-weight, --label-color, --label-color-disabled
+  --label-font-size, --label-font-weight
   --label-required-color, --label-gap, --line-height-label
   --font-family-base
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-text-primary
 */
 
 .label {
@@ -12,7 +15,7 @@
   font-family: var(--font-family-base);
   font-size: var(--label-font-size);
   font-weight: var(--label-font-weight);
-  color: var(--label-color);
+  color: var(--color-text-primary);
   line-height: var(--line-height-label);
   cursor: default;
 }
@@ -23,5 +26,5 @@
 }
 
 .label--disabled {
-  color: var(--label-color-disabled);
+  color: var(--color-text-secondary);
 }

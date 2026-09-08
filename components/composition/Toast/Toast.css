@@ -1,6 +1,6 @@
 /*
   Tokens consumed:
-  --toast-background, --toast-foreground, --toast-border, --toast-border-width
+
   --toast-border-radius, --toast-padding-x, --toast-padding-y
   --toast-gap, --toast-max-width, --toast-shadow, --toast-z-index
   --toast-title-weight, --toast-font-size, --toast-icon-size, --toast-accent-width
@@ -12,6 +12,9 @@
   --border-radius-interactive, --duration-interaction, --duration-transition, --easing-default
   --color-border-focus, --color-text-secondary, --color-text-primary
   --size-touch-target
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-border-default, --border-width-default, --color-surface-primary
 */
 
 /* Viewport — fixed top-right.
@@ -41,14 +44,14 @@
   align-items: flex-start;
   gap: var(--toast-gap);
   padding: var(--toast-padding-y) var(--toast-padding-x);
-  background: var(--toast-background);
-  border: var(--toast-border-width) solid var(--toast-border);
+  background: var(--color-surface-primary);
+  border: var(--border-width-default) solid var(--color-border-default);
   border-radius: var(--toast-border-radius);
   box-shadow: var(--toast-shadow);
   font-family: var(--font-family-base);
   font-size: var(--toast-font-size);
   line-height: var(--line-height-body);
-  color: var(--toast-foreground);
+  color: var(--color-text-primary);
   animation: toast-slide-in var(--duration-transition) var(--easing-default);
   will-change: transform, opacity;
 }

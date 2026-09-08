@@ -1,11 +1,14 @@
 /*
   Tokens consumed:
   --switch-track-width, --switch-track-height, --switch-track-background
-  --switch-track-background-checked, --switch-track-background-disabled
+  --switch-track-background-disabled
   --switch-track-border-radius
   --switch-thumb-background, --switch-thumb-size, --switch-thumb-border-radius
-  --switch-label-gap, --switch-label-size, --switch-label-color, --switch-label-color-disabled
+  --switch-label-gap
   --switch-duration, --easing-default, --opacity-disabled, --color-border-focus
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-text-primary, --font-size-control, --color-accent-default
 */
 
 .switch {
@@ -45,7 +48,7 @@
 }
 
 .switch__track[data-state='checked'] {
-  background: var(--switch-track-background-checked);
+  background: var(--color-accent-default);
 }
 
 .switch__track[data-disabled] {
@@ -80,15 +83,15 @@
 
 .switch__label {
   font-family: var(--font-family-base);
-  font-size: var(--switch-label-size);
-  color: var(--switch-label-color);
+  font-size: var(--font-size-control);
+  color: var(--color-text-primary);
   cursor: pointer;
   line-height: var(--line-height-body);
   user-select: none;
 }
 
 .switch--disabled .switch__label {
-  color: var(--switch-label-color-disabled);
+  color: var(--color-text-secondary);
   cursor: not-allowed;
 }
 

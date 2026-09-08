@@ -1,15 +1,18 @@
 /*
   Tokens consumed:
-  --hero-background, --hero-padding-y, --hero-padding-x, --hero-gap
-  --hero-eyebrow-size, --hero-eyebrow-weight, --hero-eyebrow-color, --hero-eyebrow-spacing
-  --hero-title-weight, --hero-title-color
-  --hero-lead-size, --hero-lead-color, --hero-max-width, --hero-lead-max-width
+  --hero-padding-y, --hero-padding-x, --hero-gap
+  --hero-eyebrow-size, --hero-eyebrow-weight, --hero-eyebrow-spacing
+  --hero-title-weight
+  --hero-lead-size, --hero-max-width, --hero-lead-max-width
   --font-family-heading, --font-family-base, --font-size-h1-fluid
   --line-height-display, --line-height-body, --letter-spacing-heading
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-text-primary, --color-surface-primary
 */
 
 .hero {
-  background: var(--hero-background);
+  background: var(--color-surface-primary);
   padding: var(--hero-padding-y) var(--hero-padding-x);
 }
 
@@ -32,7 +35,7 @@
   font-family: var(--font-family-base);
   font-size: var(--hero-eyebrow-size);
   font-weight: var(--hero-eyebrow-weight);
-  color: var(--hero-eyebrow-color);
+  color: var(--color-text-secondary);
   letter-spacing: var(--hero-eyebrow-spacing);
   text-transform: lowercase;
   margin: 0;
@@ -46,7 +49,7 @@
   font-weight: var(--hero-title-weight);
   line-height: var(--line-height-display);
   letter-spacing: var(--letter-spacing-heading);
-  color: var(--hero-title-color);
+  color: var(--color-text-primary);
   margin: 0;
 }
 
@@ -55,7 +58,7 @@
 .hero__lead {
   font-family: var(--font-family-base);
   font-size: var(--hero-lead-size);
-  color: var(--hero-lead-color);
+  color: var(--color-text-secondary);
   line-height: var(--line-height-body);
   margin: 0;
   max-width: var(--hero-lead-max-width);

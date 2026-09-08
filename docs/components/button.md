@@ -33,21 +33,16 @@
 | `--button-border-radius` | dimension | `9999px` |
 | `--button-border-width` | dimension | `1px` |
 | `--button-duration` | duration | `200ms` |
-| `--button-font-size` | dimension | `16px` |
 | `--button-font-weight` | fontWeight | `500` |
 | `--button-ghost-background` | color | `transparent` |
-| `--button-ghost-background-hover` | color | `#F4F0EB` † |
 | `--button-ghost-border` | color | `transparent` |
-| `--button-ghost-foreground` | color | `#0A0A0A` † |
 | `--button-glow-size` | dimension | `52px` |
 | `--button-icon-gap` | dimension | `8px` |
 | `--button-icon-size` | dimension | `20px` |
 | `--button-outline-border-width` | dimension | `2px` |
 | `--button-padding-x` | dimension | `24px` |
 | `--button-padding-y` | dimension | `12px` |
-| `--button-primary-background` | color | `#292524` † |
 | `--button-primary-background-hover` | color | `#1C1917` † |
-| `--button-primary-border` | color | `#292524` † |
 | `--button-primary-foreground` | color | `#FFFFFF` † |
 | `--button-secondary-background` | color | `transparent` |
 | `--button-secondary-background-hover` | color | `#292524` † |

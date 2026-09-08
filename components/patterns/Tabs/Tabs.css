@@ -1,15 +1,17 @@
 /*
   Tokens consumed:
-  --tabs-trigger-color, --tabs-trigger-color-active, --tabs-trigger-color-hover
-  --tabs-trigger-background-hover
   --tabs-trigger-padding-x, --tabs-trigger-padding-y
-  --tabs-trigger-font-size, --tabs-trigger-font-weight, --tabs-trigger-gap
-  --tabs-indicator-color, --tabs-indicator-height
-  --tabs-list-border-bottom, --tabs-list-border-width
-  --tabs-pill-background-active, --tabs-pill-border-radius, --tabs-pill-gap
+
+  --tabs-trigger-font-weight, --tabs-trigger-gap
+  --tabs-indicator-height
+
+  --tabs-pill-border-radius, --tabs-pill-gap
   --tabs-sm-trigger-padding-y, --tabs-sm-trigger-padding-x, --tabs-content-padding-top
   --tabs-duration
   --font-family-base, --easing-default, --color-border-focus, --opacity-disabled
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-accent-default
 */
 
 /* Root */
@@ -31,7 +33,7 @@
 /* Line variant list border */
 
 .tabs--line .tabs__list {
-  border-bottom: var(--tabs-list-border-width) solid var(--tabs-list-border-bottom);
+  border-bottom: var(--border-width-default) solid var(--color-border-default);
 }
 
 /* Pill variant list */
@@ -52,9 +54,9 @@
   background: none;
   border: none;
   border-radius: 0;
-  color: var(--tabs-trigger-color);
+  color: var(--color-text-secondary);
   font-family: inherit;
-  font-size: var(--tabs-trigger-font-size);
+  font-size: var(--font-size-control);
   font-weight: var(--tabs-trigger-font-weight);
   line-height: 1;
   cursor: pointer;
@@ -65,12 +67,12 @@
 }
 
 .tabs__trigger:hover {
-  color: var(--tabs-trigger-color-hover);
-  background: var(--tabs-trigger-background-hover);
+  color: var(--color-text-primary);
+  background: var(--color-surface-secondary);
 }
 
 .tabs__trigger[data-state='active'] {
-  color: var(--tabs-trigger-color-active);
+  color: var(--color-text-primary);
 }
 
 .tabs__trigger[data-disabled] {
@@ -90,11 +92,11 @@
 .tabs--line .tabs__trigger::after {
   content: '';
   position: absolute;
-  bottom: calc(-1 * var(--tabs-list-border-width));
+  bottom: calc(-1 * var(--border-width-default));
   left: 0;
   right: 0;
   height: var(--tabs-indicator-height);
-  background: var(--tabs-indicator-color);
+  background: var(--color-accent-default);
   transform: scaleX(0);
   transition: transform var(--tabs-duration) var(--easing-default);
 }
@@ -111,7 +113,7 @@
 }
 
 .tabs--pill .tabs__trigger[data-state='active'] {
-  background: var(--tabs-pill-background-active);
+  background: var(--color-surface-secondary);
 }
 
 /* Size variants */

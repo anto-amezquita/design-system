@@ -20,8 +20,6 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--label-color` | color | `#0A0A0A` † |
-| `--label-color-disabled` | color | `#57534E` † |
 | `--label-font-size` | dimension | `14px` |
 | `--label-font-weight` | fontWeight | `500` |
 | `--label-gap` | dimension | `8px` |

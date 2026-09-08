@@ -1,22 +1,23 @@
 /*
   Tokens consumed:
   --table-cell-padding-x, --table-cell-padding-y
-  --table-header-background, --table-header-color
   --table-header-font-size, --table-header-font-weight
-  --table-body-color, --table-body-font-size
-  --table-row-border, --table-row-border-width
-  --table-row-hover-background, --table-stripe-background
-  --table-sort-icon-color, --table-sort-icon-color-active, --table-sort-icon-gap
+
+
+  --table-sort-icon-gap
   --table-selected-row-background, --table-border-radius
   --font-family-base, --duration-interaction, --easing-default
   --color-border-focus
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-accent-default
 */
 
 .table__wrapper {
   width: 100%;
   overflow-x: auto;
   border-radius: var(--table-border-radius);
-  border: var(--table-row-border-width) solid var(--table-row-border);
+  border: var(--border-width-default) solid var(--color-border-default);
 }
 
 .table__wrapper:focus-visible {
@@ -28,24 +29,24 @@
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-family-base);
-  font-size: var(--table-body-font-size);
-  color: var(--table-body-color);
+  font-size: var(--font-size-control);
+  color: var(--color-text-primary);
 }
 
 /* Head */
 
 .table__head {
-  background: var(--table-header-background);
+  background: var(--color-surface-secondary);
 }
 
 .table__header {
   padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
   font-size: var(--table-header-font-size);
   font-weight: var(--table-header-font-weight);
-  color: var(--table-header-color);
+  color: var(--color-text-secondary);
   text-align: left;
   white-space: nowrap;
-  border-bottom: var(--table-row-border-width) solid var(--table-row-border);
+  border-bottom: var(--border-width-default) solid var(--color-border-default);
   vertical-align: middle;
   user-select: none;
 }
@@ -74,7 +75,7 @@
 }
 
 .table__header-btn:hover {
-  color: var(--table-body-color);
+  color: var(--color-text-primary);
 }
 
 .table__header-btn:focus-visible {
@@ -91,17 +92,17 @@
 /* Sort icon — both arrows default to secondary color */
 
 .table__sort-arrow {
-  fill: var(--table-sort-icon-color);
+  fill: var(--color-text-secondary);
 }
 
 /* Active direction highlights the relevant arrow */
 
 .table__header--sort-asc .table__sort-arrow--up {
-  fill: var(--table-sort-icon-color-active);
+  fill: var(--color-accent-default);
 }
 
 .table__header--sort-desc .table__sort-arrow--down {
-  fill: var(--table-sort-icon-color-active);
+  fill: var(--color-accent-default);
 }
 
 /* Body */
@@ -111,7 +112,7 @@
 }
 
 .table__body .table__row:not(.table__row--selected):hover {
-  background: var(--table-row-hover-background);
+  background: var(--color-surface-secondary);
 }
 
 .table__row--selected {
@@ -120,8 +121,8 @@
 
 .table__cell {
   padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
-  color: var(--table-body-color);
-  border-bottom: var(--table-row-border-width) solid var(--table-row-border);
+  color: var(--color-text-primary);
+  border-bottom: var(--border-width-default) solid var(--color-border-default);
   vertical-align: middle;
 }
 
@@ -132,10 +133,10 @@
 /* Foot */
 
 .table__foot .table__cell {
-  color: var(--table-header-color);
+  color: var(--color-text-secondary);
   font-size: var(--table-header-font-size);
   font-weight: var(--table-header-font-weight);
-  border-top: var(--table-row-border-width) solid var(--table-row-border);
+  border-top: var(--border-width-default) solid var(--color-border-default);
   border-bottom: none;
 }
 
@@ -144,7 +145,7 @@
 .table__caption {
   padding: var(--table-cell-padding-y) var(--table-cell-padding-x);
   font-size: var(--table-header-font-size);
-  color: var(--table-header-color);
+  color: var(--color-text-secondary);
   text-align: left;
   caption-side: top;
   padding-inline-start: 0;
@@ -153,18 +154,18 @@
 /* Striped variant — alternating rows on even children */
 
 .table--striped .table__body .table__row:nth-child(even) {
-  background: var(--table-stripe-background);
+  background: var(--color-surface-secondary);
 }
 
 .table--striped .table__body .table__row:nth-child(even):hover {
-  background: var(--table-row-hover-background);
+  background: var(--color-surface-secondary);
 }
 
 /* Bordered variant — all cells get a border */
 
 .table--bordered .table__cell,
 .table--bordered .table__header {
-  border: var(--table-row-border-width) solid var(--table-row-border);
+  border: var(--border-width-default) solid var(--color-border-default);
 }
 
 /* Compact variant — tighter cell padding */

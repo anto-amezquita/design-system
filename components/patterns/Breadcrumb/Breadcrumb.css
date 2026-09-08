@@ -1,17 +1,18 @@
 /*
   Tokens consumed:
-  --breadcrumb-link-color, --breadcrumb-link-color-hover
-  --breadcrumb-current-color, --breadcrumb-separator-color
-  --breadcrumb-font-size, --breadcrumb-gap
+  --breadcrumb-font-size
   --font-family-base, --duration-interaction, --easing-default
   --color-border-focus, --border-radius-sm
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-text-primary, --space-inline-gap
 */
 
 .breadcrumb__list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--breadcrumb-gap);
+  gap: var(--space-inline-gap);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -22,11 +23,11 @@
 .breadcrumb__item {
   display: flex;
   align-items: center;
-  gap: var(--breadcrumb-gap);
+  gap: var(--space-inline-gap);
 }
 
 .breadcrumb__link {
-  color: var(--breadcrumb-link-color);
+  color: var(--color-text-secondary);
   text-decoration: none;
   max-width: var(--breadcrumb-item-max-width);
   overflow: hidden;
@@ -36,7 +37,7 @@
 }
 
 .breadcrumb__link:hover {
-  color: var(--breadcrumb-link-color-hover);
+  color: var(--color-text-primary);
 }
 
 .breadcrumb__link:focus-visible {
@@ -46,7 +47,7 @@
 }
 
 .breadcrumb__label {
-  color: var(--breadcrumb-link-color);
+  color: var(--color-text-secondary);
   max-width: var(--breadcrumb-item-max-width);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -54,13 +55,13 @@
 }
 
 .breadcrumb__separator {
-  color: var(--breadcrumb-separator-color);
+  color: var(--color-text-secondary);
   user-select: none;
   flex-shrink: 0;
 }
 
 .breadcrumb__current {
-  color: var(--breadcrumb-current-color);
+  color: var(--color-text-primary);
   font-weight: var(--font-weight-medium);
   max-width: var(--breadcrumb-current-max-width);
   overflow: hidden;

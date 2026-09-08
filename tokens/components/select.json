@@ -1,26 +1,6 @@
 {
-  "select-background": {
-    "$value": "{color-surface-primary}",
-    "$type": "color"
-  },
-  "select-background-item-hover": {
-    "$value": "{color-surface-secondary}",
-    "$type": "color"
-  },
-  "select-foreground": {
-    "$value": "{color-text-primary}",
-    "$type": "color"
-  },
-  "select-border": {
-    "$value": "{color-border-default}",
-    "$type": "color"
-  },
   "select-border-width": {
     "$value": "{border-width-interactive}",
-    "$type": "dimension"
-  },
-  "select-separator-height": {
-    "$value": "{border-width-default}",
     "$type": "dimension"
   },
   "select-border-focus": {
@@ -39,10 +19,6 @@
     "$value": "{space-control-padding-y}",
     "$type": "dimension"
   },
-  "select-font-size": {
-    "$value": "{font-size-control}",
-    "$type": "dimension"
-  },
   "select-content-shadow": {
     "$value": "{shadow-dropdown}",
     "$type": "shadow"
@@ -51,10 +27,6 @@
     "$value": "{border-radius-component}",
     "$type": "dimension"
   },
-  "select-placeholder-color": {
-    "$value": "{color-text-secondary}",
-    "$type": "color"
-  },
   "select-item-padding-x": {
     "$value": "{space.4}",
     "$type": "dimension"
@@ -62,10 +34,6 @@
   "select-item-padding-y": {
     "$value": "{space.2}",
     "$type": "dimension"
-  },
-  "select-separator-color": {
-    "$value": "{color-border-default}",
-    "$type": "color"
   },
   "select-border-hover": {
     "$value": "{color-border-strong}",

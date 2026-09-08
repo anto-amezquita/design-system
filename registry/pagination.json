@@ -14,28 +14,18 @@
     "light": {
       "pagination-button-size": "48px",
       "pagination-button-background": "transparent",
-      "pagination-button-background-active": "#292524",
-      "pagination-button-background-hover": "#F4F0EB",
-      "pagination-button-color": "#57534E",
       "pagination-button-color-active": "#FFFFFF",
       "pagination-button-font-size": "14px",
       "pagination-button-font-weight": "500",
-      "pagination-border": "#E2DDD9",
-      "pagination-border-width": "1px",
       "pagination-border-radius": "4px",
       "pagination-gap": "8px"
     },
     "dark": {
       "pagination-button-size": "48px",
       "pagination-button-background": "transparent",
-      "pagination-button-background-active": "#f4f0eb",
-      "pagination-button-background-hover": "#292524",
-      "pagination-button-color": "#c8c3be",
       "pagination-button-color-active": "#1c1917",
       "pagination-button-font-size": "14px",
       "pagination-button-font-weight": "500",
-      "pagination-border": "#57534e",
-      "pagination-border-width": "1px",
       "pagination-border-radius": "4px",
       "pagination-gap": "8px"
     }

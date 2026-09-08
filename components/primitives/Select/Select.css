@@ -1,13 +1,16 @@
 /*
   Tokens consumed:
-  --select-background, --select-background-item-hover
-  --select-foreground, --select-border, --select-border-width, --select-border-focus, --select-border-hover
-  --select-border-radius, --select-padding-x, --select-padding-y, --select-font-size
+
+  --select-border-width, --select-border-focus, --select-border-hover
+  --select-border-radius, --select-padding-x, --select-padding-y
   --select-content-shadow, --select-content-border-radius
-  --select-placeholder-color, --select-item-padding-x, --select-item-padding-y
-  --select-separator-color, --select-separator-height, --select-label-size, --select-label-weight
-  --font-family-base, --color-text-secondary, --color-border-focus, --border-radius-interactive
+  --select-item-padding-x, --select-item-padding-y
+  --select-label-size, --select-label-weight
+  --font-family-base, --color-text-secondary, --color-text-primary, --color-border-focus, --border-radius-interactive
   --space-tight-gap, --duration-interaction, --easing-default, --opacity-disabled, --z-dropdown
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-surface-primary
 */
 
 /* Trigger */
@@ -20,10 +23,10 @@
   width: 100%;
   padding: var(--select-padding-y) var(--select-padding-x);
   font-family: var(--font-family-base);
-  font-size: var(--select-font-size);
-  color: var(--select-foreground);
-  background: var(--select-background);
-  border: var(--select-border-width) solid var(--select-border);
+  font-size: var(--font-size-control);
+  color: var(--color-text-primary);
+  background: var(--color-surface-primary);
+  border: var(--select-border-width) solid var(--color-border-default);
   border-radius: var(--select-border-radius);
   cursor: pointer;
   transition: border-color var(--duration-interaction) var(--easing-default);
@@ -47,7 +50,7 @@
 }
 
 .select__trigger[data-placeholder] .select__value {
-  color: var(--select-placeholder-color);
+  color: var(--color-text-secondary);
 }
 
 /* Chevron icon */
@@ -67,8 +70,8 @@
 /* Dropdown content */
 
 .select__content {
-  background: var(--select-background);
-  border: var(--select-border-width) solid var(--select-border);
+  background: var(--color-surface-primary);
+  border: var(--select-border-width) solid var(--color-border-default);
   border-radius: var(--select-content-border-radius);
   box-shadow: var(--select-content-shadow);
   overflow: hidden;
@@ -89,8 +92,8 @@
   align-items: center;
   padding: var(--select-item-padding-y) var(--select-item-padding-x);
   font-family: var(--font-family-base);
-  font-size: var(--select-font-size);
-  color: var(--select-foreground);
+  font-size: var(--font-size-control);
+  color: var(--color-text-primary);
   border-radius: var(--border-radius-interactive);
   cursor: pointer;
   outline: none;
@@ -99,7 +102,7 @@
 }
 
 .select__item[data-highlighted] {
-  background: var(--select-background-item-hover);
+  background: var(--color-surface-secondary);
 }
 
 .select__item[data-disabled] {
@@ -128,7 +131,7 @@
 /* Separator */
 
 .select__separator {
-  height: var(--select-separator-height);
-  background: var(--select-separator-color);
+  height: var(--border-width-default);
+  background: var(--color-border-default);
   margin: var(--space-tight-gap);
 }

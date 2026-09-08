@@ -1,14 +1,17 @@
 /*
   Tokens consumed:
   --badge-font-size, --badge-font-weight, --badge-padding-x, --badge-padding-y
-  --badge-border-radius, --badge-border-width, --badge-gap
-  --badge-neutral-background, --badge-neutral-foreground, --badge-neutral-border
+  --badge-border-radius, --badge-gap
+
   --badge-success-background, --badge-success-foreground, --badge-success-border
   --badge-warning-background, --badge-warning-foreground, --badge-warning-border
   --badge-error-background, --badge-error-foreground, --badge-error-border
   --badge-info-background, --badge-info-foreground, --badge-info-border
   --badge-count-size, --badge-dot-size
   --font-family-base
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-surface-secondary, --color-border-default, --border-width-default
 */
 
 .badge {
@@ -21,9 +24,9 @@
   line-height: 1;
   padding: var(--badge-padding-y) var(--badge-padding-x);
   border-radius: var(--badge-border-radius);
-  border: var(--badge-border-width) solid var(--badge-neutral-border);
-  background: var(--badge-neutral-background);
-  color: var(--badge-neutral-foreground);
+  border: var(--border-width-default) solid var(--color-border-default);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
   white-space: nowrap;
 }
 

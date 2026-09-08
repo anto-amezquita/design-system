@@ -1,16 +1,19 @@
 /*
   Tokens consumed:
-  --dialog-background, --dialog-border, --dialog-border-width, --dialog-border-radius
+  --dialog-border-radius
   --dialog-padding, --dialog-gap, --dialog-max-width
   --dialog-max-width-sm, --dialog-max-width-lg, --dialog-max-width-xl
   --dialog-entrance-offset
   --dialog-overlay-color, --dialog-title-size, --dialog-title-weight
-  --dialog-close-size, --dialog-close-color, --dialog-close-hover
+  --dialog-close-size
   --font-family-base, --font-family-heading, --color-text-primary, --color-text-secondary
   --line-height-heading, --line-height-body, --letter-spacing-heading
   --border-radius-interactive, --space-component-gap, --space-inline-gap, --space-element-gap
   --duration-interaction, --duration-transition, --easing-default, --easing-out
   --color-border-focus, --font-size-body
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-border-default, --border-width-default, --color-surface-primary
 */
 
 /* Overlay */
@@ -46,8 +49,8 @@
   transform: translate(-50%, -50%);
   width: calc(100% - var(--space-component-gap) * 2);
   max-width: var(--dialog-max-width);
-  background: var(--dialog-background);
-  border: var(--dialog-border-width) solid var(--dialog-border);
+  background: var(--color-surface-primary);
+  border: var(--border-width-default) solid var(--color-border-default);
   border-radius: var(--dialog-border-radius);
   padding: var(--dialog-padding);
   display: flex;
@@ -141,7 +144,7 @@
   background: none;
   border: none;
   border-radius: var(--border-radius-interactive);
-  color: var(--dialog-close-color);
+  color: var(--color-text-secondary);
   cursor: pointer;
   transition: color var(--duration-interaction) var(--easing-default);
   outline: none;
@@ -157,7 +160,7 @@
 }
 
 .dialog__close:hover {
-  color: var(--dialog-close-hover);
+  color: var(--color-text-primary);
 }
 
 .dialog__close:focus-visible {

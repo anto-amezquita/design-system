@@ -29,12 +29,7 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--dialog-background` | color | `#FAFAF9` † |
-| `--dialog-border` | color | `#E2DDD9` † |
 | `--dialog-border-radius` | dimension | `8px` |
-| `--dialog-border-width` | dimension | `1px` |
-| `--dialog-close-color` | color | `#57534E` † |
-| `--dialog-close-hover` | color | `#0A0A0A` † |
 | `--dialog-close-size` | dimension | `28px` |
 | `--dialog-entrance-offset` | dimension | `8px` |
 | `--dialog-gap` | dimension | `16px` |

@@ -3,18 +3,6 @@
     "$value": "{space.5}",
     "$type": "dimension"
   },
-  "checkbox-background": {
-    "$value": "{color-surface-primary}",
-    "$type": "color"
-  },
-  "checkbox-background-checked": {
-    "$value": "{color-accent-default}",
-    "$type": "color"
-  },
-  "checkbox-background-disabled": {
-    "$value": "{color-surface-secondary}",
-    "$type": "color"
-  },
   "checkbox-border": {
     "$value": "{color-border-strong}",
     "$type": "color"
@@ -22,10 +10,6 @@
   "checkbox-border-width": {
     "$value": "{border-width-interactive}",
     "$type": "dimension"
-  },
-  "checkbox-border-hover": {
-    "$value": "{color-accent-default}",
-    "$type": "color"
   },
   "checkbox-border-radius": {
     "$value": "{border-radius-interactive}",
@@ -42,17 +26,5 @@
   "checkbox-label-gap": {
     "$value": "{space-label-gap}",
     "$type": "dimension"
-  },
-  "checkbox-label-size": {
-    "$value": "{font-size-control}",
-    "$type": "dimension"
-  },
-  "checkbox-label-color": {
-    "$value": "{color-text-primary}",
-    "$type": "color"
-  },
-  "checkbox-label-color-disabled": {
-    "$value": "{color-text-secondary}",
-    "$type": "color"
   }
 }

@@ -11,15 +11,11 @@
 | Token | Type | Value |
 |---|---|---|
 | `--toast-accent-width` | dimension | `4px` |
-| `--toast-background` | color | `#FAFAF9` † |
-| `--toast-border` | color | `#E2DDD9` † |
 | `--toast-border-radius` | dimension | `8px` |
-| `--toast-border-width` | dimension | `1px` |
 | `--toast-close-offset` | dimension | `8px` |
 | `--toast-content-gap` | dimension | `4px` |
 | `--toast-error-border` | color | `#c0392b` † |
 | `--toast-font-size` | dimension | `14px` |
-| `--toast-foreground` | color | `#0A0A0A` † |
 | `--toast-gap` | dimension | `12px` |
 | `--toast-icon-size` | dimension | `20px` |
 | `--toast-info-border` | color | `#2563EB` † |

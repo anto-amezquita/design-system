@@ -1,20 +1,4 @@
 {
-  "toast-background": {
-    "$value": "{color-surface-primary}",
-    "$type": "color"
-  },
-  "toast-foreground": {
-    "$value": "{color-text-primary}",
-    "$type": "color"
-  },
-  "toast-border": {
-    "$value": "{color-border-default}",
-    "$type": "color"
-  },
-  "toast-border-width": {
-    "$value": "{border-width-default}",
-    "$type": "dimension"
-  },
   "toast-border-radius": {
     "$value": "{border-radius-component}",
     "$type": "dimension"

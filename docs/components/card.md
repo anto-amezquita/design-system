@@ -23,13 +23,7 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--card-background` | color | `#FAFAF9` † |
-| `--card-background-ghost` | color | `#F4F0EB` † |
-| `--card-border` | color | `#E2DDD9` † |
 | `--card-border-radius` | dimension | `8px` |
-| `--card-border-width` | dimension | `1px` |
-| `--card-description-color` | color | `#57534E` † |
-| `--card-description-size` | dimension | `16px` |
 | `--card-gap` | dimension | `16px` |
 | `--card-horizontal-media-width` | dimension | `200px` |
 | `--card-padding` | dimension | `32px` |
@@ -37,8 +31,6 @@
 | `--card-shadow-hover` | shadow | `0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)` |
 | `--card-title-size` | dimension | `24px` |
 | `--card-title-weight` | fontWeight | `700` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

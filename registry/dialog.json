@@ -12,9 +12,6 @@
   ],
   "cssVars": {
     "light": {
-      "dialog-background": "#FAFAF9",
-      "dialog-border": "#E2DDD9",
-      "dialog-border-width": "1px",
       "dialog-border-radius": "8px",
       "dialog-padding": "48px",
       "dialog-gap": "16px",
@@ -23,8 +20,6 @@
       "dialog-title-size": "24px",
       "dialog-title-weight": "700",
       "dialog-close-size": "28px",
-      "dialog-close-color": "#57534E",
-      "dialog-close-hover": "#0A0A0A",
       "dialog-max-width-sm": "480px",
       "dialog-max-width-lg": "720px",
       "dialog-max-width-xl": "1024px",
@@ -33,9 +28,6 @@
       "dialog-entrance-offset": "8px"
     },
     "dark": {
-      "dialog-background": "#1c1917",
-      "dialog-border": "#57534e",
-      "dialog-border-width": "1px",
       "dialog-border-radius": "8px",
       "dialog-padding": "48px",
       "dialog-gap": "16px",
@@ -44,8 +36,6 @@
       "dialog-title-size": "24px",
       "dialog-title-weight": "700",
       "dialog-close-size": "28px",
-      "dialog-close-color": "#c8c3be",
-      "dialog-close-hover": "#fafaf9",
       "dialog-max-width-sm": "480px",
       "dialog-max-width-lg": "720px",
       "dialog-max-width-xl": "1024px",

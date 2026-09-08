@@ -1,21 +1,24 @@
 /*
   Tokens consumed:
-  --card-background, --card-background-ghost
-  --card-border, --card-border-width, --card-border-radius
+
+  --card-border-radius
   --card-padding, --card-gap
   --card-title-size, --card-title-weight
-  --card-description-size, --card-description-color
+
   --card-shadow, --card-shadow-hover
   --font-family-heading, --line-height-heading, --line-height-body
   --letter-spacing-heading, --color-text-primary, --color-text-secondary
   --color-border-strong, --color-border-focus, --color-accent-default
   --space-inline-gap, --border-radius-image
   --duration-interaction, --easing-default
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-surface-primary
 */
 
 .card {
-  background: var(--card-background);
-  border: var(--card-border-width) solid var(--card-border);
+  background: var(--color-surface-primary);
+  border: var(--border-width-default) solid var(--color-border-default);
   border-radius: var(--card-border-radius);
   overflow: hidden;
   display: flex;
@@ -23,7 +26,7 @@
 }
 
 .card--ghost {
-  background: var(--card-background-ghost);
+  background: var(--color-surface-secondary);
   border-color: transparent;
 }
 
@@ -150,8 +153,8 @@ button.card {
 }
 
 .card__description {
-  font-size: var(--card-description-size);
-  color: var(--card-description-color);
+  font-size: var(--font-size-control);
+  color: var(--color-text-secondary);
   line-height: var(--line-height-body);
   margin: 0;
 }
@@ -170,10 +173,6 @@ button.card {
 
 [data-mode="dark"] .card--ghost {
   background: var(--color-surface-primary);
-}
-
-[data-mode="dark"] .card__description {
-  color: var(--color-text-secondary);
 }
 
 [data-mode="dark"] .card--featured {

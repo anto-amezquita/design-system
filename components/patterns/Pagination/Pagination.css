@@ -1,13 +1,16 @@
 /*
   Tokens consumed:
   --pagination-button-size, --pagination-button-background
-  --pagination-button-background-active, --pagination-button-background-hover
-  --pagination-button-color, --pagination-button-color-active
+
+  --pagination-button-color-active
   --pagination-button-font-size, --pagination-button-font-weight
-  --pagination-border, --pagination-border-width
+
   --pagination-border-radius, --pagination-gap
   --font-family-base, --duration-interaction, --easing-default
   --color-border-focus, --opacity-disabled
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-text-secondary, --color-surface-secondary, --color-border-default, --border-width-default, --color-accent-default
 */
 
 .pagination {
@@ -25,8 +28,8 @@
   height: var(--pagination-button-size);
   min-width: var(--pagination-button-size);
   background: var(--pagination-button-background);
-  color: var(--pagination-button-color);
-  border: var(--pagination-border-width) solid var(--pagination-border);
+  color: var(--color-text-secondary);
+  border: var(--border-width-default) solid var(--color-border-default);
   border-radius: var(--pagination-border-radius);
   font-family: inherit;
   font-size: var(--pagination-button-font-size);
@@ -40,14 +43,14 @@
 }
 
 .pagination__button:hover:not(:disabled):not([aria-disabled="true"]) {
-  background: var(--pagination-button-background-hover);
+  background: var(--color-surface-secondary);
   color: var(--color-text-primary);
 }
 
 .pagination__button--active {
-  background: var(--pagination-button-background-active);
+  background: var(--color-accent-default);
   color: var(--pagination-button-color-active);
-  border-color: var(--pagination-button-background-active);
+  border-color: var(--color-accent-default);
   cursor: default;
   pointer-events: none;
 }
@@ -73,7 +76,7 @@
   justify-content: center;
   width: var(--pagination-button-size);
   height: var(--pagination-button-size);
-  color: var(--pagination-button-color);
+  color: var(--color-text-secondary);
   font-size: var(--pagination-button-font-size);
   user-select: none;
 }

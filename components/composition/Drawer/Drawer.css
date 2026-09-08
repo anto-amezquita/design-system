@@ -1,9 +1,8 @@
 /*
   Tokens consumed:
-  --drawer-background, --drawer-border, --drawer-border-width
   --drawer-shadow, --drawer-z-index, --drawer-padding, --drawer-gap
   --drawer-overlay-color, --drawer-title-size, --drawer-title-weight
-  --drawer-close-size, --drawer-close-color, --drawer-close-hover
+  --drawer-close-size
   --drawer-max-width-sm, --drawer-max-width-md, --drawer-max-width-lg
   --drawer-max-height-sm, --drawer-max-height-md, --drawer-max-height-lg, --drawer-max-height-full
   --drawer-close-align-offset
@@ -12,6 +11,9 @@
   --easing-default, --easing-out, --color-border-focus
   --line-height-heading, --letter-spacing-heading, --font-size-body, --line-height-body
   --space-inline-gap
+
+  Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
+  --color-border-default, --border-width-default, --color-surface-primary
 */
 
 /* Overlay */
@@ -40,8 +42,8 @@
   bottom: 0;
   width: 100%;
   max-width: var(--drawer-max-width-md);
-  background: var(--drawer-background);
-  border-left: var(--drawer-border-width) solid var(--drawer-border);
+  background: var(--color-surface-primary);
+  border-left: var(--border-width-default) solid var(--color-border-default);
   box-shadow: var(--drawer-shadow);
   display: flex;
   flex-direction: column;
@@ -64,7 +66,7 @@
   right: auto;
   left: 0;
   border-left: none;
-  border-right: var(--drawer-border-width) solid var(--drawer-border);
+  border-right: var(--border-width-default) solid var(--color-border-default);
   animation-name: drawer-left-in;
 }
 
@@ -87,7 +89,7 @@
   height: auto;
   max-height: var(--drawer-max-height-md);
   border-left: none;
-  border-top: var(--drawer-border-width) solid var(--drawer-border);
+  border-top: var(--border-width-default) solid var(--color-border-default);
   animation-name: drawer-bottom-in;
 }
 
@@ -164,7 +166,7 @@
   justify-content: flex-end;
   gap: var(--space-inline-gap);
   padding: var(--drawer-gap) var(--drawer-padding) var(--drawer-padding);
-  border-top: var(--drawer-border-width) solid var(--drawer-border);
+  border-top: var(--border-width-default) solid var(--color-border-default);
 }
 
 /* Close button */
@@ -181,7 +183,7 @@
   background: none;
   border: none;
   border-radius: var(--border-radius-interactive);
-  color: var(--drawer-close-color);
+  color: var(--color-text-secondary);
   cursor: pointer;
   transition: color var(--duration-interaction) var(--easing-default);
   outline: none;
@@ -190,7 +192,7 @@
 }
 
 .drawer__close:hover {
-  color: var(--drawer-close-hover);
+  color: var(--color-text-primary);
 }
 
 .drawer__close:focus-visible {
