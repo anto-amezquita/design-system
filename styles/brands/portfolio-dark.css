@@ -3,12 +3,10 @@
 
 [data-mode="dark"] {
   color-scheme: dark;
-  --button-primary-background-hover: var(--color-accent-hover);
   --button-secondary-foreground: #a8a29e;
   --button-secondary-border: #a8a29e;
   --button-secondary-background-hover: #a8a29e;
   --checkbox-border: #78716c;
-  --dialog-overlay-color: var(--color-surface-tertiary);
   --drawer-overlay-color: var(--color-surface-tertiary);
   --radio-border: #78716c;
   --skeleton-background: var(--color-skeleton-base);
@@ -16,10 +14,6 @@
   --switch-track-background: var(--color-border-strong);
   --switch-track-background-disabled: var(--color-surface-tertiary);
   --table-selected-row-background: var(--color-surface-tertiary);
-  --textarea-border-hover: #78716c;
-  --textarea-border-focus: #fafaf9;
-  --textarea-border-error: #f87171;
-  --textarea-error-color: #f87171;
   --tooltip-background: var(--color-surface-inverse);
   --tooltip-foreground: var(--color-text-inverse);
   --color-neutral-50: #1c1917;
@@ -79,9 +73,13 @@
   --textarea-background: #1c1917;
   --textarea-background-disabled: #292524;
   --textarea-foreground: #fafaf9;
+  --textarea-border-hover: #78716c;
+  --textarea-border-focus: #fafaf9;
+  --textarea-border-error: #f87171;
   --textarea-placeholder-color: #c8c3be;
   --textarea-label-color: #fafaf9;
   --textarea-hint-color: #c8c3be;
+  --textarea-error-color: #f87171;
   --color-surface-spotlight: #0f4750;
   --color-accent-glow: rgba(21, 97, 109, 0.5);
   --textarea-border: #57534e;

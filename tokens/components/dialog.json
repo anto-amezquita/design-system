@@ -1,31 +1,7 @@
 {
-  "dialog-border-radius": {
-    "$value": "{border-radius-component}",
-    "$type": "dimension"
-  },
-  "dialog-padding": {
-    "$value": "{space-container-padding-lg}",
-    "$type": "dimension"
-  },
-  "dialog-gap": {
-    "$value": "{space-element-gap}",
-    "$type": "dimension"
-  },
   "dialog-max-width": {
     "$value": "{size.dialog-md}",
     "$type": "dimension"
-  },
-  "dialog-overlay-color": {
-    "$value": "{color-surface-tertiary}",
-    "$type": "color"
-  },
-  "dialog-title-size": {
-    "$value": "{font-size-lead}",
-    "$type": "dimension"
-  },
-  "dialog-title-weight": {
-    "$value": "{font-weight-title}",
-    "$type": "fontWeight"
   },
   "dialog-close-size": {
     "$value": "{size.icon-interactive}",
@@ -42,14 +18,6 @@
   "dialog-max-width-xl": {
     "$value": "{size.layout-md}",
     "$type": "dimension"
-  },
-  "dialog-shadow": {
-    "$value": "{shadow-dialog}",
-    "$type": "shadow"
-  },
-  "dialog-z-index": {
-    "$value": "{z-modal}",
-    "$type": "number"
   },
   "dialog-entrance-offset": {
     "$value": "8px",

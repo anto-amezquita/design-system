@@ -1,17 +1,19 @@
 /*
   Tokens consumed:
-  --tabs-trigger-padding-x, --tabs-trigger-padding-y
 
-  --tabs-trigger-font-weight, --tabs-trigger-gap
+
+
   --tabs-indicator-height
 
-  --tabs-pill-border-radius, --tabs-pill-gap
-  --tabs-sm-trigger-padding-y, --tabs-sm-trigger-padding-x, --tabs-content-padding-top
-  --tabs-duration
+
+  --tabs-content-padding-top
+
   --font-family-base, --easing-default, --color-border-focus, --opacity-disabled
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-accent-default
+  --space-control-padding-x, --space-control-padding-y, --font-weight-control, --space-tight-gap
+  --border-radius-interactive, --space-compact-padding-y, --space-compact-padding-x, --duration-interaction
 */
 
 /* Root */
@@ -39,7 +41,7 @@
 /* Pill variant list */
 
 .tabs--pill .tabs__list {
-  gap: var(--tabs-pill-gap);
+  gap: var(--space-tight-gap);
 }
 
 /* Trigger — base */
@@ -47,22 +49,22 @@
 .tabs__trigger {
   display: inline-flex;
   align-items: center;
-  gap: var(--tabs-trigger-gap);
+  gap: var(--space-tight-gap);
   position: relative;
   min-height: var(--size-touch-target);
-  padding: var(--tabs-trigger-padding-y) var(--tabs-trigger-padding-x);
+  padding: var(--space-control-padding-y) var(--space-control-padding-x);
   background: none;
   border: none;
   border-radius: 0;
   color: var(--color-text-secondary);
   font-family: inherit;
   font-size: var(--font-size-control);
-  font-weight: var(--tabs-trigger-font-weight);
+  font-weight: var(--font-weight-control);
   line-height: 1;
   cursor: pointer;
   white-space: nowrap;
-  transition: color var(--tabs-duration) var(--easing-default),
-              background var(--tabs-duration) var(--easing-default);
+  transition: color var(--duration-interaction) var(--easing-default),
+              background var(--duration-interaction) var(--easing-default);
   outline: none;
 }
 
@@ -98,7 +100,7 @@
   height: var(--tabs-indicator-height);
   background: var(--color-accent-default);
   transform: scaleX(0);
-  transition: transform var(--tabs-duration) var(--easing-default);
+  transition: transform var(--duration-interaction) var(--easing-default);
 }
 
 .tabs--line .tabs__trigger[data-state='active']::after {
@@ -108,7 +110,7 @@
 /* Pill variant — filled active state */
 
 .tabs--pill .tabs__trigger {
-  border-radius: var(--tabs-pill-border-radius);
+  border-radius: var(--border-radius-interactive);
   background: transparent;
 }
 
@@ -121,7 +123,7 @@
 .tabs--md .tabs__trigger { /* default — no overrides needed */ }
 
 .tabs--sm .tabs__trigger {
-  padding: var(--tabs-sm-trigger-padding-y) var(--tabs-sm-trigger-padding-x);
+  padding: var(--space-compact-padding-y) var(--space-compact-padding-x);
   font-size: var(--font-size-small);
 }
 

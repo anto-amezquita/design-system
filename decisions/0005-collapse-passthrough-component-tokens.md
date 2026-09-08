@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted (rolling — 200 of 299 pass-throughs collapsed. Rest tracked in `docs/backlog.md`)
+Accepted (rolling — 234 of 299 pass-throughs collapsed. Rest tracked in `docs/backlog.md`)
 
 ## Context
 
@@ -162,6 +162,40 @@ Same mechanism as prior rounds. No process issues.
 
 **Not yet done for round 16:** a Chromatic check for Select.
 
+**Chromatic visual check (2026-09), covering rounds 11–16 (all 22 touched components, 192 stories, 28 components total, commit `e26180d`):** `npm run chromatic` build 46 passed with **no visual changes found**. Confirms both the target-group→component-slicing switch (round 12) and every round since have stayed value-neutral, matching build 44's result for rounds 1–10. One operational note: Chromatic ties builds to the git commit, so running it against uncommitted local changes just skips as "same commit, already passed" rather than actually checking anything — rounds 11–16 had to be committed and pushed first for build 46 to run at all.
+
+**Round 17 (2026-09):** same component-by-component approach. Picked Tabs, the next of the two components tied at 9 remaining (Tabs, Textarea). Collapsed all 9 across 8 semantic targets: `tabs-trigger-padding-x`/`-y` → `space-control-padding-x`/`-y`, `tabs-trigger-font-weight` → `font-weight-control`, `tabs-trigger-gap` → `space-tight-gap`, `tabs-pill-border-radius` → `border-radius-interactive`, `tabs-pill-gap` → `space-tight-gap` (same target as trigger-gap — two separate component tokens, both real, coincidentally equal), `tabs-sm-trigger-padding-y`/`-x` → `space-compact-padding-y`/`-x`, `tabs-duration` → `duration-interaction` (3 call sites: 2 in one `transition` declaration on `.tabs__trigger`, 1 on the line-variant underline). Tabs is now fully clear of passthroughs — its remaining 2 tokens (`tabs-indicator-height`, `tabs-content-padding-top`) are chain-skips.
+
+Same mechanism as prior rounds. No process issues.
+
+`npm run tokens && npm run validate` run clean after round 17: 450 → 441 tokens (exactly the 9 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean.
+
+**Not yet done for round 17:** a Chromatic check for Tabs.
+
+**Round 18 (2026-09):** same component-by-component approach. Picked Textarea, the last of the components originally tied at 9 remaining. Collapsed all 9 across 7 semantic targets, mirroring Input's structure (round 15) almost exactly since both share the same wrapper/border/error pattern: `textarea-border-width` → `border-width-interactive`, `textarea-border-hover` → `color-border-strong`, `textarea-border-focus` → `color-border-focus` (2 call sites), `textarea-border-radius` → `border-radius-interactive`, `textarea-padding-x`/`-y` → `space-control-padding-x`/`-y`, `textarea-label-weight` → `font-weight-label`, and `textarea-border-error` + `textarea-error-color` (2 separate component tokens, 3 call sites) both → `color-feedback-error`, the same border/hint-text coincidence pattern as Input's round 15 and Breadcrumb's round 2. Textarea is now fully clear of passthroughs — its remaining 2 tokens (`textarea-label-size`, `textarea-hint-size`) are chain-skips.
+
+Same mechanism as prior rounds. No process issues.
+
+`npm run tokens && npm run validate` run clean after round 18: 441 → 432 tokens (exactly the 9 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean.
+
+**Not yet done for round 18:** a Chromatic check for Textarea.
+
+**Round 19 (2026-09):** same component-by-component approach. Picked Dialog, one of two components tied at 8 remaining (Dialog, Button). Collapsed 8 across 6 semantic targets: `dialog-border-radius` → `border-radius-component`, `dialog-padding` → `space-container-padding-lg`, `dialog-gap` → `space-element-gap` (2 call sites: content, body), `dialog-overlay-color` → `color-surface-tertiary`, `dialog-title-size` → `font-size-lead`, `dialog-title-weight` → `font-weight-title`. Along the way, found two of the 8 (`dialog-shadow`, `dialog-z-index`) were already dead — not referenced anywhere in `Dialog.css` and not even listed in the file's own "Tokens consumed" header comment, meaning some earlier unlogged change had already repointed `.dialog__content` to reference `--z-modal` directly and never applied a box-shadow at all. Removed both from the token file with the rest; no CSS change needed for those two since nothing referenced them. Dialog is now fully clear of passthroughs.
+
+Same mechanism as prior rounds, plus this dead-token find. No process issues.
+
+`npm run tokens && npm run validate` run clean after round 19: 432 → 424 tokens (exactly the 8 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean.
+
+**Not yet done for round 19:** a Chromatic check for Dialog.
+
+**Round 20 (2026-09):** same component-by-component approach. Picked Button, the last component at this size tier (corrected from an earlier miscount of 8 to its actual 7 real passthroughs — three tokens the audit's `variance` list already correctly excludes, `button-secondary-foreground`, `button-secondary-border`, `button-secondary-background-hover`, resolve to `color-accent-default` in light mode but differ in dark modes, so they're genuine component-level overrides, not passthroughs, and were left untouched). Collapsed the 7 real passthroughs across 6 semantic targets: `button-font-weight` → `font-weight-control`, `button-border-radius` → `border-radius-pill`, `button-border-width` → `border-width-interactive`, `button-duration` → `duration-interaction` (9 call sites across base/secondary/link/arrow/reduced-motion transitions), `button-primary-background-hover` → `color-accent-hover` (4 call sites), `button-icon-gap` → `space-inline-gap`. Along the way, found `button-icon-size` was already dead — not referenced anywhere in `Button.css` (icon sizing uses a hardcoded `1em` instead), same pattern as round 19's `dialog-shadow`/`dialog-z-index`. Removed it with the rest. Button is now fully clear of passthroughs — its remaining tokens are literals, chain-skips, or the 3 correctly-kept variance tokens.
+
+Same mechanism as prior rounds. No process issues.
+
+`npm run tokens && npm run validate` run clean after round 20: 424 → 417 tokens (exactly the 7 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean.
+
+**Not yet done for round 20:** a Chromatic check for Button.
+
 ## Alternatives considered
 
 - Start with the largest single target group (`color-text-secondary`, 29 tokens across ~15 components) instead of one component at a time — done in round 3, after rounds 1–2 validated the mechanism on smaller surfaces first. Rounds 4–11 repeated the same approach for the next eight largest groups (`color-text-primary` 20, `color-surface-secondary` 17, `color-border-default` 16, `border-width-default` 13, `font-size-control` 12, `color-accent-default` 12, `color-surface-primary` 11, `color-accent-foreground` 7). Every group of 10+ tokens is now closed; remaining groups all have fewer than 7 members.
@@ -171,15 +205,16 @@ Same mechanism as prior rounds. No process issues.
 ## Consequences
 
 ### Positive
-- Validates the mechanism (remove token + repoint CSS var) end-to-end on small, low-risk surfaces before scaling to the remaining ~99 pass-throughs.
-- Avatar: 14 → 9 component-tier tokens. Breadcrumb: 8 → 3. Nine full target groups closed in rounds 1–11. Alert, Badge, Toast, Input, and Select (rounds 12–16) all fully cleared of passthroughs.
+- Validates the mechanism (remove token + repoint CSS var) end-to-end on small, low-risk surfaces before scaling to the remaining ~65 pass-throughs.
+- Avatar: 14 → 9 component-tier tokens. Breadcrumb: 8 → 3. Nine full target groups closed in rounds 1–11. Alert, Badge, Toast, Input, Select, Tabs, Textarea, Dialog, and Button (rounds 12–20) all fully cleared of passthroughs.
 - Confirms the mechanism itself is independent of slicing strategy — switching from target-group to component-by-component in round 12 required no change to the remove-token/repoint-CSS/update-comment steps, only to which tokens get batched together.
+- Round 20 is the second round (after round 19) to catch an already-dead token via the systematic sweep, and the first to catch the inverse case — tokens the audit's `variance` classification correctly flags as NOT passthroughs (differing dark-mode values), confirming the audit's variance/passthrough split is being read and respected, not just the passthrough list blindly emptied.
 
 ### Negative
-- Chromatic visual check still outstanding for round 11's 5 components, and rounds 12–16's Alert, Badge, Toast, Input, and Select.
-- 200 collapses confirmed via sixteen clean `npm run tokens && npm run validate` runs (rounds 3–16) plus a clean Chromatic build (44) covering rounds 1–10.
-- ~99 pass-throughs remain uncollapsed, tracked per-component.
-- Round 4 included one caught-and-fixed editing mistake (a corrupted token file, see Decision) — worth double-checking file state after each edit in future rounds rather than assuming a batch of edits all landed cleanly. Rounds 5–16 had no such issue.
+- Chromatic visual check still outstanding for round 17's Tabs, round 18's Textarea, round 19's Dialog, and round 20's Button (rounds 1–16 confirmed clean across builds 44 and 46).
+- 234 collapses confirmed via twenty clean `npm run tokens && npm run validate` runs (rounds 3–20) plus two clean Chromatic builds (44, 46).
+- ~65 pass-throughs remain uncollapsed, tracked per-component.
+- Round 4 included one caught-and-fixed editing mistake (a corrupted token file, see Decision) — worth double-checking file state after each edit in future rounds rather than assuming a batch of edits all landed cleanly. Rounds 5–20 had no such issue.
 
 ## Related files
 

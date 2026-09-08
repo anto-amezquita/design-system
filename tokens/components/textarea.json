@@ -1,46 +1,10 @@
 {
-  "textarea-border-width": {
-    "$value": "{border-width-interactive}",
-    "$type": "dimension"
-  },
-  "textarea-border-hover": {
-    "$value": "{color-border-strong}",
-    "$type": "color"
-  },
-  "textarea-border-focus": {
-    "$value": "{color-border-focus}",
-    "$type": "color"
-  },
-  "textarea-border-error": {
-    "$value": "{color-feedback-error}",
-    "$type": "color"
-  },
-  "textarea-border-radius": {
-    "$value": "{border-radius-interactive}",
-    "$type": "dimension"
-  },
-  "textarea-padding-x": {
-    "$value": "{space-control-padding-x}",
-    "$type": "dimension"
-  },
-  "textarea-padding-y": {
-    "$value": "{space-control-padding-y}",
-    "$type": "dimension"
-  },
   "textarea-label-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension"
   },
-  "textarea-label-weight": {
-    "$value": "{font-weight-label}",
-    "$type": "fontWeight"
-  },
   "textarea-hint-size": {
     "$value": "{font-size.xs}",
     "$type": "dimension"
-  },
-  "textarea-error-color": {
-    "$value": "{color-feedback-error}",
-    "$type": "color"
   }
 }

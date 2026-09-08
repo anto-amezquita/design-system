@@ -10,9 +10,9 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-450 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+417 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
 
-- component: 213
+- component: 180
 - primitive: 112
 - color: 43
 - typography: 32
@@ -50,7 +50,7 @@ Small status indicator or numeric count overlay attached to another element
 Trigger for user actions; renders as `<button>` or `<a>` depending on context
 
 - Import: `import { Button } from '@amezquita/design-system/components/primitives/Button'`
-- Token prefix: `button-*` (23 tokens)
+- Token prefix: `button-*` (16 tokens)
 - Storybook: Components/Button
 - Stories: Primary, Secondary, Ghost, Link, Loading, LoadingSecondary, FullWidth, WithIcon, Disabled, AllVariants, AllStates, DarkMode
 
@@ -140,7 +140,7 @@ Inline label for categorising or annotating content — non-interactive
 Multi-line text entry with label, hint, and error states — mirrors Input API
 
 - Import: `import { Textarea } from '@amezquita/design-system/components/primitives/Textarea'`
-- Token prefix: `textarea-*` (11 tokens)
+- Token prefix: `textarea-*` (2 tokens)
 - Storybook: Components/Textarea
 - Stories: Default, WithHint, WithError, Disabled, WithCharacterCount, AllStates, DarkMode
 
@@ -178,7 +178,7 @@ Compound container for grouped content — composed from named sub-components
 Overlay for tasks or information requiring focused attention
 
 - Import: `import { Dialog } from '@amezquita/design-system/components/composition/Dialog'`
-- Token prefix: `dialog-*` (14 tokens)
+- Token prefix: `dialog-*` (6 tokens)
 - Storybook: Components/Dialog
 - Stories: Default, Small, Large, Scrollable, WithForm, NoDescription, AllSizes, DarkMode
 
@@ -279,6 +279,6 @@ Static data table with semantic header, body, and row structure
 Segmented view switcher with full keyboard navigation; built on Radix Tabs
 
 - Import: `import { Tabs } from '@amezquita/design-system/components/patterns/Tabs'`
-- Token prefix: `tabs-*` (11 tokens)
+- Token prefix: `tabs-*` (2 tokens)
 - Storybook: Components/Tabs
 - Stories: Default, AllVariants, Sizes, WithDisabledTab, DarkMode

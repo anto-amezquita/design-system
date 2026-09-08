@@ -80,7 +80,7 @@
         "AllStates",
         "DarkMode"
       ],
-      "tokenCount": 23,
+      "tokenCount": 16,
       "internal": false
     },
     {
@@ -281,7 +281,7 @@
         "AllStates",
         "DarkMode"
       ],
-      "tokenCount": 11,
+      "tokenCount": 2,
       "internal": false
     },
     {
@@ -452,7 +452,7 @@
         "AllSizes",
         "DarkMode"
       ],
-      "tokenCount": 14,
+      "tokenCount": 6,
       "internal": false
     },
     {
@@ -804,7 +804,7 @@
         "WithDisabledTab",
         "DarkMode"
       ],
-      "tokenCount": 11,
+      "tokenCount": 2,
       "internal": false
     },
     {

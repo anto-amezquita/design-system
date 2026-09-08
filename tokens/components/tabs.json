@@ -1,46 +1,10 @@
 {
-  "tabs-trigger-padding-x": {
-    "$value": "{space-control-padding-x}",
-    "$type": "dimension"
-  },
-  "tabs-trigger-padding-y": {
-    "$value": "{space-control-padding-y}",
-    "$type": "dimension"
-  },
-  "tabs-trigger-font-weight": {
-    "$value": "{font-weight-control}",
-    "$type": "fontWeight"
-  },
-  "tabs-trigger-gap": {
-    "$value": "{space-tight-gap}",
-    "$type": "dimension"
-  },
   "tabs-indicator-height": {
     "$value": "{border-width.medium}",
-    "$type": "dimension"
-  },
-  "tabs-pill-border-radius": {
-    "$value": "{border-radius-interactive}",
-    "$type": "dimension"
-  },
-  "tabs-pill-gap": {
-    "$value": "{space-tight-gap}",
-    "$type": "dimension"
-  },
-  "tabs-sm-trigger-padding-y": {
-    "$value": "{space-compact-padding-y}",
-    "$type": "dimension"
-  },
-  "tabs-sm-trigger-padding-x": {
-    "$value": "{space-compact-padding-x}",
     "$type": "dimension"
   },
   "tabs-content-padding-top": {
     "$value": "{space.4}",
     "$type": "dimension"
-  },
-  "tabs-duration": {
-    "$value": "{duration-interaction}",
-    "$type": "duration"
   }
 }

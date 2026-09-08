@@ -2,12 +2,10 @@
 /* Brand: portfolio */
 
 :root, [data-mode="light"] {
-  --button-primary-background-hover: var(--color-accent-hover);
   --button-secondary-foreground: var(--color-accent-default);
   --button-secondary-border: var(--color-accent-default);
   --button-secondary-background-hover: var(--color-accent-default);
   --checkbox-border: var(--color-border-strong);
-  --dialog-overlay-color: var(--color-surface-tertiary);
   --drawer-overlay-color: var(--color-surface-tertiary);
   --radio-border: var(--color-border-strong);
   --skeleton-background: var(--color-skeleton-base);
@@ -15,7 +13,6 @@
   --switch-track-background: var(--color-border-strong);
   --switch-track-background-disabled: var(--color-surface-tertiary);
   --table-selected-row-background: var(--color-surface-tertiary);
-  --textarea-border-hover: var(--color-border-strong);
   --tooltip-background: var(--color-surface-inverse);
   --tooltip-foreground: var(--color-text-inverse);
   --color-neutral-50: #fafaf9;

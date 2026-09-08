@@ -20,16 +20,7 @@ Also accepts all props of: `React.ComponentPropsWithoutRef<typeof RadixTabs.Root
 | Token | Type | Value |
 |---|---|---|
 | `--tabs-content-padding-top` | dimension | `16px` |
-| `--tabs-duration` | duration | `200ms` |
 | `--tabs-indicator-height` | dimension | `2px` |
-| `--tabs-pill-border-radius` | dimension | `4px` |
-| `--tabs-pill-gap` | dimension | `4px` |
-| `--tabs-sm-trigger-padding-x` | dimension | `12px` |
-| `--tabs-sm-trigger-padding-y` | dimension | `8px` |
-| `--tabs-trigger-font-weight` | fontWeight | `500` |
-| `--tabs-trigger-gap` | dimension | `4px` |
-| `--tabs-trigger-padding-x` | dimension | `16px` |
-| `--tabs-trigger-padding-y` | dimension | `12px` |
 
 ## Usage example
 

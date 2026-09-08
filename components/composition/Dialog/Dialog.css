@@ -1,10 +1,10 @@
 /*
   Tokens consumed:
-  --dialog-border-radius
-  --dialog-padding, --dialog-gap, --dialog-max-width
+
+  --dialog-max-width
   --dialog-max-width-sm, --dialog-max-width-lg, --dialog-max-width-xl
   --dialog-entrance-offset
-  --dialog-overlay-color, --dialog-title-size, --dialog-title-weight
+
   --dialog-close-size
   --font-family-base, --font-family-heading, --color-text-primary, --color-text-secondary
   --line-height-heading, --line-height-body, --letter-spacing-heading
@@ -14,6 +14,8 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-border-default, --border-width-default, --color-surface-primary
+  --border-radius-component, --space-container-padding-lg, --space-element-gap
+  --color-surface-tertiary, --font-size-lead, --font-weight-title
 */
 
 /* Overlay */
@@ -21,7 +23,7 @@
 .dialog__overlay {
   position: fixed;
   inset: 0;
-  background: var(--dialog-overlay-color);
+  background: var(--color-surface-tertiary);
   z-index: var(--z-overlay);
   animation: dialog-overlay-in var(--duration-transition) var(--easing-out);
 }
@@ -51,11 +53,11 @@
   max-width: var(--dialog-max-width);
   background: var(--color-surface-primary);
   border: var(--border-width-default) solid var(--color-border-default);
-  border-radius: var(--dialog-border-radius);
-  padding: var(--dialog-padding);
+  border-radius: var(--border-radius-component);
+  padding: var(--space-container-padding-lg);
   display: flex;
   flex-direction: column;
-  gap: var(--dialog-gap);
+  gap: var(--space-element-gap);
   z-index: var(--z-modal);
   box-sizing: border-box;
   animation: dialog-content-in var(--duration-transition) var(--easing-out);
@@ -114,8 +116,8 @@
 
 .dialog__title {
   font-family: var(--font-family-heading);
-  font-size: var(--dialog-title-size);
-  font-weight: var(--dialog-title-weight);
+  font-size: var(--font-size-lead);
+  font-weight: var(--font-weight-title);
   line-height: var(--line-height-heading);
   letter-spacing: var(--letter-spacing-heading);
   color: var(--color-text-primary);
@@ -173,7 +175,7 @@
 .dialog__body {
   display: flex;
   flex-direction: column;
-  gap: var(--dialog-gap);
+  gap: var(--space-element-gap);
 }
 
 /* Footer */

@@ -1,11 +1,12 @@
 /*
   Tokens consumed:
   --button-padding-x, --button-padding-y
-  --button-font-weight
-  --button-border-radius, --button-border-width, --button-outline-border-width, --button-duration
-  --button-icon-gap, --button-spinner-duration
+
+  --button-outline-border-width
+
+  --button-spinner-duration
   --button-arrow-nudge, --button-glow-size
-  --button-primary-background-hover
+
   --button-secondary-background, --button-secondary-foreground, --button-secondary-border
   --button-secondary-background-hover
   --button-ghost-background, --button-ghost-border
@@ -13,6 +14,8 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-accent-foreground
+  --font-weight-control, --border-radius-pill, --border-width-interactive, --duration-interaction
+  --color-accent-hover, --space-inline-gap
 */
 
 .button {
@@ -23,10 +26,10 @@
   padding: var(--button-padding-y) var(--button-padding-x);
   font-family: var(--font-family-base);
   font-size: var(--font-size-control);
-  font-weight: var(--button-font-weight);
+  font-weight: var(--font-weight-control);
   line-height: 1;
-  border-radius: var(--button-border-radius);
-  border: var(--button-border-width) solid var(--color-accent-default);
+  border-radius: var(--border-radius-pill);
+  border: var(--border-width-interactive) solid var(--color-accent-default);
   background: var(--color-accent-default);
   color: var(--color-accent-foreground);
   text-decoration: none;
@@ -35,14 +38,14 @@
   overflow: hidden;
   isolation: isolate;
   transition:
-    border-color var(--button-duration) var(--easing-default),
-    color var(--button-duration) var(--easing-default);
+    border-color var(--duration-interaction) var(--easing-default),
+    color var(--duration-interaction) var(--easing-default);
   white-space: nowrap;
   user-select: none;
 }
 
 .button:hover {
-  border-color: var(--button-primary-background-hover);
+  border-color: var(--color-accent-hover);
 }
 
 .button:focus-visible {
@@ -61,7 +64,7 @@
 .button__label {
   display: inline-flex;
   align-items: center;
-  gap: var(--button-icon-gap);
+  gap: var(--space-inline-gap);
   position: relative;
   z-index: 1;
 }
@@ -78,8 +81,8 @@
   border-color: var(--button-secondary-border);
   border-width: var(--button-outline-border-width);
   transition:
-    border-color var(--button-duration) var(--easing-default),
-    color var(--button-duration) var(--easing-default);
+    border-color var(--duration-interaction) var(--easing-default),
+    color var(--duration-interaction) var(--easing-default);
 }
 
 .button--secondary:hover {
@@ -109,7 +112,7 @@
   text-decoration: underline;
   text-decoration-color: transparent;
   text-decoration-thickness: 1px;
-  transition: text-decoration-color var(--button-duration) var(--easing-default);
+  transition: text-decoration-color var(--duration-interaction) var(--easing-default);
   overflow: visible;
 }
 
@@ -168,7 +171,7 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  transition: transform var(--button-duration) var(--easing-default);
+  transition: transform var(--duration-interaction) var(--easing-default);
 }
 
 .button:hover .button__arrow {
@@ -202,7 +205,7 @@
 }
 
 .button__wipe path {
-  fill: var(--button-primary-background-hover);
+  fill: var(--color-accent-hover);
 }
 
 .button--secondary .button__wipe path {
@@ -215,7 +218,7 @@
 
 @media (hover: none) {
   .button:active {
-    background: var(--button-primary-background-hover);
+    background: var(--color-accent-hover);
   }
 
   .button--secondary:active {
@@ -248,13 +251,13 @@
 
   .button {
     transition:
-      background var(--button-duration) var(--easing-default),
-      border-color var(--button-duration) var(--easing-default),
-      color var(--button-duration) var(--easing-default);
+      background var(--duration-interaction) var(--easing-default),
+      border-color var(--duration-interaction) var(--easing-default),
+      color var(--duration-interaction) var(--easing-default);
   }
 
   .button:hover {
-    background: var(--button-primary-background-hover);
+    background: var(--color-accent-hover);
   }
 
   .button--secondary:hover {

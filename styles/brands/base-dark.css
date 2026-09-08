@@ -3,12 +3,10 @@
 
 [data-mode="dark"] {
   color-scheme: dark;
-  --button-primary-background-hover: var(--color-accent-hover);
   --button-secondary-foreground: var(--color-neutral-500);
   --button-secondary-border: var(--color-neutral-500);
   --button-secondary-background-hover: var(--color-neutral-500);
   --checkbox-border: var(--color-neutral-400);
-  --dialog-overlay-color: var(--color-surface-tertiary);
   --drawer-overlay-color: var(--color-surface-tertiary);
   --label-required-color: var(--color-feedback-error);
   --radio-border: var(--color-neutral-400);
@@ -17,10 +15,6 @@
   --switch-track-background: var(--color-border-strong);
   --switch-track-background-disabled: var(--color-surface-tertiary);
   --table-selected-row-background: var(--color-surface-tertiary);
-  --textarea-border-hover: var(--color-neutral-400);
-  --textarea-border-focus: var(--color-neutral-900);
-  --textarea-border-error: #f87171;
-  --textarea-error-color: #f87171;
   --tooltip-background: var(--color-surface-inverse);
   --tooltip-foreground: var(--color-text-inverse);
   --color-neutral-50: #171717;
@@ -80,7 +74,11 @@
   --textarea-background: var(--color-neutral-50);
   --textarea-background-disabled: var(--color-neutral-100);
   --textarea-foreground: var(--color-neutral-900);
+  --textarea-border-hover: var(--color-neutral-400);
+  --textarea-border-focus: var(--color-neutral-900);
+  --textarea-border-error: #f87171;
   --textarea-placeholder-color: var(--color-neutral-600);
   --textarea-label-color: var(--color-neutral-900);
   --textarea-hint-color: var(--color-neutral-600);
+  --textarea-error-color: #f87171;
 }

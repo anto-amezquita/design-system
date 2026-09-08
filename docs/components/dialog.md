@@ -29,22 +29,12 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--dialog-border-radius` | dimension | `8px` |
 | `--dialog-close-size` | dimension | `28px` |
 | `--dialog-entrance-offset` | dimension | `8px` |
-| `--dialog-gap` | dimension | `16px` |
 | `--dialog-max-width` | dimension | `560px` |
 | `--dialog-max-width-lg` | dimension | `720px` |
 | `--dialog-max-width-sm` | dimension | `480px` |
 | `--dialog-max-width-xl` | dimension | `1024px` |
-| `--dialog-overlay-color` | color | `#E2DDD9` † |
-| `--dialog-padding` | dimension | `48px` |
-| `--dialog-shadow` | shadow | `0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)` |
-| `--dialog-title-size` | dimension | `24px` |
-| `--dialog-title-weight` | fontWeight | `700` |
-| `--dialog-z-index` | number | `400` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 27,
-    "tokenCount": 302
+    "tokenCount": 272
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -161,18 +161,6 @@
     "button-arrow-nudge": [
       "components/primitives/Button/Button.css"
     ],
-    "button-border-radius": [
-      "components/primitives/Button/Button.css"
-    ],
-    "button-border-width": [
-      "components/primitives/Button/Button.css"
-    ],
-    "button-duration": [
-      "components/primitives/Button/Button.css"
-    ],
-    "button-font-weight": [
-      "components/primitives/Button/Button.css"
-    ],
     "button-ghost-background": [
       "components/primitives/Button/Button.css"
     ],
@@ -185,9 +173,6 @@
     "button-glow-size": [
       "components/primitives/Button/Button.css"
     ],
-    "button-icon-gap": [
-      "components/primitives/Button/Button.css"
-    ],
     "button-outline-border-width": [
       "components/primitives/Button/Button.css"
     ],
@@ -195,9 +180,6 @@
       "components/primitives/Button/Button.css"
     ],
     "button-padding-y": [
-      "components/primitives/Button/Button.css"
-    ],
-    "button-primary-background-hover": [
       "components/primitives/Button/Button.css"
     ],
     "button-secondary-background": [
@@ -482,16 +464,10 @@
     "datatable-gap": [
       "components/patterns/DataTable/DataTable.css"
     ],
-    "dialog-border-radius": [
-      "components/composition/Dialog/Dialog.css"
-    ],
     "dialog-close-size": [
       "components/composition/Dialog/Dialog.css"
     ],
     "dialog-entrance-offset": [
-      "components/composition/Dialog/Dialog.css"
-    ],
-    "dialog-gap": [
       "components/composition/Dialog/Dialog.css"
     ],
     "dialog-max-width": [
@@ -504,18 +480,6 @@
       "components/composition/Dialog/Dialog.css"
     ],
     "dialog-max-width-xl": [
-      "components/composition/Dialog/Dialog.css"
-    ],
-    "dialog-overlay-color": [
-      "components/composition/Dialog/Dialog.css"
-    ],
-    "dialog-padding": [
-      "components/composition/Dialog/Dialog.css"
-    ],
-    "dialog-title-size": [
-      "components/composition/Dialog/Dialog.css"
-    ],
-    "dialog-title-weight": [
       "components/composition/Dialog/Dialog.css"
     ],
     "drawer-close-align-offset": [
@@ -1148,34 +1112,7 @@
     "tabs-content-padding-top": [
       "components/patterns/Tabs/Tabs.css"
     ],
-    "tabs-duration": [
-      "components/patterns/Tabs/Tabs.css"
-    ],
     "tabs-indicator-height": [
-      "components/patterns/Tabs/Tabs.css"
-    ],
-    "tabs-pill-border-radius": [
-      "components/patterns/Tabs/Tabs.css"
-    ],
-    "tabs-pill-gap": [
-      "components/patterns/Tabs/Tabs.css"
-    ],
-    "tabs-sm-trigger-padding-x": [
-      "components/patterns/Tabs/Tabs.css"
-    ],
-    "tabs-sm-trigger-padding-y": [
-      "components/patterns/Tabs/Tabs.css"
-    ],
-    "tabs-trigger-font-weight": [
-      "components/patterns/Tabs/Tabs.css"
-    ],
-    "tabs-trigger-gap": [
-      "components/patterns/Tabs/Tabs.css"
-    ],
-    "tabs-trigger-padding-x": [
-      "components/patterns/Tabs/Tabs.css"
-    ],
-    "tabs-trigger-padding-y": [
       "components/patterns/Tabs/Tabs.css"
     ],
     "tag-border-radius": [
@@ -1196,37 +1133,10 @@
     "tag-padding-y": [
       "components/primitives/Tag/Tag.css"
     ],
-    "textarea-border-error": [
-      "components/primitives/Textarea/Textarea.css"
-    ],
-    "textarea-border-focus": [
-      "components/primitives/Textarea/Textarea.css"
-    ],
-    "textarea-border-hover": [
-      "components/primitives/Textarea/Textarea.css"
-    ],
-    "textarea-border-radius": [
-      "components/primitives/Textarea/Textarea.css"
-    ],
-    "textarea-border-width": [
-      "components/primitives/Textarea/Textarea.css"
-    ],
-    "textarea-error-color": [
-      "components/primitives/Textarea/Textarea.css"
-    ],
     "textarea-hint-size": [
       "components/primitives/Textarea/Textarea.css"
     ],
     "textarea-label-size": [
-      "components/primitives/Textarea/Textarea.css"
-    ],
-    "textarea-label-weight": [
-      "components/primitives/Textarea/Textarea.css"
-    ],
-    "textarea-padding-x": [
-      "components/primitives/Textarea/Textarea.css"
-    ],
-    "textarea-padding-y": [
       "components/primitives/Textarea/Textarea.css"
     ],
     "toast-accent-width": [

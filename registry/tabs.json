@@ -12,30 +12,12 @@
   ],
   "cssVars": {
     "light": {
-      "tabs-trigger-padding-x": "16px",
-      "tabs-trigger-padding-y": "12px",
-      "tabs-trigger-font-weight": "500",
-      "tabs-trigger-gap": "4px",
       "tabs-indicator-height": "2px",
-      "tabs-pill-border-radius": "4px",
-      "tabs-pill-gap": "4px",
-      "tabs-sm-trigger-padding-y": "8px",
-      "tabs-sm-trigger-padding-x": "12px",
-      "tabs-content-padding-top": "16px",
-      "tabs-duration": "200ms"
+      "tabs-content-padding-top": "16px"
     },
     "dark": {
-      "tabs-trigger-padding-x": "16px",
-      "tabs-trigger-padding-y": "12px",
-      "tabs-trigger-font-weight": "500",
-      "tabs-trigger-gap": "4px",
       "tabs-indicator-height": "2px",
-      "tabs-pill-border-radius": "4px",
-      "tabs-pill-gap": "4px",
-      "tabs-sm-trigger-padding-y": "8px",
-      "tabs-sm-trigger-padding-x": "12px",
-      "tabs-content-padding-top": "16px",
-      "tabs-duration": "200ms"
+      "tabs-content-padding-top": "16px"
     }
   }
 }

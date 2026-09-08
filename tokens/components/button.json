@@ -7,29 +7,9 @@
     "$value": "{space.3}",
     "$type": "dimension"
   },
-  "button-font-weight": {
-    "$value": "{font-weight-control}",
-    "$type": "fontWeight"
-  },
-  "button-border-radius": {
-    "$value": "{border-radius-pill}",
-    "$type": "dimension"
-  },
-  "button-border-width": {
-    "$value": "{border-width-interactive}",
-    "$type": "dimension"
-  },
   "button-outline-border-width": {
     "$value": "{border-width.medium}",
     "$type": "dimension"
-  },
-  "button-duration": {
-    "$value": "{duration-interaction}",
-    "$type": "duration"
-  },
-  "button-primary-background-hover": {
-    "$value": "{color-accent-hover}",
-    "$type": "color"
   },
   "button-secondary-background": {
     "$value": "transparent",
@@ -54,14 +34,6 @@
   "button-ghost-border": {
     "$value": "transparent",
     "$type": "color"
-  },
-  "button-icon-gap": {
-    "$value": "{space-inline-gap}",
-    "$type": "dimension"
-  },
-  "button-icon-size": {
-    "$value": "{size-icon-md}",
-    "$type": "dimension"
   },
   "button-spinner-duration": {
     "$value": "750ms",

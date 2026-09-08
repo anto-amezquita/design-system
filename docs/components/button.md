@@ -30,19 +30,12 @@
 | Token | Type | Value |
 |---|---|---|
 | `--button-arrow-nudge` | dimension | `2px` |
-| `--button-border-radius` | dimension | `9999px` |
-| `--button-border-width` | dimension | `1px` |
-| `--button-duration` | duration | `200ms` |
-| `--button-font-weight` | fontWeight | `500` |
 | `--button-ghost-background` | color | `transparent` |
 | `--button-ghost-border` | color | `transparent` |
 | `--button-glow-size` | dimension | `52px` |
-| `--button-icon-gap` | dimension | `8px` |
-| `--button-icon-size` | dimension | `20px` |
 | `--button-outline-border-width` | dimension | `2px` |
 | `--button-padding-x` | dimension | `24px` |
 | `--button-padding-y` | dimension | `12px` |
-| `--button-primary-background-hover` | color | `#1C1917` † |
 | `--button-secondary-background` | color | `transparent` |
 | `--button-secondary-background-hover` | color | `#292524` † |
 | `--button-secondary-border` | color | `#292524` † |
