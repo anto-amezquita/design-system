@@ -17,7 +17,7 @@ Adapted from the ai-product-starter-kit's `architecture.md` template — section
 - **Animation:** GSAP where component motion needs it beyond CSS transitions.
 - **Docs/dev:** Storybook 10 (stories double as the visual-regression corpus and the "correct usage" source for compiled docs).
 - **Package manager:** npm. **Versioning/publish:** Changesets (`npm run changeset` / `version` / `release`).
-- **Testing:** no unit-test framework — see §10.
+- **Testing:** no unit-test framework for Radix-owned behavior; a `unit` Vitest project + Storybook's Vitest addon cover behavior this repo owns — see §7.
 - **CI/visual regression:** GitHub Actions (`chromatic.yml`) + Chromatic.
 
 ## 2. Repository structure
@@ -95,12 +95,15 @@ Baseline, enforced by tooling not just review: axe run against every Storybook s
 
 ## 7. Testing strategy
 
-**No unit-test framework in this repo** — a deliberate choice, not an oversight (see the layered-filtering spec's session log for the reasoning: Playwright against a throwaway dev server substitutes for interaction assertions when needed). Coverage instead comes from:
+**No unit-test framework for behavior Radix already owns** — deliberate, not an oversight (see the layered-filtering spec's session log for the original reasoning: Playwright against a throwaway dev server substitutes for interaction assertions when needed). Narrowed by ADR [`0006`](../decisions/0006-add-layered-automated-testing.md): behavior this repo owns and could silently drop — a composed-trigger prop contract, a stateful interplay this repo's own logic drives — is this repo's to test, and Chromatic can't see it by construction (an ARIA attribute doesn't render, so a screenshot is pixel-identical whether it's present or not).
+
+Coverage comes from:
 
 - **Visual regression:** Chromatic on every push, across brand/mode combinations that have stories.
-- **Story coverage:** `check-stories.mjs` — every public component must have a story.
-- **Accessibility:** `addon-a11y` + `test-storybook` against every story.
-- **Interaction correctness for stateful logic** (e.g. DataTable's filter/sort/selection interplay): a throwaway Playwright script against a real dev server, written for that piece of work, not a persisted suite.
+- **Story coverage:** `check-stories.mjs` — every public component must have a story. As of ADR 0006, every story also runs as a browser test via `@storybook/addon-vitest` (the `storybook` Vitest project) — a story with no play function is checked for render-without-error; a story with one gets its assertions run for real, in Chromium, on every `npm run validate`. This replaced `@storybook/test-runner`, which Storybook itself has deprecated in favor of this addon.
+- **Accessibility:** `addon-a11y` (axe), now running through the same Vitest pipeline rather than a separate built-Storybook-and-serve step.
+- **Composed-trigger and other owned-behavior contracts:** a second Vitest project, `unit` (`vitest.config.ts`), for assertions that aren't visual states — e.g. `Button.slot.test.tsx`, which asserts Button forwards the ARIA attributes Radix's `Slot` injects via `asChild`. Kept separate from the `storybook` project on purpose: folding a behavioral contract into a story would grow the Storybook corpus (and every Chromatic snapshot) per-assertion instead of per-visual-state. Both projects run in real Chromium via Playwright, not jsdom — several components touch real browser APIs at mount (e.g. Button's `window.matchMedia` call), which jsdom can't satisfy.
+- **Interaction correctness for stateful logic** (e.g. DataTable's filter/sort/selection interplay): a throwaway Playwright script against a real dev server, written for that piece of work, not a persisted suite. Unchanged by ADR 0006 — DataTable's own interplay is named there as explicit follow-up, not yet covered by the `unit` project.
 - **Cold-test verification for agent-facing artifacts:** a fresh subagent with no memory of the session, given only the compiled docs/skill, attempting a real task — this is how doc-generator gaps get found (see `docs/roadmap.md` Phase 4/6 findings).
 
 ## 8. Machine-facing / agent-readiness architecture

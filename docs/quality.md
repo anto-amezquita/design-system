@@ -21,7 +21,7 @@ Work is done when:
 ## 2. `npm run validate` — the one gate
 
 ```
-npm run validate = tokens:lint && tokens:contrast && check-components-doc.mjs && check-stories.mjs && typecheck
+npm run validate = tokens:lint && tokens:contrast && check-components-doc.mjs && check-stories.mjs && typecheck && test
 ```
 
 | Step | What it checks | Script |
@@ -31,6 +31,7 @@ npm run validate = tokens:lint && tokens:contrast && check-components-doc.mjs &&
 | `check-components-doc.mjs` | Every component in `tokens/component-registry.json` has a `docs/components.md` entry | — |
 | `check-stories.mjs` | Every public component has a Storybook story | — |
 | `typecheck` | `tsc --noEmit` | — |
+| `test` | Every story as a browser test + `unit` project contracts (ADR [`0006`](../decisions/0006-add-layered-automated-testing.md)) | `vitest run`, real Chromium via Playwright |
 
 `&&`-chained: it stops and exits non-zero at the first failure. Not composition-only in spirit either — read the failing step's own error, it names the fix.
 
@@ -74,11 +75,12 @@ Enforced, not just reviewed:
 
 ## 6. Testing expectations
 
-No unit-test framework in this repo (see `architecture.md` §7 for why). What actually gates a change:
+No unit-test framework for behavior Radix already owns (see `architecture.md` §7 for why). Narrowed by ADR [`0006`](../decisions/0006-add-layered-automated-testing.md): a defect found in `Button.tsx` (Radix's `Slot` injects ARIA attributes via `asChild` composition; Button silently dropped them, and Chromatic couldn't see it — the attributes don't render) showed that behavior this repo owns needs a gate this repo owns, not just the checks below. What gates a change now:
 
 - **Visual regression** — Chromatic, every push.
-- **Story coverage** — `check-stories.mjs`.
-- **Stateful/interaction logic** (sort+filter+selection interplay, etc.) — a throwaway Playwright script against a real dev server, written for that piece of work. Not persisted as a suite; written fresh, run, deleted or kept per the spec's own call.
+- **Story coverage** — `check-stories.mjs`. Every story also runs as a browser test via `@storybook/addon-vitest` (the `storybook` Vitest project, real Chromium via Playwright) — render-without-error for a plain story, real assertions for one with a play function. Replaces `@storybook/test-runner`, deprecated by Storybook in favor of this addon.
+- **Composed-trigger and other owned-behavior contracts** — a second Vitest project, `unit`, for assertions that aren't visual states (e.g. `Button.slot.test.tsx`, asserting Button forwards Radix-injected props). Separate from the `storybook` project so a behavioral contract doesn't become a Chromatic-snapshotted story just to get tested. Same browser-mode requirement as above — several components touch real browser APIs at mount (`window.matchMedia`, etc.) that jsdom can't satisfy.
+- **Stateful/interaction logic** (sort+filter+selection interplay, etc.) — a throwaway Playwright script against a real dev server, written for that piece of work. Not persisted as a suite; written fresh, run, deleted or kept per the spec's own call. Unchanged by ADR 0006 — DataTable's own interplay is named there as follow-up, not yet moved into the `unit` project.
 - **Agent-facing artifacts** (compiled docs, the skill file, the MCP server) — a cold test: a fresh subagent with zero memory of the session, given only the compiled artifact, attempting a real task. This is the only way doc-generator gaps have actually been found (see `docs/roadmap.md` Phase 4 and Phase 6 findings) — a self-assessment doesn't substitute for it.
 
 ## 7. Release checklist
