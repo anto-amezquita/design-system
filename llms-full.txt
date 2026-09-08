@@ -97,7 +97,7 @@ Dropdown for choosing a single value from a list; supports grouped options
 - Import: `import { Select } from '@amezquita/design-system/components/primitives/Select'`
 - Token prefix: `select-item-padding-*` (2 tokens)
 - Storybook: Components/Select
-- Stories: Default, WithDefaultValue, Grouped, GroupedOpen, Disabled, DarkMode
+- Stories: Default, WithDefaultValue, Grouped, Disabled, DarkMode
 
 ### Skeleton
 

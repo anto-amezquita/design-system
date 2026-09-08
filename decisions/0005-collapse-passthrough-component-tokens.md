@@ -234,7 +234,7 @@ This closes the last of the three round-21 planned batches. Every component orig
 
 `npm run tokens:lint-architecture` clean, 0 violations.
 
-**Not yet done for rounds 24–25:** `npm run tokens && npm run validate` after round 25's edit specifically, and a Chromatic check for Input, Label, Select, and Textarea.
+**Verification, closing out rounds 24–25:** Input, Label, and Textarea confirmed via Chromatic build 56 — "no changes found," as expected (both went sm → sm, just via a different token path). Select couldn't get the same automated check: two attempts at a story that opens its Radix dropdown (a play-function click, then a `defaultOpen` prop) both got captured as closed by Chromatic, because Radix Select closes on any window resize (`window.addEventListener('resize', close)` in its own source) and Chromatic resizes the viewport as part of its own capture pipeline — closing the select again regardless of how it was opened. Reverted both story attempts rather than keep a passing-but-meaningless Chromatic check. Select's label-size change (xs → sm, matching the other three) was verified manually in a local `npm run storybook` session instead.
 
 ## Alternatives considered
 
