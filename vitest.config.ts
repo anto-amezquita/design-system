@@ -32,12 +32,53 @@ function browserFor(instanceName: string) {
   } as const;
 }
 
+// Every dependency real component trees pull in, pre-bundled up front rather
+// than discovered mid-run — secondary to the cacheDir fix below, but still
+// worth keeping: it shrinks how much any one project's optimizer has left to
+// discover on a cold run.
+const optimizeDeps = {
+  include: [
+    'react/jsx-dev-runtime',
+    '@testing-library/react',
+    '@testing-library/user-event',
+    '@radix-ui/react-accordion',
+    '@radix-ui/react-alert-dialog',
+    '@radix-ui/react-avatar',
+    '@radix-ui/react-checkbox',
+    '@radix-ui/react-dialog',
+    '@radix-ui/react-radio-group',
+    '@radix-ui/react-select',
+    '@radix-ui/react-switch',
+    '@radix-ui/react-tabs',
+    '@radix-ui/react-toast',
+    '@radix-ui/react-tooltip',
+    'gsap',
+    '@phosphor-icons/react',
+  ],
+};
+
+// Each Vitest project below spins its own independent Vite dev server, and
+// by default both would write their dependency pre-bundle to the same shared
+// node_modules/.vite — on a cold cache (exactly what CI always starts from),
+// that's two processes writing to the same files at once. The actual
+// symptom this produced wasn't "unknown dependency" (optimizeDeps.include
+// above doesn't fix it) but a corrupted read of a file mid-write: "Failed to
+// import ... setup-file-with-project-annotations.js: SyntaxError: missing )
+// after argument list", cascading into ~20 unrelated story files and a real
+// "Invalid hook call" in an unrelated test, both artifacts of the race, not
+// real bugs. Giving each project its own cacheDir removes the shared
+// resource entirely, rather than trying to out-race it.
+const STORYBOOK_CACHE_DIR = path.join(dirname, 'node_modules/.vite/storybook');
+const UNIT_CACHE_DIR = path.join(dirname, 'node_modules/.vite/unit');
+
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
+  optimizeDeps,
   test: {
     projects: [
       {
         extends: true,
+        cacheDir: STORYBOOK_CACHE_DIR,
         plugins: [
           // The plugin will run tests for the stories defined in your Storybook config
           // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
@@ -55,6 +96,7 @@ export default defineConfig({
       // growing an entry per assertion.
       {
         extends: true,
+        cacheDir: UNIT_CACHE_DIR,
         test: {
           name: 'unit',
           include: [
