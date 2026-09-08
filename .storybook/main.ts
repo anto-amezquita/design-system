@@ -6,6 +6,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-docs',
     '@storybook/addon-a11y',
+    '@storybook/addon-vitest'
   ],
   framework: '@storybook/react-vite',
   async viteFinal(config) {

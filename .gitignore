@@ -5,6 +5,10 @@ node_modules/
 storybook-static/
 .DS_Store
 
+# Vitest browser-mode debug output — regenerated per run, not committed
+__screenshots__/
+.vitest-attachments/
+
 # CI script output — generated on each run, not committed
 a11y-report.json
 token-violations.json
