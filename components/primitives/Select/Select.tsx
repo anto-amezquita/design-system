@@ -24,6 +24,12 @@ type SelectProps = {
   required?: boolean
   name?: string
   groups: SelectGroup[]
+  /** Renders the dropdown open on mount, uncontrolled. Story/testing use
+      only — lets a visual-testing tool (Chromatic) capture the portal-mounted
+      content without a click, since Radix closes the select on any window
+      blur (see SelectContent's `window.addEventListener('blur', close)`),
+      which a screenshot tool's own capture step can trigger. */
+  defaultOpen?: boolean
   /** Required: the trigger is a combobox, which gets no accessible name from
       its content — without this, screen readers announce an unnamed control. */
   'aria-label': string
@@ -38,6 +44,7 @@ export function Select({
   required = false,
   name,
   groups,
+  defaultOpen,
   'aria-label': ariaLabel,
 }: SelectProps) {
   return (
@@ -48,6 +55,7 @@ export function Select({
       disabled={disabled}
       required={required}
       name={name}
+      defaultOpen={defaultOpen}
     >
       <RadixSelect.Trigger className="select__trigger" aria-label={ariaLabel}>
         <span className="select__value">

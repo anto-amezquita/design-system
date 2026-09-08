@@ -18,6 +18,7 @@
 | `required?` | `boolean` |  |
 | `name?` | `string` |  |
 | `groups` | `{ label?: string; options: { value: string; label: string; disabled?: boolean }[] }[]` |  |
+| `defaultOpen?` | `boolean` | Renders the dropdown open on mount, uncontrolled. Story/testing use only — lets a visual-testing tool (Chromatic) capture the portal-mounted content without a click, since Radix closes the select on any window blur (see SelectContent's `window.addEventListener('blur', close)`), which a screenshot tool's own capture step can trigger. |
 | `aria-label` | `string` | Required: the trigger is a combobox, which gets no accessible name from its content — without this, screen readers announce an unnamed control. |
 
 ## Tokens
