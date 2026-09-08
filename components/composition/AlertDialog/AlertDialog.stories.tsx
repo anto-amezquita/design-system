@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { AlertDialog } from './AlertDialog'
+import { Button } from '../../primitives/Button'
 import { darkModeDecorator } from '@/lib/storybook'
 
 const meta: Meta<typeof AlertDialog> = {
@@ -24,10 +25,16 @@ type Story = StoryObj<typeof AlertDialog>
  * than a direct click. This wrapper demonstrates the realistic shape:
  * consumer owns `open` state, a separate trigger button sets it.
  *
- * Cancel/Action render as plain `<button>` elements, not `<Button>` — the
- * design system's own Button component does not forward a ref, and Radix's
- * AlertDialog.Cancel/.Action need a real one to auto-focus Cancel on open.
- * Passing `<Button>` here would silently demonstrate a broken pattern.
+ * Cancel/Action render as `<Button>` — verified safe by
+ * AlertDialog.slot.test.tsx (decisions/0006-add-layered-automated-testing.md).
+ * This used to be a plain `<button>` on the reasoning that Button "does not
+ * forward a ref"; that claim was never accurate (Button has always used
+ * forwardRef + useImperativeHandle) — the real gap, found and fixed
+ * separately, was that Button didn't spread unrecognised props onto the
+ * rendered element, which is unrelated to ref forwarding but similarly
+ * invisible to Chromatic. Kept as plain `<button>` in stories where the
+ * demonstrated behavior isn't about Button specifically (WithBody,
+ * NoDescription), to keep those stories focused on AlertDialog's own props.
  */
 function Demo({ size }: { size?: 'sm' | 'md' | 'lg' }) {
   const [open, setOpen] = useState(false)
@@ -42,8 +49,8 @@ function Demo({ size }: { size?: 'sm' | 'md' | 'lg' }) {
         title="Delete this item?"
         description="This action cannot be undone."
         size={size}
-        cancel={<button type="button">Cancel</button>}
-        action={<button type="button" onClick={() => setOpen(false)}>Delete</button>}
+        cancel={<Button variant="secondary">Cancel</Button>}
+        action={<Button onClick={() => setOpen(false)}>Delete</Button>}
       />
     </>
   )
@@ -62,8 +69,8 @@ export const Default: Story = {
           onOpenChange={setOpen}
           title="Delete this item?"
           description="This action cannot be undone."
-          cancel={<button type="button">Cancel</button>}
-          action={<button type="button" onClick={() => setOpen(false)}>Delete</button>}
+          cancel={<Button variant="secondary">Cancel</Button>}
+          action={<Button onClick={() => setOpen(false)}>Delete</Button>}
         />
       </>
     )

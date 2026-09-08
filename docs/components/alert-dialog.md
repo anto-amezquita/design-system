@@ -35,8 +35,8 @@
         onOpenChange={setOpen}
         title="Delete this item?"
         description="This action cannot be undone."
-        cancel={<button type="button">Cancel</button>}
-        action={<button type="button" onClick={() => setOpen(false)}>Delete</button>}
+        cancel={<Button variant="secondary">Cancel</Button>}
+        action={<Button onClick={() => setOpen(false)}>Delete</Button>}
       />
     </>
   )
