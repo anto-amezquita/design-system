@@ -2,7 +2,7 @@
   Tokens consumed:
   --pagination-button-size, --pagination-button-background
 
-  --pagination-button-color-active
+
   --pagination-button-font-size, --pagination-button-font-weight
 
   --pagination-border-radius, --pagination-gap
@@ -10,7 +10,7 @@
   --color-border-focus, --opacity-disabled
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
-  --color-text-secondary, --color-surface-secondary, --color-border-default, --border-width-default, --color-accent-default
+  --color-text-secondary, --color-surface-secondary, --color-border-default, --border-width-default, --color-accent-default, --color-accent-foreground
 */
 
 .pagination {
@@ -49,7 +49,7 @@
 
 .pagination__button--active {
   background: var(--color-accent-default);
-  color: var(--pagination-button-color-active);
+  color: var(--color-accent-foreground);
   border-color: var(--color-accent-default);
   cursor: default;
   pointer-events: none;

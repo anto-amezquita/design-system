@@ -27,7 +27,6 @@
 |---|---|---|
 | `--switch-duration` | duration | `200ms` |
 | `--switch-label-gap` | dimension | `12px` |
-| `--switch-thumb-background` | color | `#FFFFFF` † |
 | `--switch-thumb-border-radius` | dimension | `9999px` |
 | `--switch-thumb-size` | dimension | `16px` |
 | `--switch-track-background` | color | `#A8A29E` † |

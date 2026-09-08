@@ -43,12 +43,10 @@
 | `--button-padding-x` | dimension | `24px` |
 | `--button-padding-y` | dimension | `12px` |
 | `--button-primary-background-hover` | color | `#1C1917` † |
-| `--button-primary-foreground` | color | `#FFFFFF` † |
 | `--button-secondary-background` | color | `transparent` |
 | `--button-secondary-background-hover` | color | `#292524` † |
 | `--button-secondary-border` | color | `#292524` † |
 | `--button-secondary-foreground` | color | `#292524` † |
-| `--button-secondary-foreground-hover` | color | `#FFFFFF` † |
 | `--button-spinner-duration` | duration | `750ms` |
 | `--button-wipe-duration-curve` | duration | `220ms` |
 | `--button-wipe-duration-curve-out` | duration | `180ms` |

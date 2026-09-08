@@ -23,13 +23,10 @@
 |---|---|---|
 | `--pagination-border-radius` | dimension | `4px` |
 | `--pagination-button-background` | color | `transparent` |
-| `--pagination-button-color-active` | color | `#FFFFFF` † |
 | `--pagination-button-font-size` | dimension | `14px` |
 | `--pagination-button-font-weight` | fontWeight | `500` |
 | `--pagination-button-size` | dimension | `48px` |
 | `--pagination-gap` | dimension | `8px` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

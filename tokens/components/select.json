@@ -1,32 +1,4 @@
 {
-  "select-border-width": {
-    "$value": "{border-width-interactive}",
-    "$type": "dimension"
-  },
-  "select-border-focus": {
-    "$value": "{color-border-focus}",
-    "$type": "color"
-  },
-  "select-border-radius": {
-    "$value": "{border-radius-interactive}",
-    "$type": "dimension"
-  },
-  "select-padding-x": {
-    "$value": "{space-control-padding-x}",
-    "$type": "dimension"
-  },
-  "select-padding-y": {
-    "$value": "{space-control-padding-y}",
-    "$type": "dimension"
-  },
-  "select-content-shadow": {
-    "$value": "{shadow-dropdown}",
-    "$type": "shadow"
-  },
-  "select-content-border-radius": {
-    "$value": "{border-radius-component}",
-    "$type": "dimension"
-  },
   "select-item-padding-x": {
     "$value": "{space.4}",
     "$type": "dimension"
@@ -35,16 +7,8 @@
     "$value": "{space.2}",
     "$type": "dimension"
   },
-  "select-border-hover": {
-    "$value": "{color-border-strong}",
-    "$type": "color"
-  },
   "select-label-size": {
     "$value": "{font-size.xs}",
     "$type": "dimension"
-  },
-  "select-label-weight": {
-    "$value": "{font-weight-label}",
-    "$type": "fontWeight"
   }
 }

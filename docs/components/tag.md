@@ -22,15 +22,12 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--tag-accent-foreground` | color | `#FFFFFF` † |
 | `--tag-border-radius` | dimension | `9999px` |
 | `--tag-font-size` | dimension | `12px` |
 | `--tag-font-weight` | fontWeight | `500` |
 | `--tag-muted-background` | color | `transparent` |
 | `--tag-padding-x` | dimension | `12px` |
 | `--tag-padding-y` | dimension | `4px` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

@@ -10,9 +10,9 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-518 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+450 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
 
-- component: 281
+- component: 213
 - primitive: 112
 - color: 43
 - typography: 32
@@ -41,7 +41,7 @@ User profile picture with fallback to initials when no image is provided
 Small status indicator or numeric count overlay attached to another element
 
 - Import: `import { Badge } from '@amezquita/design-system/components/primitives/Badge'`
-- Token prefix: `badge-*` (20 tokens)
+- Token prefix: `badge-*` (6 tokens)
 - Storybook: Components/Badge
 - Stories: Default, Count, Dot, AllVariants, AllShapes, AllVariantsAllShapes, DarkMode
 
@@ -50,7 +50,7 @@ Small status indicator or numeric count overlay attached to another element
 Trigger for user actions; renders as `<button>` or `<a>` depending on context
 
 - Import: `import { Button } from '@amezquita/design-system/components/primitives/Button'`
-- Token prefix: `button-*` (25 tokens)
+- Token prefix: `button-*` (23 tokens)
 - Storybook: Components/Button
 - Stories: Primary, Secondary, Ghost, Link, Loading, LoadingSecondary, FullWidth, WithIcon, Disabled, AllVariants, AllStates, DarkMode
 
@@ -59,7 +59,7 @@ Trigger for user actions; renders as `<button>` or `<a>` depending on context
 Single boolean selection with an associated label; supports indeterminate state
 
 - Import: `import { Checkbox } from '@amezquita/design-system/components/primitives/Checkbox'`
-- Token prefix: `checkbox-*` (7 tokens)
+- Token prefix: `checkbox-*` (5 tokens)
 - Storybook: Components/Checkbox
 - Stories: Default, Checked, Indeterminate, Disabled, DisabledChecked, Controlled, AllStates, NoLabel, DarkMode
 
@@ -68,7 +68,7 @@ Single boolean selection with an associated label; supports indeterminate state
 Labelled single-line text entry with hint and error states
 
 - Import: `import { Input } from '@amezquita/design-system/components/primitives/Input'`
-- Token prefix: `input-*` (11 tokens)
+- Token prefix: `input-*` (2 tokens)
 - Storybook: Components/Input
 - Stories: Default, WithHint, WithError, Disabled, NoLabel, WithPrefix, WithSuffix, Clearable, Search, AllStates, DarkMode
 
@@ -95,7 +95,7 @@ Single-selection control within a mutually exclusive group
 Dropdown for choosing a single value from a list; supports grouped options
 
 - Import: `import { Select } from '@amezquita/design-system/components/primitives/Select'`
-- Token prefix: `select-*` (12 tokens)
+- Token prefix: `select-*` (3 tokens)
 - Storybook: Components/Select
 - Stories: Default, WithDefaultValue, Grouped, Disabled, DarkMode
 
@@ -122,7 +122,7 @@ Indeterminate loading indicator for in-progress operations
 Binary toggle for on/off settings; renders as a styled checkbox under the hood
 
 - Import: `import { Switch } from '@amezquita/design-system/components/primitives/Switch'`
-- Token prefix: `switch-*` (10 tokens)
+- Token prefix: `switch-*` (9 tokens)
 - Storybook: Components/Switch
 - Stories: Default, Checked, Disabled, DisabledChecked, NoLabel, Controlled, AllStates, DarkMode
 
@@ -131,7 +131,7 @@ Binary toggle for on/off settings; renders as a styled checkbox under the hood
 Inline label for categorising or annotating content — non-interactive
 
 - Import: `import { Tag } from '@amezquita/design-system/components/primitives/Tag'`
-- Token prefix: `tag-*` (7 tokens)
+- Token prefix: `tag-*` (6 tokens)
 - Storybook: Components/Tag
 - Stories: Default, Accent, Muted, WithIcon, Removable, AllVariants, InContext, DarkMode
 
@@ -151,7 +151,7 @@ Multi-line text entry with label, hint, and error states — mirrors Input API
 Contextual inline feedback message with semantic severity levels (info, success, warning, error)
 
 - Import: `import { Alert } from '@amezquita/design-system/components/composition/Alert'`
-- Token prefix: `alert-*` (21 tokens)
+- Token prefix: `alert-*` (4 tokens)
 - Storybook: Components/Alert
 - Stories: Default, AllVariants, Dismissible, NoTitle, NoIcon, DarkMode
 
@@ -196,7 +196,7 @@ Side-anchored slide-in panel for supplemental content or secondary navigation
 Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout
 
 - Import: `import { Toast } from '@amezquita/design-system/components/composition/Toast'`
-- Token prefix: `toast-*` (18 tokens)
+- Token prefix: `toast-*` (6 tokens)
 - Storybook: Components/Toast
 - Stories: Default, AllVariants, TitleOnly, DarkMode
 
@@ -261,7 +261,7 @@ Page-level section header with eyebrow, title, lead text, and an action slot
 Page navigation controls for multi-page data sets; exposes current page and total page count
 
 - Import: `import { Pagination } from '@amezquita/design-system/components/patterns/Pagination'`
-- Token prefix: `pagination-*` (7 tokens)
+- Token prefix: `pagination-*` (6 tokens)
 - Storybook: Components/Pagination
 - Stories: Default, EdgeCases, Compact, DarkMode
 

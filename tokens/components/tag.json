@@ -19,10 +19,6 @@
     "$value": "{font-weight.medium}",
     "$type": "fontWeight"
   },
-  "tag-accent-foreground": {
-    "$value": "{color-accent-foreground}",
-    "$type": "color"
-  },
   "tag-muted-background": {
     "$value": "transparent",
     "$type": "color"

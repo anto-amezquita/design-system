@@ -5,15 +5,14 @@
   --button-border-radius, --button-border-width, --button-outline-border-width, --button-duration
   --button-icon-gap, --button-spinner-duration
   --button-arrow-nudge, --button-glow-size
-  --button-primary-foreground
   --button-primary-background-hover
   --button-secondary-background, --button-secondary-foreground, --button-secondary-border
-  --button-secondary-background-hover, --button-secondary-foreground-hover
+  --button-secondary-background-hover
   --button-ghost-background, --button-ghost-border
   --color-border-focus, --font-family-base, --easing-default, --opacity-disabled
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
-  --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default
+  --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-accent-foreground
 */
 
 .button {
@@ -29,7 +28,7 @@
   border-radius: var(--button-border-radius);
   border: var(--button-border-width) solid var(--color-accent-default);
   background: var(--color-accent-default);
-  color: var(--button-primary-foreground);
+  color: var(--color-accent-foreground);
   text-decoration: none;
   cursor: pointer;
   position: relative;
@@ -88,7 +87,7 @@
 }
 
 .button--secondary.button--hovering {
-  color: var(--button-secondary-foreground-hover);
+  color: var(--color-accent-foreground);
 }
 
 /* Ghost */
@@ -221,7 +220,7 @@
 
   .button--secondary:active {
     background: var(--button-secondary-background-hover);
-    color: var(--button-secondary-foreground-hover);
+    color: var(--color-accent-foreground);
     border-color: var(--button-secondary-background-hover);
   }
 
@@ -260,7 +259,7 @@
 
   .button--secondary:hover {
     background: var(--button-secondary-background-hover);
-    color: var(--button-secondary-foreground-hover);
+    color: var(--color-accent-foreground);
   }
 
   .button--ghost:hover {

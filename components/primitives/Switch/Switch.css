@@ -3,12 +3,12 @@
   --switch-track-width, --switch-track-height, --switch-track-background
   --switch-track-background-disabled
   --switch-track-border-radius
-  --switch-thumb-background, --switch-thumb-size, --switch-thumb-border-radius
+  --switch-thumb-size, --switch-thumb-border-radius
   --switch-label-gap
   --switch-duration, --easing-default, --opacity-disabled, --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
-  --color-text-secondary, --color-text-primary, --font-size-control, --color-accent-default
+  --color-text-secondary, --color-text-primary, --font-size-control, --color-accent-default, --color-accent-foreground
 */
 
 .switch {
@@ -65,7 +65,7 @@
   display: block;
   width: var(--switch-thumb-size);
   height: var(--switch-thumb-size);
-  background: var(--switch-thumb-background);
+  background: var(--color-accent-foreground);
   border-radius: var(--switch-thumb-border-radius);
   transform: translateX(calc((var(--switch-track-height) - var(--switch-thumb-size)) / 2));
   transition: transform var(--switch-duration) var(--easing-default);

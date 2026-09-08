@@ -1,15 +1,17 @@
 /*
   Tokens consumed:
-  --input-border-width, --input-border-hover, --input-border-focus, --input-border-error
-  --input-border-radius, --input-padding-x, --input-padding-y
+
+
   --input-label-size, --input-label-weight
-  --input-hint-size, --input-error-color
+  --input-hint-size
   --font-family-base, --duration-interaction, --easing-default
   --space-element-gap, --space-inline-gap, --opacity-disabled, --border-radius-pill
   --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --font-size-control, --color-surface-primary
+  --border-width-interactive, --color-border-strong, --color-feedback-error
+  --border-radius-interactive, --space-control-padding-x, --space-control-padding-y, --font-weight-label
 */
 
 .input-field {
@@ -21,7 +23,7 @@
 .input-field__label {
   font-family: var(--font-family-base);
   font-size: var(--input-label-size);
-  font-weight: var(--input-label-weight);
+  font-weight: var(--font-weight-label);
   color: var(--color-text-primary);
   line-height: 1;
 }
@@ -32,21 +34,21 @@
   display: flex;
   align-items: center;
   gap: var(--space-inline-gap);
-  padding: var(--input-padding-y) var(--input-padding-x);
+  padding: var(--space-control-padding-y) var(--space-control-padding-x);
   background: var(--color-surface-primary);
-  border: var(--input-border-width) solid var(--color-border-default);
-  border-radius: var(--input-border-radius);
+  border: var(--border-width-interactive) solid var(--color-border-default);
+  border-radius: var(--border-radius-interactive);
   transition: border-color var(--duration-interaction) var(--easing-default);
   box-sizing: border-box;
 }
 
 .input-field__wrapper:hover:not(.input-field__wrapper--disabled) {
-  border-color: var(--input-border-hover);
+  border-color: var(--color-border-strong);
 }
 
 .input-field__wrapper:focus-within:not(.input-field__wrapper--disabled) {
-  border-color: var(--input-border-focus);
-  outline: var(--focus-ring-width) solid var(--input-border-focus);
+  border-color: var(--color-border-focus);
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
   outline-offset: var(--focus-ring-offset);
 }
 
@@ -83,12 +85,12 @@
 /* Error state */
 
 .input-field--error .input-field__wrapper {
-  border-color: var(--input-border-error);
+  border-color: var(--color-feedback-error);
 }
 
 .input-field--error .input-field__wrapper:focus-within:not(.input-field__wrapper--disabled) {
-  border-color: var(--input-border-error);
-  outline-color: var(--input-border-error);
+  border-color: var(--color-feedback-error);
+  outline-color: var(--color-feedback-error);
 }
 
 /* Hint */
@@ -101,7 +103,7 @@
 }
 
 .input-field--error .input-field__hint {
-  color: var(--input-error-color);
+  color: var(--color-feedback-error);
 }
 
 /* Prefix and suffix slots */

@@ -2,13 +2,13 @@
   Tokens consumed:
   --checkbox-size
   --checkbox-border, --checkbox-border-width, --checkbox-border-radius
-  --checkbox-foreground-checked, --checkbox-foreground-indeterminate
+
   --checkbox-label-gap
   --font-family-base, --duration-interaction, --easing-default
   --opacity-disabled, --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
-  --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-surface-primary
+  --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-surface-primary, --color-accent-foreground
 */
 
 /* Wrapper — owns layout and disabled opacity */
@@ -91,7 +91,7 @@
   display: none;
   width: var(--icon-size-xs);
   height: var(--icon-size-xs);
-  color: var(--checkbox-foreground-checked);
+  color: var(--color-accent-foreground);
 }
 
 .checkbox__root[data-state='checked'] .checkbox__icon--check {
@@ -100,7 +100,7 @@
 
 .checkbox__root[data-state='indeterminate'] .checkbox__icon--indeterminate {
   display: block;
-  color: var(--checkbox-foreground-indeterminate);
+  color: var(--color-accent-foreground);
 }
 
 /* Label */

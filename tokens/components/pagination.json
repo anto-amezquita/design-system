@@ -7,10 +7,6 @@
     "$value": "transparent",
     "$type": "color"
   },
-  "pagination-button-color-active": {
-    "$value": "{color-accent-foreground}",
-    "$type": "color"
-  },
   "pagination-button-font-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension"

@@ -11,25 +11,11 @@
 | Token | Type | Value |
 |---|---|---|
 | `--toast-accent-width` | dimension | `4px` |
-| `--toast-border-radius` | dimension | `8px` |
 | `--toast-close-offset` | dimension | `8px` |
-| `--toast-content-gap` | dimension | `4px` |
-| `--toast-error-border` | color | `#c0392b` † |
 | `--toast-font-size` | dimension | `14px` |
-| `--toast-gap` | dimension | `12px` |
-| `--toast-icon-size` | dimension | `20px` |
-| `--toast-info-border` | color | `#2563EB` † |
 | `--toast-max-width` | dimension | `380px` |
-| `--toast-padding-x` | dimension | `24px` |
-| `--toast-padding-y` | dimension | `16px` |
-| `--toast-shadow` | shadow | `0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)` |
-| `--toast-success-border` | color | `#16A34A` † |
 | `--toast-title-weight` | fontWeight | `600` |
 | `--toast-viewport-inset` | dimension | `24px` |
-| `--toast-warning-border` | color | `#D97706` † |
-| `--toast-z-index` | number | `500` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

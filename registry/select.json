@@ -12,32 +12,14 @@
   ],
   "cssVars": {
     "light": {
-      "select-border-width": "1px",
-      "select-border-focus": "#0A0A0A",
-      "select-border-radius": "4px",
-      "select-padding-x": "16px",
-      "select-padding-y": "12px",
-      "select-content-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
-      "select-content-border-radius": "8px",
       "select-item-padding-x": "16px",
       "select-item-padding-y": "8px",
-      "select-border-hover": "#A8A29E",
-      "select-label-size": "12px",
-      "select-label-weight": "500"
+      "select-label-size": "12px"
     },
     "dark": {
-      "select-border-width": "1px",
-      "select-border-focus": "#fafaf9",
-      "select-border-radius": "4px",
-      "select-padding-x": "16px",
-      "select-padding-y": "12px",
-      "select-content-shadow": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
-      "select-content-border-radius": "8px",
       "select-item-padding-x": "16px",
       "select-item-padding-y": "8px",
-      "select-border-hover": "#78716c",
-      "select-label-size": "12px",
-      "select-label-weight": "500"
+      "select-label-size": "12px"
     }
   }
 }

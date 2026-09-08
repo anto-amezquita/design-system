@@ -30,19 +30,8 @@ Also accepts all props of: `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'o
 
 | Token | Type | Value |
 |---|---|---|
-| `--input-border-error` | color | `#c0392b` † |
-| `--input-border-focus` | color | `#0A0A0A` † |
-| `--input-border-hover` | color | `#A8A29E` † |
-| `--input-border-radius` | dimension | `4px` |
-| `--input-border-width` | dimension | `1px` |
-| `--input-error-color` | color | `#c0392b` † |
 | `--input-hint-size` | dimension | `12px` |
 | `--input-label-size` | dimension | `14px` |
-| `--input-label-weight` | fontWeight | `500` |
-| `--input-padding-x` | dimension | `16px` |
-| `--input-padding-y` | dimension | `12px` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

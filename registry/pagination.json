@@ -14,7 +14,6 @@
     "light": {
       "pagination-button-size": "48px",
       "pagination-button-background": "transparent",
-      "pagination-button-color-active": "#FFFFFF",
       "pagination-button-font-size": "14px",
       "pagination-button-font-weight": "500",
       "pagination-border-radius": "4px",
@@ -23,7 +22,6 @@
     "dark": {
       "pagination-button-size": "48px",
       "pagination-button-background": "transparent",
-      "pagination-button-color-active": "#1c1917",
       "pagination-button-font-size": "14px",
       "pagination-button-font-weight": "500",
       "pagination-border-radius": "4px",

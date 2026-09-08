@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted (rolling — 132 of 299 pass-throughs collapsed; eight full target groups closed. Rest tracked in `docs/backlog.md`)
+Accepted (rolling — 200 of 299 pass-throughs collapsed. Rest tracked in `docs/backlog.md`)
 
 ## Context
 
@@ -112,22 +112,74 @@ Same mechanism as prior rounds. No process issues.
 
 **Chromatic visual check (2026-09), covering rounds 1–10 (all 22 touched components, 192 stories, 28 components total):** `npm run chromatic` build 44 passed with **no visual changes found**. Confirms the collapse mechanism (removing a component token and repointing its consuming CSS to reference the semantic token directly) has been value-neutral across every round so far — the CSS cascade resolves identically whether a component token or a direct semantic reference is used, as the design predicted before round 1 began.
 
+**Round 11 (2026-09):** re-ran `npm run tokens:audit --json` (167 passthroughs remained, all 65 remaining target groups under 17 members — the 10+ groups from rounds 3–10 are all closed). Collapsed all 7 of the `color-accent-foreground` pass-throughs (a clean group — none previously touched). Spans 5 components: Button (2 tokens: `button-primary-foreground` at 1 call site, `button-secondary-foreground-hover` at 3 call sites), Checkbox (2 tokens: `checkbox-foreground-checked`, `checkbox-foreground-indeterminate`), Pagination (1), Switch (1), Tag (1).
+
+Same mechanism as prior rounds. No process issues.
+
+`npm run tokens && npm run validate` run clean after round 11: 518 → 511 tokens (exactly the 7 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean.
+
+**Not yet done for round 11:** a Chromatic check specifically covering round 11's 5 touched components.
+
+**Round 12 (2026-09):** switched slicing strategy from target-group batching to component-by-component clearing, now that every target group is under 7 tokens — at that size, a round sliced by component covers more ground than one sliced by shared target, and fully clearing a component removes an entire file's passthrough debt in one pass rather than leaving scattered remainders across many rounds. Picked Alert first: the largest single component's remaining passthrough count (17), all previously untouched by target-group rounds except `alert-border-width` (round 7) and `alert-font-size` (round 8).
+
+Collapsed all 17 remaining Alert passthroughs in one sweep, spanning 5 different semantic targets: `alert-padding-x`/`alert-padding-y` → `space-prominent-padding-x`/`-y`, `alert-gap` → `space-label-gap`, `alert-border-radius` → `border-radius-component`, `alert-icon-size` → `size-icon-md`, and all 12 variant color tokens (`alert-{success,warning,error,info}-{background,foreground,border}`) → their matching `color-feedback-*` semantic tokens. Rewrote `tokens/components/alert.json` in full (17 removals in one file is past the point where sequential `str_replace` edits are worth it) rather than editing token-by-token. Alert is now fully clear of passthroughs — its remaining 4 tokens are all chain-skips or literals, tracked separately.
+
+Same mechanism as prior rounds (remove token, repoint CSS, update header comment) — slicing changed, not the mechanism itself. No process issues.
+
+`npm run tokens && npm run validate` run clean after round 12: 511 → 494 tokens (exactly the 17 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean.
+
+**Not yet done for round 12:** a Chromatic check for Alert.
+
+**Round 13 (2026-09):** same component-by-component approach, next largest remaining count: Badge (14 passthroughs, all previously untouched by target-group rounds). Collapsed all 14 in one sweep across 3 semantic targets: `badge-gap` → `space-tight-gap`, `badge-border-radius` → `border-radius-pill`, and all 12 variant color tokens (`badge-{success,warning,error,info}-{background,foreground,border}`) → their matching `color-feedback-*` tokens — the exact same variant-color pattern as Alert in round 12. Rewrote `tokens/components/badge.json` in full for the same reason as Alert (14 removals). Badge is now fully clear of passthroughs.
+
+Same mechanism as prior rounds. No process issues.
+
+`npm run tokens && npm run validate` run clean after round 13: 494 → 480 tokens (exactly the 14 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean.
+
+**Not yet done for round 13:** a Chromatic check for Badge.
+
+**Round 14 (2026-09):** same component-by-component approach, next largest remaining count: Toast (12 passthroughs, all previously untouched by target-group rounds). Collapsed all 12 across 9 semantic targets: `toast-border-radius` → `border-radius-component`, `toast-padding-x`/`-y` → `space-prominent-padding-x`/`-y`, `toast-gap` → `space-label-gap` (2 call sites: viewport gap, individual toast gap), `toast-shadow` → `shadow-toast`, `toast-z-index` → `z-toast`, `toast-icon-size` → `size-icon-md` (2 call sites), `toast-content-gap` → `space-tight-gap`, and the 4 variant border tokens (`toast-{success,warning,error,info}-border`) → their matching `color-feedback-*-border` tokens. Toast is now fully clear of passthroughs — its remaining 6 tokens are literals or chain-skips.
+
+Same mechanism as prior rounds. No process issues.
+
+`npm run tokens && npm run validate` run clean after round 14: 480 → 468 tokens (exactly the 12 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean.
+
+**Not yet done for round 14:** a Chromatic check for Toast.
+
+**Round 15 (2026-09):** same component-by-component approach. Four components were tied at 9 remaining passthroughs each (Select, Tabs, Textarea, Input); picked Input first. Collapsed all 9 across 7 semantic targets: `input-border-width` → `border-width-interactive`, `input-border-hover` → `color-border-strong`, `input-border-focus` → `color-border-focus` (2 call sites), `input-border-radius` → `border-radius-interactive`, `input-padding-x`/`-y` → `space-control-padding-x`/`-y`, `input-label-weight` → `font-weight-label`, and `input-border-error` + `input-error-color` (2 separate component tokens, 4 call sites total) both → `color-feedback-error` — confirmed as a genuine coincidence (border color and hint-text color happening to share one semantic value) rather than a duplicate to merge, same reasoning as round 2's `breadcrumb-link-color`/`breadcrumb-separator-color`. Input is now fully clear of passthroughs — its remaining 2 tokens (`input-label-size`, `input-hint-size`) are chain-skips.
+
+Same mechanism as prior rounds. No process issues.
+
+`npm run tokens && npm run validate` run clean after round 15: 468 → 459 tokens (exactly the 9 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean.
+
+**Not yet done for round 15:** a Chromatic check for Input.
+
+**Round 16 (2026-09):** same component-by-component approach. Picked Select, the next of the three components still tied at 9 remaining (Select, Tabs, Textarea). Collapsed all 9 across 8 semantic targets: `select-border-width` → `border-width-interactive` (2 call sites: trigger, content), `select-border-focus` → `color-border-focus` (2 call sites), `select-border-radius` → `border-radius-interactive`, `select-padding-x`/`-y` → `space-control-padding-x`/`-y`, `select-content-shadow` → `shadow-dropdown`, `select-content-border-radius` → `border-radius-component`, `select-border-hover` → `color-border-strong`, `select-label-weight` → `font-weight-label`. Select is now fully clear of passthroughs — its remaining 3 tokens (`select-item-padding-x`, `select-item-padding-y`, `select-label-size`) are chain-skips.
+
+Same mechanism as prior rounds. No process issues.
+
+`npm run tokens && npm run validate` run clean after round 16: 459 → 450 tokens (exactly the 9 collapsed), token linter 0 violations, contrast check clean across all 4 modes, `tsc --noEmit` clean.
+
+**Not yet done for round 16:** a Chromatic check for Select.
+
 ## Alternatives considered
 
-- Start with the largest single target group (`color-text-secondary`, 29 tokens across ~15 components) instead of one component at a time — done in round 3, after rounds 1–2 validated the mechanism on smaller surfaces first. Rounds 4–10 repeated the same approach for the next seven largest groups (`color-text-primary` 20, `color-surface-secondary` 17, `color-border-default` 16, `border-width-default` 13, `font-size-control` 12, `color-accent-default` 12, `color-surface-primary` 11). Every group of 10+ tokens is now closed; remaining groups all have fewer than 10 members.
+- Start with the largest single target group (`color-text-secondary`, 29 tokens across ~15 components) instead of one component at a time — done in round 3, after rounds 1–2 validated the mechanism on smaller surfaces first. Rounds 4–11 repeated the same approach for the next eight largest groups (`color-text-primary` 20, `color-surface-secondary` 17, `color-border-default` 16, `border-width-default` 13, `font-size-control` 12, `color-accent-default` 12, `color-surface-primary` 11, `color-accent-foreground` 7). Every group of 10+ tokens is now closed; remaining groups all have fewer than 7 members.
+- Round 12 switched slicing from target-group to component-by-component, now that remaining groups are too small (under 7 members) for group-batching to clear much per round. Clearing a whole component's passthroughs in one round, regardless of how many different semantic targets they point to, removes more debt per round at this stage and leaves no scattered per-component remainder the way group-batching would.
 - Collapse all 299 in one pass — rejected as the same over-large-batch risk 0004 avoided by running five separate rounds.
 
 ## Consequences
 
 ### Positive
-- Validates the mechanism (remove token + repoint CSS var) end-to-end on small, low-risk surfaces before scaling to the remaining ~167 pass-throughs.
-- Avatar: 14 → 9 component-tier tokens. Breadcrumb: 8 → 3. Eight full target groups (`color-text-secondary` 29/29, `color-text-primary` 20/20, `color-surface-secondary` 17/17, `color-border-default` 16/16, `border-width-default` 13/13, `font-size-control` 12/12, `color-accent-default` 12/12, `color-surface-primary` 11/11) closed end to end across their respective components.
-- Confirms target-group batching scales cleanly across many files and multiple rounds, not just a single pilot. All target groups of 10+ tokens are now done — every remaining group is under 10 members, a natural point to reconsider round sizing.
+- Validates the mechanism (remove token + repoint CSS var) end-to-end on small, low-risk surfaces before scaling to the remaining ~99 pass-throughs.
+- Avatar: 14 → 9 component-tier tokens. Breadcrumb: 8 → 3. Nine full target groups closed in rounds 1–11. Alert, Badge, Toast, Input, and Select (rounds 12–16) all fully cleared of passthroughs.
+- Confirms the mechanism itself is independent of slicing strategy — switching from target-group to component-by-component in round 12 required no change to the remove-token/repoint-CSS/update-comment steps, only to which tokens get batched together.
 
 ### Negative
-- 132 collapses confirmed via nine clean `npm run tokens && npm run validate` runs (rounds 3–10), each matching the exact token-count delta predicted by the audit, and now also confirmed pixel-identical by a clean Chromatic build (build 44, 2026-09) across all 192 stories.
-- ~167 pass-throughs remain uncollapsed across the other 57 target groups, all under 10 tokens each.
-- Round 4 included one caught-and-fixed editing mistake (a corrupted token file, see Decision) — worth double-checking file state after each edit in future rounds rather than assuming a batch of edits all landed cleanly. Rounds 5–10 had no such issue.
+- Chromatic visual check still outstanding for round 11's 5 components, and rounds 12–16's Alert, Badge, Toast, Input, and Select.
+- 200 collapses confirmed via sixteen clean `npm run tokens && npm run validate` runs (rounds 3–16) plus a clean Chromatic build (44) covering rounds 1–10.
+- ~99 pass-throughs remain uncollapsed, tracked per-component.
+- Round 4 included one caught-and-fixed editing mistake (a corrupted token file, see Decision) — worth double-checking file state after each edit in future rounds rather than assuming a batch of edits all landed cleanly. Rounds 5–16 had no such issue.
 
 ## Related files
 

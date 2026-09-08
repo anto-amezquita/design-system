@@ -19,10 +19,6 @@
     "$value": "{border-radius-pill}",
     "$type": "dimension"
   },
-  "switch-thumb-background": {
-    "$value": "{color-accent-foreground}",
-    "$type": "color"
-  },
   "switch-thumb-size": {
     "$value": "{space.4}",
     "$type": "dimension"

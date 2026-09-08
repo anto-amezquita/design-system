@@ -2,13 +2,13 @@
   Tokens consumed:
   --tag-border-radius
   --tag-padding-x, --tag-padding-y, --tag-font-size, --tag-font-weight
-  --tag-accent-foreground
+
   --tag-muted-background
   --font-family-base, --duration-interaction, --easing-default, --color-border-focus
   --space-inline-gap
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
-  --color-text-secondary, --color-surface-secondary, --color-border-default, --border-width-default, --color-accent-default
+  --color-text-secondary, --color-surface-secondary, --color-border-default, --border-width-default, --color-accent-default, --color-accent-foreground
 */
 
 .tag {
@@ -30,7 +30,7 @@
 
 .tag--accent {
   background: var(--color-accent-default);
-  color: var(--tag-accent-foreground);
+  color: var(--color-accent-foreground);
   border-color: var(--color-accent-default);
 }
 

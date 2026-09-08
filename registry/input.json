@@ -12,30 +12,12 @@
   ],
   "cssVars": {
     "light": {
-      "input-border-width": "1px",
-      "input-border-hover": "#A8A29E",
-      "input-border-focus": "#0A0A0A",
-      "input-border-error": "#c0392b",
-      "input-border-radius": "4px",
-      "input-padding-x": "16px",
-      "input-padding-y": "12px",
       "input-label-size": "14px",
-      "input-label-weight": "500",
-      "input-hint-size": "12px",
-      "input-error-color": "#c0392b"
+      "input-hint-size": "12px"
     },
     "dark": {
-      "input-border-width": "1px",
-      "input-border-hover": "#78716c",
-      "input-border-focus": "#fafaf9",
-      "input-border-error": "#f87171",
-      "input-border-radius": "4px",
-      "input-padding-x": "16px",
-      "input-padding-y": "12px",
       "input-label-size": "14px",
-      "input-label-weight": "500",
-      "input-hint-size": "12px",
-      "input-error-color": "#f87171"
+      "input-hint-size": "12px"
     }
   }
 }

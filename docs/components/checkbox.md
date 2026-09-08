@@ -28,8 +28,6 @@
 | `--checkbox-border` | color | `#A8A29E` † |
 | `--checkbox-border-radius` | dimension | `4px` |
 | `--checkbox-border-width` | dimension | `1px` |
-| `--checkbox-foreground-checked` | color | `#FFFFFF` † |
-| `--checkbox-foreground-indeterminate` | color | `#FFFFFF` † |
 | `--checkbox-label-gap` | dimension | `12px` |
 | `--checkbox-size` | dimension | `24px` |
 

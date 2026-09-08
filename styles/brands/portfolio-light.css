@@ -9,9 +9,7 @@
   --checkbox-border: var(--color-border-strong);
   --dialog-overlay-color: var(--color-surface-tertiary);
   --drawer-overlay-color: var(--color-surface-tertiary);
-  --input-border-hover: var(--color-border-strong);
   --radio-border: var(--color-border-strong);
-  --select-border-hover: var(--color-border-strong);
   --skeleton-background: var(--color-skeleton-base);
   --skeleton-highlight: var(--color-skeleton-highlight);
   --switch-track-background: var(--color-border-strong);

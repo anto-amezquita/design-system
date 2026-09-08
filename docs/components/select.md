@@ -24,20 +24,9 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--select-border-focus` | color | `#0A0A0A` † |
-| `--select-border-hover` | color | `#A8A29E` † |
-| `--select-border-radius` | dimension | `4px` |
-| `--select-border-width` | dimension | `1px` |
-| `--select-content-border-radius` | dimension | `8px` |
-| `--select-content-shadow` | shadow | `0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)` |
 | `--select-item-padding-x` | dimension | `16px` |
 | `--select-item-padding-y` | dimension | `8px` |
 | `--select-label-size` | dimension | `12px` |
-| `--select-label-weight` | fontWeight | `500` |
-| `--select-padding-x` | dimension | `16px` |
-| `--select-padding-y` | dimension | `12px` |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

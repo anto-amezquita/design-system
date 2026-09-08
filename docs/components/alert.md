@@ -22,29 +22,10 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--alert-border-radius` | dimension | `8px` |
 | `--alert-close-offset` | dimension | `8px` |
 | `--alert-content-gap` | dimension | `4px` |
-| `--alert-error-background` | color | `#FEF2F2` † |
-| `--alert-error-border` | color | `#c0392b` † |
-| `--alert-error-foreground` | color | `#a93226` † |
 | `--alert-exit-distance` | dimension | `4px` |
-| `--alert-gap` | dimension | `12px` |
-| `--alert-icon-size` | dimension | `20px` |
-| `--alert-info-background` | color | `#EFF6FF` † |
-| `--alert-info-border` | color | `#2563EB` † |
-| `--alert-info-foreground` | color | `#1D4ED8` † |
-| `--alert-padding-x` | dimension | `24px` |
-| `--alert-padding-y` | dimension | `16px` |
-| `--alert-success-background` | color | `#F0FDF4` † |
-| `--alert-success-border` | color | `#16A34A` † |
-| `--alert-success-foreground` | color | `#15803D` † |
 | `--alert-title-weight` | fontWeight | `600` |
-| `--alert-warning-background` | color | `#FFFBEB` † |
-| `--alert-warning-border` | color | `#D97706` † |
-| `--alert-warning-foreground` | color | `#B45309` † |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

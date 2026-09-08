@@ -19,28 +19,12 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--badge-border-radius` | dimension | `9999px` |
 | `--badge-count-size` | dimension | `20px` |
 | `--badge-dot-size` | dimension | `8px` |
-| `--badge-error-background` | color | `#FEF2F2` † |
-| `--badge-error-border` | color | `#c0392b` † |
-| `--badge-error-foreground` | color | `#a93226` † |
 | `--badge-font-size` | dimension | `12px` |
 | `--badge-font-weight` | fontWeight | `500` |
-| `--badge-gap` | dimension | `4px` |
-| `--badge-info-background` | color | `#EFF6FF` † |
-| `--badge-info-border` | color | `#2563EB` † |
-| `--badge-info-foreground` | color | `#1D4ED8` † |
 | `--badge-padding-x` | dimension | `8px` |
 | `--badge-padding-y` | dimension | `4px` |
-| `--badge-success-background` | color | `#F0FDF4` † |
-| `--badge-success-border` | color | `#16A34A` † |
-| `--badge-success-foreground` | color | `#15803D` † |
-| `--badge-warning-background` | color | `#FFFBEB` † |
-| `--badge-warning-border` | color | `#D97706` † |
-| `--badge-warning-foreground` | color | `#B45309` † |
-
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
 ## Usage example
 

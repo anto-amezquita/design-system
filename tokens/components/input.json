@@ -1,46 +1,10 @@
 {
-  "input-border-width": {
-    "$value": "{border-width-interactive}",
-    "$type": "dimension"
-  },
-  "input-border-hover": {
-    "$value": "{color-border-strong}",
-    "$type": "color"
-  },
-  "input-border-focus": {
-    "$value": "{color-border-focus}",
-    "$type": "color"
-  },
-  "input-border-error": {
-    "$value": "{color-feedback-error}",
-    "$type": "color"
-  },
-  "input-border-radius": {
-    "$value": "{border-radius-interactive}",
-    "$type": "dimension"
-  },
-  "input-padding-x": {
-    "$value": "{space-control-padding-x}",
-    "$type": "dimension"
-  },
-  "input-padding-y": {
-    "$value": "{space-control-padding-y}",
-    "$type": "dimension"
-  },
   "input-label-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension"
   },
-  "input-label-weight": {
-    "$value": "{font-weight-label}",
-    "$type": "fontWeight"
-  },
   "input-hint-size": {
     "$value": "{font-size.xs}",
     "$type": "dimension"
-  },
-  "input-error-color": {
-    "$value": "{color-feedback-error}",
-    "$type": "color"
   }
 }

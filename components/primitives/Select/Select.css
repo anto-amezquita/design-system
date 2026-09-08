@@ -1,16 +1,19 @@
 /*
   Tokens consumed:
 
-  --select-border-width, --select-border-focus, --select-border-hover
-  --select-border-radius, --select-padding-x, --select-padding-y
-  --select-content-shadow, --select-content-border-radius
+
+
+
+
   --select-item-padding-x, --select-item-padding-y
-  --select-label-size, --select-label-weight
+  --select-label-size
   --font-family-base, --color-text-secondary, --color-text-primary, --color-border-focus, --border-radius-interactive
   --space-tight-gap, --duration-interaction, --easing-default, --opacity-disabled, --z-dropdown
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-surface-primary
+  --border-width-interactive, --color-border-strong, --border-radius-interactive
+  --space-control-padding-x, --space-control-padding-y, --shadow-dropdown, --border-radius-component, --font-weight-label
 */
 
 /* Trigger */
@@ -21,13 +24,13 @@
   justify-content: space-between;
   gap: var(--space-inline-gap);
   width: 100%;
-  padding: var(--select-padding-y) var(--select-padding-x);
+  padding: var(--space-control-padding-y) var(--space-control-padding-x);
   font-family: var(--font-family-base);
   font-size: var(--font-size-control);
   color: var(--color-text-primary);
   background: var(--color-surface-primary);
-  border: var(--select-border-width) solid var(--color-border-default);
-  border-radius: var(--select-border-radius);
+  border: var(--border-width-interactive) solid var(--color-border-default);
+  border-radius: var(--border-radius-interactive);
   cursor: pointer;
   transition: border-color var(--duration-interaction) var(--easing-default);
   outline: none;
@@ -35,12 +38,12 @@
 }
 
 .select__trigger:hover:not([data-disabled]) {
-  border-color: var(--select-border-hover);
+  border-color: var(--color-border-strong);
 }
 
 .select__trigger:focus-visible {
-  border-color: var(--select-border-focus);
-  outline: var(--focus-ring-width) solid var(--select-border-focus);
+  border-color: var(--color-border-focus);
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
   outline-offset: var(--focus-ring-offset);
 }
 
@@ -71,9 +74,9 @@
 
 .select__content {
   background: var(--color-surface-primary);
-  border: var(--select-border-width) solid var(--color-border-default);
-  border-radius: var(--select-content-border-radius);
-  box-shadow: var(--select-content-shadow);
+  border: var(--border-width-interactive) solid var(--color-border-default);
+  border-radius: var(--border-radius-component);
+  box-shadow: var(--shadow-dropdown);
   overflow: hidden;
   z-index: var(--z-dropdown);
   min-width: var(--radix-select-trigger-width);
@@ -116,7 +119,7 @@
   padding: var(--select-item-padding-y) var(--select-item-padding-x);
   font-family: var(--font-family-base);
   font-size: var(--select-label-size);
-  font-weight: var(--select-label-weight);
+  font-weight: var(--font-weight-label);
   color: var(--color-text-secondary);
 }
 

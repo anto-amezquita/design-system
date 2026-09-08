@@ -27,10 +27,6 @@
     "$value": "{duration-interaction}",
     "$type": "duration"
   },
-  "button-primary-foreground": {
-    "$value": "{color-accent-foreground}",
-    "$type": "color"
-  },
   "button-primary-background-hover": {
     "$value": "{color-accent-hover}",
     "$type": "color"
@@ -49,10 +45,6 @@
   },
   "button-secondary-background-hover": {
     "$value": "{color-accent-default}",
-    "$type": "color"
-  },
-  "button-secondary-foreground-hover": {
-    "$value": "{color-accent-foreground}",
     "$type": "color"
   },
   "button-ghost-background": {

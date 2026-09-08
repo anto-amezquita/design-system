@@ -1,11 +1,11 @@
 /*
   Tokens consumed:
 
-  --toast-border-radius, --toast-padding-x, --toast-padding-y
-  --toast-gap, --toast-max-width, --toast-shadow, --toast-z-index
-  --toast-title-weight, --toast-font-size, --toast-icon-size, --toast-accent-width
-  --toast-success-border, --toast-warning-border, --toast-error-border, --toast-info-border
-  --toast-viewport-inset, --toast-content-gap, --toast-close-offset
+
+  --toast-max-width
+  --toast-title-weight, --toast-font-size, --toast-accent-width
+
+  --toast-viewport-inset, --toast-close-offset
   --color-feedback-success-foreground, --color-feedback-warning-foreground
   --color-feedback-error-foreground, --color-feedback-info-foreground
   --font-family-base, --line-height-body
@@ -15,6 +15,10 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-border-default, --border-width-default, --color-surface-primary
+  --border-radius-component, --space-prominent-padding-x, --space-prominent-padding-y
+  --space-label-gap, --shadow-toast, --z-toast, --size-icon-md, --space-tight-gap
+  --color-feedback-success-border, --color-feedback-warning-border
+  --color-feedback-error-border, --color-feedback-info-border
 */
 
 /* Viewport — fixed top-right.
@@ -27,10 +31,10 @@
   right: var(--toast-viewport-inset);
   display: flex;
   flex-direction: column;
-  gap: var(--toast-gap);
+  gap: var(--space-label-gap);
   width: var(--toast-max-width);
   max-width: calc(100vw - var(--toast-viewport-inset) * 2);
-  z-index: var(--toast-z-index);
+  z-index: var(--z-toast);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -42,12 +46,12 @@
 .toast {
   display: flex;
   align-items: flex-start;
-  gap: var(--toast-gap);
-  padding: var(--toast-padding-y) var(--toast-padding-x);
+  gap: var(--space-label-gap);
+  padding: var(--space-prominent-padding-y) var(--space-prominent-padding-x);
   background: var(--color-surface-primary);
   border: var(--border-width-default) solid var(--color-border-default);
-  border-radius: var(--toast-border-radius);
-  box-shadow: var(--toast-shadow);
+  border-radius: var(--border-radius-component);
+  box-shadow: var(--shadow-toast);
   font-family: var(--font-family-base);
   font-size: var(--toast-font-size);
   line-height: var(--line-height-body);
@@ -104,10 +108,10 @@
 
 /* Variant: left-border accent strip */
 
-.toast--success { border-left: var(--toast-accent-width) solid var(--toast-success-border); }
-.toast--warning { border-left: var(--toast-accent-width) solid var(--toast-warning-border); }
-.toast--error   { border-left: var(--toast-accent-width) solid var(--toast-error-border); }
-.toast--info    { border-left: var(--toast-accent-width) solid var(--toast-info-border); }
+.toast--success { border-left: var(--toast-accent-width) solid var(--color-feedback-success-border); }
+.toast--warning { border-left: var(--toast-accent-width) solid var(--color-feedback-warning-border); }
+.toast--error   { border-left: var(--toast-accent-width) solid var(--color-feedback-error-border); }
+.toast--info    { border-left: var(--toast-accent-width) solid var(--color-feedback-info-border); }
 
 /* Icon */
 
@@ -115,13 +119,13 @@
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  width: var(--toast-icon-size);
-  height: var(--toast-icon-size);
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
 }
 
 .toast__icon svg {
-  width: var(--toast-icon-size);
-  height: var(--toast-icon-size);
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
 }
 
 .toast--success .toast__icon { color: var(--color-feedback-success-foreground); }
@@ -136,7 +140,7 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--toast-content-gap);
+  gap: var(--space-tight-gap);
 }
 
 .toast__title {

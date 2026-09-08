@@ -1,25 +1,29 @@
 /*
   Tokens consumed:
-  --alert-padding-x, --alert-padding-y, --alert-gap
-  --alert-border-radius, --alert-title-weight, --alert-icon-size
+  --alert-title-weight
   --alert-content-gap, --alert-close-offset, --alert-exit-distance
-  --alert-success-background, --alert-success-foreground, --alert-success-border
-  --alert-warning-background, --alert-warning-foreground, --alert-warning-border
-  --alert-error-background,   --alert-error-foreground,   --alert-error-border
-  --alert-info-background,    --alert-info-foreground,    --alert-info-border
+
+
+
+
   --font-family-base, --line-height-body
   --border-radius-interactive, --duration-interaction, --easing-default, --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --border-width-default, --font-size-control
+  --space-prominent-padding-x, --space-prominent-padding-y, --space-label-gap, --border-radius-component, --size-icon-md
+  --color-feedback-success-background, --color-feedback-success-foreground, --color-feedback-success-border
+  --color-feedback-warning-background, --color-feedback-warning-foreground, --color-feedback-warning-border
+  --color-feedback-error-background, --color-feedback-error-foreground, --color-feedback-error-border
+  --color-feedback-info-background, --color-feedback-info-foreground, --color-feedback-info-border
 */
 
 .alert {
   display: flex;
   align-items: flex-start;
-  gap: var(--alert-gap);
-  padding: var(--alert-padding-y) var(--alert-padding-x);
-  border-radius: var(--alert-border-radius);
+  gap: var(--space-label-gap);
+  padding: var(--space-prominent-padding-y) var(--space-prominent-padding-x);
+  border-radius: var(--border-radius-component);
   border-width: var(--border-width-default);
   border-style: solid;
   font-family: var(--font-family-base);
@@ -30,27 +34,27 @@
 /* Variant colours */
 
 .alert--success {
-  background: var(--alert-success-background);
-  color: var(--alert-success-foreground);
-  border-color: var(--alert-success-border);
+  background: var(--color-feedback-success-background);
+  color: var(--color-feedback-success-foreground);
+  border-color: var(--color-feedback-success-border);
 }
 
 .alert--warning {
-  background: var(--alert-warning-background);
-  color: var(--alert-warning-foreground);
-  border-color: var(--alert-warning-border);
+  background: var(--color-feedback-warning-background);
+  color: var(--color-feedback-warning-foreground);
+  border-color: var(--color-feedback-warning-border);
 }
 
 .alert--error {
-  background: var(--alert-error-background);
-  color: var(--alert-error-foreground);
-  border-color: var(--alert-error-border);
+  background: var(--color-feedback-error-background);
+  color: var(--color-feedback-error-foreground);
+  border-color: var(--color-feedback-error-border);
 }
 
 .alert--info {
-  background: var(--alert-info-background);
-  color: var(--alert-info-foreground);
-  border-color: var(--alert-info-border);
+  background: var(--color-feedback-info-background);
+  color: var(--color-feedback-info-foreground);
+  border-color: var(--color-feedback-info-border);
 }
 
 /* Icon */
@@ -59,13 +63,13 @@
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  width: var(--alert-icon-size);
-  height: var(--alert-icon-size);
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
 }
 
 .alert__icon svg {
-  width: var(--alert-icon-size);
-  height: var(--alert-icon-size);
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
 }
 
 /* Content */

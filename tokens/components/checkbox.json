@@ -15,14 +15,6 @@
     "$value": "{border-radius-interactive}",
     "$type": "dimension"
   },
-  "checkbox-foreground-checked": {
-    "$value": "{color-accent-foreground}",
-    "$type": "color"
-  },
-  "checkbox-foreground-indeterminate": {
-    "$value": "{color-accent-foreground}",
-    "$type": "color"
-  },
   "checkbox-label-gap": {
     "$value": "{space-label-gap}",
     "$type": "dimension"
