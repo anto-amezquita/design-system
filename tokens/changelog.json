@@ -210,7 +210,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "a05de97",
+      "type": "fix",
+      "scope": "button",
+      "message": "forward unrecognised props to the rendered element",
+      "date": "2026-09-08",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
