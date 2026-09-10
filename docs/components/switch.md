@@ -12,10 +12,10 @@
 |---|---|---|
 | `id?` | `string` |  |
 | `label?` | `string` |  |
-| `checked?` | `boolean` |  |
+| `checked?` | `boolean` | Controlled checked state. Pair with onCheckedChange; use defaultChecked instead for uncontrolled. |
 | `defaultChecked?` | `boolean` |  |
 | `onCheckedChange?` | `(checked: boolean) => void` |  |
-| `disabled?` | `boolean` |  |
+| `disabled?` | `boolean` | Blocks interaction and removes the control from the tab order. |
 | `required?` | `boolean` |  |
 | `name?` | `string` |  |
 | `value?` | `string` |  |

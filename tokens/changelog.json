@@ -212,6 +212,22 @@
   ],
   "unreleased": [
     {
+      "sha": "425251d",
+      "type": "docs",
+      "scope": "switch",
+      "message": "document the disabled prop",
+      "date": "2026-09-10",
+      "breaking": false
+    },
+    {
+      "sha": "d402d75",
+      "type": "docs",
+      "scope": "switch",
+      "message": "document the checked prop",
+      "date": "2026-09-10",
+      "breaking": false
+    },
+    {
       "sha": "95b55e8",
       "type": "fix",
       "scope": "alert-dialog",
