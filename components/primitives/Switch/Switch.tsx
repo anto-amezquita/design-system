@@ -12,6 +12,7 @@ type SwitchProps = {
   checked?: boolean
   defaultChecked?: boolean
   onCheckedChange?: (checked: boolean) => void
+  /** Blocks interaction and removes the control from the tab order. */
   disabled?: boolean
   required?: boolean
   name?: string
