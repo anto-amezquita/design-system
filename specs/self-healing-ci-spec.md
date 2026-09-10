@@ -10,16 +10,13 @@ An agent that reacts to a failing CI check and opens a fix, rather than a human 
 
 ```
 Last updated:   2026-09-10
-Current phase:  Phase 1 built and largely proven. The GitHub App
-                (amez-ds-self-heal) exists, is installed, and its secrets are
-                stored. Acceptance tests 1, 2 and 4 pass against real runs;
-                3 and 5 not yet run. Test 2 — chromatic running unattended on
-                the bot's PR — is confirmed, which is the criterion the App
-                exists for.
-Next action:    Re-run acceptance 1-3 and 5 against a fresh drift branch, now
-                that the changelog gap found by the first run is fixed. Then
-                step 5, branch protection.
-Blocked on:     nothing. Branch protection needs one decision first: the
+Current phase:  Phase 1 complete and proven. All five acceptance criteria pass
+                against real runs. The App (amez-ds-self-heal) is live, the
+                workflow heals both the generated artifacts and the changelog,
+                and a merged bot PR leaves a genuinely clean branch.
+Next action:    Land `ci/self-heal-phase-1` on main, then step 5 (branch
+                protection).
+Blocked on:     one decision before branch protection — chromatic.yml's
                 update-changelog job pushes directly to main, which a
                 require-a-PR ruleset would break.
 ```
@@ -171,15 +168,17 @@ Two guards, not one:
 
 | # | Criterion | Result |
 |---|---|---|
-| 1 | Drift produces exactly one PR, only regenerated files | **Pass** — PR #9, `docs/components/tag.md` (+1/-1), nothing else |
-| 2 | `chromatic.yml` runs on the bot's PR | **Pass** — ran unattended, no approval gate. Compare the `GITHUB_TOKEN` control, frozen at `action_required` |
-| 3 | A second drifting push updates the same PR | Not yet run |
+| 1 | Drift produces exactly one PR, only regenerated files | **Pass** — PR #12: `docs/components/switch.md` plus one `tokens/changelog.json` entry, nothing else |
+| 2 | `chromatic.yml` runs on the bot's PR | **Pass, green** — ran unattended and passed. Compare the `GITHUB_TOKEN` control, frozen at `action_required` |
+| 3 | A second drifting push updates the same PR | **Pass** — bot branch moved `9fc9254` → `2c6d5e6`, still one PR and one branch. The per-branch-name keying this spec fixed on paper, now exercised |
 | 4 | A clean branch produces no PR | **Pass** — run #2 on `ci/self-heal-phase-1`, green, no PR |
-| 5 | Merging the fix leaves no new PR, branch cleaned up | Not yet run |
+| 5 | Merging the fix leaves no new PR, branch cleaned up | **Pass** — PR #12 merged, `chore/regen-artifacts/test/drift-3` deleted automatically by `delete-branch: true`, self-heal run #9 green with no new PR |
+
+**The load-bearing check is the merge, not the diff.** Merging PR #12 into its source branch left both `check-generated-sync` and `changelog-sync --check` exiting 0 — the branch was genuinely healed, not partially. That is the criterion the two earlier attempts failed while still producing correctly-scoped PRs (#9 red on the changelog, #10 red on an emptied one), and it is why the acceptance bar here is "green and mergeable", not "correctly scoped".
 
 Two things confirmed incidentally: `create-pull-request`'s `sign-commits: true` produces `verified: true, reason: valid` commits authored by `amez-ds-self-heal[bot]`, and the App token step is the job's first step — so getting past it proves both secrets are correct.
 
-Test 1's PR was nonetheless **red**, on `Check changelog is in sync`. That is the gap written up under "The path list" above, and it is fixed rather than accepted: the acceptance list is about the bot leaving a mergeable green PR, not merely a scoped one.
+**It took three attempts, and both failures came from trusting this document over the repo.** The first (PR #9) went red because the changelog was excluded from the commit list; the second (PR #10) because the sketch above said "full history not needed" and the shallow checkout emptied the changelog. Both were written here, both read as reasonable, and neither survived contact with a real run. Worth remembering the next time this spec sounds authoritative.
 
 ## Phase 2 — judgment-requiring failures (named, not built)
 
@@ -208,6 +207,7 @@ The shape, for when this gets picked up:
 
 | Date | Phase | What changed |
 |---|---|---|
+| 2026-09-10 | 1 | **Phase 1 acceptance complete — all five criteria pass.** Third attempt; the first two produced correctly-scoped PRs that were still red, and both failures traced to this spec rather than to the implementation. Fix one: the changelog was excluded from the bot's commit list, so a drifting branch stayed red on `Check changelog is in sync` (PR #9) — resolved with `scripts/changelog-sync.mjs` owning the content-only comparison in both directions plus a second `SELF_HEAL_PATHS` list. Fix two: the architecture sketch said "full history not needed", so the default depth-1 checkout left `build-changelog.mjs` seeing 1 eligible commit and 0 tags against 69, and the bot committed a changelog with 220 lines deleted (PR #10) — resolved with `fetch-depth: 0`, matching what `chromatic.yml` already does on both its jobs, and diagnosed by cloning the repo at `--depth 1` and running the builder's own git query rather than reasoning about shallow clones. Final run (PR #12) passed all five: one correctly-scoped PR, `chromatic` green unattended, a second drifting push updating the same PR rather than opening a second, a clean branch producing nothing, and a merge that deleted the bot branch and left both staleness checks exiting 0. Sandbox branches removed afterwards; `main` untouched throughout. |
 | 2026-09-10 | 1 | Phase 1 went live and was tested against real runs. GitHub App `amez-ds-self-heal` created, installed on this repo only, scoped to Contents + Pull requests read/write; secrets stored. Acceptance 1, 2 and 4 pass — **2 is the one that matters**: `chromatic` ran unattended on the bot's PR, against the `GITHUB_TOKEN` control from earlier the same day that stayed frozen at `action_required`. **Acceptance found a real design gap that paper review missed.** The bot healed `docs/components/tag.md` correctly and the PR was still red, because a drifting branch also drifts `tokens/changelog.json` — any `feat/fix/refactor/perf/style/docs` commit touching `tokens/`, `components/`, `sd.config.mjs` or `styles/brands/` changes its content — and the changelog was excluded from the commit list to stop `meta.generatedAt` triggering a PR on every push. Healing one of two stale artifacts still leaves the human running `npm run tokens`, which is the whole trip Phase 1 exists to save. Fixed with `scripts/changelog-sync.mjs`, which now owns the content-only comparison in both directions (`--check` for `chromatic.yml`, `--restore-if-unchanged` for the bot) plus a second `SELF_HEAL_PATHS` list, verified against both cases: timestamp-only churn restores and commits nothing, real content change is kept and committed. That comparison had been inline in `chromatic.yml` and was one copy-paste away from being duplicated — the same hazard the path list was extracted to avoid, caught this time because there was a script to put it in. Also corrected the acceptance list's required-check name from `validate` (no such check exists) to `chromatic`. |
 | 2026-09-10 | 1 | Steps 2 and 3 built. **Step 2:** the generated-artifact path list extracted to `scripts/generated-artifacts.mjs` — one source, read by the new `scripts/check-generated-sync.mjs` (which replaces the two inline copies in `chromatic.yml`'s staleness step) and by the new workflow's `add-paths`. Verified it catches both drift shapes locally: a modified generated file and a brand-new untracked one. **Step 3:** `.github/workflows/self-heal-stale-artifacts.yml` written to the architecture above, with three deliberate divergences recorded there — `contents: read` instead of write (every write goes through the App token, so GITHUB_TOKEN needs nothing more), `delete-branch: true` (what actually satisfies the branch-cleanup acceptance criterion), and `client-id` instead of the action's deprecated `app-id`. The PR-body step was run verbatim against simulated drift rather than assumed to work. Steps 1, 4 and 5 are all GitHub-UI work and remain open; the workflow must not be pushed before step 1 or every non-`main` push fails on the missing secret. Also fixed two pre-existing governance divergences found by the audit pass: `docs/quality.md` and `AGENTS.md` both described `npm run validate` without `tokens:lint-architecture`, and `AGENTS.md` omitted the test suite too. |
 | 2026-09-10 | 1 | Spec validated against industry precedent ([`docs/self-healing-ci-research.md`](../docs/self-healing-ci-research.md)) and revised. Phase 1 gained the load-bearing auth decision (GitHub App token, not `GITHUB_TOKEN` — otherwise the bot's PRs silently skip every check), a `concurrency` group, SHA-pinned actions, and `add-paths` scoping. Fixed a real bug in the original architecture: the branch name was keyed to the commit SHA, which defeats `create-pull-request`'s per-branch idempotency and would have opened a new PR per drifting push. Three divergences between the research report's derived backlog and this spec resolved with Antonio: trigger stays non-`main` (the report's push-to-`main` recommendation rested on a job-contention premise that doesn't apply — the two are already separate workflows writing to different branches); "glob-scoped write permissions" dropped as not a thing GitHub offers; Chromatic auto-accept dropped entirely and moved to Out of scope. |

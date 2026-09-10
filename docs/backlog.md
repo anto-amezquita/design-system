@@ -23,11 +23,10 @@ Opened 2026-09-08, unblocked by [`decisions/0006`](../decisions/0006-add-layered
 
 Two phases, deliberately different mechanisms: Phase 1 (stale generated artifacts) is a plain deterministic script — the fix is the diff, no judgment needed. Phase 2 (lint/contrast/type/test failures) is named but not built — Claude Code in a GitHub Action, for when a real code fix is required. Both phases open a PR; neither pushes directly or merges anything.
 
-**The App is live and the mechanism is proven.** `amez-ds-self-heal` is created, installed on this repo, and its secrets are stored. Acceptance 1, 2 and 4 pass against real runs — including the one the App exists for, `chromatic` running unattended on the bot's PR. Detail in the spec's session log and its Acceptance table.
+**Phase 1 works and is fully verified.** `amez-ds-self-heal` is live, and all five acceptance criteria pass against real runs — a drifting branch gets one correctly-scoped PR, `chromatic` goes green on it unattended, a second push updates that same PR, a clean branch produces nothing, and merging leaves both staleness checks clean with the bot's branch deleted. Detail in the spec's Acceptance table and session log.
 
-1. Re-run acceptance 1–3 and 5 against a fresh drift branch, now that the changelog gap the first run exposed is fixed (`scripts/changelog-sync.mjs`). 3 and 5 have never been run.
-2. Land `ci/self-heal-phase-1` on `main`.
-3. Add branch protection on `main`: required check **`chromatic`** (there is no check named `validate` — it's an npm script inside that job), review required, no bypass entry for the App. **Decide first:** `chromatic.yml`'s `update-changelog` job pushes directly to `main`, so a require-a-PR ruleset breaks it. Either add a bypass actor for the Actions bot, or rework that job to open a PR like everything else. Also note requiring 1 approval makes your own PRs unmergeable on a solo repo — GitHub blocks self-approval.
+1. Land `ci/self-heal-phase-1` on `main`.
+2. Add branch protection on `main`: required check **`chromatic`** (there is no check named `validate` — it's an npm script inside that job), review required, no bypass entry for the App. **Decide first:** `chromatic.yml`'s `update-changelog` job pushes directly to `main`, so a require-a-PR ruleset breaks it. Either add a bypass actor for the Actions bot, or rework that job to open a PR like everything else. Also note requiring 1 approval makes your own PRs unmergeable on a solo repo — GitHub blocks self-approval.
 
 **Phase 2 stays parked** until Phase 1 has been boring for a while. Its open questions are in the spec, not here.
 
