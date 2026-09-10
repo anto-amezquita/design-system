@@ -8,6 +8,7 @@ import './Switch.css'
 type SwitchProps = {
   id?: string
   label?: string
+  /** Controlled checked state. Pair with onCheckedChange; use defaultChecked instead for uncontrolled. */
   checked?: boolean
   defaultChecked?: boolean
   onCheckedChange?: (checked: boolean) => void
