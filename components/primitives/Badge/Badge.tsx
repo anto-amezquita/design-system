@@ -12,6 +12,7 @@ type DotBadgeProps = {
 
 type OtherBadgeProps = {
   variant?: BadgeVariant
+  /** Visual treatment. `status` is the default pill; `count` is the compact numeric form. Use `dot` (see DotBadgeProps) when there is no visible text, which requires an aria-label. */
   shape?: 'status' | 'count'
   children?: React.ReactNode
   'aria-label'?: string
