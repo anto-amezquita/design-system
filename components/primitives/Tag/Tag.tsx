@@ -7,6 +7,7 @@ type TagProps = {
   /** Accessible label for the outer clickable element. Required when onClick is set and children is not a plain string. */
   label?: string
   icon?: React.ReactNode
+  /** Renders a remove button inside the tag. Requires onRemove — without it the button is not rendered and a warning is logged in development. */
   removable?: boolean
   onRemove?: () => void
   onClick?: () => void
