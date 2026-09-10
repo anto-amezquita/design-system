@@ -81,7 +81,7 @@ jobs:
                                   # below, so it needs nothing more
     steps:
       - mint a GitHub App installation token (see "Auth")
-      - checkout (the pushed branch, full history not needed)
+      - checkout (the pushed branch, fetch-depth: 0 — see below)
       - npm ci
       - npm run tokens
       - peter-evans/create-pull-request, with:
@@ -95,6 +95,8 @@ jobs:
                        was opened automatically because npm run tokens
                        produced a diff
 ```
+
+**`fetch-depth: 0` is required, and this spec originally said the opposite.** The sketch above used to read "full history not needed". That is wrong: `scripts/build-changelog.mjs` derives `tokens/changelog.json` from `git tag` and `git log`, so a default depth-1 checkout produces a near-empty changelog. The bug was latent until the changelog joined the commit list — before that the garbage was rebuilt and discarded. Once committed, it showed up as the bot deleting 220 lines of changelog and `chromatic.yml` (which checks out full history) failing on the result. Found by acceptance run 2, PR #10.
 
 **As built, three details the sketch above didn't fix.** `permissions` came out
 *narrower* than this spec originally wrote (`contents: read`, not

@@ -58,7 +58,15 @@ jobs:
           client-id: ${{ secrets.SELF_HEAL_APP_CLIENT_ID }}
           private-key: ${{ secrets.SELF_HEAL_APP_PRIVATE_KEY }}
 
+      # fetch-depth: 0 is load-bearing, not caution. scripts/build-changelog.mjs
+      # reads `git tag` and `git log` to build tokens/changelog.json, so on the
+      # default depth-1 checkout it sees no history and emits a near-empty
+      # changelog. Before the changelog joined SELF_HEAL_PATHS that garbage was
+      # regenerated and thrown away; now it would be committed. chromatic.yml
+      # sets the same thing on both its jobs for the same reason.
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v6
         with:
