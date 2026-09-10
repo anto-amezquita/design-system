@@ -14,7 +14,7 @@
 | `children` | `React.ReactNode` |  |
 | `label?` | `string` | Accessible label for the outer clickable element. Required when onClick is set and children is not a plain string. |
 | `icon?` | `React.ReactNode` |  |
-| `removable?` | `boolean` |  |
+| `removable?` | `boolean` | Renders a remove button inside the tag. Requires onRemove — without it the button is not rendered and a warning is logged in development. |
 | `onRemove?` | `() => void` |  |
 | `onClick?` | `() => void` |  |
 
