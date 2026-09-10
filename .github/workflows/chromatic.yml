@@ -46,18 +46,11 @@ jobs:
       - name: Check generated files are in sync
         run: node scripts/check-generated-sync.mjs
 
+      # Content-only comparison (meta.generatedAt nulled) lives in
+      # scripts/changelog-sync.mjs, shared with self-heal-stale-artifacts.yml
+      # so the two can't disagree about what "stale" means.
       - name: Check changelog is in sync
-        run: |
-          node -e "
-            const { execSync } = require('child_process');
-            const committed = JSON.parse(execSync('git show HEAD:tokens/changelog.json').toString());
-            const current = JSON.parse(require('fs').readFileSync('tokens/changelog.json', 'utf8'));
-            committed.meta.generatedAt = current.meta.generatedAt = null;
-            if (JSON.stringify(committed) !== JSON.stringify(current)) {
-              console.error('tokens/changelog.json is out of sync with its source (ignoring generatedAt) — run \`npm run tokens\` and commit the result.');
-              process.exit(1);
-            }
-          "
+        run: node scripts/changelog-sync.mjs --check
 
       - name: Contrast check
         run: node scripts/check-contrast.mjs

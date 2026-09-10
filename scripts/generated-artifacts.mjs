@@ -31,12 +31,34 @@ export const GENERATED_PATHS = [
   'skills/',
 ]
 
-// `tokens/changelog.json` is deliberately absent: it is generated, but its
-// staleness is checked differently (ignoring `meta.generatedAt`, which changes
-// on every build) by its own step in chromatic.yml, and it is written on main
-// by that workflow's `update-changelog` job. Adding it here would make the
-// self-healing workflow open a PR on every single push.
+// `tokens/changelog.json` is deliberately absent from GENERATED_PATHS: it is
+// generated, but its staleness can't be judged by a plain `git diff`, because
+// `meta.generatedAt` changes on every build. Its own comparison — content
+// only, timestamp nulled — lives in `changelog-sync.mjs`.
 
+/**
+ * What the self-healing workflow is allowed to commit. GENERATED_PATHS plus
+ * the changelog.
+ *
+ * The changelog is included here but not above because the workflow runs
+ * `changelog-sync.mjs --restore-if-unchanged` first: if only `generatedAt`
+ * moved, the committed file is put back and there is nothing to commit; if the
+ * content genuinely changed, it stays and gets committed. Without that step
+ * this list would make the bot open a PR on every single push forever.
+ *
+ * Why it has to be here at all: acceptance testing on 2026-09-10 found that
+ * healing only GENERATED_PATHS leaves a drifting branch still red. Any
+ * feat/fix/refactor/perf/style/docs commit touching tokens/, components/,
+ * sd.config.mjs or styles/brands/ changes the changelog's content too, so the
+ * bot fixed the component docs and `chromatic.yml`'s changelog step stayed
+ * failing — leaving the human to run `npm run tokens` anyway, which is the
+ * trip Phase 1 exists to save.
+ */
+export const SELF_HEAL_PATHS = [...GENERATED_PATHS, 'tokens/changelog.json']
+
+// CLI: default prints GENERATED_PATHS (the strict staleness list);
+// `--self-heal` prints the wider list the self-healing workflow commits.
 if (import.meta.url === `file://${process.argv[1]}`) {
-  console.log(GENERATED_PATHS.join('\n'))
+  const list = process.argv[2] === '--self-heal' ? SELF_HEAL_PATHS : GENERATED_PATHS
+  console.log(list.join('\n'))
 }

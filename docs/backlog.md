@@ -23,15 +23,15 @@ Opened 2026-09-08, unblocked by [`decisions/0006`](../decisions/0006-add-layered
 
 Two phases, deliberately different mechanisms: Phase 1 (stale generated artifacts) is a plain deterministic script — the fix is the diff, no judgment needed. Phase 2 (lint/contrast/type/test failures) is named but not built — Claude Code in a GitHub Action, for when a real code fix is required. Both phases open a PR; neither pushes directly or merges anything.
 
-**What's left is all GitHub-UI work.** The two code steps are done — the path list is extracted to `scripts/generated-artifacts.mjs` and `.github/workflows/self-heal-stale-artifacts.yml` is written (detail in the spec's session log). The workflow is uncommitted-to-`main` and unrun: it can't run until step 1 exists.
+**The App is live and the mechanism is proven.** `amez-ds-self-heal` is created, installed on this repo, and its secrets are stored. Acceptance 1, 2 and 4 pass against real runs — including the one the App exists for, `chromatic` running unattended on the bot's PR. Detail in the spec's session log and its Acceptance table.
 
-1. Create the GitHub App (Contents: write, Pull requests: write, nothing else), install it on this repo, store its credentials as the repo secrets `SELF_HEAL_APP_CLIENT_ID` and `SELF_HEAL_APP_PRIVATE_KEY`. Cheap falsification first: confirm a `GITHUB_TOKEN`-authored bot PR really doesn't trigger `chromatic.yml`, rather than taking the docs on faith — if it does, the App isn't needed. **This has to land before the workflow is pushed**, or every non-`main` push fails on the missing secret.
-2. Verify against the spec's acceptance list — including that `chromatic.yml` actually runs on the bot's PR, and that a second drifting push updates the same PR instead of opening a second.
-3. Add branch protection on `main`: `validate` required, review required, no bypass entry for the App.
+1. Re-run acceptance 1–3 and 5 against a fresh drift branch, now that the changelog gap the first run exposed is fixed (`scripts/changelog-sync.mjs`). 3 and 5 have never been run.
+2. Land `ci/self-heal-phase-1` on `main`.
+3. Add branch protection on `main`: required check **`chromatic`** (there is no check named `validate` — it's an npm script inside that job), review required, no bypass entry for the App. **Decide first:** `chromatic.yml`'s `update-changelog` job pushes directly to `main`, so a require-a-PR ruleset breaks it. Either add a bypass actor for the Actions bot, or rework that job to open a PR like everything else. Also note requiring 1 approval makes your own PRs unmergeable on a solo repo — GitHub blocks self-approval.
 
 **Phase 2 stays parked** until Phase 1 has been boring for a while. Its open questions are in the spec, not here.
 
-Status: Phase 1 code written and locally verified; blocked on the GitHub App.
+Status: Phase 1 live and mostly verified; acceptance 3 and 5 outstanding, branch protection needs one decision.
 
 ## Human-facing docs site (backlog)
 

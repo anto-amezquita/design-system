@@ -71,6 +71,14 @@ jobs:
       - name: Regenerate artifacts
         run: npm run tokens
 
+      # tokens/changelog.json can't be judged by a plain diff — meta.generatedAt
+      # moves on every build. This restores the committed file when only the
+      # timestamp changed, and leaves it in place when the content genuinely
+      # did. That is what lets the changelog join add-paths below without the
+      # bot opening a PR on every push. Same comparison chromatic.yml gates on.
+      - name: Drop the changelog if only its timestamp moved
+        run: node scripts/changelog-sync.mjs --restore-if-unchanged
+
       # add-paths below is scoped to this list, and chromatic.yml's staleness
       # check reads the same module — one source, so the two cannot drift.
       # Restating the paths here would be the fourth copy the spec calls out.
@@ -79,7 +87,7 @@ jobs:
         run: |
           {
             echo 'list<<PATHS_EOF'
-            node scripts/generated-artifacts.mjs
+            node scripts/generated-artifacts.mjs --self-heal
             echo 'PATHS_EOF'
           } >> "$GITHUB_OUTPUT"
 
@@ -95,13 +103,13 @@ jobs:
           # scripts/check-generated-sync.mjs does it. Piped through xargs
           # rather than a bash array so the same line is runnable in any
           # POSIX-ish shell, including the one on a contributor's machine.
-          node scripts/generated-artifacts.mjs | xargs git add -N --
+          node scripts/generated-artifacts.mjs --self-heal | xargs git add -N --
           {
             echo "\`npm run tokens\` produced a diff on \`$SOURCE_BRANCH\`, so its committed generated artifacts are stale. This PR was opened automatically and contains only regenerated output — nothing hand-written."
             echo
             echo "Regenerated:"
             echo
-            node scripts/generated-artifacts.mjs | xargs git diff --name-only -- | sed 's|^|- `|; s|$|`|'
+            node scripts/generated-artifacts.mjs --self-heal | xargs git diff --name-only -- | sed 's|^|- `|; s|$|`|'
             echo
             echo "Merge it into \`$SOURCE_BRANCH\`, or run \`npm run tokens\` locally and push that instead — either way the drift is gone and this PR closes itself."
           } > "$RUNNER_TEMP/pr-body.md"
