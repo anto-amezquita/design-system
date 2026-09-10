@@ -11,7 +11,7 @@
 | Prop | Type | Description |
 |---|---|---|
 | `variant?` | `'neutral' \| 'success' \| 'warning' \| 'error' \| 'info'` |  |
-| `shape?` | `'dot' \| 'status' \| 'count'` |  |
+| `shape?` | `'dot' \| 'status' \| 'count'` | Visual treatment. `status` is the default pill; `count` is the compact numeric form. Use `dot` (see DotBadgeProps) when there is no visible text, which requires an aria-label. |
 | `aria-label?` | `string` |  |
 | `children?` | `never \| React.ReactNode` |  |
 
