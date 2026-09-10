@@ -1,0 +1,63 @@
+# THROWAWAY — delete this file and its branch once the question is answered.
+#
+# The question: does a pull request opened by a workflow authenticated with the
+# default GITHUB_TOKEN trigger further workflow runs (i.e. does chromatic.yml
+# run on it)? GitHub's documented answer is no. specs/self-healing-ci-spec.md
+# builds a whole GitHub App on that answer, so it gets tested, not assumed.
+#
+# Read the result on the PR this opens:
+#   No checks listed  -> documented behaviour confirmed, the App is required.
+#   "Chromatic" runs  -> the docs are wrong for this case, skip the App.
+
+name: Falsification — GITHUB_TOKEN bot PR
+
+on:
+  push:
+    branches:
+      - test/self-heal-falsification
+
+jobs:
+  falsify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run tokens
+
+      - uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          # The whole point of the experiment: GITHUB_TOKEN, not an App token.
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/regen-artifacts/test/self-heal-falsification
+          base: test/self-heal-falsification
+          delete-branch: true
+          add-paths: |
+            tokens/dependency-graph.json
+            tokens/token-reference.json
+            tokens/component-registry.json
+            styles/brands/
+            tokens.json
+            docs/components/
+            llms.txt
+            llms-full.txt
+            registry/
+            skills/
+          commit-message: 'chore(tokens): regenerate stale artifacts'
+          title: 'chore(tokens): regenerate stale artifacts [falsification test]'
+          body: |
+            Throwaway PR from the falsification test in
+            `specs/self-healing-ci-spec.md` § Auth.
+
+            **Look at the checks on this PR.** If none are listed, a
+            GITHUB_TOKEN-authored PR really does skip every check, and Phase 1
+            needs the GitHub App. If "Chromatic" ran, it doesn't.

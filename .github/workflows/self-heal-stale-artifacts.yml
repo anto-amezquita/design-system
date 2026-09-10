@@ -1,0 +1,134 @@
+# Self-healing CI, Phase 1 — stale generated artifacts.
+#
+# Reacts to the one failure class whose fix is deterministic: `npm run tokens`
+# produced a diff, so the committed generated artifacts are stale. There is no
+# judgment call here — the diff *is* the fix — so this is a plain script, not
+# an agent. Phase 2 (lint/contrast/type/test failures, which need real
+# reasoning) is named but not built.
+#
+# Runs independently of chromatic.yml's own staleness check rather than
+# parsing its outcome: that check still gates every PR red, this one acts on
+# the same drift by opening a PR.
+#
+# Full rationale, including why this is a PR onto the contributor's branch and
+# never a push: specs/self-healing-ci-spec.md § "Phase 1".
+
+name: Self-heal stale artifacts
+
+on:
+  push:
+    branches-ignore:
+      # main's staleness is chromatic.yml's job to catch pre-merge — this
+      # phase reacts to a contributor's own branch, not to what already landed.
+      - main
+      # This workflow's own output branches. Pushing one would re-trigger this
+      # workflow on the bot's own commit; it would find no drift and open
+      # nothing, so it isn't an infinite loop, but it burns a run every time
+      # and stops being harmless the moment a generator is non-deterministic.
+      - 'chore/regen-artifacts/**'
+  workflow_dispatch: # manual re-run without needing an empty commit
+
+# Two rapid pushes to the same branch would otherwise race two runs onto the
+# same bot branch. Cancelling a superseded run is safe here specifically
+# because this workflow never runs on main and never feeds a merge queue.
+concurrency:
+  group: regen-artifacts-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  regenerate-and-open-pr:
+    runs-on: ubuntu-latest
+
+    # Deliberately read-only. Every write in this job goes through the GitHub
+    # App installation token below, not GITHUB_TOKEN — so GITHUB_TOKEN needs
+    # only what checkout uses to clone.
+    permissions:
+      contents: read
+
+    steps:
+      # A GitHub App token, not GITHUB_TOKEN, and this is load-bearing:
+      # GitHub refuses to trigger further workflow runs from a GITHUB_TOKEN-
+      # authored event, so a PR opened with it would silently run none of this
+      # repo's checks — worse than the red X it replaces. The App is scoped to
+      # Contents: write + Pull requests: write on this repo and nothing else.
+      - name: Mint a GitHub App installation token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ secrets.SELF_HEAL_APP_CLIENT_ID }}
+          private-key: ${{ secrets.SELF_HEAL_APP_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Regenerate artifacts
+        run: npm run tokens
+
+      # add-paths below is scoped to this list, and chromatic.yml's staleness
+      # check reads the same module — one source, so the two cannot drift.
+      # Restating the paths here would be the fourth copy the spec calls out.
+      - name: Resolve the generated-artifact path list
+        id: paths
+        run: |
+          {
+            echo 'list<<PATHS_EOF'
+            node scripts/generated-artifacts.mjs
+            echo 'PATHS_EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      # Builds the PR body while the diff is still readable as a file list.
+      # Written to RUNNER_TEMP, never into the workspace — add-paths below
+      # would not pick it up, but a stray file in the tree is still noise.
+      - name: Summarize the drift
+        env:
+          SOURCE_BRANCH: ${{ github.ref_name }}
+        run: |
+          # Intent-to-add so brand-new untracked output (a new component's
+          # docs/components/ twin) shows up in --name-only, same reason
+          # scripts/check-generated-sync.mjs does it. Piped through xargs
+          # rather than a bash array so the same line is runnable in any
+          # POSIX-ish shell, including the one on a contributor's machine.
+          node scripts/generated-artifacts.mjs | xargs git add -N --
+          {
+            echo "\`npm run tokens\` produced a diff on \`$SOURCE_BRANCH\`, so its committed generated artifacts are stale. This PR was opened automatically and contains only regenerated output — nothing hand-written."
+            echo
+            echo "Regenerated:"
+            echo
+            node scripts/generated-artifacts.mjs | xargs git diff --name-only -- | sed 's|^|- `|; s|$|`|'
+            echo
+            echo "Merge it into \`$SOURCE_BRANCH\`, or run \`npm run tokens\` locally and push that instead — either way the drift is gone and this PR closes itself."
+          } > "$RUNNER_TEMP/pr-body.md"
+          git reset -q
+
+      # Pinned to a commit SHA, not a floating tag: this step holds a
+      # write-scoped token, and a tag that moves under it is a supply-chain
+      # path into the repo.
+      #
+      # No explicit "is there a diff?" check is needed — the action no-ops
+      # when there's nothing to commit, and closes its own PR and deletes its
+      # branch once the drift is gone.
+      - name: Open or update the regeneration PR
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          # Keyed to the source branch, never the commit SHA: the action is
+          # idempotent per branch name, so every drifting push during one work
+          # session updates this same PR instead of opening a new one.
+          branch: chore/regen-artifacts/${{ github.ref_name }}
+          base: ${{ github.ref_name }}
+          delete-branch: true
+          # This scoping is the enforcement. GitHub App permissions scope by
+          # repo and permission type — there is no path-level write scoping
+          # anywhere in Actions — so the only thing keeping this commit off
+          # source files is that it is never `git add -A`.
+          add-paths: ${{ steps.paths.outputs.list }}
+          commit-message: 'chore(tokens): regenerate stale artifacts'
+          title: 'chore(tokens): regenerate stale artifacts'
+          body-path: ${{ runner.temp }}/pr-body.md

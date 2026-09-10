@@ -121,7 +121,7 @@ This system deliberately ships a compiled, machine-readable layer alongside the 
 
 ## 9. Build pipeline
 
-`npm run tokens` runs, in dependency order: `buildTokenReference` → `buildTokensJson` → `buildComponentRegistry` → `buildComponentDocs` → `buildChangelog` → `buildLlmsTxt` → registry manifests → skill. Every generated artifact in §2 comes from this one chain (`sd.config.mjs`). CI (`chromatic.yml`) rebuilds and diffs against the committed tree (with `git add -N` first, so new untracked files count too) — a stale artifact fails the build.
+`npm run tokens` runs, in dependency order: `buildTokenReference` → `buildTokensJson` → `buildComponentRegistry` → `buildComponentDocs` → `buildChangelog` → `buildLlmsTxt` → registry manifests → skill. Every generated artifact in §2 comes from this one chain (`sd.config.mjs`). CI (`chromatic.yml`) rebuilds and diffs against the committed tree via `scripts/check-generated-sync.mjs` (which does `git add -N` first, so new untracked files count too) — a stale artifact fails the build. That script reads its path list from `scripts/generated-artifacts.mjs`, the one place the generated-artifact list is written down; `self-heal-stale-artifacts.yml` scopes its commit to the same list.
 
 ## 10. Preferred patterns
 

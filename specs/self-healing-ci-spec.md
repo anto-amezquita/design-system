@@ -10,12 +10,20 @@ An agent that reacts to a failing CI check and opens a fix, rather than a human 
 
 ```
 Last updated:   2026-09-10
-Current phase:  Not started. Spec only — validated against industry
-                precedent and revised; see the 2026-09-10 session log row
-                and [`docs/self-healing-ci-research.md`](../docs/self-healing-ci-research.md).
-Next action:    Phase 1, step 1 — create the GitHub App. The workflow can't
-                be tested meaningfully without it (see "Auth" below).
-Blocked on:     nothing
+Current phase:  Phase 1, steps 2 and 3 built. The path list is extracted to
+                `scripts/generated-artifacts.mjs` and read by both
+                `chromatic.yml` (via `scripts/check-generated-sync.mjs`) and
+                the new `.github/workflows/self-heal-stale-artifacts.yml`.
+                Untested end-to-end — the workflow cannot run until step 1
+                exists, and will fail at its first step without the secrets.
+Next action:    Phase 1, step 1 — create the GitHub App, install it, and store
+                its credentials as `SELF_HEAL_APP_CLIENT_ID` and
+                `SELF_HEAL_APP_PRIVATE_KEY`. **Do this before pushing the
+                workflow**, or every non-`main` push goes red on a missing
+                secret. Then step 4 (acceptance) and step 5 (branch
+                protection).
+Blocked on:     step 1 — GitHub UI work (App creation, secrets, branch
+                protection) that has to be done by hand.
 ```
 
 ---
@@ -70,8 +78,9 @@ concurrency:
 jobs:
   regenerate-and-open-pr:
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read              # GITHUB_TOKEN is used only by checkout —
+                                  # every write goes through the App token
+                                  # below, so it needs nothing more
     steps:
       - mint a GitHub App installation token (see "Auth")
       - checkout (the pushed branch, full history not needed)
@@ -82,11 +91,23 @@ jobs:
           branch:      chore/regen-artifacts/<the pushed branch>
           base:        <the pushed branch>
           add-paths:   the generated-artifact list (see "The path list")
+          delete-branch: true
           title:       "chore(tokens): regenerate stale artifacts"
           body:        which files changed, and a one-line note that this PR
                        was opened automatically because npm run tokens
                        produced a diff
 ```
+
+**As built, three details the sketch above didn't fix.** `permissions` came out
+*narrower* than this spec originally wrote (`contents: read`, not
+`contents: write` + `pull-requests: write`): every write in the job goes
+through the App installation token, so GITHUB_TOKEN only ever needs what
+`actions/checkout` uses to clone. Granting it write as well would widen the
+blast radius of the job for no capability gained. `delete-branch: true` is what
+actually satisfies the acceptance criterion about the bot's branch being
+cleaned up once the drift is gone. And the App token step uses
+`client-id`, not the action's deprecated `app-id` input — so the secrets are
+`SELF_HEAL_APP_CLIENT_ID` and `SELF_HEAL_APP_PRIVATE_KEY`.
 
 Uses [`peter-evans/create-pull-request`](https://github.com/peter-evans/create-pull-request) for the branch/commit/PR steps rather than hand-rolling `gh` CLI calls — a well-established action for exactly this shape, not a new thing to debug. It also removes the need for an explicit diff check: the action no-ops when there's nothing to commit, and deletes its own branch when a previously-open PR's drift is gone.
 
@@ -108,11 +129,13 @@ The commit is scoped via `create-pull-request`'s `add-paths` to the same explici
 
 Note that **this list is the enforcement.** GitHub App permissions scope by repository and permission *type*; there is no path-level write scoping anywhere in GitHub Actions. `contents: write` + `pull-requests: write` is already the narrowest grant available, and it is repo-wide by construction. Anything narrower has to be done in the workflow.
 
-That list currently appears twice in `chromatic.yml` (the `git add -N` line and the `git diff --exit-code` line). Adding a third copy here makes it a four-way sync hazard of exactly the kind `governance-audit` exists to catch — **extract it to one source both workflows read before writing this workflow**, not after.
+That list used to appear twice in `chromatic.yml` (the `git add -N` line and the `git diff --exit-code` line). Adding a third copy here would have made it a four-way sync hazard of exactly the kind `governance-audit` exists to catch, so it was extracted first, not after: **[`scripts/generated-artifacts.mjs`](../scripts/generated-artifacts.mjs) is now the only place the list is written down.** `chromatic.yml`'s staleness step became one line (`node scripts/check-generated-sync.mjs`), and this workflow resolves `add-paths` by shelling out to the same module rather than restating the paths in YAML.
+
+`tokens/changelog.json` is deliberately *not* on that list even though it is generated. Its `meta.generatedAt` changes on every build, so including it would make this workflow open a PR on every single push. Its staleness has its own step in `chromatic.yml` that diffs with `generatedAt` nulled out.
 
 ### Pin third-party actions to a commit SHA
 
-`peter-evans/create-pull-request` and `actions/create-github-app-token` get pinned to a full commit SHA, not a floating tag. This workflow holds a write-scoped token; a tag that silently moves under it is a supply-chain path into the repo. (The existing workflows' tag pins are a separate, pre-existing question — not this spec's to change.)
+`peter-evans/create-pull-request` (`5f6978f`, v8.1.1) and `actions/create-github-app-token` (`bcd2ba4`, v3.2.0) are pinned to a full commit SHA, not a floating tag. This workflow holds a write-scoped token; a tag that silently moves under it is a supply-chain path into the repo. (The existing workflows' tag pins are a separate, pre-existing question — not this spec's to change.)
 
 ### Why a PR onto the branch, not onto `main`
 
@@ -163,5 +186,6 @@ The shape, for when this gets picked up:
 
 | Date | Phase | What changed |
 |---|---|---|
+| 2026-09-10 | 1 | Steps 2 and 3 built. **Step 2:** the generated-artifact path list extracted to `scripts/generated-artifacts.mjs` — one source, read by the new `scripts/check-generated-sync.mjs` (which replaces the two inline copies in `chromatic.yml`'s staleness step) and by the new workflow's `add-paths`. Verified it catches both drift shapes locally: a modified generated file and a brand-new untracked one. **Step 3:** `.github/workflows/self-heal-stale-artifacts.yml` written to the architecture above, with three deliberate divergences recorded there — `contents: read` instead of write (every write goes through the App token, so GITHUB_TOKEN needs nothing more), `delete-branch: true` (what actually satisfies the branch-cleanup acceptance criterion), and `client-id` instead of the action's deprecated `app-id`. The PR-body step was run verbatim against simulated drift rather than assumed to work. Steps 1, 4 and 5 are all GitHub-UI work and remain open; the workflow must not be pushed before step 1 or every non-`main` push fails on the missing secret. Also fixed two pre-existing governance divergences found by the audit pass: `docs/quality.md` and `AGENTS.md` both described `npm run validate` without `tokens:lint-architecture`, and `AGENTS.md` omitted the test suite too. |
 | 2026-09-10 | 1 | Spec validated against industry precedent ([`docs/self-healing-ci-research.md`](../docs/self-healing-ci-research.md)) and revised. Phase 1 gained the load-bearing auth decision (GitHub App token, not `GITHUB_TOKEN` — otherwise the bot's PRs silently skip every check), a `concurrency` group, SHA-pinned actions, and `add-paths` scoping. Fixed a real bug in the original architecture: the branch name was keyed to the commit SHA, which defeats `create-pull-request`'s per-branch idempotency and would have opened a new PR per drifting push. Three divergences between the research report's derived backlog and this spec resolved with Antonio: trigger stays non-`main` (the report's push-to-`main` recommendation rested on a job-contention premise that doesn't apply — the two are already separate workflows writing to different branches); "glob-scoped write permissions" dropped as not a thing GitHub offers; Chromatic auto-accept dropped entirely and moved to Out of scope. |
 | 2026-09-08 | — | Spec written. Scoping decided directly with Antonio: PR-with-human-merge (not direct push, not comment-only) as the action for both phases; Phase 1 covers stale generated artifacts only; Phase 2 (broader `npm run validate` failures) named and pointed at `anthropics/claude-code-action@v1` but deliberately not built yet. |
