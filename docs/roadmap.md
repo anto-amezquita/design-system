@@ -19,7 +19,7 @@ Last updated:   2026-09-07 (roadmap/backlog split — see 2026-09-07 session
 Current phase:  All six phases (0–5) of this plan are done, plus the MCP
                 server — scoped out of this plan at Phase 0 ("deliberately
                 out of scope"), picked back up as a separate spec
-                (docs/mcp-server-spec.md) once a second consumer became a
+                (specs/mcp-server-spec.md) once a second consumer became a
                 real near-term possibility, all 7 of its own phases shipped
                 2026-09-01. DS.one 3/5 → 4/5, Kaelig 5/10 → 6/10 shipped —
                 both re-scored against live evidence. That evidence now

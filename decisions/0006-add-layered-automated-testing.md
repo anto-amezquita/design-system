@@ -93,5 +93,5 @@ Commit sequence: `c78019f` (failing test + Vitest addon setup), `024ba1d` (tscon
 - `components/primitives/Input/Input.tsx`, `components/patterns/Accordion/Accordion.tsx` (`AccordionTrigger`) — cited precedent for the typing pattern
 - `docs/architecture.md` §5 (prop-type/doc-generator interaction), §7 (testing strategy — narrowed by this decision, not yet edited)
 - `docs/quality.md` §6 (testing expectations — narrowed by this decision, not yet edited)
-- `docs/roadmap.md` — self-healing CI item, whose feasibility this decision unblocks
+- `docs/backlog.md` — self-healing CI item, whose feasibility this decision unblocks (was `docs/roadmap.md` when this ADR was written; moved in the 2026-09-07 roadmap/backlog split)
 - `scripts/build-component-docs.mjs` (`decomposeProps`) — the generator behavior this decision's typing choice was checked against
