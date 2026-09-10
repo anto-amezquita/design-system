@@ -19,9 +19,19 @@ Live, actionable work for this repo. **Open this file first in any new session**
 
 ## Self-healing CI (backlog)
 
-Opened 2026-09-08, unblocked by [`decisions/0006`](../decisions/0006-add-layered-automated-testing.md) (real tests now exist for CI to react to). Spec'd in [`specs/self-healing-ci-spec.md`](../specs/self-healing-ci-spec.md).
+Opened 2026-09-08, unblocked by [`decisions/0006`](../decisions/0006-add-layered-automated-testing.md) (real tests now exist for CI to react to). Spec'd in [`specs/self-healing-ci-spec.md`](../specs/self-healing-ci-spec.md), validated against industry precedent in [`self-healing-ci-research.md`](./self-healing-ci-research.md).
 
 Two phases, deliberately different mechanisms: Phase 1 (stale generated artifacts) is a plain deterministic script — the fix is the diff, no judgment needed. Phase 2 (lint/contrast/type/test failures) is named but not built — Claude Code in a GitHub Action, for when a real code fix is required. Both phases open a PR; neither pushes directly or merges anything.
+
+**Phase 1, in order.** Steps 1 and 2 come before the workflow deliberately — 1 because the workflow can't be meaningfully tested without it, 2 because doing it after means fixing a four-way sync hazard instead of avoiding one.
+
+1. Create the GitHub App (Contents: write, Pull requests: write, nothing else), install it on this repo, store its credentials as secrets. Cheap falsification first: confirm a `GITHUB_TOKEN`-authored bot PR really doesn't trigger `chromatic.yml`, rather than taking the docs on faith.
+2. Extract the generated-artifact path list to one source. It's already duplicated inside `chromatic.yml`; the new workflow would make it four copies.
+3. Write `.github/workflows/self-heal-stale-artifacts.yml` per the spec's architecture — non-`main` push + `workflow_dispatch`, App token, `concurrency` group, `add-paths` scoping, actions pinned to commit SHAs, branch keyed to the source branch.
+4. Verify against the spec's acceptance list — including that `chromatic.yml` actually runs on the bot's PR, and that a second drifting push updates the same PR instead of opening a second.
+5. Add branch protection on `main`: `validate` required, review required, no bypass entry for the App.
+
+**Phase 2 stays parked** until Phase 1 has been boring for a while. Its open questions are in the spec, not here.
 
 Status: spec only, Phase 1 not started.
 
