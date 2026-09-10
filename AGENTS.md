@@ -28,7 +28,7 @@ If the `amezquita-design-system` MCP server is connected (check `claude mcp list
 - Introduce a second full semantic token tier for a new brand — a brand is a thin override skin on `base` (see ADR [`0001`](decisions/0001-white-label-base-portfolio-brand-split.md)), never its own complete color/type/spacing tier.
 - Adopt an external library or convention wholesale for one technique you need from it — see ADR [`0002`](decisions/0002-reject-transitions-dev-library-adopt-audit-technique.md).
 - Make an architectural change (new token tier, new brand, changed component model, changed package structure) without writing an ADR in `/decisions`.
-- Consider a change done because `npm run tokens` and `npm run validate` pass locally but you haven't checked whether generated artifacts are stale — CI's staleness check (`git add -N` + diff) is the real gate; reproduce it locally if unsure.
+- Consider a change done because `npm run tokens` and `npm run validate` pass locally but you haven't checked whether generated artifacts are stale — CI's staleness check is the real gate. Reproduce it exactly: `npm run tokens && node scripts/check-generated-sync.mjs`, the same script `chromatic.yml` runs.
 - Edit `AGENTS.md`, `docs/architecture.md`, `docs/quality.md`, or add/edit an ADR or spec without running [`contributor-skills/governance-audit`](contributor-skills/governance-audit/SKILL.md) first — `npm run validate` doesn't catch contradictions between documents, only between code and docs (see that skill's origin note for what it caught here on 2026-09-02).
 
 ## Real token prefixes
@@ -51,7 +51,7 @@ Component tokens follow `--<component-slug>-*` (e.g. `--button-padding-x`, `--di
 
 ## Not done until
 
-`npm run validate` exits `0`. It chains the token linter, the contrast checker, the component-registry check, the story-coverage check, and `tsc --noEmit` — full detail and rationale in [`docs/quality.md`](docs/quality.md). A non-zero exit on any of them means the change isn't finished — fix the underlying issue, don't route around the check.
+`npm run validate` exits `0`. It chains the token linter, the token-architecture linter, the contrast checker, the component-registry check, the story-coverage check, `tsc --noEmit`, and the test suite — full detail and rationale in [`docs/quality.md`](docs/quality.md). A non-zero exit on any of them means the change isn't finished — fix the underlying issue, don't route around the check.
 
 ## Roadmap and backlog
 

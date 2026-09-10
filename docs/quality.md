@@ -21,12 +21,13 @@ Work is done when:
 ## 2. `npm run validate` — the one gate
 
 ```
-npm run validate = tokens:lint && tokens:contrast && check-components-doc.mjs && check-stories.mjs && typecheck && test
+npm run validate = tokens:lint && tokens:lint-architecture && tokens:contrast && check-components-doc.mjs && check-stories.mjs && typecheck && test
 ```
 
 | Step | What it checks | Script |
 |---|---|---|
 | `tokens:lint` | 9 rules against component CSS (below) | `scripts/lint-tokens.mjs` |
+| `tokens:lint-architecture` | Component tokens that are pass-throughs or chain-skips to their referent in all 4 modes | `scripts/lint-token-architecture.mjs` |
 | `tokens:contrast` | Color contrast across all 4 brand/mode combinations | `scripts/check-contrast.mjs` |
 | `check-components-doc.mjs` | Every component in `tokens/component-registry.json` has a `docs/components.md` entry | — |
 | `check-stories.mjs` | Every public component has a Storybook story | — |
@@ -86,7 +87,7 @@ No unit-test framework for behavior Radix already owns (see `architecture.md` §
 ## 7. Release checklist
 
 - [ ] `npm run validate` exits 0
-- [ ] `npm run tokens` produces no diff against the committed tree (staleness check — what CI runs)
+- [ ] `npm run tokens` produces no diff against the committed tree — run `node scripts/check-generated-sync.mjs`, the same script CI runs
 - [ ] Chromatic reviewed, no unexplained visual changes
 - [ ] Significant architectural choices recorded as an ADR in `/decisions`
 - [ ] Changeset written (`npm run changeset`) if the change should land in the published package

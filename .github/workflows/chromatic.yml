@@ -40,14 +40,11 @@ jobs:
       - name: Build tokens
         run: npm run tokens
 
+      # The path list this checks lives in scripts/generated-artifacts.mjs,
+      # shared with self-heal-stale-artifacts.yml's add-paths scoping so the
+      # two can't drift apart.
       - name: Check generated files are in sync
-        run: |
-          # git add -N (intent-to-add) first: plain `git diff` is silent about
-          # brand-new untracked files — e.g. a new component's docs/components/
-          # twin — so a rebuild that only *adds* a file would pass unnoticed
-          # without this.
-          git add -N tokens/dependency-graph.json tokens/token-reference.json tokens/component-registry.json styles/brands/ tokens.json docs/components/ llms.txt llms-full.txt registry/ skills/
-          git diff --exit-code tokens/dependency-graph.json tokens/token-reference.json tokens/component-registry.json styles/brands/ tokens.json docs/components/ llms.txt llms-full.txt registry/ skills/
+        run: node scripts/check-generated-sync.mjs
 
       - name: Check changelog is in sync
         run: |
