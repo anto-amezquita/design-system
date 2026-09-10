@@ -121,7 +121,7 @@ This system deliberately ships a compiled, machine-readable layer alongside the 
 
 ## 9. Build pipeline
 
-`npm run tokens` runs, in dependency order: `buildTokenReference` → `buildTokensJson` → `buildComponentRegistry` → `buildComponentDocs` → `buildChangelog` → `buildLlmsTxt` → registry manifests → skill. Every generated artifact in §2 comes from this one chain (`sd.config.mjs`). CI (`chromatic.yml`) rebuilds and diffs against the committed tree (with `git add -N` first, so new untracked files count too) — a stale artifact fails the build.
+`npm run tokens` runs, in dependency order: `buildTokenReference` → `buildTokensJson` → `buildComponentRegistry` → `buildComponentDocs` → `buildChangelog` → `buildLlmsTxt` → registry manifests → skill. Every generated artifact in §2 comes from this one chain (`sd.config.mjs`). CI (`chromatic.yml`) rebuilds and diffs against the committed tree via `scripts/check-generated-sync.mjs` (which does `git add -N` first, so new untracked files count too) — a stale artifact fails the build. That script reads its path list from `scripts/generated-artifacts.mjs`, the one place the generated-artifact list is written down. `self-heal-stale-artifacts.yml` scopes its commit to the same module's wider `SELF_HEAL_PATHS`, which adds `tokens/changelog.json` — excluded from the strict list because its `meta.generatedAt` moves on every build, and safe to add there only because the workflow first runs `scripts/changelog-sync.mjs --restore-if-unchanged`. That script owns the content-only comparison (timestamp nulled) that `chromatic.yml`'s changelog step also gates on.
 
 ## 10. Preferred patterns
 
