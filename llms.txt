@@ -52,5 +52,3 @@ npm install @amezquita/design-system
 - [Pagination](https://amezquita.dk/design-system/pagination.md): Page navigation controls for multi-page data sets; exposes current page and total page count
 - [Table](https://amezquita.dk/design-system/table.md): Static data table with semantic header, body, and row structure
 - [Tabs](https://amezquita.dk/design-system/tabs.md): Segmented view switcher with full keyboard navigation; built on Radix Tabs
-
-<!-- deliberate drift -->
