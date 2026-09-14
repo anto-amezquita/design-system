@@ -56,6 +56,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
   href,
   curtainColor,
   onNavigate,
+  className: classNameProp,
   ...rest
 }, ref) {
   const svgRef = useRef<SVGSVGElement>(null)
@@ -67,12 +68,16 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
   const isLink = variant === 'link'
   const isDisabled = disabled || loading
 
+  // decisions/0007: classNameProp merged in last, closing the gap 0006 left
+  // open — {...rest} below no longer carries className (destructured out
+  // above), so this is the only place it can still get lost.
   const className = cn(
     'button',
     variant !== 'primary' && `button--${variant}`,
     fullWidth && 'button--full-width',
     loading && 'button--loading',
     disabled && !loading && 'button--disabled',
+    classNameProp,
   )
 
   useEffect(() => {
