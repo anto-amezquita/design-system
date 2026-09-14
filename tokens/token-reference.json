@@ -2660,9 +2660,7 @@
         "portfolio-dark": "200"
       },
       "axisAware": false,
-      "usedBy": [
-        "Select"
-      ]
+      "usedBy": []
     },
     {
       "name": "z-overlay",
@@ -2677,9 +2675,7 @@
         "portfolio-dark": "300"
       },
       "axisAware": false,
-      "usedBy": [
-        "Dialog"
-      ]
+      "usedBy": []
     },
     {
       "name": "z-modal",
@@ -2694,10 +2690,7 @@
         "portfolio-dark": "400"
       },
       "axisAware": false,
-      "usedBy": [
-        "Dialog",
-        "Drawer"
-      ]
+      "usedBy": []
     },
     {
       "name": "z-toast",

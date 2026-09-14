@@ -22,7 +22,8 @@
   position: fixed;
   inset: 0;
   background: var(--color-surface-tertiary);
-  z-index: calc(var(--z-modal) - 1);
+  /* decisions/0007 follow-up: no z-index here on purpose — see
+     .drawer__content below, same reasoning as Dialog.css. */
   animation: drawer-overlay-in var(--duration-transition) var(--easing-out);
 }
 
@@ -47,11 +48,19 @@
   box-shadow: var(--shadow-dialog);
   display: flex;
   flex-direction: column;
-  z-index: var(--z-modal);
   overflow: hidden;
   box-sizing: border-box;
   animation: drawer-right-in var(--duration-transition) var(--easing-out);
 }
+
+/* decisions/0007 follow-up (code review, 2026-09-14): this PR originally
+   removed Dialog's explicit z-index but left Drawer's untouched. Before
+   that, both were explicitly --z-modal (400) — a tie, correctly resolved
+   by DOM/mount order. Auto vs. Drawer's explicit 400 broke that tie the
+   other way: Drawer always outranked Dialog/AlertDialog regardless of
+   which opened later (e.g. a delete-confirmation AlertDialog triggered
+   from inside an open Drawer rendered behind it). Both content panels now
+   leave z-index unset for the same reason — see Dialog.css's own comment. */
 
 .drawer__content[data-state='closed'] {
   animation: drawer-right-out var(--duration-transition) var(--easing-default);

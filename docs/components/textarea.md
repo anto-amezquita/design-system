@@ -10,20 +10,16 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `id?` | `string` |  |
 | `label?` | `string` |  |
-| `placeholder?` | `string` |  |
 | `value?` | `string` |  |
 | `defaultValue?` | `string` |  |
 | `onChange?` | `(value: string) => void` |  |
-| `disabled?` | `boolean` |  |
 | `error?` | `string` |  |
 | `hint?` | `string` |  |
-| `rows?` | `number` |  |
-| `maxLength?` | `number` |  |
 | `characterCount?` | `boolean` |  |
-| `required?` | `boolean` |  |
 | `aria-label?` | `string` |  |
+
+Also accepts all props of: `Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange' | 'value' | 'defaultValue' | 'children'>`
 
 ## Tokens
 

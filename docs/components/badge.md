@@ -15,6 +15,8 @@
 | `aria-label?` | `string` |  |
 | `children?` | `never \| React.ReactNode` |  |
 
+Also accepts all props of: `Omit<React.HTMLAttributes<HTMLSpanElement>, 'children' | 'aria-label' | 'role'>`
+
 ## Tokens
 
 | Token | Type | Value |

@@ -10,16 +10,13 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `id?` | `string` |  |
 | `label?` | `string` |  |
 | `checked?` | `CheckedState` |  |
 | `defaultChecked?` | `CheckedState` |  |
 | `onCheckedChange?` | `(checked: CheckedState) => void` |  |
-| `disabled?` | `boolean` |  |
-| `required?` | `boolean` |  |
-| `name?` | `string` |  |
-| `value?` | `string` |  |
 | `aria-label?` | `string` |  |
+
+Also accepts all props of: `Omit<React.ComponentPropsWithoutRef<typeof RadixCheckbox.Root>, 'onCheckedChange' | 'checked' | 'defaultChecked' | 'children' | 'asChild'>`
 
 ## Tokens
 

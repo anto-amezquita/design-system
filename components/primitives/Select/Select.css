@@ -77,8 +77,19 @@
   border-radius: var(--border-radius-component);
   box-shadow: var(--shadow-dropdown);
   overflow: hidden;
-  z-index: var(--z-dropdown);
   min-width: var(--radix-select-trigger-width);
+  /* decisions/0007: no z-index here on purpose. --z-dropdown (200) ranked
+     below --z-overlay/--z-modal (300/400), so a Select opened while nested
+     inside a Dialog had its dropdown painted behind the Dialog's own
+     overlay — every option click intercepted. Radix's own Portal (this
+     content is portalled via RadixSelect.Portal) appends to document.body
+     in mount order with no z-index needed: opened later than whatever it's
+     nested inside, so it paints on top by default — the same fix Radix's
+     own maintainers shipped for the identical bug
+     (github.com/radix-ui/primitives/discussions/1985). Leaves --z-dropdown
+     itself unreferenced; not removed from the token files in this pass,
+     flagged in docs/backlog.md as a small follow-up for the next
+     decisions/0005-style dead-token round. */
 }
 
 /* Viewport — contains items */

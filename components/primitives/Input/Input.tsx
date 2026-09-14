@@ -1,14 +1,18 @@
 'use client'
 
-import { useId } from 'react'
+import { forwardRef, useId } from 'react'
 import { MagnifyingGlassIcon, XIcon } from '@phosphor-icons/react'
 import { useUncontrolledValue } from '../../../lib/useUncontrolledValue'
 import { cn } from '../../../lib/cn'
 import './Input.css'
 
+// `children` excluded (same latent gap the code review flagged on Textarea,
+// 2026-09-14): part of the native input attributes type via DOMAttributes,
+// but <input> is a void element — passing children through `...rest` onto
+// it is invalid DOM and React treats it as an error, not just a warning.
 type InputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
-  'onChange' | 'value' | 'defaultValue' | 'prefix' | 'type'
+  'onChange' | 'value' | 'defaultValue' | 'prefix' | 'type' | 'children'
 > & {
   type?: 'text' | 'email' | 'password' | 'url' | 'search' | 'tel'
   label?: string
@@ -25,7 +29,7 @@ type InputProps = Omit<
   searchLabel?: string
 }
 
-export function Input({
+export const Input = forwardRef<HTMLInputElement, InputProps>(function Input({
   id: idProp,
   type = 'text',
   label,
@@ -43,8 +47,9 @@ export function Input({
   search = false,
   searchLabel = 'Search',
   'aria-label': ariaLabel,
+  className,
   ...rest
-}: InputProps) {
+}, ref) {
   const generatedId = useId()
   const id = idProp ?? generatedId
   const hintId = `${id}-hint`
@@ -99,7 +104,8 @@ export function Input({
         )}
         <input
           {...rest}
-          className="input-field__input"
+          ref={ref}
+          className={cn('input-field__input', className)}
           id={id}
           type={type}
           placeholder={placeholder}
@@ -133,4 +139,6 @@ export function Input({
       )}
     </div>
   )
-}
+})
+
+Input.displayName = 'Input'

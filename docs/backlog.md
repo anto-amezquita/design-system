@@ -17,6 +17,24 @@ Live, actionable work for this repo. **Open this file first in any new session**
 
 ---
 
+## Ship the pending release — 0006's tail + all of 0007 (backlog)
+
+Opened 2026-09-14, updated same day once [`decisions/0007`](../decisions/0007-universal-prop-passthrough-and-nesting-safe-z-index.md) was implemented in full (see `roadmap.md`'s session log). `CHANGELOG.md`'s `0.3.1` entry only covers half of [`decisions/0006`](../decisions/0006-add-layered-automated-testing.md) — the ref-forwarding fix (`133c77d`). The `...rest`-spread fix (`c78019f`, `a05de97`), the `AlertDialog` cancel/action → `Button` switch (`95b55e8`), and now everything in `0007` (`Textarea`/`Badge`/`Checkbox`/`Input` passthrough, `className` merging on all five primitives, the `Select`↔`Dialog` z-index fix) all sit on a branch with no changeset queued yet (`.changeset/` is empty apart from `README.md`/`config.json`).
+
+No published npm version contains any of this. Every consumer — Ajar included, which independently hit and worked around several of these exact bugs (its own `decisions/0030`) — is blocked until a release ships. Next step: PR review and merge (changeset already written — `.changeset/universal-prop-passthrough.md`), then the release workflow (merge to `main` → bot opens "Version Packages" PR → merging that publishes). Not new engineering.
+
+Pre-merge code review found and fixed one real regression this branch itself introduced (`Drawer` started outranking `Dialog`/`AlertDialog` — same bug class as the `Select`/`Dialog` fix, different pair) plus three narrower correctness gaps of the same shape (`Badge`'s `role`, `Checkbox`'s `children`/`asChild`, `Textarea`/`Input`'s `children`, each now explicitly rejected with a `@ts-expect-error` contract test). See `decisions/0007`'s Verified section.
+
+Status: code complete on branch `fix/0007-prop-passthrough-and-z-index`, review findings fixed, `npm run validate` green (214/214). Needs: PR review, merge, then the release PR merged separately (a deliberate second checkpoint — that merge is what actually publishes, and this package also ships to portfolio).
+
+## Unconfirmed: does Drawer/Toast/Tooltip have the same z-index-when-nested bug as Select did? (backlog)
+
+Opened 2026-09-14, alongside `decisions/0007`. That decision fixed the *confirmed* case (`Select` nested inside `Dialog`) by dropping both sides to `auto` z-index rather than ranking by overlay kind. `Drawer.css` still references `--z-modal` explicitly (`decisions/0005` round 21); `Toast`/`Tooltip` keep their own tiers (`--z-toast`/`--z-tooltip`) untouched. Any of these nested inside `Dialog`, or inside each other, could have the identical bug — deliberately not fixed speculatively without a failing test the way `Select`'s was confirmed (see `0007`'s own Select.nesting.test.tsx for the pattern to reuse: real `vitest/browser` `page` clicks, brand CSS imported directly, not `@testing-library/user-event` — that doesn't do real hit-testing and would pass regardless).
+
+Also: `--z-dropdown` and `--z-overlay` are now fully unreferenced (confirmed via `tokens/dependency-graph.json`) — left defined in the token files rather than deleted, since removing them wasn't necessary to fix the confirmed bug. Candidate for a future `decisions/0005`-style dead-token round.
+
+Status: not started, no known failing case yet for Drawer/Toast/Tooltip specifically.
+
 ## Self-healing CI (backlog)
 
 Opened 2026-09-08, unblocked by [`decisions/0006`](../decisions/0006-add-layered-automated-testing.md) (real tests now exist for CI to react to). Spec'd in [`specs/self-healing-ci-spec.md`](../specs/self-healing-ci-spec.md), validated against industry precedent in [`self-healing-ci-research.md`](./self-healing-ci-research.md).
