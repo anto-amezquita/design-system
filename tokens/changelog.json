@@ -212,6 +212,22 @@
   ],
   "unreleased": [
     {
+      "sha": "89bca16",
+      "type": "fix",
+      "scope": "badge,checkbox,textarea,input",
+      "message": "stop admitting props each component silently discards or breaks on",
+      "date": "2026-09-14",
+      "breaking": false
+    },
+    {
+      "sha": "b8863ad",
+      "type": "fix",
+      "scope": "drawer,dialog",
+      "message": "Drawer no longer outranks Dialog/AlertDialog",
+      "date": "2026-09-14",
+      "breaking": false
+    },
+    {
       "sha": "8d3b110",
       "type": "docs",
       "scope": null,
