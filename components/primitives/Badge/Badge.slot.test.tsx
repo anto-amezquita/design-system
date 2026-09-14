@@ -41,4 +41,16 @@ describe('Badge inside Radix Dialog.Trigger (asChild)', () => {
     expect(trigger).toHaveAttribute('aria-haspopup', 'dialog')
     expect(trigger).toHaveAttribute('data-state', 'closed')
   })
+
+  test('role is rejected at compile time, not silently overridden at runtime', () => {
+    // Code review (2026-09-14): widening to HTMLAttributes<HTMLSpanElement>
+    // admitted `role` too, but Badge always computes its own role (line
+    // 47/53) after spreading ...rest, so a passed role was silently
+    // discarded. This @ts-expect-error line is the actual assertion — if
+    // `role` stops erroring (someone widens the Omit list back), typecheck
+    // fails here.
+    // @ts-expect-error - Badge computes its own role, doesn't accept one
+    const element = <Badge aria-label="3 unread" role="status">3</Badge>
+    void element
+  })
 })

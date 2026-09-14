@@ -23,9 +23,15 @@ type TextareaOwnProps = {
 // other native attribute (`rows`, `maxLength`, `disabled`, `required`,
 // `placeholder`, `className`, and everything decisions/0007 was written
 // about — `onKeyDown`, `onBlur`, `ref`) passes through unchanged via `...rest`.
+// `children` explicitly excluded (code review, 2026-09-14): part of the
+// native textarea attributes type via DOMAttributes, but Textarea is a
+// controlled component driven by `value`/`onChange` — a consumer-supplied
+// `children` would land in `...rest` and get spread onto a controlled
+// <textarea>, which triggers React's own dev warning and risks a hydration
+// mismatch. Textarea doesn't support children; the type now says so.
 type TextareaProps = Omit<
   React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-  'onChange' | 'value' | 'defaultValue'
+  'onChange' | 'value' | 'defaultValue' | 'children'
 > & TextareaOwnProps
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea({

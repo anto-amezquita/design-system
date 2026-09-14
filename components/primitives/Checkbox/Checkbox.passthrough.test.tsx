@@ -26,4 +26,20 @@ describe('Checkbox prop/ref passthrough', () => {
     expect(ref.current?.className).toContain('checkbox__root')
     expect(ref.current?.className).toContain('rights-checkbox')
   })
+
+  test('children and asChild are rejected at compile time, not silently discarded at runtime', () => {
+    // Code review (2026-09-14): widening to RadixCheckbox.Root's own prop
+    // type admitted `children`/`asChild` too, but Checkbox always renders a
+    // fixed check/indeterminate icon as Root's real children, so either one
+    // silently did nothing (children) or broke the component (asChild).
+    // These two @ts-expect-error lines are the actual assertion — if either
+    // prop stops erroring (someone widens the Omit list back), typecheck
+    // fails here.
+    // @ts-expect-error - Checkbox doesn't support custom children
+    const withChildren = <Checkbox label="Agree" children={<span>nope</span>} />
+    void withChildren
+    // @ts-expect-error - Checkbox doesn't support asChild
+    const withAsChild = <Checkbox label="Agree" asChild />
+    void withAsChild
+  })
 })

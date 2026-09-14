@@ -16,7 +16,7 @@
 | `onCheckedChange?` | `(checked: CheckedState) => void` |  |
 | `aria-label?` | `string` |  |
 
-Also accepts all props of: `Omit<React.ComponentPropsWithoutRef<typeof RadixCheckbox.Root>, 'onCheckedChange' | 'checked' | 'defaultChecked'>`
+Also accepts all props of: `Omit<React.ComponentPropsWithoutRef<typeof RadixCheckbox.Root>, 'onCheckedChange' | 'checked' | 'defaultChecked' | 'children' | 'asChild'>`
 
 ## Tokens
 

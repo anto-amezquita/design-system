@@ -6,9 +6,13 @@ import { useUncontrolledValue } from '../../../lib/useUncontrolledValue'
 import { cn } from '../../../lib/cn'
 import './Input.css'
 
+// `children` excluded (same latent gap the code review flagged on Textarea,
+// 2026-09-14): part of the native input attributes type via DOMAttributes,
+// but <input> is a void element — passing children through `...rest` onto
+// it is invalid DOM and React treats it as an error, not just a warning.
 type InputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
-  'onChange' | 'value' | 'defaultValue' | 'prefix' | 'type'
+  'onChange' | 'value' | 'defaultValue' | 'prefix' | 'type' | 'children'
 > & {
   type?: 'text' | 'email' | 'password' | 'url' | 'search' | 'tel'
   label?: string

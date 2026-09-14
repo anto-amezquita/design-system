@@ -28,4 +28,17 @@ describe('Input ref forwarding and className merge', () => {
     expect(ref.current?.className).toContain('input-field__input')
     expect(ref.current?.className).toContain('song-title')
   })
+
+  test('children is rejected at compile time — <input> is a void element', () => {
+    // Same latent gap the code review flagged on Textarea (2026-09-14):
+    // InputHTMLAttributes admits `children` via DOMAttributes, but <input>
+    // is a void element. Constructed only, never rendered — React itself
+    // throws a hard invariant for children on a void element at mount time,
+    // which is a real, separate guarantee, not what this test is checking.
+    // The directive below is the actual assertion: if `children` stops
+    // erroring (someone widens the Omit list back), typecheck fails here.
+    // @ts-expect-error - <input> is a void element, doesn't accept children
+    const element = <Input aria-label="Song title" value="hi" onChange={() => {}} children="nope" />
+    void element
+  })
 })

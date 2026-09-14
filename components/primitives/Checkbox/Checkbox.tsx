@@ -21,9 +21,17 @@ type CheckboxOwnProps = {
 // hand-written list — `onCheckedChange`/`checked`/`defaultChecked` are
 // redeclared as own props purely so this file's JSDoc/doc-gen output states
 // them explicitly, not because their signature differs from Radix's own.
+// `children`/`asChild` explicitly excluded (code review, 2026-09-14): both
+// are part of RadixCheckbox.Root's own prop type, so widening to it without
+// omitting them let TypeScript admit either — but Checkbox always renders
+// its own fixed check/indeterminate icon as Root's children (below), so a
+// consumer's `children` is silently discarded, and `asChild` would try to
+// merge Root's behavior onto that same fixed icon markup instead of a real
+// interactive element, breaking it. Checkbox doesn't support either; the
+// type now says so.
 type CheckboxProps = Omit<
   React.ComponentPropsWithoutRef<typeof RadixCheckbox.Root>,
-  'onCheckedChange' | 'checked' | 'defaultChecked'
+  'onCheckedChange' | 'checked' | 'defaultChecked' | 'children' | 'asChild'
 > & CheckboxOwnProps
 
 export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(function Checkbox({

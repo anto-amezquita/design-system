@@ -26,7 +26,13 @@ type OtherBadgeProps = {
 // way Button's `Omit<...> & ButtonOwnProps` does it — the union still
 // resolves to two clean rows, and the `Omit<...>` part surfaces as its own
 // "Also accepts all props of" note rather than silently breaking the table.
-type BadgeProps = (DotBadgeProps | OtherBadgeProps) & Omit<React.HTMLAttributes<HTMLSpanElement>, 'children' | 'aria-label'>
+// `role` explicitly excluded (code review, 2026-09-14): Badge always
+// computes its own role (`role="img"` when labeled, `undefined` otherwise —
+// a deliberate a11y decision, not a passthrough candidate) and writes it in
+// JSX after `{...rest}`, so a consumer-supplied `role` was silently
+// discarded when it was admitted through the native-attrs intersection.
+// Badge doesn't support overriding its own role; the type now says so.
+type BadgeProps = (DotBadgeProps | OtherBadgeProps) & Omit<React.HTMLAttributes<HTMLSpanElement>, 'children' | 'aria-label' | 'role'>
 
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge({
   variant = 'neutral',

@@ -19,7 +19,7 @@
 | `characterCount?` | `boolean` |  |
 | `aria-label?` | `string` |  |
 
-Also accepts all props of: `Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange' | 'value' | 'defaultValue'>`
+Also accepts all props of: `Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange' | 'value' | 'defaultValue' | 'children'>`
 
 ## Tokens
 

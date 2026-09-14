@@ -50,4 +50,16 @@ describe('Textarea prop/ref passthrough', () => {
     expect(field.className).toContain('textarea-field__textarea')
     expect(field.className).toContain('lyric')
   })
+
+  test('children is rejected at compile time, not silently spread onto a controlled textarea', () => {
+    // Code review (2026-09-14): widening to TextareaHTMLAttributes admitted
+    // `children` too, but Textarea is controlled via value/onChange — a
+    // passed children would land in ...rest and hit a controlled <textarea>,
+    // which React warns about and can hydration-mismatch on. The directive
+    // below is the actual assertion: if `children` stops erroring (someone
+    // widens the Omit list back), typecheck fails here.
+    // @ts-expect-error - Textarea is controlled via value, doesn't accept children
+    const element = <Textarea aria-label="Notes" value="" onChange={() => {}} children="nope" />
+    void element
+  })
 })

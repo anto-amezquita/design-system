@@ -24,7 +24,7 @@
 | `search?` | `boolean` |  |
 | `searchLabel?` | `string` |  |
 
-Also accepts all props of: `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value' | 'defaultValue' | 'prefix' | 'type'>`
+Also accepts all props of: `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value' | 'defaultValue' | 'prefix' | 'type' | 'children'>`
 
 ## Tokens
 
