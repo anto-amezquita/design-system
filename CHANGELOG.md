@@ -1,5 +1,20 @@
 # @amezquita/design-system
 
+## 0.3.2
+
+### Patch Changes
+
+- 8d3b110: Every primitive now forwards a ref, spreads unrecognised props onto its rendered element, and merges a consumer's `className` instead of discarding it. Fixes `Select`'s dropdown rendering behind its own containing `Dialog`.
+
+  - **Button**, **Textarea**, **Badge**, **Checkbox**, **Input** all extend the real native element's (or, for `Checkbox`, the real Radix primitive's) own props type and spread `...rest` onto the rendered element — `onKeyDown`, `onBlur`, arbitrary `data-*`/`aria-*` attributes, and third-party libraries that spread their own props onto a rendered node (e.g. `@dnd-kit/sortable`'s `attributes`/`listeners`) now all reach the real DOM node. Previously only `Button` had this (`decisions/0006`); this extends the same pattern to every other primitive with a single rendered element.
+  - **`className` is now merged, not silently overwritten**, on all five of the above — including `Button`, which `decisions/0006`'s fix didn't close: it spread `...rest` (which carries `className`) but then wrote its own computed `className` after it, unconditionally overwriting whatever a consumer passed.
+  - **`Button` now forwards Radix's `asChild`-injected ARIA contract _and_ an external `className`** — both needed for `Button`/`Badge` to work correctly as a `Dialog`/`AlertDialog` trigger with consumer-supplied styling.
+  - **`Select`'s dropdown no longer renders behind a `Dialog` it's nested inside**, and **`Drawer`'s content/overlay no longer outrank `Dialog`/`AlertDialog`.** `Select.css`, `Dialog.css`, and `Drawer.css` no longer set an explicit `z-index` on their overlay/content — all now layer by DOM mount order instead of a fixed `dropdown < overlay < modal` rank, the same fix Radix's own maintainers shipped for the identical bug. `--z-dropdown`, `--z-overlay`, and `--z-modal` are now unreferenced (not removed from the token files in this release).
+  - **`AlertDialog`'s `cancel`/`action` slots can now safely use `Button`** instead of a plain `<button>` — the guidance recommending a raw element there is retired; `Button`'s own `asChild`-composition contract test (`Button.slot.test.tsx`) now covers this.
+  - **`Badge`, `Checkbox`, `Textarea`, and `Input` each explicitly reject one or two props they can't actually support**, caught by review rather than shipped silently broken: `Badge` no longer accepts `role` (it always computes its own — a deliberate a11y decision, not a passthrough gap); `Checkbox` no longer accepts `children`/`asChild` (its check/indeterminate icon is fixed markup); `Textarea`/`Input` no longer accept `children` (both are controlled via `value`, and `<input>` is a void element besides — passing `children` to either was always going to misbehave, this just makes the type say so instead of admitting it silently).
+
+  No breaking changes for any real existing usage — the three components above were never designed to accept `role`/`children`/`asChild` in the first place; nothing that worked before stops working. No component removed or renamed.
+
 ## 0.3.1
 
 ### Patch Changes
