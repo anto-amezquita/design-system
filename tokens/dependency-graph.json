@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 27,
-    "tokenCount": 203
+    "tokenCount": 202
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -991,9 +991,6 @@
     ],
     "tooltip-max-width": [
       "components/composition/Tooltip/Tooltip.css"
-    ],
-    "z-modal": [
-      "components/composition/Drawer/Drawer.css"
     ],
     "z-toast": [
       "components/composition/Toast/Toast.css"

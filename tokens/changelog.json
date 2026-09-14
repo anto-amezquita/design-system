@@ -212,6 +212,38 @@
   ],
   "unreleased": [
     {
+      "sha": "8d3b110",
+      "type": "docs",
+      "scope": null,
+      "message": "write decisions/0007, close backlog item, add changeset",
+      "date": "2026-09-14",
+      "breaking": false
+    },
+    {
+      "sha": "3f5b00a",
+      "type": "fix",
+      "scope": "select,dialog",
+      "message": "layer by portal mount order, not a fixed z-index rank",
+      "date": "2026-09-14",
+      "breaking": false
+    },
+    {
+      "sha": "9b86b21",
+      "type": "fix",
+      "scope": "button",
+      "message": "merge consumer className instead of overwriting it",
+      "date": "2026-09-14",
+      "breaking": false
+    },
+    {
+      "sha": "b902896",
+      "type": "fix",
+      "scope": "textarea,badge,checkbox,input",
+      "message": "extend Button's ref/rest passthrough pattern",
+      "date": "2026-09-14",
+      "breaking": false
+    },
+    {
       "sha": "95b55e8",
       "type": "fix",
       "scope": "alert-dialog",

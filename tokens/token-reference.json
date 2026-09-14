@@ -2690,9 +2690,7 @@
         "portfolio-dark": "400"
       },
       "axisAware": false,
-      "usedBy": [
-        "Drawer"
-      ]
+      "usedBy": []
     },
     {
       "name": "z-toast",
