@@ -1,28 +1,34 @@
 'use client'
 
-import { useId } from 'react'
+import { forwardRef, useId } from 'react'
 import { useUncontrolledValue } from '../../../lib/useUncontrolledValue'
 import { cn } from '../../../lib/cn'
 import './Textarea.css'
 
-type TextareaProps = {
-  id?: string
+type TextareaOwnProps = {
   label?: string
-  placeholder?: string
   value?: string
   defaultValue?: string
   onChange?: (value: string) => void
-  disabled?: boolean
   error?: string
   hint?: string
-  rows?: number
-  maxLength?: number
   characterCount?: boolean
-  required?: boolean
   'aria-label'?: string
 }
 
-export function Textarea({
+// Same shape as Input.tsx: extend the real native element's attributes,
+// only `Omit` the ones whose own-prop signature genuinely differs
+// (`onChange` takes a value, not an event; `value`/`defaultValue` are
+// redeclared alongside it so all three stay in sync as a group) — every
+// other native attribute (`rows`, `maxLength`, `disabled`, `required`,
+// `placeholder`, `className`, and everything decisions/0007 was written
+// about — `onKeyDown`, `onBlur`, `ref`) passes through unchanged via `...rest`.
+type TextareaProps = Omit<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  'onChange' | 'value' | 'defaultValue'
+> & TextareaOwnProps
+
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea({
   id: idProp,
   label,
   placeholder,
@@ -37,7 +43,9 @@ export function Textarea({
   characterCount = false,
   required = false,
   'aria-label': ariaLabel,
-}: TextareaProps) {
+  className,
+  ...rest
+}, ref) {
   const generatedId = useId()
   const id = idProp ?? generatedId
   const hintId = `${id}-hint`
@@ -74,7 +82,9 @@ export function Textarea({
       )}
       <div className={wrapperClass}>
         <textarea
-          className="textarea-field__textarea"
+          {...rest}
+          ref={ref}
+          className={cn('textarea-field__textarea', className)}
           id={id}
           rows={rows}
           placeholder={placeholder}
@@ -100,4 +110,6 @@ export function Textarea({
       )}
     </div>
   )
-}
+})
+
+Textarea.displayName = 'Textarea'

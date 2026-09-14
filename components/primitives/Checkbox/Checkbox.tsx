@@ -1,26 +1,32 @@
 'use client'
 
-import { useId } from 'react'
+import { forwardRef, useId } from 'react'
 import * as RadixCheckbox from '@radix-ui/react-checkbox'
 import { cn } from '../../../lib/cn'
 import './Checkbox.css'
 
 type CheckedState = boolean | 'indeterminate'
 
-type CheckboxProps = {
-  id?: string
+type CheckboxOwnProps = {
   label?: string
   checked?: CheckedState
   defaultChecked?: CheckedState
   onCheckedChange?: (checked: CheckedState) => void
-  disabled?: boolean
-  required?: boolean
-  name?: string
-  value?: string
   'aria-label'?: string
 }
 
-export function Checkbox({
+// Same pattern AccordionTrigger already established for a Radix-wrapped
+// component: type against the real Radix primitive's own props
+// (`React.ComponentPropsWithoutRef<typeof RadixCheckbox.Root>`), not a
+// hand-written list — `onCheckedChange`/`checked`/`defaultChecked` are
+// redeclared as own props purely so this file's JSDoc/doc-gen output states
+// them explicitly, not because their signature differs from Radix's own.
+type CheckboxProps = Omit<
+  React.ComponentPropsWithoutRef<typeof RadixCheckbox.Root>,
+  'onCheckedChange' | 'checked' | 'defaultChecked'
+> & CheckboxOwnProps
+
+export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(function Checkbox({
   id: idProp,
   label,
   checked,
@@ -31,7 +37,9 @@ export function Checkbox({
   name,
   value,
   'aria-label': ariaLabel,
-}: CheckboxProps) {
+  className,
+  ...rest
+}, ref) {
   const generatedId = useId()
   const id = idProp ?? generatedId
 
@@ -44,7 +52,9 @@ export function Checkbox({
   return (
     <div className={rootClass}>
       <RadixCheckbox.Root
-        className="checkbox__root"
+        {...rest}
+        ref={ref}
+        className={cn('checkbox__root', className)}
         id={id}
         checked={checked}
         defaultChecked={defaultChecked}
@@ -81,4 +91,6 @@ export function Checkbox({
       )}
     </div>
   )
-}
+})
+
+Checkbox.displayName = 'Checkbox'

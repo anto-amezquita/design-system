@@ -1,6 +1,6 @@
 'use client'
 
-import { useId } from 'react'
+import { forwardRef, useId } from 'react'
 import { MagnifyingGlassIcon, XIcon } from '@phosphor-icons/react'
 import { useUncontrolledValue } from '../../../lib/useUncontrolledValue'
 import { cn } from '../../../lib/cn'
@@ -25,7 +25,7 @@ type InputProps = Omit<
   searchLabel?: string
 }
 
-export function Input({
+export const Input = forwardRef<HTMLInputElement, InputProps>(function Input({
   id: idProp,
   type = 'text',
   label,
@@ -43,8 +43,9 @@ export function Input({
   search = false,
   searchLabel = 'Search',
   'aria-label': ariaLabel,
+  className,
   ...rest
-}: InputProps) {
+}, ref) {
   const generatedId = useId()
   const id = idProp ?? generatedId
   const hintId = `${id}-hint`
@@ -99,7 +100,8 @@ export function Input({
         )}
         <input
           {...rest}
-          className="input-field__input"
+          ref={ref}
+          className={cn('input-field__input', className)}
           id={id}
           type={type}
           placeholder={placeholder}
@@ -133,4 +135,6 @@ export function Input({
       )}
     </div>
   )
-}
+})
+
+Input.displayName = 'Input'
