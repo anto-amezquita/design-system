@@ -24,7 +24,8 @@
   position: fixed;
   inset: 0;
   background: var(--color-surface-tertiary);
-  z-index: var(--z-overlay);
+  /* decisions/0007: no z-index here on purpose — see .dialog__content below,
+     same reasoning. */
   animation: dialog-overlay-in var(--duration-transition) var(--easing-out);
 }
 
@@ -58,10 +59,26 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-element-gap);
-  z-index: var(--z-modal);
   box-sizing: border-box;
   animation: dialog-content-in var(--duration-transition) var(--easing-out);
 }
+
+/* decisions/0007: an explicit z-index on .dialog__overlay/.dialog__content
+   always outranks a sibling with z-index:auto, regardless of DOM/mount
+   order — which is exactly what broke a Select nested inside this Dialog
+   (Select.css's --z-dropdown was lower; removing only that side still left
+   Dialog's own --z-modal/--z-overlay outranking Select's now-auto content).
+   Both z-indices removed here for the same reason Radix's own maintainer
+   gave for the identical bug (github.com/radix-ui/primitives/discussions/1985):
+   every layered part here is portalled to document.body already, so DOM
+   append order — later-mounted paints on top — does the layering correctly
+   with nothing set at all, the same way raw unstyled Radix primitives with
+   no custom z-index already behave. Leaves --z-overlay/--z-modal themselves
+   unreferenced by Dialog specifically; Drawer still uses --z-modal
+   (decisions/0005 round 21) and is unaffected by this change. Verified
+   against a real nested-Select regression test
+   (components/primitives/Select/Select.nesting.test.tsx) using real
+   Playwright hit-testing, not a DOM-structure assertion. */
 
 .dialog__content[data-state='closed'] {
   animation: dialog-content-out var(--duration-transition) var(--easing-out);
