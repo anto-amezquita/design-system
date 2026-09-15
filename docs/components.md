@@ -492,6 +492,39 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Heading
+
+| Field | Value |
+|---|---|
+| **Purpose** | Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level |
+| **Figma name** | `Heading` |
+| **Code name** | `Heading` |
+| **Storybook path** | `Components/Heading` |
+
+**Props / variants**
+- `level` (required): `1`–`6` — controls visual size only. `1`–`3` use fluid (`clamp()`-based) sizing that scales with viewport width; `4`–`6` are static, fixed-size — see decisions/0008 for why the split sits there
+- `as`: `'h1'`–`'h6'`, optional, defaults to matching `level` (`level={2}` renders `<h2>`) — set explicitly when the correct document-outline position diverges from the desired visual size (e.g. a visually small `H1` that must stay a real `<h1>` for SEO/screen-reader navigation)
+
+**Required states**
+- [x] H1–H3 (fluid)
+- [x] H4–H6 (static)
+- [x] `level`/`as` decoupled (visual size independent of rendered tag)
+
+**Tokens consumed**
+- `--font-family-heading`, `--font-weight-heading`, `--color-text-primary`, `--letter-spacing-heading`
+- `--font-size-h1-fluid`, `--line-height-display`
+- `--font-size-h2-fluid`, `--font-size-h3-fluid`, `--line-height-heading`
+- `--font-size-h4`, `--font-size-h5`, `--font-size-h6`
+
+**Accessibility**
+- Renders a real `h1`–`h6` element — always reflects the document outline correctly via `as`, never rely on `level` alone for that
+- No ARIA requirements beyond correct heading-level nesting in the surrounding page
+
+**Chromatic stories**
+- `H1`, `H2`, `H3`, `H4`, `H5`, `H6`, `AllLevels`, `LevelAsDecoupling`, `DarkMode`
+
+---
+
 ### Alert
 
 | Field | Value |

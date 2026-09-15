@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 28 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 29 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -22,6 +22,7 @@ npm install @amezquita/design-system
 - [Badge](https://amezquita.dk/design-system/badge.md): Small status indicator or numeric count overlay attached to another element
 - [Button](https://amezquita.dk/design-system/button.md): Trigger for user actions; renders as `<button>` or `<a>` depending on context
 - [Checkbox](https://amezquita.dk/design-system/checkbox.md): Single boolean selection with an associated label; supports indeterminate state
+- [Heading](https://amezquita.dk/design-system/heading.md): Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level
 - [Input](https://amezquita.dk/design-system/input.md): Labelled single-line text entry with hint and error states
 - [Label](https://amezquita.dk/design-system/label.md): Standalone form label element — used when a label must be decoupled from its input
 - [Radio](https://amezquita.dk/design-system/radio.md): Single-selection control within a mutually exclusive group

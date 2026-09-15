@@ -41,9 +41,9 @@ Component tokens follow `--<component-slug>-*` (e.g. `--button-padding-x`, `--di
 
 ## Components that exist
 
-28 public components. Anything not on this list is provably invented — check `tokens/component-registry.json` if this list is ever stale.
+29 public components. Anything not on this list is provably invented — check `tokens/component-registry.json` if this list is ever stale.
 
-- **Primitives (13):** Avatar, Badge, Button, Checkbox, Input, Label, Radio, Select, Skeleton, Spinner, Switch, Tag, Textarea
+- **Primitives (14):** Avatar, Badge, Button, Checkbox, Heading, Input, Label, Radio, Select, Skeleton, Spinner, Switch, Tag, Textarea
 - **Composition (7):** Alert, AlertDialog, Card, Dialog, Drawer, Toast, Tooltip
 - **Patterns (8):** Accordion, Breadcrumb, DataTable, EmptyState, Hero, Pagination, Table, Tabs
 

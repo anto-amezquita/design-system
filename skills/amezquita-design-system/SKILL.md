@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 28 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 29 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 28 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 29 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -31,7 +31,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://amezquita.dk/design-system/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (13)
+### Primitives (14)
 
 | Component | Reference |
 |---|---|
@@ -39,6 +39,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Badge | [badge](https://amezquita.dk/design-system/badge.md) — Small status indicator or numeric count overlay attached to another element |
 | Button | [button](https://amezquita.dk/design-system/button.md) — Trigger for user actions; renders as `<button>` or `<a>` depending on context |
 | Checkbox | [checkbox](https://amezquita.dk/design-system/checkbox.md) — Single boolean selection with an associated label; supports indeterminate state |
+| Heading | [heading](https://amezquita.dk/design-system/heading.md) — Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level |
 | Input | [input](https://amezquita.dk/design-system/input.md) — Labelled single-line text entry with hint and error states |
 | Label | [label](https://amezquita.dk/design-system/label.md) — Standalone form label element — used when a label must be decoupled from its input |
 | Radio | [radio](https://amezquita.dk/design-system/radio.md) — Single-selection control within a mutually exclusive group |
@@ -81,7 +82,7 @@ Every token this system defines, resolved across all four theme axes: https://am
 Real semantic token families:
 
 - **color** (43): `--color-accent-*`, `--color-border-*`, `--color-curtain-*`, `--color-feedback-*`, `--color-neutral-*`, `--color-skeleton-*`, `--color-surface-*`, `--color-text-*`
-- **typography** (32): `--font-family-*`, `--font-size-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
+- **typography** (34): `--font-family-*`, `--font-size-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
 - **spacing** (19): `--space-compact-*`, `--space-component-*`, `--space-container-*`, `--space-control-*`, `--space-dialog-*`, `--space-element-*`, `--space-inline-*`, `--space-label-*`, `--space-layout-*`, `--space-prominent-*`, `--space-section-*`, `--space-tight-*`
 - **size** (8): `--focus-ring-*`, `--size-dialog-*`, `--size-icon-*`
 - **motion** (7): `--duration-entrance-*`, `--duration-interaction-*`, `--duration-reveal-*`, `--duration-skeleton-*`, `--duration-spin-*`, `--duration-transition-*`
