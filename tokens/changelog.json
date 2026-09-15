@@ -300,6 +300,22 @@
   ],
   "unreleased": [
     {
+      "sha": "75cf9b5",
+      "type": "fix",
+      "scope": null,
+      "message": "registry manifest gap and changelog staleness from Heading migration; trim now-redundant title CSS",
+      "date": "2026-09-15",
+      "breaking": false
+    },
+    {
+      "sha": "42f01ba",
+      "type": "refactor",
+      "scope": null,
+      "message": "migrate Card/Dialog/Drawer/EmptyState titles onto Heading primitive",
+      "date": "2026-09-15",
+      "breaking": false
+    },
+    {
       "sha": "0348876",
       "type": "fix",
       "scope": null,

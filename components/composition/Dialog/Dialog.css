@@ -15,7 +15,7 @@
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-border-default, --border-width-default, --color-surface-primary
   --border-radius-component, --space-element-gap
-  --color-surface-tertiary, --font-size-lead, --font-weight-title
+  --color-surface-tertiary, --font-size-lead, --font-size-h4, --font-weight-title
 
   --space-dialog-padding-mobile, --space-dialog-padding-tablet,
   --space-dialog-padding-desktop — responsive .dialog__content padding,
@@ -155,6 +155,27 @@
   letter-spacing: var(--letter-spacing-heading);
   color: var(--color-text-primary);
   margin: 0;
+}
+
+/* Dialog now composes the Heading primitive internally (docs/backlog.md
+   migration) via BaseSheet.tsx, which adds .heading/.heading--h4 classes
+   alongside .dialog__title — Heading's own .heading rule hardcodes
+   font-weight-heading (semibold), this title needs font-weight-title
+   (bold). AlertDialog.tsx still uses .dialog__title directly (not via
+   Heading), so the rule above stays untouched — it's the only thing
+   sizing/styling AlertDialog's title.
+
+   font-size is pinned here too, explicitly to font-size-h4 rather than
+   left as an accidental tie with .heading--h4 (same specificity, order-
+   dependent otherwise) — font-size-lead and font-size-h4 are the same
+   value today by design (decisions/0008), but when this title IS composed
+   via Heading, font-size-h4 is the authoritative source; if the two tokens
+   ever diverge, this title should keep following Heading's H4, not drift
+   from it. Compound selector (0,2,0) beats .heading's (0,1,0) regardless
+   of CSS import order either way. */
+.heading.dialog__title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-title);
 }
 
 /* Description */

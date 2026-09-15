@@ -17,19 +17,15 @@ Live, actionable work for this repo. **Open this file first in any new session**
 
 ---
 
-## Migrate Card/Dialog/Drawer/EmptyState titles onto the Heading primitive (backlog) — TOP PRIORITY
+## Heading `weight` variant, and whether the migration needed an ADR (backlog)
 
-Opened 2026-09-15, alongside [`decisions/0008`](../decisions/0008-productive-expressive-typography-split.md), which built the `Heading` primitive (`components/primitives/Heading/`) but explicitly left this migration out of scope as a separate, larger follow-up.
+Opened 2026-09-15, surfaced by code review on [`refactor/heading-migration`](../decisions/0008-productive-expressive-typography-split.md) (the `Card`/`Dialog`/`Drawer`/`EmptyState` → `Heading` migration, see `roadmap.md`'s session log for both entries). Two related, deliberately undecided items — both judgment calls beyond that task's own scope, not bugs.
 
-Right now two heading implementations coexist: the new `Heading` primitive (`level`/`as` props, used for real page-level H1–H6), and each of `Card`/`Dialog`/`Drawer`/`EmptyState`'s own inline title markup (`CardTitle` and equivalents), which renders its own `<h*>` tag and reaches directly for `font-size-lead`/`font-size-h4` rather than composing `Heading`. They currently agree by coincidence — same static values, same `font-family-heading`/`line-height-heading`/`letter-spacing-heading` tokens — not because one is built from the other.
+**1. `Heading` has no way to ask for `font-weight-title` instead of its hardcoded `font-weight-heading`.** Three of the migration's four call sites (`Card`, `Dialog`, `Drawer`) need bold where `Heading`'s base `.heading` rule always applies semibold, so each got its own `.heading.<block>__title { font-weight: var(--font-weight-title) }` compound-selector override in `Card.css`/`Dialog.css`/`Drawer.css`, each with its own comment justifying it — a real, recurring need patched at three leaves instead of once at the root. A `weight?: 'heading' | 'title'` prop on `Heading` (toggling a modifier class) would replace all three CSS overrides with one prop passed at each call site. Not done as part of the migration because it changes `Heading`'s public API — the exact surface `decisions/0008` fixed on purpose — which felt like a call for the user to make, not something to decide unilaterally mid-refactor.
 
-**Goal:** migrate `CardTitle` and the equivalent title markup in `Dialog`, `Drawer`, and `EmptyState` to render via the `Heading` primitive internally (static `level`, e.g. `H4`/`H5` depending on which matches each component's current static size — check against `font-size-h4`/`h5`/`h6`'s actual values from `0008` rather than assuming), instead of each maintaining parallel heading CSS. Consumer-facing API (`<CardTitle>`, `<Dialog title="...">`, etc.) should not change — this is an internal implementation consolidation, not a public API change.
+**2. Whether the migration itself needed a `decisions/0009-*.md`.** `decisions/0008`'s own Consequences section explicitly deferred this migration as "a separate, larger change," and the backlog entry that opened it (now removed) argued it was closing real architectural drift, not just tidying — both signals that lean toward "this was a decision, not just an implementation." Against that: no new token tier, brand, or package was introduced, and the component-facing API didn't change. Repo `CLAUDE.md`'s "Do not… make an architectural change… without writing an ADR" rule is the thing in tension here; `decisions/README.md`'s bar is described as low ("one small file per important decision"), so writing one costs little if the answer is yes.
 
-**Why this matters, not just tidiness:** two independent heading implementations is exactly the kind of drift `decisions/0004`/`0005`'s chain-skip and pass-through collapses exist to prevent elsewhere in this system — right now a future change to heading typography (weight, letter-spacing, a new static step) has to be made in five places by hand and could silently diverge, the same failure shape those ADRs already fixed for spacing and border tokens.
-
-**Care needed:** four components' worth of markup change plus Chromatic snapshot review (visual output should be byte-identical if done right — this is a refactor, not a value change), and `CardTitle`'s current API is `as`-only polymorphic (per `decisions/0008`'s own Consequences section) — reconcile that with `Heading`'s `level`/`as` split rather than just swapping the render call in place.
-
-Status: not started.
+Status: not started — needs the user's call on both before either is acted on.
 
 ## Self-healing CI (backlog)
 

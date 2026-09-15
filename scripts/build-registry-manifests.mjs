@@ -62,18 +62,65 @@ function getSiteRoot() {
   return m[1]
 }
 
-// Which other public components a component's own .tsx actually imports —
-// e.g. `from '../Spinner'` or `from '../../primitives/Checkbox'`. Read from
-// source, not asserted, so this can't drift from what's really composed.
-function findSiblingImports(source, componentName, publicNames) {
+// Which other known components (public or internal) a component's own .tsx
+// actually imports — e.g. `from '../Spinner'` or
+// `from '../../primitives/Checkbox'`. Read from source, not asserted, so
+// this can't drift from what's really composed.
+function findSiblingImports(source, componentName, knownNames) {
   const deps = new Set()
   const re = /from\s+'(?:\.\.\/)+(?:primitives\/|composition\/|patterns\/)?([A-Za-z]+)'/g
   let m
   while ((m = re.exec(source))) {
     const target = m[1]
-    if (target !== componentName && publicNames.has(target)) deps.add(target)
+    if (target !== componentName && knownNames.has(target)) deps.add(target)
   }
   return deps
+}
+
+// A public component's registryDependencies, following imports *through*
+// internal siblings only. A public component's own .tsx sometimes composes
+// another public component only through an internal one — Dialog/Drawer
+// import BaseSheet, and it's BaseSheet.tsx, not Dialog.tsx/Drawer.tsx, that
+// imports Heading. There's no separate registry item for an internal
+// component (no base-sheet.json) — its source ships bundled inside
+// whichever public item uses it — so its own public dependencies have to
+// surface on the public item's registryDependencies, or a registry-CLI
+// install silently omits them.
+//
+// Stops at the first PUBLIC dependency found on each path rather than
+// flattening the whole transitive closure — a public component (e.g.
+// Button) has its own registry item with its own registryDependencies
+// (e.g. Spinner), which the shadcn CLI already resolves recursively on
+// install. Re-declaring those here would just be redundant, and would
+// silently change this generator's documented one-hop behavior for every
+// existing component, not only the internal-sibling case this fixes.
+function collectTransitivePublicDeps(startName, componentByName, publicNames) {
+  const knownNames = new Set(componentByName.keys())
+  const publicDeps = new Set()
+  const visited = new Set([startName])
+  const queue = [startName]
+
+  while (queue.length) {
+    const current = queue.shift()
+    const component = componentByName.get(current)
+    if (!component) continue
+    const filePath = `components/${component.tier}/${component.name}/${component.name}.tsx`
+    const source = existsSync(filePath) ? readFileSync(filePath, 'utf8') : ''
+    const directDeps = findSiblingImports(source, current, knownNames)
+
+    for (const dep of directDeps) {
+      if (publicNames.has(dep)) {
+        publicDeps.add(dep)
+        continue // public dep's own manifest covers its further deps
+      }
+      if (!visited.has(dep)) {
+        visited.add(dep)
+        queue.push(dep) // internal dep — keep walking through it
+      }
+    }
+  }
+
+  return publicDeps
 }
 
 function resolveComponentTokenFile(name, toKebab) {
@@ -114,6 +161,9 @@ export function buildRegistryManifests() {
   // exactly the real, installable component set, same as before this field existed.
   const publicComponents = registry.components.filter(c => !c.internal && !c.parent)
   const publicNames = new Set(publicComponents.map(c => c.name))
+  // Includes internal components (e.g. BaseSheet) so the transitive-import
+  // walk can traverse through them — see collectTransitivePublicDeps.
+  const componentByName = new Map(registry.components.map(c => [c.name, c]))
 
   const OUTPUT_DIR = 'registry'
   if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true })
@@ -136,11 +186,9 @@ export function buildRegistryManifests() {
   // ── One item per public component ───────────────────────────────────────
   const componentItems = []
   for (const component of publicComponents) {
-    const { name, tier, slug, purpose } = component
-    const filePath = `components/${tier}/${name}/${name}.tsx`
-    const source = existsSync(filePath) ? readFileSync(filePath, 'utf8') : ''
+    const { name, slug, purpose } = component
 
-    const siblingDeps = source ? findSiblingImports(source, name, publicNames) : new Set()
+    const siblingDeps = collectTransitivePublicDeps(name, componentByName, publicNames)
     const siblingSlugs = [...siblingDeps]
       .map(depName => publicComponents.find(c => c.name === depName)?.slug)
       .filter(Boolean)

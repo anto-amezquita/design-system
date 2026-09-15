@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 28,
-    "tokenCount": 210
+    "tokenCount": 209
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -363,13 +363,11 @@
       "components/composition/Tooltip/Tooltip.css"
     ],
     "color-text-primary": [
-      "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
-      "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/Table/Table.css",
@@ -595,9 +593,7 @@
       "components/primitives/Textarea/Textarea.css"
     ],
     "font-family-heading": [
-      "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
-      "components/composition/Drawer/Drawer.css",
       "components/patterns/Hero/Hero.css",
       "components/primitives/Heading/Heading.css"
     ],
@@ -631,7 +627,7 @@
       "components/primitives/Heading/Heading.css"
     ],
     "font-size-h4": [
-      "components/patterns/EmptyState/EmptyState.css",
+      "components/composition/Dialog/Dialog.css",
       "components/primitives/Heading/Heading.css"
     ],
     "font-size-h5": [
@@ -647,9 +643,7 @@
       "components/primitives/Textarea/Textarea.css"
     ],
     "font-size-lead": [
-      "components/composition/Card/Card.css",
-      "components/composition/Dialog/Dialog.css",
-      "components/composition/Drawer/Drawer.css"
+      "components/composition/Dialog/Dialog.css"
     ],
     "font-size-small": [
       "components/patterns/DataTable/DataTable.css",
@@ -672,9 +666,6 @@
     ],
     "font-weight-medium": [
       "components/patterns/Breadcrumb/Breadcrumb.css"
-    ],
-    "font-weight-semibold": [
-      "components/patterns/EmptyState/EmptyState.css"
     ],
     "font-weight-title": [
       "components/composition/Card/Card.css",
@@ -721,9 +712,7 @@
       "components/primitives/Input/Input.css"
     ],
     "letter-spacing-heading": [
-      "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
-      "components/composition/Drawer/Drawer.css",
       "components/patterns/Hero/Hero.css",
       "components/primitives/Heading/Heading.css"
     ],
@@ -747,11 +736,8 @@
       "components/primitives/Heading/Heading.css"
     ],
     "line-height-heading": [
-      "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
-      "components/composition/Drawer/Drawer.css",
       "components/composition/Tooltip/Tooltip.css",
-      "components/patterns/EmptyState/EmptyState.css",
       "components/primitives/Heading/Heading.css"
     ],
     "line-height-label": [
