@@ -116,7 +116,7 @@
   },
   "space": {
     "1": {
-      "$value": "4px",
+      "$value": "3px",
       "$type": "dimension"
     },
     "2": {
