@@ -13,15 +13,15 @@
   "cssVars": {
     "light": {
       "alert-title-weight": "600",
-      "alert-content-gap": "4px",
+      "alert-content-gap": "3px",
       "alert-close-offset": "8px",
-      "alert-exit-distance": "4px"
+      "alert-exit-distance": "3px"
     },
     "dark": {
       "alert-title-weight": "600",
-      "alert-content-gap": "4px",
+      "alert-content-gap": "3px",
       "alert-close-offset": "8px",
-      "alert-exit-distance": "4px"
+      "alert-exit-distance": "3px"
     }
   }
 }

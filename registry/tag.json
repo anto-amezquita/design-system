@@ -13,14 +13,14 @@
   "cssVars": {
     "light": {
       "tag-padding-x": "12px",
-      "tag-padding-y": "4px",
+      "tag-padding-y": "3px",
       "tag-font-size": "12px",
       "tag-font-weight": "500",
       "tag-muted-background": "transparent"
     },
     "dark": {
       "tag-padding-x": "12px",
-      "tag-padding-y": "4px",
+      "tag-padding-y": "3px",
       "tag-font-size": "12px",
       "tag-font-weight": "500",
       "tag-muted-background": "transparent"

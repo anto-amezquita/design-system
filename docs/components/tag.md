@@ -26,7 +26,7 @@
 | `--tag-font-weight` | fontWeight | `500` |
 | `--tag-muted-background` | color | `transparent` |
 | `--tag-padding-x` | dimension | `12px` |
-| `--tag-padding-y` | dimension | `4px` |
+| `--tag-padding-y` | dimension | `3px` |
 
 ## Usage example
 

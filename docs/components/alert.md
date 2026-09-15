@@ -23,8 +23,8 @@
 | Token | Type | Value |
 |---|---|---|
 | `--alert-close-offset` | dimension | `8px` |
-| `--alert-content-gap` | dimension | `4px` |
-| `--alert-exit-distance` | dimension | `4px` |
+| `--alert-content-gap` | dimension | `3px` |
+| `--alert-exit-distance` | dimension | `3px` |
 | `--alert-title-weight` | fontWeight | `600` |
 
 ## Usage example

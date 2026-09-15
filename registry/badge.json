@@ -15,7 +15,7 @@
       "badge-font-size": "12px",
       "badge-font-weight": "500",
       "badge-padding-x": "8px",
-      "badge-padding-y": "4px",
+      "badge-padding-y": "3px",
       "badge-count-size": "20px",
       "badge-dot-size": "8px"
     },
@@ -23,7 +23,7 @@
       "badge-font-size": "12px",
       "badge-font-weight": "500",
       "badge-padding-x": "8px",
-      "badge-padding-y": "4px",
+      "badge-padding-y": "3px",
       "badge-count-size": "20px",
       "badge-dot-size": "8px"
     }

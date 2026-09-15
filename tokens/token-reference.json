@@ -431,12 +431,12 @@
       "cssVar": "--space-1",
       "type": "dimension",
       "category": "primitive",
-      "rawValue": "4px",
+      "rawValue": "3px",
       "resolved": {
-        "base-light": "4px",
-        "base-dark": "4px",
-        "portfolio-light": "4px",
-        "portfolio-dark": "4px"
+        "base-light": "3px",
+        "base-dark": "3px",
+        "portfolio-light": "3px",
+        "portfolio-dark": "3px"
       },
       "axisAware": false,
       "usedBy": []
@@ -2565,10 +2565,10 @@
       "category": "size",
       "rawValue": "{space.1}",
       "resolved": {
-        "base-light": "4px",
-        "base-dark": "4px",
-        "portfolio-light": "4px",
-        "portfolio-dark": "4px"
+        "base-light": "3px",
+        "base-dark": "3px",
+        "portfolio-light": "3px",
+        "portfolio-dark": "3px"
       },
       "axisAware": false,
       "usedBy": [
@@ -3811,10 +3811,10 @@
       "category": "spacing",
       "rawValue": "{space.1}",
       "resolved": {
-        "base-light": "4px",
-        "base-dark": "4px",
-        "portfolio-light": "4px",
-        "portfolio-dark": "4px"
+        "base-light": "3px",
+        "base-dark": "3px",
+        "portfolio-light": "3px",
+        "portfolio-dark": "3px"
       },
       "axisAware": false,
       "usedBy": [
@@ -4264,10 +4264,10 @@
       "category": "component",
       "rawValue": "{space.1}",
       "resolved": {
-        "base-light": "4px",
-        "base-dark": "4px",
-        "portfolio-light": "4px",
-        "portfolio-dark": "4px"
+        "base-light": "3px",
+        "base-dark": "3px",
+        "portfolio-light": "3px",
+        "portfolio-dark": "3px"
       },
       "axisAware": false,
       "usedBy": [
@@ -4298,10 +4298,10 @@
       "category": "component",
       "rawValue": "{space.1}",
       "resolved": {
-        "base-light": "4px",
-        "base-dark": "4px",
-        "portfolio-light": "4px",
-        "portfolio-dark": "4px"
+        "base-light": "3px",
+        "base-dark": "3px",
+        "portfolio-light": "3px",
+        "portfolio-dark": "3px"
       },
       "axisAware": false,
       "usedBy": [
@@ -4503,10 +4503,10 @@
       "category": "component",
       "rawValue": "{space.1}",
       "resolved": {
-        "base-light": "4px",
-        "base-dark": "4px",
-        "portfolio-light": "4px",
-        "portfolio-dark": "4px"
+        "base-light": "3px",
+        "base-dark": "3px",
+        "portfolio-light": "3px",
+        "portfolio-dark": "3px"
       },
       "axisAware": false,
       "usedBy": [
@@ -5736,10 +5736,10 @@
       "category": "component",
       "rawValue": "{space.1}",
       "resolved": {
-        "base-light": "4px",
-        "base-dark": "4px",
-        "portfolio-light": "4px",
-        "portfolio-dark": "4px"
+        "base-light": "3px",
+        "base-dark": "3px",
+        "portfolio-light": "3px",
+        "portfolio-dark": "3px"
       },
       "axisAware": false,
       "usedBy": [

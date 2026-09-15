@@ -30,7 +30,7 @@
   --color-teal-500: #15616d;
   --color-teal-600: #0f4750;
   --color-teal-500-glow: rgba(21, 97, 109, 0.2);
-  --space-1: 4px;
+  --space-1: 3px;
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
@@ -122,9 +122,9 @@
   --accordion-duration-expand: 650ms;
   --accordion-duration-collapse: 200ms;
   --alert-title-weight: 600;
-  --alert-content-gap: 4px;
+  --alert-content-gap: 3px;
   --alert-close-offset: 8px;
-  --alert-exit-distance: 4px;
+  --alert-exit-distance: 3px;
   --avatar-size-sm: 24px;
   --avatar-size-md: 32px;
   --avatar-size-lg: 40px;
@@ -136,7 +136,7 @@
   --badge-font-size: 12px;
   --badge-font-weight: 500;
   --badge-padding-x: 8px;
-  --badge-padding-y: 4px;
+  --badge-padding-y: 3px;
   --badge-count-size: 20px;
   --badge-dot-size: 8px;
   --breadcrumb-font-size: 14px;
@@ -209,7 +209,7 @@
   --tabs-indicator-height: 2px;
   --tabs-content-padding-top: 16px;
   --tag-padding-x: 12px;
-  --tag-padding-y: 4px;
+  --tag-padding-y: 3px;
   --tag-font-size: 12px;
   --tag-font-weight: 500;
   --tag-muted-background: rgba(0, 0, 0, 0);
@@ -268,7 +268,7 @@
   --color-skeleton-highlight: var(--color-neutral-100);
   --duration-skeleton: 400ms;
   --focus-ring-width: 2px;
-  --focus-ring-offset: 4px;
+  --focus-ring-offset: 3px;
   --shadow-card: 0 1px 2px 0 rgba(0,0,0,0.05);
   --shadow-card-hover: 0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10);
   --shadow-dropdown: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10);
@@ -335,7 +335,7 @@
   --duration-reveal-delay: 300ms;
   --opacity-overlay: 0.3;
   --opacity-disabled: 0.1;
-  --space-tight-gap: 4px;
+  --space-tight-gap: 3px;
   --space-control-padding-x: 16px;
   --space-control-padding-y: 12px;
   --space-prominent-padding-x: 24px;
