@@ -282,7 +282,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "15974a0",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "expand space scale to 13 steps, add responsive dialog padding",
+      "date": "2026-09-15",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
