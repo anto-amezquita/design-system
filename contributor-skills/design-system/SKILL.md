@@ -37,7 +37,7 @@ Use when the value represents a repeatable design decision (color role, spacing 
 
 Use when there's a reusable interface object with stable anatomy, behaviour, and states across multiple places.
 
-This system has 28 public components across 3 tiers (13 primitives, 7 composition, 8 patterns) — see `AGENTS.md`'s allow-list, pulled live from `tokens/component-registry.json`. A name not on that list is provably invented.
+This system has 29 public components across 3 tiers (14 primitives, 7 composition, 8 patterns) — see `AGENTS.md`'s allow-list, pulled live from `tokens/component-registry.json`. A name not on that list is provably invented.
 
 ### Pattern
 

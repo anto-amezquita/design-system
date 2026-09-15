@@ -303,6 +303,8 @@
   --font-size-h3: 32px;
   --font-size-h3-fluid: clamp(1.5rem, 1rem + 2vw, 2.5rem);
   --font-size-h4: 24px;
+  --font-size-h5: 20px;
+  --font-size-h6: 18px;
   --font-weight-body: 400;
   --font-weight-heading: 600;
   --font-weight-label: 500;

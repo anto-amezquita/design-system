@@ -8,7 +8,7 @@
       "name": "theme",
       "type": "registry:theme",
       "title": "Design tokens",
-      "description": "128 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
+      "description": "130 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
       "cssVars": {
         "light": {
           "color-neutral-50": "#FAFAF9",
@@ -87,6 +87,8 @@
           "font-size-h3": "32px",
           "font-size-h3-fluid": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
           "font-size-h4": "24px",
+          "font-size-h5": "20px",
+          "font-size-h6": "18px",
           "font-weight-body": "400",
           "font-weight-heading": "600",
           "font-weight-label": "500",
@@ -217,6 +219,8 @@
           "font-size-h3": "32px",
           "font-size-h3-fluid": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
           "font-size-h4": "24px",
+          "font-size-h5": "20px",
+          "font-size-h6": "18px",
           "font-weight-body": "400",
           "font-weight-heading": "600",
           "font-weight-label": "500",
@@ -409,6 +413,23 @@
         "dark": {
           "checkbox-size": "24px"
         }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "heading",
+      "type": "registry:component",
+      "title": "Heading",
+      "description": "Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://amezquita.dk/r/theme.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
       }
     },
     {

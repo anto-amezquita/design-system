@@ -1,0 +1,45 @@
+/*
+  Tokens consumed:
+  --font-family-heading, --font-weight-heading, --color-text-primary, --letter-spacing-heading
+
+  Fluid tier (decisions/0008) — H1-H3:
+  --font-size-h1-fluid, --line-height-display
+  --font-size-h2-fluid, --font-size-h3-fluid, --line-height-heading
+
+  Static tier (decisions/0008) — H4-H6, deliberately not fluid:
+  --font-size-h4, --font-size-h5, --font-size-h6
+*/
+
+.heading {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+  color: var(--color-text-primary);
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: var(--line-height-heading);
+  margin: 0;
+}
+
+.heading--h1 {
+  font-size: var(--font-size-h1-fluid);
+  line-height: var(--line-height-display);
+}
+
+.heading--h2 {
+  font-size: var(--font-size-h2-fluid);
+}
+
+.heading--h3 {
+  font-size: var(--font-size-h3-fluid);
+}
+
+.heading--h4 {
+  font-size: var(--font-size-h4);
+}
+
+.heading--h5 {
+  font-size: var(--font-size-h5);
+}
+
+.heading--h6 {
+  font-size: var(--font-size-h6);
+}

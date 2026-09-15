@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 27,
-    "tokenCount": 205
+    "filesScanned": 28,
+    "tokenCount": 210
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -376,6 +376,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Heading/Heading.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
       "components/primitives/Radio/Radio.css",
@@ -597,7 +598,8 @@
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
-      "components/patterns/Hero/Hero.css"
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/Heading/Heading.css"
     ],
     "font-size-body": [
       "components/composition/Dialog/Dialog.css",
@@ -619,10 +621,24 @@
       "components/primitives/Textarea/Textarea.css"
     ],
     "font-size-h1-fluid": [
-      "components/patterns/Hero/Hero.css"
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/Heading/Heading.css"
+    ],
+    "font-size-h2-fluid": [
+      "components/primitives/Heading/Heading.css"
+    ],
+    "font-size-h3-fluid": [
+      "components/primitives/Heading/Heading.css"
     ],
     "font-size-h4": [
-      "components/patterns/EmptyState/EmptyState.css"
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/primitives/Heading/Heading.css"
+    ],
+    "font-size-h5": [
+      "components/primitives/Heading/Heading.css"
+    ],
+    "font-size-h6": [
+      "components/primitives/Heading/Heading.css"
     ],
     "font-size-label": [
       "components/primitives/Input/Input.css",
@@ -644,6 +660,9 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css"
+    ],
+    "font-weight-heading": [
+      "components/primitives/Heading/Heading.css"
     ],
     "font-weight-label": [
       "components/primitives/Input/Input.css",
@@ -705,7 +724,8 @@
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
-      "components/patterns/Hero/Hero.css"
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/Heading/Heading.css"
     ],
     "line-height-body": [
       "components/composition/Alert/Alert.css",
@@ -723,14 +743,16 @@
       "components/primitives/Textarea/Textarea.css"
     ],
     "line-height-display": [
-      "components/patterns/Hero/Hero.css"
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/Heading/Heading.css"
     ],
     "line-height-heading": [
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Tooltip/Tooltip.css",
-      "components/patterns/EmptyState/EmptyState.css"
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/primitives/Heading/Heading.css"
     ],
     "line-height-label": [
       "components/primitives/Label/Label.css"

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 50,
-    "publicComponentCount": 28,
+    "componentCount": 51,
+    "publicComponentCount": 29,
     "subComponentCount": 21
   },
   "components": [
@@ -103,6 +103,28 @@
         "DarkMode"
       ],
       "tokenCount": 1,
+      "internal": false
+    },
+    {
+      "name": "Heading",
+      "slug": "heading",
+      "tier": "primitives",
+      "purpose": "Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level",
+      "storybookPath": "Components/Heading",
+      "storybookTitleId": "components-heading",
+      "tokenPrefix": "heading",
+      "stories": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "AllLevels",
+        "LevelAsDecoupling",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {

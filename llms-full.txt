@@ -10,12 +10,12 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-353 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+355 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
 
 - primitive: 115
 - component: 110
 - color: 43
-- typography: 32
+- typography: 34
 - spacing: 19
 - size: 8
 - motion: 7
@@ -62,6 +62,15 @@ Single boolean selection with an associated label; supports indeterminate state
 - Token prefix: `checkbox-*` (1 tokens)
 - Storybook: Components/Checkbox
 - Stories: Default, Checked, Indeterminate, Disabled, DisabledChecked, Controlled, AllStates, NoLabel, DarkMode
+
+### Heading
+
+Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level
+
+- Import: `import { Heading } from '@amezquita/design-system/components/primitives/Heading'`
+- Token prefix: `heading-*` (0 tokens)
+- Storybook: Components/Heading
+- Stories: H1, H2, H3, H4, H5, H6, AllLevels, LevelAsDecoupling, DarkMode
 
 ### Input
 

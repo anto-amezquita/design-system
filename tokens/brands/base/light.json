@@ -305,6 +305,16 @@
     "$value": "{font-size.lg}",
     "$type": "dimension"
   },
+  "font-size-h5": {
+    "$value": "{font-size.emphasis}",
+    "$type": "dimension",
+    "$description": "Static (not fluid) by design — see decisions/0008. Pairs with line-height-heading and letter-spacing-heading."
+  },
+  "font-size-h6": {
+    "$value": "{font-size.md}",
+    "$type": "dimension",
+    "$description": "Static (not fluid) by design — see decisions/0008. Pairs with line-height-heading and letter-spacing-heading."
+  },
   "font-weight-body": {
     "$value": "{font-weight.regular}",
     "$type": "fontWeight"

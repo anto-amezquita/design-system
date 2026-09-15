@@ -24,8 +24,8 @@ Adapted from the ai-product-starter-kit's `architecture.md` template — section
 
 ```
 components/
-  primitives/     — 13 components: Avatar, Badge, Button, Checkbox, Input, Label,
-                     Radio, Select, Skeleton, Spinner, Switch, Tag, Textarea
+  primitives/     — 14 components: Avatar, Badge, Button, Checkbox, Heading, Input,
+                     Label, Radio, Select, Skeleton, Spinner, Switch, Tag, Textarea
   composition/     — 7 components: Alert, AlertDialog, Card, Dialog, Drawer, Toast, Tooltip
   patterns/        — 8 components: Accordion, Breadcrumb, DataTable, EmptyState,
                      Hero, Pagination, Table, Tabs
@@ -56,9 +56,9 @@ docs/              — roadmap/rationale docs that aren't tied to one feature (b
 
 This repo reports three different totals depending on what's being counted, and none of them is wrong:
 
-- **27** — CSS files under `components/{primitives,composition,patterns}/` (`npm run tokens:lint`'s "27 files checked"). Lower than the component count because `AlertDialog` and `BaseSheet` have no CSS file of their own — both deliberately reuse `Dialog`'s.
-- **28** — public components (`tokens/component-registry.json`'s `publicComponentCount`, `AGENTS.md`'s allow-list). What "28 public components" everywhere else in this repo's docs means.
-- **29** — directories on disk under the same three tiers (`check-components-doc.mjs`'s "directories documented"). 28 public + `BaseSheet` (internal).
+- **28** — CSS files under `components/{primitives,composition,patterns}/` (`npm run tokens:lint`'s "28 files checked"). Lower than the component count because `AlertDialog` and `BaseSheet` have no CSS file of their own — both deliberately reuse `Dialog`'s.
+- **29** — public components (`tokens/component-registry.json`'s `publicComponentCount`, `AGENTS.md`'s allow-list). What "29 public components" everywhere else in this repo's docs means.
+- **30** — directories on disk under the same three tiers (`check-components-doc.mjs`'s "directories documented"). 29 public + `BaseSheet` (internal).
 
 If a number in one file looks like it contradicts a number in another, check which of these three it's actually counting before assuming drift.
 

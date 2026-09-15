@@ -19,12 +19,12 @@ type EmptyStateProps = {
 export function EmptyState({ icon, title, description, action, level = 3, compact = false, className }: EmptyStateProps) {
   const cls = cn('empty-state', compact && 'empty-state--compact', className)
 
-  const Heading = `h${level}` as 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  const TitleTag = `h${level}` as 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
   return (
     <div className={cls}>
       {icon && <div className="empty-state__icon" aria-hidden="true">{icon}</div>}
-      <Heading className="empty-state__title">{title}</Heading>
+      <TitleTag className="empty-state__title">{title}</TitleTag>
       {description && <p className="empty-state__body">{description}</p>}
       {action && (
         <div className="empty-state__action">
