@@ -300,6 +300,14 @@
   ],
   "unreleased": [
     {
+      "sha": "0348876",
+      "type": "fix",
+      "scope": null,
+      "message": "address code-review findings on Heading primitive PR",
+      "date": "2026-09-15",
+      "breaking": false
+    },
+    {
       "sha": "868e727",
       "type": "feat",
       "scope": null,
