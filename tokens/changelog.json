@@ -4,6 +4,22 @@
   },
   "versions": [
     {
+      "tag": "v0.4.0",
+      "date": "2026-09-15",
+      "sha": "b682669",
+      "entries": [
+        {
+          "sha": "15974a0",
+          "type": "feat",
+          "scope": "tokens",
+          "message": "expand space scale to 13 steps, add responsive dialog padding",
+          "date": "2026-09-15",
+          "breaking": false
+        }
+      ],
+      "entryCount": 1
+    },
+    {
       "tag": "v0.3.2",
       "date": "2026-09-14",
       "sha": "58cfb4e",
@@ -282,16 +298,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "15974a0",
-      "type": "feat",
-      "scope": "tokens",
-      "message": "expand space scale to 13 steps, add responsive dialog padding",
-      "date": "2026-09-15",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
