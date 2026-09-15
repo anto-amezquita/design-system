@@ -1,6 +1,6 @@
 {
   "avatar-size-sm": {
-    "$value": "{space.5}",
+    "$value": "{space.6}",
     "$type": "dimension",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
@@ -8,7 +8,7 @@
     }
   },
   "avatar-size-md": {
-    "$value": "{space.6}",
+    "$value": "{space.8}",
     "$type": "dimension",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
@@ -20,7 +20,7 @@
     "$type": "dimension"
   },
   "avatar-size-xl": {
-    "$value": "{space.8}",
+    "$value": "{space.11}",
     "$type": "dimension",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],

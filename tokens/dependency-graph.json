@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 27,
-    "tokenCount": 202
+    "tokenCount": 205
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -851,7 +851,6 @@
       "components/patterns/Hero/Hero.css"
     ],
     "space-container-padding-lg": [
-      "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/patterns/EmptyState/EmptyState.css"
     ],
@@ -868,6 +867,15 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
+    ],
+    "space-dialog-padding-desktop": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "space-dialog-padding-mobile": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "space-dialog-padding-tablet": [
+      "components/composition/Dialog/Dialog.css"
     ],
     "space-element-gap": [
       "components/composition/Card/Card.css",

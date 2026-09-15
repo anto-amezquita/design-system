@@ -1,6 +1,6 @@
 {
   "accordion-content-padding-x": {
-    "$value": "{space.5}",
+    "$value": "{space.6}",
     "$type": "dimension",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
@@ -8,7 +8,7 @@
     }
   },
   "accordion-content-padding-bottom": {
-    "$value": "{space.5}",
+    "$value": "{space.6}",
     "$type": "dimension",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],

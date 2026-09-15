@@ -378,7 +378,7 @@
     "$type": "dimension"
   },
   "space-component-gap": {
-    "$value": "{space.5}",
+    "$value": "{space.6}",
     "$type": "dimension"
   },
   "space-element-gap": {
@@ -453,7 +453,7 @@
     "$description": "Vertical padding for default-size form controls and interactive components (input, select, table cell, tabs trigger, textarea). See decisions/0004."
   },
   "space-prominent-padding-x": {
-    "$value": "{space.5}",
+    "$value": "{space.6}",
     "$type": "dimension",
     "$description": "Horizontal padding for prominent container-style components (accordion trigger, alert, toast). See decisions/0004."
   },
@@ -473,14 +473,29 @@
     "$description": "Vertical padding for compact/small-size controls (tooltip, tabs small trigger). See decisions/0004."
   },
   "space-container-padding": {
-    "$value": "{space.6}",
+    "$value": "{space.8}",
     "$type": "dimension",
     "$description": "All-around padding for standard container-style components (card, hero, datatable empty state, empty-state compact horizontal). See decisions/0004."
   },
   "space-container-padding-lg": {
-    "$value": "{space.7}",
+    "$value": "{space.10}",
     "$type": "dimension",
-    "$description": "All-around padding for larger overlay-style containers (dialog, drawer, empty-state compact vertical). See decisions/0004."
+    "$description": "All-around padding for larger overlay-style containers (drawer, empty-state compact vertical). Dialog no longer uses this directly — see space-dialog-padding-* for its responsive replacement (docs/backlog.md, space-scale-expansion item)."
+  },
+  "space-dialog-padding-mobile": {
+    "$value": "{space.4}",
+    "$type": "dimension",
+    "$description": "Dialog content padding below the tablet breakpoint (max-width: 767px). Pairs with space-dialog-padding-tablet/-desktop, switched via @media in Dialog.css rather than resolved by the token layer — no per-breakpoint token resolution exists in the build pipeline yet."
+  },
+  "space-dialog-padding-tablet": {
+    "$value": "{space.6}",
+    "$type": "dimension",
+    "$description": "Dialog content padding from the tablet breakpoint (min-width: 768px). See space-dialog-padding-mobile."
+  },
+  "space-dialog-padding-desktop": {
+    "$value": "{space.8}",
+    "$type": "dimension",
+    "$description": "Dialog content padding from the desktop breakpoint (min-width: 1024px). See space-dialog-padding-mobile."
   },
   "space-layout-max-width": {
     "$value": "{size.layout-lg}",

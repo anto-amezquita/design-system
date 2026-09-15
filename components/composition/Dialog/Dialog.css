@@ -14,8 +14,12 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-border-default, --border-width-default, --color-surface-primary
-  --border-radius-component, --space-container-padding-lg, --space-element-gap
+  --border-radius-component, --space-element-gap
   --color-surface-tertiary, --font-size-lead, --font-weight-title
+
+  --space-dialog-padding-mobile, --space-dialog-padding-tablet,
+  --space-dialog-padding-desktop — responsive .dialog__content padding,
+  switched via @media below (docs/backlog.md, space-scale-expansion item).
 */
 
 /* Overlay */
@@ -55,12 +59,24 @@
   background: var(--color-surface-primary);
   border: var(--border-width-default) solid var(--color-border-default);
   border-radius: var(--border-radius-component);
-  padding: var(--space-container-padding-lg);
+  padding: var(--space-dialog-padding-mobile);
   display: flex;
   flex-direction: column;
   gap: var(--space-element-gap);
   box-sizing: border-box;
   animation: dialog-content-in var(--duration-transition) var(--easing-out);
+}
+
+@media (min-width: 768px) {
+  .dialog__content {
+    padding: var(--space-dialog-padding-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dialog__content {
+    padding: var(--space-dialog-padding-desktop);
+  }
 }
 
 /* decisions/0007: an explicit z-index on .dialog__overlay/.dialog__content

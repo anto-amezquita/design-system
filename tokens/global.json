@@ -132,26 +132,38 @@
       "$type": "dimension"
     },
     "5": {
-      "$value": "24px",
+      "$value": "20px",
       "$type": "dimension"
     },
     "6": {
-      "$value": "32px",
+      "$value": "24px",
       "$type": "dimension"
     },
     "7": {
-      "$value": "48px",
+      "$value": "28px",
       "$type": "dimension"
     },
     "8": {
-      "$value": "64px",
+      "$value": "32px",
       "$type": "dimension"
     },
     "9": {
-      "$value": "96px",
+      "$value": "40px",
       "$type": "dimension"
     },
     "10": {
+      "$value": "48px",
+      "$type": "dimension"
+    },
+    "11": {
+      "$value": "64px",
+      "$type": "dimension"
+    },
+    "12": {
+      "$value": "96px",
+      "$type": "dimension"
+    },
+    "13": {
       "$value": "128px",
       "$type": "dimension"
     }

@@ -1,6 +1,6 @@
 {
   "hero-padding-y": {
-    "$value": "{space.9}",
+    "$value": "{space.12}",
     "$type": "dimension",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],

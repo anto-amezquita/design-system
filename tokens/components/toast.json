@@ -24,7 +24,7 @@
     "$type": "dimension"
   },
   "toast-viewport-inset": {
-    "$value": "{space.5}",
+    "$value": "{space.6}",
     "$type": "dimension",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],

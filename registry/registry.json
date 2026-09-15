@@ -8,7 +8,7 @@
       "name": "theme",
       "type": "registry:theme",
       "title": "Design tokens",
-      "description": "125 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
+      "description": "128 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
       "cssVars": {
         "light": {
           "color-neutral-50": "#FAFAF9",
@@ -128,6 +128,9 @@
           "space-compact-padding-y": "8px",
           "space-container-padding": "32px",
           "space-container-padding-lg": "48px",
+          "space-dialog-padding-mobile": "16px",
+          "space-dialog-padding-tablet": "24px",
+          "space-dialog-padding-desktop": "32px",
           "space-layout-max-width": "1200px",
           "border-width-interactive": "1px",
           "border-width-default": "1px",
@@ -255,6 +258,9 @@
           "space-compact-padding-y": "8px",
           "space-container-padding": "32px",
           "space-container-padding-lg": "48px",
+          "space-dialog-padding-mobile": "16px",
+          "space-dialog-padding-tablet": "24px",
+          "space-dialog-padding-desktop": "32px",
           "space-layout-max-width": "1200px",
           "border-width-interactive": "1px",
           "border-width-default": "1px",

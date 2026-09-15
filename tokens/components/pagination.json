@@ -1,6 +1,6 @@
 {
   "pagination-button-size": {
-    "$value": "{space.7}",
+    "$value": "{space.10}",
     "$type": "dimension",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
