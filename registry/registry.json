@@ -713,7 +713,8 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://amezquita.dk/r/theme.json",
+        "https://amezquita.dk/r/heading.json"
       ],
       "cssVars": {
         "light": {
@@ -744,7 +745,8 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://amezquita.dk/r/theme.json",
+        "https://amezquita.dk/r/heading.json"
       ],
       "cssVars": {
         "light": {

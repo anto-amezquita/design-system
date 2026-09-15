@@ -1,11 +1,11 @@
 /*
   Tokens consumed:
-  --color-text-primary, --color-text-secondary
-  --font-family-base, --font-size-body, --font-size-h4, --font-size-small
+  --color-text-secondary
+  --font-family-base, --font-size-body, --font-size-small
   --emptystate-padding-y, --emptystate-padding-x
 
   --icon-size-xl, --icon-size-lg
-  --line-height-heading, --line-height-body
+  --line-height-body
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --space-element-gap, --space-inline-gap, --space-container-padding-lg, --space-container-padding, --space-label-gap
@@ -43,22 +43,16 @@
   margin-bottom: 0;
 }
 
-.empty-state__title {
-  margin: 0;
-  font-size: var(--font-size-h4);
-  color: var(--color-text-primary);
-  line-height: var(--line-height-heading);
-}
-
-/* Title now composes the Heading primitive internally (docs/backlog.md
-   migration) — its .heading base rule already supplies font-family,
-   font-size (h4, matching the value above), font-weight (heading/
-   semibold — the exact weight this title always rendered at, previously
-   sourced from the primitive --font-weight-semibold directly rather than
-   a semantic token), line-height and color. The one property Heading adds
-   that this title never had is letter-spacing (-0.02em) — restored to
-   its pre-migration implicit "normal" here so the visual output stays
-   byte-identical. */
+/* Title composes the Heading primitive internally (docs/backlog.md
+   migration) — .empty-state__title has no consumer other than that title,
+   so font-family, size (h4), font-weight (heading/semibold — the exact
+   weight this title always rendered at, previously sourced from the
+   primitive --font-weight-semibold directly rather than a semantic
+   token), line-height, color and margin all come from Heading's own
+   .heading/.heading--h4 rules with nothing to duplicate here. The one
+   property Heading adds that this title never had is letter-spacing
+   (-0.02em) — restored to its pre-migration implicit "normal" here so the
+   visual output stays byte-identical. */
 .heading.empty-state__title {
   letter-spacing: normal;
 }

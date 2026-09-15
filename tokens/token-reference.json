@@ -1988,13 +1988,11 @@
       },
       "axisAware": true,
       "usedBy": [
-        "Card",
         "Dialog",
         "Drawer",
         "Toast",
         "Accordion",
         "Breadcrumb",
-        "EmptyState",
         "Hero",
         "Pagination",
         "Table",
@@ -2925,9 +2923,7 @@
       },
       "axisAware": true,
       "usedBy": [
-        "Card",
         "Dialog",
-        "Drawer",
         "Hero",
         "Heading"
       ]
@@ -3062,9 +3058,7 @@
       },
       "axisAware": false,
       "usedBy": [
-        "Card",
-        "Dialog",
-        "Drawer"
+        "Dialog"
       ]
     },
     {
@@ -3193,7 +3187,7 @@
       },
       "axisAware": false,
       "usedBy": [
-        "EmptyState",
+        "Dialog",
         "Heading"
       ]
     },
@@ -3397,11 +3391,8 @@
       },
       "axisAware": false,
       "usedBy": [
-        "Card",
         "Dialog",
-        "Drawer",
         "Tooltip",
-        "EmptyState",
         "Heading"
       ]
     },
@@ -3436,9 +3427,7 @@
       },
       "axisAware": false,
       "usedBy": [
-        "Card",
         "Dialog",
-        "Drawer",
         "Hero",
         "Heading"
       ]
