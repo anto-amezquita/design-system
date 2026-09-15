@@ -17,20 +17,6 @@ Live, actionable work for this repo. **Open this file first in any new session**
 
 ---
 
-## Migrate Card/Dialog/Drawer/EmptyState titles onto the Heading primitive (backlog) — TOP PRIORITY
-
-Opened 2026-09-15, alongside [`decisions/0008`](../decisions/0008-productive-expressive-typography-split.md), which built the `Heading` primitive (`components/primitives/Heading/`) but explicitly left this migration out of scope as a separate, larger follow-up.
-
-Right now two heading implementations coexist: the new `Heading` primitive (`level`/`as` props, used for real page-level H1–H6), and each of `Card`/`Dialog`/`Drawer`/`EmptyState`'s own inline title markup (`CardTitle` and equivalents), which renders its own `<h*>` tag and reaches directly for `font-size-lead`/`font-size-h4` rather than composing `Heading`. They currently agree by coincidence — same static values, same `font-family-heading`/`line-height-heading`/`letter-spacing-heading` tokens — not because one is built from the other.
-
-**Goal:** migrate `CardTitle` and the equivalent title markup in `Dialog`, `Drawer`, and `EmptyState` to render via the `Heading` primitive internally (static `level`, e.g. `H4`/`H5` depending on which matches each component's current static size — check against `font-size-h4`/`h5`/`h6`'s actual values from `0008` rather than assuming), instead of each maintaining parallel heading CSS. Consumer-facing API (`<CardTitle>`, `<Dialog title="...">`, etc.) should not change — this is an internal implementation consolidation, not a public API change.
-
-**Why this matters, not just tidiness:** two independent heading implementations is exactly the kind of drift `decisions/0004`/`0005`'s chain-skip and pass-through collapses exist to prevent elsewhere in this system — right now a future change to heading typography (weight, letter-spacing, a new static step) has to be made in five places by hand and could silently diverge, the same failure shape those ADRs already fixed for spacing and border tokens.
-
-**Care needed:** four components' worth of markup change plus Chromatic snapshot review (visual output should be byte-identical if done right — this is a refactor, not a value change), and `CardTitle`'s current API is `as`-only polymorphic (per `decisions/0008`'s own Consequences section) — reconcile that with `Heading`'s `level`/`as` split rather than just swapping the render call in place.
-
-Status: not started.
-
 ## Self-healing CI (backlog)
 
 Opened 2026-09-08, unblocked by [`decisions/0006`](../decisions/0006-add-layered-automated-testing.md) (real tests now exist for CI to react to). Spec'd in [`specs/self-healing-ci-spec.md`](../specs/self-healing-ci-spec.md), validated against industry precedent in [`self-healing-ci-research.md`](./self-healing-ci-research.md).

@@ -9,7 +9,8 @@
   ],
   "registryDependencies": [
     "https://amezquita.dk/r/theme.json",
-    "https://amezquita.dk/r/button.json"
+    "https://amezquita.dk/r/button.json",
+    "https://amezquita.dk/r/heading.json"
   ],
   "cssVars": {
     "light": {

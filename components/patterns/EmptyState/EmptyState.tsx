@@ -1,4 +1,5 @@
 import { Button } from '../../primitives/Button'
+import { Heading } from '../../primitives/Heading'
 import { cn } from '../../../lib/cn'
 import './EmptyState.css'
 
@@ -19,12 +20,10 @@ type EmptyStateProps = {
 export function EmptyState({ icon, title, description, action, level = 3, compact = false, className }: EmptyStateProps) {
   const cls = cn('empty-state', compact && 'empty-state--compact', className)
 
-  const TitleTag = `h${level}` as 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
-
   return (
     <div className={cls}>
       {icon && <div className="empty-state__icon" aria-hidden="true">{icon}</div>}
-      <TitleTag className="empty-state__title">{title}</TitleTag>
+      <Heading level={4} as={`h${level}`} className="empty-state__title">{title}</Heading>
       {description && <p className="empty-state__body">{description}</p>}
       {action && (
         <div className="empty-state__action">

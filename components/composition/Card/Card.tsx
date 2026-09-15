@@ -1,5 +1,6 @@
 'use client'
 
+import { Heading } from '../../primitives/Heading'
 import './Card.css'
 
 type CardProps = {
@@ -85,8 +86,12 @@ export function CardFooter({ children }: CardFooterProps) {
   return <div className="card__footer">{children}</div>
 }
 
-export function CardTitle({ children, as: Tag = 'h3' }: CardTitleProps) {
-  return <Tag className="card__title">{children}</Tag>
+export function CardTitle({ children, as = 'h3' }: CardTitleProps) {
+  return (
+    <Heading level={4} as={as} className="card__title">
+      {children}
+    </Heading>
+  )
 }
 
 type CardDescriptionProps = { children: React.ReactNode }

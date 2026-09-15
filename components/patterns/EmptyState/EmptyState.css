@@ -2,7 +2,6 @@
   Tokens consumed:
   --color-text-primary, --color-text-secondary
   --font-family-base, --font-size-body, --font-size-h4, --font-size-small
-  --font-weight-semibold
   --emptystate-padding-y, --emptystate-padding-x
 
   --icon-size-xl, --icon-size-lg
@@ -47,9 +46,21 @@
 .empty-state__title {
   margin: 0;
   font-size: var(--font-size-h4);
-  font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   line-height: var(--line-height-heading);
+}
+
+/* Title now composes the Heading primitive internally (docs/backlog.md
+   migration) — its .heading base rule already supplies font-family,
+   font-size (h4, matching the value above), font-weight (heading/
+   semibold — the exact weight this title always rendered at, previously
+   sourced from the primitive --font-weight-semibold directly rather than
+   a semantic token), line-height and color. The one property Heading adds
+   that this title never had is letter-spacing (-0.02em) — restored to
+   its pre-migration implicit "normal" here so the visual output stays
+   byte-identical. */
+.heading.empty-state__title {
+  letter-spacing: normal;
 }
 
 .empty-state--compact .empty-state__title {

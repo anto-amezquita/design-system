@@ -2,6 +2,7 @@
 
 import * as RadixDialog from '@radix-ui/react-dialog'
 import { XIcon } from '@phosphor-icons/react'
+import { Heading } from '../../primitives/Heading'
 
 export type BaseSheetProps = {
   open?: boolean
@@ -67,7 +68,15 @@ export function BaseSheet({
           onEscapeKeyDown={onEscapeKeyDown}
         >
           <div className={b('header')}>
-            <RadixDialog.Title className={b('title')}>{title}</RadixDialog.Title>
+            <RadixDialog.Title asChild>
+              {/* Radix's Title renders <h2> by default and wires up
+                  aria-labelledby via context — asChild preserves both while
+                  composing Heading for the visual styling (docs/backlog.md
+                  migration). level=4 matches this title's existing static
+                  size (font-size-lead === font-size-h4); as="h2" keeps the
+                  real DOM tag unchanged. */}
+              <Heading level={4} as="h2" className={b('title')}>{title}</Heading>
+            </RadixDialog.Title>
             <RadixDialog.Close className={b('close')} aria-label={closeLabel}>
               <XIcon size={16} weight="regular" aria-hidden="true" />
             </RadixDialog.Close>

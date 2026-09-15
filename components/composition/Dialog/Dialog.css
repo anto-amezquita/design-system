@@ -157,6 +157,18 @@
   margin: 0;
 }
 
+/* Dialog now composes the Heading primitive internally (docs/backlog.md
+   migration) via BaseSheet.tsx, which adds .heading/.heading--h4 classes
+   alongside .dialog__title — Heading's own .heading rule hardcodes
+   font-weight-heading (semibold), this title needs font-weight-title
+   (bold). AlertDialog.tsx still uses .dialog__title directly (not via
+   Heading), so the rule above stays untouched; this compound selector
+   only fires when .heading is also present, and wins regardless of CSS
+   import order since it's a higher-specificity override, not a tie. */
+.heading.dialog__title {
+  font-weight: var(--font-weight-title);
+}
+
 /* Description */
 
 .dialog__description {

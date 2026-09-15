@@ -152,6 +152,17 @@ button.card {
   margin: 0;
 }
 
+/* CardTitle now composes the Heading primitive (docs/backlog.md migration),
+   which carries its own .heading base rule at equal specificity to the
+   plain .card__title rule above — font-family/size/line-height/letter-
+   spacing/color/margin all already agree with Heading's H4, but Heading's
+   .heading hardcodes font-weight-heading (semibold) where this title needs
+   font-weight-title (bold). Compound selector guarantees this wins over
+   .heading regardless of CSS import order. */
+.heading.card__title {
+  font-weight: var(--font-weight-title);
+}
+
 .card__description {
   font-size: var(--font-size-control);
   color: var(--color-text-secondary);

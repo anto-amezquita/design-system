@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 28,
-    "tokenCount": 210
+    "tokenCount": 209
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -672,9 +672,6 @@
     ],
     "font-weight-medium": [
       "components/patterns/Breadcrumb/Breadcrumb.css"
-    ],
-    "font-weight-semibold": [
-      "components/patterns/EmptyState/EmptyState.css"
     ],
     "font-weight-title": [
       "components/composition/Card/Card.css",
