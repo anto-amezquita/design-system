@@ -17,6 +17,20 @@ Live, actionable work for this repo. **Open this file first in any new session**
 
 ---
 
+## `0.5.0` release (PR #23) blocked on Chromatic's monthly snapshot limit (backlog)
+
+Opened 2026-09-15. `main` already has everything a `0.5.0` release needs: the `Heading` primitive (PR #22) and the `Card`/`Dialog`/`Drawer`/`EmptyState` migration + registry fix (PR #24), both changesets present and correctly reflected in the changesets bot's open "Version Packages" PR (#23) — confirmed by diffing `origin/changeset-release/main`'s `CHANGELOG.md` against `main`.
+
+**What's actually blocking it:** PR #23's Chromatic check is frozen at `action_required` — confirmed via the GitHub API (0 completed check-runs on the PR's head commit), the same GITHUB_TOKEN-triggered-workflow freeze `roadmap.md`'s 2026-09-15 session log already documents for PR #22 ("the run is created but frozen at `action_required`, never starting without a human click"). The user confirmed the same day that the account's Chromatic monthly snapshot limit is hit and needs roughly 7 days to refresh (so check back around **2026-09-22**).
+
+Branch protection isn't enabled on `main`, so the merge button on PR #23 isn't technically blocked — but merging it now would publish `0.5.0` with zero real visual verification, not something to do just because the button is clickable.
+
+**When it's time:** confirm Chromatic's limit has actually reset (check the account's build page, not just the calendar), get PR #23's frozen run to actually execute (a manual "Run workflow" click, or push something that re-triggers `synchronize`), confirm it goes green, then merge to publish.
+
+**Separate manual step after publishing, easy to forget:** the registry fix in PR #24 (`registry/dialog.json`/`drawer.json` now correctly list `heading.json`) only exists in this repo. The registry real consumers hit (`https://amezquita.dk/r/*.json`) is a manually-maintained static copy in the portfolio repo — `scripts/build-registry-manifests.mjs`'s own header says so ("not an automated pipeline — re-copy there when these manifests change"). Publishing to npm does not fix this on its own.
+
+Status: waiting on Chromatic's limit, not on any code or decision.
+
 ## Heading `weight` variant, and whether the migration needed an ADR (backlog)
 
 Opened 2026-09-15, surfaced by code review on [`refactor/heading-migration`](../decisions/0008-productive-expressive-typography-split.md) (the `Card`/`Dialog`/`Drawer`/`EmptyState` → `Heading` migration, see `roadmap.md`'s session log for both entries). Two related, deliberately undecided items — both judgment calls beyond that task's own scope, not bugs.
