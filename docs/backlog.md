@@ -17,14 +17,6 @@ Live, actionable work for this repo. **Open this file first in any new session**
 
 ---
 
-## Unconfirmed: does Drawer/Toast/Tooltip have the same z-index-when-nested bug as Select did? (backlog)
-
-Opened 2026-09-14, alongside `decisions/0007`. That decision fixed the *confirmed* case (`Select` nested inside `Dialog`) by dropping both sides to `auto` z-index rather than ranking by overlay kind. `Drawer.css` still references `--z-modal` explicitly (`decisions/0005` round 21); `Toast`/`Tooltip` keep their own tiers (`--z-toast`/`--z-tooltip`) untouched. Any of these nested inside `Dialog`, or inside each other, could have the identical bug — deliberately not fixed speculatively without a failing test the way `Select`'s was confirmed (see `0007`'s own Select.nesting.test.tsx for the pattern to reuse: real `vitest/browser` `page` clicks, brand CSS imported directly, not `@testing-library/user-event` — that doesn't do real hit-testing and would pass regardless).
-
-Also: `--z-dropdown` and `--z-overlay` are now fully unreferenced (confirmed via `tokens/dependency-graph.json`) — left defined in the token files rather than deleted, since removing them wasn't necessary to fix the confirmed bug. Candidate for a future `decisions/0005`-style dead-token round.
-
-Status: not started, no known failing case yet for Drawer/Toast/Tooltip specifically.
-
 ## Self-healing CI (backlog)
 
 Opened 2026-09-08, unblocked by [`decisions/0006`](../decisions/0006-add-layered-automated-testing.md) (real tests now exist for CI to react to). Spec'd in [`specs/self-healing-ci-spec.md`](../specs/self-healing-ci-spec.md), validated against industry precedent in [`self-healing-ci-research.md`](./self-healing-ci-research.md).
