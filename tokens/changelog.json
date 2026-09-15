@@ -298,7 +298,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "868e727",
+      "type": "feat",
+      "scope": null,
+      "message": "add Heading primitive with fluid/static typography split",
+      "date": "2026-09-15",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",

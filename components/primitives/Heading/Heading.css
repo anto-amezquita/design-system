@@ -15,6 +15,7 @@
   font-weight: var(--font-weight-heading);
   color: var(--color-text-primary);
   letter-spacing: var(--letter-spacing-heading);
+  line-height: var(--line-height-heading);
   margin: 0;
 }
 
@@ -25,25 +26,20 @@
 
 .heading--h2 {
   font-size: var(--font-size-h2-fluid);
-  line-height: var(--line-height-heading);
 }
 
 .heading--h3 {
   font-size: var(--font-size-h3-fluid);
-  line-height: var(--line-height-heading);
 }
 
 .heading--h4 {
   font-size: var(--font-size-h4);
-  line-height: var(--line-height-heading);
 }
 
 .heading--h5 {
   font-size: var(--font-size-h5);
-  line-height: var(--line-height-heading);
 }
 
 .heading--h6 {
   font-size: var(--font-size-h6);
-  line-height: var(--line-height-heading);
 }
