@@ -15,3 +15,14 @@ token-violations.json
 token-architecture-violations.json
 contrast-failures.json
 docs/token-audit.json
+
+# Claude Code local overrides. .claude/settings.json IS committed (the hook
+# pair, ADR 0009); these two are per-machine — settings.local.json holds
+# permission allowlists that should never be shared.
+.claude/settings.local.json
+.claude/*.local.json
+
+# Proposed decision drafts — unreviewed harvested evidence, never committed.
+# Accepting one means rewriting it as decisions/NNNN-<slug>.md by hand.
+# See decisions/proposed/README.md and decisions/0009-*.md.
+decisions/proposed/*.draft.md

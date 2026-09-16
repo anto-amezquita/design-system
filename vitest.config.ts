@@ -70,6 +70,7 @@ const optimizeDeps = {
 // resource entirely, rather than trying to out-race it.
 const STORYBOOK_CACHE_DIR = path.join(dirname, 'node_modules/.vite/storybook');
 const UNIT_CACHE_DIR = path.join(dirname, 'node_modules/.vite/unit');
+const SCRIPTS_CACHE_DIR = path.join(dirname, 'node_modules/.vite/scripts');
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
@@ -106,6 +107,26 @@ export default defineConfig({
           ],
           setupFiles: ['./vitest.setup.ts'],
           browser: browserFor('unit-chromium'),
+        },
+      },
+      // Node-side tooling. The two projects above run in real Chromium because
+      // the components under test touch browser APIs at mount; scripts/ is
+      // plain Node that reads the filesystem and parses session transcripts,
+      // which needs no browser and no Storybook. Kept as its own project
+      // rather than folded into `unit` so it doesn't pay browser startup, and
+      // so a failure here is legible as a tooling failure, not a component one.
+      {
+        extends: true,
+        // Its own cacheDir for the same reason the two above have one: a
+        // project that inherits the default writes its dep pre-bundle to the
+        // shared node_modules/.vite alongside whatever else is starting up.
+        // Skipping this produced exactly the documented symptom — one run with
+        // 4 unrelated test files failing to load, the next run clean.
+        cacheDir: SCRIPTS_CACHE_DIR,
+        test: {
+          name: 'scripts',
+          include: ['scripts/**/*.test.mjs'],
+          environment: 'node',
         },
       },
     ],
