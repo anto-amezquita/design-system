@@ -338,7 +338,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "ce43383",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "tie static line-heights to the 4px grid (decisions/0012)",
+      "date": "2026-09-16",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",

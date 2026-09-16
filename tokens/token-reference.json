@@ -3513,10 +3513,14 @@
       "axisAware": false,
       "usedBy": [
         "Toast",
+        "Tooltip",
         "Breadcrumb",
         "DataTable",
         "EmptyState",
-        "Hero"
+        "Hero",
+        "Table",
+        "Input",
+        "Textarea"
       ]
     },
     {
@@ -3532,12 +3536,7 @@
         "portfolio-dark": "16px"
       },
       "axisAware": false,
-      "usedBy": [
-        "Tooltip",
-        "Table",
-        "Input",
-        "Textarea"
-      ]
+      "usedBy": []
     },
     {
       "name": "line-height-h1",
