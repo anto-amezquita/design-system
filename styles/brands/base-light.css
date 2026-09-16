@@ -43,6 +43,7 @@
   --space-11: 64px;
   --space-12: 96px;
   --space-13: 128px;
+  --font-size-2xs: 10px;
   --font-size-xs: 12px;
   --font-size-sm: 14px;
   --font-size-base: 16px;
@@ -65,6 +66,9 @@
   --line-height-fixed-24: 24px;
   --line-height-fixed-28: 28px;
   --line-height-fixed-32: 32px;
+  --line-height-fixed-40: 40px;
+  --line-height-fixed-60: 60px;
+  --line-height-fixed-80: 80px;
   --border-radius-none: 0;
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
@@ -294,6 +298,7 @@
   --font-size-control: 16px;
   --font-size-small: 14px;
   --font-size-label: 14px;
+  --font-size-micro: 10px;
   --font-size-lead: 24px;
   --font-size-h1: 64px;
   --font-size-display: clamp(2rem, 0.75rem + 5vw, 5rem);
@@ -315,6 +320,10 @@
   --line-height-body: 28px;
   --line-height-control: 24px;
   --line-height-small: 20px;
+  --line-height-micro: 16px;
+  --line-height-h1: 80px;
+  --line-height-h2: 60px;
+  --line-height-h3: 40px;
   --line-height-h4: 32px;
   --line-height-h5: 24px;
   --line-height-h6: 24px;

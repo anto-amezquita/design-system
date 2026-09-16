@@ -169,6 +169,10 @@
     }
   },
   "font-size": {
+    "2xs": {
+      "$value": "10px",
+      "$type": "dimension"
+    },
     "xs": {
       "$value": "12px",
       "$type": "dimension"
@@ -260,6 +264,18 @@
     },
     "fixed-32": {
       "$value": "32px",
+      "$type": "dimension"
+    },
+    "fixed-40": {
+      "$value": "40px",
+      "$type": "dimension"
+    },
+    "fixed-60": {
+      "$value": "60px",
+      "$type": "dimension"
+    },
+    "fixed-80": {
+      "$value": "80px",
       "$type": "dimension"
     }
   },
