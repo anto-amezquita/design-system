@@ -43,7 +43,7 @@ Status: not started — needs the user's call.
 
 Opened 2026-09-16, surfaced while implementing `decisions/0012` on `baseline-grid-vertical-rhythm` (see `roadmap.md`'s session log). The ADR maps line-height roles to the semantic font-size tokens, but three real text sizes in the system aren't in its table. Each got the nearest sensible on-grid value so nothing is left off-grid, and each needs a call.
 
-**1. 12px text has no role of its own.** `font-size.xs` is used through component tokens (`tooltip-font-size`, `input-hint-size`, `textarea-hint-size`, `table-header-font-size`), never through a semantic font-size token, so the ADR never listed it. Interim call (2026-09-16): those rules use the next role up, `line-height-small` (20px, the 14px role). That keeps them on the grid, but 12/20 is looser than 12/16, which is Material's caption pairing. Still open: whether 12px gets its own `caption` role and an amendment to 0012. `line-height-micro` has no consumers in the meantime.
+**1. 12px text has no role of its own.** `font-size.xs` is used through component tokens (`tooltip-font-size`, `input-hint-size`, `textarea-hint-size`, `table-header-font-size`), never through a semantic font-size token, so the ADR never listed it. Interim call (2026-09-16): those rules use the next role up, `line-height-small` (20px, the 14px role). That keeps them on the grid, but 12/20 is looser than 12/16, which is Material's caption pairing. Still open: whether 12px gets its own `caption` role and an amendment to 0012.
 
 **2. Hero's lead is 20px, not `font-size-lead`'s 24px.** `hero-lead-size` resolves to `font-size.emphasis`, so `.hero__lead` still uses `line-height-body`, now 28px (was 30px). On grid, and it reads fine, but it's a body role on non-body text.
 

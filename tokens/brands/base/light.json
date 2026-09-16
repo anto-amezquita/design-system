@@ -265,10 +265,6 @@
     "$type": "dimension",
     "$description": "Text size for form-field labels (input, standalone Label, textarea). Corrected from xs to sm, Sep 2026 — role existed but was unused and its value didn't match any actual label component, same shape of bug as font-weight-label (see decisions/0004). Select's label is currently xs, not yet folded in — flagged separately, not assumed to be the same bug."
   },
-  "font-size-micro": {
-    "$value": "{font-size.2xs}",
-    "$type": "dimension"
-  },
   "font-size-lead": {
     "$value": "{font-size.lg}",
     "$type": "dimension"
@@ -360,11 +356,6 @@
     "$value": "{line-height.fixed-20}",
     "$type": "dimension",
     "$description": "Strict-4px-grid line-height for font-size-small (14px) — see decisions/0012."
-  },
-  "line-height-micro": {
-    "$value": "{line-height.fixed-16}",
-    "$type": "dimension",
-    "$description": "Strict-4px-grid line-height for font-size-micro (10px) — see decisions/0012."
   },
   "line-height-h1": {
     "$value": "{line-height.fixed-80}",

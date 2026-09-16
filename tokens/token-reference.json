@@ -1,9 +1,9 @@
 {
   "meta": {
-    "primitiveCount": 122,
-    "semanticCount": 140,
+    "primitiveCount": 121,
+    "semanticCount": 138,
     "componentCount": 110,
-    "total": 372
+    "total": 369
   },
   "tokens": [
     {
@@ -617,21 +617,6 @@
         "base-dark": "128px",
         "portfolio-light": "128px",
         "portfolio-dark": "128px"
-      },
-      "axisAware": false,
-      "usedBy": []
-    },
-    {
-      "name": "font-size-2xs",
-      "cssVar": "--font-size-2xs",
-      "type": "dimension",
-      "category": "primitive",
-      "rawValue": "10px",
-      "resolved": {
-        "base-light": "10px",
-        "base-dark": "10px",
-        "portfolio-light": "10px",
-        "portfolio-dark": "10px"
       },
       "axisAware": false,
       "usedBy": []
@@ -3135,21 +3120,6 @@
       ]
     },
     {
-      "name": "font-size-micro",
-      "cssVar": "--font-size-micro",
-      "type": "dimension",
-      "category": "typography",
-      "rawValue": "{font-size.2xs}",
-      "resolved": {
-        "base-light": "10px",
-        "base-dark": "10px",
-        "portfolio-light": "10px",
-        "portfolio-dark": "10px"
-      },
-      "axisAware": false,
-      "usedBy": []
-    },
-    {
       "name": "font-size-lead",
       "cssVar": "--font-size-lead",
       "type": "dimension",
@@ -3521,21 +3491,6 @@
         "Input",
         "Textarea"
       ]
-    },
-    {
-      "name": "line-height-micro",
-      "cssVar": "--line-height-micro",
-      "type": "dimension",
-      "category": "typography",
-      "rawValue": "{line-height.fixed-16}",
-      "resolved": {
-        "base-light": "16px",
-        "base-dark": "16px",
-        "portfolio-light": "16px",
-        "portfolio-dark": "16px"
-      },
-      "axisAware": false,
-      "usedBy": []
     },
     {
       "name": "line-height-h1",
