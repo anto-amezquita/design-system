@@ -129,7 +129,7 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 - `--card-padding`, `--card-gap`
 - `--card-title-size`, `--card-title-weight`
 - `--card-description-size`, `--card-description-color`
-- `--font-family-heading`, `--line-height-heading`, `--line-height-body`
+- `--font-family-heading`, `--line-height-control`
 - `--letter-spacing-heading`, `--color-text-primary`, `--space-inline-gap`
 
 **Accessibility**
@@ -219,7 +219,7 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 - `--dialog-title-size`, `--dialog-title-weight`
 - `--dialog-close-size`, `--dialog-close-color`, `--dialog-close-hover`
 - `--font-family-base`, `--font-family-heading`, `--color-text-primary`, `--color-text-secondary`
-- `--line-height-heading`, `--line-height-body`, `--letter-spacing-heading`
+- `--line-height-lead`, `--line-height-h4`, `--line-height-body`, `--letter-spacing-heading`
 - `--border-radius-interactive`, `--space-component-gap`, `--space-element-gap`, `--space-inline-gap`
 - `--duration-interaction`, `--duration-transition`, `--easing-default`, `--easing-out`
 - `--color-border-focus`
@@ -515,6 +515,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - `--font-size-h1-fluid`, `--line-height-display`
 - `--font-size-h2-fluid`, `--font-size-h3-fluid`, `--line-height-heading`
 - `--font-size-h4`, `--font-size-h5`, `--font-size-h6`
+- `--line-height-h4`, `--line-height-h5`, `--line-height-h6`
 
 **Accessibility**
 - Renders a real `h1`–`h6` element — always reflects the document outline correctly via `as`, never rely on `level` alone for that

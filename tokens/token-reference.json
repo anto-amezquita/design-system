@@ -1,9 +1,9 @@
 {
   "meta": {
-    "primitiveCount": 115,
-    "semanticCount": 130,
+    "primitiveCount": 122,
+    "semanticCount": 140,
     "componentCount": 110,
-    "total": 355
+    "total": 372
   },
   "tokens": [
     {
@@ -932,6 +932,111 @@
         "base-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-fixed-20",
+      "cssVar": "--line-height-fixed-20",
+      "type": "dimension",
+      "category": "primitive",
+      "rawValue": "20px",
+      "resolved": {
+        "base-light": "20px",
+        "base-dark": "20px",
+        "portfolio-light": "20px",
+        "portfolio-dark": "20px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-fixed-24",
+      "cssVar": "--line-height-fixed-24",
+      "type": "dimension",
+      "category": "primitive",
+      "rawValue": "24px",
+      "resolved": {
+        "base-light": "24px",
+        "base-dark": "24px",
+        "portfolio-light": "24px",
+        "portfolio-dark": "24px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-fixed-28",
+      "cssVar": "--line-height-fixed-28",
+      "type": "dimension",
+      "category": "primitive",
+      "rawValue": "28px",
+      "resolved": {
+        "base-light": "28px",
+        "base-dark": "28px",
+        "portfolio-light": "28px",
+        "portfolio-dark": "28px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-fixed-32",
+      "cssVar": "--line-height-fixed-32",
+      "type": "dimension",
+      "category": "primitive",
+      "rawValue": "32px",
+      "resolved": {
+        "base-light": "32px",
+        "base-dark": "32px",
+        "portfolio-light": "32px",
+        "portfolio-dark": "32px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-fixed-40",
+      "cssVar": "--line-height-fixed-40",
+      "type": "dimension",
+      "category": "primitive",
+      "rawValue": "40px",
+      "resolved": {
+        "base-light": "40px",
+        "base-dark": "40px",
+        "portfolio-light": "40px",
+        "portfolio-dark": "40px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-fixed-60",
+      "cssVar": "--line-height-fixed-60",
+      "type": "dimension",
+      "category": "primitive",
+      "rawValue": "60px",
+      "resolved": {
+        "base-light": "60px",
+        "base-dark": "60px",
+        "portfolio-light": "60px",
+        "portfolio-dark": "60px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-fixed-80",
+      "cssVar": "--line-height-fixed-80",
+      "type": "dimension",
+      "category": "primitive",
+      "rawValue": "80px",
+      "resolved": {
+        "base-light": "80px",
+        "base-dark": "80px",
+        "portfolio-light": "80px",
+        "portfolio-dark": "80px"
       },
       "axisAware": false,
       "usedBy": []
@@ -3350,30 +3455,202 @@
     {
       "name": "line-height-body",
       "cssVar": "--line-height-body",
-      "type": "number",
+      "type": "dimension",
       "category": "typography",
-      "rawValue": "{line-height.normal}",
+      "rawValue": "{line-height.fixed-28}",
       "resolved": {
-        "base-light": "1.5",
-        "base-dark": "1.5",
-        "portfolio-light": "1.5",
-        "portfolio-dark": "1.5"
+        "base-light": "28px",
+        "base-dark": "28px",
+        "portfolio-light": "28px",
+        "portfolio-dark": "28px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Dialog",
+        "Drawer",
+        "EmptyState",
+        "Hero"
+      ]
+    },
+    {
+      "name": "line-height-control",
+      "cssVar": "--line-height-control",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-24}",
+      "resolved": {
+        "base-light": "24px",
+        "base-dark": "24px",
+        "portfolio-light": "24px",
+        "portfolio-dark": "24px"
       },
       "axisAware": false,
       "usedBy": [
         "Alert",
         "Card",
-        "Dialog",
-        "Drawer",
-        "Toast",
         "Accordion",
-        "EmptyState",
-        "Hero",
+        "Table",
         "Checkbox",
-        "Input",
         "Radio",
+        "Select",
         "Switch",
         "Textarea"
+      ]
+    },
+    {
+      "name": "line-height-small",
+      "cssVar": "--line-height-small",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-20}",
+      "resolved": {
+        "base-light": "20px",
+        "base-dark": "20px",
+        "portfolio-light": "20px",
+        "portfolio-dark": "20px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Toast",
+        "Breadcrumb",
+        "DataTable",
+        "EmptyState",
+        "Hero"
+      ]
+    },
+    {
+      "name": "line-height-micro",
+      "cssVar": "--line-height-micro",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-16}",
+      "resolved": {
+        "base-light": "16px",
+        "base-dark": "16px",
+        "portfolio-light": "16px",
+        "portfolio-dark": "16px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Tooltip",
+        "Table",
+        "Input",
+        "Textarea"
+      ]
+    },
+    {
+      "name": "line-height-h1",
+      "cssVar": "--line-height-h1",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-80}",
+      "resolved": {
+        "base-light": "80px",
+        "base-dark": "80px",
+        "portfolio-light": "80px",
+        "portfolio-dark": "80px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-h2",
+      "cssVar": "--line-height-h2",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-60}",
+      "resolved": {
+        "base-light": "60px",
+        "base-dark": "60px",
+        "portfolio-light": "60px",
+        "portfolio-dark": "60px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-h3",
+      "cssVar": "--line-height-h3",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-40}",
+      "resolved": {
+        "base-light": "40px",
+        "base-dark": "40px",
+        "portfolio-light": "40px",
+        "portfolio-dark": "40px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-h4",
+      "cssVar": "--line-height-h4",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-32}",
+      "resolved": {
+        "base-light": "32px",
+        "base-dark": "32px",
+        "portfolio-light": "32px",
+        "portfolio-dark": "32px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Dialog",
+        "Heading"
+      ]
+    },
+    {
+      "name": "line-height-h5",
+      "cssVar": "--line-height-h5",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-24}",
+      "resolved": {
+        "base-light": "24px",
+        "base-dark": "24px",
+        "portfolio-light": "24px",
+        "portfolio-dark": "24px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Heading"
+      ]
+    },
+    {
+      "name": "line-height-h6",
+      "cssVar": "--line-height-h6",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-24}",
+      "resolved": {
+        "base-light": "24px",
+        "base-dark": "24px",
+        "portfolio-light": "24px",
+        "portfolio-dark": "24px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "EmptyState",
+        "Heading"
+      ]
+    },
+    {
+      "name": "line-height-lead",
+      "cssVar": "--line-height-lead",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-32}",
+      "resolved": {
+        "base-light": "32px",
+        "base-dark": "32px",
+        "portfolio-light": "32px",
+        "portfolio-dark": "32px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Dialog"
       ]
     },
     {
@@ -3390,8 +3667,6 @@
       },
       "axisAware": false,
       "usedBy": [
-        "Dialog",
-        "Tooltip",
         "Heading"
       ]
     },
@@ -3409,7 +3684,8 @@
       },
       "axisAware": false,
       "usedBy": [
-        "Label"
+        "Label",
+        "Select"
       ]
     },
     {

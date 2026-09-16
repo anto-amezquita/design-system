@@ -55,7 +55,7 @@
   font-family: inherit;
   font-size: var(--font-size-control);
   font-weight: var(--font-weight-control);
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-control);
   text-align: left;
   cursor: pointer;
   transition: background var(--accordion-duration-collapse) var(--easing-default);
@@ -127,7 +127,7 @@
   padding-inline: var(--accordion-content-padding-x);
   padding-block-end: var(--accordion-content-padding-bottom);
   font-size: var(--font-size-control);
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-control);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -65,7 +65,7 @@
   resize: vertical;
   cursor: inherit;
   box-sizing: border-box;
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-control);
 }
 
 .textarea-field__textarea::placeholder {
@@ -93,7 +93,7 @@
   font-family: var(--font-family-base);
   font-size: var(--textarea-hint-size);
   color: var(--color-text-secondary);
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-micro);
 }
 
 .textarea-field--error .textarea-field__hint {
