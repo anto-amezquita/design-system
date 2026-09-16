@@ -1,9 +1,9 @@
 {
   "meta": {
-    "primitiveCount": 116,
-    "semanticCount": 135,
+    "primitiveCount": 120,
+    "semanticCount": 140,
     "componentCount": 110,
-    "total": 361
+    "total": 370
   },
   "tokens": [
     {
@@ -622,6 +622,21 @@
       "usedBy": []
     },
     {
+      "name": "font-size-2xs",
+      "cssVar": "--font-size-2xs",
+      "type": "dimension",
+      "category": "primitive",
+      "rawValue": "10px",
+      "resolved": {
+        "base-light": "10px",
+        "base-dark": "10px",
+        "portfolio-light": "10px",
+        "portfolio-dark": "10px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
       "name": "font-size-xs",
       "cssVar": "--font-size-xs",
       "type": "dimension",
@@ -947,6 +962,51 @@
         "base-dark": "32px",
         "portfolio-light": "32px",
         "portfolio-dark": "32px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-fixed-40",
+      "cssVar": "--line-height-fixed-40",
+      "type": "dimension",
+      "category": "primitive",
+      "rawValue": "40px",
+      "resolved": {
+        "base-light": "40px",
+        "base-dark": "40px",
+        "portfolio-light": "40px",
+        "portfolio-dark": "40px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-fixed-60",
+      "cssVar": "--line-height-fixed-60",
+      "type": "dimension",
+      "category": "primitive",
+      "rawValue": "60px",
+      "resolved": {
+        "base-light": "60px",
+        "base-dark": "60px",
+        "portfolio-light": "60px",
+        "portfolio-dark": "60px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-fixed-80",
+      "cssVar": "--line-height-fixed-80",
+      "type": "dimension",
+      "category": "primitive",
+      "rawValue": "80px",
+      "resolved": {
+        "base-light": "80px",
+        "base-dark": "80px",
+        "portfolio-light": "80px",
+        "portfolio-dark": "80px"
       },
       "axisAware": false,
       "usedBy": []
@@ -3045,6 +3105,21 @@
       ]
     },
     {
+      "name": "font-size-micro",
+      "cssVar": "--font-size-micro",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{font-size.2xs}",
+      "resolved": {
+        "base-light": "10px",
+        "base-dark": "10px",
+        "portfolio-light": "10px",
+        "portfolio-dark": "10px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
       "name": "font-size-lead",
       "cssVar": "--font-size-lead",
       "type": "dimension",
@@ -3417,6 +3492,66 @@
         "Input",
         "Textarea"
       ]
+    },
+    {
+      "name": "line-height-micro",
+      "cssVar": "--line-height-micro",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-16}",
+      "resolved": {
+        "base-light": "16px",
+        "base-dark": "16px",
+        "portfolio-light": "16px",
+        "portfolio-dark": "16px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-h1",
+      "cssVar": "--line-height-h1",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-80}",
+      "resolved": {
+        "base-light": "80px",
+        "base-dark": "80px",
+        "portfolio-light": "80px",
+        "portfolio-dark": "80px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-h2",
+      "cssVar": "--line-height-h2",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-60}",
+      "resolved": {
+        "base-light": "60px",
+        "base-dark": "60px",
+        "portfolio-light": "60px",
+        "portfolio-dark": "60px"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "line-height-h3",
+      "cssVar": "--line-height-h3",
+      "type": "dimension",
+      "category": "typography",
+      "rawValue": "{line-height.fixed-40}",
+      "resolved": {
+        "base-light": "40px",
+        "base-dark": "40px",
+        "portfolio-light": "40px",
+        "portfolio-dark": "40px"
+      },
+      "axisAware": false,
+      "usedBy": []
     },
     {
       "name": "line-height-h4",
