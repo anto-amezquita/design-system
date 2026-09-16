@@ -10,7 +10,7 @@
  * Rules:
  *   no-raw-hex                — no hex colour literals; use semantic tokens
  *   no-primitive-tokens       — no --color-warm-*, --color-black, etc., no raw --space-N, no raw
- *                               --font-size-{xs..3xl}, no raw --line-height-{tighter,tight,normal,loose,fixed-*};
+ *                               --font-size-{xs..3xl}, no raw --line-height-{tighter,tight,fixed-*};
  *                               use a semantic token, or a Tier-3 component token that itself binds to the primitive
  *   no-hardcoded-motion       — no bare ms timing values; use --duration-* tokens
  *   no-hardcoded-line-height  — no raw line-height values; use --line-height-* tokens. Bare
@@ -75,7 +75,7 @@ const PRIMITIVE_PATTERNS = [
   /var\(--color-teal-[\w-]*\)/g,
   /var\(--space-\d+\)/g,
   /var\(--font-size-(xs|sm|base|md|emphasis|lg|xl|2xl|3xl)\)/g,
-  /var\(--line-height-(tighter|tight|normal|loose|fixed-\d+)\)/g,
+  /var\(--line-height-(tighter|tight|fixed-\d+)\)/g,
 ]
 
 // Radix Primitives sets these on the DOM at runtime (e.g. for animating open/close
@@ -254,7 +254,7 @@ const RULES = [
   },
   {
     id: 'no-hardcoded-line-height',
-    description: 'Hardcoded line-height value — replace with a line-height token (static sizes: --line-height-body/-control/-small/-label/-lead/-h1…-h6; fluid sizes: --line-height-display/-heading — see decisions/0012). Bare `1` remains valid for tight single-line UI controls (buttons, badges, tags, pagination); bare `0` remains valid for icon-only controls that collapse the line box.',
+    description: 'Hardcoded line-height value — replace with a line-height token (static sizes: --line-height-body/-control/-small/-label/-lead/-h4…-h6; fluid sizes: --line-height-display/-heading — see decisions/0012). Bare `1` remains valid for tight single-line UI controls (buttons, badges, tags, pagination); bare `0` remains valid for icon-only controls that collapse the line box.',
     check(strippedLine) {
       const pv = parsePropertyValue(strippedLine)
       if (!pv || pv.prop !== 'line-height') return null
