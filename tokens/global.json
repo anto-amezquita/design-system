@@ -169,10 +169,6 @@
     }
   },
   "font-size": {
-    "2xs": {
-      "$value": "10px",
-      "$type": "dimension"
-    },
     "xs": {
       "$value": "12px",
       "$type": "dimension"
