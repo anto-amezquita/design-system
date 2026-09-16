@@ -12,7 +12,7 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-surface-primary
-  --border-radius-component, --space-container-padding, --space-element-gap, --font-weight-title, --shadow-card-hover
+  --border-radius-component, --space-container-padding, --space-element-gap, --shadow-card-hover
 */
 
 .card {
@@ -139,18 +139,6 @@ button.card {
   display: flex;
   align-items: center;
   gap: var(--space-inline-gap);
-}
-
-/* CardTitle composes the Heading primitive (docs/backlog.md migration) —
-   .card__title has no consumer other than CardTitle, so font-family, size,
-   line-height, letter-spacing, color and margin all come from Heading's own
-   .heading/.heading--h4 rules with nothing to duplicate here. The one
-   property that still needs a Card-specific value is font-weight: Heading's
-   .heading hardcodes font-weight-heading (semibold), this title needs
-   font-weight-title (bold). Compound selector (0,2,0) beats .heading's
-   (0,1,0) regardless of CSS import order. */
-.heading.card__title {
-  font-weight: var(--font-weight-title);
 }
 
 .card__description {

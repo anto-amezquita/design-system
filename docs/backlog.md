@@ -31,15 +31,13 @@ Branch protection isn't enabled on `main`, so the merge button on PR #23 isn't t
 
 Status: waiting on Chromatic's limit, not on any code or decision.
 
-## Heading `weight` variant, and whether the migration needed an ADR (backlog)
+## Whether the Heading migration itself needed its own ADR (backlog)
 
-Opened 2026-09-15, surfaced by code review on [`refactor/heading-migration`](../decisions/0008-productive-expressive-typography-split.md) (the `Card`/`Dialog`/`Drawer`/`EmptyState` → `Heading` migration, see `roadmap.md`'s session log for both entries). Two related, deliberately undecided items — both judgment calls beyond that task's own scope, not bugs.
+Opened 2026-09-15, surfaced by code review on [`refactor/heading-migration`](../decisions/0008-productive-expressive-typography-split.md) (the `Card`/`Dialog`/`Drawer`/`EmptyState` → `Heading` migration, see `roadmap.md`'s session log for both entries). A companion item — whether `Heading` needed a `weight` prop instead of three CSS overrides — was decided 2026-09-16: see `decisions/0010-heading-weight-prop.md`.
 
-**1. `Heading` has no way to ask for `font-weight-title` instead of its hardcoded `font-weight-heading`.** Three of the migration's four call sites (`Card`, `Dialog`, `Drawer`) need bold where `Heading`'s base `.heading` rule always applies semibold, so each got its own `.heading.<block>__title { font-weight: var(--font-weight-title) }` compound-selector override in `Card.css`/`Dialog.css`/`Drawer.css`, each with its own comment justifying it — a real, recurring need patched at three leaves instead of once at the root. A `weight?: 'heading' | 'title'` prop on `Heading` (toggling a modifier class) would replace all three CSS overrides with one prop passed at each call site. Not done as part of the migration because it changes `Heading`'s public API — the exact surface `decisions/0008` fixed on purpose — which felt like a call for the user to make, not something to decide unilaterally mid-refactor.
+**Whether the migration itself needed its own numbered ADR** (next free number is `0011`). `decisions/0008`'s own Consequences section explicitly deferred this migration as "a separate, larger change," and the backlog entry that opened it (now removed) argued it was closing real architectural drift, not just tidying — both signals that lean toward "this was a decision, not just an implementation." Against that: no new token tier, brand, or package was introduced, and the component-facing API didn't change. Repo `CLAUDE.md`'s "Do not… make an architectural change… without writing an ADR" rule is the thing in tension here; `decisions/README.md`'s bar is described as low ("one small file per important decision"), so writing one costs little if the answer is yes.
 
-**2. Whether the migration itself needed a `decisions/0009-*.md`.** `decisions/0008`'s own Consequences section explicitly deferred this migration as "a separate, larger change," and the backlog entry that opened it (now removed) argued it was closing real architectural drift, not just tidying — both signals that lean toward "this was a decision, not just an implementation." Against that: no new token tier, brand, or package was introduced, and the component-facing API didn't change. Repo `CLAUDE.md`'s "Do not… make an architectural change… without writing an ADR" rule is the thing in tension here; `decisions/README.md`'s bar is described as low ("one small file per important decision"), so writing one costs little if the answer is yes.
-
-Status: not started — needs the user's call on both before either is acted on.
+Status: not started — needs the user's call.
 
 ## Self-healing CI (backlog)
 

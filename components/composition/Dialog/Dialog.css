@@ -158,24 +158,25 @@
 }
 
 /* Dialog now composes the Heading primitive internally (docs/backlog.md
-   migration) via BaseSheet.tsx, which adds .heading/.heading--h4 classes
-   alongside .dialog__title — Heading's own .heading rule hardcodes
-   font-weight-heading (semibold), this title needs font-weight-title
-   (bold). AlertDialog.tsx still uses .dialog__title directly (not via
-   Heading), so the rule above stays untouched — it's the only thing
-   sizing/styling AlertDialog's title.
+   migration) via BaseSheet.tsx, which adds .heading/.heading--h4/
+   .heading--title classes alongside .dialog__title. AlertDialog.tsx still
+   uses .dialog__title directly (not via Heading), so the rule above stays
+   untouched — it's the only thing sizing/styling AlertDialog's title,
+   font-weight included.
 
-   font-size is pinned here too, explicitly to font-size-h4 rather than
-   left as an accidental tie with .heading--h4 (same specificity, order-
-   dependent otherwise) — font-size-lead and font-size-h4 are the same
-   value today by design (decisions/0008), but when this title IS composed
-   via Heading, font-size-h4 is the authoritative source; if the two tokens
-   ever diverge, this title should keep following Heading's H4, not drift
-   from it. Compound selector (0,2,0) beats .heading's (0,1,0) regardless
-   of CSS import order either way. */
+   When composed via Heading, both rules above and Heading's own apply at
+   the same (0,1,0) specificity, so which wins is order-dependent. Weight
+   is safe either way — .dialog__title and .heading--title both resolve to
+   font-weight-title (decisions/0010). font-size is not: .dialog__title's
+   font-size-lead would tie with .heading--h4's font-size-h4, so it's
+   pinned here explicitly — the two tokens are the same value today by
+   design (decisions/0008), but when this title IS composed via Heading,
+   font-size-h4 is the authoritative source; if the two tokens ever
+   diverge, this title should keep following Heading's H4, not drift from
+   it. Compound selector (0,2,0) beats both regardless of CSS import
+   order. */
 .heading.dialog__title {
   font-size: var(--font-size-h4);
-  font-weight: var(--font-weight-title);
 }
 
 /* Description */

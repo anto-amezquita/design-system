@@ -5,6 +5,8 @@
  * single-element primitive. Also covers the `level`/`as` decoupling this
  * component exists for (decisions/0008): `level` controls visual size,
  * `as` controls the real rendered tag, and they're independent.
+ * Also covers the `weight` prop (decisions/0010): `.heading--title` is
+ * added only when `weight="title"`.
  */
 
 import { createRef } from 'react'
@@ -57,5 +59,32 @@ describe('Heading level/as decoupling', () => {
     const heading = screen.getByRole('heading', { level: 1 })
     expect(heading.tagName).toBe('H1')
     expect(heading.className).toContain('heading--h5')
+  })
+})
+
+describe('Heading weight', () => {
+  test("defaults to the 'heading' weight — no modifier class", () => {
+    render(<Heading level={4}>Title</Heading>)
+    expect(screen.getByRole('heading', { level: 4 }).className).not.toContain('heading--title')
+  })
+
+  test("weight='heading' explicitly adds no modifier class", () => {
+    render(<Heading level={4} weight="heading">Title</Heading>)
+    expect(screen.getByRole('heading', { level: 4 }).className).not.toContain('heading--title')
+  })
+
+  test("weight='title' adds heading--title alongside the level class and a consumer className", () => {
+    render(<Heading level={4} weight="title" className="card__title">Title</Heading>)
+
+    const heading = screen.getByRole('heading', { level: 4 })
+    expect(heading.className).toContain('heading')
+    expect(heading.className).toContain('heading--h4')
+    expect(heading.className).toContain('heading--title')
+    expect(heading.className).toContain('card__title')
+  })
+
+  test('weight is consumed, not spread onto the DOM element', () => {
+    render(<Heading level={4} weight="title">Title</Heading>)
+    expect(screen.getByRole('heading', { level: 4 })).not.toHaveAttribute('weight')
   })
 })

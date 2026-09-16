@@ -88,7 +88,7 @@ export function CardFooter({ children }: CardFooterProps) {
 
 export function CardTitle({ children, as = 'h3' }: CardTitleProps) {
   return (
-    <Heading level={4} as={as} className="card__title">
+    <Heading level={4} as={as} weight="title" className="card__title">
       {children}
     </Heading>
   )

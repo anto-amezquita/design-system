@@ -16,6 +16,14 @@ type HeadingOwnProps = {
    * under a page's actual `<h1>`.
    */
   as?: HeadingElement
+  /**
+   * Font weight role (decisions/0010). `'heading'` (default) is semibold —
+   * right for standalone headings. `'title'` is bold, for title text in
+   * compact container chrome (a Card, Dialog or Drawer header sitting next
+   * to buttons or a close control), where a small title needs the extra
+   * weight to hold its own.
+   */
+  weight?: 'heading' | 'title'
   children: React.ReactNode
 }
 
@@ -29,12 +37,13 @@ type HeadingProps = React.HTMLAttributes<HTMLHeadingElement> & HeadingOwnProps
 export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(function Heading({
   level,
   as,
+  weight = 'heading',
   children,
   className: classNameProp,
   ...rest
 }, ref) {
   const Tag = as ?? (`h${level}` as HeadingElement)
-  const className = cn('heading', `heading--h${level}`, classNameProp)
+  const className = cn('heading', `heading--h${level}`, weight === 'title' && 'heading--title', classNameProp)
 
   return (
     <Tag {...rest} ref={ref} className={className}>

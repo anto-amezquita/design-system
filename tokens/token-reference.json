@@ -3306,9 +3306,8 @@
       },
       "axisAware": false,
       "usedBy": [
-        "Card",
         "Dialog",
-        "Drawer"
+        "Heading"
       ]
     },
     {
