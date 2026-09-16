@@ -668,9 +668,8 @@
       "components/patterns/Breadcrumb/Breadcrumb.css"
     ],
     "font-weight-title": [
-      "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
-      "components/composition/Drawer/Drawer.css"
+      "components/primitives/Heading/Heading.css"
     ],
     "hero-eyebrow-size": [
       "components/patterns/Hero/Hero.css"

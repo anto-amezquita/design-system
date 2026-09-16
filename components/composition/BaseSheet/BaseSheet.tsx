@@ -74,8 +74,9 @@ export function BaseSheet({
                   composing Heading for the visual styling (docs/backlog.md
                   migration). level=4 matches this title's existing static
                   size (font-size-lead === font-size-h4); as="h2" keeps the
-                  real DOM tag unchanged. */}
-              <Heading level={4} as="h2" className={b('title')}>{title}</Heading>
+                  real DOM tag unchanged. weight="title" is the bold weight
+                  both Dialog and Drawer titles use (decisions/0010). */}
+              <Heading level={4} as="h2" weight="title" className={b('title')}>{title}</Heading>
             </RadixDialog.Title>
             <RadixDialog.Close className={b('close')} aria-label={closeLabel}>
               <XIcon size={16} weight="regular" aria-hidden="true" />

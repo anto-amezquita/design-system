@@ -13,7 +13,7 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-border-default, --border-width-default, --color-surface-primary
-  --shadow-dialog, --z-modal, --space-container-padding-lg, --space-component-gap, --color-surface-tertiary, --font-weight-title
+  --shadow-dialog, --z-modal, --space-container-padding-lg, --space-component-gap, --color-surface-tertiary
 */
 
 /* Overlay */
@@ -130,21 +130,6 @@
   gap: var(--space-inline-gap);
   padding: var(--space-container-padding-lg) var(--space-container-padding-lg) 0;
   flex-shrink: 0;
-}
-
-/* Title */
-
-/* Drawer's title composes the Heading primitive internally (docs/backlog.md
-   migration) via BaseSheet.tsx — .drawer__title has no consumer other than
-   that title, so font-family, size, line-height, letter-spacing, color and
-   margin all come from Heading's own .heading/.heading--h4 rules with
-   nothing to duplicate here. The one property that still needs a
-   Drawer-specific value is font-weight: Heading's .heading hardcodes
-   font-weight-heading (semibold), this title needs font-weight-title
-   (bold). Compound selector (0,2,0) beats .heading's (0,1,0) regardless of
-   CSS import order. */
-.heading.drawer__title {
-  font-weight: var(--font-weight-title);
 }
 
 /* Description */

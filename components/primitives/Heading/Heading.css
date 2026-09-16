@@ -2,6 +2,9 @@
   Tokens consumed:
   --font-family-heading, --font-weight-heading, --color-text-primary, --letter-spacing-heading
 
+  weight="title" modifier (decisions/0010):
+  --font-weight-title
+
   Fluid tier (decisions/0008) — H1-H3:
   --font-size-h1-fluid, --line-height-display
   --font-size-h2-fluid, --font-size-h3-fluid, --line-height-heading
@@ -17,6 +20,13 @@
   letter-spacing: var(--letter-spacing-heading);
   line-height: var(--line-height-heading);
   margin: 0;
+}
+
+/* weight="title" (decisions/0010) — bold for titles in compact container
+   chrome. Same (0,1,0) specificity as .heading, so it relies on coming
+   after it in this file. */
+.heading--title {
+  font-weight: var(--font-weight-title);
 }
 
 .heading--h1 {
