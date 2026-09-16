@@ -58,11 +58,3 @@ Worth knowing when you get to it: the stale-by-one changelog behaviour predates 
 **Phase 2 stays parked** until Phase 1 has been boring for a while. Its open questions are in the spec, not here.
 
 Status: Phase 1 shipped and verified. Branch protection open, gated on one decision and on watching the bot in real use first.
-
-## Human-facing docs site (backlog)
-
-Opened 2026-09-01, outside the six roadmap phases. Not a priority, not scheduled — recorded so the idea isn't lost. Spec'd in [`specs/docs-site-spec.md`](../specs/docs-site-spec.md).
-
-Full rationale (why Storybook and the MCP server don't cover this audience) lives in the spec itself, not repeated here. Portfolio already has a single `/design-system` overview page (case-study style, see the Aug 12 entry in `roadmap.md`'s session log for its known staleness issue) — the sketch is a proper four-section site built on the same generated artifacts the MCP server and Storybook already read, so it can't drift out of sync with them.
-
-Status: spec only, not started.

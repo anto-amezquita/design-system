@@ -13,12 +13,26 @@ Storybook and the [MCP server](./mcp-server-spec.md) both serve developers and a
 ## State
 
 ```
-Last updated:   2026-09-01
-Current phase:  Not started. Spec only.
-Next action:    Task 1.1 — fix the existing /design-system page's stale
-                token-reference.json import (the 2026-08-12 finding) before
-                building anything new on top of the same pattern.
-Blocked on:     nothing; explicitly not a priority during the job search
+Last updated:   2026-09-16
+Current phase:  All five phases done.
+Done:           Phase 1 — /design-system page imports token-reference.json
+                and component-registry.json from the published
+                @amezquita/design-system package, not a stale local copy.
+                Phase 2 — Landing/pitch page live, stats derived from the
+                generated artifacts, no hand-typed numbers.
+                Phase 3 — Foundations pages live: /design-system/foundations/
+                color, typography, spacing, motion.
+                Phase 4 — Component gallery live at /design-system/components/[name].
+                Phase 5 — Guidelines page live at /design-system/guidelines:
+                governance (the validate gate, the never-violate rules, the
+                ADR process), versioning (changesets, npm trusted publishing),
+                and the AI-agent story (AGENTS.md, the skill, all 7 MCP tools).
+                Linked from the sidebar nav and the overview page's section grid.
+Next action:    None. Revisit only if a phase's underlying facts change (a
+                new MCP tool, a changed release process) — this page links
+                out rather than duplicating detail, so most changes upstream
+                shouldn't require an edit here.
+Blocked on:     nothing
 ```
 
 ---
@@ -54,13 +68,13 @@ Next.js + MDX — matches the stack already in use (portfolio is Next.js), so no
 
 ## Phases
 
-| Phase | Scope | Done when |
-|---|---|---|
-| 1 | Fix the stale `token-reference.json` import on the existing `/design-system` page (blocking — see State above) | Page's numbers match this repo's canonical `token-reference.json`, not a stale local copy |
-| 2 | Landing / pitch page | Numbers traced to a generated artifact, no hand-typed stats |
-| 3 | Foundations page | Color + type + spacing rendered visually from `token-reference.json` |
-| 4 | Component gallery | All public components listed (pull the count from `component-registry.json`'s `meta.publicComponentCount` at build time — don't hand-type it, it's already drifted once), grouped, each with a one-line human-written "when to use this" |
-| 5 | Guidelines page | Links to `AGENTS.md`, the skill, and the MCP server (if built by then) resolve |
+| Phase | Scope | Done when | Status |
+|---|---|---|---|
+| 1 | Fix the stale `token-reference.json` import on the existing `/design-system` page (blocking — see State above) | Page's numbers match this repo's canonical `token-reference.json`, not a stale local copy | Done |
+| 2 | Landing / pitch page | Numbers traced to a generated artifact, no hand-typed stats | Done |
+| 3 | Foundations page | Color + type + spacing rendered visually from `token-reference.json` | Done |
+| 4 | Component gallery | All public components listed (pull the count from `component-registry.json`'s `meta.publicComponentCount` at build time — don't hand-type it, it's already drifted once), grouped, each with a one-line human-written "when to use this" | Done |
+| 5 | Guidelines page | Links to `AGENTS.md`, the skill, and the MCP server (shipped since this spec was written) resolve | Done |
 
 ## Local → hosted
 
