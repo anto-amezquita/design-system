@@ -8,7 +8,7 @@
   --toast-viewport-inset, --toast-close-offset
   --color-feedback-success-foreground, --color-feedback-warning-foreground
   --color-feedback-error-foreground, --color-feedback-info-foreground
-  --font-family-base, --line-height-body
+  --font-family-base, --line-height-small
   --border-radius-interactive, --duration-interaction, --duration-transition, --easing-default
   --color-border-focus, --color-text-secondary, --color-text-primary
   --size-touch-target
@@ -54,7 +54,7 @@
   box-shadow: var(--shadow-toast);
   font-family: var(--font-family-base);
   font-size: var(--toast-font-size);
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-small);
   color: var(--color-text-primary);
   animation: toast-slide-in var(--duration-transition) var(--easing-default);
   will-change: transform, opacity;

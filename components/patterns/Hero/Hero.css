@@ -5,7 +5,7 @@
   --hero-title-weight
   --hero-lead-size, --hero-max-width, --hero-lead-max-width
   --font-family-heading, --font-family-base, --font-size-h1-fluid
-  --line-height-display, --line-height-body, --letter-spacing-heading
+  --line-height-display, --line-height-body, --line-height-small, --letter-spacing-heading
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-primary
@@ -35,6 +35,7 @@
 .hero__eyebrow {
   font-family: var(--font-family-base);
   font-size: var(--hero-eyebrow-size);
+  line-height: var(--line-height-small);
   font-weight: var(--hero-eyebrow-weight);
   color: var(--color-text-secondary);
   letter-spacing: var(--hero-eyebrow-spacing);

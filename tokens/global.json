@@ -256,7 +256,35 @@
     "fixed-16": {
       "$value": "16px",
       "$type": "dimension",
-      "$description": "Strict-4px-grid line-height for static (non-fluid) single-line UI text — pairs with a fixed font-size, not a clamp() one. Unitless tighter/tight/normal/loose remain the right choice for fluid, clamp()-scaled headings, where a fixed px value would break proportional scaling."
+      "$description": "Strict-4px-grid line-height for static (non-fluid) text — pairs with a fixed font-size, not a clamp() one. The fixed-* scale is the baseline grid for every static font-size (decisions/0012). Unitless tighter/tight/normal/loose remain the right choice for fluid, clamp()-scaled type, where a fixed px value would break proportional scaling."
+    },
+    "fixed-20": {
+      "$value": "20px",
+      "$type": "dimension"
+    },
+    "fixed-24": {
+      "$value": "24px",
+      "$type": "dimension"
+    },
+    "fixed-28": {
+      "$value": "28px",
+      "$type": "dimension"
+    },
+    "fixed-32": {
+      "$value": "32px",
+      "$type": "dimension"
+    },
+    "fixed-40": {
+      "$value": "40px",
+      "$type": "dimension"
+    },
+    "fixed-60": {
+      "$value": "60px",
+      "$type": "dimension"
+    },
+    "fixed-80": {
+      "$value": "80px",
+      "$type": "dimension"
     }
   },
   "border-radius": {

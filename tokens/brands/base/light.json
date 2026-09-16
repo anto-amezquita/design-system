@@ -308,12 +308,12 @@
   "font-size-h5": {
     "$value": "{font-size.emphasis}",
     "$type": "dimension",
-    "$description": "Static (not fluid) by design — see decisions/0008. Pairs with line-height-heading and letter-spacing-heading."
+    "$description": "Static (not fluid) by design — see decisions/0008. Pairs with its own fixed line-height role (decisions/0012) and letter-spacing-heading."
   },
   "font-size-h6": {
     "$value": "{font-size.md}",
     "$type": "dimension",
-    "$description": "Static (not fluid) by design — see decisions/0008. Pairs with line-height-heading and letter-spacing-heading."
+    "$description": "Static (not fluid) by design — see decisions/0008. Pairs with its own fixed line-height role (decisions/0012) and letter-spacing-heading."
   },
   "font-weight-body": {
     "$value": "{font-weight.regular}",
@@ -347,8 +347,59 @@
     "$type": "number"
   },
   "line-height-body": {
-    "$value": "{line-height.normal}",
-    "$type": "number"
+    "$value": "{line-height.fixed-28}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-body (18px). Redefined from unitless 1.5 to a fixed 4px-grid value — see decisions/0012."
+  },
+  "line-height-control": {
+    "$value": "{line-height.fixed-24}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-control (16px) — see decisions/0012."
+  },
+  "line-height-small": {
+    "$value": "{line-height.fixed-20}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-small (14px) — see decisions/0012."
+  },
+  "line-height-micro": {
+    "$value": "{line-height.fixed-16}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-micro (10px) — see decisions/0012."
+  },
+  "line-height-h1": {
+    "$value": "{line-height.fixed-80}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-h1 (64px, static) — see decisions/0012. The fluid font-size-h1-fluid keeps line-height-display."
+  },
+  "line-height-h2": {
+    "$value": "{line-height.fixed-60}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-h2 (48px, static) — see decisions/0012. The fluid font-size-h2-fluid keeps line-height-heading."
+  },
+  "line-height-h3": {
+    "$value": "{line-height.fixed-40}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-h3 (32px, static) — see decisions/0012. The fluid font-size-h3-fluid keeps line-height-heading."
+  },
+  "line-height-h4": {
+    "$value": "{line-height.fixed-32}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-h4 (24px) — see decisions/0012."
+  },
+  "line-height-h5": {
+    "$value": "{line-height.fixed-24}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-h5 (20px) — see decisions/0012."
+  },
+  "line-height-h6": {
+    "$value": "{line-height.fixed-24}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-h6 (18px) — see decisions/0012."
+  },
+  "line-height-lead": {
+    "$value": "{line-height.fixed-32}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-lead (24px) — see decisions/0012."
   },
   "line-height-heading": {
     "$value": "{line-height.tight}",

@@ -41,6 +41,20 @@ Opened 2026-09-15, surfaced by code review on [`refactor/heading-migration`](../
 
 Status: not started — needs the user's call on both before either is acted on.
 
+## Baseline grid: sizes `decisions/0012`'s table doesn't cover (backlog)
+
+Opened 2026-09-16, surfaced while implementing `decisions/0012` on `baseline-grid-vertical-rhythm` (see `roadmap.md`'s session log). The ADR maps line-height roles to the semantic font-size tokens, but three real text sizes in the system aren't in its table. Each got the nearest sensible on-grid value so nothing is left off-grid, and each needs a call.
+
+**1. 12px text has no role of its own.** `font-size.xs` is used through component tokens (`tooltip-font-size`, `input-hint-size`, `textarea-hint-size`, `table-header-font-size`), never through a semantic font-size token, so the ADR never listed it. Those rules now use `line-height-micro` (16px), which is the right number (12/16, same as Material's caption) but the wrong name, since `micro` is documented as the 10px role. Options: add a `font-size-caption` + `line-height-caption` pair and amend 0012, or rename `micro`'s description to cover both sizes. Whichever it is, `line-height-micro` stops being a 1:1 pairing.
+
+**2. Hero's lead is 20px, not `font-size-lead`'s 24px.** `hero-lead-size` resolves to `font-size.emphasis`, so `.hero__lead` still uses `line-height-body`, now 28px (was 30px). On grid, and it reads fine, but it's a body role on non-body text.
+
+**3. `<body>` has no font-size.** `reset.css` sets `line-height-body` (28px) on `<body>` but leaves font-size at the browser default of 16px, so any consumer text that inherits both gets 16/28 instead of the ADR's 18/28. Components are unaffected now: every component rule that sets a font-size also gets its line-height from its own component CSS, except Avatar's fallback and Pagination's ellipsis, which sit in fixed-size flex boxes. Setting `font-size: var(--font-size-body)` on `<body>` would fix the pairing but changes the default size for every consumer, so it's a release-notes-level change, not a quiet one.
+
+Also open: `decisions/0012` is still marked `Proposed`, though the code now implements it.
+
+Status: not started — needs the user's call on 1–3.
+
 ## Self-healing CI (backlog)
 
 Opened 2026-09-08, unblocked by [`decisions/0006`](../decisions/0006-add-layered-automated-testing.md) (real tests now exist for CI to react to). Spec'd in [`specs/self-healing-ci-spec.md`](../specs/self-healing-ci-spec.md), validated against industry precedent in [`self-healing-ci-research.md`](./self-healing-ci-research.md).

@@ -254,7 +254,7 @@ const RULES = [
   },
   {
     id: 'no-hardcoded-line-height',
-    description: 'Hardcoded line-height value — replace with a line-height token (--line-height-heading, --line-height-body, --line-height-display, --line-height-label). Bare `1` remains valid for tight single-line UI controls (buttons, badges, tags, pagination); bare `0` remains valid for icon-only controls that collapse the line box.',
+    description: 'Hardcoded line-height value — replace with a line-height token (static sizes: --line-height-body/-control/-small/-micro/-label/-lead/-h1…-h6; fluid sizes: --line-height-display/-heading — see decisions/0012). Bare `1` remains valid for tight single-line UI controls (buttons, badges, tags, pagination); bare `0` remains valid for icon-only controls that collapse the line box.',
     check(strippedLine) {
       const pv = parsePropertyValue(strippedLine)
       if (!pv || pv.prop !== 'line-height') return null

@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 28,
-    "tokenCount": 209
+    "tokenCount": 216
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -717,17 +717,19 @@
       "components/primitives/Heading/Heading.css"
     ],
     "line-height-body": [
-      "components/composition/Alert/Alert.css",
-      "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
-      "components/composition/Toast/Toast.css",
-      "components/patterns/Accordion/Accordion.css",
       "components/patterns/EmptyState/EmptyState.css",
-      "components/patterns/Hero/Hero.css",
+      "components/patterns/Hero/Hero.css"
+    ],
+    "line-height-control": [
+      "components/composition/Alert/Alert.css",
+      "components/composition/Card/Card.css",
+      "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Table/Table.css",
       "components/primitives/Checkbox/Checkbox.css",
-      "components/primitives/Input/Input.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -735,13 +737,39 @@
       "components/patterns/Hero/Hero.css",
       "components/primitives/Heading/Heading.css"
     ],
-    "line-height-heading": [
+    "line-height-h4": [
       "components/composition/Dialog/Dialog.css",
-      "components/composition/Tooltip/Tooltip.css",
+      "components/primitives/Heading/Heading.css"
+    ],
+    "line-height-h5": [
+      "components/primitives/Heading/Heading.css"
+    ],
+    "line-height-h6": [
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/primitives/Heading/Heading.css"
+    ],
+    "line-height-heading": [
       "components/primitives/Heading/Heading.css"
     ],
     "line-height-label": [
-      "components/primitives/Label/Label.css"
+      "components/primitives/Label/Label.css",
+      "components/primitives/Select/Select.css"
+    ],
+    "line-height-lead": [
+      "components/composition/Dialog/Dialog.css"
+    ],
+    "line-height-micro": [
+      "components/composition/Tooltip/Tooltip.css",
+      "components/patterns/Table/Table.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
+    "line-height-small": [
+      "components/composition/Toast/Toast.css",
+      "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/DataTable/DataTable.css",
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/patterns/Hero/Hero.css"
     ],
     "opacity-disabled": [
       "components/patterns/Accordion/Accordion.css",

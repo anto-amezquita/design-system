@@ -18,6 +18,7 @@
   padding: 0;
   font-family: var(--font-family-base);
   font-size: var(--breadcrumb-font-size);
+  line-height: var(--line-height-small);
 }
 
 .breadcrumb__item {

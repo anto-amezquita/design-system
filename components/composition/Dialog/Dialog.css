@@ -7,7 +7,7 @@
 
   --dialog-close-size
   --font-family-base, --font-family-heading, --color-text-primary, --color-text-secondary
-  --line-height-heading, --line-height-body, --letter-spacing-heading
+  --line-height-lead, --line-height-h4, --line-height-body, --letter-spacing-heading
   --border-radius-interactive, --space-component-gap, --space-inline-gap, --space-element-gap
   --duration-interaction, --duration-transition, --easing-default, --easing-out
   --color-border-focus, --font-size-body
@@ -151,7 +151,7 @@
   font-family: var(--font-family-heading);
   font-size: var(--font-size-lead);
   font-weight: var(--font-weight-title);
-  line-height: var(--line-height-heading);
+  line-height: var(--line-height-lead);
   letter-spacing: var(--letter-spacing-heading);
   color: var(--color-text-primary);
   margin: 0;
@@ -175,6 +175,7 @@
    of CSS import order either way. */
 .heading.dialog__title {
   font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
   font-weight: var(--font-weight-title);
 }
 

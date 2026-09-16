@@ -6,8 +6,11 @@
   --font-size-h1-fluid, --line-height-display
   --font-size-h2-fluid, --font-size-h3-fluid, --line-height-heading
 
-  Static tier (decisions/0008) — H4-H6, deliberately not fluid:
-  --font-size-h4, --font-size-h5, --font-size-h6
+  Static tier (decisions/0008) — H4-H6, deliberately not fluid, each with
+  its own fixed 4px-grid line-height (decisions/0012):
+  --font-size-h4, --line-height-h4
+  --font-size-h5, --line-height-h5
+  --font-size-h6, --line-height-h6
 */
 
 .heading {
@@ -34,12 +37,15 @@
 
 .heading--h4 {
   font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
 }
 
 .heading--h5 {
   font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
 }
 
 .heading--h6 {
   font-size: var(--font-size-h6);
+  line-height: var(--line-height-h6);
 }

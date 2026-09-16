@@ -26,6 +26,7 @@
   padding: var(--space-control-padding-y) var(--space-control-padding-x);
   font-family: var(--font-family-base);
   font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
   color: var(--color-text-primary);
   background: var(--color-surface-primary);
   border: var(--border-width-interactive) solid var(--color-border-default);
@@ -106,6 +107,7 @@
   padding: var(--select-item-padding-y) var(--select-item-padding-x);
   font-family: var(--font-family-base);
   font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
   color: var(--color-text-primary);
   border-radius: var(--border-radius-interactive);
   cursor: pointer;
@@ -129,6 +131,7 @@
   padding: var(--select-item-padding-y) var(--select-item-padding-x);
   font-family: var(--font-family-base);
   font-size: var(--font-size-label);
+  line-height: var(--line-height-label);
   font-weight: var(--font-weight-label);
   color: var(--color-text-secondary);
 }

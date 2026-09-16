@@ -6,7 +6,7 @@
 
 
 
-  --font-family-base, --line-height-body
+  --font-family-base, --line-height-control
   --border-radius-interactive, --duration-interaction, --easing-default, --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
@@ -28,7 +28,7 @@
   border-style: solid;
   font-family: var(--font-family-base);
   font-size: var(--font-size-control);
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-control);
 }
 
 /* Variant colours */
@@ -87,7 +87,7 @@
 .alert__title {
   font-weight: var(--alert-title-weight);
   margin: 0;
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-control);
 }
 
 /* Body */
