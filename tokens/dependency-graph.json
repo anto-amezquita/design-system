@@ -751,8 +751,10 @@
       "components/primitives/Heading/Heading.css"
     ],
     "line-height-label": [
+      "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
-      "components/primitives/Select/Select.css"
+      "components/primitives/Select/Select.css",
+      "components/primitives/Textarea/Textarea.css"
     ],
     "line-height-lead": [
       "components/composition/Dialog/Dialog.css"
