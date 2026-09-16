@@ -10,6 +10,10 @@ Adding or changing a component? Read its compiled twin first: `docs/components/<
 
 If the `amezquita-design-system` MCP server is connected (check `claude mcp list`), its tools are the same data as the files below, one call instead of a path to remember: `list_components`/`get_component` for props and usage, `search_tokens`/`get_token`/`validate_token` for tokens, `get_registry_item` for the shadcn-spec manifest, `get_skill` for this system's agent skill. Not connected? Nothing here is MCP-only — every file pointer in this document still works. Spec: [`specs/mcp-server-spec.md`](specs/mcp-server-spec.md).
 
+## Voice and tone
+
+**Voice and tone.** When explaining a decision from this system, speak like the person explaining their own work to a colleague, not like marketing copy. First person is fine. State the real reason plainly, including the alternative that was tried and rejected if there was one. Do not compress into a pitch or a hook, there is room to explain in full. If there is a genuine tradeoff or limitation, say so, do not smooth it over.
+
 ## Never violate
 
 - No raw hex colors in component CSS (`#0A0A0A`) — use a semantic token.
