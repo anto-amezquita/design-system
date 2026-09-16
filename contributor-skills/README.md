@@ -8,6 +8,7 @@ Adopted from the ai-product-starter-kit's `/skills` convention, renamed to `/con
 
 - `design-system/SKILL.md` — deciding whether something is a token, component, pattern, or one-off; reviewing tokens/components/patterns for consistency
 - `token-audit/SKILL.md` — the repeatable technique for auditing component CSS against the token system (used for the 2026-09-02 duration and line-height audits)
+- `decision-proposal/SKILL.md` — turning a harvested draft in `decisions/proposed/` into a real ADR, or rejecting it; the accept/reject bar, and how to tune the harvester
 - `governance-audit/SKILL.md` — checking the repo's own governance docs (AGENTS.md, docs/architecture.md, docs/quality.md, ADRs, specs) for cross-file contradictions, dead pointers, and stale counts before committing — run this before any change to those files
 
 Use the relevant skill when the task matches. Read `AGENTS.md` first regardless — it's the router.
