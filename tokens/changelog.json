@@ -338,7 +338,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "d29faae",
+      "type": "feat",
+      "scope": "heading",
+      "message": "add weight prop, replace title weight overrides (ADR 0010)",
+      "date": "2026-09-16",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
