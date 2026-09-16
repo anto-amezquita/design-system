@@ -340,6 +340,46 @@
   ],
   "unreleased": [
     {
+      "sha": "4f41f7f",
+      "type": "fix",
+      "scope": "input,textarea",
+      "message": "put field labels on the 4px grid",
+      "date": "2026-09-16",
+      "breaking": false
+    },
+    {
+      "sha": "a263445",
+      "type": "fix",
+      "scope": "tokens",
+      "message": "restore micro and static h1-h3 line-height tokens",
+      "date": "2026-09-16",
+      "breaking": false
+    },
+    {
+      "sha": "e33b377",
+      "type": "refactor",
+      "scope": "tokens",
+      "message": "remove unused line-height tokens",
+      "date": "2026-09-16",
+      "breaking": false
+    },
+    {
+      "sha": "d90bcd6",
+      "type": "refactor",
+      "scope": "tokens",
+      "message": "remove unused 10px size and line-height-micro",
+      "date": "2026-09-16",
+      "breaking": false
+    },
+    {
+      "sha": "bec172f",
+      "type": "fix",
+      "scope": "tokens",
+      "message": "use line-height-small for 12px text",
+      "date": "2026-09-16",
+      "breaking": false
+    },
+    {
       "sha": "ce43383",
       "type": "feat",
       "scope": "tokens",
