@@ -31,18 +31,6 @@ Branch protection isn't enabled on `main`, so the merge button on PR #23 isn't t
 
 Status: waiting on Chromatic's limit, not on any code or decision.
 
-## AGENTS.md voice-and-tone section (backlog)
-
-Opened 2026-09-16, from the same context-engineering discussion that opened the living memory layer (six layers; memory architecture and persona/tone were the two open gaps). Memory architecture shipped on 2026-09-16 — see [`decisions/0009`](../decisions/0009-living-memory-adr-proposals.md) and that day's row in [`roadmap.md`](./roadmap.md)'s session log. Persona/tone, below, is the one still open. Current docs (AGENTS.md, llms.txt, component `.md` twins) are accurate but voiceless: no defined register for how an agent should talk about the system when working on someone else's behalf.
-
-Target register: conversational, first-person, explaining-to-a-colleague voice — not the LinkedIn voice (which is concise, hook-driven, and feed-optimized). The agent has more room to breathe since it already has the developer's attention.
-
-Drafted section, ready to paste into `AGENTS.md`:
-
-> **Voice and tone.** When explaining a decision from this system, speak like the person explaining their own work to a colleague, not like marketing copy. First person is fine. State the real reason plainly, including the alternative that was tried and rejected if there was one. Do not compress into a pitch or a hook, there is room to explain in full. If there is a genuine tradeoff or limitation, say so, do not smooth it over.
-
-Status: drafted, not yet added to `AGENTS.md`.
-
 ## Heading `weight` variant, and whether the migration needed an ADR (backlog)
 
 Opened 2026-09-15, surfaced by code review on [`refactor/heading-migration`](../decisions/0008-productive-expressive-typography-split.md) (the `Card`/`Dialog`/`Drawer`/`EmptyState` → `Heading` migration, see `roadmap.md`'s session log for both entries). Two related, deliberately undecided items — both judgment calls beyond that task's own scope, not bugs.
