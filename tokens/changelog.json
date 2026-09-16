@@ -4,6 +4,46 @@
   },
   "versions": [
     {
+      "tag": "v0.5.0",
+      "date": "2026-09-16",
+      "sha": "1af10ba",
+      "entries": [
+        {
+          "sha": "75cf9b5",
+          "type": "fix",
+          "scope": null,
+          "message": "registry manifest gap and changelog staleness from Heading migration; trim now-redundant title CSS",
+          "date": "2026-09-15",
+          "breaking": false
+        },
+        {
+          "sha": "42f01ba",
+          "type": "refactor",
+          "scope": null,
+          "message": "migrate Card/Dialog/Drawer/EmptyState titles onto Heading primitive",
+          "date": "2026-09-15",
+          "breaking": false
+        },
+        {
+          "sha": "0348876",
+          "type": "fix",
+          "scope": null,
+          "message": "address code-review findings on Heading primitive PR",
+          "date": "2026-09-15",
+          "breaking": false
+        },
+        {
+          "sha": "868e727",
+          "type": "feat",
+          "scope": null,
+          "message": "add Heading primitive with fluid/static typography split",
+          "date": "2026-09-15",
+          "breaking": false
+        }
+      ],
+      "entryCount": 4
+    },
+    {
       "tag": "v0.4.0",
       "date": "2026-09-15",
       "sha": "b682669",
@@ -298,40 +338,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "75cf9b5",
-      "type": "fix",
-      "scope": null,
-      "message": "registry manifest gap and changelog staleness from Heading migration; trim now-redundant title CSS",
-      "date": "2026-09-15",
-      "breaking": false
-    },
-    {
-      "sha": "42f01ba",
-      "type": "refactor",
-      "scope": null,
-      "message": "migrate Card/Dialog/Drawer/EmptyState titles onto Heading primitive",
-      "date": "2026-09-15",
-      "breaking": false
-    },
-    {
-      "sha": "0348876",
-      "type": "fix",
-      "scope": null,
-      "message": "address code-review findings on Heading primitive PR",
-      "date": "2026-09-15",
-      "breaking": false
-    },
-    {
-      "sha": "868e727",
-      "type": "feat",
-      "scope": null,
-      "message": "add Heading primitive with fluid/static typography split",
-      "date": "2026-09-15",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
