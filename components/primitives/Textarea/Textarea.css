@@ -93,7 +93,7 @@
   font-family: var(--font-family-base);
   font-size: var(--textarea-hint-size);
   color: var(--color-text-secondary);
-  line-height: var(--line-height-micro);
+  line-height: var(--line-height-small);
 }
 
 .textarea-field--error .textarea-field__hint {

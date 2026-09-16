@@ -340,10 +340,10 @@
   ],
   "unreleased": [
     {
-      "sha": "d29faae",
+      "sha": "ce43383",
       "type": "feat",
-      "scope": "heading",
-      "message": "add weight prop, replace title weight overrides (ADR 0010)",
+      "scope": "tokens",
+      "message": "tie static line-heights to the 4px grid (decisions/0012)",
       "date": "2026-09-16",
       "breaking": false
     }

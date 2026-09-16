@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 28,
-    "tokenCount": 216
+    "tokenCount": 215
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -757,18 +757,16 @@
     "line-height-lead": [
       "components/composition/Dialog/Dialog.css"
     ],
-    "line-height-micro": [
-      "components/composition/Tooltip/Tooltip.css",
-      "components/patterns/Table/Table.css",
-      "components/primitives/Input/Input.css",
-      "components/primitives/Textarea/Textarea.css"
-    ],
     "line-height-small": [
       "components/composition/Toast/Toast.css",
+      "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
-      "components/patterns/Hero/Hero.css"
+      "components/patterns/Hero/Hero.css",
+      "components/patterns/Table/Table.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Textarea/Textarea.css"
     ],
     "opacity-disabled": [
       "components/patterns/Accordion/Accordion.css",

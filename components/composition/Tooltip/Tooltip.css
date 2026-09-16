@@ -16,7 +16,7 @@
   font-family: var(--font-family-base);
   font-size: var(--tooltip-font-size);
   font-weight: var(--tooltip-font-weight);
-  line-height: var(--line-height-micro);
+  line-height: var(--line-height-small);
   border-radius: var(--tooltip-border-radius);
   box-shadow: var(--shadow-toast);
   max-width: var(--tooltip-max-width);

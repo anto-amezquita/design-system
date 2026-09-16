@@ -98,7 +98,7 @@
   font-family: var(--font-family-base);
   font-size: var(--input-hint-size);
   color: var(--color-text-secondary);
-  line-height: var(--line-height-micro);
+  line-height: var(--line-height-small);
 }
 
 .input-field--error .input-field__hint {

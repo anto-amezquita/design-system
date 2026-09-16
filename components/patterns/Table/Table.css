@@ -43,7 +43,7 @@
 .table__header {
   padding: var(--space-control-padding-y) var(--space-control-padding-x);
   font-size: var(--table-header-font-size);
-  line-height: var(--line-height-micro);
+  line-height: var(--line-height-small);
   font-weight: var(--table-header-font-weight);
   color: var(--color-text-secondary);
   text-align: left;
@@ -137,7 +137,7 @@
 .table__foot .table__cell {
   color: var(--color-text-secondary);
   font-size: var(--table-header-font-size);
-  line-height: var(--line-height-micro);
+  line-height: var(--line-height-small);
   font-weight: var(--table-header-font-weight);
   border-top: var(--border-width-default) solid var(--color-border-default);
   border-bottom: none;
@@ -148,7 +148,7 @@
 .table__caption {
   padding: var(--space-control-padding-y) var(--space-control-padding-x);
   font-size: var(--table-header-font-size);
-  line-height: var(--line-height-micro);
+  line-height: var(--line-height-small);
   color: var(--color-text-secondary);
   text-align: left;
   caption-side: top;
