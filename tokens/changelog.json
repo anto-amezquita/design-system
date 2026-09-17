@@ -340,6 +340,14 @@
   ],
   "unreleased": [
     {
+      "sha": "36f4113",
+      "type": "docs",
+      "scope": null,
+      "message": "correct 0014's claim about portfolio's case-study width tokens",
+      "date": "2026-09-17",
+      "breaking": false
+    },
+    {
       "sha": "476911f",
       "type": "feat",
       "scope": "tokens",
