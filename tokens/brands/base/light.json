@@ -557,7 +557,7 @@
   "size-container-text": {
     "$value": "{size.container-45}",
     "$type": "dimension",
-    "$description": "Max width for running text (720px at a 16px root, about 65 characters of font-size-body). Use as min(var(--size-container-text), 100%) so it fills narrow screens. See decisions/0014."
+    "$description": "Max width for running text (720px at a 16px root, about 65 characters of font-size-body). Use directly as max-width, or as min(var(--size-container-text), 100%) for width or grid tracks. See decisions/0014."
   },
   "size-container-media": {
     "$value": "{size.container-60}",

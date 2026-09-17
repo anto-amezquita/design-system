@@ -8,7 +8,7 @@ Accepted
 
 This system had no shared answer to "how wide should this be". The primitives had `size.layout-md/lg/xl` (1024/1200/1440px) and one semantic token, `space-layout-max-width` (1200px), filed under spacing. Nothing covered reading width or media width.
 
-The portfolio site, the main consumer, shows what happens without one: about 40 different `max-width` values (`720px` nine times, `60ch` nine times, `52ch`, `56ch`, `64ch`, `68ch`, `72ch` and so on) and 11 different breakpoints. Two tokens it uses for case-study reading and breakout widths, `--space-reading-width` and `--space-breakout-width`, were never defined anywhere, so those rules have silently computed to `max-width: none`.
+The portfolio site, the main consumer, shows what happens without one: about 40 different `max-width` values (`720px` nine times, `60ch` nine times, `52ch`, `56ch`, `64ch`, `68ch`, `72ch` and so on) and 11 different breakpoints. Its case studies define their own local reading and breakout widths (`--space-reading-width: 720px`, `--space-breakout-width: 960px` in `styles/case.css`), because this system had nothing to offer.
 
 The trigger was the 0.6.0 upgrade itself: `<body>` moving to 18px widened two portfolio reading columns by about 88px, because they were sized in `ch`, which follows the element's own font size.
 
@@ -24,7 +24,7 @@ Researched before deciding (2026-09-17):
 
 ## Decision
 
-Five semantic tokens, smallest to largest, each a max width meant to be used as `min(var(--token), 100%)` so it fills narrow screens:
+Five semantic tokens, smallest to largest. As `max-width` they can be used directly; as a `width` or a grid track they need `min(var(--token), 100%)` so they fill narrow screens:
 
 | Token | Value | Relationship | For |
 |---|---|---|---|
@@ -57,12 +57,12 @@ Backed by new primitives `size.container-45/60/80/90` and `size.container-viewpo
 ### Positive
 - One named width for each job, with fixed 4/3 steps between the three content tiers.
 - Widths stay put when an element's font size changes, and still scale with the user's font-size setting.
-- The portfolio's two undefined tokens have somewhere real to point.
+- The portfolio's local case-study widths (720px and 960px) map exactly onto `size-container-text` and `size-container-media`, so they can move to the system without changing anything visually.
 
 ### Negative
 - The site tier needs a media query at the call site, because of the `@media` limitation. Easy to apply inconsistently until breakpoint tokens exist.
 - `space-layout-max-width` (1200px) and `size-container-page` (1440px) coexist for now, with different values.
-- `min(…, 100%)` is a convention, not something the token enforces. Consumers who forget it get horizontal overflow on small screens.
+- `min(…, 100%)` is a convention, not something the token enforces. Consumers who use a tier as `width` or a grid track without it get horizontal overflow on small screens.
 
 ## Related files
 
