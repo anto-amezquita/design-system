@@ -21,12 +21,6 @@
 
 Also accepts all props of: `Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange' | 'value' | 'defaultValue' | 'children'>`
 
-## Tokens
-
-| Token | Type | Value |
-|---|---|---|
-| `--textarea-hint-size` | dimension | `12px` |
-
 ## Usage example
 
 ```tsx

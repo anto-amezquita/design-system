@@ -7,7 +7,7 @@
 
   --dialog-close-size
   --font-family-base, --font-family-heading, --color-text-primary, --color-text-secondary
-  --line-height-heading, --line-height-body, --letter-spacing-heading
+  --line-height-h4, --line-height-body, --letter-spacing-heading
   --border-radius-interactive, --space-component-gap, --space-inline-gap, --space-element-gap
   --duration-interaction, --duration-transition, --easing-default, --easing-out
   --color-border-focus, --font-size-body
@@ -15,7 +15,7 @@
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-border-default, --border-width-default, --color-surface-primary
   --border-radius-component, --space-element-gap
-  --color-surface-tertiary, --font-size-lead, --font-size-h4, --font-weight-title
+  --color-surface-tertiary, --font-size-h4, --font-weight-title
 
   --space-dialog-padding-mobile, --space-dialog-padding-tablet,
   --space-dialog-padding-desktop — responsive .dialog__content padding,
@@ -149,35 +149,20 @@
 
 .dialog__title {
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-lead);
+  font-size: var(--font-size-h4);
   font-weight: var(--font-weight-title);
-  line-height: var(--line-height-heading);
+  line-height: var(--line-height-h4);
   letter-spacing: var(--letter-spacing-heading);
   color: var(--color-text-primary);
   margin: 0;
 }
 
-/* Dialog now composes the Heading primitive internally (docs/backlog.md
-   migration) via BaseSheet.tsx, which adds .heading/.heading--h4/
-   .heading--title classes alongside .dialog__title. AlertDialog.tsx still
-   uses .dialog__title directly (not via Heading), so the rule above stays
-   untouched — it's the only thing sizing/styling AlertDialog's title,
-   font-weight included.
-
-   When composed via Heading, both rules above and Heading's own apply at
-   the same (0,1,0) specificity, so which wins is order-dependent. Weight
-   is safe either way — .dialog__title and .heading--title both resolve to
-   font-weight-title (decisions/0010). font-size is not: .dialog__title's
-   font-size-lead would tie with .heading--h4's font-size-h4, so it's
-   pinned here explicitly — the two tokens are the same value today by
-   design (decisions/0008), but when this title IS composed via Heading,
-   font-size-h4 is the authoritative source; if the two tokens ever
-   diverge, this title should keep following Heading's H4, not drift from
-   it. Compound selector (0,2,0) beats both regardless of CSS import
-   order. */
-.heading.dialog__title {
-  font-size: var(--font-size-h4);
-}
+/* Dialog composes the Heading primitive via BaseSheet.tsx, which adds
+   .heading/.heading--h4/.heading--title alongside .dialog__title.
+   AlertDialog.tsx uses .dialog__title directly, so the rule above is the
+   only thing styling its title. Both paths resolve to the same H4 size,
+   line-height and title weight, so no compound override is needed
+   (decisions/0013 merged font-size-lead into font-size-h4). */
 
 /* Description */
 

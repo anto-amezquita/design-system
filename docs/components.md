@@ -129,7 +129,7 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 - `--card-padding`, `--card-gap`
 - `--card-title-size`, `--card-title-weight`
 - `--card-description-size`, `--card-description-color`
-- `--font-family-heading`, `--line-height-heading`, `--line-height-body`
+- `--font-family-heading`, `--line-height-control`
 - `--letter-spacing-heading`, `--color-text-primary`, `--space-inline-gap`
 
 **Accessibility**
@@ -173,7 +173,7 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 - `--input-border-radius`, `--input-padding-x`, `--input-padding-y`, `--input-font-size`
 - `--input-placeholder-color`
 - `--input-label-size`, `--input-label-weight`, `--input-label-color`
-- `--input-hint-size`, `--input-hint-color`, `--input-error-color`
+- `--font-size-caption`, `--input-hint-color`, `--input-error-color`
 - `--font-family-base`, `--duration-interaction`, `--easing-default`
 - `--space-inline-gap`, `--opacity-disabled`
 
@@ -219,7 +219,7 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 - `--dialog-title-size`, `--dialog-title-weight`
 - `--dialog-close-size`, `--dialog-close-color`, `--dialog-close-hover`
 - `--font-family-base`, `--font-family-heading`, `--color-text-primary`, `--color-text-secondary`
-- `--line-height-heading`, `--line-height-body`, `--letter-spacing-heading`
+- `--line-height-h4`, `--line-height-body`, `--letter-spacing-heading`
 - `--border-radius-interactive`, `--space-component-gap`, `--space-element-gap`, `--space-inline-gap`
 - `--duration-interaction`, `--duration-transition`, `--easing-default`, `--easing-out`
 - `--color-border-focus`
@@ -339,7 +339,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 **Tokens consumed**
 - `--tag-background`, `--tag-foreground`, `--tag-border`, `--tag-border-width`
 - `--tag-border-radius`, `--tag-padding-x`, `--tag-padding-y`
-- `--tag-font-size`, `--tag-font-weight`
+- `--font-size-caption`, `--tag-font-weight`
 - `--tag-accent-background`, `--tag-accent-foreground`, `--tag-accent-border`
 - `--tag-muted-background`, `--tag-muted-foreground`, `--tag-muted-border`
 
@@ -496,32 +496,33 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 | Field | Value |
 |---|---|
-| **Purpose** | Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level |
+| **Purpose** | Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level |
 | **Figma name** | `Heading` |
 | **Code name** | `Heading` |
 | **Storybook path** | `Components/Heading` |
 
 **Props / variants**
-- `level` (required): `1`–`6` — controls visual size only. `1`–`3` use fluid (`clamp()`-based) sizing that scales with viewport width; `4`–`6` are static, fixed-size — see decisions/0008 for why the split sits there
+- `level` (required): `1`–`5` — controls visual size only. `1`–`3` use fluid (`clamp()`-based) sizing that scales with viewport width; `4`–`5` are static, fixed-size — see decisions/0008 for why the split sits there, and decisions/0013 for why there's no H6 size
 - `as`: `'h1'`–`'h6'`, optional, defaults to matching `level` (`level={2}` renders `<h2>`) — set explicitly when the correct document-outline position diverges from the desired visual size (e.g. a visually small `H1` that must stay a real `<h1>` for SEO/screen-reader navigation)
 
 **Required states**
 - [x] H1–H3 (fluid)
-- [x] H4–H6 (static)
+- [x] H4–H5 (static)
 - [x] `level`/`as` decoupled (visual size independent of rendered tag)
 
 **Tokens consumed**
 - `--font-family-heading`, `--font-weight-heading`, `--color-text-primary`, `--letter-spacing-heading`
 - `--font-size-h1-fluid`, `--line-height-display`
 - `--font-size-h2-fluid`, `--font-size-h3-fluid`, `--line-height-heading`
-- `--font-size-h4`, `--font-size-h5`, `--font-size-h6`
+- `--font-size-h4`, `--font-size-h5`
+- `--line-height-h4`, `--line-height-h5`
 
 **Accessibility**
 - Renders a real `h1`–`h6` element — always reflects the document outline correctly via `as`, never rely on `level` alone for that
 - No ARIA requirements beyond correct heading-level nesting in the surrounding page
 
 **Chromatic stories**
-- `H1`, `H2`, `H3`, `H4`, `H5`, `H6`, `AllLevels`, `LevelAsDecoupling`, `DarkMode`
+- `H1`, `H2`, `H3`, `H4`, `H5`, `AllLevels`, `LevelAsDecoupling`, `DarkMode`
 
 ---
 

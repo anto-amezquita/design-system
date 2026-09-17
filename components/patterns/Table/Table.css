@@ -1,7 +1,7 @@
 /*
   Tokens consumed:
 
-  --table-header-font-size, --table-header-font-weight
+  --table-header-font-weight
 
 
 
@@ -10,7 +10,7 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-accent-default
-  --space-control-padding-x, --space-control-padding-y, --color-surface-tertiary, --border-radius-component, --space-tight-gap
+  --space-control-padding-x, --space-control-padding-y, --color-surface-tertiary, --border-radius-component, --space-tight-gap, --font-size-caption, --line-height-caption
 */
 
 .table__wrapper {
@@ -30,6 +30,7 @@
   border-collapse: collapse;
   font-family: var(--font-family-base);
   font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
   color: var(--color-text-primary);
 }
 
@@ -41,7 +42,8 @@
 
 .table__header {
   padding: var(--space-control-padding-y) var(--space-control-padding-x);
-  font-size: var(--table-header-font-size);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
   font-weight: var(--table-header-font-weight);
   color: var(--color-text-secondary);
   text-align: left;
@@ -134,7 +136,8 @@
 
 .table__foot .table__cell {
   color: var(--color-text-secondary);
-  font-size: var(--table-header-font-size);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
   font-weight: var(--table-header-font-weight);
   border-top: var(--border-width-default) solid var(--color-border-default);
   border-bottom: none;
@@ -144,7 +147,8 @@
 
 .table__caption {
   padding: var(--space-control-padding-y) var(--space-control-padding-x);
-  font-size: var(--table-header-font-size);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
   color: var(--color-text-secondary);
   text-align: left;
   caption-side: top;

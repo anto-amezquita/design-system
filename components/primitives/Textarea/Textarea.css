@@ -3,14 +3,13 @@
 
 
 
-  --textarea-hint-size
   --font-family-base, --duration-interaction, --easing-default
   --space-inline-gap, --opacity-disabled, --color-border-focus, --font-size-xs
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --font-size-control, --color-surface-primary
   --border-width-interactive, --color-border-strong, --color-feedback-error
-  --border-radius-interactive, --space-control-padding-x, --space-control-padding-y, --font-weight-label, --font-size-label
+  --border-radius-interactive, --space-control-padding-x, --space-control-padding-y, --font-weight-label, --font-size-small, --line-height-label, --font-size-caption, --line-height-caption
 */
 
 .textarea-field {
@@ -21,10 +20,10 @@
 
 .textarea-field__label {
   font-family: var(--font-family-base);
-  font-size: var(--font-size-label);
+  font-size: var(--font-size-small);
   font-weight: var(--font-weight-label);
   color: var(--color-text-primary);
-  line-height: 1;
+  line-height: var(--line-height-label);
 }
 
 .textarea-field__wrapper {
@@ -65,7 +64,7 @@
   resize: vertical;
   cursor: inherit;
   box-sizing: border-box;
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-control);
 }
 
 .textarea-field__textarea::placeholder {
@@ -91,9 +90,9 @@
 
 .textarea-field__hint {
   font-family: var(--font-family-base);
-  font-size: var(--textarea-hint-size);
+  font-size: var(--font-size-caption);
   color: var(--color-text-secondary);
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-caption);
 }
 
 .textarea-field--error .textarea-field__hint {
@@ -104,7 +103,7 @@
 
 .textarea-field__count {
   font-family: var(--font-family-base);
-  font-size: var(--textarea-hint-size);
+  font-size: var(--font-size-caption);
   color: var(--color-text-secondary);
   text-align: right;
   line-height: 1;

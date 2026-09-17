@@ -94,7 +94,7 @@ export const Horizontal: Story = {
               alignItems: 'center',
               justifyContent: 'center',
               color: 'var(--color-text-secondary)',
-              fontSize: 'var(--font-size-label)',
+              fontSize: 'var(--font-size-small)',
               fontFamily: 'var(--font-family-base)',
             }}
           >
@@ -176,7 +176,7 @@ export const WithMedia: Story = {
               alignItems: 'center',
               justifyContent: 'center',
               color: 'var(--color-text-secondary)',
-              fontSize: 'var(--font-size-label)',
+              fontSize: 'var(--font-size-small)',
               fontFamily: 'var(--font-family-base)',
               letterSpacing: '0.08em',
               textTransform: 'uppercase',

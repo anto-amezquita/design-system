@@ -2,7 +2,7 @@
   Tokens consumed:
   --datatable-gap, --datatable-footer-gap
   --datatable-filter-cell-padding-y
-  --color-text-secondary, --font-size-small, --font-family-base
+  --color-text-secondary, --font-size-small, --line-height-small, --font-family-base
   --size-touch-target
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
@@ -31,6 +31,7 @@
 
 .data-table__count {
   font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
   color: var(--color-text-secondary);
 }
 
@@ -52,5 +53,6 @@
   text-align: center;
   color: var(--color-text-secondary);
   font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
   padding-block: var(--space-container-padding);
 }

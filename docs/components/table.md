@@ -21,7 +21,6 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--table-header-font-size` | dimension | `12px` |
 | `--table-header-font-weight` | fontWeight | `600` |
 
 ## Usage example

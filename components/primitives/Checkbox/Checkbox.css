@@ -110,7 +110,7 @@
   font-size: var(--font-size-control);
   color: var(--color-text-primary);
   cursor: pointer;
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-control);
   user-select: none;
 }
 

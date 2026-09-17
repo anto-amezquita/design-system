@@ -12,7 +12,7 @@
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-surface-primary
   --border-width-interactive, --color-border-strong, --border-radius-interactive
-  --space-control-padding-x, --space-control-padding-y, --shadow-dropdown, --border-radius-component, --font-weight-label, --font-size-label
+  --space-control-padding-x, --space-control-padding-y, --shadow-dropdown, --border-radius-component, --font-weight-label, --font-size-small
 */
 
 /* Trigger */
@@ -26,6 +26,7 @@
   padding: var(--space-control-padding-y) var(--space-control-padding-x);
   font-family: var(--font-family-base);
   font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
   color: var(--color-text-primary);
   background: var(--color-surface-primary);
   border: var(--border-width-interactive) solid var(--color-border-default);
@@ -106,6 +107,7 @@
   padding: var(--select-item-padding-y) var(--select-item-padding-x);
   font-family: var(--font-family-base);
   font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
   color: var(--color-text-primary);
   border-radius: var(--border-radius-interactive);
   cursor: pointer;
@@ -128,7 +130,8 @@
 .select__label {
   padding: var(--select-item-padding-y) var(--select-item-padding-x);
   font-family: var(--font-family-base);
-  font-size: var(--font-size-label);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-label);
   font-weight: var(--font-weight-label);
   color: var(--color-text-secondary);
 }

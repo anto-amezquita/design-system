@@ -8,7 +8,7 @@
       "name": "theme",
       "type": "registry:theme",
       "title": "Design tokens",
-      "description": "130 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
+      "description": "140 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
       "cssVars": {
         "light": {
           "color-neutral-50": "#FAFAF9",
@@ -76,19 +76,16 @@
           "font-size-body": "18px",
           "font-size-control": "16px",
           "font-size-small": "14px",
-          "font-size-label": "14px",
-          "font-size-micro": "10px",
-          "font-size-lead": "24px",
+          "font-size-caption": "12px",
           "font-size-h1": "64px",
           "font-size-display": "clamp(2rem, 0.75rem + 5vw, 5rem)",
           "font-size-h1-fluid": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
           "font-size-h2": "48px",
-          "font-size-h2-fluid": "clamp(1.375rem, 0.75rem + 2.5vw, 3rem)",
+          "font-size-h2-fluid": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
           "font-size-h3": "32px",
           "font-size-h3-fluid": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
           "font-size-h4": "24px",
           "font-size-h5": "20px",
-          "font-size-h6": "18px",
           "font-weight-body": "400",
           "font-weight-heading": "600",
           "font-weight-label": "500",
@@ -96,7 +93,15 @@
           "font-weight-title": "700",
           "font-weight-control": "500",
           "line-height-display": "1.125",
-          "line-height-body": "1.5",
+          "line-height-body": "28px",
+          "line-height-control": "24px",
+          "line-height-small": "20px",
+          "line-height-caption": "16px",
+          "line-height-h1": "80px",
+          "line-height-h2": "60px",
+          "line-height-h3": "40px",
+          "line-height-h4": "32px",
+          "line-height-h5": "24px",
           "line-height-heading": "1.25",
           "line-height-label": "16px",
           "letter-spacing-heading": "-0.02em",
@@ -137,6 +142,11 @@
           "border-width-interactive": "1px",
           "border-width-default": "1px",
           "size-dialog-default": "560px",
+          "size-container-text": "45rem",
+          "size-container-media": "60rem",
+          "size-container-wide": "80rem",
+          "size-container-page": "90rem",
+          "size-container-site": "90vw",
           "color-surface-spotlight": "#1C1917",
           "color-text-frozen-primary": "#1C1917",
           "color-text-frozen-secondary": "#57534E",
@@ -208,19 +218,16 @@
           "font-size-body": "18px",
           "font-size-control": "16px",
           "font-size-small": "14px",
-          "font-size-label": "14px",
-          "font-size-micro": "10px",
-          "font-size-lead": "24px",
+          "font-size-caption": "12px",
           "font-size-h1": "64px",
           "font-size-display": "clamp(2rem, 0.75rem + 5vw, 5rem)",
           "font-size-h1-fluid": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
           "font-size-h2": "48px",
-          "font-size-h2-fluid": "clamp(1.375rem, 0.75rem + 2.5vw, 3rem)",
+          "font-size-h2-fluid": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
           "font-size-h3": "32px",
           "font-size-h3-fluid": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
           "font-size-h4": "24px",
           "font-size-h5": "20px",
-          "font-size-h6": "18px",
           "font-weight-body": "400",
           "font-weight-heading": "600",
           "font-weight-label": "500",
@@ -228,7 +235,15 @@
           "font-weight-title": "700",
           "font-weight-control": "500",
           "line-height-display": "1.125",
-          "line-height-body": "1.5",
+          "line-height-body": "28px",
+          "line-height-control": "24px",
+          "line-height-small": "20px",
+          "line-height-caption": "16px",
+          "line-height-h1": "80px",
+          "line-height-h2": "60px",
+          "line-height-h3": "40px",
+          "line-height-h4": "32px",
+          "line-height-h5": "24px",
           "line-height-heading": "1.25",
           "line-height-label": "16px",
           "letter-spacing-heading": "-0.02em",
@@ -269,6 +284,11 @@
           "border-width-interactive": "1px",
           "border-width-default": "1px",
           "size-dialog-default": "560px",
+          "size-container-text": "45rem",
+          "size-container-media": "60rem",
+          "size-container-wide": "80rem",
+          "size-container-page": "90rem",
+          "size-container-site": "90vw",
           "color-surface-spotlight": "#0F4750",
           "color-text-frozen-primary": "#1C1917",
           "color-text-frozen-secondary": "#57534E",
@@ -325,7 +345,6 @@
       ],
       "cssVars": {
         "light": {
-          "badge-font-size": "12px",
           "badge-font-weight": "500",
           "badge-padding-x": "8px",
           "badge-padding-y": "4px",
@@ -333,7 +352,6 @@
           "badge-dot-size": "8px"
         },
         "dark": {
-          "badge-font-size": "12px",
           "badge-font-weight": "500",
           "badge-padding-x": "8px",
           "badge-padding-y": "4px",
@@ -420,7 +438,7 @@
       "name": "heading",
       "type": "registry:component",
       "title": "Heading",
-      "description": "Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level",
+      "description": "Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level",
       "dependencies": [
         "@amezquita/design-system"
       ],
@@ -445,12 +463,8 @@
         "https://amezquita.dk/r/theme.json"
       ],
       "cssVars": {
-        "light": {
-          "input-hint-size": "12px"
-        },
-        "dark": {
-          "input-hint-size": "12px"
-        }
+        "light": {},
+        "dark": {}
       }
     },
     {
@@ -603,14 +617,12 @@
         "light": {
           "tag-padding-x": "12px",
           "tag-padding-y": "4px",
-          "tag-font-size": "12px",
           "tag-font-weight": "500",
           "tag-muted-background": "transparent"
         },
         "dark": {
           "tag-padding-x": "12px",
           "tag-padding-y": "4px",
-          "tag-font-size": "12px",
           "tag-font-weight": "500",
           "tag-muted-background": "transparent"
         }
@@ -629,12 +641,8 @@
         "https://amezquita.dk/r/theme.json"
       ],
       "cssVars": {
-        "light": {
-          "textarea-hint-size": "12px"
-        },
-        "dark": {
-          "textarea-hint-size": "12px"
-        }
+        "light": {},
+        "dark": {}
       }
     },
     {
@@ -818,7 +826,6 @@
       ],
       "cssVars": {
         "light": {
-          "tooltip-font-size": "12px",
           "tooltip-font-weight": "500",
           "tooltip-border-radius": "4px",
           "tooltip-max-width": "260px",
@@ -827,7 +834,6 @@
           "tooltip-side-offset": "6"
         },
         "dark": {
-          "tooltip-font-size": "12px",
           "tooltip-font-weight": "500",
           "tooltip-border-radius": "4px",
           "tooltip-max-width": "260px",
@@ -1021,11 +1027,9 @@
       ],
       "cssVars": {
         "light": {
-          "table-header-font-size": "12px",
           "table-header-font-weight": "600"
         },
         "dark": {
-          "table-header-font-size": "12px",
           "table-header-font-weight": "600"
         }
       }

@@ -23,7 +23,6 @@ Also accepts all props of: `Omit<React.HTMLAttributes<HTMLSpanElement>, 'childre
 |---|---|---|
 | `--badge-count-size` | dimension | `20px` |
 | `--badge-dot-size` | dimension | `8px` |
-| `--badge-font-size` | dimension | `12px` |
 | `--badge-font-weight` | fontWeight | `500` |
 | `--badge-padding-x` | dimension | `8px` |
 | `--badge-padding-y` | dimension | `4px` |

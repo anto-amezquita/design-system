@@ -72,8 +72,8 @@ export function BaseSheet({
               {/* Radix's Title renders <h2> by default and wires up
                   aria-labelledby via context — asChild preserves both while
                   composing Heading for the visual styling (docs/backlog.md
-                  migration). level=4 matches this title's existing static
-                  size (font-size-lead === font-size-h4); as="h2" keeps the
+                  migration). level=4 matches this title's static H4 size
+                  (the same as AlertDialog's .dialog__title); as="h2" keeps the
                   real DOM tag unchanged. weight="title" is the bold weight
                   both Dialog and Drawer titles use (decisions/0010). */}
               <Heading level={4} as="h2" weight="title" className={b('title')}>{title}</Heading>

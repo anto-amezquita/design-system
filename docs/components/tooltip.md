@@ -25,7 +25,6 @@
 | `--tooltip-arrow-size` | dimension | `8px` |
 | `--tooltip-border-radius` | dimension | `4px` |
 | `--tooltip-delay-duration` | number | `400` |
-| `--tooltip-font-size` | dimension | `12px` |
 | `--tooltip-font-weight` | fontWeight | `500` |
 | `--tooltip-max-width` | dimension | `260px` |
 | `--tooltip-side-offset` | number | `6` |

@@ -258,20 +258,13 @@
   },
   "font-size-small": {
     "$value": "{font-size.sm}",
-    "$type": "dimension"
-  },
-  "font-size-label": {
-    "$value": "{font-size.sm}",
     "$type": "dimension",
-    "$description": "Text size for form-field labels (input, standalone Label, textarea). Corrected from xs to sm, Sep 2026 — role existed but was unused and its value didn't match any actual label component, same shape of bug as font-weight-label (see decisions/0004). Select's label is currently xs, not yet folded in — flagged separately, not assumed to be the same bug."
+    "$description": "14px text: wrapping secondary text (pairs with line-height-small) and single-line form-field labels (pair with line-height-label). font-size-label merged into this role — see decisions/0013."
   },
-  "font-size-micro": {
-    "$value": "{font-size.2xs}",
-    "$type": "dimension"
-  },
-  "font-size-lead": {
-    "$value": "{font-size.lg}",
-    "$type": "dimension"
+  "font-size-caption": {
+    "$value": "{font-size.xs}",
+    "$type": "dimension",
+    "$description": "12px supporting text: hints, tooltips, table headers and captions, badges, tags, and consumer-side eyebrows or metadata. Pairs with line-height-caption — see decisions/0012."
   },
   "font-size-h1": {
     "$value": "{font-size.3xl}",
@@ -290,7 +283,7 @@
     "$type": "dimension"
   },
   "font-size-h2-fluid": {
-    "$value": "clamp(1.375rem, 0.75rem + 2.5vw, 3rem)",
+    "$value": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
     "$type": "dimension"
   },
   "font-size-h3": {
@@ -308,12 +301,7 @@
   "font-size-h5": {
     "$value": "{font-size.emphasis}",
     "$type": "dimension",
-    "$description": "Static (not fluid) by design — see decisions/0008. Pairs with line-height-heading and letter-spacing-heading."
-  },
-  "font-size-h6": {
-    "$value": "{font-size.md}",
-    "$type": "dimension",
-    "$description": "Static (not fluid) by design — see decisions/0008. Pairs with line-height-heading and letter-spacing-heading."
+    "$description": "Static (not fluid) by design — see decisions/0008. Pairs with its own fixed line-height role (decisions/0012) and letter-spacing-heading."
   },
   "font-weight-body": {
     "$value": "{font-weight.regular}",
@@ -347,8 +335,49 @@
     "$type": "number"
   },
   "line-height-body": {
-    "$value": "{line-height.normal}",
-    "$type": "number"
+    "$value": "{line-height.fixed-28}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-body (18px). Redefined from unitless 1.5 to a fixed 4px-grid value — see decisions/0012."
+  },
+  "line-height-control": {
+    "$value": "{line-height.fixed-24}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-control (16px) — see decisions/0012."
+  },
+  "line-height-small": {
+    "$value": "{line-height.fixed-20}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-small (14px) — see decisions/0012."
+  },
+  "line-height-caption": {
+    "$value": "{line-height.fixed-16}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-caption (12px) — see decisions/0012."
+  },
+  "line-height-h1": {
+    "$value": "{line-height.fixed-80}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-h1 (64px, static) — see decisions/0012. The fluid font-size-h1-fluid keeps line-height-display."
+  },
+  "line-height-h2": {
+    "$value": "{line-height.fixed-60}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-h2 (48px, static) — see decisions/0012. The fluid font-size-h2-fluid keeps line-height-heading."
+  },
+  "line-height-h3": {
+    "$value": "{line-height.fixed-40}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-h3 (32px, static) — see decisions/0012. The fluid font-size-h3-fluid keeps line-height-heading."
+  },
+  "line-height-h4": {
+    "$value": "{line-height.fixed-32}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-h4 (24px) — see decisions/0012."
+  },
+  "line-height-h5": {
+    "$value": "{line-height.fixed-24}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-h5 (20px) — see decisions/0012."
   },
   "line-height-heading": {
     "$value": "{line-height.tight}",
@@ -357,7 +386,7 @@
   "line-height-label": {
     "$value": "{line-height.fixed-16}",
     "$type": "dimension",
-    "$description": "Strict-4px-grid line-height for static single-line UI labels (14px label text) — see Label.css."
+    "$description": "Strict-4px-grid line-height for single-line form-field labels at font-size-small (14px) — see Label.css and decisions/0013."
   },
   "letter-spacing-heading": {
     "$value": "-0.02em",
@@ -509,7 +538,8 @@
   },
   "space-layout-max-width": {
     "$value": "{size.layout-lg}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Deprecated: use the size-container-* scale (decisions/0014). Kept at 1200px so existing layouts don't move; to be removed in a later release."
   },
   "border-width-interactive": {
     "$value": "{border-width.thin}",
@@ -523,5 +553,30 @@
   "size-dialog-default": {
     "$value": "{size.dialog-md}",
     "$type": "dimension"
+  },
+  "size-container-text": {
+    "$value": "{size.container-45}",
+    "$type": "dimension",
+    "$description": "Max width for running text (720px at a 16px root, about 65 characters of font-size-body). Use directly as max-width, or as min(var(--size-container-text), 100%) for width or grid tracks. See decisions/0014."
+  },
+  "size-container-media": {
+    "$value": "{size.container-60}",
+    "$type": "dimension",
+    "$description": "Max width for text with media: images, embeds, diagrams sitting in a text column (960px, 4/3 of size-container-text). See decisions/0014."
+  },
+  "size-container-wide": {
+    "$value": "{size.container-80}",
+    "$type": "dimension",
+    "$description": "Max width for wide media that breaks out past size-container-media (1280px, 4/3 of it). See decisions/0014."
+  },
+  "size-container-page": {
+    "$value": "{size.container-90}",
+    "$type": "dimension",
+    "$description": "Max width of a page's centred content area (1440px). See decisions/0014."
+  },
+  "size-container-site": {
+    "$value": "{size.container-viewport-90}",
+    "$type": "dimension",
+    "$description": "Outer site frame from 1024px up (90vw). Below 1024px the site is 100% wide with space-layout-margin gutters. Tokens can't carry the breakpoint; apply this inside a (min-width: 1024px) query. See decisions/0014."
   }
 }

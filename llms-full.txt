@@ -10,14 +10,14 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-355 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+368 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
 
-- primitive: 115
-- component: 110
+- primitive: 124
+- component: 104
 - color: 43
-- typography: 34
+- typography: 39
 - spacing: 19
-- size: 8
+- size: 13
 - motion: 7
 - elevation: 6
 - shadow: 5
@@ -41,7 +41,7 @@ User profile picture with fallback to initials when no image is provided
 Small status indicator or numeric count overlay attached to another element
 
 - Import: `import { Badge } from '@amezquita/design-system/components/primitives/Badge'`
-- Token prefix: `badge-*` (6 tokens)
+- Token prefix: `badge-*` (5 tokens)
 - Storybook: Components/Badge
 - Stories: Default, Count, Dot, AllVariants, AllShapes, AllVariantsAllShapes, DarkMode
 
@@ -65,19 +65,19 @@ Single boolean selection with an associated label; supports indeterminate state
 
 ### Heading
 
-Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level
+Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level
 
 - Import: `import { Heading } from '@amezquita/design-system/components/primitives/Heading'`
 - Token prefix: `heading-*` (0 tokens)
 - Storybook: Components/Heading
-- Stories: H1, H2, H3, H4, H5, H6, AllLevels, LevelAsDecoupling, DarkMode
+- Stories: H1, H2, H3, H4, H5, AllLevels, LevelAsDecoupling, DarkMode
 
 ### Input
 
 Labelled single-line text entry with hint and error states
 
 - Import: `import { Input } from '@amezquita/design-system/components/primitives/Input'`
-- Token prefix: `input-hint-*` (1 tokens)
+- Token prefix: `input-*` (0 tokens)
 - Storybook: Components/Input
 - Stories: Default, WithHint, WithError, Disabled, NoLabel, WithPrefix, WithSuffix, Clearable, Search, AllStates, DarkMode
 
@@ -140,7 +140,7 @@ Binary toggle for on/off settings; renders as a styled checkbox under the hood
 Inline label for categorising or annotating content — non-interactive
 
 - Import: `import { Tag } from '@amezquita/design-system/components/primitives/Tag'`
-- Token prefix: `tag-*` (5 tokens)
+- Token prefix: `tag-*` (4 tokens)
 - Storybook: Components/Tag
 - Stories: Default, Accent, Muted, WithIcon, Removable, AllVariants, InContext, DarkMode
 
@@ -149,7 +149,7 @@ Inline label for categorising or annotating content — non-interactive
 Multi-line text entry with label, hint, and error states — mirrors Input API
 
 - Import: `import { Textarea } from '@amezquita/design-system/components/primitives/Textarea'`
-- Token prefix: `textarea-hint-*` (1 tokens)
+- Token prefix: `textarea-*` (0 tokens)
 - Storybook: Components/Textarea
 - Stories: Default, WithHint, WithError, Disabled, WithCharacterCount, AllStates, DarkMode
 
@@ -214,7 +214,7 @@ Ephemeral notification pushed to a corner of the viewport; auto-dismisses after 
 Contextual label revealed on hover or focus — supplements an icon or truncated text
 
 - Import: `import { Tooltip } from '@amezquita/design-system/components/composition/Tooltip'`
-- Token prefix: `tooltip-*` (7 tokens)
+- Token prefix: `tooltip-*` (6 tokens)
 - Storybook: Components/Tooltip
 - Stories: Default, AllSides, IconButtons, LongContent, NoDelay, DarkMode
 
@@ -279,7 +279,7 @@ Page navigation controls for multi-page data sets; exposes current page and tota
 Static data table with semantic header, body, and row structure
 
 - Import: `import { Table } from '@amezquita/design-system/components/patterns/Table'`
-- Token prefix: `table-header-font-*` (2 tokens)
+- Token prefix: `table-header-font-*` (1 tokens)
 - Storybook: Components/Table
 - Stories: Default, Striped, Bordered, Compact, AllVariants, WithCaption, WithFoot, HorizontalScroll, DarkMode
 

@@ -22,7 +22,6 @@
 
 | Token | Type | Value |
 |---|---|---|
-| `--tag-font-size` | dimension | `12px` |
 | `--tag-font-weight` | fontWeight | `500` |
 | `--tag-muted-background` | color | `transparent` |
 | `--tag-padding-x` | dimension | `12px` |

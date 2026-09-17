@@ -12,7 +12,6 @@
   ],
   "cssVars": {
     "light": {
-      "badge-font-size": "12px",
       "badge-font-weight": "500",
       "badge-padding-x": "8px",
       "badge-padding-y": "4px",
@@ -20,7 +19,6 @@
       "badge-dot-size": "8px"
     },
     "dark": {
-      "badge-font-size": "12px",
       "badge-font-weight": "500",
       "badge-padding-x": "8px",
       "badge-padding-y": "4px",
