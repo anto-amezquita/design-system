@@ -340,6 +340,14 @@
   ],
   "unreleased": [
     {
+      "sha": "476911f",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "add container width scale (decisions/0014)",
+      "date": "2026-09-17",
+      "breaking": false
+    },
+    {
       "sha": "797c753",
       "type": "feat",
       "scope": "tokens",
