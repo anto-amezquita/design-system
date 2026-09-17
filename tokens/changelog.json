@@ -340,6 +340,14 @@
   ],
   "unreleased": [
     {
+      "sha": "cff0463",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "add caption role for 12px text (decisions/0012 amendment)",
+      "date": "2026-09-17",
+      "breaking": false
+    },
+    {
       "sha": "1578600",
       "type": "fix",
       "scope": "input,textarea",
