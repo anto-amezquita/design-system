@@ -4,6 +4,102 @@
   },
   "versions": [
     {
+      "tag": "v0.6.0",
+      "date": "2026-09-17",
+      "sha": "bdd95fe",
+      "entries": [
+        {
+          "sha": "36f4113",
+          "type": "docs",
+          "scope": null,
+          "message": "correct 0014's claim about portfolio's case-study width tokens",
+          "date": "2026-09-17",
+          "breaking": false
+        },
+        {
+          "sha": "476911f",
+          "type": "feat",
+          "scope": "tokens",
+          "message": "add container width scale (decisions/0014)",
+          "date": "2026-09-17",
+          "breaking": false
+        },
+        {
+          "sha": "797c753",
+          "type": "feat",
+          "scope": "tokens",
+          "message": "simplify the type scale (decisions/0013)",
+          "date": "2026-09-17",
+          "breaking": true
+        },
+        {
+          "sha": "cff0463",
+          "type": "feat",
+          "scope": "tokens",
+          "message": "add caption role for 12px text (decisions/0012 amendment)",
+          "date": "2026-09-17",
+          "breaking": false
+        },
+        {
+          "sha": "1578600",
+          "type": "fix",
+          "scope": "input,textarea",
+          "message": "put field labels on the 4px grid",
+          "date": "2026-09-16",
+          "breaking": false
+        },
+        {
+          "sha": "1bedb3a",
+          "type": "fix",
+          "scope": "tokens",
+          "message": "restore micro and static h1-h3 line-height tokens",
+          "date": "2026-09-16",
+          "breaking": false
+        },
+        {
+          "sha": "85f5f04",
+          "type": "refactor",
+          "scope": "tokens",
+          "message": "remove unused line-height tokens",
+          "date": "2026-09-16",
+          "breaking": false
+        },
+        {
+          "sha": "dc1d8dd",
+          "type": "refactor",
+          "scope": "tokens",
+          "message": "remove unused 10px size and line-height-micro",
+          "date": "2026-09-16",
+          "breaking": false
+        },
+        {
+          "sha": "951de02",
+          "type": "fix",
+          "scope": "tokens",
+          "message": "use line-height-small for 12px text",
+          "date": "2026-09-16",
+          "breaking": false
+        },
+        {
+          "sha": "5c061df",
+          "type": "feat",
+          "scope": "tokens",
+          "message": "tie static line-heights to the 4px grid (decisions/0012)",
+          "date": "2026-09-16",
+          "breaking": false
+        },
+        {
+          "sha": "d29faae",
+          "type": "feat",
+          "scope": "heading",
+          "message": "add weight prop, replace title weight overrides (ADR 0010)",
+          "date": "2026-09-16",
+          "breaking": false
+        }
+      ],
+      "entryCount": 11
+    },
+    {
       "tag": "v0.5.0",
       "date": "2026-09-16",
       "sha": "1af10ba",
@@ -338,96 +434,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "36f4113",
-      "type": "docs",
-      "scope": null,
-      "message": "correct 0014's claim about portfolio's case-study width tokens",
-      "date": "2026-09-17",
-      "breaking": false
-    },
-    {
-      "sha": "476911f",
-      "type": "feat",
-      "scope": "tokens",
-      "message": "add container width scale (decisions/0014)",
-      "date": "2026-09-17",
-      "breaking": false
-    },
-    {
-      "sha": "797c753",
-      "type": "feat",
-      "scope": "tokens",
-      "message": "simplify the type scale (decisions/0013)",
-      "date": "2026-09-17",
-      "breaking": true
-    },
-    {
-      "sha": "cff0463",
-      "type": "feat",
-      "scope": "tokens",
-      "message": "add caption role for 12px text (decisions/0012 amendment)",
-      "date": "2026-09-17",
-      "breaking": false
-    },
-    {
-      "sha": "1578600",
-      "type": "fix",
-      "scope": "input,textarea",
-      "message": "put field labels on the 4px grid",
-      "date": "2026-09-16",
-      "breaking": false
-    },
-    {
-      "sha": "1bedb3a",
-      "type": "fix",
-      "scope": "tokens",
-      "message": "restore micro and static h1-h3 line-height tokens",
-      "date": "2026-09-16",
-      "breaking": false
-    },
-    {
-      "sha": "85f5f04",
-      "type": "refactor",
-      "scope": "tokens",
-      "message": "remove unused line-height tokens",
-      "date": "2026-09-16",
-      "breaking": false
-    },
-    {
-      "sha": "dc1d8dd",
-      "type": "refactor",
-      "scope": "tokens",
-      "message": "remove unused 10px size and line-height-micro",
-      "date": "2026-09-16",
-      "breaking": false
-    },
-    {
-      "sha": "951de02",
-      "type": "fix",
-      "scope": "tokens",
-      "message": "use line-height-small for 12px text",
-      "date": "2026-09-16",
-      "breaking": false
-    },
-    {
-      "sha": "5c061df",
-      "type": "feat",
-      "scope": "tokens",
-      "message": "tie static line-heights to the 4px grid (decisions/0012)",
-      "date": "2026-09-16",
-      "breaking": false
-    },
-    {
-      "sha": "d29faae",
-      "type": "feat",
-      "scope": "heading",
-      "message": "add weight prop, replace title weight overrides (ADR 0010)",
-      "date": "2026-09-16",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
