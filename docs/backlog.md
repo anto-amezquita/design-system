@@ -31,17 +31,9 @@ Branch protection isn't enabled on `main`, so the merge button on PR #23 isn't t
 
 Status: waiting on Chromatic's limit, not on any code or decision.
 
-## Whether the Heading migration itself needed its own ADR (backlog)
-
-Opened 2026-09-15, surfaced by code review on [`refactor/heading-migration`](../decisions/0008-productive-expressive-typography-split.md) (the `Card`/`Dialog`/`Drawer`/`EmptyState` → `Heading` migration, see `roadmap.md`'s session log for both entries). A companion item — whether `Heading` needed a `weight` prop instead of three CSS overrides — was decided 2026-09-16: see `decisions/0010-heading-weight-prop.md`.
-
-**Whether the migration itself needed its own numbered ADR** (next free number is `0011`). `decisions/0008`'s own Consequences section explicitly deferred this migration as "a separate, larger change," and the backlog entry that opened it (now removed) argued it was closing real architectural drift, not just tidying — both signals that lean toward "this was a decision, not just an implementation." Against that: no new token tier, brand, or package was introduced, and the component-facing API didn't change. Repo `CLAUDE.md`'s "Do not… make an architectural change… without writing an ADR" rule is the thing in tension here; `decisions/README.md`'s bar is described as low ("one small file per important decision"), so writing one costs little if the answer is yes.
-
-Status: not started — needs the user's call.
-
 ## Baseline grid: sizes `decisions/0012`'s table doesn't cover (backlog)
 
-Opened 2026-09-16, surfaced while implementing `decisions/0012` on `baseline-grid-vertical-rhythm` (see `roadmap.md`'s session log). The ADR maps line-height roles to the semantic font-size tokens, but three real text sizes in the system aren't in its table. Each got the nearest sensible on-grid value so nothing is left off-grid, and each needs a call. A fourth item covers the portfolio site's upgrade, and a fifth covers controls that use `line-height: 1`.
+Opened 2026-09-16, surfaced while implementing `decisions/0012` (originally on `baseline-grid-vertical-rhythm`, landed via `feat/baseline-grid-line-height`) (see `roadmap.md`'s session log). The ADR maps line-height roles to the semantic font-size tokens, but three real text sizes in the system aren't in its table. Each got the nearest sensible on-grid value so nothing is left off-grid, and each needs a call. A fourth item covers the portfolio site's upgrade, and a fifth covers controls that use `line-height: 1`.
 
 **1. 12px text has no role of its own.** `font-size.xs` is used through component tokens (`tooltip-font-size`, `input-hint-size`, `textarea-hint-size`, `table-header-font-size`), never through a semantic font-size token, so the ADR never listed it. Interim call (2026-09-16): those rules use the next role up, `line-height-small` (20px, the 14px role). That keeps them on the grid, but 12/20 is looser than 12/16, which is Material's caption pairing. Still open: whether 12px gets its own `caption` role and an amendment to 0012.
 
@@ -52,8 +44,6 @@ Opened 2026-09-16, surfaced while implementing `decisions/0012` on `baseline-gri
 **4. The portfolio site needs a migration pass when it upgrades past `0.3.x`.** `~/Documents/github/portfolio` imports this package's CSS and is pinned to `^0.3.1`, so nothing changes for it until it bumps. Then its 71 `var(--line-height-body)` uses become a fixed 28px whatever the text size, and its 34 `var(--line-height-heading)` uses stay at 1.25, including next to static `--font-size-h1`–`h3` (17 uses) where `--line-height-h1`–`h3` now exist. Each needs re-pointing to the role that matches its font size, the same sweep this repo's components got.
 
 **5. Controls that set `line-height: 1` on 14px text get a 14px line box, which isn't a multiple of 4.** `decisions/0003` allows bare `1` for single-line controls, and 0012 didn't revisit it. Two cases left: `.pagination__button` (fixed `--pagination-button-size` box) and `.tabs--sm .tabs__trigger` (inherits `line-height: 1` from `.tabs__trigger`, which has a touch-target `min-height`). In both, the control's box sets the height, so the rhythm holds at the component level; only the text's own line box is off-grid. Worth deciding whether 0012's rule should reach inside fixed-size controls, or whether `line-height: 1` inside a sized box is an accepted exception to write into the ADR. The Input/Textarea field labels had the same issue and were moved to `line-height-label` (16px) to match the standalone Label. 12px and 16px controls with `line-height: 1` (Badge, Tag, Button, Textarea count) already land on the grid.
-
-Also open: `decisions/0012` is still marked `Proposed`, though the code now implements it.
 
 Status: 1 has an interim answer; 2 and 3 need the user's call; 4 waits on the portfolio's upgrade; 5 needs the user's call.
 
