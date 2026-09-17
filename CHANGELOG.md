@@ -1,5 +1,52 @@
 # @amezquita/design-system
 
+## 0.6.0
+
+### Minor Changes
+
+This release reworks the type scale and adds container widths. It removes tokens, so read **Removed** before upgrading.
+
+- 5c061df, cff0463, 797c753: **Line-heights on the 4px grid, and a simpler type scale** (`decisions/0012`, `decisions/0013`). Every static font size now has a fixed pixel line-height on the same 4px grid as the spacing scale. The static scale goes from 13 sizes to 9:
+
+  | Role | Size / line-height |
+  |---|---|
+  | `h1` | 64 / 80px |
+  | `h2` | 48 / 60px |
+  | `h3` | 32 / 40px |
+  | `h4` | 24 / 32px |
+  | `h5` | 20 / 24px |
+  | `body` | 18 / 28px |
+  | `control` | 16 / 24px |
+  | `small` | 14 / 20px (form labels: 14 / 16px with `--line-height-label`) |
+  | `caption` (new) | 12 / 16px |
+
+  Fluid `display` and `h1`–`h3` keep their unitless ratios (`--line-height-display`, `--line-height-heading`).
+
+  **`--line-height-body` is now a fixed `28px`, not `1.5`.** It no longer scales with the element's font size: text inheriting it from `<body>` gets 28px whatever its size. Pair each font size with its own line-height role instead (`--font-size-small` with `--line-height-small`, and so on).
+
+  **Removed, with replacements:**
+
+  - `--font-size-micro` → `--font-size-caption` (10px text becomes 12px)
+  - `--font-size-h6` → `--font-size-h5` / `--line-height-h5`, or `--font-size-body` if you need 18px
+  - `--font-size-label` → `--font-size-small` (same 14px; keep `--line-height-label` for one-line labels)
+  - `--font-size-lead` → `--font-size-h4` / `--line-height-h4` (same 24 / 32px)
+  - `--tooltip-font-size`, `--input-hint-size`, `--textarea-hint-size`, `--table-header-font-size`, `--badge-font-size`, `--tag-font-size` → `--font-size-caption`
+  - `--line-height-normal` (1.5) and `--line-height-loose` (1.75) primitives, and the `font-size.2xs` (10px) primitive: set the value in your own CSS if you used them
+
+  **`Heading`:** `level` is now `1`–`5`. `level={6}` no longer type-checks; use `level={5}`, adding `as="h6"` if you need a real `<h6>`.
+
+  **Visible changes:**
+
+  - Tooltip, Input and Textarea hints, and Table header/foot/caption text: line-height 20px → 16px.
+  - `--font-size-h2-fluid` is now `clamp(1.625rem, 1rem + 2.5vw, 3rem)` (26px → 48px, was 22px → 48px). Fluid H2 is up to 4px larger below about 1280px wide, and never smaller than H3 (before, it was smaller at every width under 800px).
+  - EmptyState's compact title: 18 / 24px → 20 / 24px.
+  - Dialog's title resolves to `--font-size-h4` / `--line-height-h4` directly; the `.heading.dialog__title` override is gone. Same size as before.
+  - Most other static text moves by 1–2px of line-height.
+
+- 476911f: **Container width scale** (`decisions/0014`): `--size-container-text` (45rem), `--size-container-media` (60rem), `--size-container-wide` (80rem), `--size-container-page` (90rem) and `--size-container-site` (90vw, applied from 1024px up; below that the site is 100% wide with `--space-layout-margin` gutters). Use them directly as `max-width`; as a `width` or grid track, wrap them in `min(var(--size-container-*), 100%)` so they fill narrow screens.
+
+  `--space-layout-max-width` is deprecated in favour of this scale. It keeps its 1200px value in this release.
+
 ## 0.5.0
 
 ### Minor Changes
