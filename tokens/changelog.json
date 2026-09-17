@@ -340,6 +340,14 @@
   ],
   "unreleased": [
     {
+      "sha": "797c753",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "simplify the type scale (decisions/0013)",
+      "date": "2026-09-17",
+      "breaking": true
+    },
+    {
       "sha": "cff0463",
       "type": "feat",
       "scope": "tokens",
