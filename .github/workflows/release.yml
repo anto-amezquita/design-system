@@ -38,8 +38,36 @@ jobs:
         run: npm install -g npm@latest
 
       - name: Create Release Pull Request or publish to npm
+        id: changesets
         uses: changesets/action@v1
         with:
           publish: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Fires only when this run actually published (not on the "Version
+      # Packages" PR-open runs). Mints a token scoped to the portfolio repo
+      # specifically — the same GitHub App as self-heal-stale-artifacts.yml's,
+      # but that App must also be installed on anto-amezquita/portfolio (a
+      # separate installation step in GitHub's UI) for this to have anything
+      # to scope to. Portfolio's own sync-design-system.yml picks this up.
+      - name: Mint a token scoped to the portfolio repo
+        if: steps.changesets.outputs.published == 'true'
+        id: portfolio-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ secrets.SELF_HEAL_APP_CLIENT_ID }}
+          private-key: ${{ secrets.SELF_HEAL_APP_PRIVATE_KEY }}
+          owner: anto-amezquita
+          repositories: portfolio
+
+      - name: Notify portfolio of the new release
+        if: steps.changesets.outputs.published == 'true'
+        env:
+          GH_TOKEN: ${{ steps.portfolio-token.outputs.token }}
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          gh api repos/anto-amezquita/portfolio/dispatches \
+            -f event_type=design-system-released \
+            -f "client_payload[version]=$VERSION"
+          echo "Dispatched design-system-released ($VERSION) to anto-amezquita/portfolio"
