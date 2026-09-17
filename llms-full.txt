@@ -10,14 +10,14 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-358 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+368 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
 
-- primitive: 119
+- primitive: 124
 - component: 104
 - color: 43
 - typography: 39
 - spacing: 19
-- size: 8
+- size: 13
 - motion: 7
 - elevation: 6
 - shadow: 5

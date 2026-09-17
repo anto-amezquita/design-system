@@ -538,7 +538,8 @@
   },
   "space-layout-max-width": {
     "$value": "{size.layout-lg}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Deprecated: use the size-container-* scale (decisions/0014). Kept at 1200px so existing layouts don't move; to be removed in a later release."
   },
   "border-width-interactive": {
     "$value": "{border-width.thin}",
@@ -552,5 +553,30 @@
   "size-dialog-default": {
     "$value": "{size.dialog-md}",
     "$type": "dimension"
+  },
+  "size-container-text": {
+    "$value": "{size.container-45}",
+    "$type": "dimension",
+    "$description": "Max width for running text (720px at a 16px root, about 65 characters of font-size-body). Use as min(var(--size-container-text), 100%) so it fills narrow screens. See decisions/0014."
+  },
+  "size-container-media": {
+    "$value": "{size.container-60}",
+    "$type": "dimension",
+    "$description": "Max width for text with media: images, embeds, diagrams sitting in a text column (960px, 4/3 of size-container-text). See decisions/0014."
+  },
+  "size-container-wide": {
+    "$value": "{size.container-80}",
+    "$type": "dimension",
+    "$description": "Max width for wide media that breaks out past size-container-media (1280px, 4/3 of it). See decisions/0014."
+  },
+  "size-container-page": {
+    "$value": "{size.container-90}",
+    "$type": "dimension",
+    "$description": "Max width of a page's centred content area (1440px). See decisions/0014."
+  },
+  "size-container-site": {
+    "$value": "{size.container-viewport-90}",
+    "$type": "dimension",
+    "$description": "Outer site frame from 1024px up (90vw). Below 1024px the site is 100% wide with space-layout-margin gutters. Tokens can't carry the breakpoint; apply this inside a (min-width: 1024px) query. See decisions/0014."
   }
 }

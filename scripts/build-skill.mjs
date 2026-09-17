@@ -154,7 +154,7 @@ function buildSkillMd({ pkg, registry, tokenReference, siteUrls }) {
     '',
     `Component-scoped tokens follow \`--<component-slug>-*\` (e.g. \`--button-padding-x\`) — each component's own reference page (above) lists its real ones.`,
     '',
-    `Composing a page, not just a component — a wrapper's own padding/max-width/section gaps — has real tokens too, easy to miss because no single component page owns them: \`--space-layout-margin\`, \`--space-layout-max-width\`, \`--space-section-gap\`, \`--space-component-gap\`. Use these instead of a guessed pixel value or an invented T-shirt-sized token.`,
+    `Composing a page, not just a component — a wrapper's own padding/max-width/section gaps — has real tokens too, easy to miss because no single component page owns them: \`--space-layout-margin\`, \`--space-section-gap\`, \`--space-component-gap\`, and the max-width scale \`--size-container-text\` / \`-media\` / \`-wide\` / \`-page\` / \`-site\` (wrap each in \`min(…, 100%)\`; \`--space-layout-max-width\` is deprecated). Use these instead of a guessed pixel value or an invented T-shirt-sized token.`,
     '',
     '## What doesn\'t exist',
     '',

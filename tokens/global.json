@@ -509,6 +509,26 @@
     "layout-xl": {
       "$value": "1440px",
       "$type": "dimension"
+    },
+    "container-45": {
+      "$value": "45rem",
+      "$type": "dimension"
+    },
+    "container-60": {
+      "$value": "60rem",
+      "$type": "dimension"
+    },
+    "container-80": {
+      "$value": "80rem",
+      "$type": "dimension"
+    },
+    "container-90": {
+      "$value": "90rem",
+      "$type": "dimension"
+    },
+    "container-viewport-90": {
+      "$value": "90vw",
+      "$type": "dimension"
     }
   }
 }

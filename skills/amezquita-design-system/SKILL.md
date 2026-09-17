@@ -84,7 +84,7 @@ Real semantic token families:
 - **color** (43): `--color-accent-*`, `--color-border-*`, `--color-curtain-*`, `--color-feedback-*`, `--color-neutral-*`, `--color-skeleton-*`, `--color-surface-*`, `--color-text-*`
 - **typography** (39): `--font-family-*`, `--font-size-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
 - **spacing** (19): `--space-compact-*`, `--space-component-*`, `--space-container-*`, `--space-control-*`, `--space-dialog-*`, `--space-element-*`, `--space-inline-*`, `--space-label-*`, `--space-layout-*`, `--space-prominent-*`, `--space-section-*`, `--space-tight-*`
-- **size** (8): `--focus-ring-*`, `--size-dialog-*`, `--size-icon-*`
+- **size** (13): `--focus-ring-*`, `--size-container-*`, `--size-dialog-*`, `--size-icon-*`
 - **motion** (7): `--duration-entrance-*`, `--duration-interaction-*`, `--duration-reveal-*`, `--duration-skeleton-*`, `--duration-spin-*`, `--duration-transition-*`
 - **elevation** (6): `--z-dropdown-*`, `--z-modal-*`, `--z-overlay-*`, `--z-sticky-*`, `--z-toast-*`, `--z-tooltip-*`
 - **shadow** (5): `--shadow-card-*`, `--shadow-dialog-*`, `--shadow-dropdown-*`, `--shadow-toast-*`
@@ -94,7 +94,7 @@ Real semantic token families:
 
 Component-scoped tokens follow `--<component-slug>-*` (e.g. `--button-padding-x`) — each component's own reference page (above) lists its real ones.
 
-Composing a page, not just a component — a wrapper's own padding/max-width/section gaps — has real tokens too, easy to miss because no single component page owns them: `--space-layout-margin`, `--space-layout-max-width`, `--space-section-gap`, `--space-component-gap`. Use these instead of a guessed pixel value or an invented T-shirt-sized token.
+Composing a page, not just a component — a wrapper's own padding/max-width/section gaps — has real tokens too, easy to miss because no single component page owns them: `--space-layout-margin`, `--space-section-gap`, `--space-component-gap`, and the max-width scale `--size-container-text` / `-media` / `-wide` / `-page` / `-site` (wrap each in `min(…, 100%)`; `--space-layout-max-width` is deprecated). Use these instead of a guessed pixel value or an invented T-shirt-sized token.
 
 ## What doesn't exist
 

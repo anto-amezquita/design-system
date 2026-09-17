@@ -121,6 +121,11 @@
   --size-layout-md: 1024px;
   --size-layout-lg: 1200px;
   --size-layout-xl: 1440px;
+  --size-container-45: 45rem;
+  --size-container-60: 60rem;
+  --size-container-80: 80rem;
+  --size-container-90: 90rem;
+  --size-container-viewport-90: 90vw;
   --accordion-content-padding-x: 24px;
   --accordion-content-padding-bottom: 24px;
   --accordion-duration-expand: 650ms;
@@ -356,4 +361,9 @@
   --border-width-interactive: 1px;
   --border-width-default: 1px;
   --size-dialog-default: 560px;
+  --size-container-text: 45rem;
+  --size-container-media: 60rem;
+  --size-container-wide: 80rem;
+  --size-container-page: 90rem;
+  --size-container-site: 90vw;
 }

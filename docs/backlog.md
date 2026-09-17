@@ -45,6 +45,18 @@ Opened 2026-09-16, surfaced while implementing `decisions/0012` (originally on `
 
 Status: 2 and 3 need the user's call; 4 waits on the portfolio's upgrade; 5 needs the user's call.
 
+## Container width scale follow-ups (backlog)
+
+Opened 2026-09-17 with `decisions/0014`, which added the `size-container-text/media/wide/page/site` tokens and deliberately stopped at tokens. Three things left:
+
+**1. Breakpoint tokens.** The site tier switches at 1024px, and component CSS already hardcodes 768px and 1024px (`Dialog.css`). CSS custom properties can't be used inside `@media`, so breakpoints need build-time output: Style Dictionary emitting `@custom-media` (consumers would need PostCSS), SCSS/JS constants, or documented values only. Needs a call on which.
+
+**2. A layout component.** A CSS grid with named lines (text / media / wide / full), as in Ryan Mulligan's layout breakouts, so a page opts children into a tier instead of repeating `min(var(--size-container-*), 100%)` and `margin-inline: auto`. Wait until the portfolio has used the tokens for real.
+
+**3. Retire `space-layout-max-width`.** Deprecated at 1200px, sitting between `size-container-wide` (1280px) and `-media` (960px). Consumers need to pick a tier per use before it can go. `dialog.json`'s use of `size.layout-md` and Hero's `hero-max-width` (800px) / `hero-lead-max-width` (60ch) are worth checking against the scale at the same time.
+
+Status: not started.
+
 ## Self-healing CI (backlog)
 
 Opened 2026-09-08, unblocked by [`decisions/0006`](../decisions/0006-add-layered-automated-testing.md) (real tests now exist for CI to react to). Spec'd in [`specs/self-healing-ci-spec.md`](../specs/self-healing-ci-spec.md), validated against industry precedent in [`self-healing-ci-research.md`](./self-healing-ci-research.md).
