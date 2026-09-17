@@ -1,12 +1,4 @@
 {
-  "badge-font-size": {
-    "$value": "{font-size.xs}",
-    "$type": "dimension",
-    "$extensions": {
-      "amezquita.lint-ignore": ["no-collapsible-token"],
-      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
-    }
-  },
   "badge-font-weight": {
     "$value": "{font-weight.medium}",
     "$type": "fontWeight",

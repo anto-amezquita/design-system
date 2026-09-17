@@ -26,12 +26,6 @@
 
 Also accepts all props of: `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value' | 'defaultValue' | 'prefix' | 'type' | 'children'>`
 
-## Tokens
-
-| Token | Type | Value |
-|---|---|---|
-| `--input-hint-size` | dimension | `12px` |
-
 ## Usage example
 
 ```tsx

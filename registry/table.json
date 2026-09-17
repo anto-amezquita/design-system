@@ -12,11 +12,9 @@
   ],
   "cssVars": {
     "light": {
-      "table-header-font-size": "12px",
       "table-header-font-weight": "600"
     },
     "dark": {
-      "table-header-font-size": "12px",
       "table-header-font-weight": "600"
     }
   }

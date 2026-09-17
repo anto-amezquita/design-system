@@ -55,7 +55,7 @@
         "AllVariantsAllShapes",
         "DarkMode"
       ],
-      "tokenCount": 6,
+      "tokenCount": 5,
       "internal": false
     },
     {
@@ -134,7 +134,7 @@
       "purpose": "Labelled single-line text entry with hint and error states",
       "storybookPath": "Components/Input",
       "storybookTitleId": "components-input",
-      "tokenPrefix": "input-hint",
+      "tokenPrefix": "input",
       "stories": [
         "Default",
         "WithHint",
@@ -148,7 +148,7 @@
         "AllStates",
         "DarkMode"
       ],
-      "tokenCount": 1,
+      "tokenCount": 0,
       "internal": false
     },
     {
@@ -283,7 +283,7 @@
         "InContext",
         "DarkMode"
       ],
-      "tokenCount": 5,
+      "tokenCount": 4,
       "internal": false
     },
     {
@@ -293,7 +293,7 @@
       "purpose": "Multi-line text entry with label, hint, and error states — mirrors Input API",
       "storybookPath": "Components/Textarea",
       "storybookTitleId": "components-textarea",
-      "tokenPrefix": "textarea-hint",
+      "tokenPrefix": "textarea",
       "stories": [
         "Default",
         "WithHint",
@@ -303,7 +303,7 @@
         "AllStates",
         "DarkMode"
       ],
-      "tokenCount": 1,
+      "tokenCount": 0,
       "internal": false
     },
     {
@@ -528,7 +528,7 @@
         "NoDelay",
         "DarkMode"
       ],
-      "tokenCount": 7,
+      "tokenCount": 6,
       "internal": false
     },
     {
@@ -717,7 +717,7 @@
         "HorizontalScroll",
         "DarkMode"
       ],
-      "tokenCount": 2,
+      "tokenCount": 1,
       "internal": false
     },
     {

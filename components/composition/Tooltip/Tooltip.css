@@ -1,12 +1,12 @@
 /*
   Tokens consumed:
-  --tooltip-font-size, --tooltip-font-weight, --tooltip-border-radius
+  --tooltip-font-weight, --tooltip-border-radius
   --tooltip-max-width, --tooltip-arrow-size
   --font-family-base, --duration-interaction, --easing-default
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-surface-inverse, --color-text-inverse, --space-compact-padding-x, --space-compact-padding-y
-  --shadow-toast, --z-tooltip
+  --shadow-toast, --z-tooltip, --font-size-caption, --line-height-caption
 */
 
 .tooltip {
@@ -14,9 +14,9 @@
   color: var(--color-text-inverse);
   padding: var(--space-compact-padding-y) var(--space-compact-padding-x);
   font-family: var(--font-family-base);
-  font-size: var(--tooltip-font-size);
+  font-size: var(--font-size-caption);
   font-weight: var(--tooltip-font-weight);
-  line-height: var(--line-height-small);
+  line-height: var(--line-height-caption);
   border-radius: var(--tooltip-border-radius);
   box-shadow: var(--shadow-toast);
   max-width: var(--tooltip-max-width);

@@ -260,10 +260,15 @@
     "$value": "{font-size.sm}",
     "$type": "dimension"
   },
+  "font-size-caption": {
+    "$value": "{font-size.xs}",
+    "$type": "dimension",
+    "$description": "12px supporting text: hints, tooltips, table headers and captions, badges, tags, and consumer-side eyebrows or metadata. Pairs with line-height-caption — see decisions/0012."
+  },
   "font-size-label": {
     "$value": "{font-size.sm}",
     "$type": "dimension",
-    "$description": "Text size for form-field labels (input, standalone Label, textarea). Corrected from xs to sm, Sep 2026 — role existed but was unused and its value didn't match any actual label component, same shape of bug as font-weight-label (see decisions/0004). Select's label is currently xs, not yet folded in — flagged separately, not assumed to be the same bug."
+    "$description": "Text size for form-field labels (input, standalone Label, textarea). Corrected from xs to sm, Sep 2026 — role existed but was unused and its value didn't match any actual label component, same shape of bug as font-weight-label (see decisions/0004). Select's label was folded in too (decisions/0005, round 25). For 12px text, use font-size-caption."
   },
   "font-size-micro": {
     "$value": "{font-size.2xs}",
@@ -360,6 +365,11 @@
     "$value": "{line-height.fixed-20}",
     "$type": "dimension",
     "$description": "Strict-4px-grid line-height for font-size-small (14px) — see decisions/0012."
+  },
+  "line-height-caption": {
+    "$value": "{line-height.fixed-16}",
+    "$type": "dimension",
+    "$description": "Strict-4px-grid line-height for font-size-caption (12px) — see decisions/0012."
   },
   "line-height-micro": {
     "$value": "{line-height.fixed-16}",

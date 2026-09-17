@@ -1,7 +1,7 @@
 /*
   Tokens consumed:
 
-  --tag-padding-x, --tag-padding-y, --tag-font-size, --tag-font-weight
+  --tag-padding-x, --tag-padding-y, --tag-font-weight
 
   --tag-muted-background
   --font-family-base, --duration-interaction, --easing-default, --color-border-focus
@@ -9,7 +9,7 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-surface-secondary, --color-border-default, --border-width-default, --color-accent-default, --color-accent-foreground
-  --border-radius-pill
+  --border-radius-pill, --font-size-caption
 */
 
 .tag {
@@ -18,7 +18,7 @@
   gap: var(--space-inline-gap);
   padding: var(--tag-padding-y) var(--tag-padding-x);
   font-family: var(--font-family-base);
-  font-size: var(--tag-font-size);
+  font-size: var(--font-size-caption);
   font-weight: var(--tag-font-weight);
   line-height: 1;
   border-radius: var(--border-radius-pill);

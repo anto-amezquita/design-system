@@ -8,7 +8,7 @@
       "name": "theme",
       "type": "registry:theme",
       "title": "Design tokens",
-      "description": "140 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
+      "description": "142 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
       "cssVars": {
         "light": {
           "color-neutral-50": "#FAFAF9",
@@ -76,6 +76,7 @@
           "font-size-body": "18px",
           "font-size-control": "16px",
           "font-size-small": "14px",
+          "font-size-caption": "12px",
           "font-size-label": "14px",
           "font-size-micro": "10px",
           "font-size-lead": "24px",
@@ -99,6 +100,7 @@
           "line-height-body": "28px",
           "line-height-control": "24px",
           "line-height-small": "20px",
+          "line-height-caption": "16px",
           "line-height-micro": "16px",
           "line-height-h1": "80px",
           "line-height-h2": "60px",
@@ -218,6 +220,7 @@
           "font-size-body": "18px",
           "font-size-control": "16px",
           "font-size-small": "14px",
+          "font-size-caption": "12px",
           "font-size-label": "14px",
           "font-size-micro": "10px",
           "font-size-lead": "24px",
@@ -241,6 +244,7 @@
           "line-height-body": "28px",
           "line-height-control": "24px",
           "line-height-small": "20px",
+          "line-height-caption": "16px",
           "line-height-micro": "16px",
           "line-height-h1": "80px",
           "line-height-h2": "60px",
@@ -345,7 +349,6 @@
       ],
       "cssVars": {
         "light": {
-          "badge-font-size": "12px",
           "badge-font-weight": "500",
           "badge-padding-x": "8px",
           "badge-padding-y": "4px",
@@ -353,7 +356,6 @@
           "badge-dot-size": "8px"
         },
         "dark": {
-          "badge-font-size": "12px",
           "badge-font-weight": "500",
           "badge-padding-x": "8px",
           "badge-padding-y": "4px",
@@ -465,12 +467,8 @@
         "https://amezquita.dk/r/theme.json"
       ],
       "cssVars": {
-        "light": {
-          "input-hint-size": "12px"
-        },
-        "dark": {
-          "input-hint-size": "12px"
-        }
+        "light": {},
+        "dark": {}
       }
     },
     {
@@ -623,14 +621,12 @@
         "light": {
           "tag-padding-x": "12px",
           "tag-padding-y": "4px",
-          "tag-font-size": "12px",
           "tag-font-weight": "500",
           "tag-muted-background": "transparent"
         },
         "dark": {
           "tag-padding-x": "12px",
           "tag-padding-y": "4px",
-          "tag-font-size": "12px",
           "tag-font-weight": "500",
           "tag-muted-background": "transparent"
         }
@@ -649,12 +645,8 @@
         "https://amezquita.dk/r/theme.json"
       ],
       "cssVars": {
-        "light": {
-          "textarea-hint-size": "12px"
-        },
-        "dark": {
-          "textarea-hint-size": "12px"
-        }
+        "light": {},
+        "dark": {}
       }
     },
     {
@@ -838,7 +830,6 @@
       ],
       "cssVars": {
         "light": {
-          "tooltip-font-size": "12px",
           "tooltip-font-weight": "500",
           "tooltip-border-radius": "4px",
           "tooltip-max-width": "260px",
@@ -847,7 +838,6 @@
           "tooltip-side-offset": "6"
         },
         "dark": {
-          "tooltip-font-size": "12px",
           "tooltip-font-weight": "500",
           "tooltip-border-radius": "4px",
           "tooltip-max-width": "260px",
@@ -1041,11 +1031,9 @@
       ],
       "cssVars": {
         "light": {
-          "table-header-font-size": "12px",
           "table-header-font-weight": "600"
         },
         "dark": {
-          "table-header-font-size": "12px",
           "table-header-font-weight": "600"
         }
       }

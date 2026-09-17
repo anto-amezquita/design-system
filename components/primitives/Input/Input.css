@@ -2,7 +2,6 @@
   Tokens consumed:
 
 
-  --input-hint-size
   --font-family-base, --duration-interaction, --easing-default
   --space-element-gap, --space-inline-gap, --opacity-disabled, --border-radius-pill
   --color-border-focus
@@ -10,7 +9,7 @@
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --font-size-control, --color-surface-primary
   --border-width-interactive, --color-border-strong, --color-feedback-error
-  --border-radius-interactive, --space-control-padding-x, --space-control-padding-y, --font-weight-label, --font-size-label, --line-height-label
+  --border-radius-interactive, --space-control-padding-x, --space-control-padding-y, --font-weight-label, --font-size-label, --line-height-label, --font-size-caption, --line-height-caption
 */
 
 .input-field {
@@ -96,9 +95,9 @@
 
 .input-field__hint {
   font-family: var(--font-family-base);
-  font-size: var(--input-hint-size);
+  font-size: var(--font-size-caption);
   color: var(--color-text-secondary);
-  line-height: var(--line-height-small);
+  line-height: var(--line-height-caption);
 }
 
 .input-field--error .input-field__hint {

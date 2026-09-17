@@ -173,7 +173,7 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 - `--input-border-radius`, `--input-padding-x`, `--input-padding-y`, `--input-font-size`
 - `--input-placeholder-color`
 - `--input-label-size`, `--input-label-weight`, `--input-label-color`
-- `--input-hint-size`, `--input-hint-color`, `--input-error-color`
+- `--font-size-caption`, `--input-hint-color`, `--input-error-color`
 - `--font-family-base`, `--duration-interaction`, `--easing-default`
 - `--space-inline-gap`, `--opacity-disabled`
 
@@ -339,7 +339,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 **Tokens consumed**
 - `--tag-background`, `--tag-foreground`, `--tag-border`, `--tag-border-width`
 - `--tag-border-radius`, `--tag-padding-x`, `--tag-padding-y`
-- `--tag-font-size`, `--tag-font-weight`
+- `--font-size-caption`, `--tag-font-weight`
 - `--tag-accent-background`, `--tag-accent-foreground`, `--tag-accent-border`
 - `--tag-muted-background`, `--tag-muted-foreground`, `--tag-muted-border`
 

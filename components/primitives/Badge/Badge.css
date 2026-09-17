@@ -1,6 +1,6 @@
 /*
   Tokens consumed:
-  --badge-font-size, --badge-font-weight, --badge-padding-x, --badge-padding-y
+  --badge-font-weight, --badge-padding-x, --badge-padding-y
 
 
 
@@ -15,7 +15,7 @@
   --color-feedback-success-background, --color-feedback-success-foreground, --color-feedback-success-border
   --color-feedback-warning-background, --color-feedback-warning-foreground, --color-feedback-warning-border
   --color-feedback-error-background, --color-feedback-error-foreground, --color-feedback-error-border
-  --color-feedback-info-background, --color-feedback-info-foreground, --color-feedback-info-border
+  --color-feedback-info-background, --color-feedback-info-foreground, --color-feedback-info-border, --font-size-caption
 */
 
 .badge {
@@ -23,7 +23,7 @@
   align-items: center;
   gap: var(--space-tight-gap);
   font-family: var(--font-family-base);
-  font-size: var(--badge-font-size);
+  font-size: var(--font-size-caption);
   font-weight: var(--badge-font-weight);
   line-height: 1;
   padding: var(--badge-padding-y) var(--badge-padding-x);

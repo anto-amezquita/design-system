@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 28,
-    "tokenCount": 215
+    "tokenCount": 211
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -57,9 +57,6 @@
       "components/primitives/Badge/Badge.css"
     ],
     "badge-dot-size": [
-      "components/primitives/Badge/Badge.css"
-    ],
-    "badge-font-size": [
       "components/primitives/Badge/Badge.css"
     ],
     "badge-font-weight": [
@@ -602,6 +599,14 @@
       "components/composition/Drawer/Drawer.css",
       "components/patterns/EmptyState/EmptyState.css"
     ],
+    "font-size-caption": [
+      "components/composition/Tooltip/Tooltip.css",
+      "components/patterns/Table/Table.css",
+      "components/primitives/Badge/Badge.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
+    ],
     "font-size-control": [
       "components/composition/Alert/Alert.css",
       "components/composition/Card/Card.css",
@@ -707,9 +712,6 @@
     "icon-size-xs": [
       "components/primitives/Checkbox/Checkbox.css"
     ],
-    "input-hint-size": [
-      "components/primitives/Input/Input.css"
-    ],
     "letter-spacing-heading": [
       "components/composition/Dialog/Dialog.css",
       "components/patterns/Hero/Hero.css",
@@ -720,6 +722,12 @@
       "components/composition/Drawer/Drawer.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css"
+    ],
+    "line-height-caption": [
+      "components/composition/Tooltip/Tooltip.css",
+      "components/patterns/Table/Table.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Textarea/Textarea.css"
     ],
     "line-height-control": [
       "components/composition/Alert/Alert.css",
@@ -761,14 +769,10 @@
     ],
     "line-height-small": [
       "components/composition/Toast/Toast.css",
-      "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
-      "components/patterns/Hero/Hero.css",
-      "components/patterns/Table/Table.css",
-      "components/primitives/Input/Input.css",
-      "components/primitives/Textarea/Textarea.css"
+      "components/patterns/Hero/Hero.css"
     ],
     "opacity-disabled": [
       "components/patterns/Accordion/Accordion.css",
@@ -972,9 +976,6 @@
     "switch-track-width": [
       "components/primitives/Switch/Switch.css"
     ],
-    "table-header-font-size": [
-      "components/patterns/Table/Table.css"
-    ],
     "table-header-font-weight": [
       "components/patterns/Table/Table.css"
     ],
@@ -983,9 +984,6 @@
     ],
     "tabs-indicator-height": [
       "components/patterns/Tabs/Tabs.css"
-    ],
-    "tag-font-size": [
-      "components/primitives/Tag/Tag.css"
     ],
     "tag-font-weight": [
       "components/primitives/Tag/Tag.css"
@@ -998,9 +996,6 @@
     ],
     "tag-padding-y": [
       "components/primitives/Tag/Tag.css"
-    ],
-    "textarea-hint-size": [
-      "components/primitives/Textarea/Textarea.css"
     ],
     "toast-accent-width": [
       "components/composition/Toast/Toast.css"
@@ -1024,9 +1019,6 @@
       "components/composition/Tooltip/Tooltip.css"
     ],
     "tooltip-border-radius": [
-      "components/composition/Tooltip/Tooltip.css"
-    ],
-    "tooltip-font-size": [
       "components/composition/Tooltip/Tooltip.css"
     ],
     "tooltip-font-weight": [
