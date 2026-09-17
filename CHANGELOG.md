@@ -1,5 +1,40 @@
 # @amezquita/design-system
 
+## 0.6.0
+
+### Minor Changes
+
+- 5c061df: Line-heights for static text now sit on the same 4px grid as the spacing scale (`decisions/0012`). `--line-height-body` changes from `1.5` to `28px`, and ten new semantic roles pair with the other static font sizes: `--line-height-control` (24px), `--line-height-small` (20px), `--line-height-micro` (16px), `--line-height-lead` (32px) and `--line-height-h1` through `--line-height-h6` (80/60/40/32/24/24px). `--line-height-display`, `--line-height-heading` and `--line-height-label` are unchanged, and fluid H1–H3 headings keep their unitless ratios.
+
+  Most components move by 1–2px at most: Heading H4–H6, Dialog's title, Toast, Tooltip, form hints, table headers, Breadcrumb and DataTable text now resolve to exact grid values. 16px control text stays at 24px.
+
+  If your own CSS relies on `--line-height-body`: it is now a fixed pixel value, so it no longer scales with the element's font size. Text inheriting it from `<body>` gets 28px whatever its size. Use the role that matches your font size instead: `--line-height-small` with `--font-size-small`, `--line-height-micro` with `--font-size-micro`, and so on. The same goes for static headings: `--font-size-h1` through `--font-size-h6` now have their own `--line-height-h1` through `--line-height-h6`. Keep `--line-height-heading` and `--line-height-display` for the fluid sizes only.
+
+  **Removed:** the unitless `--line-height-normal` (1.5) and `--line-height-loose` (1.75) primitives. Nothing referenced them. If your own CSS does, set the value in your own CSS instead.
+
+- cff0463: Added a `caption` role for 12px text: `--font-size-caption` (12px) and `--line-height-caption` (16px), amending `decisions/0012`. Tooltip, Input and Textarea hints, Table header/foot/caption text, Badge and Tag now use it.
+
+  Visible change: Tooltip, form hints and Table header/foot/caption text move from a 20px to a 16px line-height (the 12/16 caption pairing), so those boxes get 4px shorter per line. Badge and Tag render the same.
+
+  **Removed:** six component tokens that only pointed at 12px, now covered by `--font-size-caption`: `--tooltip-font-size`, `--input-hint-size`, `--textarea-hint-size`, `--table-header-font-size`, `--badge-font-size`, `--tag-font-size`. If your own CSS references one, use `--font-size-caption` instead.
+
+- 476911f: Added a container width scale (`decisions/0014`): `--size-container-text` (45rem), `--size-container-media` (60rem), `--size-container-wide` (80rem), `--size-container-page` (90rem) and `--size-container-site` (90vw, for 1024px and up). Use each as `min(var(--size-container-*), 100%)` so it fills narrow screens.
+
+  `--space-layout-max-width` is deprecated in favour of this scale. It keeps its 1200px value in this release.
+
+- 797c753: Simplified the type scale (`decisions/0013`): 9 static sizes instead of 13, and H2 no longer renders smaller than H3 on small screens.
+
+  **Removed, with replacements:**
+
+  - `--font-size-micro`, `--line-height-micro` → `--font-size-caption`, `--line-height-caption` (10px text becomes 12px)
+  - `--font-size-h6`, `--line-height-h6` → `--font-size-h5`, `--line-height-h5`, or `--font-size-body` if you need 18px
+  - `--font-size-label` → `--font-size-small` (same 14px; keep `--line-height-label` for one-line labels)
+  - `--font-size-lead`, `--line-height-lead` → `--font-size-h4`, `--line-height-h4` (same 24/32)
+
+  **`Heading`:** `level` is now `1`–`5`. `level={6}` no longer type-checks; use `level={5}`, adding `as="h6"` if you need a real `<h6>`.
+
+  **Visible changes:** `--font-size-h2-fluid` is now `clamp(1.625rem, 1rem + 2.5vw, 3rem)` (26px → 48px, was 22px → 48px), so fluid H2 is up to 4px larger below about 1280px wide and always at least as large as H3. EmptyState's compact title moves from 18/24 to 20/24.
+
 ## 0.5.0
 
 ### Minor Changes
