@@ -2,11 +2,11 @@ import { forwardRef } from 'react'
 import { cn } from '../../../lib/cn'
 import './Heading.css'
 
-type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
+type HeadingLevel = 1 | 2 | 3 | 4 | 5
 type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 type HeadingOwnProps = {
-  /** Visual size, H1 (largest) to H6 (smallest). Decoupled from `as` — see that prop. */
+  /** Visual size, H1 (largest) to H5 (smallest). Decoupled from `as` — see that prop. For a real `<h6>`, use `as="h6"` with `level={5}`. */
   level: HeadingLevel
   /**
    * Semantic tag to render. Defaults to matching `level` (`level={2}` renders

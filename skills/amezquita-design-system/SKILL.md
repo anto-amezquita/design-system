@@ -39,7 +39,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Badge | [badge](https://amezquita.dk/design-system/badge.md) — Small status indicator or numeric count overlay attached to another element |
 | Button | [button](https://amezquita.dk/design-system/button.md) — Trigger for user actions; renders as `<button>` or `<a>` depending on context |
 | Checkbox | [checkbox](https://amezquita.dk/design-system/checkbox.md) — Single boolean selection with an associated label; supports indeterminate state |
-| Heading | [heading](https://amezquita.dk/design-system/heading.md) — Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level |
+| Heading | [heading](https://amezquita.dk/design-system/heading.md) — Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level |
 | Input | [input](https://amezquita.dk/design-system/input.md) — Labelled single-line text entry with hint and error states |
 | Label | [label](https://amezquita.dk/design-system/label.md) — Standalone form label element — used when a label must be decoupled from its input |
 | Radio | [radio](https://amezquita.dk/design-system/radio.md) — Single-selection control within a mutually exclusive group |
@@ -81,8 +81,8 @@ Every token this system defines, resolved across all four theme axes: https://am
 
 Real semantic token families:
 
-- **typography** (46): `--font-family-*`, `--font-size-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
 - **color** (43): `--color-accent-*`, `--color-border-*`, `--color-curtain-*`, `--color-feedback-*`, `--color-neutral-*`, `--color-skeleton-*`, `--color-surface-*`, `--color-text-*`
+- **typography** (39): `--font-family-*`, `--font-size-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
 - **spacing** (19): `--space-compact-*`, `--space-component-*`, `--space-container-*`, `--space-control-*`, `--space-dialog-*`, `--space-element-*`, `--space-inline-*`, `--space-label-*`, `--space-layout-*`, `--space-prominent-*`, `--space-section-*`, `--space-tight-*`
 - **size** (8): `--focus-ring-*`, `--size-dialog-*`, `--size-icon-*`
 - **motion** (7): `--duration-entrance-*`, `--duration-interaction-*`, `--duration-reveal-*`, `--duration-skeleton-*`, `--duration-spin-*`, `--duration-transition-*`

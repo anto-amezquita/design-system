@@ -1,9 +1,9 @@
 {
   "meta": {
-    "primitiveCount": 120,
-    "semanticCount": 142,
+    "primitiveCount": 119,
+    "semanticCount": 135,
     "componentCount": 104,
-    "total": 366
+    "total": 358
   },
   "tokens": [
     {
@@ -617,21 +617,6 @@
         "base-dark": "128px",
         "portfolio-light": "128px",
         "portfolio-dark": "128px"
-      },
-      "axisAware": false,
-      "usedBy": []
-    },
-    {
-      "name": "font-size-2xs",
-      "cssVar": "--font-size-2xs",
-      "type": "dimension",
-      "category": "primitive",
-      "rawValue": "10px",
-      "resolved": {
-        "base-light": "10px",
-        "base-dark": "10px",
-        "portfolio-light": "10px",
-        "portfolio-dark": "10px"
       },
       "axisAware": false,
       "usedBy": []
@@ -3081,7 +3066,11 @@
       "usedBy": [
         "DataTable",
         "EmptyState",
-        "Tabs"
+        "Tabs",
+        "Input",
+        "Label",
+        "Select",
+        "Textarea"
       ]
     },
     {
@@ -3104,58 +3093,6 @@
         "Input",
         "Tag",
         "Textarea"
-      ]
-    },
-    {
-      "name": "font-size-label",
-      "cssVar": "--font-size-label",
-      "type": "dimension",
-      "category": "typography",
-      "rawValue": "{font-size.sm}",
-      "resolved": {
-        "base-light": "14px",
-        "base-dark": "14px",
-        "portfolio-light": "14px",
-        "portfolio-dark": "14px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Input",
-        "Label",
-        "Select",
-        "Textarea"
-      ]
-    },
-    {
-      "name": "font-size-micro",
-      "cssVar": "--font-size-micro",
-      "type": "dimension",
-      "category": "typography",
-      "rawValue": "{font-size.2xs}",
-      "resolved": {
-        "base-light": "10px",
-        "base-dark": "10px",
-        "portfolio-light": "10px",
-        "portfolio-dark": "10px"
-      },
-      "axisAware": false,
-      "usedBy": []
-    },
-    {
-      "name": "font-size-lead",
-      "cssVar": "--font-size-lead",
-      "type": "dimension",
-      "category": "typography",
-      "rawValue": "{font-size.lg}",
-      "resolved": {
-        "base-light": "24px",
-        "base-dark": "24px",
-        "portfolio-light": "24px",
-        "portfolio-dark": "24px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Dialog"
       ]
     },
     {
@@ -3226,12 +3163,12 @@
       "cssVar": "--font-size-h2-fluid",
       "type": "dimension",
       "category": "typography",
-      "rawValue": "clamp(1.375rem, 0.75rem + 2.5vw, 3rem)",
+      "rawValue": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
       "resolved": {
-        "base-light": "clamp(1.375rem, 0.75rem + 2.5vw, 3rem)",
-        "base-dark": "clamp(1.375rem, 0.75rem + 2.5vw, 3rem)",
-        "portfolio-light": "clamp(1.375rem, 0.75rem + 2.5vw, 3rem)",
-        "portfolio-dark": "clamp(1.375rem, 0.75rem + 2.5vw, 3rem)"
+        "base-light": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
+        "base-dark": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
+        "portfolio-light": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
+        "portfolio-dark": "clamp(1.625rem, 1rem + 2.5vw, 3rem)"
       },
       "axisAware": false,
       "usedBy": [
@@ -3302,23 +3239,7 @@
       },
       "axisAware": false,
       "usedBy": [
-        "Heading"
-      ]
-    },
-    {
-      "name": "font-size-h6",
-      "cssVar": "--font-size-h6",
-      "type": "dimension",
-      "category": "typography",
-      "rawValue": "{font-size.md}",
-      "resolved": {
-        "base-light": "18px",
-        "base-dark": "18px",
-        "portfolio-light": "18px",
-        "portfolio-dark": "18px"
-      },
-      "axisAware": false,
-      "usedBy": [
+        "EmptyState",
         "Heading"
       ]
     },
@@ -3531,21 +3452,6 @@
       ]
     },
     {
-      "name": "line-height-micro",
-      "cssVar": "--line-height-micro",
-      "type": "dimension",
-      "category": "typography",
-      "rawValue": "{line-height.fixed-16}",
-      "resolved": {
-        "base-light": "16px",
-        "base-dark": "16px",
-        "portfolio-light": "16px",
-        "portfolio-dark": "16px"
-      },
-      "axisAware": false,
-      "usedBy": []
-    },
-    {
       "name": "line-height-h1",
       "cssVar": "--line-height-h1",
       "type": "dimension",
@@ -3622,42 +3528,8 @@
       },
       "axisAware": false,
       "usedBy": [
-        "Heading"
-      ]
-    },
-    {
-      "name": "line-height-h6",
-      "cssVar": "--line-height-h6",
-      "type": "dimension",
-      "category": "typography",
-      "rawValue": "{line-height.fixed-24}",
-      "resolved": {
-        "base-light": "24px",
-        "base-dark": "24px",
-        "portfolio-light": "24px",
-        "portfolio-dark": "24px"
-      },
-      "axisAware": false,
-      "usedBy": [
         "EmptyState",
         "Heading"
-      ]
-    },
-    {
-      "name": "line-height-lead",
-      "cssVar": "--line-height-lead",
-      "type": "dimension",
-      "category": "typography",
-      "rawValue": "{line-height.fixed-32}",
-      "resolved": {
-        "base-light": "32px",
-        "base-dark": "32px",
-        "portfolio-light": "32px",
-        "portfolio-dark": "32px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Dialog"
       ]
     },
     {

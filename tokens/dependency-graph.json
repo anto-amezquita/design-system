@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 28,
-    "tokenCount": 211
+    "tokenCount": 206
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -636,24 +636,17 @@
       "components/primitives/Heading/Heading.css"
     ],
     "font-size-h5": [
+      "components/patterns/EmptyState/EmptyState.css",
       "components/primitives/Heading/Heading.css"
-    ],
-    "font-size-h6": [
-      "components/primitives/Heading/Heading.css"
-    ],
-    "font-size-label": [
-      "components/primitives/Input/Input.css",
-      "components/primitives/Label/Label.css",
-      "components/primitives/Select/Select.css",
-      "components/primitives/Textarea/Textarea.css"
-    ],
-    "font-size-lead": [
-      "components/composition/Dialog/Dialog.css"
     ],
     "font-size-small": [
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
-      "components/patterns/Tabs/Tabs.css"
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Input/Input.css",
+      "components/primitives/Label/Label.css",
+      "components/primitives/Select/Select.css",
+      "components/primitives/Textarea/Textarea.css"
     ],
     "font-weight-control": [
       "components/patterns/Accordion/Accordion.css",
@@ -749,9 +742,6 @@
       "components/primitives/Heading/Heading.css"
     ],
     "line-height-h5": [
-      "components/primitives/Heading/Heading.css"
-    ],
-    "line-height-h6": [
       "components/patterns/EmptyState/EmptyState.css",
       "components/primitives/Heading/Heading.css"
     ],
@@ -763,9 +753,6 @@
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
-    ],
-    "line-height-lead": [
-      "components/composition/Dialog/Dialog.css"
     ],
     "line-height-small": [
       "components/composition/Toast/Toast.css",

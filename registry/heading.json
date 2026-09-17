@@ -3,7 +3,7 @@
   "name": "heading",
   "type": "registry:component",
   "title": "Heading",
-  "description": "Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level",
+  "description": "Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level",
   "dependencies": [
     "@amezquita/design-system"
   ],

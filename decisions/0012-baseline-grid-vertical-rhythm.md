@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted
+Accepted. Partly superseded by `decisions/0013`, which removes the `micro`, `h6`, `lead` and `label` font-size roles from the table below.
 
 ## Context
 

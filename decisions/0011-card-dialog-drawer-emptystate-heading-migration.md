@@ -33,7 +33,7 @@ Verification: every affected story (`Card`, `Dialog`, `Drawer`, `EmptyState` def
 - The registry dependency gap (`dialog.json`/`drawer.json` missing `heading.json`) was caught and fixed as a direct consequence of this migration's own review, not left latent for a future registry consumer to hit.
 
 ### Negative
-- Components composing `Heading` via `asChild` (`Dialog`, `Drawer`) now carry a real risk shape: any place-specific style deviation from `Heading`'s defaults requires a compound-selector override understood at the CSS level, not just the component's own prop type. `Dialog.css`'s font-size pin (guarding against `font-size-lead`/`font-size-h4` ever diverging) is the clearest example — a contributor unfamiliar with the pattern could remove it without realizing why it's there.
+- Components composing `Heading` via `asChild` (`Dialog`, `Drawer`) now carry a real risk shape: any place-specific style deviation from `Heading`'s defaults requires a compound-selector override understood at the CSS level, not just the component's own prop type. `Dialog.css`'s font-size pin (guarding against `font-size-lead`/`font-size-h4` ever diverging) is the clearest example — a contributor unfamiliar with the pattern could remove it without realizing why it's there. (Resolved by `decisions/0013`, which merged the two tokens and deleted the pin.)
 - Two heading vocabularies now coexist for a period: `Heading`'s own `level`/`as`/`weight` API, and any component still using its own inline title pattern outside the four migrated here (none currently, but nothing prevents a new component from reintroducing the pattern this migration closed).
 
 ## Related files

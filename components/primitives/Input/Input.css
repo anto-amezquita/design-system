@@ -9,7 +9,7 @@
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --font-size-control, --color-surface-primary
   --border-width-interactive, --color-border-strong, --color-feedback-error
-  --border-radius-interactive, --space-control-padding-x, --space-control-padding-y, --font-weight-label, --font-size-label, --line-height-label, --font-size-caption, --line-height-caption
+  --border-radius-interactive, --space-control-padding-x, --space-control-padding-y, --font-weight-label, --font-size-small, --line-height-label, --font-size-caption, --line-height-caption
 */
 
 .input-field {
@@ -20,7 +20,7 @@
 
 .input-field__label {
   font-family: var(--font-family-base);
-  font-size: var(--font-size-label);
+  font-size: var(--font-size-small);
   font-weight: var(--font-weight-label);
   color: var(--color-text-primary);
   line-height: var(--line-height-label);

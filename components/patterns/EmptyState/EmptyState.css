@@ -5,7 +5,7 @@
   --emptystate-padding-y, --emptystate-padding-x
 
   --icon-size-xl, --icon-size-lg
-  --line-height-body, --line-height-small, --line-height-h6
+  --line-height-body, --line-height-small, --font-size-h5, --line-height-h5
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --space-element-gap, --space-inline-gap, --space-container-padding-lg, --space-container-padding, --space-label-gap
@@ -58,8 +58,8 @@
 }
 
 .empty-state--compact .empty-state__title {
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-h6);
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
 }
 
 .empty-state__body {

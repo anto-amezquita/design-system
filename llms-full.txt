@@ -10,12 +10,12 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-366 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+358 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
 
-- primitive: 120
+- primitive: 119
 - component: 104
-- typography: 46
 - color: 43
+- typography: 39
 - spacing: 19
 - size: 8
 - motion: 7
@@ -65,12 +65,12 @@ Single boolean selection with an associated label; supports indeterminate state
 
 ### Heading
 
-Semantic heading element (H1–H6) with a visual size decoupled from its document-outline level
+Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level
 
 - Import: `import { Heading } from '@amezquita/design-system/components/primitives/Heading'`
 - Token prefix: `heading-*` (0 tokens)
 - Storybook: Components/Heading
-- Stories: H1, H2, H3, H4, H5, H6, AllLevels, LevelAsDecoupling, DarkMode
+- Stories: H1, H2, H3, H4, H5, AllLevels, LevelAsDecoupling, DarkMode
 
 ### Input
 

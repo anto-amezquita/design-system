@@ -258,25 +258,13 @@
   },
   "font-size-small": {
     "$value": "{font-size.sm}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "14px text: wrapping secondary text (pairs with line-height-small) and single-line form-field labels (pair with line-height-label). font-size-label merged into this role — see decisions/0013."
   },
   "font-size-caption": {
     "$value": "{font-size.xs}",
     "$type": "dimension",
     "$description": "12px supporting text: hints, tooltips, table headers and captions, badges, tags, and consumer-side eyebrows or metadata. Pairs with line-height-caption — see decisions/0012."
-  },
-  "font-size-label": {
-    "$value": "{font-size.sm}",
-    "$type": "dimension",
-    "$description": "Text size for form-field labels (input, standalone Label, textarea). Corrected from xs to sm, Sep 2026 — role existed but was unused and its value didn't match any actual label component, same shape of bug as font-weight-label (see decisions/0004). Select's label was folded in too (decisions/0005, round 25). For 12px text, use font-size-caption."
-  },
-  "font-size-micro": {
-    "$value": "{font-size.2xs}",
-    "$type": "dimension"
-  },
-  "font-size-lead": {
-    "$value": "{font-size.lg}",
-    "$type": "dimension"
   },
   "font-size-h1": {
     "$value": "{font-size.3xl}",
@@ -295,7 +283,7 @@
     "$type": "dimension"
   },
   "font-size-h2-fluid": {
-    "$value": "clamp(1.375rem, 0.75rem + 2.5vw, 3rem)",
+    "$value": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
     "$type": "dimension"
   },
   "font-size-h3": {
@@ -312,11 +300,6 @@
   },
   "font-size-h5": {
     "$value": "{font-size.emphasis}",
-    "$type": "dimension",
-    "$description": "Static (not fluid) by design — see decisions/0008. Pairs with its own fixed line-height role (decisions/0012) and letter-spacing-heading."
-  },
-  "font-size-h6": {
-    "$value": "{font-size.md}",
     "$type": "dimension",
     "$description": "Static (not fluid) by design — see decisions/0008. Pairs with its own fixed line-height role (decisions/0012) and letter-spacing-heading."
   },
@@ -371,11 +354,6 @@
     "$type": "dimension",
     "$description": "Strict-4px-grid line-height for font-size-caption (12px) — see decisions/0012."
   },
-  "line-height-micro": {
-    "$value": "{line-height.fixed-16}",
-    "$type": "dimension",
-    "$description": "Strict-4px-grid line-height for font-size-micro (10px) — see decisions/0012."
-  },
   "line-height-h1": {
     "$value": "{line-height.fixed-80}",
     "$type": "dimension",
@@ -401,16 +379,6 @@
     "$type": "dimension",
     "$description": "Strict-4px-grid line-height for font-size-h5 (20px) — see decisions/0012."
   },
-  "line-height-h6": {
-    "$value": "{line-height.fixed-24}",
-    "$type": "dimension",
-    "$description": "Strict-4px-grid line-height for font-size-h6 (18px) — see decisions/0012."
-  },
-  "line-height-lead": {
-    "$value": "{line-height.fixed-32}",
-    "$type": "dimension",
-    "$description": "Strict-4px-grid line-height for font-size-lead (24px) — see decisions/0012."
-  },
   "line-height-heading": {
     "$value": "{line-height.tight}",
     "$type": "number"
@@ -418,7 +386,7 @@
   "line-height-label": {
     "$value": "{line-height.fixed-16}",
     "$type": "dimension",
-    "$description": "Strict-4px-grid line-height for static single-line UI labels (14px label text) — see Label.css."
+    "$description": "Strict-4px-grid line-height for single-line form-field labels at font-size-small (14px) — see Label.css and decisions/0013."
   },
   "letter-spacing-heading": {
     "$value": "-0.02em",
