@@ -29,12 +29,6 @@ Opened 2026-09-22. `feat/functional-button-default` is code-complete and unpushe
 
 Status: waiting on Chromatic's limit, not on any code or decision.
 
-## `hooks/useButtonWipe.ts` contradicts 0016 and is dead (backlog)
-
-Opened 2026-09-22, noticed while implementing 0016. Nothing in this repo imports it. It statically imports GSAP, so any consumer importing from `hooks/` pulls GSAP in regardless of Button's `motion` prop — the exact coupling 0016 removed. It also defaults `fillColor` to `var(--button-primary-background-hover)`, a token decisions/0005 collapsed, so it references a name that no longer exists.
-
-It ships in the published package (`files: ["hooks"]`), so deleting it is a public API change and wants a line in a changeset, not a quiet removal. Decide whether anything outside this repo ever imported it — the portfolio has its own copy of the wipe — then delete or keep deliberately.
-
 ## Baseline grid: sizes `decisions/0012`'s table doesn't cover (backlog)
 
 Opened 2026-09-16, surfaced while implementing `decisions/0012` (originally on `baseline-grid-vertical-rhythm`, landed via `feat/baseline-grid-line-height`) (see `roadmap.md`'s session log). The ADR maps line-height roles to the semantic font-size tokens, but real text sizes in the system weren't in its table. 12px text now has its own `caption` role (0012's 2026-09-17 amendment). The two below got the nearest sensible on-grid value so nothing is left off-grid, and each needs a call. A fourth item covers the portfolio site's upgrade, and a fifth covers controls that use `line-height: 1`.

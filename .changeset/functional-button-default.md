@@ -18,3 +18,5 @@ Button is functional by default, and the expressive hover is opt-in (`decisions/
 **Tokens:** `--button-glow-color` is now a real component token instead of a hardcoded value in `Button.css`, so a brand can override it.
 
 Unchanged: `motion="expressive"` still does nothing under `prefers-reduced-motion: reduce` or on a device without hover, where it falls back to the functional hover.
+
+**Removed: `hooks/useButtonWipe.ts`.** Nothing in this package used it. It imported GSAP statically, so importing it pulled GSAP into your bundle whatever Button's `motion` prop said, and its default fill pointed at `--button-primary-background-hover`, a token removed in an earlier release. If you imported it directly, copy it into your own app; the expressive wipe on Button itself is unaffected.
