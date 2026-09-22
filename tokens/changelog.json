@@ -434,7 +434,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "0455ee1",
+      "type": "feat",
+      "scope": "button",
+      "message": "functional by default, expressive hover opt-in",
+      "date": "2026-09-22",
+      "breaking": true
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
