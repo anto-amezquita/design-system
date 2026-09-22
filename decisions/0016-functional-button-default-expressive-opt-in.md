@@ -61,11 +61,22 @@ This is a visible change to every existing Button, so it ships as a **major** ve
 - GSAP's place in `package.json` needs a decision at build time: a dynamic import still needs the package resolvable where the expressive mode is used. Likely an optional peer dependency, to verify against a real consumer build.
 - The portfolio needs its wrapper in place before it upgrades, or its buttons go plain.
 
+## Amendment (2026-09-22): GSAP stays a dependency, and what the dynamic import actually buys
+
+Two claims above were written before the implementation and are wrong as stated. Leaving them in place with the correction underneath, rather than editing them away, so the original reasoning stays readable.
+
+**"Likely an optional peer dependency"** (Consequences → Negative) is the one option to avoid. This package has no build step: `package.json` has no `main`, `module` or `exports`, `files` lists source directories, and consumers compile the `.tsx` themselves — the portfolio through Next's `transpilePackages`. The `import('gsap')` specifier therefore sits in every consumer's module graph whether or not they ever render an expressive Button, and a bundler that can't resolve it fails the build rather than warning. Marking it optional would break exactly the consumers this decision is meant to serve. It stays in `dependencies`.
+
+**"GSAP leaves the bundles of every consumer that doesn't use the expressive mode"** (Consequences → Positive) overstates the win. The dynamic import puts GSAP in its own chunk that is never *fetched* unless an expressive Button mounts, so nobody downloads or executes it. But the chunk is still *emitted* into the consumer's build output, because a bundler can't prove `motion === 'expressive'` is unreachable. Zero runtime cost; non-zero install and build-output cost. Removing it outright needs the build step this decision deliberately left out of scope.
+
+**A consequence not anticipated above: the lazy import can't be exercised from this repo's test projects.** GSAP used to arrive through Button's static import, so Vite pre-bundled it and every test ran against a warm graph. Now nothing pulls it in until something hovers an expressive Button — at which point Vite discovers the dependency mid-test and reloads the page underneath it. Browser mode never recovers: the run hangs with no failure and past every test timeout, so it reads as a dead process rather than a red test. A side-effect `import 'gsap'` at the top of the test file to force it in at collection time does not fix it. `Button.motion.test.tsx` therefore asserts the structural contract only, and the proof that the wipe actually loads and animates is a Playwright pass over real Storybook. Worth knowing before writing a test for any future lazily-imported dependency — the failure looks like broken tooling, not like the test it is.
+
 ## Related files
 
 - `components/primitives/Button/Button.tsx` — GSAP wipe, glow, `noArrow`
 - `components/primitives/Button/Button.css` — the reduced-motion block that becomes the default, `--button-glow-color`
 - `components/primitives/Button/Button.stories.tsx` — stories for both motion modes
+- `components/primitives/Button/Button.motion.test.tsx` — contract tests for the functional default and the opt-ins
 - `decisions/0001-white-label-base-portfolio-brand-split.md` — the token split this extends to behaviour
 - `decisions/0015-navigation-components-core-set.md` — blocked on this
 - `docs/components.md`, `AGENTS.md` — to update with the new props
