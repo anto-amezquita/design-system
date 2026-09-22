@@ -22,7 +22,12 @@
     "tokens/token-reference.json",
     "tokens/changelog.json",
     "styles/brands",
-    "styles/reset.css"
+    "styles/reset.css",
+    "llms.txt",
+    "llms-full.txt",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "decisions/*.md"
   ],
   "scripts": {
     "changeset": "changeset",
