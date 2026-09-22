@@ -14,7 +14,7 @@ Adapted from the ai-product-starter-kit's `architecture.md` template — section
 - **Components:** React 19 (peer dependency), Radix UI primitives (Accordion, AlertDialog, Avatar, Checkbox, Dialog, RadioGroup, Select, Switch, Tabs, Toast, Tooltip) for behavior/accessibility; this repo owns styling and composition on top.
 - **Styling:** CSS custom properties driven by a three-tier token system (see §3) — no CSS-in-JS, no Tailwind in component source.
 - **Tokens:** DTCG format (`$value`/`$type`) in `tokens/*.json`, compiled by Style Dictionary (`sd.config.mjs`) into CSS files per brand/mode.
-- **Animation:** GSAP where component motion needs it beyond CSS transitions.
+- **Animation:** CSS transitions carry the default behaviour of every component. GSAP is reserved for opt-in expressive motion (Button's `motion="expressive"` wipe), loaded there with a dynamic `import()` so it stays out of the bundles of consumers that never ask for it — see ADR [`0016`](../decisions/0016-functional-button-default-expressive-opt-in.md). It stays a regular dependency rather than an optional peer: this package ships raw source with no build step, so the import specifier is always in the consumer's module graph and an absent package would fail their build.
 - **Docs/dev:** Storybook 10 (stories double as the visual-regression corpus and the "correct usage" source for compiled docs).
 - **Package manager:** npm. **Versioning/publish:** Changesets (`npm run changeset` / `version` / `release`).
 - **Testing:** no unit-test framework for Radix-owned behavior; a `unit` Vitest project + Storybook's Vitest addon cover behavior this repo owns — see §7.

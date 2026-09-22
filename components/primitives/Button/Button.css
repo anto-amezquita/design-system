@@ -5,7 +5,7 @@
   --button-outline-border-width
 
   --button-spinner-duration
-  --button-arrow-nudge, --button-glow-size
+  --button-arrow-nudge, --button-glow-size, --button-glow-color
 
   --button-secondary-background, --button-secondary-foreground, --button-secondary-border
   --button-secondary-background-hover
@@ -19,7 +19,6 @@
 */
 
 .button {
-  --button-glow-color: rgba(255, 255, 255, 0.45);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -38,6 +37,7 @@
   overflow: hidden;
   isolation: isolate;
   transition:
+    background var(--duration-interaction) var(--easing-default),
     border-color var(--duration-interaction) var(--easing-default),
     color var(--duration-interaction) var(--easing-default);
   white-space: nowrap;
@@ -46,6 +46,15 @@
 
 .button:hover {
   border-color: var(--color-accent-hover);
+}
+
+/* The functional hover fill — the default since decisions/0016. Expressive
+   buttons opt out because their wipe paints these same colours over the top,
+   and a CSS background would land instantly, ahead of the sweep. They get the
+   fill back under reduced motion, where the wipe doesn't run. */
+
+.button:not(.button--expressive):hover {
+  background: var(--color-accent-hover);
 }
 
 .button:focus-visible {
@@ -81,12 +90,18 @@
   border-color: var(--button-secondary-border);
   border-width: var(--button-outline-border-width);
   transition:
+    background var(--duration-interaction) var(--easing-default),
     border-color var(--duration-interaction) var(--easing-default),
     color var(--duration-interaction) var(--easing-default);
 }
 
 .button--secondary:hover {
   border-color: var(--button-secondary-background-hover);
+}
+
+.button--secondary:not(.button--expressive):hover {
+  background: var(--button-secondary-background-hover);
+  color: var(--color-accent-foreground);
 }
 
 .button--secondary.button--hovering {
@@ -100,6 +115,10 @@
   color: var(--color-text-primary);
   border-color: var(--button-ghost-border);
   border-width: var(--button-outline-border-width);
+}
+
+.button--ghost:not(.button--expressive):hover {
+  background: var(--color-surface-secondary);
 }
 
 /* Link variant */
@@ -117,9 +136,14 @@
 }
 
 .button--link:hover {
-  background: none;
   border-color: transparent;
   text-decoration-color: currentColor;
+}
+
+/* Matches the specificity of the functional fill above, and comes after it,
+   so a link button keeps its transparent background on hover. */
+.button--link:not(.button--expressive):hover {
+  background: none;
 }
 
 /* Full width */
@@ -249,30 +273,24 @@
     transition: none;
   }
 
-  .button {
-    transition:
-      background var(--duration-interaction) var(--easing-default),
-      border-color var(--duration-interaction) var(--easing-default),
-      color var(--duration-interaction) var(--easing-default);
-  }
+  /* The wipe doesn't run here, so an expressive button falls back to the
+     functional fill it opted out of above. Functional buttons already have it. */
 
-  .button:hover {
+  .button--expressive:hover {
     background: var(--color-accent-hover);
   }
 
-  .button--secondary:hover {
+  .button--expressive.button--secondary:hover {
     background: var(--button-secondary-background-hover);
     color: var(--color-accent-foreground);
   }
 
-  .button--ghost:hover {
+  .button--expressive.button--ghost:hover {
     background: var(--color-surface-secondary);
   }
 
-  /* Link resets must come after the generic .button:hover rule to win the cascade */
-  .button--link:hover {
+  /* Link resets must come after the generic hover rules to win the cascade */
+  .button--expressive.button--link:hover {
     background: none;
-    border-color: transparent;
-    text-decoration-color: currentColor;
   }
 }

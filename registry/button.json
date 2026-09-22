@@ -28,7 +28,8 @@
       "button-wipe-duration-exit": "400ms",
       "button-wipe-duration-curve-out": "180ms",
       "button-arrow-nudge": "2px",
-      "button-glow-size": "52px"
+      "button-glow-size": "52px",
+      "button-glow-color": "rgba(255, 255, 255, 0.45)"
     },
     "dark": {
       "button-padding-x": "24px",
@@ -46,7 +47,8 @@
       "button-wipe-duration-exit": "400ms",
       "button-wipe-duration-curve-out": "180ms",
       "button-arrow-nudge": "2px",
-      "button-glow-size": "52px"
+      "button-glow-size": "52px",
+      "button-glow-color": "rgba(255, 255, 255, 0.45)"
     }
   }
 }

@@ -76,11 +76,13 @@
         "FullWidth",
         "WithIcon",
         "Disabled",
+        "WithArrow",
+        "Motion",
         "AllVariants",
         "AllStates",
         "DarkMode"
       ],
-      "tokenCount": 16,
+      "tokenCount": 17,
       "internal": false
     },
     {

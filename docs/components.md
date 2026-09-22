@@ -64,12 +64,13 @@ Copy this for each new component. Fill in every field before the component ships
 - `href`: when present, renders as `<a>` instead of `<button>`
 - `onNavigate`: optional `(href, curtainColor?) => void` — called instead of a plain navigation on internal-link clicks when set; lets a host app inject its own route-transition behavior. Omit for a plain navigation.
 - `icon` + `iconPosition` (`start` | `end`): optional leading or trailing icon slot
-- `noArrow`: suppresses the default trailing arrow SVG on non-icon buttons
+- `arrow`: opt-in trailing arrow SVG, default `false`. Ignored on `link` and while loading (decisions/0016)
+- `motion`: `functional` (default — hover changes the background over a CSS transition, no animation code loaded) or `expressive` (hover wipe and glow, loads GSAP with a dynamic `import()`). Expressive falls back to the functional hover under `prefers-reduced-motion: reduce` or `hover: none` (decisions/0016)
 - `disabled`, `type`, `aria-label`
 
 **Required states**
 - [x] default
-- [x] hover (background shifts; arrow translates 2px right)
+- [x] hover (background shifts; arrow translates 2px right when `arrow` is on)
 - [x] focus-visible (2px ring)
 - [x] disabled (opacity, not-allowed cursor)
 
