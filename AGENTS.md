@@ -64,3 +64,5 @@ Component tokens follow `--<component-slug>-*` (e.g. `--button-padding-x`, `--di
 **Start here for any new session:** [`docs/backlog.md`](docs/backlog.md) — the live, actionable work list. If it's empty, there's nothing open.
 
 What's already shipped, and why, lives in [`docs/roadmap.md`](docs/roadmap.md) (condensed) and [`docs/roadmap-archive.md`](docs/roadmap-archive.md) (full detail) — read these for context, not for a task to pick up.
+
+How the CI governance and agent loop were designed lives in [`docs/autonomous-design-system.md`](docs/autonomous-design-system.md). It was written in June 2026, when the system still lived in the portfolio repo, so some paths, counts and brand names in it are from that time. Read it for the reasoning behind the gates; where it disagrees with [`docs/architecture.md`](docs/architecture.md) or [`docs/quality.md`](docs/quality.md), those win.
