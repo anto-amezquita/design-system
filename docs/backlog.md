@@ -17,19 +17,23 @@ Live, actionable work for this repo. **Open this file first in any new session**
 
 ---
 
-## `0.5.0` release (PR #23) blocked on Chromatic's monthly snapshot limit (backlog)
+## `0.6.0` → next release blocked on Chromatic's monthly snapshot limit (backlog)
 
-Opened 2026-09-15. `main` already has everything a `0.5.0` release needs: the `Heading` primitive (PR #22) and the `Card`/`Dialog`/`Drawer`/`EmptyState` migration + registry fix (PR #24), both changesets present and correctly reflected in the changesets bot's open "Version Packages" PR (#23) — confirmed by diffing `origin/changeset-release/main`'s `CHANGELOG.md` against `main`.
+Opened 2026-09-22. `feat/functional-button-default` is code-complete and unpushed: decisions/0015 and 0016 recorded, Button made functional by default with the expressive hover opt-in, contract tests, a major changeset, and 0016 amended with the GSAP packaging outcome. `npm run validate` exits 0 (44 files, 273 tests) and `check-generated-sync.mjs` passes.
 
-**What's actually blocking it:** PR #23's Chromatic check is frozen at `action_required` — confirmed via the GitHub API (0 completed check-runs on the PR's head commit), the same GITHUB_TOKEN-triggered-workflow freeze `roadmap.md`'s 2026-09-15 session log already documents for PR #22 ("the run is created but frozen at `action_required`, never starting without a human click"). The user confirmed the same day that the account's Chromatic monthly snapshot limit is hit and needs roughly 7 days to refresh (so check back around **2026-09-22**).
+**What's blocking the push:** the account's Chromatic monthly snapshot limit is reached again (banner confirmed by the user on 2026-09-22; expected to renew 2026-09-23). This change alters the hover on *every* Button story plus two new ones, so the snapshot batch is the review — 0016 says those diffs "need reviewing and accepting as a batch, against a committed build." Pushing while capped means the run fails or skips and the Button diffs land unexamined, which is the one thing this change shouldn't do.
 
-Branch protection isn't enabled on `main`, so the merge button on PR #23 isn't technically blocked — but merging it now would publish `0.5.0` with zero real visual verification, not something to do just because the button is clickable.
+**When it's time:** confirm the limit actually reset on Chromatic's build page, not just the calendar. Then push the branch, open the PR, let `chromatic.yml` run, review and accept the Button batch, merge, release the major.
 
-**When it's time:** confirm Chromatic's limit has actually reset (check the account's build page, not just the calendar), get PR #23's frozen run to actually execute (a manual "Run workflow" click, or push something that re-triggers `synchronize`), confirm it goes green, then merge to publish.
-
-**Separate manual step after publishing, easy to forget:** the registry fix in PR #24 (`registry/dialog.json`/`drawer.json` now correctly list `heading.json`) only exists in this repo. The registry real consumers hit (`https://amezquita.dk/r/*.json`) is a manually-maintained static copy in the portfolio repo — `scripts/build-registry-manifests.mjs`'s own header says so ("not an automated pipeline — re-copy there when these manifests change"). Publishing to npm does not fix this on its own.
+**After that, in order:** bump `~/Documents/github/portfolio` to the new major — its Button wrapper (`components/primitives/Button/Button.tsx`, sets `motion="expressive"` and `arrow`) and ~13 converted `noArrow` call sites are sitting uncommitted on `main` and cannot typecheck until then. While there, re-sync the hand-copied `BUTTON_DOC` string in `app/two-things-i-use-everyday/ButtonDuality.tsx` from the regenerated `docs/components/button.md`; it snapshots the *published* package, so it is correct today and stale the moment the major lands. Only then start 0015.
 
 Status: waiting on Chromatic's limit, not on any code or decision.
+
+## `hooks/useButtonWipe.ts` contradicts 0016 and is dead (backlog)
+
+Opened 2026-09-22, noticed while implementing 0016. Nothing in this repo imports it. It statically imports GSAP, so any consumer importing from `hooks/` pulls GSAP in regardless of Button's `motion` prop — the exact coupling 0016 removed. It also defaults `fillColor` to `var(--button-primary-background-hover)`, a token decisions/0005 collapsed, so it references a name that no longer exists.
+
+It ships in the published package (`files: ["hooks"]`), so deleting it is a public API change and wants a line in a changeset, not a quiet removal. Decide whether anything outside this repo ever imported it — the portfolio has its own copy of the wipe — then delete or keep deliberately.
 
 ## Baseline grid: sizes `decisions/0012`'s table doesn't cover (backlog)
 
