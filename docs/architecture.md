@@ -4,7 +4,7 @@
 
 This file defines the stable technical rules of this design system. Feature work belongs in `/specs`; this file is what stays true across all of it.
 
-Adapted from the ai-product-starter-kit's `architecture.md` template — sections that assume a full product with a backend (auth, data architecture, API conventions, deployment environments) are marked **N/A** rather than left as unfilled brackets: this repo is a component-library package with no server, no database, and no deploy target beyond `npm publish` and a static docs snapshot in the portfolio repo.
+Adapted from the ai-product-starter-kit's `architecture.md` template — sections that assume a full product with a backend (auth, data architecture, API conventions, deployment environments) are marked **N/A** rather than left as unfilled brackets: this repo is a component-library package with no server, no database, and no deploy target beyond `npm publish` and a docs site (a static snapshot in the portfolio repo today, moving to its own repo per ADR [`0017`](../decisions/0017-standalone-docs-site-base-theme.md)).
 
 ---
 
