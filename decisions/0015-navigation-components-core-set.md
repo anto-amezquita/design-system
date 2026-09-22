@@ -65,6 +65,10 @@ This entry records the strategy only. Each component gets its own scope when it 
 - `Button` carries portfolio-specific expression by default (a GSAP hover wipe and a trailing arrow). If it's used as a trigger inside `Menu` or `NavigationMenu`, that expression leaks into every consumer's navigation too. Worth fixing Button's defaults before this work starts.
 - Deferred components will be asked for eventually. When they are, each needs its own decision rather than slipping in.
 
+## Amendment (2026-09-22): the Button concern is resolved
+
+The second Negative consequence above (Button's GSAP wipe and trailing arrow leaking into navigation triggers) is resolved by ADR [`0016`](./0016-functional-button-default-expressive-opt-in.md): Button is now functional by default, with `motion="expressive"` and `arrow` as opt-ins. Left in place above so the original reasoning stays readable.
+
 ## Related files
 
 - `docs/ai-readiness.md` — the component-cap direction this decision works within
