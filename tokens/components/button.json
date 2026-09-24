@@ -74,5 +74,10 @@
   "button-glow-size": {
     "$value": "52px",
     "$type": "dimension"
+  },
+  "button-glow-color": {
+    "$value": "rgba(255, 255, 255, 0.45)",
+    "$type": "color",
+    "$description": "Highlight riding the crest of the expressive hover wipe. Translucent white rather than a semantic reference: it reads as a light source over whichever fill the wipe paints, not as one of the brand's surface colours. See decisions/0016."
   }
 }

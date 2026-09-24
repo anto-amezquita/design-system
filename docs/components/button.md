@@ -19,7 +19,8 @@
 | `type?` | `'button' \| 'submit' \| 'reset'` |  |
 | `icon?` | `React.ReactNode` |  |
 | `iconPosition?` | `'start' \| 'end'` |  |
-| `noArrow?` | `boolean` |  |
+| `arrow?` | `boolean` | Trailing arrow after the label. Off by default — turn it on for a call to action that leads somewhere. Ignored on the `link` variant and while loading. |
+| `motion?` | `'functional' \| 'expressive'` | `'expressive'` adds the hover wipe and glow, and loads GSAP on demand. Left at `'functional'`, hover is a plain background change and no animation code is fetched. See decisions/0016. |
 | `aria-label?` | `string` |  |
 | `href?` | `string` |  |
 | `curtainColor?` | `string` |  |
@@ -34,6 +35,7 @@ Also accepts all props of: `Omit<React.HTMLAttributes<HTMLElement>, 'onClick' | 
 | `--button-arrow-nudge` | dimension | `2px` |
 | `--button-ghost-background` | color | `transparent` |
 | `--button-ghost-border` | color | `transparent` |
+| `--button-glow-color` | color | `rgba(255, 255, 255, 0.45)` |
 | `--button-glow-size` | dimension | `52px` |
 | `--button-outline-border-width` | dimension | `2px` |
 | `--button-padding-x` | dimension | `24px` |

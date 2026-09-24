@@ -12,12 +12,19 @@ const meta: Meta<typeof Button> = {
     disabled: false,
     loading: false,
     fullWidth: false,
+    arrow: false,
+    motion: 'functional',
   },
   argTypes: {
     variant: {
       control: 'radio',
       options: ['primary', 'secondary', 'ghost', 'link'],
     },
+    motion: {
+      control: 'radio',
+      options: ['functional', 'expressive'],
+    },
+    arrow: { control: 'boolean' },
     disabled: { control: 'boolean' },
     loading: { control: 'boolean' },
     fullWidth: { control: 'boolean' },
@@ -42,7 +49,7 @@ export const Ghost: Story = {
 }
 
 export const Link: Story = {
-  args: { variant: 'link', children: 'Link button', noArrow: true },
+  args: { variant: 'link', children: 'Link button' },
 }
 
 export const Loading: Story = {
@@ -67,14 +74,45 @@ export const WithIcon: Story = {
   name: 'With icon',
   render: () => (
     <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-      <Button variant="primary" icon={<StarIcon size={16} />} iconPosition="start" noArrow>Star</Button>
-      <Button variant="secondary" icon={<StarIcon size={16} />} iconPosition="end" noArrow>Star end</Button>
+      <Button variant="primary" icon={<StarIcon size={16} />} iconPosition="start">Star</Button>
+      <Button variant="secondary" icon={<StarIcon size={16} />} iconPosition="end">Star end</Button>
     </div>
   ),
 }
 
 export const Disabled: Story = {
   args: { variant: 'primary', children: 'Disabled', disabled: true },
+}
+
+export const WithArrow: Story = {
+  name: 'With arrow',
+  args: { variant: 'primary', children: 'Read the case', arrow: true },
+}
+
+export const Motion: Story = {
+  name: 'Motion modes',
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Hover each row. Functional is the default: the background changes over a short CSS transition, and no animation code is loaded. Expressive opts into the wipe and glow, and fetches GSAP on demand (decisions/0016). Under `prefers-reduced-motion: reduce` or on a device without hover, expressive falls back to the functional hover.',
+      },
+    },
+  },
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+        <Button variant="primary" motion="functional">Functional</Button>
+        <Button variant="secondary" motion="functional">Functional</Button>
+        <Button variant="ghost" motion="functional">Functional</Button>
+      </div>
+      <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+        <Button variant="primary" motion="expressive">Expressive</Button>
+        <Button variant="secondary" motion="expressive">Expressive</Button>
+        <Button variant="ghost" motion="expressive">Expressive</Button>
+      </div>
+    </div>
+  ),
 }
 
 export const AllVariants: Story = {
@@ -84,7 +122,7 @@ export const AllVariants: Story = {
       <Button variant="primary">Primary</Button>
       <Button variant="secondary">Secondary</Button>
       <Button variant="ghost">Ghost</Button>
-      <Button variant="link" noArrow>Link</Button>
+      <Button variant="link">Link</Button>
       <Button variant="primary" disabled>Disabled</Button>
     </div>
   ),
@@ -110,7 +148,7 @@ export const AllStates: Story = {
         <Button variant="ghost" disabled>Disabled</Button>
       </div>
       <div>
-        <Button variant="link" noArrow>Link button</Button>
+        <Button variant="link">Link button</Button>
       </div>
       <Button variant="primary" fullWidth>Full width</Button>
     </div>

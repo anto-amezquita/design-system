@@ -47,22 +47,22 @@ export const IconButtons: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '8px' }}>
       <Tooltip content="Like">
-        <Button variant="ghost" aria-label="Like" icon={<HeartIcon size={16} aria-hidden="true" />} noArrow>
+        <Button variant="ghost" aria-label="Like" icon={<HeartIcon size={16} aria-hidden="true" />}>
           <span style={{ display: 'none' }}>Like</span>
         </Button>
       </Tooltip>
       <Tooltip content="Edit">
-        <Button variant="ghost" aria-label="Edit" icon={<PencilIcon size={16} aria-hidden="true" />} noArrow>
+        <Button variant="ghost" aria-label="Edit" icon={<PencilIcon size={16} aria-hidden="true" />}>
           <span style={{ display: 'none' }}>Edit</span>
         </Button>
       </Tooltip>
       <Tooltip content="Share">
-        <Button variant="ghost" aria-label="Share" icon={<ShareIcon size={16} aria-hidden="true" />} noArrow>
+        <Button variant="ghost" aria-label="Share" icon={<ShareIcon size={16} aria-hidden="true" />}>
           <span style={{ display: 'none' }}>Share</span>
         </Button>
       </Tooltip>
       <Tooltip content="Delete — cannot be undone" side="bottom">
-        <Button variant="ghost" aria-label="Delete" icon={<TrashIcon size={16} aria-hidden="true" />} noArrow>
+        <Button variant="ghost" aria-label="Delete" icon={<TrashIcon size={16} aria-hidden="true" />}>
           <span style={{ display: 'none' }}>Delete</span>
         </Button>
       </Tooltip>

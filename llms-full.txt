@@ -10,10 +10,10 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-368 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+369 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
 
 - primitive: 124
-- component: 104
+- component: 105
 - color: 43
 - typography: 39
 - spacing: 19
@@ -50,9 +50,9 @@ Small status indicator or numeric count overlay attached to another element
 Trigger for user actions; renders as `<button>` or `<a>` depending on context
 
 - Import: `import { Button } from '@amezquita/design-system/components/primitives/Button'`
-- Token prefix: `button-*` (16 tokens)
+- Token prefix: `button-*` (17 tokens)
 - Storybook: Components/Button
-- Stories: Primary, Secondary, Ghost, Link, Loading, LoadingSecondary, FullWidth, WithIcon, Disabled, AllVariants, AllStates, DarkMode
+- Stories: Primary, Secondary, Ghost, Link, Loading, LoadingSecondary, FullWidth, WithIcon, Disabled, WithArrow, Motion, AllVariants, AllStates, DarkMode
 
 ### Checkbox
 

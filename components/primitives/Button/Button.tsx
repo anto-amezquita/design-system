@@ -1,14 +1,14 @@
 'use client'
 
 import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react'
-import gsap from 'gsap'
-import { ease } from '../../../lib/motion'
 import { ArrowRightIcon } from '@phosphor-icons/react'
 import { Spinner } from '../Spinner'
 import { cn } from '../../../lib/cn'
 import './Button.css'
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'link'
+
+type ButtonMotion = 'functional' | 'expressive'
 
 type ButtonOwnProps = {
   variant?: ButtonVariant
@@ -20,7 +20,10 @@ type ButtonOwnProps = {
   type?: 'button' | 'submit' | 'reset'
   icon?: React.ReactNode
   iconPosition?: 'start' | 'end'
-  noArrow?: boolean
+  /** Trailing arrow after the label. Off by default — turn it on for a call to action that leads somewhere. Ignored on the `link` variant and while loading. */
+  arrow?: boolean
+  /** `'expressive'` adds the hover wipe and glow, and loads GSAP on demand. Left at `'functional'`, hover is a plain background change and no animation code is fetched. See decisions/0016. */
+  motion?: ButtonMotion
   'aria-label'?: string
   href?: string
   curtainColor?: string
@@ -51,7 +54,8 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
   type = 'button',
   icon,
   iconPosition = 'start',
-  noArrow = false,
+  arrow = false,
+  motion = 'functional',
   'aria-label': ariaLabel,
   href,
   curtainColor,
@@ -67,6 +71,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
 
   const isLink = variant === 'link'
   const isDisabled = disabled || loading
+  const isExpressive = motion === 'expressive'
 
   // decisions/0007: classNameProp merged in last, closing the gap 0006 left
   // open — {...rest} below no longer carries className (destructured out
@@ -74,6 +79,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
   const className = cn(
     'button',
     variant !== 'primary' && `button--${variant}`,
+    isExpressive && 'button--expressive',
     fullWidth && 'button--full-width',
     loading && 'button--loading',
     disabled && !loading && 'button--disabled',
@@ -81,6 +87,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
   )
 
   useEffect(() => {
+    if (!isExpressive) return
     if (isLink || isDisabled) {
       if (pathRef.current) {
         pathRef.current.setAttribute('d', 'M 0 105 Q 50 105 100 105 L 100 105 L 0 105 Z')
@@ -127,44 +134,62 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
 
     drawPath()
 
-    let tl: gsap.core.Timeline | null = null
+    // decisions/0016: GSAP is fetched here rather than imported at the top of
+    // the file, so it only enters the bundle graph of a consumer that renders
+    // an expressive Button. lib/motion comes along in the same chunk — it
+    // registers the 'expand' CustomEase the wipe eases on.
+    let cancelled = false
+    let detach: (() => void) | undefined
 
-    function onEnter(e: MouseEvent) {
-      if (tl) tl.kill()
-      buttonRect = container.getBoundingClientRect()
-      state.curveX = ((e.clientX - buttonRect.left) / buttonRect.width) * 100
+    void Promise.all([import('gsap'), import('../../../lib/motion')]).then(
+      ([{ default: gsap }, { ease }]) => {
+        if (cancelled) return
 
-      container.classList.add('button--hovering')
+        let tl: ReturnType<typeof gsap.timeline> | null = null
 
-      tl = gsap.timeline({ onUpdate: drawPath, onComplete: drawPath })
-        .to(state, { topY: -5, duration: durEnter, ease: ease.out }, 0)
-        .to(state, { curveAmp: 40, duration: durCurve, ease: ease.expand }, 0)
-        .to(state, { curveAmp: 0, duration: durCurve, ease: ease.out }, durCurve)
-    }
+        function onEnter(e: MouseEvent) {
+          if (tl) tl.kill()
+          buttonRect = container.getBoundingClientRect()
+          state.curveX = ((e.clientX - buttonRect.left) / buttonRect.width) * 100
 
-    function onLeave() {
-      if (tl) tl.kill()
-      container.classList.remove('button--hovering')
-      drawPath()
+          container.classList.add('button--hovering')
 
-      tl = gsap.timeline({ onUpdate: drawPath, onComplete: drawPath })
-        .to(state, { topY: 105, duration: durExit, ease: ease.in }, 0)
-        .to(state, { curveAmp: 28, duration: durCurveOut, ease: ease.expand }, 0)
-        .to(state, { curveAmp: 0, duration: durCurveOut, ease: ease.out }, durCurveOut)
-    }
+          tl = gsap.timeline({ onUpdate: drawPath, onComplete: drawPath })
+            .to(state, { topY: -5, duration: durEnter, ease: ease.out }, 0)
+            .to(state, { curveAmp: 40, duration: durCurve, ease: ease.expand }, 0)
+            .to(state, { curveAmp: 0, duration: durCurve, ease: ease.out }, durCurve)
+        }
 
-    container.addEventListener('mouseenter', onEnter)
-    container.addEventListener('mouseleave', onLeave)
+        function onLeave() {
+          if (tl) tl.kill()
+          container.classList.remove('button--hovering')
+          drawPath()
+
+          tl = gsap.timeline({ onUpdate: drawPath, onComplete: drawPath })
+            .to(state, { topY: 105, duration: durExit, ease: ease.in }, 0)
+            .to(state, { curveAmp: 28, duration: durCurveOut, ease: ease.expand }, 0)
+            .to(state, { curveAmp: 0, duration: durCurveOut, ease: ease.out }, durCurveOut)
+        }
+
+        container.addEventListener('mouseenter', onEnter)
+        container.addEventListener('mouseleave', onLeave)
+
+        detach = () => {
+          container.removeEventListener('mouseenter', onEnter)
+          container.removeEventListener('mouseleave', onLeave)
+          if (tl) tl.kill()
+        }
+      }
+    )
 
     return () => {
-      container.removeEventListener('mouseenter', onEnter)
-      container.removeEventListener('mouseleave', onLeave)
+      cancelled = true
+      detach?.()
       container.classList.remove('button--hovering')
-      if (tl) tl.kill()
     }
-  }, [isLink, isDisabled])
+  }, [isExpressive, isLink, isDisabled])
 
-  const arrow = (
+  const arrowNode = (
     <span className="button__arrow" aria-hidden="true">
       <ArrowRightIcon size={14} weight="regular" />
     </span>
@@ -179,14 +204,14 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       {isLink || loading ? null : (
         icon && iconPosition === 'end' ? (
           <span className="button__icon" aria-hidden="true">{icon}</span>
-        ) : noArrow ? null : arrow
+        ) : arrow ? arrowNode : null
       )}
     </span>
   )
 
   const content = (
     <>
-      {!isLink && (
+      {isExpressive && !isLink && (
         <>
           <svg
             className="button__wipe"

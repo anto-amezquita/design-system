@@ -2,8 +2,8 @@
   "meta": {
     "primitiveCount": 124,
     "semanticCount": 140,
-    "componentCount": 104,
-    "total": 368
+    "componentCount": 105,
+    "total": 369
   },
   "tokens": [
     {
@@ -5181,6 +5181,23 @@
         "base-dark": "52px",
         "portfolio-light": "52px",
         "portfolio-dark": "52px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Button"
+      ]
+    },
+    {
+      "name": "button-glow-color",
+      "cssVar": "--button-glow-color",
+      "type": "color",
+      "category": "component",
+      "rawValue": "rgba(255, 255, 255, 0.45)",
+      "resolved": {
+        "base-light": "rgba(255, 255, 255, 0.45)",
+        "base-dark": "rgba(255, 255, 255, 0.45)",
+        "portfolio-light": "rgba(255, 255, 255, 0.45)",
+        "portfolio-dark": "rgba(255, 255, 255, 0.45)"
       },
       "axisAware": false,
       "usedBy": [

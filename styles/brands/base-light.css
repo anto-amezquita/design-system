@@ -166,6 +166,7 @@
   --button-wipe-duration-curve-out: 180ms;
   --button-arrow-nudge: 2px;
   --button-glow-size: 52px;
+  --button-glow-color: rgba(255, 255, 255, 0.45);
   --card-horizontal-media-width: 200px;
   --checkbox-size: 24px;
   --datatable-gap: 16px;
