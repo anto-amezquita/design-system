@@ -452,6 +452,14 @@
   ],
   "unreleased": [
     {
+      "sha": "a11a022",
+      "type": "docs",
+      "scope": "changelog",
+      "message": "add unreleased entry for v1.0.0 release with breaking change for button feature",
+      "date": "2026-09-24",
+      "breaking": true
+    },
+    {
       "sha": "73c6245",
       "type": "docs",
       "scope": "changelog",
