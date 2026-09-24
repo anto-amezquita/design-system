@@ -4,6 +4,22 @@
   },
   "versions": [
     {
+      "tag": "v1.0.0",
+      "date": "2026-09-24",
+      "sha": "c798089",
+      "entries": [
+        {
+          "sha": "0455ee1",
+          "type": "feat",
+          "scope": "button",
+          "message": "functional by default, expressive hover opt-in",
+          "date": "2026-09-22",
+          "breaking": true
+        }
+      ],
+      "entryCount": 1
+    },
+    {
       "tag": "v0.6.0",
       "date": "2026-09-17",
       "sha": "bdd95fe",
@@ -434,16 +450,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "0455ee1",
-      "type": "feat",
-      "scope": "button",
-      "message": "functional by default, expressive hover opt-in",
-      "date": "2026-09-22",
-      "breaking": true
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
