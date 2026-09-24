@@ -4,6 +4,22 @@
   },
   "versions": [
     {
+      "tag": "v1.0.0",
+      "date": "2026-09-24",
+      "sha": "c798089",
+      "entries": [
+        {
+          "sha": "0455ee1",
+          "type": "feat",
+          "scope": "button",
+          "message": "functional by default, expressive hover opt-in",
+          "date": "2026-09-22",
+          "breaking": true
+        }
+      ],
+      "entryCount": 1
+    },
+    {
       "tag": "v0.6.0",
       "date": "2026-09-17",
       "sha": "bdd95fe",
@@ -436,11 +452,19 @@
   ],
   "unreleased": [
     {
-      "sha": "0455ee1",
-      "type": "feat",
-      "scope": "button",
-      "message": "functional by default, expressive hover opt-in",
-      "date": "2026-09-22",
+      "sha": "a11a022",
+      "type": "docs",
+      "scope": "changelog",
+      "message": "add unreleased entry for v1.0.0 release with breaking change for button feature",
+      "date": "2026-09-24",
+      "breaking": true
+    },
+    {
+      "sha": "73c6245",
+      "type": "docs",
+      "scope": "changelog",
+      "message": "add v1.0.0 release with breaking change for button feature",
+      "date": "2026-09-24",
       "breaking": true
     }
   ],

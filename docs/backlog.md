@@ -17,17 +17,19 @@ Live, actionable work for this repo. **Open this file first in any new session**
 
 ---
 
-## `0.6.0` → next release blocked on Chromatic's monthly snapshot limit (backlog)
+## Release dispatch to the portfolio fails: the GitHub App isn't installed there (backlog)
 
-Opened 2026-09-22. `feat/functional-button-default` is code-complete and **pushed to origin (2026-09-22), no PR opened yet**: decisions/0015 and 0016 recorded, Button made functional by default with the expressive hover opt-in, contract tests, a major changeset, and 0016 amended with the GSAP packaging outcome. Also on the branch: `hooks/useButtonWipe.ts` removed (a line in the same major changeset), `package.json` `files` extended to ship `llms*.txt`, `AGENTS.md`, `CHANGELOG.md` and `decisions/*.md` (patch changeset `ship-docs-in-package.md`, decisions/0017), and a regenerated changelog. `npm run validate` exits 0 (44 files, 273 tests).
+Opened 2026-09-24. Release #108 (the merge of the `1.0.0` Version Packages PR #33) published to npm, then failed about 37s in at "Mint a token scoped to the portfolio repo" with `Not Found` from `get-a-repository-installation-for-the-authenticated-app`. So `design-system-released` was never dispatched and the portfolio's `sync-design-system.yml` never ran; `1.0.0` was bumped by hand in portfolio PR #4.
 
-**What's blocking the merge:** the account's Chromatic monthly snapshot limit is reached again (banner confirmed by the user on 2026-09-22; expected to renew 2026-09-23). The branch was pushed while capped, so the `chromatic` run for that push most likely failed or skipped. This change alters the hover on *every* Button story plus two new ones, so the snapshot batch is the review — 0016 says those diffs "need reviewing and accepting as a batch, against a committed build." A green check that didn't upload snapshots is not that review.
+Two one-time steps, both listed in `sync-design-system.yml`'s header: install the self-heal GitHub App on `anto-amezquita/portfolio` (Contents, Pull requests and Issues write), and add `SELF_HEAL_APP_CLIENT_ID` and `SELF_HEAL_APP_PRIVATE_KEY` as secrets in the portfolio repo, since secrets aren't shared across repos. It can only be confirmed on the next release.
 
-**When it's time:** confirm the limit actually reset on Chromatic's build page, not just the calendar. Then re-run the `chromatic` workflow for the branch from the Actions tab (or push an empty commit), open the PR, review and accept the Button batch, merge, release the major.
+Status: not started.
 
-**After that, in order:** bump `~/Documents/github/portfolio` to the new major — its Button wrapper (`components/primitives/Button/Button.tsx`, sets `motion="expressive"` and `arrow`) and ~13 converted `noArrow` call sites are sitting uncommitted on `main` and cannot typecheck until then. While there, re-sync the hand-copied `BUTTON_DOC` string in `app/two-things-i-use-everyday/ButtonDuality.tsx` from the regenerated `docs/components/button.md`; it snapshots the *published* package, so it is correct today and stale the moment the major lands. Only then start 0015.
+## Portfolio's `chromatic` changelog check fails on every branch (backlog)
 
-Status: waiting on Chromatic's limit, not on any code or decision.
+Opened 2026-09-24. On portfolio PR #4 the "Check changelog is in sync" step failed until `npm run tokens` was rerun after the last commit, and the changelog committed again as a `chore`. It's the same stale-by-one gap as item 1 of Self-healing CI below, but the portfolio has no self-heal bot, so every branch with a qualifying commit needs that manual step. `update-changelog` regenerates the file on `main` after merge. Options: leave it, port Phase 1 self-heal to the portfolio, or relax the check. Needs a call.
+
+Status: not started.
 
 ## Baseline grid: sizes `decisions/0012`'s table doesn't cover (backlog)
 
