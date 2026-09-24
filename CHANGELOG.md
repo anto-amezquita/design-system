@@ -1,5 +1,32 @@
 # @amezquita/design-system
 
+## 1.0.0
+
+### Major Changes
+
+- d30931a: Button is functional by default, and the expressive hover is opt-in (`decisions/0016`). Every Button changes on upgrade.
+
+  **Hover:** a plain background change over a short CSS transition — the rules that previously only reached people with `prefers-reduced-motion: reduce`. The GSAP wipe and cursor-following glow are now behind `motion="expressive"`.
+
+  **The arrow is opt-in.** `noArrow` is gone; use `arrow`:
+
+  - `<Button noArrow>` → `<Button>`
+  - `<Button>` (was getting an arrow) → `<Button arrow>`
+
+  **To keep the previous look**, set both: `<Button motion="expressive" arrow>`. A wrapper in your own app is the tidier place for that than repeating it at every call site.
+
+  **GSAP** now loads through a dynamic `import()` on the expressive path, so it never executes in an app that doesn't use it. It remains a regular dependency rather than an optional peer — this package ships raw source with no build step, so the import has to stay resolvable.
+
+  **Tokens:** `--button-glow-color` is now a real component token instead of a hardcoded value in `Button.css`, so a brand can override it.
+
+  Unchanged: `motion="expressive"` still does nothing under `prefers-reduced-motion: reduce` or on a device without hover, where it falls back to the functional hover.
+
+  **Removed: `hooks/useButtonWipe.ts`.** Nothing in this package used it. It imported GSAP statically, so importing it pulled GSAP into your bundle whatever Button's `motion` prop said, and its default fill pointed at `--button-primary-background-hover`, a token removed in an earlier release. If you imported it directly, copy it into your own app; the expressive wipe on Button itself is unaffected.
+
+### Patch Changes
+
+- fb7a7eb: The package now ships its agent and reference docs alongside the code: `llms.txt`, `llms-full.txt`, `AGENTS.md`, `CHANGELOG.md`, and the ADRs in `decisions/*.md` (`decisions/0017`). An agent working in a consumer project can read them from `node_modules/@amezquita/design-system/`, and the docs site builds its Changelog, Working with AI and Decisions pages from the published package instead of from this repo. No code or token changes.
+
 ## 0.6.0
 
 ### Minor Changes
@@ -8,17 +35,17 @@ This release reworks the type scale and adds container widths. It removes tokens
 
 - 5c061df, cff0463, 797c753: **Line-heights on the 4px grid, and a simpler type scale** (`decisions/0012`, `decisions/0013`). Every static font size now has a fixed pixel line-height on the same 4px grid as the spacing scale. The static scale goes from 13 sizes to 9:
 
-  | Role | Size / line-height |
-  |---|---|
-  | `h1` | 64 / 80px |
-  | `h2` | 48 / 60px |
-  | `h3` | 32 / 40px |
-  | `h4` | 24 / 32px |
-  | `h5` | 20 / 24px |
-  | `body` | 18 / 28px |
-  | `control` | 16 / 24px |
-  | `small` | 14 / 20px (form labels: 14 / 16px with `--line-height-label`) |
-  | `caption` (new) | 12 / 16px |
+  | Role            | Size / line-height                                            |
+  | --------------- | ------------------------------------------------------------- |
+  | `h1`            | 64 / 80px                                                     |
+  | `h2`            | 48 / 60px                                                     |
+  | `h3`            | 32 / 40px                                                     |
+  | `h4`            | 24 / 32px                                                     |
+  | `h5`            | 20 / 24px                                                     |
+  | `body`          | 18 / 28px                                                     |
+  | `control`       | 16 / 24px                                                     |
+  | `small`         | 14 / 20px (form labels: 14 / 16px with `--line-height-label`) |
+  | `caption` (new) | 12 / 16px                                                     |
 
   Fluid `display` and `h1`–`h3` keep their unitless ratios (`--line-height-display`, `--line-height-heading`).
 
