@@ -1,0 +1,71 @@
+/*
+  Tokens consumed:
+
+  --color-accent-default, --color-accent-hover, --color-border-focus
+  --border-width-default, --border-radius-interactive
+  --focus-ring-width, --focus-ring-offset
+  --duration-interaction, --easing-default
+  --size-icon-xs, --space-tight-gap
+
+  No component tokens: every value is a semantic token used as-is, so a
+  component token would be a pass-through (decisions/0005).
+*/
+
+.link {
+  color: var(--color-accent-default);
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: var(--border-width-default);
+  border-radius: var(--border-radius-interactive);
+  transition:
+    color var(--duration-interaction) var(--easing-default),
+    text-decoration-color var(--duration-interaction) var(--easing-default);
+}
+
+.link:hover {
+  color: var(--color-accent-hover);
+}
+
+.link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Standalone: no underline until hover or focus. The line is kept and made
+   transparent, rather than removed, so it can fade in instead of jumping. */
+
+.link--standalone {
+  text-decoration-color: transparent;
+}
+
+.link--standalone:hover,
+.link--standalone:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+/* External */
+
+.link__icon {
+  display: inline-block;
+  width: var(--size-icon-xs);
+  height: var(--size-icon-xs);
+  margin-inline-start: var(--space-tight-gap);
+  vertical-align: middle;
+}
+
+/* Read by screen readers, not shown. */
+.link__hint {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}

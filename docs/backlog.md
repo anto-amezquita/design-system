@@ -17,6 +17,30 @@ Live, actionable work for this repo. **Open this file first in any new session**
 
 ---
 
+## `decisions/0015`: navigation components ready to push (backlog)
+
+Opened 2026-09-28. `Link`, `SkipLink`, `Menu`, `NavigationMenu` and `SideNav` (with `SideNavProvider` and `SideNavTrigger`), plus the breakpoint tokens from `decisions/0018`, are built and committed on `feat/navigation-components`, one commit per step. Not pushed, on purpose: Chromatic runs on every push to an open PR. Scope and every deviation from the handoff are in `specs/navigation-components-spec.md`; the step-by-step handoff was `~/Documents/github/dotfiles/claude/handoff-0015-navigation-components.md`, which gets deleted once this merges, along with this entry.
+
+Left to do: push, open the PR, run Chromatic once and review. Expect new baselines for 28 new stories, and one intended change to existing ones: Card's description now shows from 1024px instead of 1200px (`decisions/0018`), so any Card story snapshotted between those widths changes.
+
+Status: waiting on push and review.
+
+## Navigation follow-ups (backlog)
+
+Opened 2026-09-28, deferred on purpose while building the `decisions/0015` components.
+
+**1. Move Breadcrumb and Pagination onto Link.** Both render their own `<a>` with their own link styles. Moving them onto `Link` (`variant="standalone"`) would give one link look and one focus ring, but it changes both components' visuals and classes, so it wasn't part of adding Link.
+
+**2. Menu: checkbox items, radio items and submenus.** Radix DropdownMenu supports all three. Left out until a consumer needs one; each adds state and keyboard behaviour worth its own tests.
+
+**3. Built-in English strings that can't be changed.** Link's "(opens in a new tab)" and Drawer's "Close drawer" (and so the close button in SideNav's drawer) are hardcoded. Everything else the new components say is a prop with an English default. The consumers include Danish and Spanish sites, so these need a prop or a small strings object. Worth deciding once, for the whole system, rather than per component.
+
+**4. Tests for the other nine `tokens:lint` rules.** `scripts/lint-tokens.test.mjs` covers only `no-unknown-breakpoint`. The file and the exported `lintFile`/`RULES` now make the rest cheap to add.
+
+**5. `--z-dropdown` is referenced again, by NavigationMenu.** `decisions/0007`'s dead-token note listed it as unreferenced; it isn't any more (spec Deviation 6). `--z-overlay` and `--z-modal` are still candidates for the dead-token round.
+
+Status: not started.
+
 ## Release dispatch to the portfolio fails: the GitHub App isn't installed there (backlog)
 
 Opened 2026-09-24. Release #108 (the merge of the `1.0.0` Version Packages PR #33) published to npm, then failed about 37s in at "Mint a token scoped to the portfolio repo" with `Not Found` from `get-a-repository-installation-for-the-authenticated-app`. So `design-system-released` was never dispatched and the portfolio's `sync-design-system.yml` never ran; `1.0.0` was bumped by hand in portfolio PR #4.
@@ -27,7 +51,7 @@ Status: not started.
 
 ## Portfolio's `chromatic` changelog check fails on every branch (backlog)
 
-Opened 2026-09-24. On portfolio PR #4 the "Check changelog is in sync" step failed until `npm run tokens` was rerun after the last commit, and the changelog committed again as a `chore`. It's the same stale-by-one gap as item 1 of Self-healing CI below, but the portfolio has no self-heal bot, so every branch with a qualifying commit needs that manual step. `update-changelog` regenerates the file on `main` after merge. Options: leave it, port Phase 1 self-heal to the portfolio, or relax the check. Needs a call.
+Opened 2026-09-24. On portfolio PR #4 the "Check changelog is in sync" step failed until `npm run tokens` was rerun after the last commit, and the changelog committed again as a `chore`. It's the same stale-by-one gap as item 1 of Self-healing CI below, but the portfolio has no self-heal bot, so every branch with a qualifying commit needs that manual step. `update-changelog` regenerates the file on `main` after merge. Options: leave it, port Phase 1 self-heal to the portfolio, or relax the check. This repo relaxed it on 2026-09-28 (`decisions/0019`: no branch gate, `main` regenerates after merge); the same change would fix the portfolio.
 
 Status: not started.
 
@@ -47,9 +71,7 @@ Status: 2 and 3 need the user's call; 4 waits on the portfolio's upgrade; 5 need
 
 ## Container width scale follow-ups (backlog)
 
-Opened 2026-09-17 with `decisions/0014`, which added the `size-container-text/media/wide/page/site` tokens and deliberately stopped at tokens. Three things left:
-
-**1. Breakpoint tokens.** The site tier switches at 1024px, and component CSS already hardcodes 768px and 1024px (`Dialog.css`). CSS custom properties can't be used inside `@media`, so breakpoints need build-time output: Style Dictionary emitting `@custom-media` (consumers would need PostCSS), SCSS/JS constants, or documented values only. Needs a call on which.
+Opened 2026-09-17 with `decisions/0014`, which added the `size-container-text/media/wide/page/site` tokens and deliberately stopped at tokens. Item 1, breakpoint tokens, shipped as `decisions/0018` (2026-09-28). Two things left:
 
 **2. A layout component.** A CSS grid with named lines (text / media / wide / full), as in Ryan Mulligan's layout breakouts, so a page opts children into a tier instead of repeating `min(var(--size-container-*), 100%)` and `margin-inline: auto`. Wait until the portfolio has used the tokens for real.
 
@@ -65,9 +87,9 @@ Two phases, deliberately different mechanisms: Phase 1 (stale generated artifact
 
 **Phase 1 works and is fully verified.** `amez-ds-self-heal` is live, and all five acceptance criteria pass against real runs — a drifting branch gets one correctly-scoped PR, `chromatic` goes green on it unattended, a second push updates that same PR, a clean branch produces nothing, and merging leaves both staleness checks clean with the bot's branch deleted. Detail in the spec's Acceptance table and session log.
 
-Merged to `main` 2026-09-10 (PR #13). Two things remain, both deliberately deferred rather than forgotten.
+Merged to `main` 2026-09-10 (PR #13). Item 1 is resolved; item 2 remains, and matters more now that `update-changelog` is the only thing keeping the changelog current on `main`.
 
-**1. Watch the PR rate before doing anything else.** Deferred by decision, not blocked. The changelog can never be current in the commit that updates it — you build it, then commit, and the commit you just made isn't in it. So *every* `feat/fix/refactor/perf/style/docs` commit touching `tokens/`, `components/`, `sd.config.mjs` or `styles/brands/` leaves it one entry stale, however carefully you work. The bot therefore fires on nearly every component branch, not only when you forget to regenerate. Two readings, and only real use decides between them: useful (it closes a gap you were absorbing by hand) or noise (a PR per branch, most of them one changelog line). **Do a few real pieces of work, then judge.** If it reads as noise, the lever is `build-changelog.mjs` writing `meta.generatedAt` only on real change, which would let the strict and self-heal path lists collapse back into one.
+**1. Watch the PR rate before doing anything else.** Resolved 2026-09-28 by `decisions/0019`: it read as noise, so branches no longer gate on the changelog and the bot no longer commits it. It now opens a PR only for real generated-artifact drift. Original note kept below for context. Deferred by decision, not blocked. The changelog can never be current in the commit that updates it — you build it, then commit, and the commit you just made isn't in it. So *every* `feat/fix/refactor/perf/style/docs` commit touching `tokens/`, `components/`, `sd.config.mjs` or `styles/brands/` leaves it one entry stale, however carefully you work. The bot therefore fires on nearly every component branch, not only when you forget to regenerate. Two readings, and only real use decides between them: useful (it closes a gap you were absorbing by hand) or noise (a PR per branch, most of them one changelog line). **Do a few real pieces of work, then judge.** If it reads as noise, the lever is `build-changelog.mjs` writing `meta.generatedAt` only on real change, which would let the strict and self-heal path lists collapse back into one.
 
 **2. Branch protection on `main`.** Required check **`chromatic`** (there is no check named `validate` — it's an npm script inside that job), approvals **0** (GitHub blocks self-approval, so requiring 1 makes your own PRs unmergeable on a solo repo), no bypass entry for the App. **Decide first:** `chromatic.yml`'s `update-changelog` job pushes directly to `main`, so a require-a-PR ruleset rejects that push — silently, on every merge from then on. Either add a bypass actor for the Actions bot, or rework that job to open a PR like everything else. **Recommend the rework:** `main` currently has one bot pushing straight to it while Phase 1's bot is forbidden from doing exactly that, and a bypass entry makes that inconsistency permanent.
 
@@ -75,4 +97,4 @@ Worth knowing when you get to it: the stale-by-one changelog behaviour predates 
 
 **Phase 2 stays parked** until Phase 1 has been boring for a while. Its open questions are in the spec, not here.
 
-Status: Phase 1 shipped and verified. Branch protection open, gated on one decision and on watching the bot in real use first.
+Status: Phase 1 shipped and verified; the changelog noise is fixed (`decisions/0019`). Branch protection open, gated on the `update-changelog` push decision.

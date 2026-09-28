@@ -1,0 +1,166 @@
+/*
+  Tokens consumed:
+
+  --z-dropdown
+  --color-surface-primary, --color-surface-secondary, --color-border-default
+  --color-text-primary, --color-text-secondary, --color-border-focus
+  --border-width-interactive, --border-radius-component, --border-radius-interactive, --shadow-dropdown
+  --font-family-base, --font-size-control, --line-height-control, --font-weight-label
+  --space-tight-gap, --space-inline-gap, --space-compact-padding-y, --space-control-padding-x
+  --size-touch-target, --size-icon-sm
+  --focus-ring-width, --focus-ring-offset
+  --duration-interaction, --easing-default
+
+  No component tokens: the dropdown panel matches Menu's and Select's, and
+  every value is a semantic token used as-is (decisions/0005).
+*/
+
+/* Header navigation exists from breakpoint.desktop up (decisions/0018).
+   Below it, SideNav's drawer carries the same items (SideNav's headerItems).
+   CSS decides this, not JS, so there's no flash before hydration. */
+
+.navigation-menu {
+  display: none;
+  font-family: var(--font-family-base);
+}
+
+@media (min-width: 1024px) {
+  .navigation-menu {
+    display: block;
+  }
+}
+
+.navigation-menu__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-tight-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation-menu__item {
+  position: relative;
+}
+
+/* Top-level links and group triggers share one look. */
+
+.navigation-menu__link,
+.navigation-menu__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  min-height: var(--size-touch-target);
+  padding: 0 var(--space-control-padding-x);
+  font-family: inherit;
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  border-radius: var(--border-radius-interactive);
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    color var(--duration-interaction) var(--easing-default),
+    background var(--duration-interaction) var(--easing-default);
+}
+
+.navigation-menu__link:hover,
+.navigation-menu__trigger:hover,
+.navigation-menu__trigger[data-state='open'] {
+  color: var(--color-text-primary);
+  background: var(--color-surface-secondary);
+}
+
+.navigation-menu__link[data-active],
+.navigation-menu__trigger--active {
+  color: var(--color-text-primary);
+  background: var(--color-surface-secondary);
+}
+
+.navigation-menu__link:focus-visible,
+.navigation-menu__trigger:focus-visible,
+.navigation-menu__sublink:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.navigation-menu__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+}
+
+.navigation-menu__chevron {
+  flex-shrink: 0;
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+  transition: transform var(--duration-interaction) var(--easing-default);
+}
+
+.navigation-menu__trigger[data-state='open'] .navigation-menu__chevron {
+  transform: rotate(180deg);
+}
+
+/* Group dropdown. Rendered inside its own item (no Radix Viewport), so it
+   isn't portalled — mount order can't lift it above page content that comes
+   later in the DOM, which is why this keeps an explicit z-index where Menu
+   and Select don't (decisions/0007, see the spec's Deviations). */
+
+.navigation-menu__content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: var(--z-dropdown);
+  min-width: 100%;
+  margin-top: var(--space-tight-gap);
+  padding: var(--space-tight-gap);
+  background: var(--color-surface-primary);
+  border: var(--border-width-interactive) solid var(--color-border-default);
+  border-radius: var(--border-radius-component);
+  box-shadow: var(--shadow-dropdown);
+  box-sizing: border-box;
+}
+
+.navigation-menu__sublist {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation-menu__sublink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  padding: var(--space-compact-padding-y) var(--space-control-padding-x);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  color: var(--color-text-primary);
+  border-radius: var(--border-radius-interactive);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--duration-interaction) var(--easing-default);
+}
+
+.navigation-menu__sublink:hover,
+.navigation-menu__sublink[data-active] {
+  background: var(--color-surface-secondary);
+}
+
+.navigation-menu__sublink[data-active] {
+  font-weight: var(--font-weight-label);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation-menu__link,
+  .navigation-menu__trigger,
+  .navigation-menu__chevron,
+  .navigation-menu__sublink {
+    transition: none;
+  }
+}

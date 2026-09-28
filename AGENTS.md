@@ -22,8 +22,9 @@ If the `amezquita-design-system` MCP server is connected (check `claude mcp list
 - No hardcoded motion (`transition: 200ms`) — use a `--duration-*` token.
 - No hardcoded spacing (`padding: 16px`) — use a `--space-*` token.
 - No hardcoded `line-height` values (bare `1`/`0` excepted for tight single-line/icon-only controls) — use a `--line-height-*` token.
+- No `@media` width that isn't a breakpoint token (`768px` tablet, `1024px` desktop), and no `max-width` queries — write the literal, mobile-first: `@media (min-width: 1024px)`. JS reads the same values from `lib/breakpoints.ts`. See ADR [`0018`](decisions/0018-breakpoint-tokens.md).
 
-`npm run tokens:lint` enforces all six, plus `no-fabricated-token` (any `var(--x)` that doesn't resolve to something real in `tokens/`), `no-deep-bem-nesting`, and `no-missing-reduced-motion` — 9 rules total, itemized in [`docs/quality.md`](docs/quality.md) §2. Read the errors — they tell you the fix and how to suppress a genuine exception (`/* lint-ignore: rule-id */`, with a one-line reason), which is different from working around a real one.
+`npm run tokens:lint` enforces all seven, plus `no-fabricated-token` (any `var(--x)` that doesn't resolve to something real in `tokens/`), `no-deep-bem-nesting`, and `no-missing-reduced-motion` — 10 rules total, itemized in [`docs/quality.md`](docs/quality.md) §2. Read the errors — they tell you the fix and how to suppress a genuine exception (`/* lint-ignore: rule-id */`, with a one-line reason), which is different from working around a real one.
 
 ## Do not
 
@@ -47,11 +48,13 @@ Component tokens follow `--<component-slug>-*` (e.g. `--button-padding-x`, `--di
 
 ## Components that exist
 
-29 public components. Anything not on this list is provably invented — check `tokens/component-registry.json` if this list is ever stale.
+34 public components. Anything not on this list is provably invented — check `tokens/component-registry.json` if this list is ever stale.
 
-- **Primitives (14):** Avatar, Badge, Button, Checkbox, Heading, Input, Label, Radio, Select, Skeleton, Spinner, Switch, Tag, Textarea
-- **Composition (7):** Alert, AlertDialog, Card, Dialog, Drawer, Toast, Tooltip
-- **Patterns (8):** Accordion, Breadcrumb, DataTable, EmptyState, Hero, Pagination, Table, Tabs
+- **Primitives (16):** Avatar, Badge, Button, Checkbox, Heading, Input, Label, Link, Radio, Select, Skeleton, SkipLink, Spinner, Switch, Tag, Textarea
+- **Composition (9):** Alert, AlertDialog, Card, Dialog, Drawer, Menu, NavigationMenu, Toast, Tooltip
+- **Patterns (9):** Accordion, Breadcrumb, DataTable, EmptyState, Hero, Pagination, SideNav, Table, Tabs
+
+`SideNav` ships with two sub-components, `SideNavProvider` and `SideNavTrigger`, registered the same way Card's parts are.
 
 (`BaseSheet` also ships in the package but is internal — Drawer's overlay primitive, not something to reach for directly.)
 

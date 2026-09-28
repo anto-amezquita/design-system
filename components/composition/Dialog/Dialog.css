@@ -67,6 +67,10 @@
   animation: dialog-content-in var(--duration-transition) var(--easing-out);
 }
 
+/* 768px and 1024px are breakpoint.tablet and breakpoint.desktop
+   (tokens/global.json, decisions/0018). Custom properties can't be read in
+   @media, so the literals stay; no-unknown-breakpoint checks them against
+   the tokens. */
 @media (min-width: 768px) {
   .dialog__content {
     padding: var(--space-dialog-padding-tablet);

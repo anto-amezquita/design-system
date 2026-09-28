@@ -37,6 +37,13 @@
  *                               plan is measured against. A token either exists or it doesn't;
  *                               a component-private customization hook belongs to
  *                               no-fabricated-token's allow-list, not a fallback value.
+ *   no-unknown-breakpoint      — every width in an @media condition must equal a
+ *                               breakpoint.* token value (tokens/global.json, read at lint
+ *                               time, not copied here), and max-width queries aren't
+ *                               allowed: mobile-first min-width only, so there's no
+ *                               1023/1024 off-by-one. Non-width features
+ *                               (prefers-reduced-motion, hover) are ignored. See
+ *                               decisions/0018.
  *
  * To suppress a known legitimate exception on a single line:
  *   padding: 6px;  [lint-ignore: no-hardcoded-spacing]
@@ -114,6 +121,38 @@ export function loadKnownTokenVars(rootDir = process.cwd()) {
   }
 
   return new Set([...names].map(name => `--${name}`))
+}
+
+// The breakpoint.* values from tokens/global.json, as the literal strings a
+// media query writes ("768px"). Read from the DTCG source for the same reason
+// loadKnownTokenVars is: a new breakpoint token should be usable in the same
+// change that adds it, without a rebuild in between. rootDir as above.
+export function loadBreakpointValues(rootDir = process.cwd()) {
+  const globalTokens = JSON.parse(readFileSync(join(rootDir, 'tokens/global.json'), 'utf8'))
+  return new Set(
+    flattenPrimitives(globalTokens.breakpoint ?? {}, 'breakpoint').map(entry => entry.rawValue),
+  )
+}
+
+// Width conditions inside an @media prelude, in both syntaxes:
+// `(min-width: 768px)` and the range form `(width >= 768px)`.
+const MEDIA_WIDTH_FEATURE_RE = /\(\s*(min-width|max-width|width)\s*:\s*([\d.]+[a-z%]*)\s*\)/gi
+const MEDIA_WIDTH_RANGE_RE = /\(\s*width\s*(<=|>=|<|>|=)\s*([\d.]+[a-z%]*)\s*\)/gi
+
+export function findUnknownBreakpoints(strippedLine, breakpointValues) {
+  if (!/^\s*@media\b/.test(strippedLine)) return null
+  const found = []
+  for (const m of strippedLine.matchAll(MEDIA_WIDTH_FEATURE_RE)) {
+    const [, feature, value] = m
+    if (feature.toLowerCase() === 'max-width') found.push(`max-width: ${value}`)
+    else if (!breakpointValues.has(value)) found.push(`${feature}: ${value}`)
+  }
+  for (const m of strippedLine.matchAll(MEDIA_WIDTH_RANGE_RE)) {
+    const [, op, value] = m
+    if (op.startsWith('<')) found.push(`width ${op} ${value}`)
+    else if (!breakpointValues.has(value)) found.push(`width ${op} ${value}`)
+  }
+  return found.length ? found : null
 }
 
 // Strips /* ... */ (including comments that span multiple lines) and //
@@ -220,7 +259,7 @@ export function isKnownTokenVar(name, knownTokenVars) {
   return knownTokenVars.has(name) || RADIX_VAR_RE.test(name)
 }
 
-const RULES = [
+export const RULES = [
   {
     id: 'no-raw-hex',
     description: 'Raw hex value — replace with a semantic token (e.g. var(--color-text-primary))',
@@ -292,6 +331,13 @@ const RULES = [
     },
   },
   {
+    id: 'no-unknown-breakpoint',
+    description: 'Media query width that isn\'t a breakpoint token, or a max-width query — use a breakpoint.* value from tokens/global.json, mobile-first: @media (min-width: 768px) or (min-width: 1024px). See decisions/0018.',
+    check(strippedLine, fileContext) {
+      return findUnknownBreakpoints(strippedLine, fileContext.breakpointValues)
+    },
+  },
+  {
     id: 'no-fabricated-token',
     description: 'var(--x) where --x isn\'t a real token (global.json, any brand\'s tokens.json, or tokens/components/*.json), a --radix-* runtime variable, or declared elsewhere in this same file as a private custom property.',
     check(strippedLine, fileContext) {
@@ -307,7 +353,7 @@ const RULES = [
   },
 ]
 
-function lintFile(filePath, rules, knownTokenVars) {
+export function lintFile(filePath, rules, knownTokenVars, breakpointValues) {
   const content = readFileSync(filePath, 'utf8')
   const lines = content.split('\n')
   // Comment-free view, computed once for the whole file so a multi-line block
@@ -335,7 +381,7 @@ function lintFile(filePath, rules, knownTokenVars) {
     const pv = parsePropertyValue(strippedLine)
     if (pv && pv.prop.startsWith('--')) locallyDeclaredVars.add(pv.prop)
   }
-  const fileContext = { locallyDeclaredVars, knownTokenVars }
+  const fileContext = { locallyDeclaredVars, knownTokenVars, breakpointValues }
 
   for (let i = 0; i < lines.length; i++) {
     const rawLine = lines[i]
@@ -381,6 +427,7 @@ function lintFile(filePath, rules, knownTokenVars) {
 
 async function runLinter() {
   const knownTokenVars = loadKnownTokenVars()
+  const breakpointValues = loadBreakpointValues()
 
   const systemFiles = (await glob([
     'components/primitives/**/*.css',
@@ -390,7 +437,7 @@ async function runLinter() {
 
   const allViolations = []
   for (const file of systemFiles) {
-    allViolations.push(...lintFile(file, RULES, knownTokenVars))
+    allViolations.push(...lintFile(file, RULES, knownTokenVars, breakpointValues))
   }
 
   if (allViolations.length === 0) {

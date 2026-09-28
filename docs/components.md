@@ -527,6 +527,80 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Link
+
+| Field | Value |
+|---|---|
+| **Purpose** | Navigation to another page or resource; use Link for navigation and Button for actions |
+| **Figma name** | `Link` |
+| **Code name** | `Link` |
+| **Storybook path** | `Primitives/Link` |
+
+**Props / variants**
+- `variant`: `inline` (default, underlined, for running text) or `standalone` (no underline until hover or focus)
+- `external`: opens in a new tab (`target="_blank"`, `rel="noopener noreferrer"`), adds an icon and visually hidden "(opens in a new tab)". Set it explicitly; it isn't detected from `href`
+- `asChild`: render a router's link instead of `<a>` — `<Link asChild><NextLink href="/about">About</NextLink></Link>`
+- Every native anchor attribute passes through; `className` merges; the ref reaches the `<a>`
+- Link vs Button: Button still renders `<a>` when given `href`, but reach for Link whenever the element goes somewhere, and Button when it does something
+
+**Required states**
+- [x] default (accent colour, underlined when inline)
+- [x] hover (accent hover colour; standalone gains its underline)
+- [x] focus-visible (2px ring)
+
+**Tokens consumed**
+- `--color-accent-default`, `--color-accent-hover`, `--color-border-focus`
+- `--border-width-default`, `--border-radius-interactive`, `--focus-ring-width`, `--focus-ring-offset`
+- `--duration-interaction`, `--easing-default`, `--size-icon-xs`, `--space-tight-gap`
+
+**Accessibility**
+- Semantic element: `<a>` (or the `asChild` element, which must render an `<a>`)
+- Link text should make sense out of context; avoid "click here"
+- `external` adds "(opens in a new tab)" to the accessible name, so the new tab isn't a surprise
+- Text colour is checked at 4.5:1 against the primary surface in all four modes (`tokens/contrast-pairs.json`, `link-text`)
+
+**Chromatic stories**
+- `Default`, `Standalone`, `External`, `AsChild`, `AllVariants`, `DarkMode`
+
+---
+
+### SkipLink
+
+| Field | Value |
+|---|---|
+| **Purpose** | First Tab stop on the page that lets keyboard users jump past the header to the main content |
+| **Figma name** | `SkipLink` |
+| **Code name** | `SkipLink` |
+| **Storybook path** | `Primitives/SkipLink` |
+
+**Props / variants**
+- `targetId`: the `id` to jump to, default `'main-content'`. Put the matching `id` on your `<main>`: `<main id="main-content">`
+- `children`: the label, default "Skip to main content"
+- Render it first inside `<body>` (before the header), so it's the first thing Tab reaches
+- Every native anchor attribute except `href` passes through; `className` merges; the ref reaches the `<a>`
+
+**Required states**
+- [x] hidden (at rest, visually hidden but reachable)
+- [x] focus (fixed to the top-left, above every other layer)
+
+**Tokens consumed**
+- `--z-skip-link` (700, one step above `--z-tooltip`)
+- `--color-accent-default`, `--color-accent-foreground`, `--color-border-focus`
+- `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-weight-label`
+- `--space-control-padding-x`, `--space-control-padding-y`, `--space-inline-gap`
+- `--border-radius-interactive`, `--focus-ring-width`, `--focus-ring-offset`
+
+**Accessibility**
+- Semantic element: `<a href="#main-content">`
+- On activation it moves focus to the target, adding `tabindex="-1"` if the target isn't focusable, so the next Tab continues from the main content instead of the top of the page
+- Visible whenever focused (`:focus`, not only `:focus-visible`)
+- The only component with an explicit z-index after decisions/0007: it isn't portalled, so mount order can't lift it
+
+**Chromatic stories**
+- `Default`, `Focused`, `CustomTarget`, `DarkMode`
+
+---
+
 ### Alert
 
 | Field | Value |
@@ -585,6 +659,88 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### Menu
+
+| Field | Value |
+|---|---|
+| **Purpose** | Dropdown list of actions opened from a trigger: account menus, overflow ("more") menus, row actions |
+| **Figma name** | `Menu` |
+| **Code name** | `Menu` |
+| **Storybook path** | `Composition/Menu` |
+
+**Props / variants**
+- `trigger`: the element that opens the menu, a single element that forwards its ref. Use `Button` with its functional default: `trigger={<Button variant="secondary">Actions</Button>}`
+- `groups`: `{ label?: string; items: MenuItem[] }[]`. A separator is drawn between groups; one unlabelled group is a plain list
+- Each item: `{ id, label, onSelect?, disabled?, variant?: 'default' | 'destructive', icon? }`. `destructive` is for deletes and other actions that can't be undone
+- `align` (`start` default, `center`, `end`), `side` (`bottom` default)
+- `open` / `defaultOpen` / `onOpenChange` for controlled or uncontrolled use
+- Actions only: no checkbox or radio items and no submenus yet (deferred, see `docs/backlog.md`). For navigation between pages use `NavigationMenu`, not Menu
+
+**Required states**
+- [x] closed / open
+- [x] highlighted item (pointer or arrow keys)
+- [x] disabled item
+- [x] destructive item, at rest and highlighted
+
+**Tokens consumed**
+- `--color-surface-primary`, `--color-surface-secondary`, `--color-border-default`, `--color-text-primary`, `--color-text-secondary`
+- `--color-feedback-error`, `--color-feedback-error-background`
+- `--border-width-interactive`, `--border-width-default`, `--border-radius-component`, `--border-radius-interactive`, `--shadow-dropdown`
+- `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-size-small`, `--line-height-label`, `--font-weight-label`
+- `--space-tight-gap`, `--space-inline-gap`, `--space-compact-padding-y`, `--space-control-padding-x`, `--size-icon-sm`, `--opacity-disabled`
+
+**Accessibility**
+- Built on Radix DropdownMenu: `role="menu"` / `menuitem`, the trigger gets `aria-haspopup` and `aria-expanded`
+- Keyboard: `Enter`, `Space` or `ArrowDown` opens and focuses the first item; arrow keys move; typing jumps to a matching item; `Escape` closes and returns focus to the trigger
+- An icon-only trigger needs an `aria-label` on the trigger itself
+- No z-index (decisions/0007): the panel is portalled, so it layers correctly inside a Dialog or Drawer (`Menu.nesting.test.tsx`)
+
+**Chromatic stories**
+- `Default`, `Open`, `WithGroupLabelsAndIcons`, `Overflow`, `DarkMode`
+
+---
+
+### NavigationMenu
+
+| Field | Value |
+|---|---|
+| **Purpose** | The site's header navigation: top-level links, plus groups that open a dropdown of links. Hidden below 1024px, where SideNav's drawer carries the same links (its `headerItems`) |
+| **Figma name** | `NavigationMenu` |
+| **Code name** | `NavigationMenu` |
+| **Storybook path** | `Composition/NavigationMenu` |
+
+**Props / variants**
+- `items: NavItem[]` — each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`. Two levels at most. The types (`NavItem`, `NavLink`, `NavGroup`, `NavLinkComponent`) are exported from this component's folder and from `SideNav`'s
+- `currentHref`: your router's current pathname. An exact match sets `aria-current="page"` and marks the link's group active
+- `LinkComponent`: your router's Link (e.g. `next/link`), defaults to `<a>`. It must forward its ref and pass `aria-current`, `className` and `onClick` through
+- `aria-label`: names the `<nav>` landmark, default "Main"
+- **Hidden below 1024px** (`breakpoint.desktop`) by CSS. Pair it with `SideNav` and pass the same array as SideNav's `headerItems`, so the links move into the mobile drawer
+- No mega-menu or rich content: a group is a simple list of links
+
+**Required states**
+- [x] default, hover, focus-visible
+- [x] current link (`aria-current="page"`) and active group
+- [x] group open
+
+**Tokens consumed**
+- `--z-dropdown` (the group dropdown isn't portalled, see Accessibility)
+- `--color-surface-primary`, `--color-surface-secondary`, `--color-border-default`, `--color-text-primary`, `--color-text-secondary`, `--color-border-focus`
+- `--border-width-interactive`, `--border-radius-component`, `--border-radius-interactive`, `--shadow-dropdown`
+- `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-weight-label`
+- `--space-tight-gap`, `--space-inline-gap`, `--space-compact-padding-y`, `--space-control-padding-x`, `--size-touch-target`, `--size-icon-sm`
+
+**Accessibility**
+- Built on Radix NavigationMenu: a `<nav>` landmark, groups open from a real `<button>` with `aria-expanded`
+- Keyboard: Tab moves between top-level items; `Enter`/`Space` opens a group and Tab moves into its links; `Escape` closes and returns focus to the trigger; arrow keys move between top-level items
+- Hover also opens a group, after Radix's short delay
+- Every top-level item is at least 44px tall (`--size-touch-target`)
+- The dropdown renders inside its own item rather than in a portal, so it carries `--z-dropdown` to stay above later page content
+
+**Chromatic stories**
+- `Default`, `Open`, `WithIcons`, `NoCurrentPage`, `DarkMode` — snapshotted at 1280px, since the component is hidden below 1024px
+
+---
+
 ### Accordion
 
 | Field | Value |
@@ -640,6 +796,63 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 | **Figma name** | `Pagination` |
 | **Code name** | `Pagination` |
 | **Storybook path** | `Components/Pagination` |
+
+---
+
+### SideNav
+
+| Field | Value |
+|---|---|
+| **Purpose** | Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider` |
+| **Figma name** | `SideNav` |
+| **Code name** | `SideNav` (+ `SideNavProvider`, `SideNavTrigger`) |
+| **Storybook path** | `Patterns/SideNav` |
+
+**Compound structure**
+```tsx
+<SideNavProvider>                {/* holds the drawer's open state; wraps header and nav */}
+  <SkipLink />
+  <header>
+    <SideNavTrigger />           {/* hamburger; hidden from 1024px up */}
+    <NavigationMenu items={headerItems} currentHref={pathname} />
+  </header>
+  <SideNav items={sectionItems} headerItems={headerItems} currentHref={pathname} />
+  <main id="main-content">…</main>
+</SideNavProvider>
+```
+`SideNav` and `SideNavTrigger` throw if rendered outside `SideNavProvider`.
+
+**Props / variants**
+- `items: NavItem[]` — links `{ id, label, href, icon? }` and groups `{ id, label, icon?, items: NavLink[] }`, two levels at most. Groups are collapsible sections
+- `headerItems`: the same array you give `NavigationMenu`. Rendered only in the drawer, above `items` with a separator, so header links stay reachable on mobile
+- `currentHref`: your router's pathname. An exact match sets `aria-current="page"`; the group holding it starts open. A change of `currentHref` also closes the drawer
+- `LinkComponent`: your router's Link, defaults to `<a>`. It must pass `aria-current`, `className` and `onClick` through, and forward its ref (the collapsed rail's tooltips need it)
+- `layout`: `sidebar` (default) or `drawer-only` — nothing inline at desktop width, for a site whose desktop navigation is only the header
+- `collapsed`: icon rail, labels in tooltips, inline only. Controlled, with no built-in toggle: drive it from your own Button. Needs an `icon` on every item, including links inside groups; without one it warns in development and renders expanded
+- `aria-label`: the inline `<nav>`'s name, default "Section". `drawerTitle`: the drawer's heading, default "Navigation"
+- `SideNavTrigger`: `aria-label` (default "Open navigation"), `className`
+- **The switch is 1024px** (`breakpoint.desktop`): CSS shows the inline nav and hides the trigger from there up. If the viewport grows past it while the drawer is open, the drawer closes
+
+**Required states**
+- [x] expanded (inline), collapsed rail (inline), drawer (below 1024px)
+- [x] current link, active group, group open / closed
+- [x] hover, focus-visible
+
+**Tokens consumed**
+- `--side-nav-width` (240px, the expanded inline width)
+- `--color-surface-secondary`, `--color-border-default`, `--color-text-primary`, `--color-text-secondary`, `--color-border-focus`
+- `--border-width-default`, `--border-radius-interactive`, `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-weight-label`
+- `--space-tight-gap`, `--space-inline-gap`, `--space-control-padding-x`, `--size-touch-target`, `--size-icon-sm`
+
+**Accessibility**
+- Semantic elements: `<nav>` landmarks (inline and in the drawer), links, native `<button aria-expanded aria-controls>` for groups
+- The trigger has `aria-expanded` and `aria-controls` pointing at the drawer's `<nav>`
+- Opening the drawer moves focus to its first link; Escape or the close button closes it and returns focus to the trigger (`SideNav.drawer.test.tsx`)
+- Choosing a link in the drawer closes it
+- Every link and toggle is at least 44px tall; in the collapsed rail each label stays in the DOM as the accessible name
+
+**Chromatic stories**
+- `Default`, `WithIcons`, `Collapsed`, `MobileDrawer` (375px), `DrawerOnly` and `PageShell` (375px and 1280px), `CollapsedWithoutIcons`, `DarkMode`
 
 ---
 

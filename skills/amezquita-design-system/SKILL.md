@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 29 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 31 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 29 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 34 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -22,8 +22,11 @@ npx shadcn add https://amezquita.dk/r/<component-slug>.json
 
 ```tsx
 import { Button } from '@amezquita/design-system/components/primitives/Button'
-import '@amezquita/design-system/styles/brands/portfolio.css'
+import '@amezquita/design-system/styles/brands/base-light.css'
+import '@amezquita/design-system/styles/brands/base-dark.css'
 ```
+
+Import the brand CSS once, in your root layout. `base` is the neutral default; for the portfolio brand, also import `portfolio-light.css` and `portfolio-dark.css` after these. Dark mode applies inside any element with `data-mode="dark"`.
 
 Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `next.config.js` — this package ships source `.tsx`/`.css`, not a pre-built bundle.
 
@@ -31,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://amezquita.dk/design-system/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (14)
+### Primitives (16)
 
 | Component | Reference |
 |---|---|
@@ -42,15 +45,17 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Heading | [heading](https://amezquita.dk/design-system/heading.md) — Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level |
 | Input | [input](https://amezquita.dk/design-system/input.md) — Labelled single-line text entry with hint and error states |
 | Label | [label](https://amezquita.dk/design-system/label.md) — Standalone form label element — used when a label must be decoupled from its input |
+| Link | [link](https://amezquita.dk/design-system/link.md) — Navigation to another page or resource; use Link for navigation and Button for actions |
 | Radio | [radio](https://amezquita.dk/design-system/radio.md) — Single-selection control within a mutually exclusive group |
 | Select | [select](https://amezquita.dk/design-system/select.md) — Dropdown for choosing a single value from a list; supports grouped options |
 | Skeleton | [skeleton](https://amezquita.dk/design-system/skeleton.md) — Placeholder loading state that mirrors the geometry of the content it replaces |
+| SkipLink | [skip-link](https://amezquita.dk/design-system/skip-link.md) — First Tab stop on the page that lets keyboard users jump past the header to the main content |
 | Spinner | [spinner](https://amezquita.dk/design-system/spinner.md) — Indeterminate loading indicator for in-progress operations |
 | Switch | [switch](https://amezquita.dk/design-system/switch.md) — Binary toggle for on/off settings; renders as a styled checkbox under the hood |
 | Tag | [tag](https://amezquita.dk/design-system/tag.md) — Inline label for categorising or annotating content — non-interactive |
 | Textarea | [textarea](https://amezquita.dk/design-system/textarea.md) — Multi-line text entry with label, hint, and error states — mirrors Input API |
 
-### Composition (7)
+### Composition (9)
 
 | Component | Reference |
 |---|---|
@@ -59,10 +64,12 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Card | [card](https://amezquita.dk/design-system/card.md) — Compound container for grouped content — composed from named sub-components |
 | Dialog | [dialog](https://amezquita.dk/design-system/dialog.md) — Overlay for tasks or information requiring focused attention |
 | Drawer | [drawer](https://amezquita.dk/design-system/drawer.md) — Side-anchored slide-in panel for supplemental content or secondary navigation |
+| Menu | [menu](https://amezquita.dk/design-system/menu.md) — Dropdown list of actions opened from a trigger: account menus, overflow ("more") menus, row actions |
+| NavigationMenu | [navigation-menu](https://amezquita.dk/design-system/navigation-menu.md) — The site's header navigation: top-level links, plus groups that open a dropdown of links. Hidden below 1024px, where SideNav's drawer carries the same links (its `headerItems`) |
 | Toast | [toast](https://amezquita.dk/design-system/toast.md) — Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout |
 | Tooltip | [tooltip](https://amezquita.dk/design-system/tooltip.md) — Contextual label revealed on hover or focus — supplements an icon or truncated text |
 
-### Patterns (8)
+### Patterns (9)
 
 | Component | Reference |
 |---|---|
@@ -72,6 +79,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | EmptyState | [empty-state](https://amezquita.dk/design-system/empty-state.md) — Placeholder for zero-content states — icon, heading, supporting text, and an optional action |
 | Hero | [hero](https://amezquita.dk/design-system/hero.md) — Page-level section header with eyebrow, title, lead text, and an action slot |
 | Pagination | [pagination](https://amezquita.dk/design-system/pagination.md) — Page navigation controls for multi-page data sets; exposes current page and total page count |
+| SideNav | [side-nav](https://amezquita.dk/design-system/side-nav.md) — Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider` |
 | Table | [table](https://amezquita.dk/design-system/table.md) — Static data table with semantic header, body, and row structure |
 | Tabs | [tabs](https://amezquita.dk/design-system/tabs.md) — Segmented view switcher with full keyboard navigation; built on Radix Tabs |
 
@@ -86,7 +94,7 @@ Real semantic token families:
 - **spacing** (19): `--space-compact-*`, `--space-component-*`, `--space-container-*`, `--space-control-*`, `--space-dialog-*`, `--space-element-*`, `--space-inline-*`, `--space-label-*`, `--space-layout-*`, `--space-prominent-*`, `--space-section-*`, `--space-tight-*`
 - **size** (13): `--focus-ring-*`, `--size-container-*`, `--size-dialog-*`, `--size-icon-*`
 - **motion** (7): `--duration-entrance-*`, `--duration-interaction-*`, `--duration-reveal-*`, `--duration-skeleton-*`, `--duration-spin-*`, `--duration-transition-*`
-- **elevation** (6): `--z-dropdown-*`, `--z-modal-*`, `--z-overlay-*`, `--z-sticky-*`, `--z-toast-*`, `--z-tooltip-*`
+- **elevation** (7): `--z-dropdown-*`, `--z-modal-*`, `--z-overlay-*`, `--z-skip-*`, `--z-sticky-*`, `--z-toast-*`, `--z-tooltip-*`
 - **shadow** (5): `--shadow-card-*`, `--shadow-dialog-*`, `--shadow-dropdown-*`, `--shadow-toast-*`
 - **radius** (4): `--border-radius-*`
 - **opacity** (2): `--opacity-disabled-*`, `--opacity-overlay-*`

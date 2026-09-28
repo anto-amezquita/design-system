@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu",
+  "type": "registry:component",
+  "title": "Menu",
+  "description": "Dropdown list of actions opened from a trigger: account menus, overflow (\"more\") menus, row actions",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://amezquita.dk/r/theme.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}

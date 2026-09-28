@@ -38,7 +38,7 @@ Backed by new primitives `size.container-45/60/80/90` and `size.container-viewpo
 
 **`rem`, not `ch`.** `ch` is measured from the element's own font, so a container's width changes whenever its font size does. That is exactly what widened the portfolio's columns. `rem` still follows the user's browser font-size setting, which is the part of Apple's approach worth keeping, without moving when one element's text size changes.
 
-**The site tier's breakpoint lives in the description, not the token.** Below 1024px the site is 100% wide with `space-layout-margin` gutters; from 1024px it's `90vw`. CSS custom properties can't be used inside `@media` conditions, so a token can't carry that switch. Breakpoint tokens are a separate follow-up (docs/backlog.md).
+**The site tier's breakpoint lives in the description, not the token.** Below 1024px the site is 100% wide with `space-layout-margin` gutters; from 1024px it's `90vw`. CSS custom properties can't be used inside `@media` conditions, so a token can't carry that switch. Breakpoint tokens were a separate follow-up, now [0018](./0018-breakpoint-tokens.md): the switch is `breakpoint.desktop` (1024px).
 
 **`space-layout-max-width` is deprecated, not removed.** It stays at 1200px so nothing that uses it moves in this release; its description points at this scale.
 

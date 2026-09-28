@@ -141,16 +141,20 @@ button.card {
   gap: var(--space-inline-gap);
 }
 
+/* Hidden below breakpoint.desktop, shown from it. Was `max-width: 1199px`
+   before decisions/0018; moved to the nearest breakpoint token and written
+   mobile-first, so it now also shows between 1024px and 1199px. */
 .card__description {
+  display: none;
   font-size: var(--font-size-control);
   color: var(--color-text-secondary);
   line-height: var(--line-height-control);
   margin: 0;
 }
 
-@media (max-width: 1199px) {
+@media (min-width: 1024px) {
   .card__description {
-    display: none;
+    display: block;
   }
 }
 

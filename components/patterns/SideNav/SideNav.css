@@ -1,0 +1,185 @@
+/*
+  Tokens consumed:
+
+  --side-nav-width
+  --color-surface-secondary, --color-border-default
+  --color-text-primary, --color-text-secondary, --color-border-focus
+  --border-width-default, --border-radius-interactive
+  --font-family-base, --font-size-control, --line-height-control, --font-weight-label
+  --space-tight-gap, --space-inline-gap, --space-control-padding-x
+  --size-touch-target, --size-icon-sm
+  --focus-ring-width, --focus-ring-offset
+  --duration-interaction, --easing-default
+*/
+
+/* The inline nav exists from breakpoint.desktop up; below it, the same
+   lists render in a Drawer opened by SideNavTrigger (decisions/0018). CSS
+   decides, so there's no flash before hydration. */
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-base);
+}
+
+.side-nav--inline {
+  display: none;
+  width: var(--side-nav-width);
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .side-nav--inline {
+    display: flex;
+  }
+
+  /* Hide the hamburger where the inline nav (or the header nav) takes
+     over. Two classes to outrank .button's own display. */
+  .button.side-nav-trigger {
+    display: none;
+  }
+}
+
+.side-nav--collapsed {
+  width: auto;
+}
+
+/* Lists */
+
+.side-nav__list,
+.side-nav__sublist {
+  display: grid;
+  gap: var(--space-tight-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.side-nav__sublist {
+  margin-top: var(--space-tight-gap);
+  padding-inline-start: var(--space-inline-gap);
+}
+
+/* display: grid above would otherwise override the hidden attribute. */
+.side-nav__sublist[hidden] {
+  display: none;
+}
+
+/* Links and group toggles share one look. */
+
+.side-nav__link,
+.side-nav__toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  width: 100%;
+  min-height: var(--size-touch-target);
+  padding: 0 var(--space-control-padding-x);
+  font-family: inherit;
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  color: var(--color-text-secondary);
+  text-align: start;
+  text-decoration: none;
+  background: none;
+  border: none;
+  border-radius: var(--border-radius-interactive);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    color var(--duration-interaction) var(--easing-default),
+    background var(--duration-interaction) var(--easing-default);
+}
+
+.side-nav__link:hover,
+.side-nav__toggle:hover {
+  color: var(--color-text-primary);
+  background: var(--color-surface-secondary);
+}
+
+.side-nav__link[aria-current='page'] {
+  color: var(--color-text-primary);
+  background: var(--color-surface-secondary);
+  font-weight: var(--font-weight-label);
+}
+
+.side-nav__toggle--active {
+  color: var(--color-text-primary);
+}
+
+.side-nav__link:focus-visible,
+.side-nav__toggle:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.side-nav__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+}
+
+.side-nav__label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.side-nav__chevron {
+  flex-shrink: 0;
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+  transition: transform var(--duration-interaction) var(--easing-default);
+}
+
+.side-nav__toggle[aria-expanded='true'] .side-nav__chevron {
+  transform: rotate(180deg);
+}
+
+/* Between headerItems and items, in the drawer only. */
+
+.side-nav__separator {
+  height: var(--border-width-default);
+  margin: var(--space-tight-gap) 0;
+  background: var(--color-border-default);
+  border: none;
+}
+
+/* Collapsed rail: icons only, square touch targets, labels kept for
+   screen readers and shown in a Tooltip. */
+
+.side-nav--collapsed .side-nav__link,
+.side-nav--collapsed .side-nav__toggle {
+  justify-content: center;
+  width: var(--size-touch-target);
+  padding: 0;
+}
+
+.side-nav--collapsed .side-nav__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.side-nav--collapsed .side-nav__chevron {
+  display: none;
+}
+
+.side-nav--collapsed .side-nav__sublist {
+  padding-inline-start: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .side-nav__link,
+  .side-nav__toggle,
+  .side-nav__chevron {
+    transition: none;
+  }
+}

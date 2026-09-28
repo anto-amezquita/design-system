@@ -48,5 +48,33 @@
     "role": "accent-on-surface",
     "minRatio": 3.0,
     "note": "3:1 WCAG AA for large text and UI component boundaries (links, borders, icons)"
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-accent-default",
+    "role": "link-text",
+    "minRatio": 4.5,
+    "note": "Link's text colour at body size (decisions/0015). Stricter than accent-on-surface's 3:1, which only covers large text and UI boundaries."
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-accent-hover",
+    "role": "link-text-hover",
+    "minRatio": 4.5,
+    "note": "Link's hover colour."
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-feedback-error",
+    "role": "menu-destructive-item",
+    "minRatio": 4.5,
+    "note": "Menu's destructive item label at rest."
+  },
+  {
+    "bg": "color-feedback-error-background",
+    "fg": "color-feedback-error",
+    "role": "menu-destructive-item-highlighted",
+    "minRatio": 4.5,
+    "note": "Menu's destructive item label while highlighted."
   }
 ]

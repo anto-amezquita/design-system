@@ -8,7 +8,7 @@ Companion documents: [`backlog.md`](./backlog.md) is the live work list and the 
 
 ## 1. The position
 
-This system does not compete with shadcn/ui, MUI, Ant Design, or Carbon on breadth, and no amount of AI tooling would change that. A 29-component library maintained by one person will never win a component-count comparison, and trying to is the fastest way to burn the maintenance budget on work nobody asked for.
+This system does not compete with shadcn/ui, MUI, Ant Design, or Carbon on breadth, and no amount of AI tooling would change that. A 34-component library maintained by one person will never win a component-count comparison, and trying to is the fastest way to burn the maintenance budget on work nobody asked for.
 
 What it competes on is a different axis: **being a fully governed, machine-consumable system at a size one person can actually keep green.** The industry benchmarks make that a defensible claim rather than a hopeful one.
 

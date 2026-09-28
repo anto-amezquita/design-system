@@ -126,6 +126,8 @@
   --size-container-80: 80rem;
   --size-container-90: 90rem;
   --size-container-viewport-90: 90vw;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
   --accordion-content-padding-x: 24px;
   --accordion-content-padding-bottom: 24px;
   --accordion-duration-expand: 650ms;
@@ -205,6 +207,7 @@
   --radio-indicator-size: 12px;
   --select-item-padding-x: 16px;
   --select-item-padding-y: 8px;
+  --side-nav-width: 240px;
   --skeleton-border-radius: 4px;
   --skeleton-height-text: 1em;
   --skeleton-height-rect: 48px;
@@ -284,6 +287,7 @@
   --z-modal: 400;
   --z-toast: 500;
   --z-tooltip: 600;
+  --z-skip-link: 700;
   --size-icon-xs: 12px;
   --size-icon-sm: 16px;
   --size-icon-md: 20px;

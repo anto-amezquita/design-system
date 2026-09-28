@@ -46,11 +46,12 @@ jobs:
       - name: Check generated files are in sync
         run: node scripts/check-generated-sync.mjs
 
-      # Content-only comparison (meta.generatedAt nulled) lives in
-      # scripts/changelog-sync.mjs, shared with self-heal-stale-artifacts.yml
-      # so the two can't disagree about what "stale" means.
-      - name: Check changelog is in sync
-        run: node scripts/changelog-sync.mjs --check
+      # No changelog check here on purpose (decisions/0019). tokens/changelog.json
+      # lists commit SHAs, so the commit that changes a component can never be
+      # in its own changelog: a branch check failed on nearly every component
+      # branch until a follow-up chore commit or a self-heal PR, each spending
+      # another Chromatic run. main is the one place it has to be right, and
+      # the update-changelog job below regenerates it after every push there.
 
       - name: Contrast check
         run: node scripts/check-contrast.mjs
@@ -101,8 +102,10 @@ jobs:
           autoAcceptChanges: main
           exitOnceUploaded: true
 
-  # Regenerates tokens/changelog.json after pushes to main (e.g. merge commits
-  # shift the history the committed artifact was built from). Safe against
+  # Regenerates tokens/changelog.json after pushes to main. Since
+  # decisions/0019 this is the only thing keeping the changelog current:
+  # branches no longer gate on it, so a merge usually lands one or more
+  # entries behind and this job catches it up. Safe against
   # loops twice over: [skip ci] stops workflow re-triggering, and the builder
   # excludes chore-type commits so this job's own commits never appear in the
   # changelog — a re-run after the bot commit produces identical output.
@@ -122,6 +125,11 @@ jobs:
 
       - name: Rebuild changelog
         run: node scripts/build-changelog.mjs
+
+      # meta.generatedAt moves on every build. Put the committed file back when
+      # that's the only change, so main doesn't get a bot commit per push.
+      - name: Drop the changelog if only its timestamp moved
+        run: node scripts/changelog-sync.mjs --restore-if-unchanged
 
       - name: Commit and push if changed
         run: |

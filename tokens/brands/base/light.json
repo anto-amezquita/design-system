@@ -211,6 +211,11 @@
     "$value": 600,
     "$type": "number"
   },
+  "z-skip-link": {
+    "$value": 700,
+    "$type": "number",
+    "$description": "SkipLink only: one step above everything else. The one justified explicit z-index after decisions/0007 — a skip link isn't portalled, so mount order can't lift it, and it must sit above every other layer the moment it's focused."
+  },
   "size-icon-xs": {
     "$value": "{icon-size.xs}",
     "$type": "dimension"
@@ -577,6 +582,6 @@
   "size-container-site": {
     "$value": "{size.container-viewport-90}",
     "$type": "dimension",
-    "$description": "Outer site frame from 1024px up (90vw). Below 1024px the site is 100% wide with space-layout-margin gutters. Tokens can't carry the breakpoint; apply this inside a (min-width: 1024px) query. See decisions/0014."
+    "$description": "Outer site frame from 1024px up (90vw). Below 1024px the site is 100% wide with space-layout-margin gutters. Custom properties can't be read in @media, so apply this inside a (min-width: 1024px) query: breakpoint.desktop, decisions/0018. See decisions/0014."
   }
 }

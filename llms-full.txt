@@ -10,16 +10,16 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-369 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+373 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
 
-- primitive: 124
-- component: 105
+- primitive: 126
+- component: 106
 - color: 43
 - typography: 39
 - spacing: 19
 - size: 13
 - motion: 7
-- elevation: 6
+- elevation: 7
 - shadow: 5
 - radius: 4
 - opacity: 2
@@ -90,6 +90,15 @@ Standalone form label element — used when a label must be decoupled from its i
 - Storybook: Components/Label
 - Stories: Default, Required, Disabled, AllVariants, DarkMode
 
+### Link
+
+Navigation to another page or resource; use Link for navigation and Button for actions
+
+- Import: `import { Link } from '@amezquita/design-system/components/primitives/Link'`
+- Token prefix: `link-*` (0 tokens)
+- Storybook: Primitives/Link
+- Stories: Default, Standalone, External, AsChild, AllVariants, DarkMode
+
 ### Radio
 
 Single-selection control within a mutually exclusive group
@@ -116,6 +125,15 @@ Placeholder loading state that mirrors the geometry of the content it replaces
 - Token prefix: `skeleton-*` (3 tokens)
 - Storybook: Components/Skeleton
 - Stories: Text, MultiLine, Circle, Rect, CardSkeleton, DarkMode
+
+### SkipLink
+
+First Tab stop on the page that lets keyboard users jump past the header to the main content
+
+- Import: `import { SkipLink } from '@amezquita/design-system/components/primitives/SkipLink'`
+- Token prefix: `skiplink-*` (0 tokens)
+- Storybook: Primitives/SkipLink
+- Stories: Default, Focused, CustomTarget, DarkMode
 
 ### Spinner
 
@@ -200,6 +218,24 @@ Side-anchored slide-in panel for supplemental content or secondary navigation
 - Storybook: Components/Drawer
 - Stories: Default, FilterPanel, AllSides, Sizes, DarkMode
 
+### Menu
+
+Dropdown list of actions opened from a trigger: account menus, overflow ("more") menus, row actions
+
+- Import: `import { Menu } from '@amezquita/design-system/components/composition/Menu'`
+- Token prefix: `menu-*` (0 tokens)
+- Storybook: Composition/Menu
+- Stories: Default, Open, WithGroupLabelsAndIcons, Overflow, DarkMode
+
+### NavigationMenu
+
+The site's header navigation: top-level links, plus groups that open a dropdown of links. Hidden below 1024px, where SideNav's drawer carries the same links (its `headerItems`)
+
+- Import: `import { NavigationMenu } from '@amezquita/design-system/components/composition/NavigationMenu'`
+- Token prefix: `navigationmenu-*` (0 tokens)
+- Storybook: Composition/NavigationMenu
+- Stories: Default, Open, WithIcons, NoCurrentPage, DarkMode
+
 ### Toast
 
 Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout
@@ -273,6 +309,15 @@ Page navigation controls for multi-page data sets; exposes current page and tota
 - Token prefix: `pagination-button-*` (4 tokens)
 - Storybook: Components/Pagination
 - Stories: Default, EdgeCases, Compact, DarkMode
+
+### SideNav
+
+Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider`
+
+- Import: `import { SideNav } from '@amezquita/design-system/components/patterns/SideNav'`
+- Token prefix: `side-nav-*` (1 tokens)
+- Storybook: Patterns/SideNav
+- Stories: Default, WithIcons, Collapsed, MobileDrawer, DrawerOnly, PageShell, DarkMode, CollapsedWithoutIcons
 
 ### Table
 

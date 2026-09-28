@@ -11,7 +11,7 @@ Adapted from the ai-product-starter-kit's `architecture.md` template — section
 ## 1. Stack
 
 - **Language:** TypeScript, `tsc --noEmit` as the type-check gate (no build step emits JS for consumers beyond what Vite/Storybook need).
-- **Components:** React 19 (peer dependency), Radix UI primitives (Accordion, AlertDialog, Avatar, Checkbox, Dialog, RadioGroup, Select, Switch, Tabs, Toast, Tooltip) for behavior/accessibility; this repo owns styling and composition on top.
+- **Components:** React 19 (peer dependency), Radix UI primitives (Accordion, AlertDialog, Avatar, Checkbox, Dialog, DropdownMenu, NavigationMenu, RadioGroup, Select, Slot, Switch, Tabs, Toast, Tooltip) for behavior/accessibility; this repo owns styling and composition on top.
 - **Styling:** CSS custom properties driven by a three-tier token system (see §3) — no CSS-in-JS, no Tailwind in component source.
 - **Tokens:** DTCG format (`$value`/`$type`) in `tokens/*.json`, compiled by Style Dictionary (`sd.config.mjs`) into CSS files per brand/mode.
 - **Animation:** CSS transitions carry the default behaviour of every component. GSAP is reserved for opt-in expressive motion (Button's `motion="expressive"` wipe), loaded there with a dynamic `import()` so it stays out of the bundles of consumers that never ask for it — see ADR [`0016`](../decisions/0016-functional-button-default-expressive-opt-in.md). It stays a regular dependency rather than an optional peer: this package ships raw source with no build step, so the import specifier is always in the consumer's module graph and an absent package would fail their build.
@@ -24,12 +24,16 @@ Adapted from the ai-product-starter-kit's `architecture.md` template — section
 
 ```
 components/
-  primitives/     — 14 components: Avatar, Badge, Button, Checkbox, Heading, Input,
-                     Label, Radio, Select, Skeleton, Spinner, Switch, Tag, Textarea
-  composition/     — 7 components: Alert, AlertDialog, Card, Dialog, Drawer, Toast, Tooltip
-  patterns/        — 8 components: Accordion, Breadcrumb, DataTable, EmptyState,
-                     Hero, Pagination, Table, Tabs
-lib/, hooks/       — shared utilities and hooks (e.g. useUncontrolledValue)
+  primitives/     — 16 components: Avatar, Badge, Button, Checkbox, Heading, Input,
+                     Label, Link, Radio, Select, Skeleton, SkipLink, Spinner, Switch,
+                     Tag, Textarea
+  composition/     — 9 components: Alert, AlertDialog, Card, Dialog, Drawer, Menu,
+                     NavigationMenu, Toast, Tooltip
+  patterns/        — 9 components: Accordion, Breadcrumb, DataTable, EmptyState,
+                     Hero, Pagination, SideNav, Table, Tabs
+lib/, hooks/       — shared utilities and hooks (e.g. useUncontrolledValue,
+                     breakpoints.ts for the breakpoint tokens in JS, navigation.ts
+                     for the NavItem type NavigationMenu and SideNav share)
 tokens/
   global.json           — Tier 1: primitives
   brands/<name>/*.json  — Tier 2: semantic, per brand (base, portfolio) and mode (light/dark)
@@ -62,9 +66,9 @@ docs/              — roadmap/rationale docs that aren't tied to one feature (b
 
 This repo reports three different totals depending on what's being counted, and none of them is wrong:
 
-- **28** — CSS files under `components/{primitives,composition,patterns}/` (`npm run tokens:lint`'s "28 files checked"). Lower than the component count because `AlertDialog` and `BaseSheet` have no CSS file of their own — both deliberately reuse `Dialog`'s.
-- **29** — public components (`tokens/component-registry.json`'s `publicComponentCount`, `AGENTS.md`'s allow-list). What "29 public components" everywhere else in this repo's docs means.
-- **30** — directories on disk under the same three tiers (`check-components-doc.mjs`'s "directories documented"). 29 public + `BaseSheet` (internal).
+- **33** — CSS files under `components/{primitives,composition,patterns}/` (`npm run tokens:lint`'s "33 files checked"). Lower than the component count because `AlertDialog` and `BaseSheet` have no CSS file of their own — both deliberately reuse `Dialog`'s.
+- **34** — public components (`tokens/component-registry.json`'s `publicComponentCount`, `AGENTS.md`'s allow-list). What "34 public components" everywhere else in this repo's docs means. Sub-components (Card's parts, `SideNavProvider`, `SideNavTrigger`) are registered separately and don't count here.
+- **35** — directories on disk under the same three tiers (`check-components-doc.mjs`'s "directories documented"). 34 public + `BaseSheet` (internal).
 
 If a number in one file looks like it contradicts a number in another, check which of these three it's actually counting before assuming drift.
 
@@ -127,7 +131,7 @@ This system deliberately ships a compiled, machine-readable layer alongside the 
 
 ## 9. Build pipeline
 
-`npm run tokens` runs, in dependency order: `buildTokenReference` → `buildTokensJson` → `buildComponentRegistry` → `buildComponentDocs` → `buildChangelog` → `buildLlmsTxt` → registry manifests → skill. Every generated artifact in §2 comes from this one chain (`sd.config.mjs`). CI (`chromatic.yml`) rebuilds and diffs against the committed tree via `scripts/check-generated-sync.mjs` (which does `git add -N` first, so new untracked files count too) — a stale artifact fails the build. That script reads its path list from `scripts/generated-artifacts.mjs`, the one place the generated-artifact list is written down. `self-heal-stale-artifacts.yml` scopes its commit to the same module's wider `SELF_HEAL_PATHS`, which adds `tokens/changelog.json` — excluded from the strict list because its `meta.generatedAt` moves on every build, and safe to add there only because the workflow first runs `scripts/changelog-sync.mjs --restore-if-unchanged`. That script owns the content-only comparison (timestamp nulled) that `chromatic.yml`'s changelog step also gates on.
+`npm run tokens` runs, in dependency order: `buildTokenReference` → `buildTokensJson` → `buildComponentRegistry` → `buildComponentDocs` → `buildChangelog` → `buildLlmsTxt` → registry manifests → skill. Every generated artifact in §2 comes from this one chain (`sd.config.mjs`). CI (`chromatic.yml`) rebuilds and diffs against the committed tree via `scripts/check-generated-sync.mjs` (which does `git add -N` first, so new untracked files count too) — a stale artifact fails the build. That script reads its path list from `scripts/generated-artifacts.mjs`, the one place the generated-artifact list is written down. `self-heal-stale-artifacts.yml` scopes its commit to the same module's `SELF_HEAL_PATHS`, the same list. `tokens/changelog.json` is in neither: it lists commit SHAs, so it can never include the commit that changes it, and branches don't gate on it. `chromatic.yml`'s `update-changelog` job regenerates it on `main` after every push, using `scripts/changelog-sync.mjs --restore-if-unchanged` (the content-only comparison, timestamp nulled) to skip timestamp-only commits. See ADR [`0019`](../decisions/0019-changelog-owned-by-main.md).
 
 ## 10. Preferred patterns
 

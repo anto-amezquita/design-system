@@ -1,8 +1,8 @@
 {
   "meta": {
-    "componentCount": 51,
-    "publicComponentCount": 29,
-    "subComponentCount": 21
+    "componentCount": 58,
+    "publicComponentCount": 34,
+    "subComponentCount": 23
   },
   "components": [
     {
@@ -171,6 +171,25 @@
       "internal": false
     },
     {
+      "name": "Link",
+      "slug": "link",
+      "tier": "primitives",
+      "purpose": "Navigation to another page or resource; use Link for navigation and Button for actions",
+      "storybookPath": "Primitives/Link",
+      "storybookTitleId": "primitives-link",
+      "tokenPrefix": "link",
+      "stories": [
+        "Default",
+        "Standalone",
+        "External",
+        "AsChild",
+        "AllVariants",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
       "name": "Radio",
       "slug": "radio",
       "tier": "primitives",
@@ -226,6 +245,23 @@
         "DarkMode"
       ],
       "tokenCount": 3,
+      "internal": false
+    },
+    {
+      "name": "SkipLink",
+      "slug": "skip-link",
+      "tier": "primitives",
+      "purpose": "First Tab stop on the page that lets keyboard users jump past the header to the main content",
+      "storybookPath": "Primitives/SkipLink",
+      "storybookTitleId": "primitives-skiplink",
+      "tokenPrefix": "skiplink",
+      "stories": [
+        "Default",
+        "Focused",
+        "CustomTarget",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {
@@ -497,6 +533,42 @@
       "internal": false
     },
     {
+      "name": "Menu",
+      "slug": "menu",
+      "tier": "composition",
+      "purpose": "Dropdown list of actions opened from a trigger: account menus, overflow (\"more\") menus, row actions",
+      "storybookPath": "Composition/Menu",
+      "storybookTitleId": "composition-menu",
+      "tokenPrefix": "menu",
+      "stories": [
+        "Default",
+        "Open",
+        "WithGroupLabelsAndIcons",
+        "Overflow",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "NavigationMenu",
+      "slug": "navigation-menu",
+      "tier": "composition",
+      "purpose": "The site's header navigation: top-level links, plus groups that open a dropdown of links. Hidden below 1024px, where SideNav's drawer carries the same links (its `headerItems`)",
+      "storybookPath": "Composition/NavigationMenu",
+      "storybookTitleId": "composition-navigationmenu",
+      "tokenPrefix": "navigationmenu",
+      "stories": [
+        "Default",
+        "Open",
+        "WithIcons",
+        "NoCurrentPage",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
       "name": "Toast",
       "slug": "toast",
       "tier": "composition",
@@ -698,6 +770,53 @@
       ],
       "tokenCount": 4,
       "internal": false
+    },
+    {
+      "name": "SideNav",
+      "slug": "side-nav",
+      "tier": "patterns",
+      "purpose": "Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider`",
+      "storybookPath": "Patterns/SideNav",
+      "storybookTitleId": "patterns-sidenav",
+      "tokenPrefix": "side-nav",
+      "stories": [
+        "Default",
+        "WithIcons",
+        "Collapsed",
+        "MobileDrawer",
+        "DrawerOnly",
+        "PageShell",
+        "DarkMode",
+        "CollapsedWithoutIcons"
+      ],
+      "tokenCount": 1,
+      "internal": false
+    },
+    {
+      "name": "SideNavProvider",
+      "slug": "side-nav-provider",
+      "tier": "patterns",
+      "purpose": "Sub-component of SideNav.",
+      "storybookPath": "Patterns/SideNav",
+      "storybookTitleId": "patterns-sidenav",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "side-nav"
+    },
+    {
+      "name": "SideNavTrigger",
+      "slug": "side-nav-trigger",
+      "tier": "patterns",
+      "purpose": "Sub-component of SideNav.",
+      "storybookPath": "Patterns/SideNav",
+      "storybookTitleId": "patterns-sidenav",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "side-nav"
     },
     {
       "name": "Table",

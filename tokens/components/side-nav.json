@@ -1,0 +1,7 @@
+{
+  "side-nav-width": {
+    "$value": "240px",
+    "$type": "dimension",
+    "$description": "Width of the expanded inline SideNav from breakpoint.desktop up. The collapsed rail sizes to its icons; the mobile drawer uses Drawer's own width."
+  }
+}

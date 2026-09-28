@@ -210,8 +210,16 @@ function escapeCell(text) {
 // ("Defaults to a plain <a>") would otherwise be read as a raw, unclosed HTML
 // tag by a strict Markdown renderer. Code-span cells (`` `Type` ``) don't
 // need this — backticks already suppress HTML parsing of their contents.
+// The same holds for a code span *inside* a description (`` `<a>` ``): there
+// the entity would render literally as `&lt;a&gt;`, so those spans are left
+// alone and only the prose between them is escaped.
 function escapeProse(text) {
-  return escapeCell(text).replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  return escapeCell(text)
+    .split(/(`[^`]*`)/)
+    .map(part => (part.startsWith('`') && part.endsWith('`') && part.length > 1
+      ? part
+      : part.replace(/</g, '&lt;').replace(/>/g, '&gt;')))
+    .join('')
 }
 
 function collapseExtra(text) {
@@ -316,6 +324,13 @@ function expandLiteralUnions(typeText, literalAliasMap) {
 // shapes referenced inside a prop's type text, recursively (SelectOption
 // inside SelectGroup) up to a small fixed depth — bounded so a
 // self-referential type (rare, none in this codebase today) can't loop.
+// An inlined alias keeps only its shape: JSDoc and line comments on its
+// fields are for the source reader, and inside a one-line prop-table type
+// they'd read as part of the type (`{ /** Stable key. */; id: string }`).
+function stripTypeComments(text) {
+  return text.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/[^\n]*/g, '')
+}
+
 function expandObjectAliases(typeText, objectAliases, depth = 2) {
   let result = typeText
   for (let i = 0; i < depth; i++) {
@@ -326,7 +341,7 @@ function expandObjectAliases(typeText, objectAliases, depth = 2) {
       // generic args to an object literal, not what the source meant.
       const re = new RegExp(`\\b${name}\\b(<[^<>]*>)?`, 'g')
       if (re.test(result)) {
-        result = result.replace(re, collapseWhitespace(shape))
+        result = result.replace(re, collapseWhitespace(stripTypeComments(shape)))
         changed = true
       }
     }

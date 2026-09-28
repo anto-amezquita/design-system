@@ -530,5 +530,17 @@
       "$value": "90vw",
       "$type": "dimension"
     }
+  },
+  "breakpoint": {
+    "tablet": {
+      "$value": "768px",
+      "$type": "dimension",
+      "$description": "Viewport width where tablet layouts start. Below it is mobile. Write the literal value in @media, mobile-first min-width only: @media (min-width: 768px). Custom properties can't be read inside @media; no-unknown-breakpoint checks the literal against this token. JS: lib/breakpoints.ts. See decisions/0018."
+    },
+    "desktop": {
+      "$value": "1024px",
+      "$type": "dimension",
+      "$description": "Viewport width where desktop layouts start: the header/side-nav switch (NavigationMenu, SideNav) and the site container tier. Write the literal value in @media, min-width only: @media (min-width: 1024px). JS: lib/breakpoints.ts. See decisions/0018."
+    }
   }
 }

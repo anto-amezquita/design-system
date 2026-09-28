@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-24"
+    "generatedAt": "2026-09-28"
   },
   "versions": [
     {
@@ -451,6 +451,86 @@
     }
   ],
   "unreleased": [
+    {
+      "sha": "2f88874",
+      "type": "fix",
+      "scope": "menu",
+      "message": "key groups by position so duplicate or missing labels can't collide",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
+      "sha": "f0e32a1",
+      "type": "docs",
+      "scope": "side-nav",
+      "message": "answer the second cold test's questions in the prop docs",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
+      "sha": "1583be7",
+      "type": "docs",
+      "scope": null,
+      "message": "close the cold test's gaps in the navigation docs and the doc generators",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
+      "sha": "55b3606",
+      "type": "docs",
+      "scope": null,
+      "message": "component counts, backlog, roadmap and changeset for the navigation components",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
+      "sha": "34d1a9a",
+      "type": "feat",
+      "scope": "side-nav",
+      "message": "SideNav with SideNavProvider and SideNavTrigger, drawer below 1024px",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
+      "sha": "731df6f",
+      "type": "feat",
+      "scope": "navigation-menu",
+      "message": "NavigationMenu header nav on Radix NavigationMenu",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
+      "sha": "5749b99",
+      "type": "feat",
+      "scope": "menu",
+      "message": "Menu dropdown on Radix DropdownMenu, with nesting test",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
+      "sha": "ab8eaf8",
+      "type": "feat",
+      "scope": "skip-link",
+      "message": "SkipLink primitive and the z-skip-link token",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
+      "sha": "53c9b95",
+      "type": "feat",
+      "scope": "link",
+      "message": "Link primitive with inline/standalone variants, external and asChild",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
+      "sha": "1c44aed",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "breakpoint tokens and the no-unknown-breakpoint lint rule",
+      "date": "2026-09-28",
+      "breaking": false
+    },
     {
       "sha": "a11a022",
       "type": "docs",

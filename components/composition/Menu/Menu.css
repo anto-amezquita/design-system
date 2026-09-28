@@ -1,0 +1,97 @@
+/*
+  Tokens consumed:
+
+  --color-surface-primary, --color-surface-secondary, --color-border-default
+  --color-text-primary, --color-text-secondary
+  --color-feedback-error, --color-feedback-error-background
+  --border-width-interactive, --border-width-default
+  --border-radius-component, --border-radius-interactive, --shadow-dropdown
+  --font-family-base, --font-size-control, --line-height-control
+  --font-size-small, --line-height-label, --font-weight-label
+  --space-tight-gap, --space-inline-gap, --space-compact-padding-y, --space-control-padding-x
+  --size-icon-sm, --opacity-disabled
+  --duration-interaction, --easing-default
+
+  No component tokens: the panel matches Select's dropdown, and every value
+  here is a semantic token used as-is (decisions/0005).
+*/
+
+/* Panel. No z-index on purpose (decisions/0007): the content is portalled
+   to document.body, so a Menu opened inside a Dialog mounts after it and
+   paints on top. Menu.nesting.test.tsx holds that. */
+
+.menu {
+  min-width: var(--radix-dropdown-menu-trigger-width);
+  padding: var(--space-tight-gap);
+  background: var(--color-surface-primary);
+  border: var(--border-width-interactive) solid var(--color-border-default);
+  border-radius: var(--border-radius-component);
+  box-shadow: var(--shadow-dropdown);
+  font-family: var(--font-family-base);
+  box-sizing: border-box;
+}
+
+/* Items */
+
+.menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  padding: var(--space-compact-padding-y) var(--space-control-padding-x);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  color: var(--color-text-primary);
+  border-radius: var(--border-radius-interactive);
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition: background var(--duration-interaction) var(--easing-default);
+}
+
+.menu__item[data-highlighted] {
+  background: var(--color-surface-secondary);
+}
+
+.menu__item[data-disabled] {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+.menu__item--destructive {
+  color: var(--color-feedback-error);
+}
+
+.menu__item--destructive[data-highlighted] {
+  background: var(--color-feedback-error-background);
+}
+
+.menu__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+}
+
+/* Group label */
+
+.menu__label {
+  padding: var(--space-compact-padding-y) var(--space-control-padding-x);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-label);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-secondary);
+}
+
+/* Separator between groups */
+
+.menu__separator {
+  height: var(--border-width-default);
+  margin: var(--space-tight-gap);
+  background: var(--color-border-default);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu__item {
+    transition: none;
+  }
+}

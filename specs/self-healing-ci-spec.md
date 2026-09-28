@@ -124,6 +124,8 @@ Why an App rather than a PAT: the token is short-lived and repo-scoped, its comm
 
 ### The path list
 
+> **Amended 2026-09-28 by [`decisions/0019`](../decisions/0019-changelog-owned-by-main.md):** branches no longer gate on the changelog, so the bot no longer commits it. `SELF_HEAL_PATHS` is now the same list as `GENERATED_PATHS`, and the `--restore-if-unchanged` step moved to `chromatic.yml`'s `update-changelog` job on `main`. The changelog paragraphs below are the history of how Phase 1 first handled it, left as written.
+
 The commit is scoped via `create-pull-request`'s `add-paths` to the same explicit artifact list `chromatic.yml`'s staleness check already names — never `git add -A` — so the bot can never sweep up an unrelated change or touch a source file.
 
 Note that **this list is the enforcement.** GitHub App permissions scope by repository and permission *type*; there is no path-level write scoping anywhere in GitHub Actions. `contents: write` + `pull-requests: write` is already the narrowest grant available, and it is repo-wide by construction. Anything narrower has to be done in the workflow.

@@ -1,0 +1,48 @@
+/*
+  Tokens consumed:
+
+  --z-skip-link
+  --color-accent-default, --color-accent-foreground, --color-border-focus
+  --font-family-base, --font-size-control, --line-height-control, --font-weight-label
+  --space-control-padding-x, --space-control-padding-y, --space-inline-gap
+  --border-radius-interactive, --focus-ring-width, --focus-ring-offset
+
+  No component tokens: every value is a semantic token used as-is.
+*/
+
+/* Visually hidden until focused. Kept in the layout's reading order (first
+   thing in <body>), so it's the first Tab stop on the page. */
+
+.skip-link {
+  position: fixed;
+  top: var(--space-inline-gap);
+  left: var(--space-inline-gap);
+  /* The one explicit z-index decisions/0007 leaves room for: a skip link
+     isn't portalled, so mount order can't lift it, and nothing may cover it
+     once it's focused. --z-skip-link is one step above --z-tooltip. */
+  z-index: var(--z-skip-link);
+  padding: var(--space-control-padding-y) var(--space-control-padding-x);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  font-weight: var(--font-weight-label);
+  color: var(--color-accent-foreground);
+  background: var(--color-accent-default);
+  border-radius: var(--border-radius-interactive);
+  text-decoration: none;
+}
+
+.skip-link:not(:focus) {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
