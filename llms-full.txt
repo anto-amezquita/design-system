@@ -218,6 +218,15 @@ Side-anchored slide-in panel for supplemental content or secondary navigation
 - Storybook: Components/Drawer
 - Stories: Default, FilterPanel, AllSides, Sizes, DarkMode
 
+### Menu
+
+Dropdown list of actions opened from a trigger: account menus, overflow ("more") menus, row actions
+
+- Import: `import { Menu } from '@amezquita/design-system/components/composition/Menu'`
+- Token prefix: `menu-*` (0 tokens)
+- Storybook: Composition/Menu
+- Stories: Default, Open, WithGroupLabelsAndIcons, Overflow, DarkMode
+
 ### Toast
 
 Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout

@@ -452,6 +452,14 @@
   ],
   "unreleased": [
     {
+      "sha": "ab8eaf8",
+      "type": "feat",
+      "scope": "skip-link",
+      "message": "SkipLink primitive and the z-skip-link token",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
       "sha": "53c9b95",
       "type": "feat",
       "scope": "link",

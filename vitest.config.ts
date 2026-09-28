@@ -46,6 +46,7 @@ const optimizeDeps = {
     '@radix-ui/react-avatar',
     '@radix-ui/react-checkbox',
     '@radix-ui/react-dialog',
+    '@radix-ui/react-dropdown-menu',
     '@radix-ui/react-radio-group',
     '@radix-ui/react-select',
     '@radix-ui/react-slot',

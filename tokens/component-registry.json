@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 53,
-    "publicComponentCount": 31,
+    "componentCount": 54,
+    "publicComponentCount": 32,
     "subComponentCount": 21
   },
   "components": [
@@ -530,6 +530,24 @@
         "DarkMode"
       ],
       "tokenCount": 9,
+      "internal": false
+    },
+    {
+      "name": "Menu",
+      "slug": "menu",
+      "tier": "composition",
+      "purpose": "Dropdown list of actions opened from a trigger: account menus, overflow (\"more\") menus, row actions",
+      "storybookPath": "Composition/Menu",
+      "storybookTitleId": "composition-menu",
+      "tokenPrefix": "menu",
+      "stories": [
+        "Default",
+        "Open",
+        "WithGroupLabelsAndIcons",
+        "Overflow",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {

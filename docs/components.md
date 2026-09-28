@@ -659,6 +659,47 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### Menu
+
+| Field | Value |
+|---|---|
+| **Purpose** | Dropdown list of actions opened from a trigger: account menus, overflow ("more") menus, row actions |
+| **Figma name** | `Menu` |
+| **Code name** | `Menu` |
+| **Storybook path** | `Composition/Menu` |
+
+**Props / variants**
+- `trigger`: the element that opens the menu, a single element that forwards its ref. Use `Button` with its functional default: `trigger={<Button variant="secondary">Actions</Button>}`
+- `groups`: `{ label?: string; items: MenuItem[] }[]`. A separator is drawn between groups; one unlabelled group is a plain list
+- Each item: `{ id, label, onSelect?, disabled?, variant?: 'default' | 'destructive', icon? }`. `destructive` is for deletes and other actions that can't be undone
+- `align` (`start` default, `center`, `end`), `side` (`bottom` default)
+- `open` / `defaultOpen` / `onOpenChange` for controlled or uncontrolled use
+- Actions only: no checkbox or radio items and no submenus yet (deferred, see `docs/backlog.md`). For navigation between pages use `NavigationMenu`, not Menu
+
+**Required states**
+- [x] closed / open
+- [x] highlighted item (pointer or arrow keys)
+- [x] disabled item
+- [x] destructive item, at rest and highlighted
+
+**Tokens consumed**
+- `--color-surface-primary`, `--color-surface-secondary`, `--color-border-default`, `--color-text-primary`, `--color-text-secondary`
+- `--color-feedback-error`, `--color-feedback-error-background`
+- `--border-width-interactive`, `--border-width-default`, `--border-radius-component`, `--border-radius-interactive`, `--shadow-dropdown`
+- `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-size-small`, `--line-height-label`, `--font-weight-label`
+- `--space-tight-gap`, `--space-inline-gap`, `--space-compact-padding-y`, `--space-control-padding-x`, `--size-icon-sm`, `--opacity-disabled`
+
+**Accessibility**
+- Built on Radix DropdownMenu: `role="menu"` / `menuitem`, the trigger gets `aria-haspopup` and `aria-expanded`
+- Keyboard: `Enter`, `Space` or `ArrowDown` opens and focuses the first item; arrow keys move; typing jumps to a matching item; `Escape` closes and returns focus to the trigger
+- An icon-only trigger needs an `aria-label` on the trigger itself
+- No z-index (decisions/0007): the panel is portalled, so it layers correctly inside a Dialog or Drawer (`Menu.nesting.test.tsx`)
+
+**Chromatic stories**
+- `Default`, `Open`, `WithGroupLabelsAndIcons`, `Overflow`, `DarkMode`
+
+---
+
 ### Accordion
 
 | Field | Value |

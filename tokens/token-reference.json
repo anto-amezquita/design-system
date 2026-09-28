@@ -2063,6 +2063,7 @@
         "Card",
         "Dialog",
         "Drawer",
+        "Menu",
         "Toast",
         "Hero",
         "Checkbox",
@@ -2087,6 +2088,7 @@
       "axisAware": true,
       "usedBy": [
         "Card",
+        "Menu",
         "Accordion",
         "Pagination",
         "Table",
@@ -2155,6 +2157,7 @@
       "usedBy": [
         "Dialog",
         "Drawer",
+        "Menu",
         "Toast",
         "Accordion",
         "Breadcrumb",
@@ -2190,6 +2193,7 @@
         "Card",
         "Dialog",
         "Drawer",
+        "Menu",
         "Toast",
         "Accordion",
         "Breadcrumb",
@@ -2312,6 +2316,7 @@
         "Card",
         "Dialog",
         "Drawer",
+        "Menu",
         "Toast",
         "Accordion",
         "Pagination",
@@ -2414,6 +2419,7 @@
       },
       "axisAware": true,
       "usedBy": [
+        "Menu",
         "Input",
         "Label",
         "Textarea"
@@ -2434,6 +2440,7 @@
       "axisAware": true,
       "usedBy": [
         "Alert",
+        "Menu",
         "Badge"
       ]
     },
@@ -2813,6 +2820,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Menu",
         "Select"
       ]
     },
@@ -2993,6 +3001,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Menu",
         "Spinner"
       ]
     },
@@ -3080,6 +3089,7 @@
       "axisAware": true,
       "usedBy": [
         "Alert",
+        "Menu",
         "Toast",
         "Tooltip",
         "Accordion",
@@ -3173,6 +3183,7 @@
       "usedBy": [
         "Alert",
         "Card",
+        "Menu",
         "Accordion",
         "Table",
         "Tabs",
@@ -3200,6 +3211,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Menu",
         "DataTable",
         "EmptyState",
         "Tabs",
@@ -3425,6 +3437,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Menu",
         "Input",
         "Label",
         "Select",
@@ -3538,6 +3551,7 @@
       "usedBy": [
         "Alert",
         "Card",
+        "Menu",
         "Accordion",
         "Table",
         "Checkbox",
@@ -3701,6 +3715,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Menu",
         "Input",
         "Label",
         "Select",
@@ -3872,6 +3887,7 @@
         "Card",
         "Dialog",
         "Drawer",
+        "Menu",
         "Breadcrumb",
         "EmptyState",
         "Hero",
@@ -3925,6 +3941,7 @@
         "Alert",
         "Card",
         "Dialog",
+        "Menu",
         "Toast",
         "Table",
         "Select"
@@ -3947,6 +3964,7 @@
         "Alert",
         "Dialog",
         "Drawer",
+        "Menu",
         "Toast",
         "Pagination",
         "Tabs",
@@ -4015,6 +4033,7 @@
         "Card",
         "Dialog",
         "Drawer",
+        "Menu",
         "Toast",
         "Tooltip",
         "Breadcrumb",
@@ -4126,6 +4145,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Menu",
         "Accordion",
         "Pagination",
         "Tabs",
@@ -4152,6 +4172,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Menu",
         "Toast",
         "Table",
         "Tabs",
@@ -4175,6 +4196,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Menu",
         "Table",
         "Tabs",
         "Input",
@@ -4275,6 +4297,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Menu",
         "Tooltip",
         "Tabs"
       ]
@@ -4397,6 +4420,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Menu",
         "Button",
         "Checkbox",
         "Input",
@@ -4423,6 +4447,7 @@
         "Card",
         "Dialog",
         "Drawer",
+        "Menu",
         "Toast",
         "Accordion",
         "Pagination",

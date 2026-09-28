@@ -62,5 +62,19 @@
     "role": "link-text-hover",
     "minRatio": 4.5,
     "note": "Link's hover colour."
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-feedback-error",
+    "role": "menu-destructive-item",
+    "minRatio": 4.5,
+    "note": "Menu's destructive item label at rest."
+  },
+  {
+    "bg": "color-feedback-error-background",
+    "fg": "color-feedback-error",
+    "role": "menu-destructive-item-highlighted",
+    "minRatio": 4.5,
+    "note": "Menu's destructive item label while highlighted."
   }
 ]
