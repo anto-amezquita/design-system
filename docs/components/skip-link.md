@@ -10,7 +10,7 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `targetId?` | `string` | The `id` of the element to jump to, without `#`. Put the matching `id` on your `&lt;main&gt;`. |
+| `targetId?` | `string` | The `id` of the element to jump to, without `#`. Defaults to `'main-content'`, so `<main id="main-content">` needs no prop here. |
 | `children?` | `React.ReactNode` | Defaults to "Skip to main content". |
 
 Also accepts all props of: `Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'children'>`

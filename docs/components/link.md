@@ -12,7 +12,7 @@
 |---|---|---|
 | `variant?` | `'inline' \| 'standalone'` | `'inline'` is underlined, for links inside running text. `'standalone'` has no underline until hover or focus, for links that stand on their own (a list of links, a "Read more"). |
 | `external?` | `boolean` | Opens in a new tab: sets `target="_blank"` and `rel="noopener noreferrer"`, and adds an icon plus visually hidden "(opens in a new tab)". Not detected from `href` — set it where you mean it. |
-| `asChild?` | `boolean` | Render your router's link instead of `&lt;a&gt;`, keeping Link's styling: `&lt;Link asChild&gt;&lt;NextLink href="/about"&gt;About&lt;/NextLink&gt;&lt;/Link&gt;`. The child must be a single element that renders an `&lt;a&gt;`. |
+| `asChild?` | `boolean` | Render your router's link instead of `<a>`, keeping Link's styling: `<Link asChild><NextLink href="/about">About</NextLink></Link>`. The child must be a single element that renders an `<a>`. |
 | `children` | `React.ReactNode` |  |
 
 Also accepts all props of: `Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'children'>`

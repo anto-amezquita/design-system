@@ -5,7 +5,7 @@ import './SkipLink.css'
 const FOCUSABLE = 'a[href], button, input, select, textarea, summary, [contenteditable], [tabindex]'
 
 type SkipLinkOwnProps = {
-  /** The `id` of the element to jump to, without `#`. Put the matching `id` on your `<main>`. */
+  /** The `id` of the element to jump to, without `#`. Defaults to `'main-content'`, so `<main id="main-content">` needs no prop here. */
   targetId?: string
   /** Defaults to "Skip to main content". */
   children?: React.ReactNode

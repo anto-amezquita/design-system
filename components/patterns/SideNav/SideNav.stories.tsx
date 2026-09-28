@@ -30,24 +30,42 @@ type Story = StoryObj<typeof SideNav>
 export const Default: Story = {
   render: () => (
     <SideNavProvider>
-      <header>
+      <SkipLink />
+      <header style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-inline-gap)' }}>
         <SideNavTrigger />
+        <strong style={{ marginInlineEnd: 'auto' }}>Studio</strong>
+        <NavigationMenu
+          currentHref="/docs/tokens"
+          items={[
+            { id: 'work', label: 'Work', href: '/work' },
+            { id: 'about', label: 'About', href: '/about' },
+          ]}
+        />
       </header>
-      <SideNav
-        currentHref="/docs/tokens"
-        items={[
-          { id: 'start', label: 'Getting started', href: '/docs/start' },
-          {
-            id: 'foundations',
-            label: 'Foundations',
-            items: [
-              { id: 'tokens', label: 'Tokens', href: '/docs/tokens' },
-              { id: 'type', label: 'Typography', href: '/docs/type' },
-            ],
-          },
-          { id: 'components', label: 'Components', href: '/docs/components' },
-        ]}
-      />
+      <div style={{ display: 'flex', gap: 'var(--space-component-gap)' }}>
+        <SideNav
+          currentHref="/docs/tokens"
+          headerItems={[
+            { id: 'work', label: 'Work', href: '/work' },
+            { id: 'about', label: 'About', href: '/about' },
+          ]}
+          items={[
+            { id: 'start', label: 'Getting started', href: '/docs/start' },
+            {
+              id: 'foundations',
+              label: 'Foundations',
+              items: [
+                { id: 'tokens', label: 'Tokens', href: '/docs/tokens' },
+                { id: 'type', label: 'Typography', href: '/docs/type' },
+              ],
+            },
+            { id: 'components', label: 'Components', href: '/docs/components' },
+          ]}
+        />
+        <main id="main-content" style={{ flex: 1, minWidth: 0 }}>
+          <p style={{ margin: 0 }}>Page content.</p>
+        </main>
+      </div>
     </SideNavProvider>
   ),
 }

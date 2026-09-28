@@ -11,7 +11,7 @@
 | Prop | Type | Description |
 |---|---|---|
 | `trigger` | `React.ReactElement` | The element that opens the menu. Must be a single element that forwards its ref — `Button` does. React.Fragment is not supported (Radix asChild). |
-| `groups` | `{ /** Optional heading shown above the group's items. */; label?: string; items: { /** Stable React key. */; id: string; label: string; /** Runs when the item is chosen by click, Enter or Space. The menu closes afterwards. */; onSelect?: () => void; disabled?: boolean; /** `'destructive'` colours the item as a warning, for deletes and other actions that can't be undone. */; variant?: 'default' \| 'destructive'; /** Decorative leading icon; the label stays the accessible name. */; icon?: React.ReactNode }[] }[]` | Items in groups; a separator is drawn between groups. One group with no label is a plain list. |
+| `groups` | `{ label?: string; items: { id: string; label: string; onSelect?: () => void; disabled?: boolean; variant?: 'default' \| 'destructive'; icon?: React.ReactNode }[] }[]` | Items in groups; a separator is drawn between groups. One group with no label is a plain list. |
 | `align?` | `'start' \| 'center' \| 'end'` |  |
 | `side?` | `'top' \| 'right' \| 'bottom' \| 'left'` |  |
 | `open?` | `boolean` |  |

@@ -10,7 +10,7 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `aria-label?` | `string` | Accessible name for the icon-only button. Defaults to "Open navigation". |
+| `aria-label?` | `string` | Accessible name for the icon-only hamburger button. Defaults to "Open navigation". The button opens SideNav's drawer, and hides itself from 1024px up, where the inline SideNav or the header's NavigationMenu takes over. |
 | `className?` | `string` |  |
 
 ## Usage example

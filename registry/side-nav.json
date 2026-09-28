@@ -3,7 +3,7 @@
   "name": "side-nav",
   "type": "registry:component",
   "title": "SideNav",
-  "description": "Section navigation: inline beside the content from desktop width up, in a left Drawer opened from a header hamburger below it",
+  "description": "Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider`",
   "dependencies": [
     "@amezquita/design-system"
   ],

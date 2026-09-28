@@ -704,7 +704,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 | Field | Value |
 |---|---|
-| **Purpose** | The site's header navigation from desktop width up: top-level links, plus groups that open a dropdown of links |
+| **Purpose** | The site's header navigation: top-level links, plus groups that open a dropdown of links. Hidden below 1024px, where SideNav's drawer carries the same links (its `headerItems`) |
 | **Figma name** | `NavigationMenu` |
 | **Code name** | `NavigationMenu` |
 | **Storybook path** | `Composition/NavigationMenu` |
@@ -803,7 +803,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 | Field | Value |
 |---|---|
-| **Purpose** | Section navigation: inline beside the content from desktop width up, in a left Drawer opened from a header hamburger below it |
+| **Purpose** | Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider` |
 | **Figma name** | `SideNav` |
 | **Code name** | `SideNav` (+ `SideNavProvider`, `SideNavTrigger`) |
 | **Storybook path** | `Patterns/SideNav` |

@@ -10,7 +10,7 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `children` | `React.ReactNode` | Your layout: the header holding `SideNavTrigger`, and `SideNav` itself. |
+| `children` | `React.ReactNode` | Your layout: at least the header holding `SideNavTrigger`, and `SideNav` itself. Wrapping the whole page shell (SkipLink and `<main>` included) is fine. |
 
 ## Usage example
 

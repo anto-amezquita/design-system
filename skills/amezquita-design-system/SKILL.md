@@ -1,6 +1,6 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 34 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 31 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://amezquita.dk
@@ -22,8 +22,11 @@ npx shadcn add https://amezquita.dk/r/<component-slug>.json
 
 ```tsx
 import { Button } from '@amezquita/design-system/components/primitives/Button'
-import '@amezquita/design-system/styles/brands/portfolio.css'
+import '@amezquita/design-system/styles/brands/base-light.css'
+import '@amezquita/design-system/styles/brands/base-dark.css'
 ```
+
+Import the brand CSS once, in your root layout. `base` is the neutral default; for the portfolio brand, also import `portfolio-light.css` and `portfolio-dark.css` after these. Dark mode applies inside any element with `data-mode="dark"`.
 
 Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `next.config.js` — this package ships source `.tsx`/`.css`, not a pre-built bundle.
 
@@ -62,7 +65,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Dialog | [dialog](https://amezquita.dk/design-system/dialog.md) — Overlay for tasks or information requiring focused attention |
 | Drawer | [drawer](https://amezquita.dk/design-system/drawer.md) — Side-anchored slide-in panel for supplemental content or secondary navigation |
 | Menu | [menu](https://amezquita.dk/design-system/menu.md) — Dropdown list of actions opened from a trigger: account menus, overflow ("more") menus, row actions |
-| NavigationMenu | [navigation-menu](https://amezquita.dk/design-system/navigation-menu.md) — The site's header navigation from desktop width up: top-level links, plus groups that open a dropdown of links |
+| NavigationMenu | [navigation-menu](https://amezquita.dk/design-system/navigation-menu.md) — The site's header navigation: top-level links, plus groups that open a dropdown of links. Hidden below 1024px, where SideNav's drawer carries the same links (its `headerItems`) |
 | Toast | [toast](https://amezquita.dk/design-system/toast.md) — Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout |
 | Tooltip | [tooltip](https://amezquita.dk/design-system/tooltip.md) — Contextual label revealed on hover or focus — supplements an icon or truncated text |
 
@@ -76,7 +79,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | EmptyState | [empty-state](https://amezquita.dk/design-system/empty-state.md) — Placeholder for zero-content states — icon, heading, supporting text, and an optional action |
 | Hero | [hero](https://amezquita.dk/design-system/hero.md) — Page-level section header with eyebrow, title, lead text, and an action slot |
 | Pagination | [pagination](https://amezquita.dk/design-system/pagination.md) — Page navigation controls for multi-page data sets; exposes current page and total page count |
-| SideNav | [side-nav](https://amezquita.dk/design-system/side-nav.md) — Section navigation: inline beside the content from desktop width up, in a left Drawer opened from a header hamburger below it |
+| SideNav | [side-nav](https://amezquita.dk/design-system/side-nav.md) — Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider` |
 | Table | [table](https://amezquita.dk/design-system/table.md) — Static data table with semantic header, body, and row structure |
 | Tabs | [tabs](https://amezquita.dk/design-system/tabs.md) — Segmented view switcher with full keyboard navigation; built on Radix Tabs |
 

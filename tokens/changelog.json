@@ -452,6 +452,14 @@
   ],
   "unreleased": [
     {
+      "sha": "55b3606",
+      "type": "docs",
+      "scope": null,
+      "message": "component counts, backlog, roadmap and changeset for the navigation components",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
       "sha": "34d1a9a",
       "type": "feat",
       "scope": "side-nav",

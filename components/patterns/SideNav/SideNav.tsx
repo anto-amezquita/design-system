@@ -42,7 +42,7 @@ function useSideNavContext(part: string): SideNavContextValue {
 }
 
 type SideNavProviderProps = {
-  /** Your layout: the header holding `SideNavTrigger`, and `SideNav` itself. */
+  /** Your layout: at least the header holding `SideNavTrigger`, and `SideNav` itself. Wrapping the whole page shell (SkipLink and `<main>` included) is fine. */
   children: React.ReactNode
 }
 
@@ -86,7 +86,7 @@ export function SideNavProvider({ children }: SideNavProviderProps) {
 // ── Trigger ──────────────────────────────────────────────────────────
 
 type SideNavTriggerProps = {
-  /** Accessible name for the icon-only button. Defaults to "Open navigation". */
+  /** Accessible name for the icon-only hamburger button. Defaults to "Open navigation". The button opens SideNav's drawer, and hides itself from 1024px up, where the inline SideNav or the header's NavigationMenu takes over. */
   'aria-label'?: string
   className?: string
 }
@@ -214,13 +214,13 @@ function DrawerNav({ id, label, children }: { id: string; label: string; childre
 type SideNavLayout = 'sidebar' | 'drawer-only'
 
 type SideNavOwnProps = {
-  /** The section's navigation. Each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`, which renders as a collapsible section. Two levels at most. */
+  /** The section's navigation. Each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`, which renders as a collapsible section. Two levels at most. Type it with `import type { NavItem } from '@amezquita/design-system/components/patterns/SideNav'`. */
   items: NavItem[]
   /** The same array you pass NavigationMenu. Shown only in the mobile drawer, above `items` with a separator, so header links stay reachable below 1024px. */
   headerItems?: NavItem[]
   /** Your router's current pathname. An exact match sets `aria-current="page"`; a group holding the current link starts open. */
   currentHref?: string
-  /** Component to render links with — pass your router's Link (e.g. next/link). It must pass `aria-current`, `className` and `onClick` through to the `<a>`, and forward its ref for the collapsed rail's tooltips. Defaults to a plain `<a>`. */
+  /** Component to render links with, called with `href` (a string), `className`, `aria-current`, `onClick` and `children`. `next/link` can be passed as-is (`LinkComponent={NextLink}`); another router's Link must pass those props through to the `<a>` and forward its ref (the collapsed rail's tooltips need it). Defaults to a plain `<a>`. */
   LinkComponent?: NavLinkComponent
   /** `'sidebar'` (default) shows the nav inline from 1024px up and in a drawer below. `'drawer-only'` renders nothing inline — for a site whose only desktop navigation is the header (NavigationMenu). */
   layout?: SideNavLayout

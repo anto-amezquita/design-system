@@ -229,7 +229,7 @@ Dropdown list of actions opened from a trigger: account menus, overflow ("more")
 
 ### NavigationMenu
 
-The site's header navigation from desktop width up: top-level links, plus groups that open a dropdown of links
+The site's header navigation: top-level links, plus groups that open a dropdown of links. Hidden below 1024px, where SideNav's drawer carries the same links (its `headerItems`)
 
 - Import: `import { NavigationMenu } from '@amezquita/design-system/components/composition/NavigationMenu'`
 - Token prefix: `navigationmenu-*` (0 tokens)
@@ -312,7 +312,7 @@ Page navigation controls for multi-page data sets; exposes current page and tota
 
 ### SideNav
 
-Section navigation: inline beside the content from desktop width up, in a left Drawer opened from a header hamburger below it
+Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider`
 
 - Import: `import { SideNav } from '@amezquita/design-system/components/patterns/SideNav'`
 - Token prefix: `side-nav-*` (1 tokens)

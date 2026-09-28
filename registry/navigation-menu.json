@@ -3,7 +3,7 @@
   "name": "navigation-menu",
   "type": "registry:component",
   "title": "NavigationMenu",
-  "description": "The site's header navigation from desktop width up: top-level links, plus groups that open a dropdown of links",
+  "description": "The site's header navigation: top-level links, plus groups that open a dropdown of links. Hidden below 1024px, where SideNav's drawer carries the same links (its `headerItems`)",
   "dependencies": [
     "@amezquita/design-system"
   ],

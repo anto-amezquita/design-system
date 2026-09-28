@@ -1,6 +1,6 @@
 # NavigationMenu
 
-> The site's header navigation from desktop width up: top-level links, plus groups that open a dropdown of links
+> The site's header navigation: top-level links, plus groups that open a dropdown of links. Hidden below 1024px, where SideNav's drawer carries the same links (its `headerItems`)
 
 - Tier: composition
 - Storybook: `Composition/NavigationMenu`
@@ -10,10 +10,10 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `items` | `NavItem[]` | The header's navigation. Each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`, which renders as a dropdown of links. Two levels at most. Pass the same array to SideNav's `headerItems` so it shows in the mobile drawer. |
+| `items` | `NavItem[]` | The header's navigation. Each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`, which renders as a dropdown of links. Two levels at most. Type it with `import type { NavItem } from '@amezquita/design-system/components/composition/NavigationMenu'`. Pass the same array to SideNav's `headerItems` so the links are in the mobile drawer, since NavigationMenu hides itself below 1024px. |
 | `currentHref?` | `string` | Your router's current pathname. An exact match sets `aria-current="page"` on that link and marks its group active. |
-| `LinkComponent?` | `NavLinkComponent` | Component to render links with — pass your router's Link (e.g. next/link) for client-side navigation. It must forward its ref and pass `aria-current`, `className` and `onClick` through to the `&lt;a&gt;`. Defaults to a plain `&lt;a&gt;`. |
-| `aria-label?` | `string` | Names the `&lt;nav&gt;` landmark. Defaults to "Main"; give each `&lt;nav&gt;` on a page a different name. |
+| `LinkComponent?` | `NavLinkComponent` | Component to render links with, called with `href` (a string), `className`, `aria-current`, `onClick` and `children`. `next/link` can be passed as-is (`LinkComponent={NextLink}`); another router's Link must forward its ref and pass those props through to the `<a>`. Defaults to a plain `<a>`. |
+| `aria-label?` | `string` | Names the `<nav>` landmark. Defaults to "Main"; give each `<nav>` on a page a different name. |
 
 Also accepts all props of: `Omit<React.HTMLAttributes<HTMLElement>, 'children' | 'defaultValue' | 'dir'>`
 
