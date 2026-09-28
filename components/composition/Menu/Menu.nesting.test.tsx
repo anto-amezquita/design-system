@@ -11,7 +11,7 @@
  */
 
 import { useState } from 'react'
-import { describe, expect, test } from 'vitest'
+import { describe, expect, test, vi } from 'vitest'
 import { render } from '@testing-library/react'
 import { page, userEvent } from 'vitest/browser'
 // Real token values, so any z-index in play resolves to a real number —
@@ -71,5 +71,23 @@ describe('Menu nested inside an open Dialog', () => {
     await expect.element(trigger).toHaveFocus()
     // Escape closed only the Menu, not the Dialog around it.
     await expect.element(page.getByRole('dialog', { name: 'Track' })).toBeVisible()
+  })
+
+  test('groups with the same label (or none) render without duplicate-key warnings', async () => {
+    const error = vi.spyOn(console, 'error').mockImplementation(() => {})
+    render(
+      <Menu
+        defaultOpen
+        trigger={<Button variant="secondary">Dup</Button>}
+        groups={[
+          { label: 'Same', items: [{ id: 'a', label: 'A' }] },
+          { label: 'Same', items: [{ id: 'b', label: 'B' }] },
+          { items: [{ id: 'c', label: 'C' }] },
+        ]}
+      />,
+    )
+    await expect.element(page.getByRole('menuitem', { name: 'B' })).toBeVisible()
+    expect(error.mock.calls.some(call => String(call[0]).includes('same key'))).toBe(false)
+    error.mockRestore()
   })
 })

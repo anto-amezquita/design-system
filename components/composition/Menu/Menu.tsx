@@ -72,7 +72,11 @@ export function Menu({
           aria-label={ariaLabel}
         >
           {groups.map((group, groupIndex) => (
-            <Fragment key={group.label ?? groupIndex}>
+            // Keyed by position, not label: labels are optional and needn't be
+            // unique, and a label like '0' could collide with another group's
+            // index. A group's identity here *is* its position (the separator
+            // before it depends on it), and items inside keep their own ids.
+            <Fragment key={groupIndex}>
               {groupIndex > 0 && <RadixMenu.Separator className="menu__separator" />}
               <RadixMenu.Group className="menu__group">
                 {group.label && <RadixMenu.Label className="menu__label">{group.label}</RadixMenu.Label>}

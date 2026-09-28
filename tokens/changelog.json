@@ -452,6 +452,14 @@
   ],
   "unreleased": [
     {
+      "sha": "f0e32a1",
+      "type": "docs",
+      "scope": "side-nav",
+      "message": "answer the second cold test's questions in the prop docs",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
       "sha": "1583be7",
       "type": "docs",
       "scope": null,
