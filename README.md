@@ -8,7 +8,7 @@ Token-first, multi-brand design system built and maintained solo — DTCG tokens
 
 A single source of truth for tokens and components, designed to be consumed as a package rather than copy-pasted between projects. The governance model — deterministic linting, contrast checks, story coverage, Figma sync detection — runs the same whether a human or an AI agent is making the change, and every rule that fails does so with a specific fix, not just a red X.
 
-- **DTCG-compliant tokens** (`$value`/`$type`) — three layers: global primitives → semantic tokens → component tokens, resolved through [Style Dictionary](https://styledictionary.com); 650 tokens total — 112 global primitives, 125 semantic tokens, and 413 component tokens, each resolved across all four theme axes
+- **DTCG-compliant tokens** (`$value`/`$type`) — three layers: global primitives → semantic tokens → component tokens, resolved through [Style Dictionary](https://styledictionary.com); 373 tokens total — 126 global primitives, 141 semantic tokens, and 106 component tokens, each resolved across all four theme axes
 - **Multi-brand, multi-mode** — a brand-agnostic `base` theme (real neutral gray) and a `portfolio` skin layered on top via CSS cascade, each with light/dark, no per-brand forking
 - **35 components** across primitives, composition, and pattern tiers — 34 of them public, with full Storybook coverage including a required dark-mode story (BaseSheet is an internal overlay primitive with no stories of its own); 230 stories, zero visual regressions across every Chromatic build
 - **CI-enforced governance** — a token linter (no raw hex, no primitive leakage, no hardcoded motion/spacing), a WCAG AA contrast checker across all four theme combinations, and a component-registry check that fails the build if a component ships without documentation
@@ -76,9 +76,9 @@ tokens/
   components/*.json        component-scoped tokens, aliasing semantic tokens
 
 components/
-  primitives/               13 — Button, Input, Select, Avatar, etc.
-  composition/               7 — Dialog, Drawer, Toast, Tooltip, Card, Alert, BaseSheet
-  patterns/                  8 — DataTable, Accordion, Tabs, Hero, Pagination, etc.
+  primitives/               16 — Button, Input, Select, Avatar, Link, SkipLink, etc.
+  composition/              10 — Dialog, AlertDialog, Drawer, Menu, NavigationMenu, Toast, Tooltip, Card, Alert, BaseSheet
+  patterns/                  9 — DataTable, Accordion, Tabs, Hero, Pagination, SideNav, etc.
 ```
 
 Component CSS never references a primitive token directly — everything routes through the semantic layer, enforced by the token linter. The portfolio skin and dark mode are both pure CSS custom-property overrides layered via cascade order and scoped by `[data-mode]` attributes; no component needs its own theme-aware logic.

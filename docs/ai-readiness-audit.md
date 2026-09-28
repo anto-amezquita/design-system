@@ -13,9 +13,11 @@ Most "AI-ready design system" claims aren't checkable. This one is. I scored `@a
 | | DesignSystems.one | Kaelig affordances |
 |---|---|---|
 | Before | 1 / 5 | 1 / 10 shipped, 1 partial |
-| After | 4 / 5 | 6 / 10 shipped |
+| After | 3 / 5 | 5 / 10 shipped |
 
-4/5 exceeds the top score in the original 37-system audit (3/5). It's built on three of the four hardest signals to ship — DTCG tokens, a real shadcn-spec registry, and an MCP server — not the easy ones.
+3/5 matches the top score in the original 37-system audit (shadcn/ui). It's built on two of the hardest signals to ship — DTCG tokens and a real shadcn-spec registry — plus `llms.txt`.
+
+The local MCP server described below is not counted. The scoring rule only counts what's published at a first-party URL, and this server runs on my own machine. Counted, the scores would be 4 / 5 and 6 / 10.
 
 ## What shipped
 
@@ -31,13 +33,13 @@ Most "AI-ready design system" claims aren't checkable. This one is. I scored `@a
 
 **A repo agent file.** `AGENTS.md` at the root, `CLAUDE.md` symlinked to it — the real component list and token prefixes pulled from the registry at write time, not typed from memory. (Memory is exactly how a stale count crept into an earlier draft of this file. Caught it, fixed it, left a note.)
 
-**A local MCP server.** Seven read-only tools — `list_components`, `get_component`, `search_tokens`, `get_token`, `validate_token`, `get_registry_item`, `get_skill` — each a thin wrapper over an artifact the build already generates, not a new source of truth; `validate_token` reuses the token linter's real fabrication-rule functions instead of a second copy that could drift. Reviewed against all seven tools together, then fault-injected by corrupting the JSON files it reads one at a time to see how it actually failed — found and fixed a startup crash on a malformed registry file. Cold-tested twice against fresh subagents with zero memory of this work: both built a real component using only tool output and zero guessed props; one validated a token against `validate_token` on its own initiative, unprompted. Confirmed connected in a real Claude Code session — `/mcp` shows it live alongside two other servers, all seven tools present. It's local and unhosted by design, not by oversight — see below.
+**A local MCP server.** Seven read-only tools — `list_components`, `get_component`, `search_tokens`, `get_token`, `validate_token`, `get_registry_item`, `get_skill` — each a thin wrapper over an artifact the build already generates, not a new source of truth; `validate_token` reuses the token linter's real fabrication-rule functions instead of a second copy that could drift. Reviewed against all seven tools together, then fault-injected by corrupting the JSON files it reads one at a time to see how it actually failed — found and fixed a startup crash on a malformed registry file. Cold-tested twice against fresh subagents with zero memory of this work: both built a real component using only tool output and zero guessed props; one validated a token against `validate_token` on its own initiative, unprompted. Confirmed connected in a real Claude Code session — `/mcp` shows it live alongside two other servers, all seven tools present. It's local and unhosted by design, not by oversight — see below. That's also why it isn't counted in the scores above.
 
 ## What broke along the way, and got fixed for real
 
 The honest version of "shipped" includes the bugs found while shipping it, not just the features:
 
-- `tokens/token-reference.json` only ever covered color primitives — 83 others (spacing, type scale, radii, motion, shadows, sizes, every feedback color) were invisible to anything reading it. Total went from 537 to 620 tokens once fixed.
+- `tokens/token-reference.json` only ever covered color primitives — 83 others (spacing, type scale, radii, motion, shadows, sizes, every feedback color) were invisible to anything reading it. Total went from 537 to 620 tokens once fixed. (Since then, collapsing pass-through component tokens took the total to 373 — see `decisions/0005-collapse-passthrough-component-tokens.md`.)
 - A shadcn registry item referencing another item in the same custom registry by a bare name silently resolves against the *default* shadcn registry instead, every time. Found by actually running the CLI, not by reading the schema — the schema alone gives no hint this is wrong.
 - A prop whose type pointed at another local type alias showed the alias name with no shape behind it — real information, invisible to anything but someone willing to read the installed package's source. Found by an agent that had to do exactly that.
 
@@ -45,11 +47,11 @@ None of these were visible from the outside. All of them would have quietly unde
 
 ## What was deliberately skipped
 
-**Hosting the MCP server.** The server itself shipped (see above) — what's still skipped is making it reachable over a network: swapping stdio for HTTP/SSE and adding auth. Only matters once a second real consumer, not just this solo maintainer, needs it.
+**Hosting the MCP server.** The server itself shipped (see above) — what's still skipped is making it reachable over a network: swapping stdio for HTTP/SSE and adding auth. Only matters once a second real consumer needs it. Right now I'm the only developer using it, so I've left it local and kept it out of the scores.
 
 **Figma Code Connect, a project-specific CLI, editor-specific rules files.** Real gaps, not attempted this round — the compiled docs layer, the registry, and the skill mattered more, in that order, and that's what got built.
 
-**Growing the component count.** No component #30 until there's a second real consumer. Breadth is the losing axis for a solo-maintained system.
+**Growing the component count.** No new components beyond what the portfolio itself needs until there's a second real consumer. Breadth is the losing axis for a solo-maintained system.
 
 ## Verifiability
 
