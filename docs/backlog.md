@@ -71,6 +71,24 @@ Opened 2026-09-17 with `decisions/0014`, which added the `size-container-text/me
 
 Status: not started.
 
+## `contributor-skills/design-system` may have diverged from the kit's copy (backlog)
+
+Opened 2026-09-28. `contributor-skills/design-system/SKILL.md` was adopted from the ai-product-starter-kit's `/skills` convention (see `contributor-skills/README.md`). The kit still ships its own `design-system` skill, and the portfolio carries a third copy in `portfolio/skills/design-system`. Three copies of the same-named skill, none of them generated, so nothing keeps them in step.
+
+Diff the three and decide: either this repo's copy is deliberately specialised for developing the system rather than building with it, in which case rename it so the divergence is obvious, or it's a stale fork and should be re-synced from the kit. The kit and the portfolio also differ by one skill already (`architecture-review` is in the portfolio, not the kit), so the sync question is wider than this one file.
+
+Status: not started.
+
+## No documented voice for the package's own copy (backlog)
+
+Opened 2026-09-28, surfaced while building the `ux-writing` skill. This repo has no `docs/brand.md` or `docs/content.md`, so `content-review` has nothing to review against and falls back to flagging both as blockers.
+
+The argument for leaving it that way: the package is consumed by other people's products, so it shouldn't carry a voice at all — the consumer's voice wins, and any string the system hardcodes is a decision taken away from them. That reasoning is the same one that keeps voice-bearing skills out of `skills/`. If it holds, the absence is a decision worth writing into an ADR rather than a gap worth filling.
+
+Either way it's the same call as item 3 of the Navigation follow-ups above (Link's "(opens in a new tab)", Drawer's "Close drawer"): decide once, for the whole system, whether built-in strings are props, a strings object, or not there at all. Do that first, then decide whether anything needs documenting.
+
+Status: needs the user's call.
+
 ## Self-healing CI (backlog)
 
 Opened 2026-09-08, unblocked by [`decisions/0006`](../decisions/0006-add-layered-automated-testing.md) (real tests now exist for CI to react to). Spec'd in [`specs/self-healing-ci-spec.md`](../specs/self-healing-ci-spec.md), validated against industry precedent in [`self-healing-ci-research.md`](./self-healing-ci-research.md).
