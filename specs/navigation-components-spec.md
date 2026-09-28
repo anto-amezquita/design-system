@@ -112,6 +112,16 @@ At minimum, all with real `page` interactions from `vitest/browser`, not `user-e
 
 ---
 
+## Cold test
+
+Two runs, per `docs/quality.md` §6: a fresh agent given only the generated docs (`docs/components/*.md`, `llms.txt`, `llms-full.txt`, the skill) wrote a Next.js `AppShell.tsx` with SkipLink, NavigationMenu and SideNav, `next/link` routing and `usePathname()` highlighting. Both files were then typechecked against this repo's components and the real `next/link` types from the portfolio's `node_modules`: zero errors both times.
+
+**Run 1** used every component correctly but had to guess at eight things. Fixed: the `NavItem` import path, NavigationMenu hiding below 1024px, SideNavTrigger hiding from 1024px, SkipLink's default target, no page-layout example (SideNav's Default story is now the full shell), what `LinkComponent` receives, JSDoc comments leaking into inlined prop types (which also hid three real `columns` fields in DataTable's twin), HTML entities rendered literally inside code spans (also in Heading's twin), and the skill telling consumers to import `styles/brands/portfolio.css`, which doesn't exist.
+
+**Run 2** found the NavItem import, the `next/link` guidance, the layout and the breakpoint behaviour from the docs alone. Its remaining questions were answered in the prop docs: both components export the same `NavItem`, the drawer's `<nav>` is named by `drawerTitle`, `className` lands on the inline `<nav>`, and the collapsed rail brings its own TooltipProvider. Left as they are: exact-match `currentHref` only (by design, documented), and general notes about the wider system (`'use client'`, token-prefix naming for components without a token file).
+
+---
+
 ## Deviations
 
 Where the code contradicted a decision above, or a question came up this spec didn't answer. Each entry: what I found, what I chose, and why. The rule for choosing: change the least existing public API and add the least new surface.
