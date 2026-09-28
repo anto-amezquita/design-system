@@ -47,9 +47,7 @@ Status: 2 and 3 need the user's call; 4 waits on the portfolio's upgrade; 5 need
 
 ## Container width scale follow-ups (backlog)
 
-Opened 2026-09-17 with `decisions/0014`, which added the `size-container-text/media/wide/page/site` tokens and deliberately stopped at tokens. Three things left:
-
-**1. Breakpoint tokens.** The site tier switches at 1024px, and component CSS already hardcodes 768px and 1024px (`Dialog.css`). CSS custom properties can't be used inside `@media`, so breakpoints need build-time output: Style Dictionary emitting `@custom-media` (consumers would need PostCSS), SCSS/JS constants, or documented values only. Needs a call on which.
+Opened 2026-09-17 with `decisions/0014`, which added the `size-container-text/media/wide/page/site` tokens and deliberately stopped at tokens. Item 1, breakpoint tokens, shipped as `decisions/0018` (2026-09-28). Two things left:
 
 **2. A layout component.** A CSS grid with named lines (text / media / wide / full), as in Ryan Mulligan's layout breakouts, so a page opts children into a tier instead of repeating `min(var(--size-container-*), 100%)` and `margin-inline: auto`. Wait until the portfolio has used the tokens for real.
 

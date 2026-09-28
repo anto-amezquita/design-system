@@ -577,6 +577,6 @@
   "size-container-site": {
     "$value": "{size.container-viewport-90}",
     "$type": "dimension",
-    "$description": "Outer site frame from 1024px up (90vw). Below 1024px the site is 100% wide with space-layout-margin gutters. Tokens can't carry the breakpoint; apply this inside a (min-width: 1024px) query. See decisions/0014."
+    "$description": "Outer site frame from 1024px up (90vw). Below 1024px the site is 100% wide with space-layout-margin gutters. Custom properties can't be read in @media, so apply this inside a (min-width: 1024px) query: breakpoint.desktop, decisions/0018. See decisions/0014."
   }
 }

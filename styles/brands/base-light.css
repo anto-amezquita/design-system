@@ -126,6 +126,8 @@
   --size-container-80: 80rem;
   --size-container-90: 90rem;
   --size-container-viewport-90: 90vw;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
   --accordion-content-padding-x: 24px;
   --accordion-content-padding-bottom: 24px;
   --accordion-duration-expand: 650ms;
