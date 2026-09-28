@@ -17,14 +17,6 @@ Live, actionable work for this repo. **Open this file first in any new session**
 
 ---
 
-## `decisions/0015`: navigation components ready to push (backlog)
-
-Opened 2026-09-28. `Link`, `SkipLink`, `Menu`, `NavigationMenu` and `SideNav` (with `SideNavProvider` and `SideNavTrigger`), plus the breakpoint tokens from `decisions/0018`, are built and committed on `feat/navigation-components`, one commit per step. Not pushed, on purpose: Chromatic runs on every push to an open PR. Scope and every deviation from the handoff are in `specs/navigation-components-spec.md`; the step-by-step handoff was `~/Documents/github/dotfiles/claude/handoff-0015-navigation-components.md`, which gets deleted once this merges, along with this entry.
-
-Left to do: push, open the PR, run Chromatic once and review. Expect new baselines for 28 new stories, and one intended change to existing ones: Card's description now shows from 1024px instead of 1200px (`decisions/0018`), so any Card story snapshotted between those widths changes.
-
-Status: waiting on push and review.
-
 ## Navigation follow-ups (backlog)
 
 Opened 2026-09-28, deferred on purpose while building the `decisions/0015` components.
