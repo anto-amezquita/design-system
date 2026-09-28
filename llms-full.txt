@@ -227,6 +227,15 @@ Dropdown list of actions opened from a trigger: account menus, overflow ("more")
 - Storybook: Composition/Menu
 - Stories: Default, Open, WithGroupLabelsAndIcons, Overflow, DarkMode
 
+### NavigationMenu
+
+The site's header navigation from desktop width up: top-level links, plus groups that open a dropdown of links
+
+- Import: `import { NavigationMenu } from '@amezquita/design-system/components/composition/NavigationMenu'`
+- Token prefix: `navigationmenu-*` (0 tokens)
+- Storybook: Composition/NavigationMenu
+- Stories: Default, Open, WithIcons, NoCurrentPage, DarkMode
+
 ### Toast
 
 Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout

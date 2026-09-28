@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 32 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 33 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -43,6 +43,7 @@ npm install @amezquita/design-system
 - [Dialog](https://amezquita.dk/design-system/dialog.md): Overlay for tasks or information requiring focused attention
 - [Drawer](https://amezquita.dk/design-system/drawer.md): Side-anchored slide-in panel for supplemental content or secondary navigation
 - [Menu](https://amezquita.dk/design-system/menu.md): Dropdown list of actions opened from a trigger: account menus, overflow ("more") menus, row actions
+- [NavigationMenu](https://amezquita.dk/design-system/navigation-menu.md): The site's header navigation from desktop width up: top-level links, plus groups that open a dropdown of links
 - [Toast](https://amezquita.dk/design-system/toast.md): Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout
 - [Tooltip](https://amezquita.dk/design-system/tooltip.md): Contextual label revealed on hover or focus — supplements an icon or truncated text
 

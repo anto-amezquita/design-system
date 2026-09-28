@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 32 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 33 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 32 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 33 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -52,7 +52,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Tag | [tag](https://amezquita.dk/design-system/tag.md) — Inline label for categorising or annotating content — non-interactive |
 | Textarea | [textarea](https://amezquita.dk/design-system/textarea.md) — Multi-line text entry with label, hint, and error states — mirrors Input API |
 
-### Composition (8)
+### Composition (9)
 
 | Component | Reference |
 |---|---|
@@ -62,6 +62,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Dialog | [dialog](https://amezquita.dk/design-system/dialog.md) — Overlay for tasks or information requiring focused attention |
 | Drawer | [drawer](https://amezquita.dk/design-system/drawer.md) — Side-anchored slide-in panel for supplemental content or secondary navigation |
 | Menu | [menu](https://amezquita.dk/design-system/menu.md) — Dropdown list of actions opened from a trigger: account menus, overflow ("more") menus, row actions |
+| NavigationMenu | [navigation-menu](https://amezquita.dk/design-system/navigation-menu.md) — The site's header navigation from desktop width up: top-level links, plus groups that open a dropdown of links |
 | Toast | [toast](https://amezquita.dk/design-system/toast.md) — Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout |
 | Tooltip | [tooltip](https://amezquita.dk/design-system/tooltip.md) — Contextual label revealed on hover or focus — supplements an icon or truncated text |
 

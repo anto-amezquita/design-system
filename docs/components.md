@@ -700,6 +700,47 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### NavigationMenu
+
+| Field | Value |
+|---|---|
+| **Purpose** | The site's header navigation from desktop width up: top-level links, plus groups that open a dropdown of links |
+| **Figma name** | `NavigationMenu` |
+| **Code name** | `NavigationMenu` |
+| **Storybook path** | `Composition/NavigationMenu` |
+
+**Props / variants**
+- `items: NavItem[]` — each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`. Two levels at most. The types (`NavItem`, `NavLink`, `NavGroup`, `NavLinkComponent`) are exported from this component's folder and from `SideNav`'s
+- `currentHref`: your router's current pathname. An exact match sets `aria-current="page"` and marks the link's group active
+- `LinkComponent`: your router's Link (e.g. `next/link`), defaults to `<a>`. It must forward its ref and pass `aria-current`, `className` and `onClick` through
+- `aria-label`: names the `<nav>` landmark, default "Main"
+- **Hidden below 1024px** (`breakpoint.desktop`) by CSS. Pair it with `SideNav` and pass the same array as SideNav's `headerItems`, so the links move into the mobile drawer
+- No mega-menu or rich content: a group is a simple list of links
+
+**Required states**
+- [x] default, hover, focus-visible
+- [x] current link (`aria-current="page"`) and active group
+- [x] group open
+
+**Tokens consumed**
+- `--z-dropdown` (the group dropdown isn't portalled, see Accessibility)
+- `--color-surface-primary`, `--color-surface-secondary`, `--color-border-default`, `--color-text-primary`, `--color-text-secondary`, `--color-border-focus`
+- `--border-width-interactive`, `--border-radius-component`, `--border-radius-interactive`, `--shadow-dropdown`
+- `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-weight-label`
+- `--space-tight-gap`, `--space-inline-gap`, `--space-compact-padding-y`, `--space-control-padding-x`, `--size-touch-target`, `--size-icon-sm`
+
+**Accessibility**
+- Built on Radix NavigationMenu: a `<nav>` landmark, groups open from a real `<button>` with `aria-expanded`
+- Keyboard: Tab moves between top-level items; `Enter`/`Space` opens a group and Tab moves into its links; `Escape` closes and returns focus to the trigger; arrow keys move between top-level items
+- Hover also opens a group, after Radix's short delay
+- Every top-level item is at least 44px tall (`--size-touch-target`)
+- The dropdown renders inside its own item rather than in a portal, so it carries `--z-dropdown` to stay above later page content
+
+**Chromatic stories**
+- `Default`, `Open`, `WithIcons`, `NoCurrentPage`, `DarkMode` — snapshotted at 1280px, since the component is hidden below 1024px
+
+---
+
 ### Accordion
 
 | Field | Value |

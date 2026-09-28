@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 31,
-    "tokenCount": 209
+    "filesScanned": 32,
+    "tokenCount": 210
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -73,6 +73,7 @@
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Table/Table.css",
       "components/primitives/Select/Select.css"
@@ -88,6 +89,7 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/Tabs/Tabs.css",
@@ -131,6 +133,7 @@
     ],
     "border-width-interactive": [
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
@@ -222,6 +225,7 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Pagination/Pagination.css",
@@ -239,6 +243,7 @@
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
@@ -343,6 +348,7 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Hero/Hero.css",
       "components/primitives/Checkbox/Checkbox.css",
@@ -354,6 +360,7 @@
     "color-surface-secondary": [
       "components/composition/Card/Card.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/Table/Table.css",
@@ -381,6 +388,7 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
@@ -403,6 +411,7 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
@@ -487,6 +496,7 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
@@ -521,6 +531,7 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Accordion/Accordion.css",
@@ -553,6 +564,7 @@
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
@@ -576,6 +588,7 @@
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
@@ -596,6 +609,7 @@
     "font-family-base": [
       "components/composition/Alert/Alert.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Accordion/Accordion.css",
@@ -641,6 +655,7 @@
       "components/composition/Alert/Alert.css",
       "components/composition/Card/Card.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
@@ -691,6 +706,7 @@
     ],
     "font-weight-label": [
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
@@ -761,6 +777,7 @@
       "components/composition/Alert/Alert.css",
       "components/composition/Card/Card.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Table/Table.css",
       "components/primitives/Checkbox/Checkbox.css",
@@ -862,6 +879,7 @@
     ],
     "shadow-dropdown": [
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/primitives/Select/Select.css"
     ],
     "shadow-toast": [
@@ -879,6 +897,7 @@
     ],
     "size-icon-sm": [
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/primitives/Spinner/Spinner.css"
     ],
     "size-icon-xs": [
@@ -888,6 +907,7 @@
       "components/composition/Alert/Alert.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/Tabs/Tabs.css",
@@ -910,6 +930,7 @@
     ],
     "space-compact-padding-y": [
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Tabs/Tabs.css"
     ],
@@ -930,6 +951,7 @@
     ],
     "space-control-padding-x": [
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Input/Input.css",
@@ -965,6 +987,7 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
@@ -998,6 +1021,7 @@
     ],
     "space-tight-gap": [
       "components/composition/Menu/Menu.css",
+      "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
@@ -1068,6 +1092,9 @@
     ],
     "tooltip-max-width": [
       "components/composition/Tooltip/Tooltip.css"
+    ],
+    "z-dropdown": [
+      "components/composition/NavigationMenu/NavigationMenu.css"
     ],
     "z-skip-link": [
       "components/primitives/SkipLink/SkipLink.css"

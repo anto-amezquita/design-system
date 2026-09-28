@@ -452,6 +452,14 @@
   ],
   "unreleased": [
     {
+      "sha": "5749b99",
+      "type": "feat",
+      "scope": "menu",
+      "message": "Menu dropdown on Radix DropdownMenu, with nesting test",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
       "sha": "ab8eaf8",
       "type": "feat",
       "scope": "skip-link",

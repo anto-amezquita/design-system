@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 54,
-    "publicComponentCount": 32,
+    "componentCount": 55,
+    "publicComponentCount": 33,
     "subComponentCount": 21
   },
   "components": [
@@ -545,6 +545,24 @@
         "Open",
         "WithGroupLabelsAndIcons",
         "Overflow",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "NavigationMenu",
+      "slug": "navigation-menu",
+      "tier": "composition",
+      "purpose": "The site's header navigation from desktop width up: top-level links, plus groups that open a dropdown of links",
+      "storybookPath": "Composition/NavigationMenu",
+      "storybookTitleId": "composition-navigationmenu",
+      "tokenPrefix": "navigationmenu",
+      "stories": [
+        "Default",
+        "Open",
+        "WithIcons",
+        "NoCurrentPage",
         "DarkMode"
       ],
       "tokenCount": 0,
