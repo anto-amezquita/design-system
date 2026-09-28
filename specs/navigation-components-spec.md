@@ -116,4 +116,4 @@ At minimum, all with real `page` interactions from `vitest/browser`, not `user-e
 
 Where the code contradicted a decision above, or a question came up this spec didn't answer. Each entry: what I found, what I chose, and why. The rule for choosing: change the least existing public API and add the least new surface.
 
-_None yet._
+1. **No package entry to export the nav types from.** The handoff asked for the types "exported from the package entry". `package.json` has no `main`, `module` or `exports`; consumers import each component from its own folder (`@amezquita/design-system/components/patterns/Breadcrumb`). Chose: the types live in `lib/navigation.ts` (already shipped under `files: ["lib"]`) and are re-exported from `NavigationMenu`'s and `SideNav`'s `index.ts`, so a consumer gets them from the component they're already importing. Adding a root entry would be new package structure, which needs its own ADR.
