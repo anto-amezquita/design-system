@@ -2,6 +2,10 @@
  * tokens/changelog.json staleness — the one place the "ignore generatedAt"
  * comparison lives.
  *
+ * Since decisions/0019 no branch CI gates on this. chromatic.yml's
+ * update-changelog job uses `--restore-if-unchanged` on main; `--check` stays
+ * for local use (is my committed changelog current?).
+ *
  * This artifact is generated like the others, but it can't be treated like
  * them. `meta.generatedAt` changes on every single build, so a plain
  * `git diff` says "changed" even when nothing meaningful did. Every consumer
@@ -14,16 +18,17 @@
  *
  *   node scripts/changelog-sync.mjs --check
  *       Exit 1 if the committed changelog's content differs from a fresh
- *       build. What chromatic.yml gates on.
+ *       build. Local use only since decisions/0019.
  *
  *   node scripts/changelog-sync.mjs --restore-if-unchanged
  *       If only generatedAt moved, restore the committed file so nothing is
  *       committed. If the content genuinely changed, leave the rebuilt file
- *       in place so the self-healing workflow commits it.
+ *       in place so chromatic.yml's update-changelog job commits it on main.
  *
- * The second mode is what lets `tokens/changelog.json` join the self-healing
- * workflow's add-paths without the bot opening a PR on every push — see
- * specs/self-healing-ci-spec.md § "The path list".
+ * The second mode first existed so the self-healing workflow could commit the
+ * changelog without opening a PR on every push (specs/self-healing-ci-spec.md
+ * § "The path list"); 0019 took the changelog out of that workflow and moved
+ * the mode to main.
  */
 
 import { execFileSync } from 'child_process'

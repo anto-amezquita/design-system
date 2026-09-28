@@ -37,24 +37,19 @@ export const GENERATED_PATHS = [
 // only, timestamp nulled — lives in `changelog-sync.mjs`.
 
 /**
- * What the self-healing workflow is allowed to commit. GENERATED_PATHS plus
- * the changelog.
+ * What the self-healing workflow is allowed to commit. The same list as
+ * GENERATED_PATHS since decisions/0019.
  *
- * The changelog is included here but not above because the workflow runs
- * `changelog-sync.mjs --restore-if-unchanged` first: if only `generatedAt`
- * moved, the committed file is put back and there is nothing to commit; if the
- * content genuinely changed, it stays and gets committed. Without that step
- * this list would make the bot open a PR on every single push forever.
- *
- * Why it has to be here at all: acceptance testing on 2026-09-10 found that
- * healing only GENERATED_PATHS leaves a drifting branch still red. Any
- * feat/fix/refactor/perf/style/docs commit touching tokens/, components/,
- * sd.config.mjs or styles/brands/ changes the changelog's content too, so the
- * bot fixed the component docs and `chromatic.yml`'s changelog step stayed
- * failing — leaving the human to run `npm run tokens` anyway, which is the
- * trip Phase 1 exists to save.
+ * It used to add `tokens/changelog.json`, because chromatic.yml gated every
+ * branch on the changelog being current, and healing only GENERATED_PATHS left
+ * a drifting branch red (acceptance testing, 2026-09-10). But the changelog
+ * lists commit SHAs, so almost every component commit made it stale, and the
+ * bot opened a PR on nearly every component branch. 0019 removed the branch
+ * gate and made main's update-changelog job the only owner, so the bot has no
+ * reason to touch it. Kept as its own export so the workflow's `--self-heal`
+ * call and any future divergence stay explicit.
  */
-export const SELF_HEAL_PATHS = [...GENERATED_PATHS, 'tokens/changelog.json']
+export const SELF_HEAL_PATHS = [...GENERATED_PATHS]
 
 // CLI: default prints GENERATED_PATHS (the strict staleness list);
 // `--self-heal` prints the wider list the self-healing workflow commits.
