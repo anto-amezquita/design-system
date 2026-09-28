@@ -452,6 +452,14 @@
   ],
   "unreleased": [
     {
+      "sha": "2f88874",
+      "type": "fix",
+      "scope": "menu",
+      "message": "key groups by position so duplicate or missing labels can't collide",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
       "sha": "f0e32a1",
       "type": "docs",
       "scope": "side-nav",
