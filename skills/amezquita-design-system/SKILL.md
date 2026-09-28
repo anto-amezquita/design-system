@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 29 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 30 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 29 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 30 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -31,7 +31,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://amezquita.dk/design-system/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (14)
+### Primitives (15)
 
 | Component | Reference |
 |---|---|
@@ -42,6 +42,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Heading | [heading](https://amezquita.dk/design-system/heading.md) — Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level |
 | Input | [input](https://amezquita.dk/design-system/input.md) — Labelled single-line text entry with hint and error states |
 | Label | [label](https://amezquita.dk/design-system/label.md) — Standalone form label element — used when a label must be decoupled from its input |
+| Link | [link](https://amezquita.dk/design-system/link.md) — Navigation to another page or resource; use Link for navigation and Button for actions |
 | Radio | [radio](https://amezquita.dk/design-system/radio.md) — Single-selection control within a mutually exclusive group |
 | Select | [select](https://amezquita.dk/design-system/select.md) — Dropdown for choosing a single value from a list; supports grouped options |
 | Skeleton | [skeleton](https://amezquita.dk/design-system/skeleton.md) — Placeholder loading state that mirrors the geometry of the content it replaces |

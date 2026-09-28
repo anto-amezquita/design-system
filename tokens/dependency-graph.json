@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 28,
-    "tokenCount": 206
+    "filesScanned": 29,
+    "tokenCount": 207
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -91,6 +91,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Link/Link.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -120,6 +121,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
+      "components/primitives/Link/Link.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css"
     ],
@@ -192,6 +194,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css"
@@ -204,7 +207,8 @@
       "components/primitives/Tag/Tag.css"
     ],
     "color-accent-hover": [
-      "components/primitives/Button/Button.css"
+      "components/primitives/Button/Button.css",
+      "components/primitives/Link/Link.css"
     ],
     "color-border-default": [
       "components/composition/Card/Card.css",
@@ -237,6 +241,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
@@ -475,6 +480,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
@@ -508,6 +514,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
@@ -539,6 +546,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
@@ -559,6 +567,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
@@ -837,6 +846,9 @@
     "size-icon-sm": [
       "components/primitives/Spinner/Spinner.css"
     ],
+    "size-icon-xs": [
+      "components/primitives/Link/Link.css"
+    ],
     "size-touch-target": [
       "components/composition/Alert/Alert.css",
       "components/composition/Dialog/Dialog.css",
@@ -949,6 +961,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Link/Link.css",
       "components/primitives/Select/Select.css"
     ],
     "spinner-stroke-width": [

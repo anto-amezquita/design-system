@@ -2248,6 +2248,7 @@
         "Tabs",
         "Button",
         "Checkbox",
+        "Link",
         "Radio",
         "Switch",
         "Tag"
@@ -2267,7 +2268,8 @@
       },
       "axisAware": true,
       "usedBy": [
-        "Button"
+        "Button",
+        "Link"
       ]
     },
     {
@@ -2372,6 +2374,7 @@
         "Button",
         "Checkbox",
         "Input",
+        "Link",
         "Radio",
         "Select",
         "Switch",
@@ -2715,6 +2718,7 @@
         "Button",
         "Checkbox",
         "Input",
+        "Link",
         "Radio",
         "Select",
         "Switch",
@@ -2750,6 +2754,7 @@
         "Button",
         "Checkbox",
         "Input",
+        "Link",
         "Radio",
         "Select",
         "Switch",
@@ -2948,7 +2953,9 @@
         "portfolio-dark": "12px"
       },
       "axisAware": false,
-      "usedBy": []
+      "usedBy": [
+        "Link"
+      ]
     },
     {
       "name": "size-icon-sm",
@@ -3918,6 +3925,7 @@
         "Tabs",
         "Checkbox",
         "Input",
+        "Link",
         "Select",
         "Textarea"
       ]
@@ -3988,6 +3996,7 @@
         "Button",
         "Checkbox",
         "Input",
+        "Link",
         "Radio",
         "Select",
         "Switch",
@@ -4120,6 +4129,7 @@
         "Tabs",
         "Badge",
         "Input",
+        "Link",
         "Select"
       ]
     },
@@ -4390,6 +4400,7 @@
         "Tabs",
         "Avatar",
         "Badge",
+        "Link",
         "Select",
         "Tag"
       ]

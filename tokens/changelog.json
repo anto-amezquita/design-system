@@ -452,6 +452,14 @@
   ],
   "unreleased": [
     {
+      "sha": "1c44aed",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "breakpoint tokens and the no-unknown-breakpoint lint rule",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
       "sha": "a11a022",
       "type": "docs",
       "scope": "changelog",

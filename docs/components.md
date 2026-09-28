@@ -527,6 +527,43 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Link
+
+| Field | Value |
+|---|---|
+| **Purpose** | Navigation to another page or resource; use Link for navigation and Button for actions |
+| **Figma name** | `Link` |
+| **Code name** | `Link` |
+| **Storybook path** | `Primitives/Link` |
+
+**Props / variants**
+- `variant`: `inline` (default, underlined, for running text) or `standalone` (no underline until hover or focus)
+- `external`: opens in a new tab (`target="_blank"`, `rel="noopener noreferrer"`), adds an icon and visually hidden "(opens in a new tab)". Set it explicitly; it isn't detected from `href`
+- `asChild`: render a router's link instead of `<a>` — `<Link asChild><NextLink href="/about">About</NextLink></Link>`
+- Every native anchor attribute passes through; `className` merges; the ref reaches the `<a>`
+- Link vs Button: Button still renders `<a>` when given `href`, but reach for Link whenever the element goes somewhere, and Button when it does something
+
+**Required states**
+- [x] default (accent colour, underlined when inline)
+- [x] hover (accent hover colour; standalone gains its underline)
+- [x] focus-visible (2px ring)
+
+**Tokens consumed**
+- `--color-accent-default`, `--color-accent-hover`, `--color-border-focus`
+- `--border-width-default`, `--border-radius-interactive`, `--focus-ring-width`, `--focus-ring-offset`
+- `--duration-interaction`, `--easing-default`, `--size-icon-xs`, `--space-tight-gap`
+
+**Accessibility**
+- Semantic element: `<a>` (or the `asChild` element, which must render an `<a>`)
+- Link text should make sense out of context; avoid "click here"
+- `external` adds "(opens in a new tab)" to the accessible name, so the new tab isn't a surprise
+- Text colour is checked at 4.5:1 against the primary surface in all four modes (`tokens/contrast-pairs.json`, `link-text`)
+
+**Chromatic stories**
+- `Default`, `Standalone`, `External`, `AsChild`, `AllVariants`, `DarkMode`
+
+---
+
 ### Alert
 
 | Field | Value |

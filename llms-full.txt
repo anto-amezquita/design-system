@@ -90,6 +90,15 @@ Standalone form label element — used when a label must be decoupled from its i
 - Storybook: Components/Label
 - Stories: Default, Required, Disabled, AllVariants, DarkMode
 
+### Link
+
+Navigation to another page or resource; use Link for navigation and Button for actions
+
+- Import: `import { Link } from '@amezquita/design-system/components/primitives/Link'`
+- Token prefix: `link-*` (0 tokens)
+- Storybook: Primitives/Link
+- Stories: Default, Standalone, External, AsChild, AllVariants, DarkMode
+
 ### Radio
 
 Single-selection control within a mutually exclusive group

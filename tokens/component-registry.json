@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 51,
-    "publicComponentCount": 29,
+    "componentCount": 52,
+    "publicComponentCount": 30,
     "subComponentCount": 21
   },
   "components": [
@@ -164,6 +164,25 @@
         "Default",
         "Required",
         "Disabled",
+        "AllVariants",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "Link",
+      "slug": "link",
+      "tier": "primitives",
+      "purpose": "Navigation to another page or resource; use Link for navigation and Button for actions",
+      "storybookPath": "Primitives/Link",
+      "storybookTitleId": "primitives-link",
+      "tokenPrefix": "link",
+      "stories": [
+        "Default",
+        "Standalone",
+        "External",
+        "AsChild",
         "AllVariants",
         "DarkMode"
       ],
