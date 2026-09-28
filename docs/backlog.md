@@ -17,6 +17,30 @@ Live, actionable work for this repo. **Open this file first in any new session**
 
 ---
 
+## `decisions/0015`: navigation components ready to push (backlog)
+
+Opened 2026-09-28. `Link`, `SkipLink`, `Menu`, `NavigationMenu` and `SideNav` (with `SideNavProvider` and `SideNavTrigger`), plus the breakpoint tokens from `decisions/0018`, are built and committed on `feat/navigation-components`, one commit per step. Not pushed, on purpose: Chromatic runs on every push to an open PR. Scope and every deviation from the handoff are in `specs/navigation-components-spec.md`; the step-by-step handoff was `~/Documents/github/dotfiles/claude/handoff-0015-navigation-components.md`, which gets deleted once this merges, along with this entry.
+
+Left to do: push, open the PR, run Chromatic once and review. Expect new baselines for 28 new stories, and one intended change to existing ones: Card's description now shows from 1024px instead of 1200px (`decisions/0018`), so any Card story snapshotted between those widths changes.
+
+Status: waiting on push and review.
+
+## Navigation follow-ups (backlog)
+
+Opened 2026-09-28, deferred on purpose while building the `decisions/0015` components.
+
+**1. Move Breadcrumb and Pagination onto Link.** Both render their own `<a>` with their own link styles. Moving them onto `Link` (`variant="standalone"`) would give one link look and one focus ring, but it changes both components' visuals and classes, so it wasn't part of adding Link.
+
+**2. Menu: checkbox items, radio items and submenus.** Radix DropdownMenu supports all three. Left out until a consumer needs one; each adds state and keyboard behaviour worth its own tests.
+
+**3. Built-in English strings that can't be changed.** Link's "(opens in a new tab)" and Drawer's "Close drawer" (and so the close button in SideNav's drawer) are hardcoded. Everything else the new components say is a prop with an English default. The consumers include Danish and Spanish sites, so these need a prop or a small strings object. Worth deciding once, for the whole system, rather than per component.
+
+**4. Tests for the other nine `tokens:lint` rules.** `scripts/lint-tokens.test.mjs` covers only `no-unknown-breakpoint`. The file and the exported `lintFile`/`RULES` now make the rest cheap to add.
+
+**5. `--z-dropdown` is referenced again, by NavigationMenu.** `decisions/0007`'s dead-token note listed it as unreferenced; it isn't any more (spec Deviation 6). `--z-overlay` and `--z-modal` are still candidates for the dead-token round.
+
+Status: not started.
+
 ## Release dispatch to the portfolio fails: the GitHub App isn't installed there (backlog)
 
 Opened 2026-09-24. Release #108 (the merge of the `1.0.0` Version Packages PR #33) published to npm, then failed about 37s in at "Mint a token scoped to the portfolio repo" with `Not Found` from `get-a-repository-installation-for-the-authenticated-app`. So `design-system-released` was never dispatched and the portfolio's `sync-design-system.yml` never ran; `1.0.0` was bumped by hand in portfolio PR #4.

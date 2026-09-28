@@ -452,6 +452,14 @@
   ],
   "unreleased": [
     {
+      "sha": "34d1a9a",
+      "type": "feat",
+      "scope": "side-nav",
+      "message": "SideNav with SideNavProvider and SideNavTrigger, drawer below 1024px",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
       "sha": "731df6f",
       "type": "feat",
       "scope": "navigation-menu",
