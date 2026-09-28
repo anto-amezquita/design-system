@@ -214,7 +214,7 @@ function DrawerNav({ id, label, children }: { id: string; label: string; childre
 type SideNavLayout = 'sidebar' | 'drawer-only'
 
 type SideNavOwnProps = {
-  /** The section's navigation. Each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`, which renders as a collapsible section. Two levels at most. Type it with `import type { NavItem } from '@amezquita/design-system/components/patterns/SideNav'`. */
+  /** The section's navigation. Each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`, which renders as a collapsible section. Two levels at most. Type it with `import type { NavItem } from '@amezquita/design-system/components/patterns/SideNav'` — the same type NavigationMenu exports. */
   items: NavItem[]
   /** The same array you pass NavigationMenu. Shown only in the mobile drawer, above `items` with a separator, so header links stay reachable below 1024px. */
   headerItems?: NavItem[]
@@ -224,11 +224,11 @@ type SideNavOwnProps = {
   LinkComponent?: NavLinkComponent
   /** `'sidebar'` (default) shows the nav inline from 1024px up and in a drawer below. `'drawer-only'` renders nothing inline — for a site whose only desktop navigation is the header (NavigationMenu). */
   layout?: SideNavLayout
-  /** Icon rail: icons only, each label in a tooltip. Inline only; the drawer is always expanded. SideNav has no toggle of its own — drive this from your own control (e.g. a Button in the sidebar's header). Needs an `icon` on every item; without one, SideNav warns in development and renders expanded. */
+  /** Icon rail: icons only, each label in a tooltip. Inline only; the drawer is always expanded. SideNav has no toggle of its own — drive this from your own control (e.g. a Button in the sidebar's header). Needs an `icon` on every item; without one, SideNav warns in development and renders expanded. Brings its own TooltipProvider. */
   collapsed?: boolean
-  /** Names the inline `<nav>` landmark. Defaults to "Section". */
+  /** Names the inline `<nav>` landmark. Defaults to "Section". `className` and other native attributes also go on the inline `<nav>`. */
   'aria-label'?: string
-  /** Heading of the mobile drawer. Defaults to "Navigation". */
+  /** Heading of the mobile drawer, and the name of the one `<nav>` inside it (holding `headerItems`, then `items`). Defaults to "Navigation". */
   drawerTitle?: string
 }
 

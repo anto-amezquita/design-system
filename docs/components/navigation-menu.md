@@ -10,7 +10,7 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `items` | `NavItem[]` | The header's navigation. Each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`, which renders as a dropdown of links. Two levels at most. Type it with `import type { NavItem } from '@amezquita/design-system/components/composition/NavigationMenu'`. Pass the same array to SideNav's `headerItems` so the links are in the mobile drawer, since NavigationMenu hides itself below 1024px. |
+| `items` | `NavItem[]` | The header's navigation. Each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`, which renders as a dropdown of links. Two levels at most. Type it with `import type { NavItem } from '@amezquita/design-system/components/composition/NavigationMenu'` — the same type SideNav exports. Pass the same array to SideNav's `headerItems` so the links are in the mobile drawer, since NavigationMenu hides itself below 1024px. |
 | `currentHref?` | `string` | Your router's current pathname. An exact match sets `aria-current="page"` on that link and marks its group active. |
 | `LinkComponent?` | `NavLinkComponent` | Component to render links with, called with `href` (a string), `className`, `aria-current`, `onClick` and `children`. `next/link` can be passed as-is (`LinkComponent={NextLink}`); another router's Link must forward its ref and pass those props through to the `<a>`. Defaults to a plain `<a>`. |
 | `aria-label?` | `string` | Names the `<nav>` landmark. Defaults to "Main"; give each `<nav>` on a page a different name. |

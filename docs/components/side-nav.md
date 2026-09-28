@@ -10,14 +10,14 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `items` | `NavItem[]` | The section's navigation. Each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`, which renders as a collapsible section. Two levels at most. Type it with `import type { NavItem } from '@amezquita/design-system/components/patterns/SideNav'`. |
+| `items` | `NavItem[]` | The section's navigation. Each item is a link `{ id, label, href, icon? }` or a group `{ id, label, icon?, items: NavLink[] }`, which renders as a collapsible section. Two levels at most. Type it with `import type { NavItem } from '@amezquita/design-system/components/patterns/SideNav'` — the same type NavigationMenu exports. |
 | `headerItems?` | `NavItem[]` | The same array you pass NavigationMenu. Shown only in the mobile drawer, above `items` with a separator, so header links stay reachable below 1024px. |
 | `currentHref?` | `string` | Your router's current pathname. An exact match sets `aria-current="page"`; a group holding the current link starts open. |
 | `LinkComponent?` | `NavLinkComponent` | Component to render links with, called with `href` (a string), `className`, `aria-current`, `onClick` and `children`. `next/link` can be passed as-is (`LinkComponent={NextLink}`); another router's Link must pass those props through to the `<a>` and forward its ref (the collapsed rail's tooltips need it). Defaults to a plain `<a>`. |
 | `layout?` | `'sidebar' \| 'drawer-only'` | `'sidebar'` (default) shows the nav inline from 1024px up and in a drawer below. `'drawer-only'` renders nothing inline — for a site whose only desktop navigation is the header (NavigationMenu). |
-| `collapsed?` | `boolean` | Icon rail: icons only, each label in a tooltip. Inline only; the drawer is always expanded. SideNav has no toggle of its own — drive this from your own control (e.g. a Button in the sidebar's header). Needs an `icon` on every item; without one, SideNav warns in development and renders expanded. |
-| `aria-label?` | `string` | Names the inline `<nav>` landmark. Defaults to "Section". |
-| `drawerTitle?` | `string` | Heading of the mobile drawer. Defaults to "Navigation". |
+| `collapsed?` | `boolean` | Icon rail: icons only, each label in a tooltip. Inline only; the drawer is always expanded. SideNav has no toggle of its own — drive this from your own control (e.g. a Button in the sidebar's header). Needs an `icon` on every item; without one, SideNav warns in development and renders expanded. Brings its own TooltipProvider. |
+| `aria-label?` | `string` | Names the inline `<nav>` landmark. Defaults to "Section". `className` and other native attributes also go on the inline `<nav>`. |
+| `drawerTitle?` | `string` | Heading of the mobile drawer, and the name of the one `<nav>` inside it (holding `headerItems`, then `items`). Defaults to "Navigation". |
 
 Also accepts all props of: `Omit<React.HTMLAttributes<HTMLElement>, 'children'>`
 

@@ -452,6 +452,14 @@
   ],
   "unreleased": [
     {
+      "sha": "1583be7",
+      "type": "docs",
+      "scope": null,
+      "message": "close the cold test's gaps in the navigation docs and the doc generators",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
       "sha": "55b3606",
       "type": "docs",
       "scope": null,
