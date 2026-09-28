@@ -564,6 +564,43 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### SkipLink
+
+| Field | Value |
+|---|---|
+| **Purpose** | First Tab stop on the page that lets keyboard users jump past the header to the main content |
+| **Figma name** | `SkipLink` |
+| **Code name** | `SkipLink` |
+| **Storybook path** | `Primitives/SkipLink` |
+
+**Props / variants**
+- `targetId`: the `id` to jump to, default `'main-content'`. Put the matching `id` on your `<main>`: `<main id="main-content">`
+- `children`: the label, default "Skip to main content"
+- Render it first inside `<body>` (before the header), so it's the first thing Tab reaches
+- Every native anchor attribute except `href` passes through; `className` merges; the ref reaches the `<a>`
+
+**Required states**
+- [x] hidden (at rest, visually hidden but reachable)
+- [x] focus (fixed to the top-left, above every other layer)
+
+**Tokens consumed**
+- `--z-skip-link` (700, one step above `--z-tooltip`)
+- `--color-accent-default`, `--color-accent-foreground`, `--color-border-focus`
+- `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-weight-label`
+- `--space-control-padding-x`, `--space-control-padding-y`, `--space-inline-gap`
+- `--border-radius-interactive`, `--focus-ring-width`, `--focus-ring-offset`
+
+**Accessibility**
+- Semantic element: `<a href="#main-content">`
+- On activation it moves focus to the target, adding `tabindex="-1"` if the target isn't focusable, so the next Tab continues from the main content instead of the top of the page
+- Visible whenever focused (`:focus`, not only `:focus-visible`)
+- The only component with an explicit z-index after decisions/0007: it isn't portalled, so mount order can't lift it
+
+**Chromatic stories**
+- `Default`, `Focused`, `CustomTarget`, `DarkMode`
+
+---
+
 ### Alert
 
 | Field | Value |

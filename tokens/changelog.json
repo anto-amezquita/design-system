@@ -452,6 +452,14 @@
   ],
   "unreleased": [
     {
+      "sha": "53c9b95",
+      "type": "feat",
+      "scope": "link",
+      "message": "Link primitive with inline/standalone variants, external and asChild",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
       "sha": "1c44aed",
       "type": "feat",
       "scope": "tokens",

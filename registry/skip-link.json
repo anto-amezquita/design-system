@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skip-link",
+  "type": "registry:component",
+  "title": "SkipLink",
+  "description": "First Tab stop on the page that lets keyboard users jump past the header to the main content",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://amezquita.dk/r/theme.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}

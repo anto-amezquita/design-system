@@ -3,7 +3,7 @@
   "name": "theme",
   "type": "registry:theme",
   "title": "Design tokens",
-  "description": "140 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
+  "description": "141 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
   "cssVars": {
     "light": {
       "color-neutral-50": "#FAFAF9",
@@ -59,6 +59,7 @@
       "z-modal": "400",
       "z-toast": "500",
       "z-tooltip": "600",
+      "z-skip-link": "700",
       "size-icon-xs": "12px",
       "size-icon-sm": "16px",
       "size-icon-md": "20px",
@@ -201,6 +202,7 @@
       "z-modal": "400",
       "z-toast": "500",
       "z-tooltip": "600",
+      "z-skip-link": "700",
       "size-icon-xs": "12px",
       "size-icon-sm": "16px",
       "size-icon-md": "20px",

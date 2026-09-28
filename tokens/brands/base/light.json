@@ -211,6 +211,11 @@
     "$value": 600,
     "$type": "number"
   },
+  "z-skip-link": {
+    "$value": 700,
+    "$type": "number",
+    "$description": "SkipLink only: one step above everything else. The one justified explicit z-index after decisions/0007 — a skip link isn't portalled, so mount order can't lift it, and it must sit above every other layer the moment it's focused."
+  },
   "size-icon-xs": {
     "$value": "{icon-size.xs}",
     "$type": "dimension"

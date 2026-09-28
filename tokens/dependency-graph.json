@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 29,
-    "tokenCount": 207
+    "filesScanned": 30,
+    "tokenCount": 208
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -93,6 +93,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "border-radius-pill": [
@@ -196,6 +197,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css"
     ],
@@ -203,6 +205,7 @@
       "components/patterns/Pagination/Pagination.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css"
     ],
@@ -244,6 +247,7 @@
       "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -549,6 +553,7 @@
       "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -570,6 +575,7 @@
       "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -594,6 +600,7 @@
       "components/primitives/Label/Label.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -627,6 +634,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -669,6 +677,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "font-weight-medium": [
@@ -739,6 +748,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -897,6 +907,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "space-control-padding-y": [
@@ -904,6 +915,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "space-dialog-padding-desktop": [
@@ -934,6 +946,7 @@
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Skeleton/Skeleton.css",
+      "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -1026,6 +1039,9 @@
     ],
     "tooltip-max-width": [
       "components/composition/Tooltip/Tooltip.css"
+    ],
+    "z-skip-link": [
+      "components/primitives/SkipLink/SkipLink.css"
     ],
     "z-toast": [
       "components/composition/Toast/Toast.css"
