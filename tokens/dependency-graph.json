@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 32,
-    "tokenCount": 210
+    "filesScanned": 33,
+    "tokenCount": 211
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -92,6 +92,7 @@
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
@@ -123,6 +124,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
@@ -229,6 +231,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
@@ -248,6 +251,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
@@ -363,6 +367,7 @@
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
@@ -394,6 +399,7 @@
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Hero/Hero.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
@@ -419,6 +425,7 @@
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
@@ -501,6 +508,7 @@
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
@@ -537,6 +545,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
@@ -569,6 +578,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
@@ -593,6 +603,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
@@ -618,6 +629,7 @@
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
@@ -657,6 +669,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
@@ -707,6 +720,7 @@
     "font-weight-label": [
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
@@ -779,6 +793,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Radio/Radio.css",
@@ -886,6 +901,9 @@
       "components/composition/Toast/Toast.css",
       "components/composition/Tooltip/Tooltip.css"
     ],
+    "side-nav-width": [
+      "components/patterns/SideNav/SideNav.css"
+    ],
     "size-icon-lg": [
       "components/primitives/Spinner/Spinner.css"
     ],
@@ -898,6 +916,7 @@
     "size-icon-sm": [
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/primitives/Spinner/Spinner.css"
     ],
     "size-icon-xs": [
@@ -910,6 +929,7 @@
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/DataTable/DataTable.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Radio/Radio.css",
@@ -952,6 +972,7 @@
     "space-control-padding-x": [
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Input/Input.css",
@@ -992,6 +1013,7 @@
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
@@ -1023,6 +1045,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
+      "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Badge/Badge.css",

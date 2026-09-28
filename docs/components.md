@@ -799,6 +799,63 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### SideNav
+
+| Field | Value |
+|---|---|
+| **Purpose** | Section navigation: inline beside the content from desktop width up, in a left Drawer opened from a header hamburger below it |
+| **Figma name** | `SideNav` |
+| **Code name** | `SideNav` (+ `SideNavProvider`, `SideNavTrigger`) |
+| **Storybook path** | `Patterns/SideNav` |
+
+**Compound structure**
+```tsx
+<SideNavProvider>                {/* holds the drawer's open state; wraps header and nav */}
+  <SkipLink />
+  <header>
+    <SideNavTrigger />           {/* hamburger; hidden from 1024px up */}
+    <NavigationMenu items={headerItems} currentHref={pathname} />
+  </header>
+  <SideNav items={sectionItems} headerItems={headerItems} currentHref={pathname} />
+  <main id="main-content">…</main>
+</SideNavProvider>
+```
+`SideNav` and `SideNavTrigger` throw if rendered outside `SideNavProvider`.
+
+**Props / variants**
+- `items: NavItem[]` — links `{ id, label, href, icon? }` and groups `{ id, label, icon?, items: NavLink[] }`, two levels at most. Groups are collapsible sections
+- `headerItems`: the same array you give `NavigationMenu`. Rendered only in the drawer, above `items` with a separator, so header links stay reachable on mobile
+- `currentHref`: your router's pathname. An exact match sets `aria-current="page"`; the group holding it starts open. A change of `currentHref` also closes the drawer
+- `LinkComponent`: your router's Link, defaults to `<a>`. It must pass `aria-current`, `className` and `onClick` through, and forward its ref (the collapsed rail's tooltips need it)
+- `layout`: `sidebar` (default) or `drawer-only` — nothing inline at desktop width, for a site whose desktop navigation is only the header
+- `collapsed`: icon rail, labels in tooltips, inline only. Controlled, with no built-in toggle: drive it from your own Button. Needs an `icon` on every item, including links inside groups; without one it warns in development and renders expanded
+- `aria-label`: the inline `<nav>`'s name, default "Section". `drawerTitle`: the drawer's heading, default "Navigation"
+- `SideNavTrigger`: `aria-label` (default "Open navigation"), `className`
+- **The switch is 1024px** (`breakpoint.desktop`): CSS shows the inline nav and hides the trigger from there up. If the viewport grows past it while the drawer is open, the drawer closes
+
+**Required states**
+- [x] expanded (inline), collapsed rail (inline), drawer (below 1024px)
+- [x] current link, active group, group open / closed
+- [x] hover, focus-visible
+
+**Tokens consumed**
+- `--side-nav-width` (240px, the expanded inline width)
+- `--color-surface-secondary`, `--color-border-default`, `--color-text-primary`, `--color-text-secondary`, `--color-border-focus`
+- `--border-width-default`, `--border-radius-interactive`, `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-weight-label`
+- `--space-tight-gap`, `--space-inline-gap`, `--space-control-padding-x`, `--size-touch-target`, `--size-icon-sm`
+
+**Accessibility**
+- Semantic elements: `<nav>` landmarks (inline and in the drawer), links, native `<button aria-expanded aria-controls>` for groups
+- The trigger has `aria-expanded` and `aria-controls` pointing at the drawer's `<nav>`
+- Opening the drawer moves focus to its first link; Escape or the close button closes it and returns focus to the trigger (`SideNav.drawer.test.tsx`)
+- Choosing a link in the drawer closes it
+- Every link and toggle is at least 44px tall; in the collapsed rail each label stays in the DOM as the accessible name
+
+**Chromatic stories**
+- `Default`, `WithIcons`, `Collapsed`, `MobileDrawer` (375px), `DrawerOnly` and `PageShell` (375px and 1280px), `CollapsedWithoutIcons`, `DarkMode`
+
+---
+
 ### Table
 
 | Field | Value |

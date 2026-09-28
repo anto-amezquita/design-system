@@ -452,6 +452,14 @@
   ],
   "unreleased": [
     {
+      "sha": "731df6f",
+      "type": "feat",
+      "scope": "navigation-menu",
+      "message": "NavigationMenu header nav on Radix NavigationMenu",
+      "date": "2026-09-28",
+      "breaking": false
+    },
+    {
       "sha": "5749b99",
       "type": "feat",
       "scope": "menu",

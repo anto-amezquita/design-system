@@ -1,8 +1,7 @@
-import { useEffect } from 'react'
-import type { Decorator, Meta, StoryObj } from '@storybook/react-vite'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, userEvent, within } from 'storybook/test'
 import { CopyIcon, DotsThreeIcon, PencilSimpleIcon, SignOutIcon, TrashIcon, UserIcon } from '@phosphor-icons/react'
-import { darkModeDecorator } from '../../../lib/storybook'
+import { bodyDarkModeDecorator, darkModeDecorator } from '../../../lib/storybook'
 import { Button } from '../../primitives/Button'
 import { Menu } from './Menu'
 
@@ -92,18 +91,6 @@ export const Overflow: Story = {
     </div>
   ),
   play: openOnMount,
-}
-
-// The menu panel is portalled to <body>, outside darkModeDecorator's
-// wrapper, so on its own it would render light. Putting data-mode="dark" on
-// <body> while this story is mounted puts the panel in the dark cascade too,
-// so the rendered-story a11y audit sees the open menu in dark.
-const bodyDarkModeDecorator: Decorator = (Story) => {
-  useEffect(() => {
-    document.body.setAttribute('data-mode', 'dark')
-    return () => document.body.removeAttribute('data-mode')
-  }, [])
-  return <Story />
 }
 
 export const DarkMode: Story = {

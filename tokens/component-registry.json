@@ -1,8 +1,8 @@
 {
   "meta": {
-    "componentCount": 55,
-    "publicComponentCount": 33,
-    "subComponentCount": 21
+    "componentCount": 58,
+    "publicComponentCount": 34,
+    "subComponentCount": 23
   },
   "components": [
     {
@@ -770,6 +770,53 @@
       ],
       "tokenCount": 4,
       "internal": false
+    },
+    {
+      "name": "SideNav",
+      "slug": "side-nav",
+      "tier": "patterns",
+      "purpose": "Section navigation: inline beside the content from desktop width up, in a left Drawer opened from a header hamburger below it",
+      "storybookPath": "Patterns/SideNav",
+      "storybookTitleId": "patterns-sidenav",
+      "tokenPrefix": "side-nav",
+      "stories": [
+        "Default",
+        "WithIcons",
+        "Collapsed",
+        "MobileDrawer",
+        "DrawerOnly",
+        "PageShell",
+        "DarkMode",
+        "CollapsedWithoutIcons"
+      ],
+      "tokenCount": 1,
+      "internal": false
+    },
+    {
+      "name": "SideNavProvider",
+      "slug": "side-nav-provider",
+      "tier": "patterns",
+      "purpose": "Sub-component of SideNav.",
+      "storybookPath": "Patterns/SideNav",
+      "storybookTitleId": "patterns-sidenav",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "side-nav"
+    },
+    {
+      "name": "SideNavTrigger",
+      "slug": "side-nav-trigger",
+      "tier": "patterns",
+      "purpose": "Sub-component of SideNav.",
+      "storybookPath": "Patterns/SideNav",
+      "storybookTitleId": "patterns-sidenav",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "side-nav"
     },
     {
       "name": "Table",

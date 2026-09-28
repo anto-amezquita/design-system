@@ -10,10 +10,10 @@ npm install @amezquita/design-system
 
 ## Tokens
 
-372 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+373 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
 
 - primitive: 126
-- component: 105
+- component: 106
 - color: 43
 - typography: 39
 - spacing: 19
@@ -309,6 +309,15 @@ Page navigation controls for multi-page data sets; exposes current page and tota
 - Token prefix: `pagination-button-*` (4 tokens)
 - Storybook: Components/Pagination
 - Stories: Default, EdgeCases, Compact, DarkMode
+
+### SideNav
+
+Section navigation: inline beside the content from desktop width up, in a left Drawer opened from a header hamburger below it
+
+- Import: `import { SideNav } from '@amezquita/design-system/components/patterns/SideNav'`
+- Token prefix: `side-nav-*` (1 tokens)
+- Storybook: Patterns/SideNav
+- Stories: Default, WithIcons, Collapsed, MobileDrawer, DrawerOnly, PageShell, DarkMode, CollapsedWithoutIcons
 
 ### Table
 

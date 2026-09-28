@@ -1087,6 +1087,30 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "side-nav",
+      "type": "registry:component",
+      "title": "SideNav",
+      "description": "Section navigation: inline beside the content from desktop width up, in a left Drawer opened from a header hamburger below it",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://amezquita.dk/r/theme.json",
+        "https://amezquita.dk/r/button.json",
+        "https://amezquita.dk/r/drawer.json",
+        "https://amezquita.dk/r/tooltip.json"
+      ],
+      "cssVars": {
+        "light": {
+          "side-nav-width": "240px"
+        },
+        "dark": {
+          "side-nav-width": "240px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "table",
       "type": "registry:component",
       "title": "Table",

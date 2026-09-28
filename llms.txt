@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 33 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 34 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -55,5 +55,6 @@ npm install @amezquita/design-system
 - [EmptyState](https://amezquita.dk/design-system/empty-state.md): Placeholder for zero-content states — icon, heading, supporting text, and an optional action
 - [Hero](https://amezquita.dk/design-system/hero.md): Page-level section header with eyebrow, title, lead text, and an action slot
 - [Pagination](https://amezquita.dk/design-system/pagination.md): Page navigation controls for multi-page data sets; exposes current page and total page count
+- [SideNav](https://amezquita.dk/design-system/side-nav.md): Section navigation: inline beside the content from desktop width up, in a left Drawer opened from a header hamburger below it
 - [Table](https://amezquita.dk/design-system/table.md): Static data table with semantic header, body, and row structure
 - [Tabs](https://amezquita.dk/design-system/tabs.md): Segmented view switcher with full keyboard navigation; built on Radix Tabs

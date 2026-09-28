@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 33 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 34 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 33 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 34 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -66,7 +66,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Toast | [toast](https://amezquita.dk/design-system/toast.md) — Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout |
 | Tooltip | [tooltip](https://amezquita.dk/design-system/tooltip.md) — Contextual label revealed on hover or focus — supplements an icon or truncated text |
 
-### Patterns (8)
+### Patterns (9)
 
 | Component | Reference |
 |---|---|
@@ -76,6 +76,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | EmptyState | [empty-state](https://amezquita.dk/design-system/empty-state.md) — Placeholder for zero-content states — icon, heading, supporting text, and an optional action |
 | Hero | [hero](https://amezquita.dk/design-system/hero.md) — Page-level section header with eyebrow, title, lead text, and an action slot |
 | Pagination | [pagination](https://amezquita.dk/design-system/pagination.md) — Page navigation controls for multi-page data sets; exposes current page and total page count |
+| SideNav | [side-nav](https://amezquita.dk/design-system/side-nav.md) — Section navigation: inline beside the content from desktop width up, in a left Drawer opened from a header hamburger below it |
 | Table | [table](https://amezquita.dk/design-system/table.md) — Static data table with semantic header, body, and row structure |
 | Tabs | [tabs](https://amezquita.dk/design-system/tabs.md) — Segmented view switcher with full keyboard navigation; built on Radix Tabs |
 
