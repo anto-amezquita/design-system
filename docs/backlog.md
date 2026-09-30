@@ -39,6 +39,8 @@ Opened 2026-09-24. Release #108 (the merge of the `1.0.0` Version Packages PR #3
 
 Two one-time steps, both listed in `sync-design-system.yml`'s header: install the self-heal GitHub App on `anto-amezquita/portfolio` (Contents, Pull requests and Issues write), and add `SELF_HEAL_APP_CLIENT_ID` and `SELF_HEAL_APP_PRIVATE_KEY` as secrets in the portfolio repo, since secrets aren't shared across repos. It can only be confirmed on the next release.
 
+Added 2026-09-30: `design-system-site` needs the same, since its `decisions/0001` has releases land there as a PR too. Install the App on both repos in one go, and add the site repo as a second dispatch target in `release.yml`.
+
 Status: not started.
 
 ## Portfolio's `chromatic` changelog check fails on every branch (backlog)
@@ -55,11 +57,11 @@ Opened 2026-09-16, surfaced while implementing `decisions/0012` (originally on `
 
 **3. `<body>` has no font-size.** `reset.css` sets `line-height-body` (28px) on `<body>` but leaves font-size at the browser default of 16px, so any consumer text that inherits both gets 16/28 instead of the ADR's 18/28. Components are unaffected now: every component rule that sets a font-size also gets its line-height from its own component CSS, except Avatar's fallback and Pagination's ellipsis, which sit in fixed-size flex boxes. Setting `font-size: var(--font-size-body)` on `<body>` would fix the pairing but changes the default size for every consumer, so it's a release-notes-level change, not a quiet one.
 
-**4. The portfolio site needs a migration pass when it upgrades past `0.3.x`.** `~/Documents/github/portfolio` imports this package's CSS and is pinned to `^0.3.1`, so nothing changes for it until it bumps. Then its 71 `var(--line-height-body)` uses become a fixed 28px whatever the text size, and its 34 `var(--line-height-heading)` uses stay at 1.25, including next to static `--font-size-h1`–`h3` (17 uses) where `--line-height-h1`–`h3` now exist. Each needs re-pointing to the role that matches its font size, the same sweep this repo's components got. Its 134 `var(--font-size-label)` uses are 12px eyebrows and metadata, not form labels, so they move to `font-size-caption`/`line-height-caption`. `decisions/0013` also removes tokens it uses: `font-size-micro` (18 uses, move to `caption`, 10px → 12px), `font-size-lead` (11 uses, move to `h4`) and `font-size-label` itself; its `font-size-h2-fluid` uses (14) get up to 4px larger below ~1280px wide.
+**4. Check whether the portfolio's migration pass happened.** `~/Documents/github/portfolio` imports this package's CSS. It has since moved to `^0.6.0` (PR #3, 2026-09-17) and then `1.0.0` (PR #4, 2026-09-24), so the upgrade this item waited on has happened, but nothing in either PR's record says the re-pointing below was done. If it wasn't, its 71 `var(--line-height-body)` uses become a fixed 28px whatever the text size, and its 34 `var(--line-height-heading)` uses stay at 1.25, including next to static `--font-size-h1`–`h3` (17 uses) where `--line-height-h1`–`h3` now exist. Each needs re-pointing to the role that matches its font size, the same sweep this repo's components got. Its 134 `var(--font-size-label)` uses are 12px eyebrows and metadata, not form labels, so they move to `font-size-caption`/`line-height-caption`. `decisions/0013` also removes tokens it uses: `font-size-micro` (18 uses, move to `caption`, 10px → 12px), `font-size-lead` (11 uses, move to `h4`) and `font-size-label` itself; its `font-size-h2-fluid` uses (14) get up to 4px larger below ~1280px wide.
 
 **5. Controls that set `line-height: 1` on 14px text get a 14px line box, which isn't a multiple of 4.** `decisions/0003` allows bare `1` for single-line controls, and 0012 didn't revisit it. Two cases left: `.pagination__button` (fixed `--pagination-button-size` box) and `.tabs--sm .tabs__trigger` (inherits `line-height: 1` from `.tabs__trigger`, which has a touch-target `min-height`). In both, the control's box sets the height, so the rhythm holds at the component level; only the text's own line box is off-grid. Worth deciding whether 0012's rule should reach inside fixed-size controls, or whether `line-height: 1` inside a sized box is an accepted exception to write into the ADR. The Input/Textarea field labels had the same issue and were moved to `line-height-label` (16px) to match the standalone Label. 12px and 16px controls with `line-height: 1` (Badge, Tag, Button, Textarea count) already land on the grid.
 
-Status: 2 and 3 need the user's call; 4 waits on the portfolio's upgrade; 5 needs the user's call.
+Status: 2, 3 and 5 need the user's call; 4 needs a check of the portfolio's current token usage.
 
 ## Container width scale follow-ups (backlog)
 
@@ -89,6 +91,28 @@ Either way it's the same call as item 3 of the Navigation follow-ups above (Link
 
 Status: needs the user's call.
 
+## Build the `design-system-site` (backlog)
+
+Opened 2026-09-29. `decisions/0017` is accepted and its prerequisites are met: the `decisions/0015` navigation components shipped in `1.1.0`, the `decisions/0016` major in `1.0.0`, and `package.json`'s `files` already ships `llms.txt`, `llms-full.txt`, `AGENTS.md`, `CHANGELOG.md` and `decisions/*.md`. The `design-system-site` repo exists (started from the ai-product-starter-kit) and stages 1-5 of its kickoff are answered: Next.js App Router, static, Vercel, tracks the latest release, no Chromatic. It has no app code yet. Stage 6, the first build, is next, and its detail lives in the site repo's own `docs/backlog.md`. The three questions left before building (page structure, where the agent-facing files are served from, how a release lands) were settled on 2026-09-30 in the site repo's `decisions/0001-page-structure-agent-surface-release-sync.md`. Once the move is complete, the portfolio's old design-system docs and agent files get deleted (its `app/design-system-playbook/` stays) and the old URLs redirect to the subdomain.
+
+Status: not started (Stage 6).
+
+## Ship the agent-facing files in the package, for `design-system-site` (backlog)
+
+Opened 2026-09-30 by the site repo's `decisions/0001`. The site will serve the whole agent-facing surface (`/.well-known/skills/`, `llms*.txt`, `tokens.json`, the shadcn registry, the component doc twins) and generate it at build time from the installed package, so it can't drift the way the portfolio's hand-copied `public/` has (27 doc twins against 34 public components).
+
+**Done locally, 2026-09-30, not committed:** `tokens.json`, `skills`, `registry` and `docs/components` added to `package.json`'s `files`, with a patch changeset (`.changeset/ship-agent-files.md`). Same release fixes the registry brand: `build-registry-manifests.mjs` now resolves `cssVars` from `base-light`/`base-dark` instead of `portfolio-light`/`portfolio-dark`, so `npx shadcn add` gives the `base` default every consumer is meant to start from (decisions/0001). Left: run `npm run tokens` to regenerate `registry/`, `npm run validate`, check the tarball with `npm pack --dry-run`, then branch, PR and merge the Version Packages PR.
+
+**The domain is one edit, deliberately not made yet.** `build-llms-txt.mjs`, `build-skill.mjs` and `build-registry-manifests.mjs` all derive their URLs from two links in `README.md` (the `[amezquita.dk](...)` root and the `[Live component docs](...)` base). Switching to the subdomain means editing those two links and running `npm run tokens`. Do it once the subdomain serves `/r/`, since registry dependencies are absolute URLs and would 404 before that.
+
+Status: in progress.
+
+## Chromatic: PR #37 result and snapshot budget (backlog)
+
+Opened 2026-09-29. The `1.1.0` row in `roadmap.md`'s session log says Chromatic's result for PR #37 (the navigation components, 28 new stories) isn't recorded. Separately, the account used 4,794 of 5,000 snapshots in the Aug 23 - Sep 23 period (per the `design-system-site` kickoff) and has hit the monthly limit before (2026-09-15, 2026-09-17), so the next batch of visual changes may not get a real check. Confirm the #37 build by hand, and decide whether the limit needs handling first.
+
+Status: not started.
+
 ## Self-healing CI (backlog)
 
 Opened 2026-09-08, unblocked by [`decisions/0006`](../decisions/0006-add-layered-automated-testing.md) (real tests now exist for CI to react to). Spec'd in [`specs/self-healing-ci-spec.md`](../specs/self-healing-ci-spec.md), validated against industry precedent in [`self-healing-ci-research.md`](./self-healing-ci-research.md).
@@ -97,13 +121,11 @@ Two phases, deliberately different mechanisms: Phase 1 (stale generated artifact
 
 **Phase 1 works and is fully verified.** `amez-ds-self-heal` is live, and all five acceptance criteria pass against real runs — a drifting branch gets one correctly-scoped PR, `chromatic` goes green on it unattended, a second push updates that same PR, a clean branch produces nothing, and merging leaves both staleness checks clean with the bot's branch deleted. Detail in the spec's Acceptance table and session log.
 
-Merged to `main` 2026-09-10 (PR #13). Item 1 is resolved; item 2 remains, and matters more now that `update-changelog` is the only thing keeping the changelog current on `main`.
+Merged to `main` 2026-09-10 (PR #13). The PR-rate question was settled by `decisions/0019`. The one open item is branch protection, which matters more now that `update-changelog` is the only thing keeping the changelog current on `main`.
 
-**1. Watch the PR rate before doing anything else.** Resolved 2026-09-28 by `decisions/0019`: it read as noise, so branches no longer gate on the changelog and the bot no longer commits it. It now opens a PR only for real generated-artifact drift. Original note kept below for context. Deferred by decision, not blocked. The changelog can never be current in the commit that updates it — you build it, then commit, and the commit you just made isn't in it. So *every* `feat/fix/refactor/perf/style/docs` commit touching `tokens/`, `components/`, `sd.config.mjs` or `styles/brands/` leaves it one entry stale, however carefully you work. The bot therefore fires on nearly every component branch, not only when you forget to regenerate. Two readings, and only real use decides between them: useful (it closes a gap you were absorbing by hand) or noise (a PR per branch, most of them one changelog line). **Do a few real pieces of work, then judge.** If it reads as noise, the lever is `build-changelog.mjs` writing `meta.generatedAt` only on real change, which would let the strict and self-heal path lists collapse back into one.
+**Branch protection on `main`.** Required check **`chromatic`** (there is no check named `validate` — it's an npm script inside that job), approvals **0** (GitHub blocks self-approval, so requiring 1 makes your own PRs unmergeable on a solo repo), no bypass entry for the App. **Decide first:** `chromatic.yml`'s `update-changelog` job pushes directly to `main`, so a require-a-PR ruleset rejects that push — silently, on every merge from then on. Either add a bypass actor for the Actions bot, or rework that job to open a PR like everything else. **Recommend the rework:** `main` currently has one bot pushing straight to it while Phase 1's bot is forbidden from doing exactly that, and a bypass entry makes that inconsistency permanent.
 
-**2. Branch protection on `main`.** Required check **`chromatic`** (there is no check named `validate` — it's an npm script inside that job), approvals **0** (GitHub blocks self-approval, so requiring 1 makes your own PRs unmergeable on a solo repo), no bypass entry for the App. **Decide first:** `chromatic.yml`'s `update-changelog` job pushes directly to `main`, so a require-a-PR ruleset rejects that push — silently, on every merge from then on. Either add a bypass actor for the Actions bot, or rework that job to open a PR like everything else. **Recommend the rework:** `main` currently has one bot pushing straight to it while Phase 1's bot is forbidden from doing exactly that, and a bypass entry makes that inconsistency permanent.
-
-Worth knowing when you get to it: the stale-by-one changelog behaviour predates Phase 1, so `chromatic` has always failed the changelog step on component branches. Requiring it before Phase 1 existed would have made component PRs unmergeable. Phase 1 is what makes branch protection viable at all — which is an argument for enabling it *after* the bot has earned trust, not alongside it.
+Worth knowing when you get to it: `chromatic` used to fail the changelog step on component branches, which would have made requiring it unmergeable. `decisions/0019` removed that step, so it no longer blocks branch protection. Enabling it after the bot has earned trust still beats enabling it alongside.
 
 **Phase 2 stays parked** until Phase 1 has been boring for a while. Its open questions are in the spec, not here.
 

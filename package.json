@@ -25,6 +25,10 @@
     "styles/reset.css",
     "llms.txt",
     "llms-full.txt",
+    "tokens.json",
+    "skills",
+    "registry",
+    "docs/components",
     "AGENTS.md",
     "CHANGELOG.md",
     "decisions/*.md"
