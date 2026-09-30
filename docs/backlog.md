@@ -39,9 +39,11 @@ Opened 2026-09-24. Release #108 (the merge of the `1.0.0` Version Packages PR #3
 
 Two one-time steps, both listed in `sync-design-system.yml`'s header: install the self-heal GitHub App on `anto-amezquita/portfolio` (Contents, Pull requests and Issues write), and add `SELF_HEAL_APP_CLIENT_ID` and `SELF_HEAL_APP_PRIVATE_KEY` as secrets in the portfolio repo, since secrets aren't shared across repos. It can only be confirmed on the next release.
 
-Added 2026-09-30: `design-system-site` needs the same, since its `decisions/0001` has releases land there as a PR too. Install the App on both repos in one go, and add the site repo as a second dispatch target in `release.yml`.
+Added 2026-09-30: `design-system-site` needs the same, since its `decisions/0001` has releases land there as a PR too. Install the App on both repos in one go (the App also needs Issues write, since the portfolio's sync workflow files an issue when regeneration fails). The `1.1.1` release (run #116) failed at the same step, after a successful publish.
 
-Status: not started.
+**Adding the site as a second dispatch target in `release.yml` waits** until `design-system-site` has its own sync workflow listening for `design-system-released`. Until then nothing there would receive it. When that workflow lands, add `design-system-site` to the token step's `repositories` and a second dispatch call.
+
+Status: not started. The App install and secrets are GitHub UI steps only the user can do.
 
 ## Portfolio's `chromatic` changelog check fails on every branch (backlog)
 
@@ -97,15 +99,7 @@ Opened 2026-09-29. `decisions/0017` is accepted and its prerequisites are met: t
 
 Status: not started (Stage 6).
 
-## Ship the agent-facing files in the package, for `design-system-site` (backlog)
-
-Opened 2026-09-30 by the site repo's `decisions/0001`. The site will serve the whole agent-facing surface (`/.well-known/skills/`, `llms*.txt`, `tokens.json`, the shadcn registry, the component doc twins) and generate it at build time from the installed package, so it can't drift the way the portfolio's hand-copied `public/` has (27 doc twins against 34 public components).
-
-**Done locally, 2026-09-30, not committed:** `tokens.json`, `skills`, `registry` and `docs/components` added to `package.json`'s `files`, with a patch changeset (`.changeset/ship-agent-files.md`). Same release fixes the registry brand: `build-registry-manifests.mjs` now resolves `cssVars` from `base-light`/`base-dark` instead of `portfolio-light`/`portfolio-dark`, so `npx shadcn add` gives the `base` default every consumer is meant to start from (decisions/0001). Left: run `npm run tokens` to regenerate `registry/`, `npm run validate`, check the tarball with `npm pack --dry-run`, then branch, PR and merge the Version Packages PR.
-
-**The domain is one edit, deliberately not made yet.** `build-llms-txt.mjs`, `build-skill.mjs` and `build-registry-manifests.mjs` all derive their URLs from two links in `README.md` (the `[amezquita.dk](...)` root and the `[Live component docs](...)` base). Switching to the subdomain means editing those two links and running `npm run tokens`. Do it once the subdomain serves `/r/`, since registry dependencies are absolute URLs and would 404 before that.
-
-Status: in progress.
+**Moving the agent-facing URLs to the subdomain is one edit, deliberately not made yet.** Since `1.1.1` the package ships `tokens.json`, `skills/`, `registry/` and `docs/components/`, so the site can generate them. `build-llms-txt.mjs`, `build-skill.mjs` and `build-registry-manifests.mjs` all derive their URLs from two links in `README.md` (the `[amezquita.dk](...)` root and the `[Live component docs](...)` base). Switching means editing those two links and running `npm run tokens`, in a patch release. Do it once the subdomain serves `/r/`, since registry dependencies are absolute URLs and would 404 before that.
 
 ## Chromatic: PR #37 result and snapshot budget (backlog)
 
