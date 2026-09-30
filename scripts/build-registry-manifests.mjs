@@ -5,7 +5,7 @@
  *
  * Sources of truth:
  *   - tokens/component-registry.json  → component list, tier, slug, purpose, tokenPrefix
- *   - tokens/token-reference.json     → resolved token values (light-default / dark-default)
+ *   - tokens/token-reference.json     → resolved token values (base-light / base-dark)
  *   - components/{tier}/{name}/{name}.tsx → sibling component imports, for registryDependencies
  *   - tokens/components/<file>.json   → exact per-component token key list (same source
  *                                        Task 1.2's build-component-docs.mjs uses)
@@ -135,14 +135,18 @@ function toKebab(name) {
   return name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
 }
 
+// Registry cssVars carry one brand only (light and dark, no brand axis), so
+// they carry `base`: every consumer gets base by default and overrides it
+// with its own brand (decisions/0001). Only the portfolio layers
+// portfolio-*.css on top, and it installs the package, not the registry.
 function cssVarsFor(tokenNames, tokenByName) {
   const light = {}
   const dark = {}
   for (const name of tokenNames) {
     const entry = tokenByName.get(name)
     if (!entry) continue
-    light[entry.name] = entry.resolved['portfolio-light']
-    dark[entry.name] = entry.resolved['portfolio-dark']
+    light[entry.name] = entry.resolved['base-light']
+    dark[entry.name] = entry.resolved['base-dark']
   }
   return { light, dark }
 }
