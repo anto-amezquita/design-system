@@ -6,6 +6,7 @@
  *   - README.md                       → docs site root + component-docs base URL
  *   - tokens/component-registry.json  → component list, tiers, purpose, tokenPrefix, tokenCount, stories
  *   - tokens/token-reference.json     → token counts by category, for the inlined summary in llms-full.txt
+ *   - scripts/mcp-server.mjs          → the MCP tool list, from the server's own registrations (TOOLS)
  *
  * llms.txt is the lean index: what the system is, how to install it, and links out to
  * every public component's markdown twin (shipped by Task 1.2) and the token reference (Task 1.3).
@@ -30,6 +31,7 @@
 
 import { readFileSync, writeFileSync } from 'fs'
 import { fileURLToPath } from 'url'
+import { TOOLS } from './mcp-server.mjs'
 
 const TIER_ORDER = ['primitives', 'composition', 'patterns']
 const TIER_LABELS = {
@@ -81,6 +83,23 @@ function summarizeTokensByCategory(tokens) {
   return Object.entries(counts).sort((a, b) => b[1] - a[1])
 }
 
+// "git+https://github.com/x/y.git" → "https://github.com/x/y". The MCP server
+// isn't in the npm package, so the agent files point at the repo to get it.
+function repoUrl(pkg) {
+  return pkg.repository.url.replace(/^git\+/, '').replace(/\.git$/, '')
+}
+
+// The first sentence of a tool description, for the lean index. Skips the
+// period in "e.g." so a parenthetical example doesn't end the sentence early.
+export function firstSentence(text) {
+  const m = text.match(/^(.+?(?<!\be\.g)\.)(?=\s|$)/)
+  return m ? m[1] : text
+}
+
+function mcpIntro(pkg) {
+  return `Read-only tools over the same files this package ships, read live instead of from a snapshot. The server isn't in the npm package: clone [the repo](${repoUrl(pkg)}) and run \`node scripts/mcp-server.mjs\` (stdio).`
+}
+
 // Falls back to the full count for registries built before publicComponentCount existed,
 // so a stale registry produces a wrong-by-one number rather than "undefined components".
 function publicCount(registry) {
@@ -120,6 +139,11 @@ function buildIndex({ pkg, registry, siteUrls }) {
     for (const component of components) {
       lines.push(`- [${component.name}](${docsBaseUrl}/${component.slug}.md): ${component.purpose}`)
     }
+  }
+
+  lines.push('', '## MCP server', '', mcpIntro(pkg), '')
+  for (const tool of TOOLS) {
+    lines.push(`- \`${tool.name}\`: ${firstSentence(tool.description)}`)
   }
 
   lines.push('')
@@ -175,6 +199,11 @@ function buildFull({ pkg, registry, tokenReference, siteUrls }) {
         lines.push(`- Stories: ${component.stories.join(', ')}`)
       }
     }
+  }
+
+  lines.push('', '## MCP server', '', mcpIntro(pkg))
+  for (const tool of TOOLS) {
+    lines.push('', `### ${tool.name}`, '', tool.description)
   }
 
   lines.push('')
