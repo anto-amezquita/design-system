@@ -706,7 +706,9 @@ function buildComponentMd(component, ctx) {
       lines.push('', '## Tokens', '', '| Token | Type | Value |', '|---|---|---|')
       let anyAxisAware = false
       for (const entry of rows) {
-        const value = entry.resolved?.['portfolio-light'] ?? entry.rawValue
+        // Base, not portfolio: base is what every consumer starts from (0001), and the
+        // registry's cssVars resolve from base too since 1.1.1.
+        const value = entry.resolved?.['base-light'] ?? entry.rawValue
         const note = entry.axisAware ? ' †' : ''
         if (entry.axisAware) anyAxisAware = true
         lines.push(`| \`--${entry.name}\` | ${entry.type} | \`${value}\`${note} |`)
