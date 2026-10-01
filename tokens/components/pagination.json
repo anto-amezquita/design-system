@@ -2,6 +2,7 @@
   "pagination-button-size": {
     "$value": "{space.10}",
     "$type": "dimension",
+    "$description": "Width and height of each Pagination button.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -9,11 +10,13 @@
   },
   "pagination-button-background": {
     "$value": "transparent",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Fill of a Pagination button at rest: none."
   },
   "pagination-button-font-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension",
+    "$description": "Text size of Pagination buttons.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -22,6 +25,7 @@
   "pagination-button-font-weight": {
     "$value": "{font-weight.medium}",
     "$type": "fontWeight",
+    "$description": "Weight of Pagination buttons.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "Doesn't share function with the font-weight-control group, see decisions/0004."

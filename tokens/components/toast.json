@@ -1,11 +1,13 @@
 {
   "toast-max-width": {
     "$value": "380px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Maximum width of a Toast."
   },
   "toast-title-weight": {
     "$value": "{font-weight.semibold}",
     "$type": "fontWeight",
+    "$description": "Weight of a Toast's title.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One of 5 semibold uses across different functions, below decisions/0004's 3+-shared-function bar."
@@ -14,6 +16,7 @@
   "toast-font-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension",
+    "$description": "Text size of a Toast.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -21,11 +24,13 @@
   },
   "toast-accent-width": {
     "$value": "4px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Width of the coloured stripe on a status Toast's leading edge."
   },
   "toast-viewport-inset": {
     "$value": "{space.6}",
     "$type": "dimension",
+    "$description": "Distance between the Toast stack and the edge of the viewport.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -34,6 +39,7 @@
   "toast-close-offset": {
     "$value": "{space.2}",
     "$type": "dimension",
+    "$description": "Pulls a Toast's close button up and out towards the corner.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."

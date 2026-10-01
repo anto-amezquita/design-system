@@ -38,7 +38,7 @@ tokens/
   global.json           — Tier 1: primitives
   brands/<name>/*.json  — Tier 2: semantic, per brand (base, portfolio) and mode (light/dark)
   components/<name>.json — Tier 3: component-scoped tokens
-  component-registry.json, token-reference.json, changelog.json — generated, do not hand-edit
+  component-registry.json, token-reference.json, fonts.json, changelog.json — generated, do not hand-edit
 styles/brands/     — compiled CSS output (generated)
 scripts/           — all build/lint/audit/generator scripts (see §9), plus the
                      session-tooling pair propose-decision.mjs / pending-decisions.mjs
@@ -75,7 +75,7 @@ If a number in one file looks like it contradicts a number in another, check whi
 ### Structure rules
 
 - A token belongs to exactly one tier (§3) — never skip a tier from component CSS to a primitive.
-- Anything in `docs/components/`, `tokens/token-reference.json`, `tokens/component-registry.json`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, and `skills/amezquita-design-system/` is **generated**. If it's wrong, fix the generator (`scripts/build-*.mjs`), never hand-edit the output — `npm run tokens` regenerates all of it and CI fails the build if a regenerate produces a diff (staleness check in `chromatic.yml`).
+- Anything in `docs/components/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, and `skills/amezquita-design-system/` is **generated**. If it's wrong, fix the generator (`scripts/build-*.mjs`), never hand-edit the output — `npm run tokens` regenerates all of it and CI fails the build if a regenerate produces a diff (staleness check in `chromatic.yml`).
 - A new component gets a `.tsx`, a `.css`, a `.stories.tsx`, and an entry in `docs/components.md` (the hand-maintained index `npm run tokens` reads to build the registry) — not a hand-written `docs/components/<slug>.md` twin.
 
 ## 3. Token architecture
@@ -90,7 +90,7 @@ Three tiers, strictly layered — no skipping:
 
 ## 4. Multi-brand / theming
 
-Two brands today, each with light + dark: `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)) and `portfolio` (thin override skin on top of `base`). `sd.config.mjs` outputs four CSS files: `base-light.css`, `base-dark.css`, `portfolio-light.css`, `portfolio-dark.css`. A third brand would follow the same shape as `portfolio` — a thin skin, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
+Two brands today, each with light + dark: `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)) and `portfolio` (thin override skin on top of `base`). `sd.config.mjs` outputs five CSS files: `base-light.css`, `base-dark.css`, `portfolio-light.css`, `portfolio-dark.css`, and `portfolio-scoped.css`, the same portfolio overrides scoped to `[data-brand="portfolio"]` instead of `:root`, so one page can show both brands (0001's 2026-10-01 amendment). A third brand would follow the same shape as `portfolio` — a thin skin, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
 
 ## 5. Code conventions
 
@@ -123,6 +123,7 @@ This system deliberately ships a compiled, machine-readable layer alongside the 
 - `llms.txt` / `llms-full.txt` — agent-facing index and full inline reference.
 - `docs/components/<slug>.md` — one compiled twin per public component (props, tokens, real usage example) — the thing an agent should read instead of guessing from source.
 - `tokens.json` — the resolved DTCG source, agent-readable without a build.
+- `tokens/fonts.json` — the Google Fonts link each brand needs, generated from its font tokens (ADR [`0020`](../decisions/0020-fonts-from-google-fonts-no-font-files.md)).
 - `registry/` — shadcn-spec CLI-installable manifests.
 - `skills/amezquita-design-system/SKILL.md` + `index.json` — agent skill at `/.well-known/skills/` when deployed.
 - MCP server (`scripts/mcp-server.mjs`, spec at [`specs/mcp-server-spec.md`](../specs/mcp-server-spec.md)) — thin read-only wrappers over the above, live rather than a snapshot.
@@ -131,7 +132,7 @@ This system deliberately ships a compiled, machine-readable layer alongside the 
 
 ## 9. Build pipeline
 
-`npm run tokens` runs, in dependency order: `buildTokenReference` → `buildTokensJson` → `buildComponentRegistry` → `buildComponentDocs` → `buildChangelog` → `buildLlmsTxt` → registry manifests → skill. Every generated artifact in §2 comes from this one chain (`sd.config.mjs`). CI (`chromatic.yml`) rebuilds and diffs against the committed tree via `scripts/check-generated-sync.mjs` (which does `git add -N` first, so new untracked files count too) — a stale artifact fails the build. That script reads its path list from `scripts/generated-artifacts.mjs`, the one place the generated-artifact list is written down. `self-heal-stale-artifacts.yml` scopes its commit to the same module's `SELF_HEAL_PATHS`, the same list. `tokens/changelog.json` is in neither: it lists commit SHAs, so it can never include the commit that changes it, and branches don't gate on it. `chromatic.yml`'s `update-changelog` job regenerates it on `main` after every push, using `scripts/changelog-sync.mjs --restore-if-unchanged` (the content-only comparison, timestamp nulled) to skip timestamp-only commits. See ADR [`0019`](../decisions/0019-changelog-owned-by-main.md).
+`npm run tokens` runs, in dependency order: `buildTokenReference` → `buildTokensJson` → `buildFonts` → `buildComponentRegistry` → `buildComponentDocs` → `buildRegistryManifests` → `buildSkill` → `buildChangelog` → `buildLlmsTxt`. Every generated artifact in §2 comes from this one chain (`sd.config.mjs`). CI (`chromatic.yml`) rebuilds and diffs against the committed tree via `scripts/check-generated-sync.mjs` (which does `git add -N` first, so new untracked files count too) — a stale artifact fails the build. That script reads its path list from `scripts/generated-artifacts.mjs`, the one place the generated-artifact list is written down. `self-heal-stale-artifacts.yml` scopes its commit to the same module's `SELF_HEAL_PATHS`, the same list. `tokens/changelog.json` is in neither: it lists commit SHAs, so it can never include the commit that changes it, and branches don't gate on it. `chromatic.yml`'s `update-changelog` job regenerates it on `main` after every push, using `scripts/changelog-sync.mjs --restore-if-unchanged` (the content-only comparison, timestamp nulled) to skip timestamp-only commits. See ADR [`0019`](../decisions/0019-changelog-owned-by-main.md).
 
 ## 10. Preferred patterns
 
@@ -143,7 +144,7 @@ This system deliberately ships a compiled, machine-readable layer alongside the 
 
 - A second semantic tier of tokens per brand (ADR 0001 — the original portfolio/base coupling).
 - `var(--token, fallback)` — a token either exists or it doesn't (`no-token-fallback` lint rule).
-- Hand-editing anything under `docs/components/`, `registry/`, `tokens/token-reference.json`, `tokens/component-registry.json`, `llms*.txt`, `tokens.json`, or `skills/amezquita-design-system/`.
+- Hand-editing anything under `docs/components/`, `registry/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `llms*.txt`, `tokens.json`, or `skills/amezquita-design-system/`.
 - Installing an external convention/library wholesale when only its *technique* is needed (ADR 0002 — transitions.dev).
 
 ## Not applicable to this repo

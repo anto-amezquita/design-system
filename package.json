@@ -20,6 +20,7 @@
     "tokens/components",
     "tokens/component-registry.json",
     "tokens/token-reference.json",
+    "tokens/fonts.json",
     "tokens/changelog.json",
     "styles/brands",
     "styles/reset.css",

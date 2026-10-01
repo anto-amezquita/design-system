@@ -35,22 +35,17 @@ Status: not started.
 
 ## Gaps found by the docs site's first build (backlog)
 
-Opened 2026-10-01. `design-system-site` is the first consumer on the Next.js App Router that installs the package cold, and its first build (its `specs/2026-09-30-first-build.md`, §9) turned up four things that are this repo's to fix. A fifth, the missing `'use client'` on Link, SkipLink and Tag, is fixed on `fix/client-directives`, with a validate check so it can't come back.
+Opened 2026-10-01. `design-system-site` is the first consumer on the Next.js App Router that installs the package cold, and its first build (its `specs/2026-09-30-first-build.md`, §9) turned up the things below that are this repo's to fix. The missing `'use client'` on Link, SkipLink and Tag shipped in `1.1.2`; brand scope, base values in the doc twins, the generated MCP tool list, token descriptions and the font links are on `feat/docs-site-gaps` for `1.2.0` (`specs/2026-10-01-docs-site-gaps.md`).
 
-**1. Brand CSS has no brand scope. Needs a decision first.** `sd.config.mjs` overrides the format's default `[data-brand="<brand>"]` selector with `:root, [data-mode="light"]` (and `[data-mode="dark"]`), so a page can only ever show one brand. The site's Themes page needs base and portfolio side by side, so it renders the portfolio brand in separate iframe documents instead. Two options:
+**1. `tokens/changelog.json` is always one release behind in the package.** The `1.1.2` package ends at `v1.1.1`, with 1.1.2's own commit under `unreleased`; the portfolio's `1.1.0` ends at `v1.0.0`. The cause: `build-changelog.mjs` groups commits by git tag, and the tag for a release is created by `changeset publish` in `release.yml`, after the Version Packages merge has fixed what goes in the tarball. So package X can never contain X. On `main`, X appears only after the next push, since pushing the tag doesn't trigger `update-changelog`. A fix needs two parts: the builder labels untagged commits with `package.json`'s version when that version has no tag yet, and `release.yml` rebuilds the changelog before publishing. The second touches `decisions/0019`'s "main owns it" split, so it wants a decision, not a quick patch. The site reads `CHANGELOG.md`, so it isn't blocked; the portfolio's changelog page reads the JSON.
 
-- **Add a scope alongside the current selector** (recommended): portfolio's files keep `:root, [data-mode="…"]` and also cover `[data-brand="portfolio"]` and `[data-brand="portfolio"] [data-mode="…"]`, so a panel can opt in. Nothing changes for the portfolio site. Minor release.
-- **Scope only:** drop `:root` from the brand files, so every portfolio consumer adds `data-brand="portfolio"` to `<html>`. Cleaner, but breaking. Major release.
+**2. Switch the agent files' URLs to the docs site.** `llms.txt`, `llms-full.txt`, the skill and the registry manifests point at `amezquita.dk` (every manifest's `registryDependencies` hardcodes `https://amezquita.dk/r/theme.json`), and the doc twins at `/design-system/<slug>.md`. On the site they're at `/components/<slug>.md`. Wait until `design.amezquita.dk` is live, so the new URLs resolve when the release goes out.
 
-Either one amends `decisions/0001` (the base/portfolio split), so it needs an ADR or an amendment, plus a test on the generated CSS that the scoped selector is there. Once it ships, the site can render both brands on one page and drop its frames.
+**3. Dark-only tokens are missing from `token-reference.json`.** Found building `portfolio-scoped.css`: `base/dark.json` and `portfolio/dark.json` define 28 `checkbox-*`, `radio-*` and `textarea-*` tokens with no light value. `build-token-reference.mjs` builds its token list from the light layers only (its comment says dark never adds a name, which isn't true), so these don't appear in the reference, `tokens.json` or the MCP tools. No component references any of them. Either they're dead and should go in the dead-token round, or they need light values and a place in the reference.
 
-**2. The doc twins' Tokens tables show the portfolio brand's values.** `docs/components/*.md` resolves token values from portfolio (Button's `--button-secondary-border` reads `#292524`, warm-800), the same bug 1.1.1 fixed in the registry's `cssVars`. `build-component-docs.mjs` should resolve from base, as the registry now does. Until then the site builds its token tables from `token-reference.json`.
+**4. Eight tokens with no description, because nothing says what they're for.** `shadow-card`, `z-sticky`, `z-overlay`, `z-modal`, `opacity-overlay`, `size-dialog-default`, `font-size-display` and `letter-spacing-body` aren't used by any component here or by the portfolio, and their names don't settle their purpose. Describe them if they're kept, or remove them in the dead-token round (`--z-overlay` and `--z-modal` are already candidates, see Navigation follow-ups item 5).
 
-**3. `tokens/changelog.json` stops at `v1.1.0`.** `CHANGELOG.md` has 1.1.1. The site reads `CHANGELOG.md`, but the JSON is stale for anyone else, and the portfolio's changelog page reads it.
-
-**4. Switch the agent files' URLs to the docs site.** `llms.txt`, `llms-full.txt`, the skill and the registry manifests point at `amezquita.dk` (every manifest's `registryDependencies` hardcodes `https://amezquita.dk/r/theme.json`), and the doc twins at `/design-system/<slug>.md`. On the site they're at `/components/<slug>.md`. Wait until `design.amezquita.dk` is live, so the new URLs resolve when the release goes out.
-
-Status: not started. Item 1 waits on the user's call.
+Status: not started. Item 2 waits on the deploy.
 
 ## Release dispatch to the portfolio fails: the GitHub App isn't installed there (backlog)
 

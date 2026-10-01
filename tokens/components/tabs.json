@@ -2,6 +2,7 @@
   "tabs-indicator-height": {
     "$value": "{border-width.medium}",
     "$type": "dimension",
+    "$description": "Thickness of the line under the active tab.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -10,6 +11,7 @@
   "tabs-content-padding-top": {
     "$value": "{space.4}",
     "$type": "dimension",
+    "$description": "Space between the tab list and its panel.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."

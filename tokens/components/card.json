@@ -1,6 +1,7 @@
 {
   "card-horizontal-media-width": {
     "$value": "200px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Width of the image column in a horizontal Card."
   }
 }

@@ -41,9 +41,9 @@ Also accepts all props of: `Omit<React.HTMLAttributes<HTMLElement>, 'onClick' | 
 | `--button-padding-x` | dimension | `24px` |
 | `--button-padding-y` | dimension | `12px` |
 | `--button-secondary-background` | color | `transparent` |
-| `--button-secondary-background-hover` | color | `#292524` † |
-| `--button-secondary-border` | color | `#292524` † |
-| `--button-secondary-foreground` | color | `#292524` † |
+| `--button-secondary-background-hover` | color | `#262626` † |
+| `--button-secondary-border` | color | `#262626` † |
+| `--button-secondary-foreground` | color | `#262626` † |
 | `--button-spinner-duration` | duration | `750ms` |
 | `--button-wipe-duration-curve` | duration | `220ms` |
 | `--button-wipe-duration-curve-out` | duration | `180ms` |

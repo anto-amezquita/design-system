@@ -1,171 +1,213 @@
 {
   "color-neutral-50": {
     "$value": "{color.gray-50}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Lightest step of the neutral ramp in light mode, darkest in dark mode. The page background resolves here."
   },
   "color-neutral-100": {
     "$value": "{color.gray-100}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Second step of the neutral ramp. Secondary surfaces and skeleton highlights resolve here."
   },
   "color-neutral-200": {
     "$value": "{color.gray-200}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Third step of the neutral ramp. Default borders, tertiary surfaces and the skeleton base resolve here."
   },
   "color-neutral-300": {
     "$value": "{color.gray-300}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Fourth step of the neutral ramp. The route-transition curtain resolves here."
   },
   "color-neutral-400": {
     "$value": "{color.gray-400}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Fifth step of the neutral ramp. Strong borders on form controls resolve here."
   },
   "color-neutral-500": {
     "$value": "{color.gray-500}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Middle of the neutral ramp."
   },
   "color-neutral-600": {
     "$value": "{color.gray-600}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Seventh step of the neutral ramp. Secondary text resolves here."
   },
   "color-neutral-700": {
     "$value": "{color.gray-700}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Eighth step of the neutral ramp."
   },
   "color-neutral-800": {
     "$value": "{color.gray-800}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Ninth step of the neutral ramp. The base accent resolves here."
   },
   "color-neutral-900": {
     "$value": "{color.gray-900}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Strongest step of the neutral ramp: near-black in light mode, near-white in dark. Inverse surfaces resolve here."
   },
   "color-surface-primary": {
     "$value": "{color-neutral-50}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "The page background, and containers that sit flat on it: cards, dialogs, drawers, menus, form fields."
   },
   "color-surface-secondary": {
     "$value": "{color-neutral-100}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "A second surface layer: hover and selected fills on tabs, nav items, pagination and accordion triggers."
   },
   "color-surface-tertiary": {
     "$value": "{color-neutral-200}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "A third surface layer, for contrast against the secondary one. Switch tracks use it."
   },
   "color-surface-inverse": {
     "$value": "{color-neutral-900}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Background for dark-on-light moments, such as tooltips. Flips with the mode."
   },
   "color-text-primary": {
     "$value": "{color.black}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Body copy and headings."
   },
   "color-text-secondary": {
     "$value": "{color-neutral-600}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Supporting text: hints, captions, metadata, inactive tabs."
   },
   "color-text-inverse": {
     "$value": "{color-neutral-50}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Text on color-surface-inverse."
   },
   "color-accent-default": {
     "$value": "{color-neutral-800}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Primary actions and selected states: filled buttons, checked controls, the active tab. Near-black in base; a brand puts its own colour here."
   },
   "color-accent-hover": {
     "$value": "{color-neutral-900}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Hover state of color-accent-default."
   },
   "color-accent-foreground": {
     "$value": "{color.white}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Text and icons on an accent fill."
   },
   "color-border-default": {
     "$value": "{color-neutral-200}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Dividers and the outlines of cards, tables, menus and fields."
   },
   "color-border-strong": {
     "$value": "{color-neutral-400}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Outlines that must read as interactive: form fields, checkboxes, radios, switches."
   },
   "color-border-focus": {
     "$value": "{color.black}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "The focus ring. Pairs with focus-ring-width and focus-ring-offset."
   },
   "color-curtain": {
     "$value": "{color-neutral-300}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Fill of the full-screen curtain shown during route transitions."
   },
   "color-feedback-error": {
     "$value": "{feedback.error-500}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Error text, icons and borders on the page background: invalid fields, destructive menu items."
   },
   "color-feedback-error-background": {
     "$value": "{feedback.error-50}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Background of an error Alert or Badge."
   },
   "color-feedback-error-foreground": {
     "$value": "{feedback.error-600}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Text and icons inside an error Alert, Toast or Badge."
   },
   "color-feedback-error-border": {
     "$value": "{feedback.error-500}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Border and accent stripe of an error Alert, Toast or Badge."
   },
   "color-feedback-success-background": {
     "$value": "{feedback.success.50}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Background of a success Alert or Badge."
   },
   "color-feedback-success-foreground": {
     "$value": "{feedback.success.600}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Text and icons inside a success Alert, Toast or Badge."
   },
   "color-feedback-success-border": {
     "$value": "{feedback.success.500}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Border and accent stripe of a success Alert, Toast or Badge."
   },
   "color-feedback-warning-background": {
     "$value": "{feedback.warning.50}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Background of a warning Alert or Badge."
   },
   "color-feedback-warning-foreground": {
     "$value": "{feedback.warning.600}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Text and icons inside a warning Alert, Toast or Badge."
   },
   "color-feedback-warning-border": {
     "$value": "{feedback.warning.500}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Border and accent stripe of a warning Alert, Toast or Badge."
   },
   "color-feedback-info-background": {
     "$value": "{feedback.info.50}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Background of an info Alert or Badge."
   },
   "color-feedback-info-foreground": {
     "$value": "{feedback.info.600}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Text and icons inside an info Alert, Toast or Badge."
   },
   "color-feedback-info-border": {
     "$value": "{feedback.info.500}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Border and accent stripe of an info Alert, Toast or Badge."
   },
   "color-skeleton-base": {
     "$value": "{color-neutral-200}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "Resting colour of a loading Skeleton."
   },
   "color-skeleton-highlight": {
     "$value": "{color-neutral-100}",
-    "$type": "color"
+    "$type": "color",
+    "$description": "The colour a loading Skeleton pulses towards."
   },
   "duration-skeleton": {
     "$value": "{duration.slow}",
-    "$type": "duration"
+    "$type": "duration",
+    "$description": "Length of one Skeleton pulse."
   },
   "focus-ring-width": {
     "$value": "{border-width.medium}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Thickness of the focus ring."
   },
   "focus-ring-offset": {
     "$value": "{space.1}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Gap between an element and its focus ring."
   },
   "shadow-card": {
     "$value": "{shadow.xs}",
@@ -173,19 +215,23 @@
   },
   "shadow-card-hover": {
     "$value": "{shadow.sm}",
-    "$type": "shadow"
+    "$type": "shadow",
+    "$description": "Shadow a clickable Card lifts to on hover."
   },
   "shadow-dropdown": {
     "$value": "{shadow.md}",
-    "$type": "shadow"
+    "$type": "shadow",
+    "$description": "Shadow under floating lists: Menu, NavigationMenu dropdowns, Select."
   },
   "shadow-dialog": {
     "$value": "{shadow.md}",
-    "$type": "shadow"
+    "$type": "shadow",
+    "$description": "Shadow on overlay panels. Drawer uses it."
   },
   "shadow-toast": {
     "$value": "{shadow.lg}",
-    "$type": "shadow"
+    "$type": "shadow",
+    "$description": "Shadow under Toasts and Tooltips, which float above everything else."
   },
   "z-sticky": {
     "$value": 100,
@@ -193,7 +239,8 @@
   },
   "z-dropdown": {
     "$value": 200,
-    "$type": "number"
+    "$type": "number",
+    "$description": "Stacking level for NavigationMenu's dropdown, above page content."
   },
   "z-overlay": {
     "$value": 300,
@@ -205,11 +252,13 @@
   },
   "z-toast": {
     "$value": 500,
-    "$type": "number"
+    "$type": "number",
+    "$description": "Stacking level for the Toast viewport, above dialogs."
   },
   "z-tooltip": {
     "$value": 600,
-    "$type": "number"
+    "$type": "number",
+    "$description": "Stacking level for Tooltips, the top of the normal stack."
   },
   "z-skip-link": {
     "$value": 700,
@@ -218,43 +267,53 @@
   },
   "size-icon-xs": {
     "$value": "{icon-size.xs}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "12px icon, such as Link's external-link arrow."
   },
   "size-icon-sm": {
     "$value": "{icon-size.sm}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "16px icon, inline with control text: menu items, nav chevrons, the small Spinner."
   },
   "size-icon-md": {
     "$value": "{icon-size.md}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "20px icon: Alert and Toast status icons, the Accordion chevron, the default Spinner."
   },
   "size-icon-lg": {
     "$value": "{icon-size.lg}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "24px icon: the large Spinner."
   },
   "size-icon-xl": {
     "$value": "{icon-size.xl}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "32px icon, for standalone icons such as footer links."
   },
   "duration-spin": {
     "$value": "700ms",
-    "$type": "duration"
+    "$type": "duration",
+    "$description": "One full turn of the Spinner."
   },
   "font-family-base": {
     "$value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-    "$type": "fontFamily"
+    "$type": "fontFamily",
+    "$description": "Typeface for body text and controls. A system stack in base; a brand sets its own."
   },
   "font-family-heading": {
     "$value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-    "$type": "fontFamily"
+    "$type": "fontFamily",
+    "$description": "Typeface for headings. A system stack in base; a brand sets its own."
   },
   "font-family-mono": {
     "$value": "'JetBrains Mono', monospace",
-    "$type": "fontFamily"
+    "$type": "fontFamily",
+    "$description": "Typeface for code: JetBrains Mono. tokens/fonts.json has the Google Fonts link that loads it."
   },
   "font-size-body": {
     "$value": "{font-size.md}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Running text: 18px."
   },
   "font-size-control": {
     "$value": "{font-size.base}",
@@ -273,7 +332,8 @@
   },
   "font-size-h1": {
     "$value": "{font-size.3xl}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Static H1 size: 64px. Pairs with line-height-h1."
   },
   "font-size-display": {
     "$value": "clamp(2rem, 0.75rem + 5vw, 5rem)",
@@ -281,27 +341,33 @@
   },
   "font-size-h1-fluid": {
     "$value": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "H1 that scales with the viewport, from 28px to 64px."
   },
   "font-size-h2": {
     "$value": "{font-size.2xl}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Static H2 size: 48px. Pairs with line-height-h2."
   },
   "font-size-h2-fluid": {
     "$value": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "H2 that scales with the viewport, from 26px to 48px."
   },
   "font-size-h3": {
     "$value": "{font-size.xl}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Static H3 size: 32px. Pairs with line-height-h3."
   },
   "font-size-h3-fluid": {
     "$value": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "H3 that scales with the viewport, from 24px to 40px."
   },
   "font-size-h4": {
     "$value": "{font-size.lg}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "H4 size: 24px. Pairs with line-height-h4."
   },
   "font-size-h5": {
     "$value": "{font-size.emphasis}",
@@ -310,11 +376,13 @@
   },
   "font-weight-body": {
     "$value": "{font-weight.regular}",
-    "$type": "fontWeight"
+    "$type": "fontWeight",
+    "$description": "Weight for running text."
   },
   "font-weight-heading": {
     "$value": "{font-weight.semibold}",
-    "$type": "fontWeight"
+    "$type": "fontWeight",
+    "$description": "Weight for headings."
   },
   "font-weight-label": {
     "$value": "{font-weight.medium}",
@@ -323,7 +391,8 @@
   },
   "font-weight-display": {
     "$value": "{font-weight.semibold}",
-    "$type": "fontWeight"
+    "$type": "fontWeight",
+    "$description": "Weight for large display text, such as a page's opening headline."
   },
   "font-weight-title": {
     "$value": "{font-weight.bold}",
@@ -337,7 +406,8 @@
   },
   "line-height-display": {
     "$value": "{line-height.tighter}",
-    "$type": "number"
+    "$type": "number",
+    "$description": "Line height for fluid H1 and display text, where a fixed px value would break the scaling."
   },
   "line-height-body": {
     "$value": "{line-height.fixed-28}",
@@ -386,7 +456,8 @@
   },
   "line-height-heading": {
     "$value": "{line-height.tight}",
-    "$type": "number"
+    "$type": "number",
+    "$description": "Line height for fluid H2 and H3."
   },
   "line-height-label": {
     "$value": "{line-height.fixed-16}",
@@ -395,11 +466,13 @@
   },
   "letter-spacing-heading": {
     "$value": "-0.02em",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Tightened tracking for headings and titles."
   },
   "letter-spacing-subheading": {
     "$value": "-0.01em",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Lighter tightening for subheadings."
   },
   "letter-spacing-body": {
     "$value": "0",
@@ -407,67 +480,83 @@
   },
   "letter-spacing-label": {
     "$value": "0.01em",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Slightly open tracking for small labels and metadata."
   },
   "letter-spacing-wide": {
     "$value": "0.08em",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Wide tracking for uppercase eyebrows and overlines."
   },
   "space-layout-margin": {
     "$value": "clamp(1.25rem, 4vw, 2rem)",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Page gutter on each side, from 20px on small screens to 32px."
   },
   "space-section-gap": {
     "$value": "clamp(3rem, 8vw, 5rem)",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Space between page sections, from 48px to 80px with the viewport."
   },
   "space-component-gap": {
     "$value": "{space.6}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Space between larger blocks inside a component, such as a dialog's header, body and footer."
   },
   "space-element-gap": {
     "$value": "{space.4}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Space between elements inside a component, such as a card's title and body."
   },
   "space-inline-gap": {
     "$value": "{space.2}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Space between items in a row: an icon and its label, buttons in a group."
   },
   "space-label-gap": {
     "$value": "{space.3}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Space between a control and its label, or a status icon and its message."
   },
   "border-radius-component": {
     "$value": "{border-radius.md}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Corners of containers: cards, dialogs, menus, alerts, tables."
   },
   "border-radius-interactive": {
     "$value": "{border-radius.sm}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Corners of controls: inputs, menu items, tab triggers, close buttons."
   },
   "border-radius-image": {
     "$value": "0.75rem",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Corners of images inside a Card."
   },
   "border-radius-pill": {
     "$value": "{border-radius.full}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Fully rounded ends: pill buttons, badges, tags, avatars, switch tracks."
   },
   "duration-interaction": {
     "$value": "{duration.base}",
-    "$type": "duration"
+    "$type": "duration",
+    "$description": "Hover, press and focus changes on controls."
   },
   "duration-transition": {
     "$value": "{duration.slow}",
-    "$type": "duration"
+    "$type": "duration",
+    "$description": "Overlays and messages entering or leaving: dialogs, drawers, toasts, dismissing an alert."
   },
   "duration-entrance": {
     "$value": "600ms",
-    "$type": "duration"
+    "$type": "duration",
+    "$description": "Larger entrance animations on page content, slower than duration-transition."
   },
   "duration-reveal": {
     "$value": "400ms",
-    "$type": "duration"
+    "$type": "duration",
+    "$description": "Content fading and sliding into view as it scrolls in."
   },
   "duration-reveal-delay": {
     "$value": "300ms",
@@ -480,11 +569,13 @@
   },
   "opacity-disabled": {
     "$value": "{opacity.low}",
-    "$type": "number"
+    "$type": "number",
+    "$description": "Opacity of a disabled control."
   },
   "space-tight-gap": {
     "$value": "{space.1}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "The smallest gap, between tightly grouped items such as tab triggers or nav items."
   },
   "space-control-padding-x": {
     "$value": "{space.4}",
@@ -548,7 +639,8 @@
   },
   "border-width-interactive": {
     "$value": "{border-width.thin}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Border on form controls and menus."
   },
   "border-width-default": {
     "$value": "{border-width.thin}",

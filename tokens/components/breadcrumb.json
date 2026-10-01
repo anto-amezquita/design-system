@@ -2,6 +2,7 @@
   "breadcrumb-font-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension",
+    "$description": "Text size of Breadcrumb items.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -9,10 +10,12 @@
   },
   "breadcrumb-item-max-width": {
     "$value": "200px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Width at which a Breadcrumb link is truncated."
   },
   "breadcrumb-current-max-width": {
     "$value": "240px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Width at which the current page in a Breadcrumb is truncated. Wider than the links before it."
   }
 }

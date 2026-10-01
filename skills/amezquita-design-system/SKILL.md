@@ -26,7 +26,7 @@ import '@amezquita/design-system/styles/brands/base-light.css'
 import '@amezquita/design-system/styles/brands/base-dark.css'
 ```
 
-Import the brand CSS once, in your root layout. `base` is the neutral default; for the portfolio brand, also import `portfolio-light.css` and `portfolio-dark.css` after these. Dark mode applies inside any element with `data-mode="dark"`.
+Import the brand CSS once, in your root layout. `base` is the neutral default; for the portfolio brand, also import `portfolio-light.css` and `portfolio-dark.css` after these. Dark mode applies inside any element with `data-mode="dark"`. To show the portfolio brand in one part of a page only, import `portfolio-scoped.css` instead of those two and put `data-brand="portfolio"` on that part.
 
 Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `next.config.js` — this package ships source `.tsx`/`.css`, not a pre-built bundle.
 

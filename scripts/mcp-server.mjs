@@ -8,7 +8,7 @@
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, realpathSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { z } from "zod";
@@ -118,7 +118,17 @@ const server = new McpServer({
   version: pkg.version,
 });
 
-server.registerTool(
+// Every tool's name, title and description, in registration order. Exported so
+// build-llms-txt.mjs lists the tools from these registrations rather than from
+// a hand-copied list that drifts when a tool is added or reworded.
+export const TOOLS = [];
+
+function registerTool(name, config, handler) {
+  TOOLS.push({ name, title: config.title, description: config.description });
+  server.registerTool(name, config, handler);
+}
+
+registerTool(
   "list_components",
   {
     title: "List components",
@@ -146,7 +156,7 @@ server.registerTool(
   }
 );
 
-server.registerTool(
+registerTool(
   "get_component",
   {
     title: "Get component",
@@ -189,7 +199,7 @@ server.registerTool(
   }
 );
 
-server.registerTool(
+registerTool(
   "search_tokens",
   {
     title: "Search tokens",
@@ -217,7 +227,7 @@ server.registerTool(
   }
 );
 
-server.registerTool(
+registerTool(
   "get_token",
   {
     title: "Get token",
@@ -248,7 +258,7 @@ server.registerTool(
   }
 );
 
-server.registerTool(
+registerTool(
   "validate_token",
   {
     title: "Validate token",
@@ -302,7 +312,7 @@ server.registerTool(
   }
 );
 
-server.registerTool(
+registerTool(
   "get_registry_item",
   {
     title: "Get registry item",
@@ -353,7 +363,7 @@ server.registerTool(
   }
 );
 
-server.registerTool(
+registerTool(
   "get_skill",
   {
     title: "Get skill",
@@ -397,5 +407,19 @@ server.registerTool(
   }
 );
 
-const transport = new StdioServerTransport();
-await server.connect(transport);
+// Connect only when this file is the process entry point. build-llms-txt.mjs
+// imports it for TOOLS and must not start a stdio transport. Both sides go
+// through realpath: Node resolves symlinks in import.meta.url but not in
+// argv[1], and a mismatch here would leave the server silently unconnected.
+function isEntryPoint() {
+  try {
+    return realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url));
+  } catch {
+    return false;
+  }
+}
+
+if (isEntryPoint()) {
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+}

@@ -21,6 +21,7 @@
 export const GENERATED_PATHS = [
   'tokens/dependency-graph.json',
   'tokens/token-reference.json',
+  'tokens/fonts.json',
   'tokens/component-registry.json',
   'styles/brands/',
   'tokens.json',

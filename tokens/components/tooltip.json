@@ -2,6 +2,7 @@
   "tooltip-font-weight": {
     "$value": "{font-weight.medium}",
     "$type": "fontWeight",
+    "$description": "Weight of Tooltip text.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "Doesn't share function with the font-weight-control group, see decisions/0004."
@@ -10,6 +11,7 @@
   "tooltip-border-radius": {
     "$value": "{border-radius.sm}",
     "$type": "dimension",
+    "$description": "Corners of a Tooltip.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "Shares value with border-radius-interactive but isn't an interactive component — deliberately left, see decisions/0004."
@@ -17,11 +19,13 @@
   },
   "tooltip-max-width": {
     "$value": "260px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Width at which Tooltip text wraps."
   },
   "tooltip-arrow-size": {
     "$value": "{space.2}",
     "$type": "dimension",
+    "$description": "Size of the Tooltip arrow.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -29,10 +33,12 @@
   },
   "tooltip-delay-duration": {
     "$value": "400",
-    "$type": "number"
+    "$type": "number",
+    "$description": "Milliseconds of hover before a Tooltip opens. A unitless number, read by Tooltip.tsx."
   },
   "tooltip-side-offset": {
     "$value": "6",
-    "$type": "number"
+    "$type": "number",
+    "$description": "Pixels between a Tooltip and its trigger. A unitless number, read by Tooltip.tsx."
   }
 }

@@ -2,6 +2,7 @@
   "dialog-max-width": {
     "$value": "{size.dialog-md}",
     "$type": "dimension",
+    "$description": "Width of a default (md) Dialog: 560px.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -10,6 +11,7 @@
   "dialog-close-size": {
     "$value": "{size.icon-interactive}",
     "$type": "dimension",
+    "$description": "Hit area of a Dialog's close button.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -18,6 +20,7 @@
   "dialog-max-width-sm": {
     "$value": "{size.dialog-sm}",
     "$type": "dimension",
+    "$description": "Width of a small Dialog: 480px.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -26,6 +29,7 @@
   "dialog-max-width-lg": {
     "$value": "{size.dialog-lg}",
     "$type": "dimension",
+    "$description": "Width of a large Dialog: 720px.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -34,6 +38,7 @@
   "dialog-max-width-xl": {
     "$value": "{size.layout-md}",
     "$type": "dimension",
+    "$description": "Width of an extra-large Dialog: 1024px.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -41,6 +46,7 @@
   },
   "dialog-entrance-offset": {
     "$value": "8px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "How far a Dialog rises as it fades in."
   }
 }

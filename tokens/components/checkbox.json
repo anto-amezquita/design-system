@@ -2,6 +2,7 @@
   "checkbox-size": {
     "$value": "{space.6}",
     "$type": "dimension",
+    "$description": "Size of the Checkbox box.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."

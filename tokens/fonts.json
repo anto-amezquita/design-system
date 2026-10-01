@@ -1,0 +1,62 @@
+{
+  "brands": {
+    "base": {
+      "families": [
+        {
+          "family": "JetBrains Mono",
+          "tokens": [
+            "font-family-mono"
+          ],
+          "weights": [
+            400,
+            500,
+            600,
+            700,
+            800
+          ]
+        }
+      ],
+      "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap",
+      "preconnect": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com"
+      ]
+    },
+    "portfolio": {
+      "families": [
+        {
+          "family": "Schibsted Grotesk",
+          "tokens": [
+            "font-family-base",
+            "font-family-heading"
+          ],
+          "weights": [
+            400,
+            500,
+            600,
+            700,
+            800
+          ]
+        },
+        {
+          "family": "JetBrains Mono",
+          "tokens": [
+            "font-family-mono"
+          ],
+          "weights": [
+            400,
+            500,
+            600,
+            700,
+            800
+          ]
+        }
+      ],
+      "href": "https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap",
+      "preconnect": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com"
+      ]
+    }
+  }
+}
