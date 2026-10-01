@@ -35,9 +35,9 @@ Status: not started.
 
 ## Gaps found by the docs site's first build (backlog)
 
-Opened 2026-10-01. `design-system-site` is the first consumer on the Next.js App Router that installs the package cold, and its first build (its `specs/2026-09-30-first-build.md`, §9) turned up four things that are this repo's to fix. A fifth, the missing `'use client'` on Link, SkipLink and Tag, is fixed on `fix/client-directives`, with a validate check so it can't come back.
+Opened 2026-10-01. `design-system-site` is the first consumer on the Next.js App Router that installs the package cold, and its first build (its `specs/2026-09-30-first-build.md`, §9) turned up the things below that are this repo's to fix. Another, the missing `'use client'` on Link, SkipLink and Tag, shipped in `1.1.2` with a validate check so it can't come back.
 
-**1. Brand CSS has no brand scope. Needs a decision first.** `sd.config.mjs` overrides the format's default `[data-brand="<brand>"]` selector with `:root, [data-mode="light"]` (and `[data-mode="dark"]`), so a page can only ever show one brand. The site's Themes page needs base and portfolio side by side, so it renders the portfolio brand in separate iframe documents instead. Two options:
+**1. Brand CSS has no brand scope. Decided 2026-10-01: add the scope alongside the current selector (minor).** `sd.config.mjs` overrides the format's default `[data-brand="<brand>"]` selector with `:root, [data-mode="light"]` (and `[data-mode="dark"]`), so a page can only ever show one brand. The site's Themes page needs base and portfolio side by side, so it renders the portfolio brand in separate iframe documents instead. Two options:
 
 - **Add a scope alongside the current selector** (recommended): portfolio's files keep `:root, [data-mode="…"]` and also cover `[data-brand="portfolio"]` and `[data-brand="portfolio"] [data-mode="…"]`, so a panel can opt in. Nothing changes for the portfolio site. Minor release.
 - **Scope only:** drop `:root` from the brand files, so every portfolio consumer adds `data-brand="portfolio"` to `<html>`. Cleaner, but breaking. Major release.
@@ -46,11 +46,19 @@ Either one amends `decisions/0001` (the base/portfolio split), so it needs an AD
 
 **2. The doc twins' Tokens tables show the portfolio brand's values.** `docs/components/*.md` resolves token values from portfolio (Button's `--button-secondary-border` reads `#292524`, warm-800), the same bug 1.1.1 fixed in the registry's `cssVars`. `build-component-docs.mjs` should resolve from base, as the registry now does. Until then the site builds its token tables from `token-reference.json`.
 
-**3. `tokens/changelog.json` stops at `v1.1.0`.** `CHANGELOG.md` has 1.1.1. The site reads `CHANGELOG.md`, but the JSON is stale for anyone else, and the portfolio's changelog page reads it.
+**3. `tokens/changelog.json` stops at `v1.1.0`.** `CHANGELOG.md` has 1.1.2. The site reads `CHANGELOG.md`, but the JSON is stale for anyone else, and the portfolio's changelog page reads it.
 
 **4. Switch the agent files' URLs to the docs site.** `llms.txt`, `llms-full.txt`, the skill and the registry manifests point at `amezquita.dk` (every manifest's `registryDependencies` hardcodes `https://amezquita.dk/r/theme.json`), and the doc twins at `/design-system/<slug>.md`. On the site they're at `/components/<slug>.md`. Wait until `design.amezquita.dk` is live, so the new URLs resolve when the release goes out.
 
-Status: not started. Item 1 waits on the user's call.
+**5. The MCP tool list is hand-copied.** The site lists the 7 tools from `scripts/mcp-server.mjs` by hand. Generate the list from the server's own tool registrations into the agent-facing files the package ships (`llms.txt` and/or `AGENTS.md`), so it can't drift.
+
+**6. Token descriptions live in the site, not on the tokens.** The site writes its own one-liners for tokens. They belong on the tokens as DTCG `$description`, flowing through `tokens/token-reference.json` to the site and to agents.
+
+**7. No documented way to load the fonts. Decided 2026-10-01: document Google Fonts links, ship no font files.** The brands name JetBrains Mono (base) and Schibsted Grotesk (portfolio), but the package ships no font files or `@font-face`, so every consumer has to work it out. Document the link each brand needs, make it machine-readable so the site can generate its Getting started page from it, and record the decision (self-hosting rejected for now) in a new ADR.
+
+Items 5-7 came from a scope question during the site's first build (2026-10-01). Items 1, 2 and 5-7 are planned together as `1.2.0` on `feat/docs-site-gaps` (spec: `specs/2026-10-01-docs-site-gaps.md`). Item 4 waits on the deploy.
+
+Status: not started. Decisions for items 1 and 7 are made.
 
 ## Release dispatch to the portfolio fails: the GitHub App isn't installed there (backlog)
 
