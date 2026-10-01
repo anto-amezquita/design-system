@@ -4,6 +4,22 @@
   },
   "versions": [
     {
+      "tag": "v1.1.2",
+      "date": "2026-10-01",
+      "sha": "9d87f40",
+      "entries": [
+        {
+          "sha": "727ee4e",
+          "type": "fix",
+          "scope": null,
+          "message": "'use client' on Link, SkipLink and Tag, and a validate check for it",
+          "date": "2026-10-01",
+          "breaking": false
+        }
+      ],
+      "entryCount": 1
+    },
+    {
       "tag": "v1.1.1",
       "date": "2026-09-30",
       "sha": "ce96cf0",
@@ -563,10 +579,26 @@
   ],
   "unreleased": [
     {
-      "sha": "727ee4e",
-      "type": "fix",
-      "scope": null,
-      "message": "'use client' on Link, SkipLink and Tag, and a validate check for it",
+      "sha": "f554d4f",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "portfolio-scoped.css, so one page can show both brands",
+      "date": "2026-10-01",
+      "breaking": false
+    },
+    {
+      "sha": "c388951",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "tokens/fonts.json, the Google Fonts link each brand needs",
+      "date": "2026-10-01",
+      "breaking": false
+    },
+    {
+      "sha": "2a52fb0",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "one-line descriptions, carried into token-reference.json",
       "date": "2026-10-01",
       "breaking": false
     }
