@@ -1,3 +1,5 @@
+'use client'
+
 import { forwardRef } from 'react'
 import { Slot, Slottable } from '@radix-ui/react-slot'
 import { ArrowUpRightIcon } from '@phosphor-icons/react'

@@ -21,7 +21,7 @@ Work is done when:
 ## 2. `npm run validate` — the one gate
 
 ```
-npm run validate = tokens:lint && tokens:lint-architecture && tokens:contrast && check-components-doc.mjs && check-stories.mjs && typecheck && test
+npm run validate = tokens:lint && tokens:lint-architecture && tokens:contrast && check-components-doc.mjs && check-stories.mjs && check-client-directives.mjs && typecheck && test
 ```
 
 | Step | What it checks | Script |
@@ -31,6 +31,7 @@ npm run validate = tokens:lint && tokens:lint-architecture && tokens:contrast &&
 | `tokens:contrast` | Color contrast across all 4 brand/mode combinations | `scripts/check-contrast.mjs` |
 | `check-components-doc.mjs` | Every component in `tokens/component-registry.json` has a `docs/components.md` entry | — |
 | `check-stories.mjs` | Every public component has a Storybook story | — |
+| `check-client-directives.mjs` | Every component that uses client-only React (state and effect hooks, context, Radix, inline event handlers) starts with `'use client'`, so a Next.js App Router consumer can render it from a Server Component. Tests and Storybook run in a browser and can't see this | — |
 | `typecheck` | `tsc --noEmit` | — |
 | `test` | Every story as a browser test + `unit` project contracts (ADR [`0006`](../decisions/0006-add-layered-automated-testing.md)) + `scripts` project tooling tests (ADR [`0009`](../decisions/0009-living-memory-adr-proposals.md)) | `vitest run` — `storybook`/`unit` in real Chromium via Playwright, `scripts` in Node |
 
@@ -82,7 +83,7 @@ No unit-test framework for behavior Radix already owns (see `architecture.md` §
 - **Visual regression** — Chromatic, every push.
 - **Story coverage** — `check-stories.mjs`. Every story also runs as a browser test via `@storybook/addon-vitest` (the `storybook` Vitest project, real Chromium via Playwright) — render-without-error for a plain story, real assertions for one with a play function. Replaces `@storybook/test-runner`, deprecated by Storybook in favor of this addon.
 - **Composed-trigger and other owned-behavior contracts** — a second Vitest project, `unit`, for assertions that aren't visual states (e.g. `Button.slot.test.tsx`, asserting Button forwards Radix-injected props). Separate from the `storybook` project so a behavioral contract doesn't become a Chromatic-snapshotted story just to get tested. Same browser-mode requirement as above — several components touch real browser APIs at mount (`window.matchMedia`, etc.) that jsdom can't satisfy.
-- **Node-side tooling contracts** — a third Vitest project, `scripts`, for the build/session tooling in `scripts/` (currently `propose-decision.test.mjs`, and `lint-tokens.test.mjs` for the `no-unknown-breakpoint` rule). Node environment, no browser: this is code that reads the filesystem and parses transcripts, so it needs neither Chromium nor Storybook and shouldn't pay browser startup. Kept separate so a tooling failure reads as a tooling failure. Its safety-contract tests — that the session-transcript harvester runs no mutating git command and can only write inside `decisions/proposed/` — are the gate that makes running it unattended at session exit acceptable (ADR [`0009`](../decisions/0009-living-memory-adr-proposals.md)).
+- **Node-side tooling contracts** — a third Vitest project, `scripts`, for the build/session tooling in `scripts/` (currently `propose-decision.test.mjs`, `lint-tokens.test.mjs` for the `no-unknown-breakpoint` rule, and `check-client-directives.test.mjs`). Node environment, no browser: this is code that reads the filesystem and parses transcripts, so it needs neither Chromium nor Storybook and shouldn't pay browser startup. Kept separate so a tooling failure reads as a tooling failure. Its safety-contract tests — that the session-transcript harvester runs no mutating git command and can only write inside `decisions/proposed/` — are the gate that makes running it unattended at session exit acceptable (ADR [`0009`](../decisions/0009-living-memory-adr-proposals.md)).
 - **Stateful/interaction logic** (sort+filter+selection interplay, etc.) — a throwaway Playwright script against a real dev server, written for that piece of work. Not persisted as a suite; written fresh, run, deleted or kept per the spec's own call. Unchanged by ADR 0006 — DataTable's own interplay is named there as follow-up, not yet moved into the `unit` project.
 - **Agent-facing artifacts** (compiled docs, the skill file, the MCP server) — a cold test: a fresh subagent with zero memory of the session, given only the compiled artifact, attempting a real task. This is the only way doc-generator gaps have actually been found (see `docs/roadmap.md` Phase 4 and Phase 6 findings) — a self-assessment doesn't substitute for it.
 

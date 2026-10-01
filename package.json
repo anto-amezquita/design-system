@@ -48,7 +48,7 @@
     "figma:status": "node scripts/figma-status.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "validate": "npm run tokens:lint && npm run tokens:lint-architecture && npm run tokens:contrast && node scripts/check-components-doc.mjs && node scripts/check-stories.mjs && npm run typecheck && npm run test",
+    "validate": "npm run tokens:lint && npm run tokens:lint-architecture && npm run tokens:contrast && node scripts/check-components-doc.mjs && node scripts/check-stories.mjs && node scripts/check-client-directives.mjs && npm run typecheck && npm run test",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --stats-json",
     "chromatic": "chromatic --build-script-name=build-storybook"
