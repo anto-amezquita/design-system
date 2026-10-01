@@ -2,6 +2,7 @@
   "drawer-close-size": {
     "$value": "{size.icon-interactive}",
     "$type": "dimension",
+    "$description": "Hit area of a Drawer's close button.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -9,34 +10,42 @@
   },
   "drawer-max-width-sm": {
     "$value": "320px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Width of a small side Drawer."
   },
   "drawer-max-width-md": {
     "$value": "480px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Width of a default side Drawer."
   },
   "drawer-max-width-lg": {
     "$value": "640px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Width of a large side Drawer."
   },
   "drawer-max-height-sm": {
     "$value": "40vh",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Height of a small bottom Drawer."
   },
   "drawer-max-height-md": {
     "$value": "90vh",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Height of a default bottom Drawer."
   },
   "drawer-max-height-lg": {
     "$value": "75vh",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Height of a large bottom Drawer."
   },
   "drawer-max-height-full": {
     "$value": "100vh",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Height of a full-screen bottom Drawer."
   },
   "drawer-close-align-offset": {
     "$value": "2px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Nudges a Drawer's close button up to line up with the title."
   }
 }

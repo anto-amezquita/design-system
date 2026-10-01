@@ -2,6 +2,7 @@
   "badge-font-weight": {
     "$value": "{font-weight.medium}",
     "$type": "fontWeight",
+    "$description": "Weight of Badge text.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "Doesn't share function with the font-weight-control group, see decisions/0004."
@@ -10,6 +11,7 @@
   "badge-padding-x": {
     "$value": "{space.2}",
     "$type": "dimension",
+    "$description": "Horizontal padding of a Badge.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -18,6 +20,7 @@
   "badge-padding-y": {
     "$value": "{space.1}",
     "$type": "dimension",
+    "$description": "Vertical padding of a Badge.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -25,11 +28,13 @@
   },
   "badge-count-size": {
     "$value": "20px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Minimum width and height of a count Badge, so a single digit sits in a circle."
   },
   "badge-dot-size": {
     "$value": "{space.2}",
     "$type": "dimension",
+    "$description": "Size of a dot Badge.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."

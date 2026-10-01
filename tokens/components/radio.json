@@ -2,6 +2,7 @@
   "radio-size": {
     "$value": "{space.6}",
     "$type": "dimension",
+    "$description": "Size of the Radio circle.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -10,6 +11,7 @@
   "radio-indicator-size": {
     "$value": "{space.3}",
     "$type": "dimension",
+    "$description": "Size of the dot inside a checked Radio.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."

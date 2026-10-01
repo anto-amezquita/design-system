@@ -11,6 +11,7 @@
       "cssVar": "--color-black",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#0A0A0A",
       "resolved": {
         "base-light": "#0A0A0A",
@@ -26,6 +27,7 @@
       "cssVar": "--color-white",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#FFFFFF",
       "resolved": {
         "base-light": "#FFFFFF",
@@ -41,6 +43,7 @@
       "cssVar": "--color-warm-50",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#FAFAF9",
       "resolved": {
         "base-light": "#FAFAF9",
@@ -56,6 +59,7 @@
       "cssVar": "--color-warm-100",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#F4F0EB",
       "resolved": {
         "base-light": "#F4F0EB",
@@ -71,6 +75,7 @@
       "cssVar": "--color-warm-200",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#E2DDD9",
       "resolved": {
         "base-light": "#E2DDD9",
@@ -86,6 +91,7 @@
       "cssVar": "--color-warm-300",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#C8C3BE",
       "resolved": {
         "base-light": "#C8C3BE",
@@ -101,6 +107,7 @@
       "cssVar": "--color-warm-400",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#A8A29E",
       "resolved": {
         "base-light": "#A8A29E",
@@ -116,6 +123,7 @@
       "cssVar": "--color-warm-500",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#78716C",
       "resolved": {
         "base-light": "#78716C",
@@ -131,6 +139,7 @@
       "cssVar": "--color-warm-600",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#57534E",
       "resolved": {
         "base-light": "#57534E",
@@ -146,6 +155,7 @@
       "cssVar": "--color-warm-700",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#44403C",
       "resolved": {
         "base-light": "#44403C",
@@ -161,6 +171,7 @@
       "cssVar": "--color-warm-800",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#292524",
       "resolved": {
         "base-light": "#292524",
@@ -176,6 +187,7 @@
       "cssVar": "--color-warm-900",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#1C1917",
       "resolved": {
         "base-light": "#1C1917",
@@ -191,6 +203,7 @@
       "cssVar": "--color-gray-50",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#FAFAFA",
       "resolved": {
         "base-light": "#FAFAFA",
@@ -206,6 +219,7 @@
       "cssVar": "--color-gray-100",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#F5F5F5",
       "resolved": {
         "base-light": "#F5F5F5",
@@ -221,6 +235,7 @@
       "cssVar": "--color-gray-200",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#E5E5E5",
       "resolved": {
         "base-light": "#E5E5E5",
@@ -236,6 +251,7 @@
       "cssVar": "--color-gray-300",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#D4D4D4",
       "resolved": {
         "base-light": "#D4D4D4",
@@ -251,6 +267,7 @@
       "cssVar": "--color-gray-400",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#A3A3A3",
       "resolved": {
         "base-light": "#A3A3A3",
@@ -266,6 +283,7 @@
       "cssVar": "--color-gray-500",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#737373",
       "resolved": {
         "base-light": "#737373",
@@ -281,6 +299,7 @@
       "cssVar": "--color-gray-600",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#525252",
       "resolved": {
         "base-light": "#525252",
@@ -296,6 +315,7 @@
       "cssVar": "--color-gray-700",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#404040",
       "resolved": {
         "base-light": "#404040",
@@ -311,6 +331,7 @@
       "cssVar": "--color-gray-800",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#262626",
       "resolved": {
         "base-light": "#262626",
@@ -326,6 +347,7 @@
       "cssVar": "--color-gray-900",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#171717",
       "resolved": {
         "base-light": "#171717",
@@ -341,6 +363,7 @@
       "cssVar": "--color-teal-50",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#EBF4F6",
       "resolved": {
         "base-light": "#EBF4F6",
@@ -356,6 +379,7 @@
       "cssVar": "--color-teal-200",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#6FB8C3",
       "resolved": {
         "base-light": "#6FB8C3",
@@ -371,6 +395,7 @@
       "cssVar": "--color-teal-300",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#4FA3B0",
       "resolved": {
         "base-light": "#4FA3B0",
@@ -386,6 +411,7 @@
       "cssVar": "--color-teal-500",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#15616D",
       "resolved": {
         "base-light": "#15616D",
@@ -401,6 +427,7 @@
       "cssVar": "--color-teal-600",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#0F4750",
       "resolved": {
         "base-light": "#0F4750",
@@ -416,6 +443,7 @@
       "cssVar": "--color-teal-500-glow",
       "type": "color",
       "category": "primitive",
+      "description": "teal-500 at 20% alpha — the diagram source-node glow's light-mode value",
       "rawValue": "#15616D33",
       "resolved": {
         "base-light": "#15616D33",
@@ -431,6 +459,7 @@
       "cssVar": "--space-1",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "4px",
       "resolved": {
         "base-light": "4px",
@@ -446,6 +475,7 @@
       "cssVar": "--space-2",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "8px",
       "resolved": {
         "base-light": "8px",
@@ -461,6 +491,7 @@
       "cssVar": "--space-3",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "12px",
       "resolved": {
         "base-light": "12px",
@@ -476,6 +507,7 @@
       "cssVar": "--space-4",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "16px",
       "resolved": {
         "base-light": "16px",
@@ -491,6 +523,7 @@
       "cssVar": "--space-5",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "20px",
       "resolved": {
         "base-light": "20px",
@@ -506,6 +539,7 @@
       "cssVar": "--space-6",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "24px",
       "resolved": {
         "base-light": "24px",
@@ -521,6 +555,7 @@
       "cssVar": "--space-7",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "28px",
       "resolved": {
         "base-light": "28px",
@@ -536,6 +571,7 @@
       "cssVar": "--space-8",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "32px",
       "resolved": {
         "base-light": "32px",
@@ -551,6 +587,7 @@
       "cssVar": "--space-9",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "40px",
       "resolved": {
         "base-light": "40px",
@@ -566,6 +603,7 @@
       "cssVar": "--space-10",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "48px",
       "resolved": {
         "base-light": "48px",
@@ -581,6 +619,7 @@
       "cssVar": "--space-11",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "64px",
       "resolved": {
         "base-light": "64px",
@@ -596,6 +635,7 @@
       "cssVar": "--space-12",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "96px",
       "resolved": {
         "base-light": "96px",
@@ -611,6 +651,7 @@
       "cssVar": "--space-13",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "128px",
       "resolved": {
         "base-light": "128px",
@@ -626,6 +667,7 @@
       "cssVar": "--font-size-xs",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "12px",
       "resolved": {
         "base-light": "12px",
@@ -641,6 +683,7 @@
       "cssVar": "--font-size-sm",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "14px",
       "resolved": {
         "base-light": "14px",
@@ -656,6 +699,7 @@
       "cssVar": "--font-size-base",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "16px",
       "resolved": {
         "base-light": "16px",
@@ -671,6 +715,7 @@
       "cssVar": "--font-size-md",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "18px",
       "resolved": {
         "base-light": "18px",
@@ -686,6 +731,7 @@
       "cssVar": "--font-size-emphasis",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "20px",
       "resolved": {
         "base-light": "20px",
@@ -701,6 +747,7 @@
       "cssVar": "--font-size-lg",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "24px",
       "resolved": {
         "base-light": "24px",
@@ -716,6 +763,7 @@
       "cssVar": "--font-size-xl",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "32px",
       "resolved": {
         "base-light": "32px",
@@ -731,6 +779,7 @@
       "cssVar": "--font-size-2xl",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "48px",
       "resolved": {
         "base-light": "48px",
@@ -746,6 +795,7 @@
       "cssVar": "--font-size-3xl",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "64px",
       "resolved": {
         "base-light": "64px",
@@ -761,6 +811,7 @@
       "cssVar": "--font-weight-light",
       "type": "fontWeight",
       "category": "primitive",
+      "description": null,
       "rawValue": "300",
       "resolved": {
         "base-light": "300",
@@ -776,6 +827,7 @@
       "cssVar": "--font-weight-regular",
       "type": "fontWeight",
       "category": "primitive",
+      "description": null,
       "rawValue": "400",
       "resolved": {
         "base-light": "400",
@@ -791,6 +843,7 @@
       "cssVar": "--font-weight-medium",
       "type": "fontWeight",
       "category": "primitive",
+      "description": null,
       "rawValue": "500",
       "resolved": {
         "base-light": "500",
@@ -806,6 +859,7 @@
       "cssVar": "--font-weight-semibold",
       "type": "fontWeight",
       "category": "primitive",
+      "description": null,
       "rawValue": "600",
       "resolved": {
         "base-light": "600",
@@ -821,6 +875,7 @@
       "cssVar": "--font-weight-bold",
       "type": "fontWeight",
       "category": "primitive",
+      "description": null,
       "rawValue": "700",
       "resolved": {
         "base-light": "700",
@@ -836,6 +891,7 @@
       "cssVar": "--font-weight-extrabold",
       "type": "fontWeight",
       "category": "primitive",
+      "description": null,
       "rawValue": "800",
       "resolved": {
         "base-light": "800",
@@ -851,6 +907,7 @@
       "cssVar": "--line-height-tighter",
       "type": "number",
       "category": "primitive",
+      "description": null,
       "rawValue": "1.125",
       "resolved": {
         "base-light": "1.125",
@@ -866,6 +923,7 @@
       "cssVar": "--line-height-tight",
       "type": "number",
       "category": "primitive",
+      "description": null,
       "rawValue": "1.25",
       "resolved": {
         "base-light": "1.25",
@@ -881,6 +939,7 @@
       "cssVar": "--line-height-fixed-16",
       "type": "dimension",
       "category": "primitive",
+      "description": "Strict-4px-grid line-height for static (non-fluid) text — pairs with a fixed font-size, not a clamp() one. The fixed-* scale is the baseline grid for every static font-size (decisions/0012). Unitless tighter/tight remain the right choice for fluid, clamp()-scaled type, where a fixed px value would break proportional scaling.",
       "rawValue": "16px",
       "resolved": {
         "base-light": "16px",
@@ -896,6 +955,7 @@
       "cssVar": "--line-height-fixed-20",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "20px",
       "resolved": {
         "base-light": "20px",
@@ -911,6 +971,7 @@
       "cssVar": "--line-height-fixed-24",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "24px",
       "resolved": {
         "base-light": "24px",
@@ -926,6 +987,7 @@
       "cssVar": "--line-height-fixed-28",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "28px",
       "resolved": {
         "base-light": "28px",
@@ -941,6 +1003,7 @@
       "cssVar": "--line-height-fixed-32",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "32px",
       "resolved": {
         "base-light": "32px",
@@ -956,6 +1019,7 @@
       "cssVar": "--line-height-fixed-40",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "40px",
       "resolved": {
         "base-light": "40px",
@@ -971,6 +1035,7 @@
       "cssVar": "--line-height-fixed-60",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "60px",
       "resolved": {
         "base-light": "60px",
@@ -986,6 +1051,7 @@
       "cssVar": "--line-height-fixed-80",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "80px",
       "resolved": {
         "base-light": "80px",
@@ -1001,6 +1067,7 @@
       "cssVar": "--border-radius-none",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "0px",
       "resolved": {
         "base-light": "0px",
@@ -1016,6 +1083,7 @@
       "cssVar": "--border-radius-sm",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "4px",
       "resolved": {
         "base-light": "4px",
@@ -1031,6 +1099,7 @@
       "cssVar": "--border-radius-md",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "8px",
       "resolved": {
         "base-light": "8px",
@@ -1046,6 +1115,7 @@
       "cssVar": "--border-radius-lg",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "16px",
       "resolved": {
         "base-light": "16px",
@@ -1061,6 +1131,7 @@
       "cssVar": "--border-radius-xl",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "20px",
       "resolved": {
         "base-light": "20px",
@@ -1076,6 +1147,7 @@
       "cssVar": "--border-radius-full",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "9999px",
       "resolved": {
         "base-light": "9999px",
@@ -1091,6 +1163,7 @@
       "cssVar": "--duration-instant",
       "type": "duration",
       "category": "primitive",
+      "description": null,
       "rawValue": "0ms",
       "resolved": {
         "base-light": "0ms",
@@ -1106,6 +1179,7 @@
       "cssVar": "--duration-fast",
       "type": "duration",
       "category": "primitive",
+      "description": null,
       "rawValue": "100ms",
       "resolved": {
         "base-light": "100ms",
@@ -1121,6 +1195,7 @@
       "cssVar": "--duration-base",
       "type": "duration",
       "category": "primitive",
+      "description": null,
       "rawValue": "200ms",
       "resolved": {
         "base-light": "200ms",
@@ -1136,6 +1211,7 @@
       "cssVar": "--duration-slow",
       "type": "duration",
       "category": "primitive",
+      "description": null,
       "rawValue": "400ms",
       "resolved": {
         "base-light": "400ms",
@@ -1151,6 +1227,7 @@
       "cssVar": "--duration-expand",
       "type": "duration",
       "category": "primitive",
+      "description": null,
       "rawValue": "650ms",
       "resolved": {
         "base-light": "650ms",
@@ -1166,6 +1243,7 @@
       "cssVar": "--duration-collapse",
       "type": "duration",
       "category": "primitive",
+      "description": null,
       "rawValue": "200ms",
       "resolved": {
         "base-light": "200ms",
@@ -1181,6 +1259,7 @@
       "cssVar": "--easing-default",
       "type": "cubicBezier",
       "category": "primitive",
+      "description": null,
       "rawValue": "cubic-bezier(0.4, 0, 0.2, 1)",
       "resolved": {
         "base-light": "cubic-bezier(0.4, 0, 0.2, 1)",
@@ -1196,6 +1275,7 @@
       "cssVar": "--easing-in",
       "type": "cubicBezier",
       "category": "primitive",
+      "description": null,
       "rawValue": "cubic-bezier(0.4, 0, 1, 1)",
       "resolved": {
         "base-light": "cubic-bezier(0.4, 0, 1, 1)",
@@ -1211,6 +1291,7 @@
       "cssVar": "--easing-out",
       "type": "cubicBezier",
       "category": "primitive",
+      "description": null,
       "rawValue": "cubic-bezier(0, 0, 0.2, 1)",
       "resolved": {
         "base-light": "cubic-bezier(0, 0, 0.2, 1)",
@@ -1226,6 +1307,7 @@
       "cssVar": "--opacity-subtle",
       "type": "number",
       "category": "primitive",
+      "description": null,
       "rawValue": "0.05",
       "resolved": {
         "base-light": "0.05",
@@ -1241,6 +1323,7 @@
       "cssVar": "--opacity-low",
       "type": "number",
       "category": "primitive",
+      "description": null,
       "rawValue": "0.1",
       "resolved": {
         "base-light": "0.1",
@@ -1256,6 +1339,7 @@
       "cssVar": "--opacity-medium",
       "type": "number",
       "category": "primitive",
+      "description": null,
       "rawValue": "0.3",
       "resolved": {
         "base-light": "0.3",
@@ -1271,6 +1355,7 @@
       "cssVar": "--opacity-high",
       "type": "number",
       "category": "primitive",
+      "description": null,
       "rawValue": "0.7",
       "resolved": {
         "base-light": "0.7",
@@ -1286,6 +1371,7 @@
       "cssVar": "--feedback-error-50",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#FEF2F2",
       "resolved": {
         "base-light": "#FEF2F2",
@@ -1301,6 +1387,7 @@
       "cssVar": "--feedback-error-400",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#e05c4b",
       "resolved": {
         "base-light": "#e05c4b",
@@ -1316,6 +1403,7 @@
       "cssVar": "--feedback-error-500",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#c0392b",
       "resolved": {
         "base-light": "#c0392b",
@@ -1331,6 +1419,7 @@
       "cssVar": "--feedback-error-600",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#a93226",
       "resolved": {
         "base-light": "#a93226",
@@ -1346,6 +1435,7 @@
       "cssVar": "--feedback-success-50",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#F0FDF4",
       "resolved": {
         "base-light": "#F0FDF4",
@@ -1361,6 +1451,7 @@
       "cssVar": "--feedback-success-500",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#16A34A",
       "resolved": {
         "base-light": "#16A34A",
@@ -1376,6 +1467,7 @@
       "cssVar": "--feedback-success-600",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#15803D",
       "resolved": {
         "base-light": "#15803D",
@@ -1391,6 +1483,7 @@
       "cssVar": "--feedback-warning-50",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#FFFBEB",
       "resolved": {
         "base-light": "#FFFBEB",
@@ -1406,6 +1499,7 @@
       "cssVar": "--feedback-warning-500",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#D97706",
       "resolved": {
         "base-light": "#D97706",
@@ -1421,6 +1515,7 @@
       "cssVar": "--feedback-warning-600",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#B45309",
       "resolved": {
         "base-light": "#B45309",
@@ -1436,6 +1531,7 @@
       "cssVar": "--feedback-info-50",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#EFF6FF",
       "resolved": {
         "base-light": "#EFF6FF",
@@ -1451,6 +1547,7 @@
       "cssVar": "--feedback-info-500",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#2563EB",
       "resolved": {
         "base-light": "#2563EB",
@@ -1466,6 +1563,7 @@
       "cssVar": "--feedback-info-600",
       "type": "color",
       "category": "primitive",
+      "description": null,
       "rawValue": "#1D4ED8",
       "resolved": {
         "base-light": "#1D4ED8",
@@ -1481,6 +1579,7 @@
       "cssVar": "--shadow-none",
       "type": "shadow",
       "category": "primitive",
+      "description": null,
       "rawValue": "none",
       "resolved": {
         "base-light": "none",
@@ -1496,6 +1595,7 @@
       "cssVar": "--shadow-xs",
       "type": "shadow",
       "category": "primitive",
+      "description": null,
       "rawValue": "0 1px 2px 0 rgba(0,0,0,0.05)",
       "resolved": {
         "base-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
@@ -1511,6 +1611,7 @@
       "cssVar": "--shadow-sm",
       "type": "shadow",
       "category": "primitive",
+      "description": null,
       "rawValue": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
       "resolved": {
         "base-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
@@ -1526,6 +1627,7 @@
       "cssVar": "--shadow-md",
       "type": "shadow",
       "category": "primitive",
+      "description": null,
       "rawValue": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
       "resolved": {
         "base-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
@@ -1541,6 +1643,7 @@
       "cssVar": "--shadow-lg",
       "type": "shadow",
       "category": "primitive",
+      "description": null,
       "rawValue": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
       "resolved": {
         "base-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
@@ -1556,6 +1659,7 @@
       "cssVar": "--icon-size-xs",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "12px",
       "resolved": {
         "base-light": "12px",
@@ -1571,6 +1675,7 @@
       "cssVar": "--icon-size-sm",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "16px",
       "resolved": {
         "base-light": "16px",
@@ -1586,6 +1691,7 @@
       "cssVar": "--icon-size-md",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "20px",
       "resolved": {
         "base-light": "20px",
@@ -1601,6 +1707,7 @@
       "cssVar": "--icon-size-lg",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "24px",
       "resolved": {
         "base-light": "24px",
@@ -1616,6 +1723,7 @@
       "cssVar": "--icon-size-xl",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "32px",
       "resolved": {
         "base-light": "32px",
@@ -1631,6 +1739,7 @@
       "cssVar": "--border-width-thin",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "1px",
       "resolved": {
         "base-light": "1px",
@@ -1646,6 +1755,7 @@
       "cssVar": "--border-width-medium",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "2px",
       "resolved": {
         "base-light": "2px",
@@ -1661,6 +1771,7 @@
       "cssVar": "--border-width-thick",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "4px",
       "resolved": {
         "base-light": "4px",
@@ -1676,6 +1787,7 @@
       "cssVar": "--size-icon-interactive",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "28px",
       "resolved": {
         "base-light": "28px",
@@ -1691,6 +1803,7 @@
       "cssVar": "--size-touch-target",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "44px",
       "resolved": {
         "base-light": "44px",
@@ -1706,6 +1819,7 @@
       "cssVar": "--size-dialog-sm",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "480px",
       "resolved": {
         "base-light": "480px",
@@ -1721,6 +1835,7 @@
       "cssVar": "--size-dialog-md",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "560px",
       "resolved": {
         "base-light": "560px",
@@ -1736,6 +1851,7 @@
       "cssVar": "--size-dialog-lg",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "720px",
       "resolved": {
         "base-light": "720px",
@@ -1751,6 +1867,7 @@
       "cssVar": "--size-layout-md",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "1024px",
       "resolved": {
         "base-light": "1024px",
@@ -1766,6 +1883,7 @@
       "cssVar": "--size-layout-lg",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "1200px",
       "resolved": {
         "base-light": "1200px",
@@ -1781,6 +1899,7 @@
       "cssVar": "--size-layout-xl",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "1440px",
       "resolved": {
         "base-light": "1440px",
@@ -1796,6 +1915,7 @@
       "cssVar": "--size-container-45",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "45rem",
       "resolved": {
         "base-light": "45rem",
@@ -1811,6 +1931,7 @@
       "cssVar": "--size-container-60",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "60rem",
       "resolved": {
         "base-light": "60rem",
@@ -1826,6 +1947,7 @@
       "cssVar": "--size-container-80",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "80rem",
       "resolved": {
         "base-light": "80rem",
@@ -1841,6 +1963,7 @@
       "cssVar": "--size-container-90",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "90rem",
       "resolved": {
         "base-light": "90rem",
@@ -1856,6 +1979,7 @@
       "cssVar": "--size-container-viewport-90",
       "type": "dimension",
       "category": "primitive",
+      "description": null,
       "rawValue": "90vw",
       "resolved": {
         "base-light": "90vw",
@@ -1871,6 +1995,7 @@
       "cssVar": "--breakpoint-tablet",
       "type": "dimension",
       "category": "primitive",
+      "description": "Viewport width where tablet layouts start. Below it is mobile. Write the literal value in @media, mobile-first min-width only: @media (min-width: 768px). Custom properties can't be read inside @media; no-unknown-breakpoint checks the literal against this token. JS: lib/breakpoints.ts. See decisions/0018.",
       "rawValue": "768px",
       "resolved": {
         "base-light": "768px",
@@ -1886,6 +2011,7 @@
       "cssVar": "--breakpoint-desktop",
       "type": "dimension",
       "category": "primitive",
+      "description": "Viewport width where desktop layouts start: the header/side-nav switch (NavigationMenu, SideNav) and the site container tier. Write the literal value in @media, min-width only: @media (min-width: 1024px). JS: lib/breakpoints.ts. See decisions/0018.",
       "rawValue": "1024px",
       "resolved": {
         "base-light": "1024px",
@@ -1901,6 +2027,7 @@
       "cssVar": "--color-neutral-50",
       "type": "color",
       "category": "color",
+      "description": "Lightest step of the neutral ramp in light mode, darkest in dark mode. The page background resolves here.",
       "rawValue": "{color.warm-50}",
       "resolved": {
         "base-light": "#FAFAFA",
@@ -1916,6 +2043,7 @@
       "cssVar": "--color-neutral-100",
       "type": "color",
       "category": "color",
+      "description": "Second step of the neutral ramp. Secondary surfaces and skeleton highlights resolve here.",
       "rawValue": "{color.warm-100}",
       "resolved": {
         "base-light": "#F5F5F5",
@@ -1931,6 +2059,7 @@
       "cssVar": "--color-neutral-200",
       "type": "color",
       "category": "color",
+      "description": "Third step of the neutral ramp. Default borders, tertiary surfaces and the skeleton base resolve here.",
       "rawValue": "{color.warm-200}",
       "resolved": {
         "base-light": "#E5E5E5",
@@ -1946,6 +2075,7 @@
       "cssVar": "--color-neutral-300",
       "type": "color",
       "category": "color",
+      "description": "Fourth step of the neutral ramp. The route-transition curtain resolves here.",
       "rawValue": "{color.warm-300}",
       "resolved": {
         "base-light": "#D4D4D4",
@@ -1961,6 +2091,7 @@
       "cssVar": "--color-neutral-400",
       "type": "color",
       "category": "color",
+      "description": "Fifth step of the neutral ramp. Strong borders on form controls resolve here.",
       "rawValue": "{color.warm-400}",
       "resolved": {
         "base-light": "#A3A3A3",
@@ -1976,6 +2107,7 @@
       "cssVar": "--color-neutral-500",
       "type": "color",
       "category": "color",
+      "description": "Middle of the neutral ramp.",
       "rawValue": "{color.warm-500}",
       "resolved": {
         "base-light": "#737373",
@@ -1991,6 +2123,7 @@
       "cssVar": "--color-neutral-600",
       "type": "color",
       "category": "color",
+      "description": "Seventh step of the neutral ramp. Secondary text resolves here.",
       "rawValue": "{color.warm-600}",
       "resolved": {
         "base-light": "#525252",
@@ -2006,6 +2139,7 @@
       "cssVar": "--color-neutral-700",
       "type": "color",
       "category": "color",
+      "description": "Eighth step of the neutral ramp.",
       "rawValue": "{color.warm-700}",
       "resolved": {
         "base-light": "#404040",
@@ -2021,6 +2155,7 @@
       "cssVar": "--color-neutral-800",
       "type": "color",
       "category": "color",
+      "description": "Ninth step of the neutral ramp. The base accent resolves here.",
       "rawValue": "{color.warm-800}",
       "resolved": {
         "base-light": "#262626",
@@ -2036,6 +2171,7 @@
       "cssVar": "--color-neutral-900",
       "type": "color",
       "category": "color",
+      "description": "Strongest step of the neutral ramp: near-black in light mode, near-white in dark. Inverse surfaces resolve here.",
       "rawValue": "{color.warm-900}",
       "resolved": {
         "base-light": "#171717",
@@ -2051,6 +2187,7 @@
       "cssVar": "--color-surface-primary",
       "type": "color",
       "category": "color",
+      "description": "The page background, and containers that sit flat on it: cards, dialogs, drawers, menus, form fields.",
       "rawValue": "{color-neutral-50}",
       "resolved": {
         "base-light": "#FAFAFA",
@@ -2079,6 +2216,7 @@
       "cssVar": "--color-surface-secondary",
       "type": "color",
       "category": "color",
+      "description": "A second surface layer: hover and selected fills on tabs, nav items, pagination and accordion triggers.",
       "rawValue": "{color-neutral-100}",
       "resolved": {
         "base-light": "#F5F5F5",
@@ -2112,6 +2250,7 @@
       "cssVar": "--color-surface-tertiary",
       "type": "color",
       "category": "color",
+      "description": "A third surface layer, for contrast against the secondary one. Switch tracks use it.",
       "rawValue": "{color-neutral-200}",
       "resolved": {
         "base-light": "#E5E5E5",
@@ -2132,6 +2271,7 @@
       "cssVar": "--color-surface-inverse",
       "type": "color",
       "category": "color",
+      "description": "Background for dark-on-light moments, such as tooltips. Flips with the mode.",
       "rawValue": "{color-neutral-900}",
       "resolved": {
         "base-light": "#171717",
@@ -2149,6 +2289,7 @@
       "cssVar": "--color-text-primary",
       "type": "color",
       "category": "color",
+      "description": "Body copy and headings.",
       "rawValue": "{color.black}",
       "resolved": {
         "base-light": "#0A0A0A",
@@ -2186,6 +2327,7 @@
       "cssVar": "--color-text-secondary",
       "type": "color",
       "category": "color",
+      "description": "Supporting text: hints, captions, metadata, inactive tabs.",
       "rawValue": "{color-neutral-600}",
       "resolved": {
         "base-light": "#525252",
@@ -2227,6 +2369,7 @@
       "cssVar": "--color-text-inverse",
       "type": "color",
       "category": "color",
+      "description": "Text on color-surface-inverse.",
       "rawValue": "{color-neutral-50}",
       "resolved": {
         "base-light": "#FAFAFA",
@@ -2244,6 +2387,7 @@
       "cssVar": "--color-accent-default",
       "type": "color",
       "category": "color",
+      "description": "Primary actions and selected states: filled buttons, checked controls, the active tab. Near-black in base; a brand puts its own colour here.",
       "rawValue": "{color-neutral-800}",
       "resolved": {
         "base-light": "#262626",
@@ -2271,6 +2415,7 @@
       "cssVar": "--color-accent-hover",
       "type": "color",
       "category": "color",
+      "description": "Hover state of color-accent-default.",
       "rawValue": "{color-neutral-900}",
       "resolved": {
         "base-light": "#171717",
@@ -2289,6 +2434,7 @@
       "cssVar": "--color-accent-foreground",
       "type": "color",
       "category": "color",
+      "description": "Text and icons on an accent fill.",
       "rawValue": "{color.white}",
       "resolved": {
         "base-light": "#FFFFFF",
@@ -2311,6 +2457,7 @@
       "cssVar": "--color-border-default",
       "type": "color",
       "category": "color",
+      "description": "Dividers and the outlines of cards, tables, menus and fields.",
       "rawValue": "{color-neutral-200}",
       "resolved": {
         "base-light": "#E5E5E5",
@@ -2344,6 +2491,7 @@
       "cssVar": "--color-border-strong",
       "type": "color",
       "category": "color",
+      "description": "Outlines that must read as interactive: form fields, checkboxes, radios, switches.",
       "rawValue": "{color-neutral-400}",
       "resolved": {
         "base-light": "#A3A3A3",
@@ -2367,6 +2515,7 @@
       "cssVar": "--color-border-focus",
       "type": "color",
       "category": "color",
+      "description": "The focus ring. Pairs with focus-ring-width and focus-ring-offset.",
       "rawValue": "{color.black}",
       "resolved": {
         "base-light": "#0A0A0A",
@@ -2406,6 +2555,7 @@
       "cssVar": "--color-curtain",
       "type": "color",
       "category": "color",
+      "description": "Fill of the full-screen curtain shown during route transitions.",
       "rawValue": "{color-neutral-300}",
       "resolved": {
         "base-light": "#D4D4D4",
@@ -2421,6 +2571,7 @@
       "cssVar": "--color-feedback-error",
       "type": "color",
       "category": "color",
+      "description": "Error text, icons and borders on the page background: invalid fields, destructive menu items.",
       "rawValue": "{feedback.error-500}",
       "resolved": {
         "base-light": "#c0392b",
@@ -2441,6 +2592,7 @@
       "cssVar": "--color-feedback-error-background",
       "type": "color",
       "category": "color",
+      "description": "Background of an error Alert or Badge.",
       "rawValue": "{feedback.error-50}",
       "resolved": {
         "base-light": "#FEF2F2",
@@ -2460,6 +2612,7 @@
       "cssVar": "--color-feedback-error-foreground",
       "type": "color",
       "category": "color",
+      "description": "Text and icons inside an error Alert, Toast or Badge.",
       "rawValue": "{feedback.error-600}",
       "resolved": {
         "base-light": "#a93226",
@@ -2479,6 +2632,7 @@
       "cssVar": "--color-feedback-error-border",
       "type": "color",
       "category": "color",
+      "description": "Border and accent stripe of an error Alert, Toast or Badge.",
       "rawValue": "{feedback.error-500}",
       "resolved": {
         "base-light": "#c0392b",
@@ -2498,6 +2652,7 @@
       "cssVar": "--color-feedback-success-background",
       "type": "color",
       "category": "color",
+      "description": "Background of a success Alert or Badge.",
       "rawValue": "{feedback.success.50}",
       "resolved": {
         "base-light": "#F0FDF4",
@@ -2516,6 +2671,7 @@
       "cssVar": "--color-feedback-success-foreground",
       "type": "color",
       "category": "color",
+      "description": "Text and icons inside a success Alert, Toast or Badge.",
       "rawValue": "{feedback.success.600}",
       "resolved": {
         "base-light": "#15803D",
@@ -2535,6 +2691,7 @@
       "cssVar": "--color-feedback-success-border",
       "type": "color",
       "category": "color",
+      "description": "Border and accent stripe of a success Alert, Toast or Badge.",
       "rawValue": "{feedback.success.500}",
       "resolved": {
         "base-light": "#16A34A",
@@ -2554,6 +2711,7 @@
       "cssVar": "--color-feedback-warning-background",
       "type": "color",
       "category": "color",
+      "description": "Background of a warning Alert or Badge.",
       "rawValue": "{feedback.warning.50}",
       "resolved": {
         "base-light": "#FFFBEB",
@@ -2572,6 +2730,7 @@
       "cssVar": "--color-feedback-warning-foreground",
       "type": "color",
       "category": "color",
+      "description": "Text and icons inside a warning Alert, Toast or Badge.",
       "rawValue": "{feedback.warning.600}",
       "resolved": {
         "base-light": "#B45309",
@@ -2591,6 +2750,7 @@
       "cssVar": "--color-feedback-warning-border",
       "type": "color",
       "category": "color",
+      "description": "Border and accent stripe of a warning Alert, Toast or Badge.",
       "rawValue": "{feedback.warning.500}",
       "resolved": {
         "base-light": "#D97706",
@@ -2610,6 +2770,7 @@
       "cssVar": "--color-feedback-info-background",
       "type": "color",
       "category": "color",
+      "description": "Background of an info Alert or Badge.",
       "rawValue": "{feedback.info.50}",
       "resolved": {
         "base-light": "#EFF6FF",
@@ -2628,6 +2789,7 @@
       "cssVar": "--color-feedback-info-foreground",
       "type": "color",
       "category": "color",
+      "description": "Text and icons inside an info Alert, Toast or Badge.",
       "rawValue": "{feedback.info.600}",
       "resolved": {
         "base-light": "#1D4ED8",
@@ -2647,6 +2809,7 @@
       "cssVar": "--color-feedback-info-border",
       "type": "color",
       "category": "color",
+      "description": "Border and accent stripe of an info Alert, Toast or Badge.",
       "rawValue": "{feedback.info.500}",
       "resolved": {
         "base-light": "#2563EB",
@@ -2666,6 +2829,7 @@
       "cssVar": "--color-skeleton-base",
       "type": "color",
       "category": "color",
+      "description": "Resting colour of a loading Skeleton.",
       "rawValue": "{color-neutral-200}",
       "resolved": {
         "base-light": "#E5E5E5",
@@ -2683,6 +2847,7 @@
       "cssVar": "--color-skeleton-highlight",
       "type": "color",
       "category": "color",
+      "description": "The colour a loading Skeleton pulses towards.",
       "rawValue": "{color-neutral-100}",
       "resolved": {
         "base-light": "#F5F5F5",
@@ -2700,6 +2865,7 @@
       "cssVar": "--duration-skeleton",
       "type": "duration",
       "category": "motion",
+      "description": "Length of one Skeleton pulse.",
       "rawValue": "{duration.slow}",
       "resolved": {
         "base-light": "400ms",
@@ -2717,6 +2883,7 @@
       "cssVar": "--focus-ring-width",
       "type": "dimension",
       "category": "size",
+      "description": "Thickness of the focus ring.",
       "rawValue": "{border-width.medium}",
       "resolved": {
         "base-light": "2px",
@@ -2755,6 +2922,7 @@
       "cssVar": "--focus-ring-offset",
       "type": "dimension",
       "category": "size",
+      "description": "Gap between an element and its focus ring.",
       "rawValue": "{space.1}",
       "resolved": {
         "base-light": "4px",
@@ -2794,6 +2962,7 @@
       "cssVar": "--shadow-card",
       "type": "shadow",
       "category": "shadow",
+      "description": null,
       "rawValue": "{shadow.xs}",
       "resolved": {
         "base-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
@@ -2809,6 +2978,7 @@
       "cssVar": "--shadow-card-hover",
       "type": "shadow",
       "category": "shadow",
+      "description": "Shadow a clickable Card lifts to on hover.",
       "rawValue": "{shadow.sm}",
       "resolved": {
         "base-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
@@ -2826,6 +2996,7 @@
       "cssVar": "--shadow-dropdown",
       "type": "shadow",
       "category": "shadow",
+      "description": "Shadow under floating lists: Menu, NavigationMenu dropdowns, Select.",
       "rawValue": "{shadow.md}",
       "resolved": {
         "base-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
@@ -2845,6 +3016,7 @@
       "cssVar": "--shadow-dialog",
       "type": "shadow",
       "category": "shadow",
+      "description": "Shadow on overlay panels. Drawer uses it.",
       "rawValue": "{shadow.md}",
       "resolved": {
         "base-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
@@ -2862,6 +3034,7 @@
       "cssVar": "--shadow-toast",
       "type": "shadow",
       "category": "shadow",
+      "description": "Shadow under Toasts and Tooltips, which float above everything else.",
       "rawValue": "{shadow.lg}",
       "resolved": {
         "base-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
@@ -2880,6 +3053,7 @@
       "cssVar": "--z-sticky",
       "type": "number",
       "category": "elevation",
+      "description": null,
       "rawValue": "100",
       "resolved": {
         "base-light": "100",
@@ -2895,6 +3069,7 @@
       "cssVar": "--z-dropdown",
       "type": "number",
       "category": "elevation",
+      "description": "Stacking level for NavigationMenu's dropdown, above page content.",
       "rawValue": "200",
       "resolved": {
         "base-light": "200",
@@ -2912,6 +3087,7 @@
       "cssVar": "--z-overlay",
       "type": "number",
       "category": "elevation",
+      "description": null,
       "rawValue": "300",
       "resolved": {
         "base-light": "300",
@@ -2927,6 +3103,7 @@
       "cssVar": "--z-modal",
       "type": "number",
       "category": "elevation",
+      "description": null,
       "rawValue": "400",
       "resolved": {
         "base-light": "400",
@@ -2942,6 +3119,7 @@
       "cssVar": "--z-toast",
       "type": "number",
       "category": "elevation",
+      "description": "Stacking level for the Toast viewport, above dialogs.",
       "rawValue": "500",
       "resolved": {
         "base-light": "500",
@@ -2959,6 +3137,7 @@
       "cssVar": "--z-tooltip",
       "type": "number",
       "category": "elevation",
+      "description": "Stacking level for Tooltips, the top of the normal stack.",
       "rawValue": "600",
       "resolved": {
         "base-light": "600",
@@ -2976,6 +3155,7 @@
       "cssVar": "--z-skip-link",
       "type": "number",
       "category": "elevation",
+      "description": "SkipLink only: one step above everything else. The one justified explicit z-index after decisions/0007 — a skip link isn't portalled, so mount order can't lift it, and it must sit above every other layer the moment it's focused.",
       "rawValue": "700",
       "resolved": {
         "base-light": "700",
@@ -2993,6 +3173,7 @@
       "cssVar": "--size-icon-xs",
       "type": "dimension",
       "category": "size",
+      "description": "12px icon, such as Link's external-link arrow.",
       "rawValue": "{icon-size.xs}",
       "resolved": {
         "base-light": "12px",
@@ -3010,6 +3191,7 @@
       "cssVar": "--size-icon-sm",
       "type": "dimension",
       "category": "size",
+      "description": "16px icon, inline with control text: menu items, nav chevrons, the small Spinner.",
       "rawValue": "{icon-size.sm}",
       "resolved": {
         "base-light": "16px",
@@ -3030,6 +3212,7 @@
       "cssVar": "--size-icon-md",
       "type": "dimension",
       "category": "size",
+      "description": "20px icon: Alert and Toast status icons, the Accordion chevron, the default Spinner.",
       "rawValue": "{icon-size.md}",
       "resolved": {
         "base-light": "20px",
@@ -3050,6 +3233,7 @@
       "cssVar": "--size-icon-lg",
       "type": "dimension",
       "category": "size",
+      "description": "24px icon: the large Spinner.",
       "rawValue": "{icon-size.lg}",
       "resolved": {
         "base-light": "24px",
@@ -3067,6 +3251,7 @@
       "cssVar": "--size-icon-xl",
       "type": "dimension",
       "category": "size",
+      "description": "32px icon, for standalone icons such as footer links.",
       "rawValue": "{icon-size.xl}",
       "resolved": {
         "base-light": "32px",
@@ -3082,6 +3267,7 @@
       "cssVar": "--duration-spin",
       "type": "duration",
       "category": "motion",
+      "description": "One full turn of the Spinner.",
       "rawValue": "700ms",
       "resolved": {
         "base-light": "700ms",
@@ -3099,6 +3285,7 @@
       "cssVar": "--font-family-base",
       "type": "fontFamily",
       "category": "typography",
+      "description": "Typeface for body text and controls. A system stack in base; a brand sets its own.",
       "rawValue": "'Schibsted Grotesk', sans-serif",
       "resolved": {
         "base-light": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
@@ -3141,6 +3328,7 @@
       "cssVar": "--font-family-heading",
       "type": "fontFamily",
       "category": "typography",
+      "description": "Typeface for headings. A system stack in base; a brand sets its own.",
       "rawValue": "'Schibsted Grotesk', sans-serif",
       "resolved": {
         "base-light": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
@@ -3160,6 +3348,7 @@
       "cssVar": "--font-family-mono",
       "type": "fontFamily",
       "category": "typography",
+      "description": "Typeface for code: JetBrains Mono.",
       "rawValue": "'JetBrains Mono', monospace",
       "resolved": {
         "base-light": "'JetBrains Mono', monospace",
@@ -3175,6 +3364,7 @@
       "cssVar": "--font-size-body",
       "type": "dimension",
       "category": "typography",
+      "description": "Running text: 18px.",
       "rawValue": "{font-size.md}",
       "resolved": {
         "base-light": "18px",
@@ -3194,6 +3384,7 @@
       "cssVar": "--font-size-control",
       "type": "dimension",
       "category": "typography",
+      "description": "Default text size for form controls and interactive components (inputs, buttons, tabs). Distinct from font-size-body (prose). See decisions/0004.",
       "rawValue": "{font-size.base}",
       "resolved": {
         "base-light": "16px",
@@ -3226,6 +3417,7 @@
       "cssVar": "--font-size-small",
       "type": "dimension",
       "category": "typography",
+      "description": "14px text: wrapping secondary text (pairs with line-height-small) and single-line form-field labels (pair with line-height-label). font-size-label merged into this role — see decisions/0013.",
       "rawValue": "{font-size.sm}",
       "resolved": {
         "base-light": "14px",
@@ -3250,6 +3442,7 @@
       "cssVar": "--font-size-caption",
       "type": "dimension",
       "category": "typography",
+      "description": "12px supporting text: hints, tooltips, table headers and captions, badges, tags, and consumer-side eyebrows or metadata. Pairs with line-height-caption — see decisions/0012.",
       "rawValue": "{font-size.xs}",
       "resolved": {
         "base-light": "12px",
@@ -3272,6 +3465,7 @@
       "cssVar": "--font-size-h1",
       "type": "dimension",
       "category": "typography",
+      "description": "Static H1 size: 64px. Pairs with line-height-h1.",
       "rawValue": "{font-size.3xl}",
       "resolved": {
         "base-light": "64px",
@@ -3287,6 +3481,7 @@
       "cssVar": "--font-size-display",
       "type": "dimension",
       "category": "typography",
+      "description": null,
       "rawValue": "clamp(2rem, 0.75rem + 5vw, 5rem)",
       "resolved": {
         "base-light": "clamp(2rem, 0.75rem + 5vw, 5rem)",
@@ -3302,6 +3497,7 @@
       "cssVar": "--font-size-h1-fluid",
       "type": "dimension",
       "category": "typography",
+      "description": "H1 that scales with the viewport, from 28px to 64px.",
       "rawValue": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
       "resolved": {
         "base-light": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
@@ -3320,6 +3516,7 @@
       "cssVar": "--font-size-h2",
       "type": "dimension",
       "category": "typography",
+      "description": "Static H2 size: 48px. Pairs with line-height-h2.",
       "rawValue": "{font-size.2xl}",
       "resolved": {
         "base-light": "48px",
@@ -3335,6 +3532,7 @@
       "cssVar": "--font-size-h2-fluid",
       "type": "dimension",
       "category": "typography",
+      "description": "H2 that scales with the viewport, from 26px to 48px.",
       "rawValue": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
       "resolved": {
         "base-light": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
@@ -3352,6 +3550,7 @@
       "cssVar": "--font-size-h3",
       "type": "dimension",
       "category": "typography",
+      "description": "Static H3 size: 32px. Pairs with line-height-h3.",
       "rawValue": "{font-size.xl}",
       "resolved": {
         "base-light": "32px",
@@ -3367,6 +3566,7 @@
       "cssVar": "--font-size-h3-fluid",
       "type": "dimension",
       "category": "typography",
+      "description": "H3 that scales with the viewport, from 24px to 40px.",
       "rawValue": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
       "resolved": {
         "base-light": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
@@ -3384,6 +3584,7 @@
       "cssVar": "--font-size-h4",
       "type": "dimension",
       "category": "typography",
+      "description": "H4 size: 24px. Pairs with line-height-h4.",
       "rawValue": "{font-size.lg}",
       "resolved": {
         "base-light": "24px",
@@ -3402,6 +3603,7 @@
       "cssVar": "--font-size-h5",
       "type": "dimension",
       "category": "typography",
+      "description": "Static (not fluid) by design — see decisions/0008. Pairs with its own fixed line-height role (decisions/0012) and letter-spacing-heading.",
       "rawValue": "{font-size.emphasis}",
       "resolved": {
         "base-light": "20px",
@@ -3420,6 +3622,7 @@
       "cssVar": "--font-weight-body",
       "type": "fontWeight",
       "category": "typography",
+      "description": "Weight for running text.",
       "rawValue": "{font-weight.regular}",
       "resolved": {
         "base-light": "400",
@@ -3435,6 +3638,7 @@
       "cssVar": "--font-weight-heading",
       "type": "fontWeight",
       "category": "typography",
+      "description": "Weight for headings.",
       "rawValue": "{font-weight.semibold}",
       "resolved": {
         "base-light": "600",
@@ -3452,6 +3656,7 @@
       "cssVar": "--font-weight-label",
       "type": "fontWeight",
       "category": "typography",
+      "description": "Weight for form-field labels (input, select, textarea, standalone Label). Corrected from semibold to medium, Sep 2026 — the role existed but was set to the wrong value and unused by any label component. See decisions/0004.",
       "rawValue": "{font-weight.medium}",
       "resolved": {
         "base-light": "500",
@@ -3476,6 +3681,7 @@
       "cssVar": "--font-weight-display",
       "type": "fontWeight",
       "category": "typography",
+      "description": "Weight for large display text, such as a page's opening headline.",
       "rawValue": "{font-weight.semibold}",
       "resolved": {
         "base-light": "600",
@@ -3491,6 +3697,7 @@
       "cssVar": "--font-weight-title",
       "type": "fontWeight",
       "category": "typography",
+      "description": "Title weight for card/dialog/drawer-style container headers. See decisions/0004.",
       "rawValue": "{font-weight.bold}",
       "resolved": {
         "base-light": "700",
@@ -3509,6 +3716,7 @@
       "cssVar": "--font-weight-control",
       "type": "fontWeight",
       "category": "typography",
+      "description": "Default text weight for interactive controls (button, tabs trigger, accordion trigger). Pairs with font-size-control. See decisions/0004.",
       "rawValue": "{font-weight.medium}",
       "resolved": {
         "base-light": "500",
@@ -3528,6 +3736,7 @@
       "cssVar": "--line-height-display",
       "type": "number",
       "category": "typography",
+      "description": "Line height for fluid H1 and display text, where a fixed px value would break the scaling.",
       "rawValue": "{line-height.tighter}",
       "resolved": {
         "base-light": "1.125",
@@ -3546,6 +3755,7 @@
       "cssVar": "--line-height-body",
       "type": "dimension",
       "category": "typography",
+      "description": "Strict-4px-grid line-height for font-size-body (18px). Redefined from unitless 1.5 to a fixed 4px-grid value — see decisions/0012.",
       "rawValue": "{line-height.fixed-28}",
       "resolved": {
         "base-light": "28px",
@@ -3566,6 +3776,7 @@
       "cssVar": "--line-height-control",
       "type": "dimension",
       "category": "typography",
+      "description": "Strict-4px-grid line-height for font-size-control (16px) — see decisions/0012.",
       "rawValue": "{line-height.fixed-24}",
       "resolved": {
         "base-light": "24px",
@@ -3595,6 +3806,7 @@
       "cssVar": "--line-height-small",
       "type": "dimension",
       "category": "typography",
+      "description": "Strict-4px-grid line-height for font-size-small (14px) — see decisions/0012.",
       "rawValue": "{line-height.fixed-20}",
       "resolved": {
         "base-light": "20px",
@@ -3616,6 +3828,7 @@
       "cssVar": "--line-height-caption",
       "type": "dimension",
       "category": "typography",
+      "description": "Strict-4px-grid line-height for font-size-caption (12px) — see decisions/0012.",
       "rawValue": "{line-height.fixed-16}",
       "resolved": {
         "base-light": "16px",
@@ -3636,6 +3849,7 @@
       "cssVar": "--line-height-h1",
       "type": "dimension",
       "category": "typography",
+      "description": "Strict-4px-grid line-height for font-size-h1 (64px, static) — see decisions/0012. The fluid font-size-h1-fluid keeps line-height-display.",
       "rawValue": "{line-height.fixed-80}",
       "resolved": {
         "base-light": "80px",
@@ -3651,6 +3865,7 @@
       "cssVar": "--line-height-h2",
       "type": "dimension",
       "category": "typography",
+      "description": "Strict-4px-grid line-height for font-size-h2 (48px, static) — see decisions/0012. The fluid font-size-h2-fluid keeps line-height-heading.",
       "rawValue": "{line-height.fixed-60}",
       "resolved": {
         "base-light": "60px",
@@ -3666,6 +3881,7 @@
       "cssVar": "--line-height-h3",
       "type": "dimension",
       "category": "typography",
+      "description": "Strict-4px-grid line-height for font-size-h3 (32px, static) — see decisions/0012. The fluid font-size-h3-fluid keeps line-height-heading.",
       "rawValue": "{line-height.fixed-40}",
       "resolved": {
         "base-light": "40px",
@@ -3681,6 +3897,7 @@
       "cssVar": "--line-height-h4",
       "type": "dimension",
       "category": "typography",
+      "description": "Strict-4px-grid line-height for font-size-h4 (24px) — see decisions/0012.",
       "rawValue": "{line-height.fixed-32}",
       "resolved": {
         "base-light": "32px",
@@ -3699,6 +3916,7 @@
       "cssVar": "--line-height-h5",
       "type": "dimension",
       "category": "typography",
+      "description": "Strict-4px-grid line-height for font-size-h5 (20px) — see decisions/0012.",
       "rawValue": "{line-height.fixed-24}",
       "resolved": {
         "base-light": "24px",
@@ -3717,6 +3935,7 @@
       "cssVar": "--line-height-heading",
       "type": "number",
       "category": "typography",
+      "description": "Line height for fluid H2 and H3.",
       "rawValue": "{line-height.tight}",
       "resolved": {
         "base-light": "1.25",
@@ -3734,6 +3953,7 @@
       "cssVar": "--line-height-label",
       "type": "dimension",
       "category": "typography",
+      "description": "Strict-4px-grid line-height for single-line form-field labels at font-size-small (14px) — see Label.css and decisions/0013.",
       "rawValue": "{line-height.fixed-16}",
       "resolved": {
         "base-light": "16px",
@@ -3755,6 +3975,7 @@
       "cssVar": "--letter-spacing-heading",
       "type": "dimension",
       "category": "typography",
+      "description": "Tightened tracking for headings and titles.",
       "rawValue": "-0.02em",
       "resolved": {
         "base-light": "-0.02em",
@@ -3774,6 +3995,7 @@
       "cssVar": "--letter-spacing-subheading",
       "type": "dimension",
       "category": "typography",
+      "description": "Lighter tightening for subheadings.",
       "rawValue": "-0.01em",
       "resolved": {
         "base-light": "-0.01em",
@@ -3789,6 +4011,7 @@
       "cssVar": "--letter-spacing-body",
       "type": "dimension",
       "category": "typography",
+      "description": null,
       "rawValue": "0",
       "resolved": {
         "base-light": "0",
@@ -3804,6 +4027,7 @@
       "cssVar": "--letter-spacing-label",
       "type": "dimension",
       "category": "typography",
+      "description": "Slightly open tracking for small labels and metadata.",
       "rawValue": "0.01em",
       "resolved": {
         "base-light": "0.01em",
@@ -3819,6 +4043,7 @@
       "cssVar": "--letter-spacing-wide",
       "type": "dimension",
       "category": "typography",
+      "description": "Wide tracking for uppercase eyebrows and overlines.",
       "rawValue": "0.08em",
       "resolved": {
         "base-light": "0.08em",
@@ -3834,6 +4059,7 @@
       "cssVar": "--space-layout-margin",
       "type": "dimension",
       "category": "spacing",
+      "description": "Page gutter on each side, from 20px on small screens to 32px.",
       "rawValue": "clamp(1.25rem, 4vw, 2rem)",
       "resolved": {
         "base-light": "clamp(1.25rem, 4vw, 2rem)",
@@ -3849,6 +4075,7 @@
       "cssVar": "--space-section-gap",
       "type": "dimension",
       "category": "spacing",
+      "description": "Space between page sections, from 48px to 80px with the viewport.",
       "rawValue": "clamp(3rem, 8vw, 5rem)",
       "resolved": {
         "base-light": "clamp(3rem, 8vw, 5rem)",
@@ -3864,6 +4091,7 @@
       "cssVar": "--space-component-gap",
       "type": "dimension",
       "category": "spacing",
+      "description": "Space between larger blocks inside a component, such as a dialog's header, body and footer.",
       "rawValue": "{space.6}",
       "resolved": {
         "base-light": "24px",
@@ -3883,6 +4111,7 @@
       "cssVar": "--space-element-gap",
       "type": "dimension",
       "category": "spacing",
+      "description": "Space between elements inside a component, such as a card's title and body.",
       "rawValue": "{space.4}",
       "resolved": {
         "base-light": "16px",
@@ -3903,6 +4132,7 @@
       "cssVar": "--space-inline-gap",
       "type": "dimension",
       "category": "spacing",
+      "description": "Space between items in a row: an icon and its label, buttons in a group.",
       "rawValue": "{space.2}",
       "resolved": {
         "base-light": "8px",
@@ -3937,6 +4167,7 @@
       "cssVar": "--space-label-gap",
       "type": "dimension",
       "category": "spacing",
+      "description": "Space between a control and its label, or a status icon and its message.",
       "rawValue": "{space.3}",
       "resolved": {
         "base-light": "12px",
@@ -3959,6 +4190,7 @@
       "cssVar": "--border-radius-component",
       "type": "dimension",
       "category": "radius",
+      "description": "Corners of containers: cards, dialogs, menus, alerts, tables.",
       "rawValue": "{border-radius.md}",
       "resolved": {
         "base-light": "8px",
@@ -3983,6 +4215,7 @@
       "cssVar": "--border-radius-interactive",
       "type": "dimension",
       "category": "radius",
+      "description": "Corners of controls: inputs, menu items, tab triggers, close buttons.",
       "rawValue": "{border-radius.sm}",
       "resolved": {
         "base-light": "4px",
@@ -4014,6 +4247,7 @@
       "cssVar": "--border-radius-image",
       "type": "dimension",
       "category": "radius",
+      "description": "Corners of images inside a Card.",
       "rawValue": "0.75rem",
       "resolved": {
         "base-light": "0.75rem",
@@ -4031,6 +4265,7 @@
       "cssVar": "--border-radius-pill",
       "type": "dimension",
       "category": "radius",
+      "description": "Fully rounded ends: pill buttons, badges, tags, avatars, switch tracks.",
       "rawValue": "{border-radius.full}",
       "resolved": {
         "base-light": "9999px",
@@ -4053,6 +4288,7 @@
       "cssVar": "--duration-interaction",
       "type": "duration",
       "category": "motion",
+      "description": "Hover, press and focus changes on controls.",
       "rawValue": "{duration.base}",
       "resolved": {
         "base-light": "200ms",
@@ -4091,6 +4327,7 @@
       "cssVar": "--duration-transition",
       "type": "duration",
       "category": "motion",
+      "description": "Overlays and messages entering or leaving: dialogs, drawers, toasts, dismissing an alert.",
       "rawValue": "{duration.slow}",
       "resolved": {
         "base-light": "400ms",
@@ -4111,6 +4348,7 @@
       "cssVar": "--duration-entrance",
       "type": "duration",
       "category": "motion",
+      "description": "Larger entrance animations on page content, slower than duration-transition.",
       "rawValue": "600ms",
       "resolved": {
         "base-light": "600ms",
@@ -4126,6 +4364,7 @@
       "cssVar": "--duration-reveal",
       "type": "duration",
       "category": "motion",
+      "description": "Content fading and sliding into view as it scrolls in.",
       "rawValue": "400ms",
       "resolved": {
         "base-light": "400ms",
@@ -4141,6 +4380,7 @@
       "cssVar": "--duration-reveal-delay",
       "type": "duration",
       "category": "motion",
+      "description": "Stagger delay for elements that follow a reveal into view",
       "rawValue": "300ms",
       "resolved": {
         "base-light": "300ms",
@@ -4156,6 +4396,7 @@
       "cssVar": "--opacity-overlay",
       "type": "number",
       "category": "opacity",
+      "description": null,
       "rawValue": "{opacity.medium}",
       "resolved": {
         "base-light": "0.3",
@@ -4171,6 +4412,7 @@
       "cssVar": "--opacity-disabled",
       "type": "number",
       "category": "opacity",
+      "description": "Opacity of a disabled control.",
       "rawValue": "{opacity.low}",
       "resolved": {
         "base-light": "0.1",
@@ -4198,6 +4440,7 @@
       "cssVar": "--space-tight-gap",
       "type": "dimension",
       "category": "spacing",
+      "description": "The smallest gap, between tightly grouped items such as tab triggers or nav items.",
       "rawValue": "{space.1}",
       "resolved": {
         "base-light": "4px",
@@ -4224,6 +4467,7 @@
       "cssVar": "--space-control-padding-x",
       "type": "dimension",
       "category": "spacing",
+      "description": "Horizontal padding for default-size form controls and interactive components (input, select, table cell, tabs trigger, textarea). See decisions/0004.",
       "rawValue": "{space.4}",
       "resolved": {
         "base-light": "16px",
@@ -4249,6 +4493,7 @@
       "cssVar": "--space-control-padding-y",
       "type": "dimension",
       "category": "spacing",
+      "description": "Vertical padding for default-size form controls and interactive components (input, select, table cell, tabs trigger, textarea). See decisions/0004.",
       "rawValue": "{space.3}",
       "resolved": {
         "base-light": "12px",
@@ -4271,6 +4516,7 @@
       "cssVar": "--space-prominent-padding-x",
       "type": "dimension",
       "category": "spacing",
+      "description": "Horizontal padding for prominent container-style components (accordion trigger, alert, toast). See decisions/0004.",
       "rawValue": "{space.6}",
       "resolved": {
         "base-light": "24px",
@@ -4290,6 +4536,7 @@
       "cssVar": "--space-prominent-padding-y",
       "type": "dimension",
       "category": "spacing",
+      "description": "Vertical padding for prominent container-style components (accordion trigger, alert, toast). See decisions/0004.",
       "rawValue": "{space.4}",
       "resolved": {
         "base-light": "16px",
@@ -4309,6 +4556,7 @@
       "cssVar": "--space-compact-padding-x",
       "type": "dimension",
       "category": "spacing",
+      "description": "Horizontal padding for compact/small-size controls (tooltip, tabs small trigger). See decisions/0004.",
       "rawValue": "{space.3}",
       "resolved": {
         "base-light": "12px",
@@ -4327,6 +4575,7 @@
       "cssVar": "--space-compact-padding-y",
       "type": "dimension",
       "category": "spacing",
+      "description": "Vertical padding for compact/small-size controls (tooltip, tabs small trigger). See decisions/0004.",
       "rawValue": "{space.2}",
       "resolved": {
         "base-light": "8px",
@@ -4347,6 +4596,7 @@
       "cssVar": "--space-container-padding",
       "type": "dimension",
       "category": "spacing",
+      "description": "All-around padding for standard container-style components (card, hero, datatable empty state, empty-state compact horizontal). See decisions/0004.",
       "rawValue": "{space.8}",
       "resolved": {
         "base-light": "32px",
@@ -4367,6 +4617,7 @@
       "cssVar": "--space-container-padding-lg",
       "type": "dimension",
       "category": "spacing",
+      "description": "All-around padding for larger overlay-style containers (drawer, empty-state compact vertical). Dialog no longer uses this directly — see space-dialog-padding-* for its responsive replacement (docs/backlog.md, space-scale-expansion item).",
       "rawValue": "{space.10}",
       "resolved": {
         "base-light": "48px",
@@ -4385,6 +4636,7 @@
       "cssVar": "--space-dialog-padding-mobile",
       "type": "dimension",
       "category": "spacing",
+      "description": "Dialog content padding below the tablet breakpoint (max-width: 767px). Pairs with space-dialog-padding-tablet/-desktop, switched via @media in Dialog.css rather than resolved by the token layer — no per-breakpoint token resolution exists in the build pipeline yet.",
       "rawValue": "{space.4}",
       "resolved": {
         "base-light": "16px",
@@ -4402,6 +4654,7 @@
       "cssVar": "--space-dialog-padding-tablet",
       "type": "dimension",
       "category": "spacing",
+      "description": "Dialog content padding from the tablet breakpoint (min-width: 768px). See space-dialog-padding-mobile.",
       "rawValue": "{space.6}",
       "resolved": {
         "base-light": "24px",
@@ -4419,6 +4672,7 @@
       "cssVar": "--space-dialog-padding-desktop",
       "type": "dimension",
       "category": "spacing",
+      "description": "Dialog content padding from the desktop breakpoint (min-width: 1024px). See space-dialog-padding-mobile.",
       "rawValue": "{space.8}",
       "resolved": {
         "base-light": "32px",
@@ -4436,6 +4690,7 @@
       "cssVar": "--space-layout-max-width",
       "type": "dimension",
       "category": "spacing",
+      "description": "Deprecated: use the size-container-* scale (decisions/0014). Kept at 1200px so existing layouts don't move; to be removed in a later release.",
       "rawValue": "{size.layout-lg}",
       "resolved": {
         "base-light": "1200px",
@@ -4451,6 +4706,7 @@
       "cssVar": "--border-width-interactive",
       "type": "dimension",
       "category": "border",
+      "description": "Border on form controls and menus.",
       "rawValue": "{border-width.thin}",
       "resolved": {
         "base-light": "1px",
@@ -4475,6 +4731,7 @@
       "cssVar": "--border-width-default",
       "type": "dimension",
       "category": "border",
+      "description": "Static, non-interactive borders (cards, dialogs, dividers, badges). See decisions/0004.",
       "rawValue": "{border-width.thin}",
       "resolved": {
         "base-light": "1px",
@@ -4507,6 +4764,7 @@
       "cssVar": "--size-dialog-default",
       "type": "dimension",
       "category": "size",
+      "description": null,
       "rawValue": "{size.dialog-md}",
       "resolved": {
         "base-light": "560px",
@@ -4522,6 +4780,7 @@
       "cssVar": "--size-container-text",
       "type": "dimension",
       "category": "size",
+      "description": "Max width for running text (720px at a 16px root, about 65 characters of font-size-body). Use directly as max-width, or as min(var(--size-container-text), 100%) for width or grid tracks. See decisions/0014.",
       "rawValue": "{size.container-45}",
       "resolved": {
         "base-light": "45rem",
@@ -4537,6 +4796,7 @@
       "cssVar": "--size-container-media",
       "type": "dimension",
       "category": "size",
+      "description": "Max width for text with media: images, embeds, diagrams sitting in a text column (960px, 4/3 of size-container-text). See decisions/0014.",
       "rawValue": "{size.container-60}",
       "resolved": {
         "base-light": "60rem",
@@ -4552,6 +4812,7 @@
       "cssVar": "--size-container-wide",
       "type": "dimension",
       "category": "size",
+      "description": "Max width for wide media that breaks out past size-container-media (1280px, 4/3 of it). See decisions/0014.",
       "rawValue": "{size.container-80}",
       "resolved": {
         "base-light": "80rem",
@@ -4567,6 +4828,7 @@
       "cssVar": "--size-container-page",
       "type": "dimension",
       "category": "size",
+      "description": "Max width of a page's centred content area (1440px). See decisions/0014.",
       "rawValue": "{size.container-90}",
       "resolved": {
         "base-light": "90rem",
@@ -4582,6 +4844,7 @@
       "cssVar": "--size-container-site",
       "type": "dimension",
       "category": "size",
+      "description": "Outer site frame from 1024px up (90vw). Below 1024px the site is 100% wide with space-layout-margin gutters. Custom properties can't be read in @media, so apply this inside a (min-width: 1024px) query: breakpoint.desktop, decisions/0018. See decisions/0014.",
       "rawValue": "{size.container-viewport-90}",
       "resolved": {
         "base-light": "90vw",
@@ -4597,6 +4860,7 @@
       "cssVar": "--color-surface-spotlight",
       "type": "color",
       "category": "color",
+      "description": "High-emphasis surface for diagram source nodes — inverse-dark in light mode, teal-dark in dark mode so it never inverts to a light blob",
       "rawValue": "{color-neutral-900}",
       "resolved": {
         "base-light": null,
@@ -4612,6 +4876,7 @@
       "cssVar": "--color-text-frozen-primary",
       "type": "color",
       "category": "color",
+      "description": "Text on fixed brand-color backgrounds (case heroes) — references the warm primitive directly so it never inverts in dark mode",
       "rawValue": "{color.warm-900}",
       "resolved": {
         "base-light": null,
@@ -4627,6 +4892,7 @@
       "cssVar": "--color-text-frozen-secondary",
       "type": "color",
       "category": "color",
+      "description": "Muted text on fixed brand-color backgrounds (case heroes) — never inverts in dark mode",
       "rawValue": "{color.warm-600}",
       "resolved": {
         "base-light": null,
@@ -4642,6 +4908,7 @@
       "cssVar": "--color-accent-glow",
       "type": "color",
       "category": "color",
+      "description": "Teal glow behind diagram source nodes — alpha strengthens in dark mode where the glow does more of the lifting",
       "rawValue": "{color.teal-500-glow}",
       "resolved": {
         "base-light": null,
@@ -4657,6 +4924,7 @@
       "cssVar": "--accordion-content-padding-x",
       "type": "dimension",
       "category": "component",
+      "description": "Horizontal padding of an open Accordion panel.",
       "rawValue": "{space.6}",
       "resolved": {
         "base-light": "24px",
@@ -4674,6 +4942,7 @@
       "cssVar": "--accordion-content-padding-bottom",
       "type": "dimension",
       "category": "component",
+      "description": "Bottom padding of an open Accordion panel.",
       "rawValue": "{space.6}",
       "resolved": {
         "base-light": "24px",
@@ -4691,6 +4960,7 @@
       "cssVar": "--accordion-duration-expand",
       "type": "duration",
       "category": "component",
+      "description": "How long an Accordion panel takes to open.",
       "rawValue": "{duration.expand}",
       "resolved": {
         "base-light": "650ms",
@@ -4708,6 +4978,7 @@
       "cssVar": "--accordion-duration-collapse",
       "type": "duration",
       "category": "component",
+      "description": "How long an Accordion panel takes to close. Shorter than opening, so closing feels immediate.",
       "rawValue": "{duration.collapse}",
       "resolved": {
         "base-light": "200ms",
@@ -4725,6 +4996,7 @@
       "cssVar": "--alert-title-weight",
       "type": "fontWeight",
       "category": "component",
+      "description": "Weight of an Alert's title.",
       "rawValue": "{font-weight.semibold}",
       "resolved": {
         "base-light": "600",
@@ -4742,6 +5014,7 @@
       "cssVar": "--alert-content-gap",
       "type": "dimension",
       "category": "component",
+      "description": "Space between an Alert's title and its message.",
       "rawValue": "{space.1}",
       "resolved": {
         "base-light": "4px",
@@ -4759,6 +5032,7 @@
       "cssVar": "--alert-close-offset",
       "type": "dimension",
       "category": "component",
+      "description": "Pulls an Alert's close button up so it lines up with the title.",
       "rawValue": "{space.2}",
       "resolved": {
         "base-light": "8px",
@@ -4776,6 +5050,7 @@
       "cssVar": "--alert-exit-distance",
       "type": "dimension",
       "category": "component",
+      "description": "How far a dismissed Alert slides up as it fades out.",
       "rawValue": "{space.1}",
       "resolved": {
         "base-light": "4px",
@@ -4793,6 +5068,7 @@
       "cssVar": "--avatar-size-sm",
       "type": "dimension",
       "category": "component",
+      "description": "Small Avatar: 24px.",
       "rawValue": "{space.6}",
       "resolved": {
         "base-light": "24px",
@@ -4810,6 +5086,7 @@
       "cssVar": "--avatar-size-md",
       "type": "dimension",
       "category": "component",
+      "description": "Default Avatar: 32px.",
       "rawValue": "{space.8}",
       "resolved": {
         "base-light": "32px",
@@ -4827,6 +5104,7 @@
       "cssVar": "--avatar-size-lg",
       "type": "dimension",
       "category": "component",
+      "description": "Large Avatar: 40px. Skeleton's circle uses it too.",
       "rawValue": "40px",
       "resolved": {
         "base-light": "40px",
@@ -4845,6 +5123,7 @@
       "cssVar": "--avatar-size-xl",
       "type": "dimension",
       "category": "component",
+      "description": "Extra-large Avatar: 64px.",
       "rawValue": "{space.11}",
       "resolved": {
         "base-light": "64px",
@@ -4862,6 +5141,7 @@
       "cssVar": "--avatar-ring-width",
       "type": "dimension",
       "category": "component",
+      "description": "Width of the ring drawn around an Avatar.",
       "rawValue": "{border-width.medium}",
       "resolved": {
         "base-light": "2px",
@@ -4879,6 +5159,7 @@
       "cssVar": "--avatar-fallback-font-size",
       "type": "dimension",
       "category": "component",
+      "description": "Size of the initials shown when an Avatar has no image.",
       "rawValue": "{font-size.sm}",
       "resolved": {
         "base-light": "14px",
@@ -4896,6 +5177,7 @@
       "cssVar": "--avatar-fallback-font-weight",
       "type": "fontWeight",
       "category": "component",
+      "description": "Weight of the initials shown when an Avatar has no image.",
       "rawValue": "{font-weight.semibold}",
       "resolved": {
         "base-light": "600",
@@ -4913,6 +5195,7 @@
       "cssVar": "--avatar-group-overlap",
       "type": "dimension",
       "category": "component",
+      "description": "How far each Avatar in a group overlaps the one before it.",
       "rawValue": "-8px",
       "resolved": {
         "base-light": "-8px",
@@ -4930,6 +5213,7 @@
       "cssVar": "--badge-font-weight",
       "type": "fontWeight",
       "category": "component",
+      "description": "Weight of Badge text.",
       "rawValue": "{font-weight.medium}",
       "resolved": {
         "base-light": "500",
@@ -4947,6 +5231,7 @@
       "cssVar": "--badge-padding-x",
       "type": "dimension",
       "category": "component",
+      "description": "Horizontal padding of a Badge.",
       "rawValue": "{space.2}",
       "resolved": {
         "base-light": "8px",
@@ -4964,6 +5249,7 @@
       "cssVar": "--badge-padding-y",
       "type": "dimension",
       "category": "component",
+      "description": "Vertical padding of a Badge.",
       "rawValue": "{space.1}",
       "resolved": {
         "base-light": "4px",
@@ -4981,6 +5267,7 @@
       "cssVar": "--badge-count-size",
       "type": "dimension",
       "category": "component",
+      "description": "Minimum width and height of a count Badge, so a single digit sits in a circle.",
       "rawValue": "20px",
       "resolved": {
         "base-light": "20px",
@@ -4998,6 +5285,7 @@
       "cssVar": "--badge-dot-size",
       "type": "dimension",
       "category": "component",
+      "description": "Size of a dot Badge.",
       "rawValue": "{space.2}",
       "resolved": {
         "base-light": "8px",
@@ -5015,6 +5303,7 @@
       "cssVar": "--breadcrumb-font-size",
       "type": "dimension",
       "category": "component",
+      "description": "Text size of Breadcrumb items.",
       "rawValue": "{font-size.sm}",
       "resolved": {
         "base-light": "14px",
@@ -5032,6 +5321,7 @@
       "cssVar": "--breadcrumb-item-max-width",
       "type": "dimension",
       "category": "component",
+      "description": "Width at which a Breadcrumb link is truncated.",
       "rawValue": "200px",
       "resolved": {
         "base-light": "200px",
@@ -5049,6 +5339,7 @@
       "cssVar": "--breadcrumb-current-max-width",
       "type": "dimension",
       "category": "component",
+      "description": "Width at which the current page in a Breadcrumb is truncated. Wider than the links before it.",
       "rawValue": "240px",
       "resolved": {
         "base-light": "240px",
@@ -5066,6 +5357,7 @@
       "cssVar": "--button-padding-x",
       "type": "dimension",
       "category": "component",
+      "description": "Horizontal padding of a default Button.",
       "rawValue": "{space.6}",
       "resolved": {
         "base-light": "24px",
@@ -5083,6 +5375,7 @@
       "cssVar": "--button-padding-y",
       "type": "dimension",
       "category": "component",
+      "description": "Vertical padding of a default Button.",
       "rawValue": "{space.3}",
       "resolved": {
         "base-light": "12px",
@@ -5100,6 +5393,7 @@
       "cssVar": "--button-outline-border-width",
       "type": "dimension",
       "category": "component",
+      "description": "Border width of the Button variants that draw a border.",
       "rawValue": "{border-width.medium}",
       "resolved": {
         "base-light": "2px",
@@ -5117,6 +5411,7 @@
       "cssVar": "--button-secondary-background",
       "type": "color",
       "category": "component",
+      "description": "Fill of the secondary Button at rest: none.",
       "rawValue": "transparent",
       "resolved": {
         "base-light": "transparent",
@@ -5134,6 +5429,7 @@
       "cssVar": "--button-secondary-foreground",
       "type": "color",
       "category": "component",
+      "description": "Text colour of the secondary Button.",
       "rawValue": "{color-accent-default}",
       "resolved": {
         "base-light": "#262626",
@@ -5151,6 +5447,7 @@
       "cssVar": "--button-secondary-border",
       "type": "color",
       "category": "component",
+      "description": "Border colour of the secondary Button.",
       "rawValue": "{color-accent-default}",
       "resolved": {
         "base-light": "#262626",
@@ -5168,6 +5465,7 @@
       "cssVar": "--button-secondary-background-hover",
       "type": "color",
       "category": "component",
+      "description": "Fill of the secondary Button on hover.",
       "rawValue": "{color-accent-default}",
       "resolved": {
         "base-light": "#262626",
@@ -5185,6 +5483,7 @@
       "cssVar": "--button-ghost-background",
       "type": "color",
       "category": "component",
+      "description": "Fill of the ghost Button at rest: none.",
       "rawValue": "transparent",
       "resolved": {
         "base-light": "transparent",
@@ -5202,6 +5501,7 @@
       "cssVar": "--button-ghost-border",
       "type": "color",
       "category": "component",
+      "description": "Border colour of the ghost Button: transparent.",
       "rawValue": "transparent",
       "resolved": {
         "base-light": "transparent",
@@ -5219,6 +5519,7 @@
       "cssVar": "--button-spinner-duration",
       "type": "duration",
       "category": "component",
+      "description": "One turn of the spinner in a loading Button.",
       "rawValue": "750ms",
       "resolved": {
         "base-light": "750ms",
@@ -5236,6 +5537,7 @@
       "cssVar": "--button-wipe-duration-enter",
       "type": "duration",
       "category": "component",
+      "description": "Expressive motion only: how long the hover wipe takes to fill the Button.",
       "rawValue": "550ms",
       "resolved": {
         "base-light": "550ms",
@@ -5251,6 +5553,7 @@
       "cssVar": "--button-wipe-duration-curve",
       "type": "duration",
       "category": "component",
+      "description": "Expressive motion only: each half of the wipe edge's bulge and settle as it fills the Button.",
       "rawValue": "220ms",
       "resolved": {
         "base-light": "220ms",
@@ -5266,6 +5569,7 @@
       "cssVar": "--button-wipe-duration-exit",
       "type": "duration",
       "category": "component",
+      "description": "Expressive motion only: how long the wipe takes to clear when the pointer leaves.",
       "rawValue": "400ms",
       "resolved": {
         "base-light": "400ms",
@@ -5281,6 +5585,7 @@
       "cssVar": "--button-wipe-duration-curve-out",
       "type": "duration",
       "category": "component",
+      "description": "Expressive motion only: each half of the wipe edge's bulge and settle as it clears.",
       "rawValue": "180ms",
       "resolved": {
         "base-light": "180ms",
@@ -5296,6 +5601,7 @@
       "cssVar": "--button-arrow-nudge",
       "type": "dimension",
       "category": "component",
+      "description": "How far a Button's trailing arrow moves on hover.",
       "rawValue": "2px",
       "resolved": {
         "base-light": "2px",
@@ -5313,6 +5619,7 @@
       "cssVar": "--button-glow-size",
       "type": "dimension",
       "category": "component",
+      "description": "Expressive motion only: diameter of the highlight on the wipe's crest.",
       "rawValue": "52px",
       "resolved": {
         "base-light": "52px",
@@ -5330,6 +5637,7 @@
       "cssVar": "--button-glow-color",
       "type": "color",
       "category": "component",
+      "description": "Highlight riding the crest of the expressive hover wipe. Translucent white rather than a semantic reference: it reads as a light source over whichever fill the wipe paints, not as one of the brand's surface colours. See decisions/0016.",
       "rawValue": "rgba(255, 255, 255, 0.45)",
       "resolved": {
         "base-light": "rgba(255, 255, 255, 0.45)",
@@ -5347,6 +5655,7 @@
       "cssVar": "--card-horizontal-media-width",
       "type": "dimension",
       "category": "component",
+      "description": "Width of the image column in a horizontal Card.",
       "rawValue": "200px",
       "resolved": {
         "base-light": "200px",
@@ -5364,6 +5673,7 @@
       "cssVar": "--checkbox-size",
       "type": "dimension",
       "category": "component",
+      "description": "Size of the Checkbox box.",
       "rawValue": "{space.6}",
       "resolved": {
         "base-light": "24px",
@@ -5381,6 +5691,7 @@
       "cssVar": "--datatable-gap",
       "type": "dimension",
       "category": "component",
+      "description": "Space between a DataTable's toolbar, table and footer.",
       "rawValue": "{space.4}",
       "resolved": {
         "base-light": "16px",
@@ -5398,6 +5709,7 @@
       "cssVar": "--datatable-footer-gap",
       "type": "dimension",
       "category": "component",
+      "description": "Space between items in a DataTable's footer.",
       "rawValue": "{space.4}",
       "resolved": {
         "base-light": "16px",
@@ -5415,6 +5727,7 @@
       "cssVar": "--datatable-filter-cell-padding-y",
       "type": "dimension",
       "category": "component",
+      "description": "Vertical padding of the filter row's cells in a DataTable.",
       "rawValue": "{space.2}",
       "resolved": {
         "base-light": "8px",
@@ -5432,6 +5745,7 @@
       "cssVar": "--dialog-max-width",
       "type": "dimension",
       "category": "component",
+      "description": "Width of a default (md) Dialog: 560px.",
       "rawValue": "{size.dialog-md}",
       "resolved": {
         "base-light": "560px",
@@ -5449,6 +5763,7 @@
       "cssVar": "--dialog-close-size",
       "type": "dimension",
       "category": "component",
+      "description": "Hit area of a Dialog's close button.",
       "rawValue": "{size.icon-interactive}",
       "resolved": {
         "base-light": "28px",
@@ -5466,6 +5781,7 @@
       "cssVar": "--dialog-max-width-sm",
       "type": "dimension",
       "category": "component",
+      "description": "Width of a small Dialog: 480px.",
       "rawValue": "{size.dialog-sm}",
       "resolved": {
         "base-light": "480px",
@@ -5483,6 +5799,7 @@
       "cssVar": "--dialog-max-width-lg",
       "type": "dimension",
       "category": "component",
+      "description": "Width of a large Dialog: 720px.",
       "rawValue": "{size.dialog-lg}",
       "resolved": {
         "base-light": "720px",
@@ -5500,6 +5817,7 @@
       "cssVar": "--dialog-max-width-xl",
       "type": "dimension",
       "category": "component",
+      "description": "Width of an extra-large Dialog: 1024px.",
       "rawValue": "{size.layout-md}",
       "resolved": {
         "base-light": "1024px",
@@ -5517,6 +5835,7 @@
       "cssVar": "--dialog-entrance-offset",
       "type": "dimension",
       "category": "component",
+      "description": "How far a Dialog rises as it fades in.",
       "rawValue": "8px",
       "resolved": {
         "base-light": "8px",
@@ -5534,6 +5853,7 @@
       "cssVar": "--drawer-close-size",
       "type": "dimension",
       "category": "component",
+      "description": "Hit area of a Drawer's close button.",
       "rawValue": "{size.icon-interactive}",
       "resolved": {
         "base-light": "28px",
@@ -5551,6 +5871,7 @@
       "cssVar": "--drawer-max-width-sm",
       "type": "dimension",
       "category": "component",
+      "description": "Width of a small side Drawer.",
       "rawValue": "320px",
       "resolved": {
         "base-light": "320px",
@@ -5568,6 +5889,7 @@
       "cssVar": "--drawer-max-width-md",
       "type": "dimension",
       "category": "component",
+      "description": "Width of a default side Drawer.",
       "rawValue": "480px",
       "resolved": {
         "base-light": "480px",
@@ -5585,6 +5907,7 @@
       "cssVar": "--drawer-max-width-lg",
       "type": "dimension",
       "category": "component",
+      "description": "Width of a large side Drawer.",
       "rawValue": "640px",
       "resolved": {
         "base-light": "640px",
@@ -5602,6 +5925,7 @@
       "cssVar": "--drawer-max-height-sm",
       "type": "dimension",
       "category": "component",
+      "description": "Height of a small bottom Drawer.",
       "rawValue": "40vh",
       "resolved": {
         "base-light": "40vh",
@@ -5619,6 +5943,7 @@
       "cssVar": "--drawer-max-height-md",
       "type": "dimension",
       "category": "component",
+      "description": "Height of a default bottom Drawer.",
       "rawValue": "90vh",
       "resolved": {
         "base-light": "90vh",
@@ -5636,6 +5961,7 @@
       "cssVar": "--drawer-max-height-lg",
       "type": "dimension",
       "category": "component",
+      "description": "Height of a large bottom Drawer.",
       "rawValue": "75vh",
       "resolved": {
         "base-light": "75vh",
@@ -5653,6 +5979,7 @@
       "cssVar": "--drawer-max-height-full",
       "type": "dimension",
       "category": "component",
+      "description": "Height of a full-screen bottom Drawer.",
       "rawValue": "100vh",
       "resolved": {
         "base-light": "100vh",
@@ -5670,6 +5997,7 @@
       "cssVar": "--drawer-close-align-offset",
       "type": "dimension",
       "category": "component",
+      "description": "Nudges a Drawer's close button up to line up with the title.",
       "rawValue": "2px",
       "resolved": {
         "base-light": "2px",
@@ -5687,6 +6015,7 @@
       "cssVar": "--emptystate-padding-y",
       "type": "dimension",
       "category": "component",
+      "description": "Literal component geometry — no reusable semantic role exists yet for a section-level inset this large.",
       "rawValue": "{space.12}",
       "resolved": {
         "base-light": "96px",
@@ -5704,6 +6033,7 @@
       "cssVar": "--emptystate-padding-x",
       "type": "dimension",
       "category": "component",
+      "description": "Horizontal padding of a full-size EmptyState.",
       "rawValue": "{space.11}",
       "resolved": {
         "base-light": "64px",
@@ -5721,6 +6051,7 @@
       "cssVar": "--hero-padding-y",
       "type": "dimension",
       "category": "component",
+      "description": "Vertical padding of a Hero section.",
       "rawValue": "{space.12}",
       "resolved": {
         "base-light": "96px",
@@ -5738,6 +6069,7 @@
       "cssVar": "--hero-eyebrow-size",
       "type": "dimension",
       "category": "component",
+      "description": "Text size of the Hero eyebrow.",
       "rawValue": "{font-size.sm}",
       "resolved": {
         "base-light": "14px",
@@ -5755,6 +6087,7 @@
       "cssVar": "--hero-eyebrow-weight",
       "type": "fontWeight",
       "category": "component",
+      "description": "Weight of the Hero eyebrow.",
       "rawValue": "{font-weight.semibold}",
       "resolved": {
         "base-light": "600",
@@ -5772,6 +6105,7 @@
       "cssVar": "--hero-eyebrow-spacing",
       "type": "dimension",
       "category": "component",
+      "description": "Tracking of the Hero eyebrow.",
       "rawValue": "0.01em",
       "resolved": {
         "base-light": "0.01em",
@@ -5789,6 +6123,7 @@
       "cssVar": "--hero-title-weight",
       "type": "fontWeight",
       "category": "component",
+      "description": "Weight of the Hero title.",
       "rawValue": "{font-weight.extrabold}",
       "resolved": {
         "base-light": "800",
@@ -5806,6 +6141,7 @@
       "cssVar": "--hero-lead-size",
       "type": "dimension",
       "category": "component",
+      "description": "Text size of the Hero lead paragraph.",
       "rawValue": "{font-size.emphasis}",
       "resolved": {
         "base-light": "20px",
@@ -5823,6 +6159,7 @@
       "cssVar": "--hero-max-width",
       "type": "dimension",
       "category": "component",
+      "description": "Maximum width of a Hero's content.",
       "rawValue": "800px",
       "resolved": {
         "base-light": "800px",
@@ -5840,6 +6177,7 @@
       "cssVar": "--hero-lead-max-width",
       "type": "dimension",
       "category": "component",
+      "description": "Maximum line length of the Hero lead paragraph.",
       "rawValue": "60ch",
       "resolved": {
         "base-light": "60ch",
@@ -5857,6 +6195,7 @@
       "cssVar": "--pagination-button-size",
       "type": "dimension",
       "category": "component",
+      "description": "Width and height of each Pagination button.",
       "rawValue": "{space.10}",
       "resolved": {
         "base-light": "48px",
@@ -5874,6 +6213,7 @@
       "cssVar": "--pagination-button-background",
       "type": "color",
       "category": "component",
+      "description": "Fill of a Pagination button at rest: none.",
       "rawValue": "transparent",
       "resolved": {
         "base-light": "transparent",
@@ -5891,6 +6231,7 @@
       "cssVar": "--pagination-button-font-size",
       "type": "dimension",
       "category": "component",
+      "description": "Text size of Pagination buttons.",
       "rawValue": "{font-size.sm}",
       "resolved": {
         "base-light": "14px",
@@ -5908,6 +6249,7 @@
       "cssVar": "--pagination-button-font-weight",
       "type": "fontWeight",
       "category": "component",
+      "description": "Weight of Pagination buttons.",
       "rawValue": "{font-weight.medium}",
       "resolved": {
         "base-light": "500",
@@ -5925,6 +6267,7 @@
       "cssVar": "--radio-size",
       "type": "dimension",
       "category": "component",
+      "description": "Size of the Radio circle.",
       "rawValue": "{space.6}",
       "resolved": {
         "base-light": "24px",
@@ -5942,6 +6285,7 @@
       "cssVar": "--radio-indicator-size",
       "type": "dimension",
       "category": "component",
+      "description": "Size of the dot inside a checked Radio.",
       "rawValue": "{space.3}",
       "resolved": {
         "base-light": "12px",
@@ -5959,6 +6303,7 @@
       "cssVar": "--select-item-padding-x",
       "type": "dimension",
       "category": "component",
+      "description": "Horizontal padding of each option in a Select.",
       "rawValue": "{space.4}",
       "resolved": {
         "base-light": "16px",
@@ -5976,6 +6321,7 @@
       "cssVar": "--select-item-padding-y",
       "type": "dimension",
       "category": "component",
+      "description": "Vertical padding of each option in a Select.",
       "rawValue": "{space.2}",
       "resolved": {
         "base-light": "8px",
@@ -5993,6 +6339,7 @@
       "cssVar": "--side-nav-width",
       "type": "dimension",
       "category": "component",
+      "description": "Width of the expanded inline SideNav from breakpoint.desktop up. The collapsed rail sizes to its icons; the mobile drawer uses Drawer's own width.",
       "rawValue": "240px",
       "resolved": {
         "base-light": "240px",
@@ -6010,6 +6357,7 @@
       "cssVar": "--skeleton-border-radius",
       "type": "dimension",
       "category": "component",
+      "description": "Corners of a text or rectangle Skeleton.",
       "rawValue": "{border-radius.sm}",
       "resolved": {
         "base-light": "4px",
@@ -6027,6 +6375,7 @@
       "cssVar": "--skeleton-height-text",
       "type": "dimension",
       "category": "component",
+      "description": "Height of a text Skeleton line: 1em, the surrounding font size.",
       "rawValue": "1em",
       "resolved": {
         "base-light": "1em",
@@ -6044,6 +6393,7 @@
       "cssVar": "--skeleton-height-rect",
       "type": "dimension",
       "category": "component",
+      "description": "Default height of a rectangle Skeleton.",
       "rawValue": "{space.10}",
       "resolved": {
         "base-light": "48px",
@@ -6061,6 +6411,7 @@
       "cssVar": "--spinner-stroke-width",
       "type": "dimension",
       "category": "component",
+      "description": "Stroke width of the Spinner ring.",
       "rawValue": "{border-width.medium}",
       "resolved": {
         "base-light": "2px",
@@ -6078,6 +6429,7 @@
       "cssVar": "--switch-track-width",
       "type": "dimension",
       "category": "component",
+      "description": "Width of the Switch track.",
       "rawValue": "44px",
       "resolved": {
         "base-light": "44px",
@@ -6095,6 +6447,7 @@
       "cssVar": "--switch-track-height",
       "type": "dimension",
       "category": "component",
+      "description": "Height of the Switch track.",
       "rawValue": "{space.6}",
       "resolved": {
         "base-light": "24px",
@@ -6112,6 +6465,7 @@
       "cssVar": "--switch-thumb-size",
       "type": "dimension",
       "category": "component",
+      "description": "Size of the Switch thumb.",
       "rawValue": "{space.4}",
       "resolved": {
         "base-light": "16px",
@@ -6129,6 +6483,7 @@
       "cssVar": "--table-header-font-weight",
       "type": "fontWeight",
       "category": "component",
+      "description": "Weight of table header cells.",
       "rawValue": "{font-weight.semibold}",
       "resolved": {
         "base-light": "600",
@@ -6146,6 +6501,7 @@
       "cssVar": "--tabs-indicator-height",
       "type": "dimension",
       "category": "component",
+      "description": "Thickness of the line under the active tab.",
       "rawValue": "{border-width.medium}",
       "resolved": {
         "base-light": "2px",
@@ -6163,6 +6519,7 @@
       "cssVar": "--tabs-content-padding-top",
       "type": "dimension",
       "category": "component",
+      "description": "Space between the tab list and its panel.",
       "rawValue": "{space.4}",
       "resolved": {
         "base-light": "16px",
@@ -6180,6 +6537,7 @@
       "cssVar": "--tag-padding-x",
       "type": "dimension",
       "category": "component",
+      "description": "Horizontal padding of a Tag.",
       "rawValue": "{space.3}",
       "resolved": {
         "base-light": "12px",
@@ -6197,6 +6555,7 @@
       "cssVar": "--tag-padding-y",
       "type": "dimension",
       "category": "component",
+      "description": "Vertical padding of a Tag.",
       "rawValue": "{space.1}",
       "resolved": {
         "base-light": "4px",
@@ -6214,6 +6573,7 @@
       "cssVar": "--tag-font-weight",
       "type": "fontWeight",
       "category": "component",
+      "description": "Weight of Tag text.",
       "rawValue": "{font-weight.medium}",
       "resolved": {
         "base-light": "500",
@@ -6231,6 +6591,7 @@
       "cssVar": "--tag-muted-background",
       "type": "color",
       "category": "component",
+      "description": "Fill of the muted Tag: none.",
       "rawValue": "transparent",
       "resolved": {
         "base-light": "transparent",
@@ -6248,6 +6609,7 @@
       "cssVar": "--toast-max-width",
       "type": "dimension",
       "category": "component",
+      "description": "Maximum width of a Toast.",
       "rawValue": "380px",
       "resolved": {
         "base-light": "380px",
@@ -6265,6 +6627,7 @@
       "cssVar": "--toast-title-weight",
       "type": "fontWeight",
       "category": "component",
+      "description": "Weight of a Toast's title.",
       "rawValue": "{font-weight.semibold}",
       "resolved": {
         "base-light": "600",
@@ -6282,6 +6645,7 @@
       "cssVar": "--toast-font-size",
       "type": "dimension",
       "category": "component",
+      "description": "Text size of a Toast.",
       "rawValue": "{font-size.sm}",
       "resolved": {
         "base-light": "14px",
@@ -6299,6 +6663,7 @@
       "cssVar": "--toast-accent-width",
       "type": "dimension",
       "category": "component",
+      "description": "Width of the coloured stripe on a status Toast's leading edge.",
       "rawValue": "4px",
       "resolved": {
         "base-light": "4px",
@@ -6316,6 +6681,7 @@
       "cssVar": "--toast-viewport-inset",
       "type": "dimension",
       "category": "component",
+      "description": "Distance between the Toast stack and the edge of the viewport.",
       "rawValue": "{space.6}",
       "resolved": {
         "base-light": "24px",
@@ -6333,6 +6699,7 @@
       "cssVar": "--toast-close-offset",
       "type": "dimension",
       "category": "component",
+      "description": "Pulls a Toast's close button up and out towards the corner.",
       "rawValue": "{space.2}",
       "resolved": {
         "base-light": "8px",
@@ -6350,6 +6717,7 @@
       "cssVar": "--tooltip-font-weight",
       "type": "fontWeight",
       "category": "component",
+      "description": "Weight of Tooltip text.",
       "rawValue": "{font-weight.medium}",
       "resolved": {
         "base-light": "500",
@@ -6367,6 +6735,7 @@
       "cssVar": "--tooltip-border-radius",
       "type": "dimension",
       "category": "component",
+      "description": "Corners of a Tooltip.",
       "rawValue": "{border-radius.sm}",
       "resolved": {
         "base-light": "4px",
@@ -6384,6 +6753,7 @@
       "cssVar": "--tooltip-max-width",
       "type": "dimension",
       "category": "component",
+      "description": "Width at which Tooltip text wraps.",
       "rawValue": "260px",
       "resolved": {
         "base-light": "260px",
@@ -6401,6 +6771,7 @@
       "cssVar": "--tooltip-arrow-size",
       "type": "dimension",
       "category": "component",
+      "description": "Size of the Tooltip arrow.",
       "rawValue": "{space.2}",
       "resolved": {
         "base-light": "8px",
@@ -6418,6 +6789,7 @@
       "cssVar": "--tooltip-delay-duration",
       "type": "number",
       "category": "component",
+      "description": "Milliseconds of hover before a Tooltip opens. A unitless number, read by Tooltip.tsx.",
       "rawValue": "400",
       "resolved": {
         "base-light": "400",
@@ -6433,6 +6805,7 @@
       "cssVar": "--tooltip-side-offset",
       "type": "number",
       "category": "component",
+      "description": "Pixels between a Tooltip and its trigger. A unitless number, read by Tooltip.tsx.",
       "rawValue": "6",
       "resolved": {
         "base-light": "6",

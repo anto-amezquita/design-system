@@ -11,6 +11,10 @@
  * Output shape:
  *   { meta: { generatedAt, tokenCount }, tokens: TokenEntry[] }
  *
+ * Each entry carries the token's DTCG $description as `description`, or null
+ * when it has none, so the docs site and agents read one line per token from
+ * the same place as its values.
+ *
  * Called by sd.config.mjs after Style Dictionary builds so tokens/token-reference.json
  * is always rebuilt when token sources change.
  */
@@ -72,6 +76,7 @@ export function flattenPrimitives(node, groupName, pathSegments = []) {
         cssVar: `--${name}`,
         type: value.$type ?? 'unknown',
         category: 'primitive',
+        description: value.$description ?? null,
         rawValue,
         resolved: {
           'base-light': rawValue,
@@ -156,6 +161,14 @@ export function buildTokenReference() {
   const semanticEntries = Object.entries(sourceTokens).map(([name, token]) => {
     const raw = token.$value ?? token.value;
 
+    // Base's description wins for a token both layers define: it describes the
+    // role every consumer gets. Portfolio's own tokens fall back to theirs.
+    const description =
+      baseLightTokens[name]?.$description ??
+      componentTokens[name]?.$description ??
+      portfolioLightOverrides[name]?.$description ??
+      null;
+
     const resolved = Object.fromEntries(
       Object.entries(resolvers).map(([axis, resolve]) => [axis, resolve(name)])
     );
@@ -178,6 +191,7 @@ export function buildTokenReference() {
       cssVar:    `--${name}`,
       type:      token.$type ?? 'unknown',
       category:  assertKnownCategory(getCategory(name), name),
+      description,
       rawValue:  typeof raw === 'string' ? raw : String(raw ?? ''),
       resolved,
       axisAware,

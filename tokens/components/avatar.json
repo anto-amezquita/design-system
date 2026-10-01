@@ -2,6 +2,7 @@
   "avatar-size-sm": {
     "$value": "{space.6}",
     "$type": "dimension",
+    "$description": "Small Avatar: 24px.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -10,6 +11,7 @@
   "avatar-size-md": {
     "$value": "{space.8}",
     "$type": "dimension",
+    "$description": "Default Avatar: 32px.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -17,11 +19,13 @@
   },
   "avatar-size-lg": {
     "$value": "40px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Large Avatar: 40px. Skeleton's circle uses it too."
   },
   "avatar-size-xl": {
     "$value": "{space.11}",
     "$type": "dimension",
+    "$description": "Extra-large Avatar: 64px.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -30,6 +34,7 @@
   "avatar-ring-width": {
     "$value": "{border-width.medium}",
     "$type": "dimension",
+    "$description": "Width of the ring drawn around an Avatar.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -38,6 +43,7 @@
   "avatar-fallback-font-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension",
+    "$description": "Size of the initials shown when an Avatar has no image.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -46,6 +52,7 @@
   "avatar-fallback-font-weight": {
     "$value": "{font-weight.semibold}",
     "$type": "fontWeight",
+    "$description": "Weight of the initials shown when an Avatar has no image.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One of 5 semibold uses across different functions, below decisions/0004's 3+-shared-function bar."
@@ -53,6 +60,7 @@
   },
   "avatar-group-overlap": {
     "$value": "-8px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "How far each Avatar in a group overlaps the one before it."
   }
 }

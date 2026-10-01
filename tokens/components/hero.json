@@ -2,6 +2,7 @@
   "hero-padding-y": {
     "$value": "{space.12}",
     "$type": "dimension",
+    "$description": "Vertical padding of a Hero section.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "Not part of either container-padding group — held out and explicitly left untouched, see decisions/0004."
@@ -10,6 +11,7 @@
   "hero-eyebrow-size": {
     "$value": "{font-size.sm}",
     "$type": "dimension",
+    "$description": "Text size of the Hero eyebrow.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -18,6 +20,7 @@
   "hero-eyebrow-weight": {
     "$value": "{font-weight.semibold}",
     "$type": "fontWeight",
+    "$description": "Weight of the Hero eyebrow.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One of 5 semibold uses across different functions, below decisions/0004's 3+-shared-function bar."
@@ -25,11 +28,13 @@
   },
   "hero-eyebrow-spacing": {
     "$value": "0.01em",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Tracking of the Hero eyebrow."
   },
   "hero-title-weight": {
     "$value": "{font-weight.extrabold}",
     "$type": "fontWeight",
+    "$description": "Weight of the Hero title.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -38,6 +43,7 @@
   "hero-lead-size": {
     "$value": "{font-size.emphasis}",
     "$type": "dimension",
+    "$description": "Text size of the Hero lead paragraph.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
       "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
@@ -45,10 +51,12 @@
   },
   "hero-max-width": {
     "$value": "800px",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Maximum width of a Hero's content."
   },
   "hero-lead-max-width": {
     "$value": "60ch",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Maximum line length of the Hero lead paragraph."
   }
 }
