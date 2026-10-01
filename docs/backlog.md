@@ -47,6 +47,25 @@ Opened 2026-10-01. `design-system-site` is the first consumer on the Next.js App
 
 Status: not started. Item 2 waits on the deploy.
 
+## Gaps found putting both brands on one page (backlog)
+
+Opened 2026-10-01. `design-system-site` moved to `1.2.0` and its Themes page now renders the same sample screen twice on one page, the second panel marked `data-brand="portfolio"` (its spec §9, items 9 and 10). That's the first time two copies of the components share a page, and two gaps showed. They fit one release: item 2 adds a component, so `1.3.0`, and item 1 can ride along.
+
+**1. Breadcrumb's `<nav>` label can't be changed.** `Breadcrumb.tsx` hardcodes `aria-label="Breadcrumb"`, so two breadcrumbs on one page are two landmarks with the same name (axe `landmark-unique`). It's the only landmark component out of line: NavigationMenu, SideNav and Pagination all take an `aria-label` with an English default. Fix it the same way, per `decisions/0006` and `0007`: accept `aria-label` (default `"Breadcrumb"`) and pass the other native attributes through to the `<nav>`. Non-breaking. The site renames the two with a DOM effect in `components/themes/ThemeExplorer.tsx` for now; its `check-workarounds.mjs` warns when the prop ships. Related: Navigation follow-ups item 3, on built-in English strings.
+
+**2. Overlays leave a brand scope.** AlertDialog, BaseSheet (and so Dialog and Drawer), Menu, Tooltip and Select render through Radix's portal at the end of `<body>`, outside any `[data-brand]` element. A menu opened inside `<div data-brand="portfolio">` comes out in base. It also takes the page's mode rather than the panel's, so a dark panel on a light page opens a light menu. Toast is next to it: its viewport renders wherever `ToastProvider` sits, usually the root.
+
+The proposed fix:
+
+- **A `BrandScope` component** in `components/` or `lib/`. It renders the element with `data-brand` and an optional `data-mode` (left out, it follows the page), and puts `{ brand, mode }` in a React context.
+- **One internal portal helper** that the five overlays use instead of calling `*.Portal` directly. It reads the context and wraps the content in `<div data-brand data-mode style="display: contents">`. Custom properties still inherit through a `display: contents` element, so the selectors in `portfolio-scoped.css` match without changing any CSS. Content stays at the end of `<body>`, so nothing is clipped by the scope's `overflow` or caught in its stacking context. With no `BrandScope` above it, the helper adds no wrapper and nothing changes.
+
+Two options were set aside. A `container` prop on each overlay puts the fix at every call site, and the first one someone forgets is the bug again. Portalling into the scope element itself fixes inheritance, but the scope's `overflow` can clip the content, and its z-index can put the content under its neighbours.
+
+Also: the README's scoped-brand section presents `data-brand` as the way to scope. It should present `BrandScope`, since a hand-written attribute still has this bug. Decide whether Toast follows the scope (a viewport per `BrandScope`) or stays page-level; page-level is probably right, since a toast belongs to the app, not to a panel. Test it next to `lib/brand-scope.test.ts`: open a Menu inside a `BrandScope` and check the content's `--color-accent-default` is the portfolio value, in both modes. On the site, Themes' portfolio panel becomes `<BrandScope brand="portfolio" mode={mode}>`.
+
+Status: not started.
+
 ## Release dispatch to the portfolio fails: the GitHub App isn't installed there (backlog)
 
 Opened 2026-09-24. Release #108 (the merge of the `1.0.0` Version Packages PR #33) published to npm, then failed about 37s in at "Mint a token scoped to the portfolio repo" with `Not Found` from `get-a-repository-installation-for-the-authenticated-app`. So `design-system-released` was never dispatched and the portfolio's `sync-design-system.yml` never ran; `1.0.0` was bumped by hand in portfolio PR #4.
