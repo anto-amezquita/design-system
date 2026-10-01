@@ -10,7 +10,7 @@ Built on `feat/docs-site-gaps`, one commit per item. The site is read for contex
 
 | # | Backlog item | What ships |
 |---|---|---|
-| 1 | Brand CSS has no brand scope | `[data-brand="portfolio"]` selectors in the portfolio CSS, a test on the generated CSS, an amendment to [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md). See "Item 1" below. |
+| 1 | Brand CSS has no brand scope | A new generated `styles/brands/portfolio-scoped.css`, scoped to `[data-brand="portfolio"]`; the existing files unchanged. Tests on the generated CSS and on the cascade in Chromium, and an amendment to [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md). See "Item 1" below. |
 | 2 | Doc twins show portfolio values | `build-component-docs.mjs` resolves from `base-light`/`base-dark`. Already built on `fix/doc-twins-base-values` (`234f748`); this branch starts from that commit, and its patch changeset folds into this release's minor one. |
 | 5 | MCP tool list is hand-copied | `llms.txt` and `llms-full.txt` list the MCP tools, generated from the server's own `registerTool()` calls. |
 | 6 | Token descriptions live in the site | DTCG `$description` on every semantic and component token, carried into `tokens/token-reference.json` (and so `tokens.json`). |
@@ -24,7 +24,9 @@ Backlog item 3 (`changelog.json` behind) is investigated, not fixed; item 4 (swi
 
 **As decided:** portfolio's files keep `:root, [data-mode="…"]` and add `[data-brand="portfolio"]` and `[data-brand="portfolio"] [data-mode="…"]`.
 
-**Found while building:** as long as `:root` stays in the same file, loading `portfolio-light.css` reskins the whole document, so the added selectors never change what renders: every element already inherits portfolio from `<html>`. The site still couldn't put base next to portfolio on one page. Held for the user's call before building; the options and the outcome are recorded in the 0001 amendment.
+**Found while building:** as long as `:root` stays in the same file, loading `portfolio-light.css` reskins the whole document, so the added selectors never change what renders: every element already inherits portfolio from `<html>`. The site still couldn't put base next to portfolio on one page.
+
+**Changed, with the user's agreement (2026-10-01):** a separate generated file, `styles/brands/portfolio-scoped.css`, holds the same overrides under `[data-brand="portfolio"]` only. A page loads base as usual plus this file. The existing four files are byte-for-byte unchanged. The selectors, the dark-then-light block order, the union of tokens in both blocks and the `initial` resets for dark-only tokens are explained in 0001's 2026-10-01 amendment. `lib/brand-scope.test.ts` checks in Chromium that a scoped panel computes every custom property exactly as a whole page does with the unscoped files.
 
 ---
 

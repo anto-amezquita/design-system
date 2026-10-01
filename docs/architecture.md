@@ -90,7 +90,7 @@ Three tiers, strictly layered — no skipping:
 
 ## 4. Multi-brand / theming
 
-Two brands today, each with light + dark: `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)) and `portfolio` (thin override skin on top of `base`). `sd.config.mjs` outputs four CSS files: `base-light.css`, `base-dark.css`, `portfolio-light.css`, `portfolio-dark.css`. A third brand would follow the same shape as `portfolio` — a thin skin, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
+Two brands today, each with light + dark: `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)) and `portfolio` (thin override skin on top of `base`). `sd.config.mjs` outputs five CSS files: `base-light.css`, `base-dark.css`, `portfolio-light.css`, `portfolio-dark.css`, and `portfolio-scoped.css`, the same portfolio overrides scoped to `[data-brand="portfolio"]` instead of `:root`, so one page can show both brands (0001's 2026-10-01 amendment). A third brand would follow the same shape as `portfolio` — a thin skin, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
 
 ## 5. Code conventions
 

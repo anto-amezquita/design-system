@@ -41,6 +41,20 @@ import '@amezquita/design-system/styles/brands/portfolio-dark.css'
 
 Peer dependencies: `react` and `react-dom` ^19.
 
+### Both brands on one page
+
+`portfolio-light.css` and `portfolio-dark.css` restyle the whole page from `:root`. To show the portfolio brand inside one part of a page and keep the rest on `base`, load `portfolio-scoped.css` instead of those two, and mark the part with `data-brand`:
+
+```tsx
+import '@amezquita/design-system/styles/brands/base-light.css'
+import '@amezquita/design-system/styles/brands/base-dark.css'
+import '@amezquita/design-system/styles/brands/portfolio-scoped.css'
+
+<div data-brand="portfolio">…</div>
+```
+
+The panel follows the page's `data-mode`, or its own if it has one. Don't load `portfolio-scoped.css` next to `portfolio-light.css`: the `:root` one would still restyle everything.
+
 ### Fonts
 
 The package ships no font files. The `base` theme sets its text in a system font stack and its code in JetBrains Mono; `portfolio` adds Schibsted Grotesk for text. Load them from Google Fonts with the `<link>` tags in [`tokens/fonts.json`](tokens/fonts.json): `brands.<brand>.href` is the stylesheet, `brands.<brand>.preconnect` the origins to preconnect to. The same links are in `llms.txt`. Both are generated from the font tokens, so they change when a font does. Why there are no font files: [ADR 0020](decisions/0020-fonts-from-google-fonts-no-font-files.md).
