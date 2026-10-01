@@ -301,6 +301,10 @@ buildTokenReference();
 const { buildTokensJson } = await import('./scripts/build-tokens-json.mjs');
 buildTokensJson();
 
+// Reads token-reference.json, rebuilt above.
+const { buildFonts } = await import('./scripts/build-fonts.mjs');
+buildFonts();
+
 const { buildComponentRegistry } = await import('./scripts/build-component-registry.mjs');
 buildComponentRegistry();
 

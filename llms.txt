@@ -10,6 +10,13 @@ Extracted from and still powering [amezquita.dk](https://amezquita.dk). 34 compo
 npm install @amezquita/design-system
 ```
 
+## Fonts
+
+The package ships no font files. Load the fonts a brand names from Google Fonts; `tokens/fonts.json` has the same links, machine-readable.
+
+- base: JetBrains Mono. `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap">`
+- portfolio: Schibsted Grotesk and JetBrains Mono. `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap">`
+
 ## Reference
 
 - [Token reference](https://amezquita.dk/tokens.json): every token name and resolved value, across all four theme axes

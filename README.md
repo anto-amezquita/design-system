@@ -41,6 +41,10 @@ import '@amezquita/design-system/styles/brands/portfolio-dark.css'
 
 Peer dependencies: `react` and `react-dom` ^19.
 
+### Fonts
+
+The package ships no font files. The `base` theme sets its text in a system font stack and its code in JetBrains Mono; `portfolio` adds Schibsted Grotesk for text. Load them from Google Fonts with the `<link>` tags in [`tokens/fonts.json`](tokens/fonts.json): `brands.<brand>.href` is the stylesheet, `brands.<brand>.preconnect` the origins to preconnect to. The same links are in `llms.txt`. Both are generated from the font tokens, so they change when a font does. Why there are no font files: [ADR 0020](decisions/0020-fonts-from-google-fonts-no-font-files.md).
+
 This package ships source `.tsx`/`.css` directly rather than a pre-built bundle, so your bundler needs to be told to process it — most tools skip transforming `node_modules` by default:
 
 - **Next.js**: add `transpilePackages: ['@amezquita/design-system']` to `next.config.js`

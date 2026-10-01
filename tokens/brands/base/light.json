@@ -308,7 +308,7 @@
   "font-family-mono": {
     "$value": "'JetBrains Mono', monospace",
     "$type": "fontFamily",
-    "$description": "Typeface for code: JetBrains Mono."
+    "$description": "Typeface for code: JetBrains Mono. tokens/fonts.json has the Google Fonts link that loads it."
   },
   "font-size-body": {
     "$value": "{font-size.md}",

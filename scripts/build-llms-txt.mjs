@@ -7,6 +7,7 @@
  *   - tokens/component-registry.json  → component list, tiers, purpose, tokenPrefix, tokenCount, stories
  *   - tokens/token-reference.json     → token counts by category, for the inlined summary in llms-full.txt
  *   - scripts/mcp-server.mjs          → the MCP tool list, from the server's own registrations (TOOLS)
+ *   - tokens/fonts.json               → the Google Fonts link each brand needs
  *
  * llms.txt is the lean index: what the system is, how to install it, and links out to
  * every public component's markdown twin (shipped by Task 1.2) and the token reference (Task 1.3).
@@ -96,6 +97,23 @@ export function firstSentence(text) {
   return m ? m[1] : text
 }
 
+// The package ships no font files (decisions/0020), so both files say which
+// link each brand needs, straight from tokens/fonts.json.
+function fontLines(fonts) {
+  const lines = [
+    '## Fonts',
+    '',
+    'The package ships no font files. Load the fonts a brand names from Google Fonts; `tokens/fonts.json` has the same links, machine-readable.',
+    '',
+  ]
+  for (const [brand, { families, href }] of Object.entries(fonts.brands)) {
+    if (!href) continue
+    const names = families.map(f => f.family).join(' and ')
+    lines.push(`- ${brand}: ${names}. \`<link rel="stylesheet" href="${href}">\``)
+  }
+  return lines
+}
+
 function mcpIntro(pkg) {
   return `Read-only tools over the same files this package ships, read live instead of from a snapshot. The server isn't in the npm package: clone [the repo](${repoUrl(pkg)}) and run \`node scripts/mcp-server.mjs\` (stdio).`
 }
@@ -108,7 +126,7 @@ function publicCount(registry) {
 
 // ── llms.txt — lean index ────────────────────────────────────────
 
-function buildIndex({ pkg, registry, siteUrls }) {
+function buildIndex({ pkg, registry, siteUrls, fonts }) {
   const { rootUrl, docsBaseUrl } = siteUrls
   const groups = groupByTier(registry.components)
 
@@ -124,6 +142,8 @@ function buildIndex({ pkg, registry, siteUrls }) {
     '```bash',
     `npm install ${pkg.name}`,
     '```',
+    '',
+    ...fontLines(fonts),
     '',
     '## Reference',
     '',
@@ -152,7 +172,7 @@ function buildIndex({ pkg, registry, siteUrls }) {
 
 // ── llms-full.txt — everything currently compiled, inlined ───────
 
-function buildFull({ pkg, registry, tokenReference, siteUrls }) {
+function buildFull({ pkg, registry, tokenReference, siteUrls, fonts }) {
   const { rootUrl } = siteUrls
   const groups = groupByTier(registry.components)
   const tokenCounts = summarizeTokensByCategory(tokenReference.tokens)
@@ -167,6 +187,8 @@ function buildFull({ pkg, registry, tokenReference, siteUrls }) {
     '```bash',
     `npm install ${pkg.name}`,
     '```',
+    '',
+    ...fontLines(fonts),
     '',
     '## Tokens',
     '',
@@ -216,10 +238,11 @@ export function buildLlmsTxt() {
   const pkg = loadJson('package.json')
   const registry = loadJson('tokens/component-registry.json')
   const tokenReference = loadJson('tokens/token-reference.json')
+  const fonts = loadJson('tokens/fonts.json')
   const siteUrls = getSiteUrls()
 
-  writeFileSync('llms.txt', buildIndex({ pkg, registry, siteUrls }))
-  writeFileSync('llms-full.txt', buildFull({ pkg, registry, tokenReference, siteUrls }))
+  writeFileSync('llms.txt', buildIndex({ pkg, registry, siteUrls, fonts }))
+  writeFileSync('llms-full.txt', buildFull({ pkg, registry, tokenReference, siteUrls, fonts }))
 
   console.log(`✓ Built llms.txt and llms-full.txt (${publicCount(registry)} public components)`)
 }

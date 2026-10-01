@@ -15,7 +15,7 @@ Work is done when:
 - `npm run validate` exits `0` (see §2 — this is the single gate, not a suggestion).
 - The relevant spec in `/specs` is satisfied, or a new one was written for work big enough to need it.
 - A significant architectural choice made along the way is recorded as an ADR in `/decisions`.
-- Generated artifacts (`docs/components/`, `tokens/token-reference.json`, `registry/`, `llms*.txt`, `tokens.json`, `skills/amezquita-design-system/`) were regenerated via `npm run tokens`, not hand-edited.
+- Generated artifacts (`docs/components/`, `tokens/token-reference.json`, `tokens/fonts.json`, `registry/`, `llms*.txt`, `tokens.json`, `skills/amezquita-design-system/`) were regenerated via `npm run tokens`, not hand-edited.
 - No known lint violation is suppressed without a one-line reason in the `lint-ignore` comment.
 
 ## 2. `npm run validate` — the one gate
