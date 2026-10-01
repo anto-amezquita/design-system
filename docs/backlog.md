@@ -33,6 +33,25 @@ Opened 2026-09-28, deferred on purpose while building the `decisions/0015` compo
 
 Status: not started.
 
+## Gaps found by the docs site's first build (backlog)
+
+Opened 2026-10-01. `design-system-site` is the first consumer on the Next.js App Router that installs the package cold, and its first build (its `specs/2026-09-30-first-build.md`, §9) turned up four things that are this repo's to fix. A fifth, the missing `'use client'` on Link, SkipLink and Tag, is fixed on `fix/client-directives`, with a validate check so it can't come back.
+
+**1. Brand CSS has no brand scope. Needs a decision first.** `sd.config.mjs` overrides the format's default `[data-brand="<brand>"]` selector with `:root, [data-mode="light"]` (and `[data-mode="dark"]`), so a page can only ever show one brand. The site's Themes page needs base and portfolio side by side, so it renders the portfolio brand in separate iframe documents instead. Two options:
+
+- **Add a scope alongside the current selector** (recommended): portfolio's files keep `:root, [data-mode="…"]` and also cover `[data-brand="portfolio"]` and `[data-brand="portfolio"] [data-mode="…"]`, so a panel can opt in. Nothing changes for the portfolio site. Minor release.
+- **Scope only:** drop `:root` from the brand files, so every portfolio consumer adds `data-brand="portfolio"` to `<html>`. Cleaner, but breaking. Major release.
+
+Either one amends `decisions/0001` (the base/portfolio split), so it needs an ADR or an amendment, plus a test on the generated CSS that the scoped selector is there. Once it ships, the site can render both brands on one page and drop its frames.
+
+**2. The doc twins' Tokens tables show the portfolio brand's values.** `docs/components/*.md` resolves token values from portfolio (Button's `--button-secondary-border` reads `#292524`, warm-800), the same bug 1.1.1 fixed in the registry's `cssVars`. `build-component-docs.mjs` should resolve from base, as the registry now does. Until then the site builds its token tables from `token-reference.json`.
+
+**3. `tokens/changelog.json` stops at `v1.1.0`.** `CHANGELOG.md` has 1.1.1. The site reads `CHANGELOG.md`, but the JSON is stale for anyone else, and the portfolio's changelog page reads it.
+
+**4. Switch the agent files' URLs to the docs site.** `llms.txt`, `llms-full.txt`, the skill and the registry manifests point at `amezquita.dk` (every manifest's `registryDependencies` hardcodes `https://amezquita.dk/r/theme.json`), and the doc twins at `/design-system/<slug>.md`. On the site they're at `/components/<slug>.md`. Wait until `design.amezquita.dk` is live, so the new URLs resolve when the release goes out.
+
+Status: not started. Item 1 waits on the user's call.
+
 ## Release dispatch to the portfolio fails: the GitHub App isn't installed there (backlog)
 
 Opened 2026-09-24. Release #108 (the merge of the `1.0.0` Version Packages PR #33) published to npm, then failed about 37s in at "Mint a token scoped to the portfolio repo" with `Not Found` from `get-a-repository-installation-for-the-authenticated-app`. So `design-system-released` was never dispatched and the portfolio's `sync-design-system.yml` never ran; `1.0.0` was bumped by hand in portfolio PR #4.
