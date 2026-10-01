@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-30"
+    "generatedAt": "2026-10-01"
   },
   "versions": [
     {
@@ -561,7 +561,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "727ee4e",
+      "type": "fix",
+      "scope": null,
+      "message": "'use client' on Link, SkipLink and Tag, and a validate check for it",
+      "date": "2026-10-01",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
