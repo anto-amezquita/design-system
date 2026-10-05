@@ -139,14 +139,20 @@ function toKebab(name) {
 // they carry `base`: every consumer gets base by default and overrides it
 // with its own brand (decisions/0001). Only the portfolio layers
 // portfolio-*.css on top, and it installs the package, not the registry.
-function cssVarsFor(tokenNames, tokenByName) {
+//
+// A token with no base value in a mode is left out of that mode, the same as
+// base-light.css and base-dark.css leave it out. Those are the portfolio-only
+// tokens (color-accent-glow and the like), which resolve to null in base.
+// Writing the null broke every install from 1.1.1 to 1.2.0: shadcn's schema
+// only allows strings, and every component depends on the theme item.
+export function cssVarsFor(tokenNames, tokenByName) {
   const light = {}
   const dark = {}
   for (const name of tokenNames) {
     const entry = tokenByName.get(name)
     if (!entry) continue
-    light[entry.name] = entry.resolved['base-light']
-    dark[entry.name] = entry.resolved['base-dark']
+    if (entry.resolved['base-light'] != null) light[entry.name] = entry.resolved['base-light']
+    if (entry.resolved['base-dark'] != null) dark[entry.name] = entry.resolved['base-dark']
   }
   return { light, dark }
 }
@@ -183,7 +189,8 @@ export function buildRegistryManifests() {
     name: 'theme',
     type: 'registry:theme',
     title: 'Design tokens',
-    description: `${semanticTokenNames.length} resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.`,
+    // Counts what the item carries, not every semantic name: portfolio-only tokens aren't in it.
+    description: `${new Set([...Object.keys(themeCssVars.light), ...Object.keys(themeCssVars.dark)]).size} resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.`,
     cssVars: themeCssVars,
   }
 
