@@ -1,8 +1,40 @@
 {
   "meta": {
-    "generatedAt": "2026-10-01"
+    "generatedAt": "2026-10-05"
   },
   "versions": [
+    {
+      "tag": "v1.2.0",
+      "date": "2026-10-01",
+      "sha": "24a1e66",
+      "entries": [
+        {
+          "sha": "f554d4f",
+          "type": "feat",
+          "scope": "tokens",
+          "message": "portfolio-scoped.css, so one page can show both brands",
+          "date": "2026-10-01",
+          "breaking": false
+        },
+        {
+          "sha": "c388951",
+          "type": "feat",
+          "scope": "tokens",
+          "message": "tokens/fonts.json, the Google Fonts link each brand needs",
+          "date": "2026-10-01",
+          "breaking": false
+        },
+        {
+          "sha": "2a52fb0",
+          "type": "feat",
+          "scope": "tokens",
+          "message": "one-line descriptions, carried into token-reference.json",
+          "date": "2026-10-01",
+          "breaking": false
+        }
+      ],
+      "entryCount": 3
+    },
     {
       "tag": "v1.1.2",
       "date": "2026-10-01",
@@ -577,32 +609,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "f554d4f",
-      "type": "feat",
-      "scope": "tokens",
-      "message": "portfolio-scoped.css, so one page can show both brands",
-      "date": "2026-10-01",
-      "breaking": false
-    },
-    {
-      "sha": "c388951",
-      "type": "feat",
-      "scope": "tokens",
-      "message": "tokens/fonts.json, the Google Fonts link each brand needs",
-      "date": "2026-10-01",
-      "breaking": false
-    },
-    {
-      "sha": "2a52fb0",
-      "type": "feat",
-      "scope": "tokens",
-      "message": "one-line descriptions, carried into token-reference.json",
-      "date": "2026-10-01",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
