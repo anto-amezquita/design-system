@@ -4,6 +4,30 @@
   },
   "versions": [
     {
+      "tag": "v1.3.2",
+      "date": "2026-10-05",
+      "sha": "35e868d",
+      "entries": [
+        {
+          "sha": "d134a55",
+          "type": "feat",
+          "scope": "theme-scope",
+          "message": "generate the brand type from the scoped brand files",
+          "date": "2026-10-05",
+          "breaking": false
+        },
+        {
+          "sha": "2206fbd",
+          "type": "fix",
+          "scope": "storybook",
+          "message": "dark stories' overlays render dark",
+          "date": "2026-10-05",
+          "breaking": false
+        }
+      ],
+      "entryCount": 2
+    },
+    {
       "tag": "v1.3.1",
       "date": "2026-10-05",
       "sha": "e2cbd3b",
@@ -658,18 +682,18 @@
   ],
   "unreleased": [
     {
-      "sha": "d134a55",
-      "type": "feat",
-      "scope": "theme-scope",
-      "message": "generate the brand type from the scoped brand files",
+      "sha": "cb79dac",
+      "type": "docs",
+      "scope": "tokens",
+      "message": "describe the four used tokens, deprecate the four unused",
       "date": "2026-10-05",
       "breaking": false
     },
     {
-      "sha": "2206fbd",
+      "sha": "9b264af",
       "type": "fix",
-      "scope": "storybook",
-      "message": "dark stories' overlays render dark",
+      "scope": "tokens",
+      "message": "delete the 28 dark-only tokens nothing reads",
       "date": "2026-10-05",
       "breaking": false
     }
