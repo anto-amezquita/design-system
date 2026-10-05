@@ -45,9 +45,7 @@ Opened 2026-10-01. `design-system-site` is the first consumer on the Next.js App
 
 **4. Eight tokens with no description, because nothing says what they're for.** `shadow-card`, `z-sticky`, `z-overlay`, `z-modal`, `opacity-overlay`, `size-dialog-default`, `font-size-display` and `letter-spacing-body` aren't used by any component here or by the portfolio, and their names don't settle their purpose. Describe them if they're kept, or remove them in the dead-token round (`--z-overlay` and `--z-modal` are already candidates, see Navigation follow-ups item 5).
 
-**5. `registry/theme.json` breaks `npx shadcn add` for every component, since `1.1.1`.** Found 2026-10-05, testing whether shadcn follows the portfolio's planned `/r/*` redirect (it does). `cssVarsFor` in `scripts/build-registry-manifests.mjs` writes `resolved['base-light']` and `resolved['base-dark']` without checking for `null`. Four semantic tokens exist only in the portfolio brand (`color-accent-glow`, `color-surface-spotlight`, `color-text-frozen-primary`, `color-text-frozen-secondary`), so the theme item gets eight `null` cssVars, and shadcn 4.21.1 rejects it: "Expected string, received null" at `cssVars.dark.color-accent-glow`. Every component lists `theme.json` in `registryDependencies`, so no install works. It went unnoticed because the portfolio still serves `1.1.0`'s registry, before 1.1.1 switched the registry to base. Fix: skip a token in a mode where its base value is `null` (portfolio-only tokens don't belong in a base registry). Then add a test that every manifest's cssVars are strings, and ideally one that runs `shadcn`'s own schema over `registry/`. No component manifest has a null; only the theme does. Blocks the portfolio's `/r/*` redirecting to the docs site, which is now live.
-
-Status: not started. Item 2 can go now: `design.amezquita.dk` is live (2026-10-05). Item 5 first: it's a broken install path.
+Status: not started. Item 2 can go now: `design.amezquita.dk` is live (2026-10-05).
 
 ## Gaps found putting both brands on one page (backlog)
 
