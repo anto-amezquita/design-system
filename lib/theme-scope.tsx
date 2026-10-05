@@ -20,7 +20,9 @@ import { createContext, useContext } from 'react'
  * don't each gain a registry dependency on theme-scope.json.
  */
 
-export type ThemeBrand = 'portfolio'
+// Generated from the *-scoped.css files in styles/brands/ (scripts/build-theme-brands.mjs).
+import type { ThemeBrand } from './theme-brands'
+export type { ThemeBrand }
 export type ThemeMode = 'light' | 'dark'
 export type ThemeScopeValue = { brand?: ThemeBrand; mode?: ThemeMode }
 

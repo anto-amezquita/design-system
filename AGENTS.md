@@ -28,7 +28,7 @@ If the `amezquita-design-system` MCP server is connected (check `claude mcp list
 
 ## Do not
 
-- Hand-edit anything generated (`docs/components/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, `skills/amezquita-design-system/`) — fix the generator in `scripts/` and run `npm run tokens`.
+- Hand-edit anything generated (`docs/components/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `lib/theme-brands.ts`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, `skills/amezquita-design-system/`) — fix the generator in `scripts/` and run `npm run tokens`.
 - Add a component token that's a pass-through or chain-skip to its referent in all 4 modes without a reason — it's a collapse candidate on day one, not free (see the token-architecture backlog in `docs/backlog.md`).
 - Introduce a second full semantic token tier for a new brand — a brand is a thin override skin on `base` (see ADR [`0001`](decisions/0001-white-label-base-portfolio-brand-split.md)), never its own complete color/type/spacing tier.
 - Adopt an external library or convention wholesale for one technique you need from it — see ADR [`0002`](decisions/0002-reject-transitions-dev-library-adopt-audit-technique.md).

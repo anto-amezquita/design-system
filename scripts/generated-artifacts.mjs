@@ -23,6 +23,7 @@ export const GENERATED_PATHS = [
   'tokens/token-reference.json',
   'tokens/fonts.json',
   'tokens/component-registry.json',
+  'lib/theme-brands.ts',
   'styles/brands/',
   'tokens.json',
   'docs/components/',

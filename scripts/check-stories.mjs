@@ -41,12 +41,15 @@ let storyFileCount = 0
 // double-quoted form alone false-negatives on any of the others, flagging a
 // story as missing dark coverage when it already has it.
 const DARK_MODE_ATTR = /data-mode=(?:\{\s*)?(["'])dark\1(?:\s*\})?/
+// A <ThemeScope mode="dark"> wrapper counts too: it renders data-mode="dark",
+// and it's the wrapper a story with a portalled overlay needs (decisions/0021).
+const DARK_THEME_SCOPE = /<ThemeScope\b[^>]*\bmode=(?:\{\s*)?(["'])dark\1/
 
 function checkDarkStory(storyFile) {
   storyFileCount++
   const content = readFileSync(storyFile, 'utf8')
-  // Either the shared decorator or an inline data-mode="dark" wrapper counts.
-  if (!content.includes('darkModeDecorator') && !DARK_MODE_ATTR.test(content)) {
+  // The shared decorator, an inline data-mode="dark" wrapper, or a dark ThemeScope.
+  if (!content.includes('darkModeDecorator') && !DARK_MODE_ATTR.test(content) && !DARK_THEME_SCOPE.test(content)) {
     missingDark.push(storyFile)
   }
 }

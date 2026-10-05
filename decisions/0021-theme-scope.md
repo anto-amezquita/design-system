@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted
+Accepted. Amended 2026-10-05 (`1.3.2`): the three negative consequences that had a fix are fixed; see the notes in Consequences.
 
 ## Context
 
@@ -40,9 +40,9 @@ Two things limit the fix. [`0007`](0007-universal-prop-passthrough-and-nesting-s
 ### Negative
 
 - A part marked with a hand-written `data-brand` or `data-mode` still has the bug, because there is no context for its overlays to read. The README and the skill point to `ThemeScope`.
-- `brand` is typed `'portfolio'`, the one scoped brand there is. A new brand with a scoped file needs the type widened by hand; it isn't generated from `tokens/brands/`.
-- Every new portalling component has to spread `useThemeScopeAttributes()`. Nothing checks for it yet; a missing one shows up as an overlay in the wrong brand.
-- `bodyDarkModeDecorator` in `lib/storybook.tsx` can now be replaced by wrapping those stories in `<ThemeScope mode="dark">`. Left as is in this change.
+- `brand` is typed `'portfolio'`, the one scoped brand there is. A new brand with a scoped file needs the type widened by hand; it isn't generated from `tokens/brands/`. **Fixed in 1.3.2:** `lib/theme-brands.ts` is generated from the `*-scoped.css` files by `scripts/build-theme-brands.mjs`, during `npm run tokens`.
+- Every new portalling component has to spread `useThemeScopeAttributes()`. Nothing checks for it yet; a missing one shows up as an overlay in the wrong brand. **Checked from 1.3.2:** `scripts/theme-scope-coverage.test.mjs` fails if a `Content` or `Overlay` inside a `Portal` doesn't spread `{...scope}`.
+- `bodyDarkModeDecorator` in `lib/storybook.tsx` can now be replaced by wrapping those stories in `<ThemeScope mode="dark">`. Left as is in this change. **Done in 1.3.2:** `darkModeDecorator` is a `ThemeScope mode="dark"`, so every dark story's overlays render dark, not only Menu's and SideNav's; the Drawer and DataTable dark stories, which had their own `data-mode` wrappers, use `ThemeScope` too.
 
 ## Related files
 

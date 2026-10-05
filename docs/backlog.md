@@ -45,18 +45,6 @@ Opened 2026-10-01. `design-system-site` is the first consumer on the Next.js App
 
 Status: not started. (Item 2, switching the agent files' URLs to the docs site, shipped in `1.3.0`.)
 
-## ThemeScope follow-ups (backlog)
-
-Opened 2026-10-05, from building `ThemeScope` for `1.3.0` (`decisions/0021`, `specs/2026-10-05-theme-scope.md`). None blocks a consumer.
-
-**1. Replace `bodyDarkModeDecorator` with `ThemeScope`.** `lib/storybook.tsx` sets `data-mode="dark"` on `<body>` so Menu's and SideNav's dark stories render their portalled content dark. Wrapping those stories in `<ThemeScope mode="dark">` does the same through the component consumers use, and the decorator can go.
-
-**2. Nothing checks that a portalling component follows the scope.** A new overlay that renders through a Radix `Portal` has to spread `useThemeScopeAttributes()` onto what it portals, or it comes out in the page's brand and mode. A check alongside `check-client-directives.mjs` could flag a `.Portal` in a component file without the hook.
-
-**3. `ThemeScope`'s `brand` type is written by hand.** It's `'portfolio'`, the one brand with a scoped file. A third brand would need it widened; generating it from the scoped files in `styles/brands/` would keep it in step.
-
-Status: not started.
-
 ## Baseline grid: sizes `decisions/0012`'s table doesn't cover (backlog)
 
 Opened 2026-09-16, surfaced while implementing `decisions/0012` (originally on `baseline-grid-vertical-rhythm`, landed via `feat/baseline-grid-line-height`) (see `roadmap.md`'s session log). The ADR maps line-height roles to the semantic font-size tokens, but real text sizes in the system weren't in its table. 12px text now has its own `caption` role (0012's 2026-09-17 amendment). The two below got the nearest sensible on-grid value so nothing is left off-grid, and each needs a call. A fourth item covers the portfolio site's upgrade, and a fifth covers controls that use `line-height: 1`.

@@ -371,6 +371,10 @@ writeFileSync(
 );
 console.log('✓ Built portfolio-scoped.css');
 
+// ThemeScope's `brand` type: one entry per *-scoped.css, written above.
+const { buildThemeBrands } = await import('./scripts/build-theme-brands.mjs');
+buildThemeBrands();
+
 const { buildTokenReference } = await import('./scripts/build-token-reference.mjs');
 buildTokenReference();
 

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, userEvent, within } from 'storybook/test'
 import { CopyIcon, DotsThreeIcon, PencilSimpleIcon, SignOutIcon, TrashIcon, UserIcon } from '@phosphor-icons/react'
-import { bodyDarkModeDecorator, darkModeDecorator } from '../../../lib/storybook'
+import { darkModeDecorator } from '../../../lib/storybook'
 import { Button } from '../../primitives/Button'
 import { Menu } from './Menu'
 
@@ -96,5 +96,5 @@ export const Overflow: Story = {
 export const DarkMode: Story = {
   ...Open,
   name: 'Dark mode',
-  decorators: [darkModeDecorator, bodyDarkModeDecorator],
+  decorators: [darkModeDecorator],
 }

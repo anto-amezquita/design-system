@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Drawer } from './Drawer'
 import { Button } from '@/components/primitives/Button'
 import { Checkbox } from '@/components/primitives/Checkbox'
+import { ThemeScope } from '../ThemeScope'
 
 const meta: Meta<typeof Drawer> = {
   title: 'Components/Drawer',
@@ -160,9 +161,11 @@ export const DarkMode: Story = {
   name: 'Dark mode',
   decorators: [
     (Story) => (
-      <div data-mode="dark" style={{ background: 'var(--color-surface-primary)', padding: '24px', borderRadius: '8px', minHeight: '200px' }}>
+      // A ThemeScope, not a plain data-mode div: the drawer portals to <body>
+      // and only follows the dark mode out of a scope (decisions/0021).
+      <ThemeScope mode="dark" style={{ background: 'var(--color-surface-primary)', padding: '24px', borderRadius: '8px', minHeight: '200px' }}>
         <Story />
-      </div>
+      </ThemeScope>
     ),
   ],
   render: () => {

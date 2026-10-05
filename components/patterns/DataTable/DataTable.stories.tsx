@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { DataTable } from './DataTable'
 import type { Column } from './DataTable'
 import { Input } from '../../primitives/Input'
+import { ThemeScope } from '../../composition/ThemeScope'
 
 const meta: Meta<typeof DataTable> = {
   title: 'Patterns/DataTable',
@@ -260,10 +261,13 @@ export const Empty: Story = {
 export const DarkMode: Story = {
   name: 'Dark mode',
   decorators: [
+    // A ThemeScope, not a plain data-mode div: the page-size Select portals
+    // its options to <body> and only follows the dark mode out of a scope
+    // (decisions/0021).
     (Story) => (
-      <div data-mode="dark" style={{ background: 'var(--color-surface-primary)', padding: '32px', borderRadius: '8px' }}>
+      <ThemeScope mode="dark" style={{ background: 'var(--color-surface-primary)', padding: '32px', borderRadius: '8px' }}>
         <Story />
-      </div>
+      </ThemeScope>
     ),
   ],
   render: () => (

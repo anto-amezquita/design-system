@@ -1,14 +1,20 @@
-import { useEffect } from 'react'
 import type { Decorator } from '@storybook/react-vite'
+import { ThemeScope } from '../components/composition/ThemeScope'
 
-/* Wraps a story in a dark-mode scope the way the site does it: data-mode on
-   the element that paints the background, so every token inside resolves
-   against the dark cascade. Used by each component's DarkMode story — the
-   rendered-story a11y audit runs axe on these, which is what catches
-   wrong-token-on-dark-surface bugs. */
+/* Wraps a story in a dark ThemeScope, the way a site scopes a dark region:
+   data-mode="dark" on the element that paints the background, so every token
+   inside resolves against the dark cascade. Overlays the story opens (a
+   Menu's panel, SideNav's drawer, a Dialog) portal to <body>, and follow the
+   scope there too (decisions/0021), so they render dark as well. Used by each
+   component's DarkMode story; the rendered-story a11y audit runs axe on
+   these, which is what catches wrong-token-on-dark-surface bugs.
+
+   Until 1.3.2 this was a plain <div>, and Menu and SideNav also needed a
+   bodyDarkModeDecorator that set data-mode on <body> for their portalled
+   content. Other dark stories' overlays rendered light. */
 export const darkModeDecorator: Decorator = (Story) => (
-  <div
-    data-mode="dark"
+  <ThemeScope
+    mode="dark"
     style={{
       background: 'var(--color-surface-primary)',
       padding: '32px',
@@ -16,18 +22,5 @@ export const darkModeDecorator: Decorator = (Story) => (
     }}
   >
     <Story />
-  </div>
+  </ThemeScope>
 )
-
-/* For stories whose overlay is portalled to <body> (Menu's panel, SideNav's
-   drawer): the portal lands outside darkModeDecorator's wrapper, so on its
-   own it would render light. This sets data-mode="dark" on <body> while the
-   story is mounted, putting the portalled content in the dark cascade too.
-   Use it alongside darkModeDecorator. */
-export const bodyDarkModeDecorator: Decorator = (Story) => {
-  useEffect(() => {
-    document.body.setAttribute('data-mode', 'dark')
-    return () => document.body.removeAttribute('data-mode')
-  }, [])
-  return <Story />
-}

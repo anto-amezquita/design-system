@@ -1,7 +1,8 @@
 'use client'
 
 import { forwardRef } from 'react'
-import { ThemeScopeContext, useThemeScope, type ThemeBrand, type ThemeMode } from '../../../lib/theme-scope'
+import { ThemeScopeContext, useThemeScope, type ThemeMode } from '../../../lib/theme-scope'
+import type { ThemeBrand } from '../../../lib/theme-brands'
 
 // Native <div> attributes pass through (decisions/0007).
 type ThemeScopeProps = React.ComponentPropsWithoutRef<'div'> & {
