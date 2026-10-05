@@ -46,28 +46,38 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Fires only when this run actually published (not on the "Version
-      # Packages" PR-open runs). Mints a token scoped to the portfolio repo
-      # specifically — the same GitHub App as self-heal-stale-artifacts.yml's,
-      # but that App must also be installed on anto-amezquita/portfolio (a
-      # separate installation step in GitHub's UI) for this to have anything
-      # to scope to. Portfolio's own sync-design-system.yml picks this up.
-      - name: Mint a token scoped to the portfolio repo
+      # Packages" PR-open runs). Mints one token scoped to the two repos that
+      # take each release as a PR: the portfolio and the docs site
+      # (design-system-site's decisions/0001, item 3). Same GitHub App as
+      # self-heal-stale-artifacts.yml's, installed on both since 2026-10-05.
+      # Each repo's own sync-design-system.yml picks the dispatch up.
+      - name: Mint a token scoped to the sites that sync releases
         if: steps.changesets.outputs.published == 'true'
-        id: portfolio-token
+        id: sites-token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
           client-id: ${{ secrets.SELF_HEAL_APP_CLIENT_ID }}
           private-key: ${{ secrets.SELF_HEAL_APP_PRIVATE_KEY }}
           owner: anto-amezquita
-          repositories: portfolio
+          repositories: portfolio,design-system-site
 
-      - name: Notify portfolio of the new release
+      # Tries every repo, so one failing doesn't keep the release from the
+      # other; the step goes red at the end if any dispatch failed.
+      - name: Notify the sites of the new release
         if: steps.changesets.outputs.published == 'true'
         env:
-          GH_TOKEN: ${{ steps.portfolio-token.outputs.token }}
+          GH_TOKEN: ${{ steps.sites-token.outputs.token }}
         run: |
           VERSION=$(node -p "require('./package.json').version")
-          gh api repos/anto-amezquita/portfolio/dispatches \
-            -f event_type=design-system-released \
-            -f "client_payload[version]=$VERSION"
-          echo "Dispatched design-system-released ($VERSION) to anto-amezquita/portfolio"
+          failed=""
+          for repo in portfolio design-system-site; do
+            if gh api "repos/anto-amezquita/$repo/dispatches" \
+                -f event_type=design-system-released \
+                -f "client_payload[version]=$VERSION"; then
+              echo "Dispatched design-system-released ($VERSION) to anto-amezquita/$repo"
+            else
+              echo "::error::Dispatch to anto-amezquita/$repo failed"
+              failed="$failed $repo"
+            fi
+          done
+          [ -z "$failed" ] || exit 1

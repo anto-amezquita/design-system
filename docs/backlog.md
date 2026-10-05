@@ -63,9 +63,9 @@ Opened 2026-09-24. From `1.0.0` to `1.3.0`, every release published to npm and t
 
 **Set up 2026-10-05.** The App is installed on `portfolio` and `design-system-site` as well as this repo, with Contents, Pull requests and Issues write (Issues newly accepted). The portfolio has its own `SELF_HEAL_APP_CLIENT_ID` and `SELF_HEAL_APP_PRIVATE_KEY`. Its half is proven: a hand-sent `design-system-released` dispatch for `1.3.0` ran its `sync-design-system.yml`, which opened portfolio PR #8, all checks green.
 
-**Still to confirm:** this repo's half, minting the portfolio-scoped token in `release.yml`. It can only run on a real publish. On the next release, check that "Mint a token scoped to the portfolio repo" and "Notify portfolio of the new release" pass, and that a bump PR opens in the portfolio.
+**Still to confirm:** this repo's half, minting the token in `release.yml`. It can only run on a real publish. On the next release, check that "Mint a token scoped to the sites that sync releases" and "Notify the sites of the new release" pass, and that a bump PR opens in the portfolio and in `design-system-site`.
 
-**Adding the site as a second dispatch target in `release.yml` waits** until `design-system-site` has its own sync workflow listening for `design-system-released`. The App is already installed there; the site still needs its own copies of the two secrets. When that workflow lands, add `design-system-site` to the token step's `repositories` and a second dispatch call.
+**The docs site is a second dispatch target since 2026-10-05.** `release.yml` mints one token for `portfolio` and `design-system-site`, and dispatches to each in turn, so one failing doesn't block the other. The site's `sync-design-system.yml` takes the dispatch from its `main` branch.
 
 Status: waiting on the next release.
 
