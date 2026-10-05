@@ -3,6 +3,7 @@
 import * as RadixDialog from '@radix-ui/react-dialog'
 import { XIcon } from '@phosphor-icons/react'
 import { Heading } from '../../primitives/Heading'
+import { useThemeScopeAttributes } from '../../../lib/theme-scope'
 
 export type BaseSheetProps = {
   open?: boolean
@@ -50,6 +51,8 @@ export function BaseSheet({
 }: BaseSheetProps) {
   const b = (element: string) => `${blockName}__${element}`
 
+  // Content portals to <body>; this keeps a ThemeScope's brand and mode on it (decisions/0021).
+  const scope = useThemeScopeAttributes()
   return (
     <RadixDialog.Root open={open} onOpenChange={onOpenChange} defaultOpen={defaultOpen} modal={modal}>
       {trigger && (
@@ -59,8 +62,9 @@ export function BaseSheet({
       )}
 
       <RadixDialog.Portal>
-        {overlayClassName && <RadixDialog.Overlay className={overlayClassName} />}
+        {overlayClassName && <RadixDialog.Overlay {...scope} className={overlayClassName} />}
         <RadixDialog.Content
+          {...scope}
           className={contentClassName}
           {...(!description && { 'aria-describedby': undefined })}
           onCloseAutoFocus={onCloseAutoFocus}

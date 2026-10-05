@@ -43,17 +43,18 @@ Peer dependencies: `react` and `react-dom` ^19.
 
 ### Both brands on one page
 
-`portfolio-light.css` and `portfolio-dark.css` restyle the whole page from `:root`. To show the portfolio brand inside one part of a page and keep the rest on `base`, load `portfolio-scoped.css` instead of those two, and mark the part with `data-brand`:
+`portfolio-light.css` and `portfolio-dark.css` restyle the whole page from `:root`. To show the portfolio brand inside one part of a page and keep the rest on `base`, load `portfolio-scoped.css` instead of those two, and wrap the part in `ThemeScope`:
 
 ```tsx
 import '@amezquita/design-system/styles/brands/base-light.css'
 import '@amezquita/design-system/styles/brands/base-dark.css'
 import '@amezquita/design-system/styles/brands/portfolio-scoped.css'
+import { ThemeScope } from '@amezquita/design-system/components/composition/ThemeScope'
 
-<div data-brand="portfolio">…</div>
+<ThemeScope brand="portfolio">…</ThemeScope>
 ```
 
-The panel follows the page's `data-mode`, or its own if it has one. Don't load `portfolio-scoped.css` next to `portfolio-light.css`: the `:root` one would still restyle everything.
+The part follows the page's mode, or its own with `mode="light"` or `mode="dark"`; `mode` works without a brand too. Dialogs, drawers, menus, selects and tooltips opened inside it take the same brand and mode, although they render at the end of the page. `ThemeScope` renders a `<div data-brand data-mode>`; writing those attributes by hand styles the part, but overlays opened in it fall back to the page's brand and mode ([ADR 0021](decisions/0021-theme-scope.md)). Don't load `portfolio-scoped.css` next to `portfolio-light.css`: the `:root` one would still restyle everything.
 
 ### Fonts
 

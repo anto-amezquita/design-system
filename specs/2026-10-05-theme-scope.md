@@ -12,7 +12,7 @@ Built on `feat/theme-scope`, one commit per item.
 |---|---|---|
 | 1 | Switch the agent files' URLs to the docs site | `llms.txt`, `llms-full.txt`, the skill and the registry point at `https://design.amezquita.dk`, with doc twins at `/components/<slug>.md`. |
 | 2 | Breadcrumb's `<nav>` label can't be changed | Breadcrumb takes `aria-label` (default `"Breadcrumb"`) and passes native attributes through, per [`0007`](../decisions/0007-universal-prop-passthrough-and-nesting-safe-z-index.md). |
-| 3 | Overlays leave a brand scope | A new public component, `ThemeScope`, and an internal portal wrapper the five portalled overlays use. New ADR `0021`. |
+| 3 | Overlays leave a brand scope | A new public component, `ThemeScope`, and a hook in `lib/` whose attributes the five portalling overlays put on what they portal. New ADR `0021`. |
 
 ---
 
@@ -39,7 +39,8 @@ Breadcrumb hardcodes `aria-label="Breadcrumb"` and takes only `className`. Two o
 **Change.**
 
 - **`ThemeScope`**, a composition component. It renders an element with `data-brand` and `data-mode` when given (`brand?: 'portfolio'`, `mode?: 'light' | 'dark'`), passes native attributes through, and puts `{ brand, mode }` in a React context. A nested scope takes what it doesn't set from the one around it. A scope with neither prop is allowed and changes nothing.
-- **An internal `ScopedPortal`** that the five overlays use in place of calling their Radix `Portal` directly. Inside a `ThemeScope`, it wraps the content in `<div data-brand data-mode style="display: contents">`. The content still mounts at the end of `<body>`, so 0007's layering is unchanged, and `display: contents` adds no box and no stacking context. Custom properties inherit through it, so `portfolio-scoped.css` and the base files apply as they do in the region. Outside a scope it adds nothing.
+- **`useThemeScopeAttributes()` in `lib/theme-scope.tsx`**, which the five overlays spread onto the elements they portal (the content, and the overlay where there is one). It returns the nearest scope's `data-brand` and `data-mode`, or nothing outside a scope. The brand CSS matches an element that carries the attributes itself, so the content takes the scope's tokens where it renders, at the end of `<body>`: 0007's layering is unchanged and nothing is added to the DOM. In `lib/`, so the overlays don't each gain a registry dependency on `theme-scope.json`.
+- **Changed while building.** This spec first planned a `display: contents` wrapper around portalled content. Radix's portals unmount closed content once their direct child's exit animation ends; a wrapper with no animation is that child, so Dialog's, Drawer's and Tooltip's exit animations would be cut short. Dialog's portal also mounts overlay and content as separate children. ADR `0021` has the detail.
 - **Toast stays page-level.** Its viewport renders where `ToastProvider` sits. A toast is about the app, not a panel, so it doesn't follow a scope.
 - **What `ThemeScope` doesn't fix:** a region marked with a hand-written `data-brand` or `data-mode` still has the bug. The README's scoped-brand section presents `ThemeScope` as the way to scope, with the attribute as what it renders.
 
@@ -47,7 +48,7 @@ Breadcrumb hardcodes `aria-label="Breadcrumb"` and takes only `className`. Two o
 
 **Tests** (browser project, real cascade, as `lib/brand-scope.test.ts` does): for each of the five overlays, opened inside `<ThemeScope brand="portfolio" mode="dark">` on a light page, the content resolves the portfolio's dark `--color-accent-default`; opened outside any scope, base light. A nested scope inherits what it doesn't set. The existing nesting tests (`Select.nesting`, `Dialog.nesting` and the rest) pass unchanged, which is the check that 0007 still holds.
 
-**Also:** stories (default, dark, nested, with a Menu open), the `docs/components.md` entry, and the count of public components going from 34 to 35 (composition 9 to 10) wherever it's stated. ADR `0021` records the decision.
+**Also:** stories (default, dark, nested, with a Menu open; Storybook loads the portfolio brand for the whole canvas, so they show the mode side), the `docs/components.md` entry, and the count of public components going from 34 to 35 (composition 9 to 10) wherever it's stated. ADR `0021` records the decision.
 
 ---
 

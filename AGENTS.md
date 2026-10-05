@@ -48,10 +48,10 @@ Component tokens follow `--<component-slug>-*` (e.g. `--button-padding-x`, `--di
 
 ## Components that exist
 
-34 public components. Anything not on this list is provably invented — check `tokens/component-registry.json` if this list is ever stale.
+35 public components. Anything not on this list is provably invented — check `tokens/component-registry.json` if this list is ever stale.
 
 - **Primitives (16):** Avatar, Badge, Button, Checkbox, Heading, Input, Label, Link, Radio, Select, Skeleton, SkipLink, Spinner, Switch, Tag, Textarea
-- **Composition (9):** Alert, AlertDialog, Card, Dialog, Drawer, Menu, NavigationMenu, Toast, Tooltip
+- **Composition (10):** Alert, AlertDialog, Card, Dialog, Drawer, Menu, NavigationMenu, ThemeScope, Toast, Tooltip
 - **Patterns (9):** Accordion, Breadcrumb, DataTable, EmptyState, Hero, Pagination, SideNav, Table, Tabs
 
 `SideNav` ships with two sub-components, `SideNavProvider` and `SideNavTrigger`, registered the same way Card's parts are.

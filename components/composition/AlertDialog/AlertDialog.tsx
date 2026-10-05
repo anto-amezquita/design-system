@@ -2,6 +2,7 @@
 
 import * as RadixAlertDialog from '@radix-ui/react-alert-dialog'
 import { cn } from '../../../lib/cn'
+import { useThemeScopeAttributes } from '../../../lib/theme-scope'
 import '../Dialog/Dialog.css'
 
 type AlertDialogSize = 'sm' | 'md' | 'lg'
@@ -55,11 +56,14 @@ export function AlertDialog({
     size !== 'md' && `dialog__content--${size}`,
   )
 
+  // Content portals to <body>; this keeps a ThemeScope's brand and mode on it (decisions/0021).
+  const scope = useThemeScopeAttributes()
   return (
     <RadixAlertDialog.Root open={open} onOpenChange={onOpenChange}>
       <RadixAlertDialog.Portal>
-        <RadixAlertDialog.Overlay className="dialog__overlay" />
+        <RadixAlertDialog.Overlay {...scope} className="dialog__overlay" />
         <RadixAlertDialog.Content
+          {...scope}
           className={contentClass}
           {...(!description && { 'aria-describedby': undefined })}
           onCloseAutoFocus={onCloseAutoFocus}

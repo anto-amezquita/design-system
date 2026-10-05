@@ -243,6 +243,15 @@ The site's header navigation: top-level links, plus groups that open a dropdown 
 - Storybook: Composition/NavigationMenu
 - Stories: Default, Open, WithIcons, NoCurrentPage, DarkMode
 
+### ThemeScope
+
+Gives one part of a page its own brand, mode, or both; overlays opened inside it (Dialog, Drawer, AlertDialog, Menu, Select, Tooltip) take the same, although they render at the end of the page
+
+- Import: `import { ThemeScope } from '@amezquita/design-system/components/composition/ThemeScope'`
+- Token prefix: `themescope-*` (0 tokens)
+- Storybook: Composition/ThemeScope
+- Stories: Default, MenuOpen, Nested, DarkMode
+
 ### Toast
 
 Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout

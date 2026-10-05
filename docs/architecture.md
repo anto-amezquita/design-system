@@ -66,9 +66,9 @@ docs/              — roadmap/rationale docs that aren't tied to one feature (b
 
 This repo reports three different totals depending on what's being counted, and none of them is wrong:
 
-- **33** — CSS files under `components/{primitives,composition,patterns}/` (`npm run tokens:lint`'s "33 files checked"). Lower than the component count because `AlertDialog` and `BaseSheet` have no CSS file of their own — both deliberately reuse `Dialog`'s.
-- **34** — public components (`tokens/component-registry.json`'s `publicComponentCount`, `AGENTS.md`'s allow-list). What "34 public components" everywhere else in this repo's docs means. Sub-components (Card's parts, `SideNavProvider`, `SideNavTrigger`) are registered separately and don't count here.
-- **35** — directories on disk under the same three tiers (`check-components-doc.mjs`'s "directories documented"). 34 public + `BaseSheet` (internal).
+- **33** — CSS files under `components/{primitives,composition,patterns}/` (`npm run tokens:lint`'s "33 files checked"). Lower than the component count because `AlertDialog`, `BaseSheet` and `ThemeScope` have no CSS file of their own — the first two deliberately reuse `Dialog`'s, and `ThemeScope` has no styles.
+- **35** — public components (`tokens/component-registry.json`'s `publicComponentCount`, `AGENTS.md`'s allow-list). What "35 public components" everywhere else in this repo's docs means. Sub-components (Card's parts, `SideNavProvider`, `SideNavTrigger`) are registered separately and don't count here.
+- **36** — directories on disk under the same three tiers (`check-components-doc.mjs`'s "directories documented"). 35 public + `BaseSheet` (internal).
 
 If a number in one file looks like it contradicts a number in another, check which of these three it's actually counting before assuming drift.
 
@@ -90,7 +90,7 @@ Three tiers, strictly layered — no skipping:
 
 ## 4. Multi-brand / theming
 
-Two brands today, each with light + dark: `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)) and `portfolio` (thin override skin on top of `base`). `sd.config.mjs` outputs five CSS files: `base-light.css`, `base-dark.css`, `portfolio-light.css`, `portfolio-dark.css`, and `portfolio-scoped.css`, the same portfolio overrides scoped to `[data-brand="portfolio"]` instead of `:root`, so one page can show both brands (0001's 2026-10-01 amendment). A third brand would follow the same shape as `portfolio` — a thin skin, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
+Two brands today, each with light + dark: `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)) and `portfolio` (thin override skin on top of `base`). `sd.config.mjs` outputs five CSS files: `base-light.css`, `base-dark.css`, `portfolio-light.css`, `portfolio-dark.css`, and `portfolio-scoped.css`, the same portfolio overrides scoped to `[data-brand="portfolio"]` instead of `:root`, so one page can show both brands (0001's 2026-10-01 amendment). The `ThemeScope` component sets that attribute, and `data-mode`, on a part of a page, and the overlays that portal to `<body>` carry the same two attributes, so they match the part they were opened from (ADR [`0021`](../decisions/0021-theme-scope.md)). A third brand with a scoped file also needs adding to `ThemeScope`'s `brand` type, which isn't generated. A third brand would follow the same shape as `portfolio` — a thin skin, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
 
 ## 5. Code conventions
 

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 58,
-    "publicComponentCount": 34,
+    "componentCount": 59,
+    "publicComponentCount": 35,
     "subComponentCount": 23
   },
   "components": [
@@ -563,6 +563,23 @@
         "Open",
         "WithIcons",
         "NoCurrentPage",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "ThemeScope",
+      "slug": "theme-scope",
+      "tier": "composition",
+      "purpose": "Gives one part of a page its own brand, mode, or both; overlays opened inside it (Dialog, Drawer, AlertDialog, Menu, Select, Tooltip) take the same, although they render at the end of the page",
+      "storybookPath": "Composition/ThemeScope",
+      "storybookTitleId": "composition-themescope",
+      "tokenPrefix": "themescope",
+      "stories": [
+        "Default",
+        "MenuOpen",
+        "Nested",
         "DarkMode"
       ],
       "tokenCount": 0,
