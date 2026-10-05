@@ -86,7 +86,7 @@ StyleDictionary.registerFormat({
     // initialUnless: names this block must still reset when the dictionary has no
     // value for them. `initial` on a custom property means "undefined", the
     // same as a page with no declaration at all (portfolio-scoped.css's light
-    // block, for the dark-only tokens).
+    // block, for a token only a dark file defines; none since 1.3.3).
     const emitted = new Set(dictionary.allTokens.map(token => token.name));
     const resets = [...(initialUnless ?? [])]
       .filter(name => !emitted.has(name))
@@ -264,10 +264,11 @@ const PORTFOLIO_SCOPED_DARK = [
 // Both blocks declare every token either portfolio file does. A light panel
 // inside a dark page still matches the dark block through its ancestor
 // ([data-mode="dark"] [data-brand="portfolio"]), so any token the light block
-// left out would keep its dark value there. Dark-only tokens (checkbox-*,
-// radio-* and textarea-* in the dark files) have no light value, so the light
-// block resets them to `initial`. portfolio-light.css doesn't need any of
-// this: on a whole page, nothing dark matches a light element.
+// left out would keep its dark value there. A token only a dark file defines
+// has no light value, so the light block resets it to `initial`. There are
+// none since 1.3.3 (scripts/dark-tokens.test.mjs fails on one); the reset
+// stays as a guard. portfolio-light.css doesn't need any of this: on a whole
+// page, nothing dark matches a light element.
 const PORTFOLIO_SCOPED_TOKENS = new Set([
   ...Object.keys(portfolioLightJson), ...portfolioLightChanged,
   ...Object.keys(portfolioDarkJson), ...portfolioDarkChanged,

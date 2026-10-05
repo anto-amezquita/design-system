@@ -17,8 +17,9 @@ import portfolioScoped from '../styles/brands/portfolio-scoped.css?raw'
 type Mode = 'light' | 'dark'
 
 // Every custom property any brand file declares. Taken from the CSS, not
-// token-reference.json, which leaves out the dark-only tokens (checkbox-*,
-// radio-*, textarea-*), the ones most likely to leak between modes.
+// token-reference.json: a token only a dark file defined would be in the CSS
+// but not the reference, and it's the kind most likely to leak between modes.
+// There are none since 1.3.3, and scripts/dark-tokens.test.mjs keeps it so.
 const CSS_VARS = [
   ...new Set(
     [baseLight, baseDark, portfolioLight, portfolioDark].flatMap(css =>
