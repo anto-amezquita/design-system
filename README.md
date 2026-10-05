@@ -2,7 +2,7 @@
 
 Token-first, multi-brand design system built and maintained solo — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance. Extracted from and still powering [amezquita.dk](https://amezquita.dk), and built to be shared across other projects.
 
-[Live component docs →](https://amezquita.dk/design-system)
+[Live component docs →](https://design.amezquita.dk)
 
 ## What this is
 
@@ -18,10 +18,10 @@ A single source of truth for tokens and components, designed to be consumed as a
 ## Use via the component registry
 
 ```bash
-npx shadcn add https://amezquita.dk/r/button.json
+npx shadcn add https://design.amezquita.dk/r/button.json
 ```
 
-Works with any [shadcn-spec](https://ui.shadcn.com/docs/registry) registry client. Adds `@amezquita/design-system` as a dependency and injects the component's resolved design tokens (light + dark) into your project's CSS — no copy-pasted source, this is the same npm package either way. Swap `button` for any [public component](https://amezquita.dk/design-system/components), or browse the full manifest at [amezquita.dk/r/registry.json](https://amezquita.dk/r/registry.json).
+Works with any [shadcn-spec](https://ui.shadcn.com/docs/registry) registry client. Adds `@amezquita/design-system` as a dependency and injects the component's resolved design tokens (light + dark) into your project's CSS — no copy-pasted source, this is the same npm package either way. Swap `button` for any [public component](https://design.amezquita.dk/components), or browse the full manifest at [design.amezquita.dk/r/registry.json](https://design.amezquita.dk/r/registry.json).
 
 If you're on Next.js, you'll also need the `transpilePackages` config below — the registry installs the dependency, not your bundler config.
 

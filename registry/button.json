@@ -8,8 +8,8 @@
     "@amezquita/design-system"
   ],
   "registryDependencies": [
-    "https://amezquita.dk/r/theme.json",
-    "https://amezquita.dk/r/spinner.json"
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/spinner.json"
   ],
   "cssVars": {
     "light": {

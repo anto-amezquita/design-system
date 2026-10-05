@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "@amezquita/design-system",
-  "homepage": "https://amezquita.dk",
+  "homepage": "https://design.amezquita.dk",
   "items": [
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -300,7 +300,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -335,7 +335,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -364,8 +364,8 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json",
-        "https://amezquita.dk/r/spinner.json"
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/spinner.json"
       ],
       "cssVars": {
         "light": {
@@ -418,7 +418,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -439,7 +439,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {},
@@ -456,7 +456,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {},
@@ -473,7 +473,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {},
@@ -490,7 +490,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {},
@@ -507,7 +507,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -530,7 +530,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -553,7 +553,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -578,7 +578,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {},
@@ -595,7 +595,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -616,7 +616,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -641,7 +641,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -668,7 +668,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {},
@@ -685,7 +685,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -712,7 +712,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {},
@@ -729,8 +729,8 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json",
-        "https://amezquita.dk/r/heading.json"
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/heading.json"
       ],
       "cssVars": {
         "light": {
@@ -751,8 +751,8 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json",
-        "https://amezquita.dk/r/heading.json"
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/heading.json"
       ],
       "cssVars": {
         "light": {
@@ -783,8 +783,8 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json",
-        "https://amezquita.dk/r/heading.json"
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/heading.json"
       ],
       "cssVars": {
         "light": {
@@ -821,7 +821,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {},
@@ -838,7 +838,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {},
@@ -855,7 +855,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -886,7 +886,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -917,7 +917,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -944,7 +944,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -969,13 +969,13 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json",
-        "https://amezquita.dk/r/checkbox.json",
-        "https://amezquita.dk/r/empty-state.json",
-        "https://amezquita.dk/r/input.json",
-        "https://amezquita.dk/r/pagination.json",
-        "https://amezquita.dk/r/select.json",
-        "https://amezquita.dk/r/table.json"
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/checkbox.json",
+        "https://design.amezquita.dk/r/empty-state.json",
+        "https://design.amezquita.dk/r/input.json",
+        "https://design.amezquita.dk/r/pagination.json",
+        "https://design.amezquita.dk/r/select.json",
+        "https://design.amezquita.dk/r/table.json"
       ],
       "cssVars": {
         "light": {
@@ -1000,9 +1000,9 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json",
-        "https://amezquita.dk/r/button.json",
-        "https://amezquita.dk/r/heading.json"
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/button.json",
+        "https://design.amezquita.dk/r/heading.json"
       ],
       "cssVars": {
         "light": {
@@ -1025,7 +1025,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -1060,7 +1060,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -1087,10 +1087,10 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json",
-        "https://amezquita.dk/r/button.json",
-        "https://amezquita.dk/r/drawer.json",
-        "https://amezquita.dk/r/tooltip.json"
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/button.json",
+        "https://design.amezquita.dk/r/drawer.json",
+        "https://design.amezquita.dk/r/tooltip.json"
       ],
       "cssVars": {
         "light": {
@@ -1111,7 +1111,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {
@@ -1132,7 +1132,7 @@
         "@amezquita/design-system"
       ],
       "registryDependencies": [
-        "https://amezquita.dk/r/theme.json"
+        "https://design.amezquita.dk/r/theme.json"
       ],
       "cssVars": {
         "light": {

@@ -34,6 +34,8 @@ import { readFileSync, writeFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { TOOLS } from './mcp-server.mjs'
 
+import { getSiteUrls } from './site-urls.mjs'
+
 const TIER_ORDER = ['primitives', 'composition', 'patterns']
 const TIER_LABELS = {
   primitives: 'Primitives',
@@ -43,24 +45,6 @@ const TIER_LABELS = {
 
 function loadJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'))
-}
-
-// Reads the docs site's URLs from README.md instead of hardcoding the domain a
-// second time — if the site ever moves, one edit to the README fixes both files.
-function getSiteUrls() {
-  const readme = readFileSync('README.md', 'utf8')
-
-  const rootMatch = readme.match(/\[amezquita\.dk\]\((https?:\/\/[^)]+)\)/)
-  if (!rootMatch) {
-    throw new Error('Could not find the "[amezquita.dk](...)" link in README.md — build-llms-txt.mjs derives the site root URL from it.')
-  }
-
-  const docsMatch = readme.match(/\[Live component docs.*?\]\((https?:\/\/[^)]+)\)/)
-  if (!docsMatch) {
-    throw new Error('Could not find the "Live component docs" link in README.md — build-llms-txt.mjs derives the docs base URL from it.')
-  }
-
-  return { rootUrl: rootMatch[1], docsBaseUrl: docsMatch[1] }
 }
 
 function groupByTier(components) {
@@ -127,7 +111,7 @@ function publicCount(registry) {
 // ── llms.txt — lean index ────────────────────────────────────────
 
 function buildIndex({ pkg, registry, siteUrls, fonts }) {
-  const { rootUrl, docsBaseUrl } = siteUrls
+  const { siteUrl, portfolioUrl, twinUrl } = siteUrls
   const groups = groupByTier(registry.components)
 
   const lines = [
@@ -135,7 +119,7 @@ function buildIndex({ pkg, registry, siteUrls, fonts }) {
     '',
     `> ${pkg.description}`,
     '',
-    `Extracted from and still powering [amezquita.dk](${rootUrl}). ${publicCount(registry)} components across primitives, composition, and pattern tiers.`,
+    `Extracted from and still powering [amezquita.dk](${portfolioUrl}). ${publicCount(registry)} components across primitives, composition, and pattern tiers.`,
     '',
     '## Install',
     '',
@@ -147,9 +131,9 @@ function buildIndex({ pkg, registry, siteUrls, fonts }) {
     '',
     '## Reference',
     '',
-    `- [Token reference](${rootUrl}/tokens.json): every token name and resolved value, across all four theme axes`,
-    `- [Full docs, single fetch](${rootUrl}/llms-full.txt): this index with every component inlined`,
-    `- [Live component docs](${docsBaseUrl}): human-facing docs site`,
+    `- [Token reference](${siteUrl}/tokens.json): every token name and resolved value, across all four theme axes`,
+    `- [Full docs, single fetch](${siteUrl}/llms-full.txt): this index with every component inlined`,
+    `- [Live component docs](${siteUrl}): human-facing docs site`,
   ]
 
   for (const tier of TIER_ORDER) {
@@ -157,7 +141,7 @@ function buildIndex({ pkg, registry, siteUrls, fonts }) {
     if (components.length === 0) continue
     lines.push('', `## ${TIER_LABELS[tier]}`, '')
     for (const component of components) {
-      lines.push(`- [${component.name}](${docsBaseUrl}/${component.slug}.md): ${component.purpose}`)
+      lines.push(`- [${component.name}](${twinUrl(component.slug)}): ${component.purpose}`)
     }
   }
 
@@ -173,7 +157,7 @@ function buildIndex({ pkg, registry, siteUrls, fonts }) {
 // ── llms-full.txt — everything currently compiled, inlined ───────
 
 function buildFull({ pkg, registry, tokenReference, siteUrls, fonts }) {
-  const { rootUrl } = siteUrls
+  const { siteUrl } = siteUrls
   const groups = groupByTier(registry.components)
   const tokenCounts = summarizeTokensByCategory(tokenReference.tokens)
 
@@ -192,7 +176,7 @@ function buildFull({ pkg, registry, tokenReference, siteUrls, fonts }) {
     '',
     '## Tokens',
     '',
-    `${tokenReference.meta.total} tokens total, resolved across base/portfolio × light/dark. Full values: ${rootUrl}/tokens.json`,
+    `${tokenReference.meta.total} tokens total, resolved across base/portfolio × light/dark. Full values: ${siteUrl}/tokens.json`,
     '',
   ]
 

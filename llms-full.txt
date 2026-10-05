@@ -17,7 +17,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-373 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+373 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
 - component: 106
