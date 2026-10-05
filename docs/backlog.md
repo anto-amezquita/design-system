@@ -57,18 +57,6 @@ Opened 2026-10-05, from building `ThemeScope` for `1.3.0` (`decisions/0021`, `sp
 
 Status: not started.
 
-## Release dispatch to the portfolio: confirm on the next release (backlog)
-
-Opened 2026-09-24. From `1.0.0` to `1.3.0`, every release published to npm and then failed at "Mint a token scoped to the portfolio repo" with `Not Found` from `get-a-repository-installation-for-the-authenticated-app`: the self-heal GitHub App wasn't installed on `anto-amezquita/portfolio`, so `design-system-released` was never dispatched.
-
-**Set up 2026-10-05.** The App is installed on `portfolio` and `design-system-site` as well as this repo, with Contents, Pull requests and Issues write (Issues newly accepted). The portfolio has its own `SELF_HEAL_APP_CLIENT_ID` and `SELF_HEAL_APP_PRIVATE_KEY`. Its half is proven: a hand-sent `design-system-released` dispatch for `1.3.0` ran its `sync-design-system.yml`, which opened portfolio PR #8, all checks green.
-
-**Still to confirm:** this repo's half, minting the token in `release.yml`. It can only run on a real publish. On the next release, check that "Mint a token scoped to the sites that sync releases" and "Notify the sites of the new release" pass, and that a bump PR opens in the portfolio and in `design-system-site`.
-
-**The docs site is a second dispatch target since 2026-10-05.** `release.yml` mints one token for `portfolio` and `design-system-site`, and dispatches to each in turn, so one failing doesn't block the other. The site's `sync-design-system.yml` takes the dispatch from its `main` branch.
-
-Status: waiting on the next release.
-
 ## Portfolio's `chromatic` changelog check fails on every branch (backlog)
 
 Opened 2026-09-24. On portfolio PR #4 the "Check changelog is in sync" step failed until `npm run tokens` was rerun after the last commit, and the changelog committed again as a `chore`. It's the same stale-by-one gap as item 1 of Self-healing CI below, but the portfolio has no self-heal bot, so every branch with a qualifying commit needs that manual step. `update-changelog` regenerates the file on `main` after merge. Options: leave it, port Phase 1 self-heal to the portfolio, or relax the check. This repo relaxed it on 2026-09-28 (`decisions/0019`: no branch gate, `main` regenerates after merge); the same change would fix the portfolio.
