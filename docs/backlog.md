@@ -39,30 +39,21 @@ Opened 2026-10-01. `design-system-site` is the first consumer on the Next.js App
 
 **1. `tokens/changelog.json` is always one release behind in the package.** The `1.1.2` package ends at `v1.1.1`, with 1.1.2's own commit under `unreleased`; the portfolio's `1.1.0` ends at `v1.0.0`. The cause: `build-changelog.mjs` groups commits by git tag, and the tag for a release is created by `changeset publish` in `release.yml`, after the Version Packages merge has fixed what goes in the tarball. So package X can never contain X. On `main`, X appears only after the next push, since pushing the tag doesn't trigger `update-changelog`. A fix needs two parts: the builder labels untagged commits with `package.json`'s version when that version has no tag yet, and `release.yml` rebuilds the changelog before publishing. The second touches `decisions/0019`'s "main owns it" split, so it wants a decision, not a quick patch. The site reads `CHANGELOG.md`, so it isn't blocked; the portfolio's changelog page reads the JSON.
 
-**2. Switch the agent files' URLs to the docs site.** `llms.txt`, `llms-full.txt`, the skill and the registry manifests point at `amezquita.dk` (every manifest's `registryDependencies` hardcodes `https://amezquita.dk/r/theme.json`), and the doc twins at `/design-system/<slug>.md`. On the site they're at `/components/<slug>.md`. Wait until `design.amezquita.dk` is live, so the new URLs resolve when the release goes out.
-
 **3. Dark-only tokens are missing from `token-reference.json`.** Found building `portfolio-scoped.css`: `base/dark.json` and `portfolio/dark.json` define 28 `checkbox-*`, `radio-*` and `textarea-*` tokens with no light value. `build-token-reference.mjs` builds its token list from the light layers only (its comment says dark never adds a name, which isn't true), so these don't appear in the reference, `tokens.json` or the MCP tools. No component references any of them. Either they're dead and should go in the dead-token round, or they need light values and a place in the reference.
 
 **4. Eight tokens with no description, because nothing says what they're for.** `shadow-card`, `z-sticky`, `z-overlay`, `z-modal`, `opacity-overlay`, `size-dialog-default`, `font-size-display` and `letter-spacing-body` aren't used by any component here or by the portfolio, and their names don't settle their purpose. Describe them if they're kept, or remove them in the dead-token round (`--z-overlay` and `--z-modal` are already candidates, see Navigation follow-ups item 5).
 
-Status: not started. Item 2 can go now: `design.amezquita.dk` is live (2026-10-05).
+Status: not started. (Item 2, switching the agent files' URLs to the docs site, shipped in `1.3.0`.)
 
-## Gaps found putting both brands on one page (backlog)
+## ThemeScope follow-ups (backlog)
 
-Opened 2026-10-01. `design-system-site` moved to `1.2.0` and its Themes page now renders the same sample screen twice on one page, the second panel marked `data-brand="portfolio"` (its spec §9, items 9 and 10). That's the first time two copies of the components share a page, and two gaps showed. They fit one release: item 2 adds a component, so `1.3.0`, and item 1 can ride along.
+Opened 2026-10-05, from building `ThemeScope` for `1.3.0` (`decisions/0021`, `specs/2026-10-05-theme-scope.md`). None blocks a consumer.
 
-**1. Breadcrumb's `<nav>` label can't be changed.** `Breadcrumb.tsx` hardcodes `aria-label="Breadcrumb"`, so two breadcrumbs on one page are two landmarks with the same name (axe `landmark-unique`). It's the only landmark component out of line: NavigationMenu, SideNav and Pagination all take an `aria-label` with an English default. Fix it the same way, per `decisions/0006` and `0007`: accept `aria-label` (default `"Breadcrumb"`) and pass the other native attributes through to the `<nav>`. Non-breaking. The site renames the two with a DOM effect in `components/themes/ThemeExplorer.tsx` for now; its `check-workarounds.mjs` warns when the prop ships. Related: Navigation follow-ups item 3, on built-in English strings.
+**1. Replace `bodyDarkModeDecorator` with `ThemeScope`.** `lib/storybook.tsx` sets `data-mode="dark"` on `<body>` so Menu's and SideNav's dark stories render their portalled content dark. Wrapping those stories in `<ThemeScope mode="dark">` does the same through the component consumers use, and the decorator can go.
 
-**2. Overlays leave a brand scope.** AlertDialog, BaseSheet (and so Dialog and Drawer), Menu, Tooltip and Select render through Radix's portal at the end of `<body>`, outside any `[data-brand]` element. A menu opened inside `<div data-brand="portfolio">` comes out in base. It also takes the page's mode rather than the panel's, so a dark panel on a light page opens a light menu. Toast is next to it: its viewport renders wherever `ToastProvider` sits, usually the root.
+**2. Nothing checks that a portalling component follows the scope.** A new overlay that renders through a Radix `Portal` has to spread `useThemeScopeAttributes()` onto what it portals, or it comes out in the page's brand and mode. A check alongside `check-client-directives.mjs` could flag a `.Portal` in a component file without the hook.
 
-The proposed fix:
-
-- **A `BrandScope` component** in `components/` or `lib/`. It renders the element with `data-brand` and an optional `data-mode` (left out, it follows the page), and puts `{ brand, mode }` in a React context.
-- **One internal portal helper** that the five overlays use instead of calling `*.Portal` directly. It reads the context and wraps the content in `<div data-brand data-mode style="display: contents">`. Custom properties still inherit through a `display: contents` element, so the selectors in `portfolio-scoped.css` match without changing any CSS. Content stays at the end of `<body>`, so nothing is clipped by the scope's `overflow` or caught in its stacking context. With no `BrandScope` above it, the helper adds no wrapper and nothing changes.
-
-Two options were set aside. A `container` prop on each overlay puts the fix at every call site, and the first one someone forgets is the bug again. Portalling into the scope element itself fixes inheritance, but the scope's `overflow` can clip the content, and its z-index can put the content under its neighbours.
-
-Also: the README's scoped-brand section presents `data-brand` as the way to scope. It should present `BrandScope`, since a hand-written attribute still has this bug. Decide whether Toast follows the scope (a viewport per `BrandScope`) or stays page-level; page-level is probably right, since a toast belongs to the app, not to a panel. Test it next to `lib/brand-scope.test.ts`: open a Menu inside a `BrandScope` and check the content's `--color-accent-default` is the portfolio value, in both modes. On the site, Themes' portfolio panel becomes `<BrandScope brand="portfolio" mode={mode}>`.
+**3. `ThemeScope`'s `brand` type is written by hand.** It's `'portfolio'`, the one brand with a scoped file. A third brand would need it widened; generating it from the scoped files in `styles/brands/` would keep it in step.
 
 Status: not started.
 
