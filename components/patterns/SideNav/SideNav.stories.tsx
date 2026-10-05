@@ -11,7 +11,7 @@ import {
   SidebarSimpleIcon,
   UsersIcon,
 } from '@phosphor-icons/react'
-import { bodyDarkModeDecorator, darkModeDecorator } from '../../../lib/storybook'
+import { darkModeDecorator } from '../../../lib/storybook'
 import { mediaQuery } from '../../../lib/breakpoints'
 import type { NavItem } from '../../../lib/navigation'
 import { Button } from '../../primitives/Button'
@@ -203,7 +203,7 @@ export const PageShell: Story = {
 export const DarkMode: Story = {
   ...MobileDrawer,
   name: 'Dark mode',
-  decorators: [darkModeDecorator, bodyDarkModeDecorator],
+  decorators: [darkModeDecorator],
 }
 
 export const CollapsedWithoutIcons: Story = {
