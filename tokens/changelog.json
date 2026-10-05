@@ -640,7 +640,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "ca8f96c",
+      "type": "fix",
+      "scope": "registry",
+      "message": "Storybook paths from the story files, and each component's first story id",
+      "date": "2026-10-05",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
