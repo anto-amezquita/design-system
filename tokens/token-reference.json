@@ -2962,7 +2962,7 @@
       "cssVar": "--shadow-card",
       "type": "shadow",
       "category": "shadow",
-      "description": null,
+      "description": "Resting shadow for a raised surface, such as a framed preview. Card has none at rest; it takes shadow-card-hover on hover.",
       "rawValue": "{shadow.xs}",
       "resolved": {
         "base-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
@@ -3053,7 +3053,7 @@
       "cssVar": "--z-sticky",
       "type": "number",
       "category": "elevation",
-      "description": null,
+      "description": "Stacking level for page chrome that stays on screen while scrolling, such as a sticky header.",
       "rawValue": "100",
       "resolved": {
         "base-light": "100",
@@ -3087,7 +3087,7 @@
       "cssVar": "--z-overlay",
       "type": "number",
       "category": "elevation",
-      "description": null,
+      "description": "Deprecated, removed in 2.0: unused since decisions/0007 let overlays stack by mount order instead of fixed levels.",
       "rawValue": "300",
       "resolved": {
         "base-light": "300",
@@ -3103,7 +3103,7 @@
       "cssVar": "--z-modal",
       "type": "number",
       "category": "elevation",
-      "description": null,
+      "description": "Deprecated, removed in 2.0: unused since decisions/0007 let overlays stack by mount order instead of fixed levels.",
       "rawValue": "400",
       "resolved": {
         "base-light": "400",
@@ -3481,7 +3481,7 @@
       "cssVar": "--font-size-display",
       "type": "dimension",
       "category": "typography",
-      "description": null,
+      "description": "The largest type step, fluid from 32px to 80px, for a page's one display line. Pairs with line-height-display.",
       "rawValue": "clamp(2rem, 0.75rem + 5vw, 5rem)",
       "resolved": {
         "base-light": "clamp(2rem, 0.75rem + 5vw, 5rem)",
@@ -4011,7 +4011,7 @@
       "cssVar": "--letter-spacing-body",
       "type": "dimension",
       "category": "typography",
-      "description": null,
+      "description": "Tracking for body text: 0, the font's own spacing.",
       "rawValue": "0",
       "resolved": {
         "base-light": "0",
@@ -4396,7 +4396,7 @@
       "cssVar": "--opacity-overlay",
       "type": "number",
       "category": "opacity",
-      "description": null,
+      "description": "Deprecated, removed in 2.0: unused; Dialog's backdrop takes its colour from color-surface-tertiary.",
       "rawValue": "{opacity.medium}",
       "resolved": {
         "base-light": "0.3",
@@ -4764,7 +4764,7 @@
       "cssVar": "--size-dialog-default",
       "type": "dimension",
       "category": "size",
-      "description": null,
+      "description": "Deprecated, removed in 2.0: unused; Dialog's width is its own dialog-max-width.",
       "rawValue": "{size.dialog-md}",
       "resolved": {
         "base-light": "560px",

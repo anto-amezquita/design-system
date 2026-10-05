@@ -211,7 +211,8 @@
   },
   "shadow-card": {
     "$value": "{shadow.xs}",
-    "$type": "shadow"
+    "$type": "shadow",
+    "$description": "Resting shadow for a raised surface, such as a framed preview. Card has none at rest; it takes shadow-card-hover on hover."
   },
   "shadow-card-hover": {
     "$value": "{shadow.sm}",
@@ -235,7 +236,8 @@
   },
   "z-sticky": {
     "$value": 100,
-    "$type": "number"
+    "$type": "number",
+    "$description": "Stacking level for page chrome that stays on screen while scrolling, such as a sticky header."
   },
   "z-dropdown": {
     "$value": 200,
@@ -244,11 +246,13 @@
   },
   "z-overlay": {
     "$value": 300,
-    "$type": "number"
+    "$type": "number",
+    "$description": "Deprecated, removed in 2.0: unused since decisions/0007 let overlays stack by mount order instead of fixed levels."
   },
   "z-modal": {
     "$value": 400,
-    "$type": "number"
+    "$type": "number",
+    "$description": "Deprecated, removed in 2.0: unused since decisions/0007 let overlays stack by mount order instead of fixed levels."
   },
   "z-toast": {
     "$value": 500,
@@ -337,7 +341,8 @@
   },
   "font-size-display": {
     "$value": "clamp(2rem, 0.75rem + 5vw, 5rem)",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "The largest type step, fluid from 32px to 80px, for a page's one display line. Pairs with line-height-display."
   },
   "font-size-h1-fluid": {
     "$value": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
@@ -476,7 +481,8 @@
   },
   "letter-spacing-body": {
     "$value": "0",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Tracking for body text: 0, the font's own spacing."
   },
   "letter-spacing-label": {
     "$value": "0.01em",
@@ -565,7 +571,8 @@
   },
   "opacity-overlay": {
     "$value": "{opacity.medium}",
-    "$type": "number"
+    "$type": "number",
+    "$description": "Deprecated, removed in 2.0: unused; Dialog's backdrop takes its colour from color-surface-tertiary."
   },
   "opacity-disabled": {
     "$value": "{opacity.low}",
@@ -649,7 +656,8 @@
   },
   "size-dialog-default": {
     "$value": "{size.dialog-md}",
-    "$type": "dimension"
+    "$type": "dimension",
+    "$description": "Deprecated, removed in 2.0: unused; Dialog's width is its own dialog-max-width."
   },
   "size-container-text": {
     "$value": "{size.container-45}",

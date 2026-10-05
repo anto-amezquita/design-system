@@ -29,7 +29,7 @@ Opened 2026-09-28, deferred on purpose while building the `decisions/0015` compo
 
 **4. Tests for the other nine `tokens:lint` rules.** `scripts/lint-tokens.test.mjs` covers only `no-unknown-breakpoint`. The file and the exported `lintFile`/`RULES` now make the rest cheap to add.
 
-**5. `--z-dropdown` is referenced again, by NavigationMenu.** `decisions/0007`'s dead-token note listed it as unreferenced; it isn't any more (spec Deviation 6). `--z-overlay` and `--z-modal` are still candidates for the dead-token round.
+**5. `--z-dropdown` is referenced again, by NavigationMenu.** `decisions/0007`'s dead-token note listed it as unreferenced; it isn't any more (spec Deviation 6). `--z-overlay` and `--z-modal` are deprecated since `1.3.3` and go in 2.0 (see "Remove the deprecated tokens in 2.0").
 
 Status: not started.
 
@@ -39,11 +39,13 @@ Opened 2026-10-01. `design-system-site` is the first consumer on the Next.js App
 
 **1. `tokens/changelog.json` is always one release behind in the package.** The `1.1.2` package ends at `v1.1.1`, with 1.1.2's own commit under `unreleased`; the portfolio's `1.1.0` ends at `v1.0.0`. The cause: `build-changelog.mjs` groups commits by git tag, and the tag for a release is created by `changeset publish` in `release.yml`, after the Version Packages merge has fixed what goes in the tarball. So package X can never contain X. On `main`, X appears only after the next push, since pushing the tag doesn't trigger `update-changelog`. A fix needs two parts: the builder labels untagged commits with `package.json`'s version when that version has no tag yet, and `release.yml` rebuilds the changelog before publishing. The second touches `decisions/0019`'s "main owns it" split, so it wants a decision, not a quick patch. The site reads `CHANGELOG.md`, so it isn't blocked; the portfolio's changelog page reads the JSON.
 
-**3. Dark-only tokens are missing from `token-reference.json`.** Found building `portfolio-scoped.css`: `base/dark.json` and `portfolio/dark.json` define 28 `checkbox-*`, `radio-*` and `textarea-*` tokens with no light value. `build-token-reference.mjs` builds its token list from the light layers only (its comment says dark never adds a name, which isn't true), so these don't appear in the reference, `tokens.json` or the MCP tools. No component references any of them. Either they're dead and should go in the dead-token round, or they need light values and a place in the reference.
+Status: not started. (Item 2 shipped in `1.3.0`; items 3 and 4, the dark-only and undescribed tokens, in `1.3.3`.)
 
-**4. Eight tokens with no description, because nothing says what they're for.** `shadow-card`, `z-sticky`, `z-overlay`, `z-modal`, `opacity-overlay`, `size-dialog-default`, `font-size-display` and `letter-spacing-body` aren't used by any component here or by the portfolio, and their names don't settle their purpose. Describe them if they're kept, or remove them in the dead-token round (`--z-overlay` and `--z-modal` are already candidates, see Navigation follow-ups item 5).
+## Remove the deprecated tokens in 2.0 (backlog)
 
-Status: not started. (Item 2, switching the agent files' URLs to the docs site, shipped in `1.3.0`.)
+Opened 2026-10-05. `1.3.3` deprecated four tokens nothing uses, in their `$description` (so the docs, the doc twins and the MCP tools say so): `z-overlay` and `z-modal` (unused since `decisions/0007`), `opacity-overlay` (Dialog's backdrop uses `color-surface-tertiary`) and `size-dialog-default` (Dialog uses `dialog-max-width`). They're documented public tokens, so deleting them is a breaking change and waits for the next major, together with whatever else that major carries. Before then, check again that neither site nor any other consumer has started using one: searched 2026-10-05 across this repo, the portfolio and design-system-site, and only comments mentioned them.
+
+Status: waiting for the next major.
 
 ## Baseline grid: sizes `decisions/0012`'s table doesn't cover (backlog)
 
