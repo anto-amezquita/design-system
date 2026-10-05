@@ -656,7 +656,24 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "d134a55",
+      "type": "feat",
+      "scope": "theme-scope",
+      "message": "generate the brand type from the scoped brand files",
+      "date": "2026-10-05",
+      "breaking": false
+    },
+    {
+      "sha": "2206fbd",
+      "type": "fix",
+      "scope": "storybook",
+      "message": "dark stories' overlays render dark",
+      "date": "2026-10-05",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
