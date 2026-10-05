@@ -75,7 +75,7 @@ If a number in one file looks like it contradicts a number in another, check whi
 ### Structure rules
 
 - A token belongs to exactly one tier (§3) — never skip a tier from component CSS to a primitive.
-- Anything in `docs/components/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, and `skills/amezquita-design-system/` is **generated**. If it's wrong, fix the generator (`scripts/build-*.mjs`), never hand-edit the output — `npm run tokens` regenerates all of it and CI fails the build if a regenerate produces a diff (staleness check in `chromatic.yml`).
+- Anything in `docs/components/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `lib/theme-brands.ts`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, and `skills/amezquita-design-system/` is **generated**. If it's wrong, fix the generator (`scripts/build-*.mjs`), never hand-edit the output — `npm run tokens` regenerates all of it and CI fails the build if a regenerate produces a diff (staleness check in `chromatic.yml`).
 - A new component gets a `.tsx`, a `.css`, a `.stories.tsx`, and an entry in `docs/components.md` (the hand-maintained index `npm run tokens` reads to build the registry) — not a hand-written `docs/components/<slug>.md` twin.
 
 ## 3. Token architecture
@@ -144,7 +144,7 @@ This system deliberately ships a compiled, machine-readable layer alongside the 
 
 - A second semantic tier of tokens per brand (ADR 0001 — the original portfolio/base coupling).
 - `var(--token, fallback)` — a token either exists or it doesn't (`no-token-fallback` lint rule).
-- Hand-editing anything under `docs/components/`, `registry/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `llms*.txt`, `tokens.json`, or `skills/amezquita-design-system/`.
+- Hand-editing anything under `docs/components/`, `registry/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `lib/theme-brands.ts`, `llms*.txt`, `tokens.json`, or `skills/amezquita-design-system/`.
 - Installing an external convention/library wholesale when only its *technique* is needed (ADR 0002 — transitions.dev).
 
 ## Not applicable to this repo
