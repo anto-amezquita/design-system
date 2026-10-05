@@ -32,17 +32,28 @@ Five semantic tokens, smallest to largest. As `max-width` they can be used direc
 | `size-container-media` | 60rem (960px) | 4/3 × text | text with images, embeds, diagrams |
 | `size-container-wide` | 80rem (1280px) | 4/3 × media | wide media breaking out further |
 | `size-container-page` | 90rem (1440px) | page cap | a page's centred content area |
-| `size-container-site` | 90vw | from 1024px up | the outer site frame |
+| `size-container-site` | 100% | from 1024px up | the outer site frame |
 
-Backed by new primitives `size.container-45/60/80/90` and `size.container-viewport-90`.
+Backed by new primitives `size.container-45/60/80/90` and `size.container-viewport-90`, plus `size.container-full` (added in the 2026-10-05 amendment below).
 
 **`rem`, not `ch`.** `ch` is measured from the element's own font, so a container's width changes whenever its font size does. That is exactly what widened the portfolio's columns. `rem` still follows the user's browser font-size setting, which is the part of Apple's approach worth keeping, without moving when one element's text size changes.
 
-**The site tier's breakpoint lives in the description, not the token.** Below 1024px the site is 100% wide with `space-layout-margin` gutters; from 1024px it's `90vw`. CSS custom properties can't be used inside `@media` conditions, so a token can't carry that switch. Breakpoint tokens were a separate follow-up, now [0018](./0018-breakpoint-tokens.md): the switch is `breakpoint.desktop` (1024px).
+**The site tier's breakpoint lives in the description, not the token.** Below 1024px the site is 100% wide with `space-layout-margin` gutters; from 1024px it was `90vw`, and since the 2026-10-05 amendment it's `100%` of its parent, still with the gutters. CSS custom properties can't be used inside `@media` conditions, so a token can't carry that switch. Breakpoint tokens were a separate follow-up, now [0018](./0018-breakpoint-tokens.md): the switch is `breakpoint.desktop` (1024px).
 
 **`space-layout-max-width` is deprecated, not removed.** It stays at 1200px so nothing that uses it moves in this release; its description points at this scale.
 
 **Tokens only.** No layout component yet. A grid with named lines for text/media/wide/full, as in the breakout pattern, is the natural next step once the tokens have been used for real.
+
+## Amendment (2026-10-05): the site tier fills its parent
+
+I changed `size-container-site` from `90vw` to `100%`. The site frame was leaving a strip of empty page on each side from 1024px up, and I wanted the header, body and footer to run the full width of the screen, with `space-layout-margin` gutters inside. Nothing else in this decision changes: the text, media, wide and page tiers keep their values, and the 1024px switch is still applied at the call site.
+
+- **`100%`, not `100vw`.** `100vw` includes the scrollbar's width, so a frame sized with it overflows sideways by the scrollbar on any desktop that shows one. `100%` is the width the parent actually has.
+- **The token keeps its name.** It still means "the outer site frame", and consumers that already use it don't change their CSS. What changes is how it looks: with `90vw` the frame was narrower than the screen, with `100%` it isn't.
+- **A new primitive, `size.container-full` (`100%`),** is what the semantic token points at, so it still goes through a primitive like the other container tokens instead of holding a raw value. `size.container-viewport-90` stays in place, now unused by the site token.
+- **Alternative: leave the token and override it in each consumer.** Rejected: every consumer that wants a full-width frame would need the same override, and the system's own token would describe a width nobody uses.
+
+This is a visible change for anything that caps its width with `size-container-site`, so it ships as a minor release through the normal weekly cadence ([0022](./0022-release-at-most-weekly.md)).
 
 ## Alternatives considered
 

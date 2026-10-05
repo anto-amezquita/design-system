@@ -33,6 +33,12 @@ Opened 2026-09-28, deferred on purpose while building the `decisions/0015` compo
 
 Status: not started.
 
+## The first test run after Vite rebuilds its dependency cache fails to import files (backlog)
+
+Opened 2026-10-05, seen three times that day. Right after `node_modules/.vite` is cleared or invalidated (a lockfile change, a new dependency, a local `npm run build-storybook`), `npm run validate` fails with a few browser test files that never ran: "Failed to import test file … SyntaxError: Invalid or unexpected token", different files each time, no test failing. Running it again passes everything. It looks like Vite re-optimizing dependencies while Vitest's browser project is already loading files. Worth checking whether CI can hit it (each CI run starts with an empty cache) and whether pre-bundling the browser project's dependencies (`optimizeDeps.include` in `vitest.config.ts`) stops it. Until then: if validate fails only with import errors, run it again before looking further.
+
+Status: not started.
+
 ## Remove in 2.0 (backlog)
 
 Opened 2026-10-05. Breaking removals, held for the next major, together with whatever else it carries.
