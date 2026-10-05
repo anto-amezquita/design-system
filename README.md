@@ -2,7 +2,7 @@
 
 Token-first, multi-brand design system built and maintained solo — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance. Extracted from and still powering [amezquita.dk](https://amezquita.dk), and built to be shared across other projects.
 
-[Live component docs →](https://design.amezquita.dk)
+[Live component docs →](https://design.amezquita.dk) · [Storybook →](https://anto-amezquita.github.io/design-system/)
 
 ## What this is
 
