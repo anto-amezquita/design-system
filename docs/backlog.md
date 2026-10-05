@@ -57,12 +57,6 @@ Opened 2026-10-05, from building `ThemeScope` for `1.3.0` (`decisions/0021`, `sp
 
 Status: not started.
 
-## Portfolio's `chromatic` changelog check fails on every branch (backlog)
-
-Opened 2026-09-24. On portfolio PR #4 the "Check changelog is in sync" step failed until `npm run tokens` was rerun after the last commit, and the changelog committed again as a `chore`. It's the same stale-by-one gap as item 1 of Self-healing CI below, but the portfolio has no self-heal bot, so every branch with a qualifying commit needs that manual step. `update-changelog` regenerates the file on `main` after merge. Options: leave it, port Phase 1 self-heal to the portfolio, or relax the check. This repo relaxed it on 2026-09-28 (`decisions/0019`: no branch gate, `main` regenerates after merge); the same change would fix the portfolio.
-
-Status: not started.
-
 ## Baseline grid: sizes `decisions/0012`'s table doesn't cover (backlog)
 
 Opened 2026-09-16, surfaced while implementing `decisions/0012` (originally on `baseline-grid-vertical-rhythm`, landed via `feat/baseline-grid-line-height`) (see `roadmap.md`'s session log). The ADR maps line-height roles to the semantic font-size tokens, but real text sizes in the system weren't in its table. 12px text now has its own `caption` role (0012's 2026-09-17 amendment). The two below got the nearest sensible on-grid value so nothing is left off-grid, and each needs a call. A fourth item covers the portfolio site's upgrade, and a fifth covers controls that use `line-height: 1`.
