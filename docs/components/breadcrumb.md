@@ -13,7 +13,10 @@
 | `items` | `{ label: string; href?: string }[]` |  |
 | `separator?` | `React.ReactNode` |  |
 | `className?` | `string` |  |
+| `aria-label?` | `string` | Names the `<nav>` landmark. Defaults to "Breadcrumb"; give each breadcrumb on a page a different name. |
 | `LinkComponent?` | `React.ElementType<{ href: string; className?: string; children?: React.ReactNode }>` | Component to render internal links with — pass your router's Link (e.g. next/link) to get client-side navigation. Defaults to a plain &lt;a&gt;, which works anywhere with a full navigation. |
+
+Also accepts all props of: `Omit<React.ComponentPropsWithoutRef<'nav'>, 'children'>`
 
 ## Tokens
 

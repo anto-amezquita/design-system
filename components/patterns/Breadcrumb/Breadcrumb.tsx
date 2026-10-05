@@ -1,3 +1,4 @@
+import { forwardRef } from 'react'
 import { cn } from '../../../lib/cn'
 import './Breadcrumb.css'
 
@@ -6,18 +7,25 @@ type BreadcrumbItem = {
   href?: string
 }
 
-type BreadcrumbProps = {
+// Native <nav> attributes pass through (decisions/0007). `children` is left
+// out: the trail is built from `items`.
+type BreadcrumbProps = Omit<React.ComponentPropsWithoutRef<'nav'>, 'children'> & {
   items: BreadcrumbItem[]
   separator?: React.ReactNode
   className?: string
+  /** Names the `<nav>` landmark. Defaults to "Breadcrumb"; give each breadcrumb on a page a different name. */
+  'aria-label'?: string
   /** Component to render internal links with — pass your router's Link (e.g. next/link) to get client-side navigation. Defaults to a plain <a>, which works anywhere with a full navigation. */
   LinkComponent?: React.ElementType<{ href: string; className?: string; children?: React.ReactNode }>
 }
 
-export function Breadcrumb({ items, separator = '/', className, LinkComponent = 'a' }: BreadcrumbProps) {
+export const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(function Breadcrumb(
+  { items, separator = '/', className, 'aria-label': ariaLabel = 'Breadcrumb', LinkComponent = 'a', ...rest },
+  ref,
+) {
   if (items.length === 0) return null
   return (
-    <nav aria-label="Breadcrumb" className={cn('breadcrumb', className)}>
+    <nav {...rest} ref={ref} aria-label={ariaLabel} className={cn('breadcrumb', className)}>
       <ol className="breadcrumb__list">
         {items.map((item, index) => {
           const isLast = index === items.length - 1
@@ -51,4 +59,4 @@ export function Breadcrumb({ items, separator = '/', className, LinkComponent = 
       </ol>
     </nav>
   )
-}
+})
