@@ -29,21 +29,17 @@ Opened 2026-09-28, deferred on purpose while building the `decisions/0015` compo
 
 **4. Tests for the other nine `tokens:lint` rules.** `scripts/lint-tokens.test.mjs` covers only `no-unknown-breakpoint`. The file and the exported `lintFile`/`RULES` now make the rest cheap to add.
 
-**5. `--z-dropdown` is referenced again, by NavigationMenu.** `decisions/0007`'s dead-token note listed it as unreferenced; it isn't any more (spec Deviation 6). `--z-overlay` and `--z-modal` are deprecated since `1.3.3` and go in 2.0 (see "Remove the deprecated tokens in 2.0").
+**5. `--z-dropdown` is referenced again, by NavigationMenu.** `decisions/0007`'s dead-token note listed it as unreferenced; it isn't any more (spec Deviation 6). `--z-overlay` and `--z-modal` are deprecated since `1.3.3` and go in 2.0 (see "Remove in 2.0").
 
 Status: not started.
 
-## Gaps found by the docs site's first build (backlog)
+## Remove in 2.0 (backlog)
 
-Opened 2026-10-01. `design-system-site` is the first consumer on the Next.js App Router that installs the package cold, and its first build (its `specs/2026-09-30-first-build.md`, §9) turned up the things below that are this repo's to fix. The missing `'use client'` on Link, SkipLink and Tag shipped in `1.1.2`; brand scope, base values in the doc twins, the generated MCP tool list, token descriptions and the font links are on `feat/docs-site-gaps` for `1.2.0` (`specs/2026-10-01-docs-site-gaps.md`).
+Opened 2026-10-05. Breaking removals, held for the next major, together with whatever else it carries.
 
-**1. `tokens/changelog.json` is always one release behind in the package.** The `1.1.2` package ends at `v1.1.1`, with 1.1.2's own commit under `unreleased`; the portfolio's `1.1.0` ends at `v1.0.0`. The cause: `build-changelog.mjs` groups commits by git tag, and the tag for a release is created by `changeset publish` in `release.yml`, after the Version Packages merge has fixed what goes in the tarball. So package X can never contain X. On `main`, X appears only after the next push, since pushing the tag doesn't trigger `update-changelog`. A fix needs two parts: the builder labels untagged commits with `package.json`'s version when that version has no tag yet, and `release.yml` rebuilds the changelog before publishing. The second touches `decisions/0019`'s "main owns it" split, so it wants a decision, not a quick patch. The site reads `CHANGELOG.md`, so it isn't blocked; the portfolio's changelog page reads the JSON.
+**1. Four deprecated tokens.** `1.3.3` deprecated them in their `$description` (so the docs, the doc twins and the MCP tools say so): `z-overlay` and `z-modal` (unused since `decisions/0007`), `opacity-overlay` (Dialog's backdrop uses `color-surface-tertiary`) and `size-dialog-default` (Dialog uses `dialog-max-width`). Before removing, check again that neither site nor any other consumer has started using one: searched 2026-10-05 across this repo, the portfolio and design-system-site, and only comments mentioned them.
 
-Status: not started. (Item 2 shipped in `1.3.0`; items 3 and 4, the dark-only and undescribed tokens, in `1.3.3`.)
-
-## Remove the deprecated tokens in 2.0 (backlog)
-
-Opened 2026-10-05. `1.3.3` deprecated four tokens nothing uses, in their `$description` (so the docs, the doc twins and the MCP tools say so): `z-overlay` and `z-modal` (unused since `decisions/0007`), `opacity-overlay` (Dialog's backdrop uses `color-surface-tertiary`) and `size-dialog-default` (Dialog uses `dialog-max-width`). They're documented public tokens, so deleting them is a breaking change and waits for the next major, together with whatever else that major carries. Before then, check again that neither site nor any other consumer has started using one: searched 2026-10-05 across this repo, the portfolio and design-system-site, and only comments mentioned them.
+**2. `tokens/changelog.json`.** The copy inside each package is always one release behind: `build-changelog.mjs` groups commits by git tag, and a release's tag is created by `changeset publish`, after the tarball's contents are fixed (the `1.3.2` package ends at `v1.3.1`). Fixing that would mean rebuilding it in `release.yml` before publishing, against `decisions/0019`'s "main owns it". Nothing reads it any more: the docs site builds its changelog from `CHANGELOG.md`, which changesets writes correctly, and the portfolio retired its own copy on 2026-10-05. Decided with the user: accept the lag until 2.0, then remove the file from `package.json`'s `files`, `build-changelog.mjs`, `changelog-sync.mjs`, the `update-changelog` job in `chromatic.yml`, and the mentions in `docs/architecture.md` and 0019.
 
 Status: waiting for the next major.
 

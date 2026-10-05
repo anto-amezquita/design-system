@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted
+Accepted. Amended 2026-10-05: `tokens/changelog.json` is removed in 2.0. Nothing reads it any more (the docs site uses `CHANGELOG.md`, the portfolio retired its own copy), and the copy inside each package is always a release behind, since the tag it groups by is created at publish. Until 2.0 the lag is accepted, not fixed. See `docs/backlog.md`, "Remove in 2.0".
 
 ## Context
 
