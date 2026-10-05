@@ -4,6 +4,30 @@
   },
   "versions": [
     {
+      "tag": "v1.3.3",
+      "date": "2026-10-05",
+      "sha": "fb5aebe",
+      "entries": [
+        {
+          "sha": "cb79dac",
+          "type": "docs",
+          "scope": "tokens",
+          "message": "describe the four used tokens, deprecate the four unused",
+          "date": "2026-10-05",
+          "breaking": false
+        },
+        {
+          "sha": "9b264af",
+          "type": "fix",
+          "scope": "tokens",
+          "message": "delete the 28 dark-only tokens nothing reads",
+          "date": "2026-10-05",
+          "breaking": false
+        }
+      ],
+      "entryCount": 2
+    },
+    {
       "tag": "v1.3.2",
       "date": "2026-10-05",
       "sha": "35e868d",
@@ -680,24 +704,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "cb79dac",
-      "type": "docs",
-      "scope": "tokens",
-      "message": "describe the four used tokens, deprecate the four unused",
-      "date": "2026-10-05",
-      "breaking": false
-    },
-    {
-      "sha": "9b264af",
-      "type": "fix",
-      "scope": "tokens",
-      "message": "delete the 28 dark-only tokens nothing reads",
-      "date": "2026-10-05",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
