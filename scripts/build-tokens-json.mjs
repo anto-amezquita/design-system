@@ -8,7 +8,7 @@
  * build-token-reference.mjs. Task 1.3 doesn't need a second resolver with a
  * different shape; it needs that same data reachable at a stable, top-level
  * path, because that's what llms.txt already links to
- * (`${rootUrl}/tokens.json`) and what an agent fetches without knowing this
+ * (`${siteUrl}/tokens.json`) and what an agent fetches without knowing this
  * repo's internal `tokens/` layout.
  *
  * Deliberately a straight copy, not a reshape: keeping one source of truth

@@ -17,7 +17,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-373 tokens total, resolved across base/portfolio × light/dark. Full values: https://amezquita.dk/tokens.json
+373 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
 - component: 106
@@ -242,6 +242,15 @@ The site's header navigation: top-level links, plus groups that open a dropdown 
 - Token prefix: `navigationmenu-*` (0 tokens)
 - Storybook: Composition/NavigationMenu
 - Stories: Default, Open, WithIcons, NoCurrentPage, DarkMode
+
+### ThemeScope
+
+Gives one part of a page its own brand, mode, or both; overlays opened inside it (Dialog, Drawer, AlertDialog, Menu, Select, Tooltip) take the same, although they render at the end of the page
+
+- Import: `import { ThemeScope } from '@amezquita/design-system/components/composition/ThemeScope'`
+- Token prefix: `themescope-*` (0 tokens)
+- Storybook: Composition/ThemeScope
+- Stories: Default, MenuOpen, Nested, DarkMode
 
 ### Toast
 

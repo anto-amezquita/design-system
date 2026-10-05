@@ -2,6 +2,7 @@
 
 import * as RadixSelect from '@radix-ui/react-select'
 import { CaretDownIcon } from '@phosphor-icons/react'
+import { useThemeScopeAttributes } from '../../../lib/theme-scope'
 import './Select.css'
 
 type SelectOption = {
@@ -40,6 +41,8 @@ export function Select({
   groups,
   'aria-label': ariaLabel,
 }: SelectProps) {
+  // Content portals to <body>; this keeps a ThemeScope's brand and mode on it (decisions/0021).
+  const scope = useThemeScopeAttributes()
   return (
     <RadixSelect.Root
       value={value}
@@ -59,7 +62,7 @@ export function Select({
       </RadixSelect.Trigger>
 
       <RadixSelect.Portal>
-        <RadixSelect.Content className="select__content" position="popper" sideOffset={4}>
+        <RadixSelect.Content {...scope} className="select__content" position="popper" sideOffset={4}>
           <RadixSelect.Viewport className="select__viewport">
             {groups.map((group, groupIndex) => (
               <RadixSelect.Group key={group.label ?? groupIndex}>

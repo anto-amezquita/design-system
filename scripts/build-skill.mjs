@@ -16,7 +16,7 @@
  * This system is small enough (27 components) that it doesn't need Nord's
  * references/ tier of local files — the component detail already exists as
  * a stable public URL (docs/components/<slug>.md, served at
- * {docsBaseUrl}/<slug>.md by Task 1.5), so the skill links straight there
+ * <docs site>/components/<slug>.md since 1.3.0), so the skill links straight there
  * instead of duplicating that content into a second local copy that could
  * drift from the first.
  *
@@ -33,6 +33,8 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs'
 import { fileURLToPath } from 'url'
 
+import { getSiteUrls } from './site-urls.mjs'
+
 function loadJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'))
 }
@@ -43,17 +45,6 @@ const SKILL_DIR = `${OUTPUT_DIR}/${SKILL_NAME}`
 
 const TIER_ORDER = ['primitives', 'composition', 'patterns']
 const TIER_LABELS = { primitives: 'Primitives', composition: 'Composition', patterns: 'Patterns' }
-
-// Same derivation build-llms-txt.mjs and build-registry-manifests.mjs use.
-function getSiteUrls() {
-  const readme = readFileSync('README.md', 'utf8')
-  const rootMatch = readme.match(/\[amezquita\.dk\]\((https?:\/\/[^)]+)\)/)
-  const docsMatch = readme.match(/\[Live component docs.*?\]\((https?:\/\/[^)]+)\)/)
-  if (!rootMatch || !docsMatch) {
-    throw new Error('Could not derive site URLs from README.md — build-skill.mjs expects the same links build-llms-txt.mjs relies on.')
-  }
-  return { rootUrl: rootMatch[1], docsBaseUrl: docsMatch[1] }
-}
 
 function groupByTier(components) {
   const groups = { primitives: [], composition: [], patterns: [] }
@@ -86,7 +77,7 @@ function realPrefixesByCategory(tokens) {
 }
 
 function buildSkillMd({ pkg, registry, tokenReference, siteUrls }) {
-  const { rootUrl, docsBaseUrl } = siteUrls
+  const { siteUrl, twinUrl } = siteUrls
   const groups = groupByTier(registry.components)
   const publicCount = registry.meta.publicComponentCount ?? registry.meta.componentCount
 
@@ -104,7 +95,7 @@ function buildSkillMd({ pkg, registry, tokenReference, siteUrls }) {
     `description: Build UI with ${pkg.name} — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from \`${pkg.name}\`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its ${publicCount - 3} other public components.`,
     'metadata:',
     '  author: Antonio Amezquita',
-    `  homepage: ${rootUrl}`,
+    `  homepage: ${siteUrl}`,
     '---',
     '',
     `${pkg.name} is a token-first, multi-brand React component library — ${publicCount} public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across base/portfolio × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.`,
@@ -118,7 +109,7 @@ function buildSkillMd({ pkg, registry, tokenReference, siteUrls }) {
     'Or install a single component via the registry:',
     '',
     '```bash',
-    `npx shadcn add ${rootUrl}/r/<component-slug>.json`,
+    `npx shadcn add ${siteUrl}/r/<component-slug>.json`,
     '```',
     '',
     '```tsx',
@@ -127,13 +118,13 @@ function buildSkillMd({ pkg, registry, tokenReference, siteUrls }) {
     `import '${pkg.name}/styles/brands/base-dark.css'`,
     '```',
     '',
-    'Import the brand CSS once, in your root layout. `base` is the neutral default; for the portfolio brand, also import `portfolio-light.css` and `portfolio-dark.css` after these. Dark mode applies inside any element with `data-mode="dark"`. To show the portfolio brand in one part of a page only, import `portfolio-scoped.css` instead of those two and put `data-brand="portfolio"` on that part.',
+    'Import the brand CSS once, in your root layout. `base` is the neutral default; for the portfolio brand, also import `portfolio-light.css` and `portfolio-dark.css` after these. Dark mode applies inside any element with `data-mode="dark"`. To show the portfolio brand in one part of a page only, import `portfolio-scoped.css` instead of those two and wrap that part in `<ThemeScope brand="portfolio">` (composition tier). `mode="dark"` or `mode="light"` on a ThemeScope sets that part\'s mode, and overlays opened inside it follow both.',
     '',
     `Next.js apps also need \`transpilePackages: ['${pkg.name}']\` in \`next.config.js\` — this package ships source \`.tsx\`/\`.css\`, not a pre-built bundle.`,
     '',
     '## Components',
     '',
-    `Full prop tables, real tokens, and a usage example for every component: \`${docsBaseUrl}/<slug>.md\`. Don't guess a prop name or a token — read the twin.`,
+    `Full prop tables, real tokens, and a usage example for every component: \`${twinUrl('<slug>')}\`. Don't guess a prop name or a token — read the twin.`,
   ]
 
   for (const tier of TIER_ORDER) {
@@ -141,7 +132,7 @@ function buildSkillMd({ pkg, registry, tokenReference, siteUrls }) {
     if (components.length === 0) continue
     lines.push('', `### ${TIER_LABELS[tier]} (${components.length})`, '', '| Component | Reference |', '|---|---|')
     for (const c of components) {
-      lines.push(`| ${c.name} | [${c.slug}](${docsBaseUrl}/${c.slug}.md) — ${c.purpose} |`)
+      lines.push(`| ${c.name} | [${c.slug}](${twinUrl(c.slug)}) — ${c.purpose} |`)
     }
   }
 
@@ -149,7 +140,7 @@ function buildSkillMd({ pkg, registry, tokenReference, siteUrls }) {
     '',
     '## Tokens',
     '',
-    `Every token this system defines, resolved across all four theme axes: ${rootUrl}/tokens.json. If a token isn't in that file, it doesn't exist — don't invent one, even a plausible-sounding one.`,
+    `Every token this system defines, resolved across all four theme axes: ${siteUrl}/tokens.json. If a token isn't in that file, it doesn't exist — don't invent one, even a plausible-sounding one.`,
     '',
     'Real semantic token families:',
     '',
@@ -161,7 +152,7 @@ function buildSkillMd({ pkg, registry, tokenReference, siteUrls }) {
     '',
     '## What doesn\'t exist',
     '',
-    `Anything not in the Components table above or ${rootUrl}/tokens.json is invented. Specifically, common near-misses that do NOT exist in this system:`,
+    `Anything not in the Components table above or ${siteUrl}/tokens.json is invented. Specifically, common near-misses that do NOT exist in this system:`,
     '',
     '- `--color-primary`, `--color-secondary`, `--color-brand` — the real accent token is `--color-accent-default`; text uses `--color-text-*`, surfaces use `--color-surface-*`',
     '- `--color-error`, `--color-success`, `--color-warning` on their own — feedback colors are namespaced `--color-feedback-error-*` / `-success-*` / `-warning-*` / `-info-*`',
@@ -169,7 +160,7 @@ function buildSkillMd({ pkg, registry, tokenReference, siteUrls }) {
     '- Any component not in the tables above — a "Card Header" or "Toast Container" is only real if it matches what that component\'s own reference page documents (e.g. `CardHeader`, `ToastProvider`)',
     '- `BaseSheet` as something you import — it ships in the package (Drawer\'s internal overlay primitive) but was never meant to be used directly',
     '',
-    `Still unsure? ${rootUrl}/llms-full.txt is a single-fetch index across every public component (purpose, import path, token count, Storybook stories) — useful for a fast overview, but it does not carry prop tables or token names; for those, the component's own reference page above is the real source. If a prop's type references another local type that isn't spelled out on that page (rare, but it happens), the installed package's own \`.tsx\` source in \`node_modules/${pkg.name}\` is ground truth — better than guessing.`,
+    `Still unsure? ${siteUrl}/llms-full.txt is a single-fetch index across every public component (purpose, import path, token count, Storybook stories) — useful for a fast overview, but it does not carry prop tables or token names; for those, the component's own reference page above is the real source. If a prop's type references another local type that isn't spelled out on that page (rare, but it happens), the installed package's own \`.tsx\` source in \`node_modules/${pkg.name}\` is ground truth — better than guessing.`,
   )
 
   return lines.join('\n') + '\n'

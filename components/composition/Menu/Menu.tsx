@@ -3,6 +3,7 @@
 import { Fragment } from 'react'
 import * as RadixMenu from '@radix-ui/react-dropdown-menu'
 import { cn } from '../../../lib/cn'
+import { useThemeScopeAttributes } from '../../../lib/theme-scope'
 import './Menu.css'
 
 type MenuItemVariant = 'default' | 'destructive'
@@ -55,6 +56,8 @@ export function Menu({
   'aria-label': ariaLabel,
   className,
 }: MenuProps) {
+  // Content portals to <body>; this keeps a ThemeScope's brand and mode on it (decisions/0021).
+  const scope = useThemeScopeAttributes()
   return (
     // Non-modal: Radix's modal mode sets aria-hidden on everything outside
     // the menu, trigger included, which leaves a focusable element inside an
@@ -65,6 +68,7 @@ export function Menu({
       <RadixMenu.Trigger asChild>{trigger}</RadixMenu.Trigger>
       <RadixMenu.Portal>
         <RadixMenu.Content
+          {...scope}
           className={cn('menu', className)}
           align={align}
           side={side}

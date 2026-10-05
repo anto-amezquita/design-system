@@ -741,6 +741,37 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### ThemeScope
+
+| Field | Value |
+|---|---|
+| **Purpose** | Gives one part of a page its own brand, mode, or both; overlays opened inside it (Dialog, Drawer, AlertDialog, Menu, Select, Tooltip) take the same, although they render at the end of the page |
+| **Figma name** | n/a (no visual of its own) |
+| **Code name** | `ThemeScope` |
+| **Storybook path** | `Composition/ThemeScope` |
+
+**Props / variants**
+- `brand?: 'portfolio'` — sets `data-brand`. Needs `styles/brands/portfolio-scoped.css` loaded, instead of `portfolio-light.css` and `portfolio-dark.css`. Left out, the part keeps the brand around it
+- `mode?: 'light' | 'dark'` — sets `data-mode`. Left out, the part follows the mode around it
+- Native `<div>` attributes pass through, and a ref reaches the `<div>` (decisions/0007)
+- A scope inside another takes what it doesn't set from the outer one
+- Toasts don't follow a scope: the viewport renders where `ToastProvider` is
+
+**Required states**
+- [x] brand, mode, both, neither; nested
+
+**Tokens consumed**
+- None of its own. It sets the attributes the brand and mode CSS select on, so every token inside resolves for that brand and mode
+
+**Accessibility**
+- A plain `<div>` with no role; it adds nothing to the accessibility tree
+- Overlays keep their own focus, keyboard and layering behaviour: the scope's attributes go on the elements they already portal, so no wrapper is added (decisions/0021)
+
+**Chromatic stories**
+- `Default`, `MenuOpen`, `Nested`, `DarkMode`. Storybook loads the portfolio brand for the whole canvas, so these show the mode side only
+
+---
+
 ### Accordion
 
 | Field | Value |

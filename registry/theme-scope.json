@@ -1,9 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "alert-dialog",
+  "name": "theme-scope",
   "type": "registry:component",
-  "title": "AlertDialog",
-  "description": "Confirmation gate for an action the user must explicitly accept or decline — real `alertdialog` role, no outside-click/close-button dismiss, unlike Dialog",
+  "title": "ThemeScope",
+  "description": "Gives one part of a page its own brand, mode, or both; overlays opened inside it (Dialog, Drawer, AlertDialog, Menu, Select, Tooltip) take the same, although they render at the end of the page",
   "dependencies": [
     "@amezquita/design-system"
   ],

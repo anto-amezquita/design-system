@@ -39,27 +39,19 @@
  * *default* shadcn registry (ui.shadcn.com) every time, never the registry the item
  * itself came from — it failed with "item ... was not found" until fixed.
  *
- * LIVE as of Task 3.2 (2026-08-10): the portfolio repo (the docs site) serves these at
- * `https://amezquita.dk/r/<slug>.json`, verified with a real `npx shadcn add` against
- * that exact URL, not just locally. It's a static snapshot of this repo's `registry/`
- * output, not an automated pipeline — re-copy there when these manifests change.
+ * Served by design-system-site at `https://design.amezquita.dk/r/<slug>.json` since
+ * 1.3.0, copied from the installed package at build time, so a release can't leave it
+ * stale. Before that the portfolio served a hand-copied snapshot at amezquita.dk/r/,
+ * which now redirects there (verified with `npx shadcn add`, 2026-10-05).
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs'
 import { fileURLToPath } from 'url'
 
+import { getSiteUrls } from './site-urls.mjs'
+
 function loadJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'))
-}
-
-// Same derivation build-llms-txt.mjs uses — one edit to the README fixes both.
-function getSiteRoot() {
-  const readme = readFileSync('README.md', 'utf8')
-  const m = readme.match(/\[amezquita\.dk\]\((https?:\/\/[^)]+)\)/)
-  if (!m) {
-    throw new Error('Could not find the "[amezquita.dk](...)" link in README.md — build-registry-manifests.mjs derives the site root URL from it.')
-  }
-  return m[1]
 }
 
 // Which other known components (public or internal) a component's own .tsx
@@ -162,7 +154,7 @@ export function buildRegistryManifests() {
   const registry = loadJson('tokens/component-registry.json')
   const tokenReference = loadJson('tokens/token-reference.json')
   const tokenByName = new Map(tokenReference.tokens.map(t => [t.name, t]))
-  const siteRoot = getSiteRoot()
+  const { siteUrl: siteRoot } = getSiteUrls()
 
   // Compound sub-components (CardHeader, TableCell, ...) aren't independently
   // installable — they only ever ship alongside their parent — so they get no

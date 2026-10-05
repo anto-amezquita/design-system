@@ -1,6 +1,7 @@
 'use client'
 
 import * as RadixTooltip from '@radix-ui/react-tooltip'
+import { useThemeScopeAttributes } from '../../../lib/theme-scope'
 import './Tooltip.css'
 
 // Read delay and offset directly from the compiled CSS tokens so they stay in
@@ -56,13 +57,15 @@ export function TooltipProvider({ children, delayDuration, skipDelayDuration, di
 }
 
 export function Tooltip({ content, children, side = 'top', delayDuration, open, defaultOpen, onOpenChange }: TooltipProps) {
+  // Content portals to <body>; this keeps a ThemeScope's brand and mode on it (decisions/0021).
+  const scope = useThemeScopeAttributes()
   return (
     <RadixTooltip.Root delayDuration={delayDuration ?? getTooltipDelay()} open={open} defaultOpen={defaultOpen} onOpenChange={onOpenChange}>
       <RadixTooltip.Trigger asChild>
         {children}
       </RadixTooltip.Trigger>
       <RadixTooltip.Portal>
-        <RadixTooltip.Content className="tooltip" side={side} sideOffset={getTooltipSideOffset()}>
+        <RadixTooltip.Content {...scope} className="tooltip" side={side} sideOffset={getTooltipSideOffset()}>
           {content}
           <RadixTooltip.Arrow className="tooltip__arrow" />
         </RadixTooltip.Content>

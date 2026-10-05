@@ -8,10 +8,10 @@
     "@amezquita/design-system"
   ],
   "registryDependencies": [
-    "https://amezquita.dk/r/theme.json",
-    "https://amezquita.dk/r/button.json",
-    "https://amezquita.dk/r/drawer.json",
-    "https://amezquita.dk/r/tooltip.json"
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/button.json",
+    "https://design.amezquita.dk/r/drawer.json",
+    "https://design.amezquita.dk/r/tooltip.json"
   ],
   "cssVars": {
     "light": {
