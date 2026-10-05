@@ -57,17 +57,17 @@ Opened 2026-10-05, from building `ThemeScope` for `1.3.0` (`decisions/0021`, `sp
 
 Status: not started.
 
-## Release dispatch to the portfolio fails: the GitHub App isn't installed there (backlog)
+## Release dispatch to the portfolio: confirm on the next release (backlog)
 
-Opened 2026-09-24. Release #108 (the merge of the `1.0.0` Version Packages PR #33) published to npm, then failed about 37s in at "Mint a token scoped to the portfolio repo" with `Not Found` from `get-a-repository-installation-for-the-authenticated-app`. So `design-system-released` was never dispatched and the portfolio's `sync-design-system.yml` never ran; `1.0.0` was bumped by hand in portfolio PR #4.
+Opened 2026-09-24. From `1.0.0` to `1.3.0`, every release published to npm and then failed at "Mint a token scoped to the portfolio repo" with `Not Found` from `get-a-repository-installation-for-the-authenticated-app`: the self-heal GitHub App wasn't installed on `anto-amezquita/portfolio`, so `design-system-released` was never dispatched.
 
-Two one-time steps, both listed in `sync-design-system.yml`'s header: install the self-heal GitHub App on `anto-amezquita/portfolio` (Contents, Pull requests and Issues write), and add `SELF_HEAL_APP_CLIENT_ID` and `SELF_HEAL_APP_PRIVATE_KEY` as secrets in the portfolio repo, since secrets aren't shared across repos. It can only be confirmed on the next release.
+**Set up 2026-10-05.** The App is installed on `portfolio` and `design-system-site` as well as this repo, with Contents, Pull requests and Issues write (Issues newly accepted). The portfolio has its own `SELF_HEAL_APP_CLIENT_ID` and `SELF_HEAL_APP_PRIVATE_KEY`. Its half is proven: a hand-sent `design-system-released` dispatch for `1.3.0` ran its `sync-design-system.yml`, which opened portfolio PR #8, all checks green.
 
-Added 2026-09-30: `design-system-site` needs the same, since its `decisions/0001` has releases land there as a PR too. Install the App on both repos in one go (the App also needs Issues write, since the portfolio's sync workflow files an issue when regeneration fails). The `1.1.1` release (run #116) failed at the same step, after a successful publish.
+**Still to confirm:** this repo's half, minting the portfolio-scoped token in `release.yml`. It can only run on a real publish. On the next release, check that "Mint a token scoped to the portfolio repo" and "Notify portfolio of the new release" pass, and that a bump PR opens in the portfolio.
 
-**Adding the site as a second dispatch target in `release.yml` waits** until `design-system-site` has its own sync workflow listening for `design-system-released`. Until then nothing there would receive it. When that workflow lands, add `design-system-site` to the token step's `repositories` and a second dispatch call.
+**Adding the site as a second dispatch target in `release.yml` waits** until `design-system-site` has its own sync workflow listening for `design-system-released`. The App is already installed there; the site still needs its own copies of the two secrets. When that workflow lands, add `design-system-site` to the token step's `repositories` and a second dispatch call.
 
-Status: not started. The App install and secrets are GitHub UI steps only the user can do.
+Status: waiting on the next release.
 
 ## Portfolio's `chromatic` changelog check fails on every branch (backlog)
 
