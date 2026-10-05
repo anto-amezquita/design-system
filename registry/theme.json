@@ -3,7 +3,7 @@
   "name": "theme",
   "type": "registry:theme",
   "title": "Design tokens",
-  "description": "141 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
+  "description": "137 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
   "cssVars": {
     "light": {
       "color-neutral-50": "#FAFAFA",
@@ -142,11 +142,7 @@
       "size-container-media": "60rem",
       "size-container-wide": "80rem",
       "size-container-page": "90rem",
-      "size-container-site": "90vw",
-      "color-surface-spotlight": null,
-      "color-text-frozen-primary": null,
-      "color-text-frozen-secondary": null,
-      "color-accent-glow": null
+      "size-container-site": "90vw"
     },
     "dark": {
       "color-neutral-50": "#171717",
@@ -285,11 +281,7 @@
       "size-container-media": "60rem",
       "size-container-wide": "80rem",
       "size-container-page": "90rem",
-      "size-container-site": "90vw",
-      "color-surface-spotlight": null,
-      "color-text-frozen-primary": null,
-      "color-text-frozen-secondary": null,
-      "color-accent-glow": null
+      "size-container-site": "90vw"
     }
   }
 }
