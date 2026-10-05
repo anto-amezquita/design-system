@@ -4,6 +4,13 @@
   },
   "versions": [
     {
+      "tag": "v1.2.1",
+      "date": "2026-10-05",
+      "sha": "e5eb758",
+      "entries": [],
+      "entryCount": 0
+    },
+    {
       "tag": "v1.2.0",
       "date": "2026-10-01",
       "sha": "24a1e66",
@@ -609,7 +616,24 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "22c55cf",
+      "type": "feat",
+      "scope": "theme-scope",
+      "message": "ThemeScope, and overlays that follow it",
+      "date": "2026-10-05",
+      "breaking": false
+    },
+    {
+      "sha": "52bfe67",
+      "type": "feat",
+      "scope": "breadcrumb",
+      "message": "take an aria-label and native nav attributes",
+      "date": "2026-10-05",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
