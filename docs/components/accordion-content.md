@@ -3,7 +3,7 @@
 > Sub-component of Accordion.
 
 - Tier: patterns
-- Storybook: `Components/Accordion`
+- Storybook: `Patterns/Accordion`
 - Import: `import { AccordionContent } from '@amezquita/design-system/components/patterns/Accordion'`
 
 ## Props

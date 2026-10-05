@@ -29,7 +29,7 @@ npm run validate = tokens:lint && tokens:lint-architecture && tokens:contrast &&
 | `tokens:lint` | 10 rules against component CSS (below) | `scripts/lint-tokens.mjs` |
 | `tokens:lint-architecture` | Component tokens that are pass-throughs or chain-skips to their referent in all 4 modes | `scripts/lint-token-architecture.mjs` |
 | `tokens:contrast` | Color contrast across all 4 brand/mode combinations | `scripts/check-contrast.mjs` |
-| `check-components-doc.mjs` | Every component in `tokens/component-registry.json` has a `docs/components.md` entry | — |
+| `check-components-doc.mjs` | Every component in `tokens/component-registry.json` has a `docs/components.md` entry, and its Storybook path matches the `title` in the component's story file | — |
 | `check-stories.mjs` | Every public component has a Storybook story | — |
 | `check-client-directives.mjs` | Every component that uses client-only React (state and effect hooks, context, Radix, inline event handlers) starts with `'use client'`, so a Next.js App Router consumer can render it from a Server Component. Tests and Storybook run in a browser and can't see this | — |
 | `typecheck` | `tsc --noEmit` | — |

@@ -3,7 +3,7 @@
 > Placeholder for zero-content states — icon, heading, supporting text, and an optional action
 
 - Tier: patterns
-- Storybook: `Components/EmptyState`
+- Storybook: `Patterns/EmptyState`
 - Import: `import { EmptyState } from '@amezquita/design-system/components/patterns/EmptyState'`
 
 ## Props

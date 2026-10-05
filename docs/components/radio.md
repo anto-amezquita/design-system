@@ -3,7 +3,7 @@
 > Single-selection control within a mutually exclusive group
 
 - Tier: primitives
-- Storybook: `Components/Radio`
+- Storybook: `Components/RadioGroup`
 - Import: `import { RadioGroup } from '@amezquita/design-system/components/primitives/Radio'`
 
 ## Props

@@ -3,7 +3,7 @@
 > Sub-component of Table.
 
 - Tier: patterns
-- Storybook: `Components/Table`
+- Storybook: `Patterns/Table`
 - Import: `import { TableHead } from '@amezquita/design-system/components/patterns/Table'`
 
 Also accepts all props of: `React.ComponentPropsWithoutRef<'thead'>`

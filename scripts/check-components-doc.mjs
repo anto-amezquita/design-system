@@ -7,7 +7,7 @@
  * Exit codes: 0 = all components documented, 1 = missing entries found.
  */
 
-import { readdirSync, readFileSync, statSync } from 'fs'
+import { existsSync, readdirSync, readFileSync, statSync } from 'fs'
 import { join } from 'path'
 
 const TIERS = ['components/primitives', 'components/composition', 'components/patterns']
@@ -49,6 +49,31 @@ for (const tier of TIERS) {
       missing.push({ tier, name })
     }
   }
+}
+
+// The Storybook path in each entry must match the `title` in the component's
+// story file, which is where Storybook actually files the stories. The
+// registry takes the title from the story file (1.3.1); this keeps the entry
+// from saying something else, as 8 entries did (Accordion listed as
+// `Components/Accordion`, filed under `Patterns/Accordion`).
+const pathMismatches = []
+for (const tier of TIERS) {
+  for (const name of getComponentDirs(tier)) {
+    const storyFile = join(tier, name, `${name}.stories.tsx`)
+    if (!existsSync(storyFile)) continue
+    const title = readFileSync(storyFile, 'utf8').match(/^\s*title:\s*['"]([^'"]+)['"]/m)?.[1]
+    const section = registry.split(/^### /m).find(block => block.split('\n')[0].trim() === name)
+    const documented = section?.match(/\*\*Storybook path\*\*\s*\|\s*`?([^`|\n]+)`?/)?.[1]?.trim()
+    if (title && documented && title !== documented) pathMismatches.push({ name, documented, title })
+  }
+}
+if (pathMismatches.length > 0) {
+  console.error(`\n✗ Component registry: ${pathMismatches.length} Storybook path(s) in ${REGISTRY} don't match the story file's title\n`)
+  for (const { name, documented, title } of pathMismatches) {
+    console.error(`  ${name}: ${REGISTRY} says \`${documented}\`, ${name}.stories.tsx says \`${title}\``)
+  }
+  console.error(`\n  Storybook files stories under the story file's title. Change the entry to match.\n`)
+  process.exit(1)
 }
 
 if (missing.length === 0) {
