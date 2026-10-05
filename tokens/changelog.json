@@ -4,6 +4,22 @@
   },
   "versions": [
     {
+      "tag": "v1.3.1",
+      "date": "2026-10-05",
+      "sha": "e2cbd3b",
+      "entries": [
+        {
+          "sha": "ca8f96c",
+          "type": "fix",
+          "scope": "registry",
+          "message": "Storybook paths from the story files, and each component's first story id",
+          "date": "2026-10-05",
+          "breaking": false
+        }
+      ],
+      "entryCount": 1
+    },
+    {
       "tag": "v1.3.0",
       "date": "2026-10-05",
       "sha": "c0023e2",
@@ -640,16 +656,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "ca8f96c",
-      "type": "fix",
-      "scope": "registry",
-      "message": "Storybook paths from the story files, and each component's first story id",
-      "date": "2026-10-05",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
