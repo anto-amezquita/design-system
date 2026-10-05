@@ -112,7 +112,7 @@ Single-selection control within a mutually exclusive group
 
 - Import: `import { Radio } from '@amezquita/design-system/components/primitives/Radio'`
 - Token prefix: `radio-*` (2 tokens)
-- Storybook: Components/Radio
+- Storybook: Components/RadioGroup
 - Stories: Default, WithDefault, Horizontal, Disabled, WithDisabledOption, Controlled, AllStates, DarkMode
 
 ### Select
@@ -278,7 +278,7 @@ Collapsible content sections with animated expand/collapse; supports single or m
 
 - Import: `import { Accordion } from '@amezquita/design-system/components/patterns/Accordion'`
 - Token prefix: `accordion-*` (4 tokens)
-- Storybook: Components/Accordion
+- Storybook: Patterns/Accordion
 - Stories: Default, Multiple, WithDisabledItem, DefaultOpen, DarkMode
 
 ### Breadcrumb
@@ -287,7 +287,7 @@ Hierarchical page location trail; the last item is the current page (non-linked)
 
 - Import: `import { Breadcrumb } from '@amezquita/design-system/components/patterns/Breadcrumb'`
 - Token prefix: `breadcrumb-*` (3 tokens)
-- Storybook: Components/Breadcrumb
+- Storybook: Patterns/Breadcrumb
 - Stories: Default, TwoLevels, SingleLevel, CustomSeparator, LongLabels, DarkMode
 
 ### DataTable
@@ -296,7 +296,7 @@ Sortable, filterable, paginated table for structured datasets
 
 - Import: `import { DataTable } from '@amezquita/design-system/components/patterns/DataTable'`
 - Token prefix: `datatable-*` (3 tokens)
-- Storybook: Components/DataTable
+- Storybook: Patterns/DataTable
 - Stories: Default, Sortable, WithSelection, WithPagination, WithPaginationAndSelection, WithColumnFilters, WithToolbarAndFilters, WithFiltersAndSelection, Striped, Compact, Empty, DarkMode
 
 ### EmptyState
@@ -305,7 +305,7 @@ Placeholder for zero-content states — icon, heading, supporting text, and an o
 
 - Import: `import { EmptyState } from '@amezquita/design-system/components/patterns/EmptyState'`
 - Token prefix: `emptystate-padding-*` (2 tokens)
-- Storybook: Components/EmptyState
+- Storybook: Patterns/EmptyState
 - Stories: Default, AllVariants, Compact, DarkMode
 
 ### Hero
@@ -323,7 +323,7 @@ Page navigation controls for multi-page data sets; exposes current page and tota
 
 - Import: `import { Pagination } from '@amezquita/design-system/components/patterns/Pagination'`
 - Token prefix: `pagination-button-*` (4 tokens)
-- Storybook: Components/Pagination
+- Storybook: Patterns/Pagination
 - Stories: Default, EdgeCases, Compact, DarkMode
 
 ### SideNav
@@ -341,7 +341,7 @@ Static data table with semantic header, body, and row structure
 
 - Import: `import { Table } from '@amezquita/design-system/components/patterns/Table'`
 - Token prefix: `table-header-font-*` (1 tokens)
-- Storybook: Components/Table
+- Storybook: Patterns/Table
 - Stories: Default, Striped, Bordered, Compact, AllVariants, WithCaption, WithFoot, HorizontalScroll, DarkMode
 
 ### Tabs
@@ -350,7 +350,7 @@ Segmented view switcher with full keyboard navigation; built on Radix Tabs
 
 - Import: `import { Tabs } from '@amezquita/design-system/components/patterns/Tabs'`
 - Token prefix: `tabs-*` (2 tokens)
-- Storybook: Components/Tabs
+- Storybook: Patterns/Tabs
 - Stories: Default, AllVariants, Sizes, WithDisabledTab, DarkMode
 
 ## MCP server

@@ -3,7 +3,7 @@
 > Segmented view switcher with full keyboard navigation; built on Radix Tabs
 
 - Tier: patterns
-- Storybook: `Components/Tabs`
+- Storybook: `Patterns/Tabs`
 - Import: `import { Tabs } from '@amezquita/design-system/components/patterns/Tabs'`
 
 ## Props

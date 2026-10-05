@@ -445,7 +445,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 | **Purpose** | Single-selection control within a mutually exclusive group |
 | **Figma name** | `Radio` |
 | **Code name** | `Radio` |
-| **Storybook path** | `Components/Radio` |
+| **Storybook path** | `Components/RadioGroup` |
 
 ---
 
@@ -779,7 +779,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 | **Purpose** | Collapsible content sections with animated expand/collapse; supports single or multi-open modes |
 | **Figma name** | `Accordion` |
 | **Code name** | `Accordion` |
-| **Storybook path** | `Components/Accordion` |
+| **Storybook path** | `Patterns/Accordion` |
 
 ---
 
@@ -790,7 +790,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 | **Purpose** | Hierarchical page location trail; the last item is the current page (non-linked) |
 | **Figma name** | `Breadcrumb` |
 | **Code name** | `Breadcrumb` |
-| **Storybook path** | `Components/Breadcrumb` |
+| **Storybook path** | `Patterns/Breadcrumb` |
 
 **Props / variants**
 - `LinkComponent`: optional component to render internal links with (e.g. `next/link` or a React Router `Link`). Defaults to a plain `<a>`.
@@ -804,7 +804,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 | **Purpose** | Sortable, filterable, paginated table for structured datasets |
 | **Figma name** | `DataTable` |
 | **Code name** | `DataTable` |
-| **Storybook path** | `Components/DataTable` |
+| **Storybook path** | `Patterns/DataTable` |
 
 ---
 
@@ -815,7 +815,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 | **Purpose** | Placeholder for zero-content states — icon, heading, supporting text, and an optional action |
 | **Figma name** | `EmptyState` |
 | **Code name** | `EmptyState` |
-| **Storybook path** | `Components/EmptyState` |
+| **Storybook path** | `Patterns/EmptyState` |
 
 ---
 
@@ -826,7 +826,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 | **Purpose** | Page navigation controls for multi-page data sets; exposes current page and total page count |
 | **Figma name** | `Pagination` |
 | **Code name** | `Pagination` |
-| **Storybook path** | `Components/Pagination` |
+| **Storybook path** | `Patterns/Pagination` |
 
 ---
 
@@ -894,7 +894,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 | **Purpose** | Static data table with semantic header, body, and row structure |
 | **Figma name** | `Table` |
 | **Code name** | `Table` |
-| **Storybook path** | `Components/Table` |
+| **Storybook path** | `Patterns/Table` |
 
 ---
 
@@ -905,7 +905,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 | **Purpose** | Segmented view switcher with full keyboard navigation; built on Radix Tabs |
 | **Figma name** | `Tabs` |
 | **Code name** | `Tabs` |
-| **Storybook path** | `Components/Tabs` |
+| **Storybook path** | `Patterns/Tabs` |
 
 ---
 

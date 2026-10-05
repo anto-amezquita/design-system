@@ -3,7 +3,7 @@
 > Page navigation controls for multi-page data sets; exposes current page and total page count
 
 - Tier: patterns
-- Storybook: `Components/Pagination`
+- Storybook: `Patterns/Pagination`
 - Import: `import { Pagination } from '@amezquita/design-system/components/patterns/Pagination'`
 
 ## Props

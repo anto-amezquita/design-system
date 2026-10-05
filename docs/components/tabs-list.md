@@ -3,7 +3,7 @@
 > Sub-component of Tabs.
 
 - Tier: patterns
-- Storybook: `Components/Tabs`
+- Storybook: `Patterns/Tabs`
 - Import: `import { TabsList } from '@amezquita/design-system/components/patterns/Tabs'`
 
 Also accepts all props of: `React.ComponentPropsWithoutRef<typeof RadixTabs.List>`

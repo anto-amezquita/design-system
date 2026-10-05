@@ -2,9 +2,12 @@
  * Generates tokens/component-registry.json.
  *
  * Sources of truth:
- *   - docs/components.md        → name, purpose, storybook path
+ *   - docs/components.md        → name, purpose; storybook path only for a
+ *                                 component with no stories (BaseSheet)
  *   - components/{tier}/{Name}/ → determines tier
- *   - {Name}.stories.tsx        → story export names
+ *   - {Name}.stories.tsx        → story export names, and the Storybook title,
+ *                                 from which storybookTitleId and defaultStoryId
+ *                                 are worked out with Storybook's own functions
  *   - tokens/components/*.json  → component token count
  *
  * Called automatically from sd.config.mjs after buildTokenReference().
@@ -13,6 +16,7 @@
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'fs'
 import { join } from 'path'
 import { fileURLToPath } from 'url'
+import { sanitize, storyNameFromExport, toId } from 'storybook/internal/csf'
 import { toKebab } from '../lib/case.mjs'
 
 const TIERS = [
@@ -21,8 +25,10 @@ const TIERS = [
   { name: 'patterns',    dir: 'components/patterns'    },
 ]
 
+// Storybook's own sanitize, so `Components/RadioGroup` becomes the
+// `components-radiogroup` Storybook uses in its URLs, not a guess at it.
 function toStorybookTitleId(storybookPath) {
-  return storybookPath.toLowerCase().replace(/[/\s]/g, '-')
+  return sanitize(storybookPath)
 }
 
 // ── Parse docs/components.md ─────────────────────────────────
@@ -78,13 +84,25 @@ function findTier(name) {
 
 // ── Extract story export names from .stories.tsx ─────────────
 
+// The story file's own `title` is where Storybook files the stories, so it's
+// the source for the Storybook path. Until 1.3.1 the path came from
+// docs/components.md and had drifted for 10 components (Accordion listed as
+// `Components/Accordion`, filed by Storybook under `Patterns/Accordion`), so
+// every link built from it opened a missing page. check-components-doc.mjs
+// now fails if the two disagree.
 function getStories(tier, name) {
   const storyFile = join('components', tier, name, `${name}.stories.tsx`)
-  if (!existsSync(storyFile)) return []
+  if (!existsSync(storyFile)) return { title: null, stories: [] }
 
   const content = readFileSync(storyFile, 'utf8')
+  const title = content.match(/^\s*title:\s*['"]([^'"]+)['"]/m)?.[1] ?? null
   const matches = [...content.matchAll(/^export const (\w+):\s*Story/gm)]
-  return matches.map(m => m[1])
+  return { title, stories: matches.map(m => m[1]) }
+}
+
+/** The first story's real Storybook id (`H1` → `components-heading--h-1`), or null. */
+function defaultStoryIdFor(title, stories) {
+  return title && stories.length > 0 ? toId(title, storyNameFromExport(stories[0])) : null
 }
 
 // ── Compound sub-components ───────────────────────────────────
@@ -218,14 +236,16 @@ export function buildComponentRegistry() {
     }
   }
 
-  for (const { name, purpose, storybookPath, internal } of parsed) {
+  for (const { name, purpose, storybookPath: documentedPath, internal } of parsed) {
     const tier = findTier(name)
     if (!tier) continue // skip non-system components
 
     const slug = toKebab(name)
-    const stories = getStories(tier, name)
+    const { title, stories } = getStories(tier, name)
     const { count: tokenCount, prefix: tokenPrefix } = getTokenInfo(name)
+    const storybookPath = title ?? documentedPath
     const storybookTitleId = toStorybookTitleId(storybookPath)
+    const defaultStoryId = defaultStoryIdFor(title, stories)
 
     components.push({
       name,
@@ -234,6 +254,7 @@ export function buildComponentRegistry() {
       purpose,
       storybookPath,
       storybookTitleId,
+      defaultStoryId,
       tokenPrefix,
       stories,
       tokenCount,
@@ -255,6 +276,7 @@ export function buildComponentRegistry() {
             purpose: `Sub-component of ${name}.`,
             storybookPath,
             storybookTitleId,
+            defaultStoryId,
             tokenPrefix: null,
             stories: [],
             tokenCount: 0,

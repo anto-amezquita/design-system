@@ -3,7 +3,7 @@
 > Collapsible content sections with animated expand/collapse; supports single or multi-open modes
 
 - Tier: patterns
-- Storybook: `Components/Accordion`
+- Storybook: `Patterns/Accordion`
 - Import: `import { Accordion } from '@amezquita/design-system/components/patterns/Accordion'`
 
 ## Props

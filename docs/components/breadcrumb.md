@@ -3,7 +3,7 @@
 > Hierarchical page location trail; the last item is the current page (non-linked)
 
 - Tier: patterns
-- Storybook: `Components/Breadcrumb`
+- Storybook: `Patterns/Breadcrumb`
 - Import: `import { Breadcrumb } from '@amezquita/design-system/components/patterns/Breadcrumb'`
 
 ## Props

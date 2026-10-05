@@ -3,7 +3,7 @@
 > Static data table with semantic header, body, and row structure
 
 - Tier: patterns
-- Storybook: `Components/Table`
+- Storybook: `Patterns/Table`
 - Import: `import { Table } from '@amezquita/design-system/components/patterns/Table'`
 
 ## Props
