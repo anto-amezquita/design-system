@@ -8,4 +8,6 @@ We have a quick list of common questions to get you started engaging with this p
 
 1. While working on a PR that changes anything under `tokens/`, `components/`, `lib/`, or `hooks/`, run `npm run changeset` — pick the bump type (patch/minor/major) and write a one-line summary. Commit the generated `.changeset/*.md` file with the PR.
 2. On merge to `main`, the release workflow opens (or updates) a "Version Packages" PR that bumps `package.json` and writes `CHANGELOG.md` from the accumulated changesets.
-3. Merging that PR triggers the actual `npm publish`.
+3. Merging that PR triggers the actual `npm publish`, and `release.yml` then notifies the portfolio and `design-system-site`, which each open a bump PR.
+
+**Merge "Version Packages" at most once a week** ([ADR 0022](../decisions/0022-release-at-most-weekly.md)). It keeps collecting changesets until it's merged, so library PRs merge whenever they're ready; only the release waits. Each release costs a full set of Chromatic snapshots in the portfolio, twice. The exception is a fix someone is waiting on, such as a broken install.
