@@ -1,0 +1,79 @@
+{
+  "projectId": "1e0334f3-9863-4797-9d75-adb8e9f3516e",
+  "pkg": "@amezquita/design-system",
+  "globalName": "AmezquitaDesignSystem",
+  "shape": "storybook",
+  "storybookConfigDir": ".storybook",
+  "storybookStatic": ".design-sync/sb-reference",
+  "buildCmd": "node .design-sync/build-package.mjs",
+  "entry": ".design-sync/.cache/pkg/index.ts",
+  "tsconfig": "../../../tsconfig.json",
+  "docsDir": "../../../docs/components",
+  "extraFonts": [
+    "../../fonts/fonts.css"
+  ],
+  "provider": {
+    "component": "ThemeScope",
+    "props": {
+      "brand": "portfolio"
+    },
+    "inner": {
+      "component": "ToastProvider",
+      "inner": {
+        "component": "TooltipProvider"
+      }
+    }
+  },
+  "titleMap": {
+    "Toast": "ToastProvider"
+  },
+  "docsMap": {
+    "RadioGroup": "../../../docs/components/radio.md",
+    "ToastProvider": "../../../docs/components/toast.md"
+  },
+  "libOverrides": {
+    "css-fallback.mjs": "drop storybook preview-head's Google Fonts link (DM Sans/Inter/etc. are storybook chrome); DS fonts are self-hosted via extraFonts",
+    "source-storybook.mjs": "group components by source tier folder (primitives/composition/patterns) - story title prefixes are inconsistent"
+  },
+  "overrides": {
+    "NavigationMenu": {
+      "cardMode": "column",
+      "viewport": "1280x700"
+    },
+    "DataTable": {
+      "cardMode": "column",
+      "viewport": "900x1200"
+    },
+    "Pagination": {
+      "cardMode": "column",
+      "viewport": "900x1200"
+    },
+    "ThemeScope": {
+      "cardMode": "single",
+      "primaryStory": "Default"
+    },
+    "SideNav": {
+      "cardMode": "single",
+      "primaryStory": "WithIcons",
+      "viewport": "1280x800"
+    },
+    "SkipLink": {
+      "cardMode": "single",
+      "primaryStory": "Focused"
+    },
+    "Textarea": {
+      "viewport": "900x1200"
+    },
+    "EmptyState": {
+      "viewport": "900x1900"
+    },
+    "Table": {
+      "viewport": "900x1500"
+    },
+    "Menu": {
+      "cardMode": "single",
+      "primaryStory": "Open"
+    }
+  },
+  "readmeHeader": ".design-sync/conventions.md"
+}
