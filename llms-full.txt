@@ -14,15 +14,17 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 - base: JetBrains Mono. `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap">`
 - demo-cool: Atkinson Hyperlegible Next and Archivo and Atkinson Hyperlegible Mono. `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600;700;800&family=Archivo:wdth,wght@62..125,400..800&family=Atkinson+Hyperlegible+Mono:wght@400;500;600;700;800&display=swap">`
+- demo-soft: Nunito and Fraunces and JetBrains Mono. `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;800&family=Fraunces:wght,SOFT,WONK@400..800,0..100,0..1&family=JetBrains+Mono:wght@400;500;600;800&display=swap">`
+- demo-warm: Instrument Sans and Bricolage Grotesque and JetBrains Mono. `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Bricolage+Grotesque:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500;600;800&display=swap">`
 - portfolio: Schibsted Grotesk and JetBrains Mono. `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap">`
 
 ## Tokens
 
-376 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+378 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
 - component: 107
-- color: 44
+- color: 46
 - typography: 40
 - spacing: 19
 - size: 13

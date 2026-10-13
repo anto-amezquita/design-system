@@ -10,7 +10,7 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `brand?` | `'demo-cool' \| 'portfolio'` | A brand for this part of the page. Needs that brand's scoped CSS loaded (`styles/brands/<brand>-scoped.css`, e.g. `portfolio-scoped.css`). Left out, the part keeps the brand around it. |
+| `brand?` | `'demo-cool' \| 'demo-soft' \| 'demo-warm' \| 'portfolio'` | A brand for this part of the page. Needs that brand's scoped CSS loaded (`styles/brands/<brand>-scoped.css`, e.g. `portfolio-scoped.css`). Left out, the part keeps the brand around it. |
 | `mode?` | `'light' \| 'dark'` | `light` or `dark` for this part of the page. Left out, the part follows the mode around it. |
 
 Also accepts all props of: `React.ComponentPropsWithoutRef<'div'>`

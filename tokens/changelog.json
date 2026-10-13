@@ -706,6 +706,14 @@
   ],
   "unreleased": [
     {
+      "sha": "d60c0df",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "demo-cool brand, heading font axes, Button radius token",
+      "date": "2026-10-13",
+      "breaking": false
+    },
+    {
       "sha": "755e86a",
       "type": "refactor",
       "scope": "tokens",

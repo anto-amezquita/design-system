@@ -28,6 +28,8 @@
   --color-accent-hover: #00694a;
   --color-accent-pressed: #005c41;
   --color-accent-foreground: #fdfefe;
+  --color-accent-text: var(--color-accent-default);
+  --color-accent-text-hover: var(--color-accent-hover);
   --color-border-default: var(--color-neutral-200);
   --color-border-strong: var(--color-neutral-400);
   --color-border-focus: #0a110f;

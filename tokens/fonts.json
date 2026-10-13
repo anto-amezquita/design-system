@@ -76,6 +76,105 @@
         "https://fonts.gstatic.com"
       ]
     },
+    "demo-soft": {
+      "families": [
+        {
+          "family": "Nunito",
+          "tokens": [
+            "font-family-base"
+          ],
+          "weights": [
+            400,
+            500,
+            600,
+            800
+          ]
+        },
+        {
+          "family": "Fraunces",
+          "tokens": [
+            "font-family-heading"
+          ],
+          "weights": [
+            400,
+            500,
+            600,
+            800
+          ],
+          "axes": {
+            "SOFT": [
+              0,
+              100
+            ],
+            "WONK": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "family": "JetBrains Mono",
+          "tokens": [
+            "font-family-mono"
+          ],
+          "weights": [
+            400,
+            500,
+            600,
+            800
+          ]
+        }
+      ],
+      "href": "https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;800&family=Fraunces:wght,SOFT,WONK@400..800,0..100,0..1&family=JetBrains+Mono:wght@400;500;600;800&display=swap",
+      "preconnect": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com"
+      ]
+    },
+    "demo-warm": {
+      "families": [
+        {
+          "family": "Instrument Sans",
+          "tokens": [
+            "font-family-base"
+          ],
+          "weights": [
+            400,
+            500,
+            600
+          ]
+        },
+        {
+          "family": "Bricolage Grotesque",
+          "tokens": [
+            "font-family-heading"
+          ],
+          "weights": [
+            400,
+            500,
+            600,
+            800
+          ]
+        },
+        {
+          "family": "JetBrains Mono",
+          "tokens": [
+            "font-family-mono"
+          ],
+          "weights": [
+            400,
+            500,
+            600,
+            800
+          ]
+        }
+      ],
+      "href": "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Bricolage+Grotesque:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500;600;800&display=swap",
+      "preconnect": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com"
+      ]
+    },
     "portfolio": {
       "families": [
         {

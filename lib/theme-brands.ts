@@ -2,6 +2,6 @@
 // styles/brands/. Do not edit: run `npm run tokens`.
 
 /** The brands a ThemeScope can apply to part of a page: one per scoped brand file. */
-export type ThemeBrand = 'demo-cool' | 'portfolio'
+export type ThemeBrand = 'demo-cool' | 'demo-soft' | 'demo-warm' | 'portfolio'
 
-export const THEME_BRANDS: readonly ThemeBrand[] = ['demo-cool', 'portfolio']
+export const THEME_BRANDS: readonly ThemeBrand[] = ['demo-cool', 'demo-soft', 'demo-warm', 'portfolio']

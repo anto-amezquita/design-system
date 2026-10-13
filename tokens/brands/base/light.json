@@ -104,6 +104,16 @@
     "$type": "color",
     "$description": "Text and icons on an accent fill."
   },
+  "color-accent-text": {
+    "$value": "{color-accent-default}",
+    "$type": "color",
+    "$description": "The accent as text on a surface: links, and anything else that colours text or a thin line with the accent. The same as color-accent-default in base; a brand whose accent is a fill too light to read as text (a pastel) sets a darker one here."
+  },
+  "color-accent-text-hover": {
+    "$value": "{color-accent-hover}",
+    "$type": "color",
+    "$description": "Hover state of color-accent-text."
+  },
   "color-border-default": {
     "$value": "{color-neutral-200}",
     "$type": "color",
