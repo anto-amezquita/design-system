@@ -101,6 +101,8 @@ The tokens stay the single source. The site defines no colours, type or spacing 
   The constraint this accepts: a preview can't sit inside a branded element. Where a preview's card is branded, the card's frame and the preview area are siblings, not parent and child. The Day 4 templates are drawn to that rule.
 - The new brand ships in one minor release under [`0022`](0022-release-at-most-weekly.md).
 
+**Update (2026-10-13):** the site brand became `demo-cool`, one of three demo brands ([`0023`](0023-demo-brands-and-n-brand-build.md)). One exception to "everything that shows a component stays in `base`": the landing hero shows one real Card under a brand switch (`demo-cool`, `demo-warm`, `demo-soft`), labelled with each brand's name, because its job is to show the same components in different brands. Component previews elsewhere stay in `base`.
+
 **Unchanged:** the site is still a consumer installing from npm, still built with the system's own components, and the Themes page still shows `base` and `portfolio` side by side, now with the site brand as a third, real example of the split.
 
 ## Related files
