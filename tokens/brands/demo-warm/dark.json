@@ -1,0 +1,82 @@
+{
+  "color-neutral-50": {
+    "$value": "#1E150E",
+    "$type": "color"
+  },
+  "color-neutral-100": {
+    "$value": "#2F241A",
+    "$type": "color"
+  },
+  "color-neutral-200": {
+    "$value": "#4B3D31",
+    "$type": "color"
+  },
+  "color-neutral-300": {
+    "$value": "#5F4F42",
+    "$type": "color"
+  },
+  "color-neutral-400": {
+    "$value": "#817062",
+    "$type": "color"
+  },
+  "color-neutral-500": {
+    "$value": "#AFA094",
+    "$type": "color"
+  },
+  "color-neutral-600": {
+    "$value": "#E0D1C6",
+    "$type": "color"
+  },
+  "color-neutral-700": {
+    "$value": "#F0E2D8",
+    "$type": "color"
+  },
+  "color-neutral-800": {
+    "$value": "#FEF3EB",
+    "$type": "color"
+  },
+  "color-neutral-900": {
+    "$value": "#FFF9F4",
+    "$type": "color"
+  },
+  "color-text-primary": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "color-border-default": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "color-border-focus": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "color-accent-default": {
+    "$value": "#F98942",
+    "$type": "color"
+  },
+  "color-accent-hover": {
+    "$value": "#FF9B5A",
+    "$type": "color"
+  },
+  "color-accent-pressed": {
+    "$value": "#FFAF7A",
+    "$type": "color"
+  },
+  "color-accent-foreground": {
+    "$value": "#1E130E",
+    "$type": "color"
+  },
+  "button-secondary-foreground": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "button-secondary-border": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "button-secondary-background-hover": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  }
+}

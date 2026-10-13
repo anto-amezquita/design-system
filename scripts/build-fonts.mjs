@@ -11,7 +11,7 @@
  * theme axis, rather than resolving the token files a second way:
  *   - families: each `font-family-*` token's first family, when it's a named
  *     web font rather than a system stack. Base's text stacks are system fonts,
- *     so base needs only its mono font; portfolio is a skin on base, so it
+ *     so base needs only its mono font; a brand is a skin on base, so it
  *     needs its own font plus base's mono.
  *   - weights: every value the brand's font-weight tokens (semantic and
  *     component) resolve to. Both families are variable fonts on Google Fonts,
@@ -29,13 +29,30 @@
 
 import { readFileSync, writeFileSync } from 'fs'
 import { fileURLToPath } from 'url'
+import { listBrands } from './brands.mjs'
 
-// Families this system loads from Google Fonts. Adding a font to a brand means
-// adding it here, which is the moment to check Google Fonts actually has it.
-const GOOGLE_FONTS = new Set(['JetBrains Mono', 'Schibsted Grotesk'])
+// Families this system loads from Google Fonts, with the ranges Google Fonts
+// serves them in. Adding a font to a brand means adding it here, which is the
+// moment to check Google Fonts actually has it, and at which weights.
+//   wght  the weight range; requested weights outside it are dropped, since a
+//         css2 request for a weight the family doesn't have fails outright
+//   axes  extra variable axes a brand sets through font-variation-heading
+//         ('wdth' 112.5). Requested as full ranges, so any value a brand picks
+//         inside them loads.
+export const GOOGLE_FONTS = new Map([
+  ['Archivo', { wght: [100, 900], axes: { wdth: [62, 125] } }],
+  ['Atkinson Hyperlegible Mono', { wght: [200, 800] }],
+  ['Atkinson Hyperlegible Next', { wght: [200, 800] }],
+  ['Bricolage Grotesque', { wght: [200, 800] }],
+  ['Fraunces', { wght: [100, 900], axes: { SOFT: [0, 100], WONK: [0, 1] } }],
+  ['Instrument Sans', { wght: [400, 700] }],
+  ['JetBrains Mono', { wght: [100, 800] }],
+  ['Nunito', { wght: [200, 1000] }],
+  ['Schibsted Grotesk', { wght: [400, 900] }],
+])
 
 // The light axis of each brand. Fonts don't change with the mode.
-const BRANDS = { base: 'base-light', portfolio: 'portfolio-light' }
+const BRANDS = Object.fromEntries([['base', 'base-light'], ...listBrands().map(b => [b, `${b}-light`])])
 
 const PRECONNECT = ['https://fonts.googleapis.com', 'https://fonts.gstatic.com']
 
@@ -48,11 +65,26 @@ export function webFontFamily(stack) {
   return quoted ? quoted[2] : null
 }
 
+// css2 wants axis tags lowercase first, then uppercase, each group alphabetical.
+function axisOrder(a, b) {
+  const aLower = a === a.toLowerCase()
+  const bLower = b === b.toLowerCase()
+  if (aLower !== bLower) return aLower ? -1 : 1
+  return a < b ? -1 : a > b ? 1 : 0
+}
+
+function familyParam({ family, weights, axes }) {
+  const name = family.replaceAll(' ', '+')
+  if (!axes || Object.keys(axes).length === 0) return `family=${name}:wght@${weights.join(';')}`
+  // With extra axes, css2 takes one range per axis instead of a weight list.
+  const ranges = { ...axes, wght: [weights[0], weights[weights.length - 1]] }
+  const tags = Object.keys(ranges).sort(axisOrder)
+  return `family=${name}:${tags.join(',')}@${tags.map(tag => ranges[tag].join('..')).join(',')}`
+}
+
 export function googleFontsHref(families) {
   if (families.length === 0) return null
-  const params = families
-    .map(({ family, weights }) => `family=${family.replaceAll(' ', '+')}:wght@${weights.join(';')}`)
-    .join('&')
+  const params = families.map(familyParam).join('&')
   return `https://fonts.googleapis.com/css2?${params}&display=swap`
 }
 
@@ -82,7 +114,11 @@ export function fontsForAxis(tokens, axis) {
     byFamily.get(family).push(token.name)
   }
 
-  const families = [...byFamily].map(([family, names]) => ({ family, tokens: names, weights }))
+  const families = [...byFamily].map(([family, names]) => {
+    const { wght: [min, max], axes } = GOOGLE_FONTS.get(family)
+    const served = weights.filter(w => w >= min && w <= max)
+    return { family, tokens: names, weights: served, ...(axes ? { axes } : {}) }
+  })
   return { families, href: googleFontsHref(families), preconnect: families.length > 0 ? PRECONNECT : [] }
 }
 

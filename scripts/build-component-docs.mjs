@@ -728,7 +728,7 @@ function buildComponentMd(component, ctx) {
       lines.push('', '## Tokens', '', '| Token | Type | Value |', '|---|---|---|')
       let anyAxisAware = false
       for (const entry of rows) {
-        // Base, not portfolio: base is what every consumer starts from (0001), and the
+        // Base, not a brand: base is what every consumer starts from (0001), and the
         // registry's cssVars resolve from base too since 1.1.1.
         const value = entry.resolved?.['base-light'] ?? entry.rawValue
         const note = entry.axisAware ? ' †' : ''
@@ -736,7 +736,7 @@ function buildComponentMd(component, ctx) {
         lines.push(`| \`--${entry.name}\` | ${entry.type} | \`${value}\`${note} |`)
       }
       if (anyAxisAware) {
-        lines.push('', '† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.')
+        lines.push('', '† resolves differently across brands and light/dark themes — see `tokens.json` for every value.')
       }
     }
   }

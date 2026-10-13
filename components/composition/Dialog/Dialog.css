@@ -6,7 +6,7 @@
   --dialog-entrance-offset
 
   --dialog-close-size
-  --font-family-base, --font-family-heading, --color-text-primary, --color-text-secondary
+  --font-family-base, --font-family-heading, --font-variation-heading, --color-text-primary, --color-text-secondary
   --line-height-h4, --line-height-body, --letter-spacing-heading
   --border-radius-interactive, --space-component-gap, --space-inline-gap, --space-element-gap
   --duration-interaction, --duration-transition, --easing-default, --easing-out
@@ -153,6 +153,7 @@
 
 .dialog__title {
   font-family: var(--font-family-heading);
+  font-variation-settings: var(--font-variation-heading);
   font-size: var(--font-size-h4);
   font-weight: var(--font-weight-title);
   line-height: var(--line-height-h4);

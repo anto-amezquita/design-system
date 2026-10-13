@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 33,
-    "tokenCount": 212
+    "tokenCount": 216
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -155,6 +155,9 @@
     "button-arrow-nudge": [
       "components/primitives/Button/Button.css"
     ],
+    "button-border-radius": [
+      "components/primitives/Button/Button.css"
+    ],
     "button-ghost-background": [
       "components/primitives/Button/Button.css"
     ],
@@ -204,7 +207,6 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
-      "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
@@ -219,11 +221,16 @@
       "components/primitives/Tag/Tag.css"
     ],
     "color-accent-hover": [
-      "components/primitives/Button/Button.css",
-      "components/primitives/Link/Link.css"
+      "components/primitives/Button/Button.css"
     ],
     "color-accent-pressed": [
       "components/primitives/Button/Button.css"
+    ],
+    "color-accent-text": [
+      "components/primitives/Link/Link.css"
+    ],
+    "color-accent-text-hover": [
+      "components/primitives/Link/Link.css"
     ],
     "color-border-default": [
       "components/composition/Card/Card.css",
@@ -712,6 +719,11 @@
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
+    ],
+    "font-variation-heading": [
+      "components/composition/Dialog/Dialog.css",
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/Heading/Heading.css"
     ],
     "font-weight-control": [
       "components/patterns/Accordion/Accordion.css",

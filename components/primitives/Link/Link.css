@@ -1,7 +1,7 @@
 /*
   Tokens consumed:
 
-  --color-accent-default, --color-accent-hover, --color-border-focus
+  --color-accent-text, --color-accent-text-hover, --color-border-focus
   --border-width-default, --border-radius-interactive
   --focus-ring-width, --focus-ring-offset
   --duration-interaction, --easing-default
@@ -12,7 +12,7 @@
 */
 
 .link {
-  color: var(--color-accent-default);
+  color: var(--color-accent-text);
   text-decoration-line: underline;
   text-decoration-color: currentColor;
   text-decoration-thickness: var(--border-width-default);
@@ -23,7 +23,7 @@
 }
 
 .link:hover {
-  color: var(--color-accent-hover);
+  color: var(--color-accent-text-hover);
 }
 
 .link:focus-visible {

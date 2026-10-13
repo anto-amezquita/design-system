@@ -104,6 +104,16 @@
     "$type": "color",
     "$description": "Text and icons on an accent fill."
   },
+  "color-accent-text": {
+    "$value": "{color-accent-default}",
+    "$type": "color",
+    "$description": "The accent as text on a surface: links, and anything else that colours text or a thin line with the accent. The same as color-accent-default in base; a brand whose accent is a fill too light to read as text (a pastel) sets a darker one here."
+  },
+  "color-accent-text-hover": {
+    "$value": "{color-accent-hover}",
+    "$type": "color",
+    "$description": "Hover state of color-accent-text."
+  },
   "color-border-default": {
     "$value": "{color-neutral-200}",
     "$type": "color",
@@ -478,6 +488,11 @@
     "$value": "-0.02em",
     "$type": "dimension",
     "$description": "Tightened tracking for headings and titles."
+  },
+  "font-variation-heading": {
+    "$value": "normal",
+    "$type": "string",
+    "$description": "Variable-font axis settings for headings, as font-variation-settings (e.g. 'wdth' 112.5 for a wide cut). normal in base; a brand whose heading font has extra axes sets them here, and scripts/build-fonts.mjs requests those axes from Google Fonts."
   },
   "letter-spacing-subheading": {
     "$value": "-0.01em",

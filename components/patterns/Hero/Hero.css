@@ -4,7 +4,7 @@
   --hero-eyebrow-size, --hero-eyebrow-weight, --hero-eyebrow-spacing
   --hero-title-weight
   --hero-lead-size, --hero-max-width, --hero-lead-max-width
-  --font-family-heading, --font-family-base, --font-size-h1-fluid
+  --font-family-heading, --font-variation-heading, --font-family-base, --font-size-h1-fluid
   --line-height-display, --line-height-body, --line-height-small, --letter-spacing-heading
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
@@ -47,6 +47,7 @@
 
 .hero__title {
   font-family: var(--font-family-heading);
+  font-variation-settings: var(--font-variation-heading);
   font-size: var(--font-size-h1-fluid);
   font-weight: var(--hero-title-weight);
   line-height: var(--line-height-display);

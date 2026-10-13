@@ -2,7 +2,8 @@
  * Token reference builder — generates tokens/token-reference.json.
  *
  * Resolves every semantic + component token to its concrete value across all
- * four theme axes: base-light, base-dark, portfolio-light, portfolio-dark.
+ * theme axis: base-light, base-dark, and <brand>-light / <brand>-dark for every
+ * brand in tokens/brands (scripts/brands.mjs).
  *
  * The resolved values are pre-computed (not CSS-variable-at-runtime) so the
  * docs UI can show real color swatches for every axis without mounting four
@@ -23,6 +24,7 @@ import { readFileSync, writeFileSync, readdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { makeResolver } from '../lib/resolve-token.mjs';
 import { TOKEN_CATEGORIES } from '../lib/token-categories.mjs';
+import { axisNames, listBrands, loadBrands } from './brands.mjs';
 
 function loadJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'));
@@ -64,7 +66,9 @@ function assertKnownCategory(category, tokenName) {
 // with one level of nesting (success.500) — CSS var names join every path
 // segment with a hyphen either way (--feedback-success-500), so the same
 // recursion produces the right name for both shapes without special-casing.
-export function flattenPrimitives(node, groupName, pathSegments = []) {
+// `axes` defaults to every axis the current brands produce; a primitive
+// resolves to the same value on all of them.
+export function flattenPrimitives(node, groupName, pathSegments = [], axes = axisNames(listBrands())) {
   const entries = [];
   for (const [key, value] of Object.entries(node)) {
     if (!value || typeof value !== 'object') continue;
@@ -78,17 +82,12 @@ export function flattenPrimitives(node, groupName, pathSegments = []) {
         category: 'primitive',
         description: value.$description ?? null,
         rawValue,
-        resolved: {
-          'base-light': rawValue,
-          'base-dark': rawValue,
-          'portfolio-light': rawValue,
-          'portfolio-dark': rawValue,
-        },
+        resolved: Object.fromEntries(axes.map(axis => [axis, rawValue])),
         axisAware: false,
         usedBy: [],
       });
     } else {
-      entries.push(...flattenPrimitives(value, groupName, [...pathSegments, key]));
+      entries.push(...flattenPrimitives(value, groupName, [...pathSegments, key], axes));
     }
   }
   return entries;
@@ -98,14 +97,19 @@ export function buildTokenReference() {
   const globalTokens  = loadJson('tokens/global.json');
   const baseLightTokens = loadJson('tokens/brands/base/light.json');
   const baseDarkOverrides = loadJson('tokens/brands/base/dark.json');
-  const portfolioLightOverrides = loadJson('tokens/brands/portfolio/tokens.json');
-  const portfolioDarkOverrides = loadJson('tokens/brands/portfolio/dark.json');
-  // Every semantic token that can appear as a source key on any layer —
-  // used only for the component-token collision check below.
-  const semanticNamespace = { ...baseLightTokens, ...portfolioLightOverrides };
+  const brands = loadBrands();
+  const brandLightOverrides = Object.assign({}, ...brands.map(b => b.light));
 
   // Load all component tokens into a single flat map
   const componentFiles = readdirSync('tokens/components').filter(f => f.endsWith('.json'));
+  // Every semantic token that can appear as a source key on any layer —
+  // used only for the component-token collision check below. A brand may
+  // override a component token (button-border-radius); that key isn't a new
+  // semantic token, so it doesn't count.
+  const componentNames = new Set(componentFiles.flatMap(f => Object.keys(loadJson(`tokens/components/${f}`))));
+  const semanticNamespace = Object.fromEntries(
+    Object.entries({ ...baseLightTokens, ...brandLightOverrides }).filter(([name]) => !componentNames.has(name) || name in baseLightTokens),
+  );
   const componentTokens = {};
   for (const file of componentFiles) {
     const fileTokens = loadJson(`tokens/components/${file}`);
@@ -114,7 +118,7 @@ export function buildTokenReference() {
         throw new Error(`Duplicate token key "${key}" in tokens/components/${file} — already defined by another component token file.`);
       }
       if (key in semanticNamespace) {
-        throw new Error(`Token key "${key}" in tokens/components/${file} collides with an existing semantic token in tokens/brands/base/light.json or tokens/brands/portfolio/tokens.json.`);
+        throw new Error(`Token key "${key}" in tokens/components/${file} collides with an existing semantic token in tokens/brands/base/light.json or a brand's tokens.json.`);
       }
     }
     Object.assign(componentTokens, fileTokens);
@@ -129,16 +133,18 @@ export function buildTokenReference() {
     console.warn(`⚠ Could not load tokens/dependency-graph.json (${err.message}) — usedBy will be empty for every token. Run "npm run tokens:graph" first.`);
   }
 
-  // The four theme axes.
-  // Load order mirrors the CSS cascade: base-light < base-dark < portfolio-light
-  // < portfolio-dark, so portfolio's overrides win over base for conflicting
-  // tokens (palette, accent, typography).
+  // The theme axes. Load order mirrors the CSS cascade: base-light <
+  // base-dark < <brand>-light < <brand>-dark, so a brand's overrides win over
+  // base for conflicting tokens (palette, accent, typography).
   const AXES = {
     'base-light':      { ...baseLightTokens, ...componentTokens },
     'base-dark':       { ...baseLightTokens, ...componentTokens, ...baseDarkOverrides },
-    'portfolio-light': { ...baseLightTokens, ...componentTokens, ...portfolioLightOverrides },
-    'portfolio-dark':  { ...baseLightTokens, ...componentTokens, ...baseDarkOverrides, ...portfolioLightOverrides, ...portfolioDarkOverrides },
+    ...Object.fromEntries(brands.flatMap(b => [
+      [`${b.name}-light`, { ...baseLightTokens, ...componentTokens, ...b.light }],
+      [`${b.name}-dark`,  { ...baseLightTokens, ...componentTokens, ...baseDarkOverrides, ...b.light, ...b.dark }],
+    ])),
   };
+  const axes = Object.keys(AXES);
 
   const resolvers = Object.fromEntries(
     Object.entries(AXES).map(([axis, tokens]) => [axis, makeResolver(tokens, globalTokens)])
@@ -150,23 +156,23 @@ export function buildTokenReference() {
   // group this used to cover. These never change across axes.
   const primitiveEntries = [];
   for (const [groupName, groupTokens] of Object.entries(globalTokens)) {
-    primitiveEntries.push(...flattenPrimitives(groupTokens, groupName));
+    primitiveEntries.push(...flattenPrimitives(groupTokens, groupName, [], axes));
   }
 
   // ── Semantic + component tokens ──────────────────────────────────────────
-  // Light-layer definitions only (base + portfolio's overrides on top) — dark
+  // Light-layer definitions only (base + every brand's overrides on top) — dark
   // overrides never introduce a token name that doesn't already exist here,
   // they only change what it resolves to on the dark axes above.
-  const sourceTokens = { ...baseLightTokens, ...portfolioLightOverrides, ...componentTokens };
+  const sourceTokens = { ...baseLightTokens, ...brandLightOverrides, ...componentTokens };
   const semanticEntries = Object.entries(sourceTokens).map(([name, token]) => {
     const raw = token.$value ?? token.value;
 
     // Base's description wins for a token both layers define: it describes the
-    // role every consumer gets. Portfolio's own tokens fall back to theirs.
+    // role every consumer gets. A brand's own tokens fall back to theirs.
     const description =
       baseLightTokens[name]?.$description ??
       componentTokens[name]?.$description ??
-      portfolioLightOverrides[name]?.$description ??
+      brands.map(b => b.light[name]?.$description).find(Boolean) ??
       null;
 
     const resolved = Object.fromEntries(

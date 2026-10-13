@@ -154,6 +154,7 @@
   --breadcrumb-current-max-width: 240px;
   --button-padding-x: 24px;
   --button-padding-y: 12px;
+  --button-border-radius: var(--border-radius-pill);
   --button-outline-border-width: 2px;
   --button-secondary-background: rgba(0, 0, 0, 0);
   --button-secondary-foreground: var(--color-accent-default);
@@ -255,6 +256,8 @@
   --color-accent-hover: var(--color-neutral-900);
   --color-accent-pressed: #0a0a0a;
   --color-accent-foreground: #ffffff;
+  --color-accent-text: var(--color-accent-default);
+  --color-accent-text-hover: var(--color-accent-hover);
   --color-border-default: var(--color-neutral-200);
   --color-border-strong: var(--color-neutral-400);
   --color-border-focus: #0a0a0a;
@@ -330,6 +333,7 @@
   --line-height-heading: 1.25;
   --line-height-label: 16px;
   --letter-spacing-heading: -0.02em;
+  --font-variation-heading: normal;
   --letter-spacing-subheading: -0.01em;
   --letter-spacing-body: 0;
   --letter-spacing-label: 0.01em;

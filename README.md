@@ -9,9 +9,9 @@ Token-first, multi-brand design system built and maintained solo — DTCG tokens
 A single source of truth for tokens and components, designed to be consumed as a package rather than copy-pasted between projects. The governance model — deterministic linting, contrast checks, story coverage, Figma sync detection — runs the same whether a human or an AI agent is making the change, and every rule that fails does so with a specific fix, not just a red X.
 
 - **DTCG-compliant tokens** (`$value`/`$type`) — three layers: global primitives → semantic tokens → component tokens, resolved through [Style Dictionary](https://styledictionary.com); 373 tokens total — 126 global primitives, 141 semantic tokens, and 106 component tokens, each resolved across all four theme axes
-- **Multi-brand, multi-mode** — a brand-agnostic `base` theme (real neutral gray) and a `portfolio` skin layered on top via CSS cascade, each with light/dark, no per-brand forking
+- **Multi-brand, multi-mode** — a brand-agnostic `base` theme (real neutral gray) and thin skins layered on top via CSS cascade (`portfolio`, plus `demo-cool`, `demo-warm` and `demo-soft` for the docs site), each with light/dark, no per-brand forking
 - **35 components** across primitives, composition, and pattern tiers — 34 of them public, with full Storybook coverage including a required dark-mode story (BaseSheet is an internal overlay primitive with no stories of its own); 230 stories, zero visual regressions across every Chromatic build
-- **CI-enforced governance** — a token linter (no raw hex, no primitive leakage, no hardcoded motion/spacing), a WCAG AA contrast checker across all four theme combinations, and a component-registry check that fails the build if a component ships without documentation
+- **CI-enforced governance** — a token linter (no raw hex, no primitive leakage, no hardcoded motion/spacing), a WCAG AA contrast checker across every brand and mode, and a component-registry check that fails the build if a component ships without documentation
 - **Figma drift detection** — `npm run figma:status` compares the resolved token state against a committed snapshot of what was last pushed to Figma (`figma/sync-state.json`), making staleness detectable offline and reviewable in a diff, with a weekly automated check. The checker is in place; the snapshot is baselined per Figma file via `--baseline`
 - **Agent-safe by design** — every governance script gives specific, actionable failures; nothing here requires a human to interpret vague CI output
 
@@ -58,7 +58,7 @@ The part follows the page's mode, or its own with `mode="light"` or `mode="dark"
 
 ### Fonts
 
-The package ships no font files. The `base` theme sets its text in a system font stack and its code in JetBrains Mono; `portfolio` adds Schibsted Grotesk for text. Load them from Google Fonts with the `<link>` tags in [`tokens/fonts.json`](tokens/fonts.json): `brands.<brand>.href` is the stylesheet, `brands.<brand>.preconnect` the origins to preconnect to. The same links are in `llms.txt`. Both are generated from the font tokens, so they change when a font does. Why there are no font files: [ADR 0020](decisions/0020-fonts-from-google-fonts-no-font-files.md).
+The package ships no font files. The `base` theme sets its text in a system font stack and its code in JetBrains Mono; `portfolio` adds Schibsted Grotesk for text; each demo brand names its own fonts. Load them from Google Fonts with the `<link>` tags in [`tokens/fonts.json`](tokens/fonts.json): `brands.<brand>.href` is the stylesheet, `brands.<brand>.preconnect` the origins to preconnect to. The same links are in `llms.txt`. Both are generated from the font tokens, so they change when a font does. Why there are no font files: [ADR 0020](decisions/0020-fonts-from-google-fonts-no-font-files.md).
 
 This package ships source `.tsx`/`.css` directly rather than a pre-built bundle, so your bundler needs to be told to process it — most tools skip transforming `node_modules` by default:
 
@@ -77,7 +77,7 @@ npm run storybook    # dev server at localhost:6006
 |---|---|
 | `npm run tokens` | Full token build: dependency graph → CSS (Style Dictionary) → token reference, component registry, changelog |
 | `npm run tokens:lint` | Token usage linter over component CSS |
-| `npm run tokens:contrast` | WCAG AA contrast check across base-light/base-dark/portfolio-light/portfolio-dark |
+| `npm run tokens:contrast` | WCAG AA contrast check across every brand in light and dark |
 | `npm run tokens:graph` | Rebuilds the token → component-file dependency graph |
 | `npm run figma:status` | Reports drift between token sources and the last Figma push |
 | `npm run storybook` | Storybook dev server |
@@ -92,6 +92,7 @@ tokens/
   global.json              primitives — raw values, never referenced directly by components
   brands/base/              brand-agnostic foundation — light.json + dark.json, standalone-usable
   brands/portfolio/        brand skin layered on base — tokens.json (light) + dark.json
+  brands/demo-*/           three demo skins for the docs site's hero (decisions/0023), same shape
   components/*.json        component-scoped tokens, aliasing semantic tokens
 
 components/

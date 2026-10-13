@@ -66,3 +66,36 @@ describe('tokens/fonts.json', () => {
     expect(brands.portfolio.families.map(f => f.family)).toEqual(['Schibsted Grotesk', 'JetBrains Mono'])
   })
 })
+
+describe('googleFontsHref with extra axes', () => {
+  it('requests a range per axis, lowercase tags first, then uppercase', () => {
+    expect(googleFontsHref([{ family: 'Archivo', weights: [400, 600, 800], axes: { wdth: [62, 125] } }])).toBe(
+      'https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap',
+    )
+    expect(googleFontsHref([{ family: 'Fraunces', weights: [400, 700], axes: { SOFT: [0, 100], WONK: [0, 1] } }])).toBe(
+      'https://fonts.googleapis.com/css2?family=Fraunces:wght,SOFT,WONK@400..700,0..100,0..1&display=swap',
+    )
+  })
+})
+
+describe('fontsForAxis weight ranges', () => {
+  it('drops weights the family isn’t served in', () => {
+    const fonts = fontsForAxis(
+      [
+        token('font-family-base', 'fontFamily', "'Instrument Sans', sans-serif"),
+        token('font-weight-body', 'fontWeight', '400'),
+        token('font-weight-display', 'fontWeight', '800'),
+      ],
+      'base-light',
+    )
+    expect(fonts.families[0].weights).toEqual([400])
+  })
+})
+
+describe('tokens/fonts.json, demo brands', () => {
+  const { brands } = JSON.parse(readFileSync('tokens/fonts.json', 'utf8'))
+
+  it('demo-cool loads Archivo with its width axis', () => {
+    expect(brands['demo-cool'].href).toContain('family=Archivo:wdth,wght@62..125,')
+  })
+})

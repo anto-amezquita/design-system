@@ -6,7 +6,7 @@ import type { ThemeBrand } from '../../../lib/theme-brands'
 
 // Native <div> attributes pass through (decisions/0007).
 type ThemeScopeProps = React.ComponentPropsWithoutRef<'div'> & {
-  /** A brand for this part of the page. Needs that brand's scoped CSS loaded (`styles/brands/portfolio-scoped.css`). Left out, the part keeps the brand around it. */
+  /** A brand for this part of the page. Needs that brand's scoped CSS loaded (`styles/brands/<brand>-scoped.css`, e.g. `portfolio-scoped.css`). Left out, the part keeps the brand around it. */
   brand?: ThemeBrand
   /** `light` or `dark` for this part of the page. Left out, the part follows the mode around it. */
   mode?: ThemeMode

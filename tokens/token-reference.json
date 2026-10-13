@@ -1,9 +1,9 @@
 {
   "meta": {
     "primitiveCount": 126,
-    "semanticCount": 142,
-    "componentCount": 106,
-    "total": 374
+    "semanticCount": 145,
+    "componentCount": 107,
+    "total": 378
   },
   "tokens": [
     {
@@ -16,6 +16,12 @@
       "resolved": {
         "base-light": "#0A0A0A",
         "base-dark": "#0A0A0A",
+        "demo-cool-light": "#0A0A0A",
+        "demo-cool-dark": "#0A0A0A",
+        "demo-soft-light": "#0A0A0A",
+        "demo-soft-dark": "#0A0A0A",
+        "demo-warm-light": "#0A0A0A",
+        "demo-warm-dark": "#0A0A0A",
         "portfolio-light": "#0A0A0A",
         "portfolio-dark": "#0A0A0A"
       },
@@ -32,6 +38,12 @@
       "resolved": {
         "base-light": "#FFFFFF",
         "base-dark": "#FFFFFF",
+        "demo-cool-light": "#FFFFFF",
+        "demo-cool-dark": "#FFFFFF",
+        "demo-soft-light": "#FFFFFF",
+        "demo-soft-dark": "#FFFFFF",
+        "demo-warm-light": "#FFFFFF",
+        "demo-warm-dark": "#FFFFFF",
         "portfolio-light": "#FFFFFF",
         "portfolio-dark": "#FFFFFF"
       },
@@ -48,6 +60,12 @@
       "resolved": {
         "base-light": "#FAFAF9",
         "base-dark": "#FAFAF9",
+        "demo-cool-light": "#FAFAF9",
+        "demo-cool-dark": "#FAFAF9",
+        "demo-soft-light": "#FAFAF9",
+        "demo-soft-dark": "#FAFAF9",
+        "demo-warm-light": "#FAFAF9",
+        "demo-warm-dark": "#FAFAF9",
         "portfolio-light": "#FAFAF9",
         "portfolio-dark": "#FAFAF9"
       },
@@ -64,6 +82,12 @@
       "resolved": {
         "base-light": "#F4F0EB",
         "base-dark": "#F4F0EB",
+        "demo-cool-light": "#F4F0EB",
+        "demo-cool-dark": "#F4F0EB",
+        "demo-soft-light": "#F4F0EB",
+        "demo-soft-dark": "#F4F0EB",
+        "demo-warm-light": "#F4F0EB",
+        "demo-warm-dark": "#F4F0EB",
         "portfolio-light": "#F4F0EB",
         "portfolio-dark": "#F4F0EB"
       },
@@ -80,6 +104,12 @@
       "resolved": {
         "base-light": "#E2DDD9",
         "base-dark": "#E2DDD9",
+        "demo-cool-light": "#E2DDD9",
+        "demo-cool-dark": "#E2DDD9",
+        "demo-soft-light": "#E2DDD9",
+        "demo-soft-dark": "#E2DDD9",
+        "demo-warm-light": "#E2DDD9",
+        "demo-warm-dark": "#E2DDD9",
         "portfolio-light": "#E2DDD9",
         "portfolio-dark": "#E2DDD9"
       },
@@ -96,6 +126,12 @@
       "resolved": {
         "base-light": "#C8C3BE",
         "base-dark": "#C8C3BE",
+        "demo-cool-light": "#C8C3BE",
+        "demo-cool-dark": "#C8C3BE",
+        "demo-soft-light": "#C8C3BE",
+        "demo-soft-dark": "#C8C3BE",
+        "demo-warm-light": "#C8C3BE",
+        "demo-warm-dark": "#C8C3BE",
         "portfolio-light": "#C8C3BE",
         "portfolio-dark": "#C8C3BE"
       },
@@ -112,6 +148,12 @@
       "resolved": {
         "base-light": "#A8A29E",
         "base-dark": "#A8A29E",
+        "demo-cool-light": "#A8A29E",
+        "demo-cool-dark": "#A8A29E",
+        "demo-soft-light": "#A8A29E",
+        "demo-soft-dark": "#A8A29E",
+        "demo-warm-light": "#A8A29E",
+        "demo-warm-dark": "#A8A29E",
         "portfolio-light": "#A8A29E",
         "portfolio-dark": "#A8A29E"
       },
@@ -128,6 +170,12 @@
       "resolved": {
         "base-light": "#78716C",
         "base-dark": "#78716C",
+        "demo-cool-light": "#78716C",
+        "demo-cool-dark": "#78716C",
+        "demo-soft-light": "#78716C",
+        "demo-soft-dark": "#78716C",
+        "demo-warm-light": "#78716C",
+        "demo-warm-dark": "#78716C",
         "portfolio-light": "#78716C",
         "portfolio-dark": "#78716C"
       },
@@ -144,6 +192,12 @@
       "resolved": {
         "base-light": "#57534E",
         "base-dark": "#57534E",
+        "demo-cool-light": "#57534E",
+        "demo-cool-dark": "#57534E",
+        "demo-soft-light": "#57534E",
+        "demo-soft-dark": "#57534E",
+        "demo-warm-light": "#57534E",
+        "demo-warm-dark": "#57534E",
         "portfolio-light": "#57534E",
         "portfolio-dark": "#57534E"
       },
@@ -160,6 +214,12 @@
       "resolved": {
         "base-light": "#44403C",
         "base-dark": "#44403C",
+        "demo-cool-light": "#44403C",
+        "demo-cool-dark": "#44403C",
+        "demo-soft-light": "#44403C",
+        "demo-soft-dark": "#44403C",
+        "demo-warm-light": "#44403C",
+        "demo-warm-dark": "#44403C",
         "portfolio-light": "#44403C",
         "portfolio-dark": "#44403C"
       },
@@ -176,6 +236,12 @@
       "resolved": {
         "base-light": "#292524",
         "base-dark": "#292524",
+        "demo-cool-light": "#292524",
+        "demo-cool-dark": "#292524",
+        "demo-soft-light": "#292524",
+        "demo-soft-dark": "#292524",
+        "demo-warm-light": "#292524",
+        "demo-warm-dark": "#292524",
         "portfolio-light": "#292524",
         "portfolio-dark": "#292524"
       },
@@ -192,6 +258,12 @@
       "resolved": {
         "base-light": "#1C1917",
         "base-dark": "#1C1917",
+        "demo-cool-light": "#1C1917",
+        "demo-cool-dark": "#1C1917",
+        "demo-soft-light": "#1C1917",
+        "demo-soft-dark": "#1C1917",
+        "demo-warm-light": "#1C1917",
+        "demo-warm-dark": "#1C1917",
         "portfolio-light": "#1C1917",
         "portfolio-dark": "#1C1917"
       },
@@ -208,6 +280,12 @@
       "resolved": {
         "base-light": "#FAFAFA",
         "base-dark": "#FAFAFA",
+        "demo-cool-light": "#FAFAFA",
+        "demo-cool-dark": "#FAFAFA",
+        "demo-soft-light": "#FAFAFA",
+        "demo-soft-dark": "#FAFAFA",
+        "demo-warm-light": "#FAFAFA",
+        "demo-warm-dark": "#FAFAFA",
         "portfolio-light": "#FAFAFA",
         "portfolio-dark": "#FAFAFA"
       },
@@ -224,6 +302,12 @@
       "resolved": {
         "base-light": "#F5F5F5",
         "base-dark": "#F5F5F5",
+        "demo-cool-light": "#F5F5F5",
+        "demo-cool-dark": "#F5F5F5",
+        "demo-soft-light": "#F5F5F5",
+        "demo-soft-dark": "#F5F5F5",
+        "demo-warm-light": "#F5F5F5",
+        "demo-warm-dark": "#F5F5F5",
         "portfolio-light": "#F5F5F5",
         "portfolio-dark": "#F5F5F5"
       },
@@ -240,6 +324,12 @@
       "resolved": {
         "base-light": "#E5E5E5",
         "base-dark": "#E5E5E5",
+        "demo-cool-light": "#E5E5E5",
+        "demo-cool-dark": "#E5E5E5",
+        "demo-soft-light": "#E5E5E5",
+        "demo-soft-dark": "#E5E5E5",
+        "demo-warm-light": "#E5E5E5",
+        "demo-warm-dark": "#E5E5E5",
         "portfolio-light": "#E5E5E5",
         "portfolio-dark": "#E5E5E5"
       },
@@ -256,6 +346,12 @@
       "resolved": {
         "base-light": "#D4D4D4",
         "base-dark": "#D4D4D4",
+        "demo-cool-light": "#D4D4D4",
+        "demo-cool-dark": "#D4D4D4",
+        "demo-soft-light": "#D4D4D4",
+        "demo-soft-dark": "#D4D4D4",
+        "demo-warm-light": "#D4D4D4",
+        "demo-warm-dark": "#D4D4D4",
         "portfolio-light": "#D4D4D4",
         "portfolio-dark": "#D4D4D4"
       },
@@ -272,6 +368,12 @@
       "resolved": {
         "base-light": "#A3A3A3",
         "base-dark": "#A3A3A3",
+        "demo-cool-light": "#A3A3A3",
+        "demo-cool-dark": "#A3A3A3",
+        "demo-soft-light": "#A3A3A3",
+        "demo-soft-dark": "#A3A3A3",
+        "demo-warm-light": "#A3A3A3",
+        "demo-warm-dark": "#A3A3A3",
         "portfolio-light": "#A3A3A3",
         "portfolio-dark": "#A3A3A3"
       },
@@ -288,6 +390,12 @@
       "resolved": {
         "base-light": "#737373",
         "base-dark": "#737373",
+        "demo-cool-light": "#737373",
+        "demo-cool-dark": "#737373",
+        "demo-soft-light": "#737373",
+        "demo-soft-dark": "#737373",
+        "demo-warm-light": "#737373",
+        "demo-warm-dark": "#737373",
         "portfolio-light": "#737373",
         "portfolio-dark": "#737373"
       },
@@ -304,6 +412,12 @@
       "resolved": {
         "base-light": "#525252",
         "base-dark": "#525252",
+        "demo-cool-light": "#525252",
+        "demo-cool-dark": "#525252",
+        "demo-soft-light": "#525252",
+        "demo-soft-dark": "#525252",
+        "demo-warm-light": "#525252",
+        "demo-warm-dark": "#525252",
         "portfolio-light": "#525252",
         "portfolio-dark": "#525252"
       },
@@ -320,6 +434,12 @@
       "resolved": {
         "base-light": "#404040",
         "base-dark": "#404040",
+        "demo-cool-light": "#404040",
+        "demo-cool-dark": "#404040",
+        "demo-soft-light": "#404040",
+        "demo-soft-dark": "#404040",
+        "demo-warm-light": "#404040",
+        "demo-warm-dark": "#404040",
         "portfolio-light": "#404040",
         "portfolio-dark": "#404040"
       },
@@ -336,6 +456,12 @@
       "resolved": {
         "base-light": "#262626",
         "base-dark": "#262626",
+        "demo-cool-light": "#262626",
+        "demo-cool-dark": "#262626",
+        "demo-soft-light": "#262626",
+        "demo-soft-dark": "#262626",
+        "demo-warm-light": "#262626",
+        "demo-warm-dark": "#262626",
         "portfolio-light": "#262626",
         "portfolio-dark": "#262626"
       },
@@ -352,6 +478,12 @@
       "resolved": {
         "base-light": "#171717",
         "base-dark": "#171717",
+        "demo-cool-light": "#171717",
+        "demo-cool-dark": "#171717",
+        "demo-soft-light": "#171717",
+        "demo-soft-dark": "#171717",
+        "demo-warm-light": "#171717",
+        "demo-warm-dark": "#171717",
         "portfolio-light": "#171717",
         "portfolio-dark": "#171717"
       },
@@ -368,6 +500,12 @@
       "resolved": {
         "base-light": "#EBF4F6",
         "base-dark": "#EBF4F6",
+        "demo-cool-light": "#EBF4F6",
+        "demo-cool-dark": "#EBF4F6",
+        "demo-soft-light": "#EBF4F6",
+        "demo-soft-dark": "#EBF4F6",
+        "demo-warm-light": "#EBF4F6",
+        "demo-warm-dark": "#EBF4F6",
         "portfolio-light": "#EBF4F6",
         "portfolio-dark": "#EBF4F6"
       },
@@ -384,6 +522,12 @@
       "resolved": {
         "base-light": "#6FB8C3",
         "base-dark": "#6FB8C3",
+        "demo-cool-light": "#6FB8C3",
+        "demo-cool-dark": "#6FB8C3",
+        "demo-soft-light": "#6FB8C3",
+        "demo-soft-dark": "#6FB8C3",
+        "demo-warm-light": "#6FB8C3",
+        "demo-warm-dark": "#6FB8C3",
         "portfolio-light": "#6FB8C3",
         "portfolio-dark": "#6FB8C3"
       },
@@ -400,6 +544,12 @@
       "resolved": {
         "base-light": "#4FA3B0",
         "base-dark": "#4FA3B0",
+        "demo-cool-light": "#4FA3B0",
+        "demo-cool-dark": "#4FA3B0",
+        "demo-soft-light": "#4FA3B0",
+        "demo-soft-dark": "#4FA3B0",
+        "demo-warm-light": "#4FA3B0",
+        "demo-warm-dark": "#4FA3B0",
         "portfolio-light": "#4FA3B0",
         "portfolio-dark": "#4FA3B0"
       },
@@ -416,6 +566,12 @@
       "resolved": {
         "base-light": "#15616D",
         "base-dark": "#15616D",
+        "demo-cool-light": "#15616D",
+        "demo-cool-dark": "#15616D",
+        "demo-soft-light": "#15616D",
+        "demo-soft-dark": "#15616D",
+        "demo-warm-light": "#15616D",
+        "demo-warm-dark": "#15616D",
         "portfolio-light": "#15616D",
         "portfolio-dark": "#15616D"
       },
@@ -432,6 +588,12 @@
       "resolved": {
         "base-light": "#0F4750",
         "base-dark": "#0F4750",
+        "demo-cool-light": "#0F4750",
+        "demo-cool-dark": "#0F4750",
+        "demo-soft-light": "#0F4750",
+        "demo-soft-dark": "#0F4750",
+        "demo-warm-light": "#0F4750",
+        "demo-warm-dark": "#0F4750",
         "portfolio-light": "#0F4750",
         "portfolio-dark": "#0F4750"
       },
@@ -448,6 +610,12 @@
       "resolved": {
         "base-light": "#15616D33",
         "base-dark": "#15616D33",
+        "demo-cool-light": "#15616D33",
+        "demo-cool-dark": "#15616D33",
+        "demo-soft-light": "#15616D33",
+        "demo-soft-dark": "#15616D33",
+        "demo-warm-light": "#15616D33",
+        "demo-warm-dark": "#15616D33",
         "portfolio-light": "#15616D33",
         "portfolio-dark": "#15616D33"
       },
@@ -464,6 +632,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -480,6 +654,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -496,6 +676,12 @@
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "12px",
+        "demo-soft-dark": "12px",
+        "demo-warm-light": "12px",
+        "demo-warm-dark": "12px",
         "portfolio-light": "12px",
         "portfolio-dark": "12px"
       },
@@ -512,6 +698,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -528,6 +720,12 @@
       "resolved": {
         "base-light": "20px",
         "base-dark": "20px",
+        "demo-cool-light": "20px",
+        "demo-cool-dark": "20px",
+        "demo-soft-light": "20px",
+        "demo-soft-dark": "20px",
+        "demo-warm-light": "20px",
+        "demo-warm-dark": "20px",
         "portfolio-light": "20px",
         "portfolio-dark": "20px"
       },
@@ -544,6 +742,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -560,6 +764,12 @@
       "resolved": {
         "base-light": "28px",
         "base-dark": "28px",
+        "demo-cool-light": "28px",
+        "demo-cool-dark": "28px",
+        "demo-soft-light": "28px",
+        "demo-soft-dark": "28px",
+        "demo-warm-light": "28px",
+        "demo-warm-dark": "28px",
         "portfolio-light": "28px",
         "portfolio-dark": "28px"
       },
@@ -576,6 +786,12 @@
       "resolved": {
         "base-light": "32px",
         "base-dark": "32px",
+        "demo-cool-light": "32px",
+        "demo-cool-dark": "32px",
+        "demo-soft-light": "32px",
+        "demo-soft-dark": "32px",
+        "demo-warm-light": "32px",
+        "demo-warm-dark": "32px",
         "portfolio-light": "32px",
         "portfolio-dark": "32px"
       },
@@ -592,6 +808,12 @@
       "resolved": {
         "base-light": "40px",
         "base-dark": "40px",
+        "demo-cool-light": "40px",
+        "demo-cool-dark": "40px",
+        "demo-soft-light": "40px",
+        "demo-soft-dark": "40px",
+        "demo-warm-light": "40px",
+        "demo-warm-dark": "40px",
         "portfolio-light": "40px",
         "portfolio-dark": "40px"
       },
@@ -608,6 +830,12 @@
       "resolved": {
         "base-light": "48px",
         "base-dark": "48px",
+        "demo-cool-light": "48px",
+        "demo-cool-dark": "48px",
+        "demo-soft-light": "48px",
+        "demo-soft-dark": "48px",
+        "demo-warm-light": "48px",
+        "demo-warm-dark": "48px",
         "portfolio-light": "48px",
         "portfolio-dark": "48px"
       },
@@ -624,6 +852,12 @@
       "resolved": {
         "base-light": "64px",
         "base-dark": "64px",
+        "demo-cool-light": "64px",
+        "demo-cool-dark": "64px",
+        "demo-soft-light": "64px",
+        "demo-soft-dark": "64px",
+        "demo-warm-light": "64px",
+        "demo-warm-dark": "64px",
         "portfolio-light": "64px",
         "portfolio-dark": "64px"
       },
@@ -640,6 +874,12 @@
       "resolved": {
         "base-light": "96px",
         "base-dark": "96px",
+        "demo-cool-light": "96px",
+        "demo-cool-dark": "96px",
+        "demo-soft-light": "96px",
+        "demo-soft-dark": "96px",
+        "demo-warm-light": "96px",
+        "demo-warm-dark": "96px",
         "portfolio-light": "96px",
         "portfolio-dark": "96px"
       },
@@ -656,6 +896,12 @@
       "resolved": {
         "base-light": "128px",
         "base-dark": "128px",
+        "demo-cool-light": "128px",
+        "demo-cool-dark": "128px",
+        "demo-soft-light": "128px",
+        "demo-soft-dark": "128px",
+        "demo-warm-light": "128px",
+        "demo-warm-dark": "128px",
         "portfolio-light": "128px",
         "portfolio-dark": "128px"
       },
@@ -672,6 +918,12 @@
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "12px",
+        "demo-soft-dark": "12px",
+        "demo-warm-light": "12px",
+        "demo-warm-dark": "12px",
         "portfolio-light": "12px",
         "portfolio-dark": "12px"
       },
@@ -688,6 +940,12 @@
       "resolved": {
         "base-light": "14px",
         "base-dark": "14px",
+        "demo-cool-light": "14px",
+        "demo-cool-dark": "14px",
+        "demo-soft-light": "14px",
+        "demo-soft-dark": "14px",
+        "demo-warm-light": "14px",
+        "demo-warm-dark": "14px",
         "portfolio-light": "14px",
         "portfolio-dark": "14px"
       },
@@ -704,6 +962,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -720,6 +984,12 @@
       "resolved": {
         "base-light": "18px",
         "base-dark": "18px",
+        "demo-cool-light": "18px",
+        "demo-cool-dark": "18px",
+        "demo-soft-light": "18px",
+        "demo-soft-dark": "18px",
+        "demo-warm-light": "18px",
+        "demo-warm-dark": "18px",
         "portfolio-light": "18px",
         "portfolio-dark": "18px"
       },
@@ -736,6 +1006,12 @@
       "resolved": {
         "base-light": "20px",
         "base-dark": "20px",
+        "demo-cool-light": "20px",
+        "demo-cool-dark": "20px",
+        "demo-soft-light": "20px",
+        "demo-soft-dark": "20px",
+        "demo-warm-light": "20px",
+        "demo-warm-dark": "20px",
         "portfolio-light": "20px",
         "portfolio-dark": "20px"
       },
@@ -752,6 +1028,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -768,6 +1050,12 @@
       "resolved": {
         "base-light": "32px",
         "base-dark": "32px",
+        "demo-cool-light": "32px",
+        "demo-cool-dark": "32px",
+        "demo-soft-light": "32px",
+        "demo-soft-dark": "32px",
+        "demo-warm-light": "32px",
+        "demo-warm-dark": "32px",
         "portfolio-light": "32px",
         "portfolio-dark": "32px"
       },
@@ -784,6 +1072,12 @@
       "resolved": {
         "base-light": "48px",
         "base-dark": "48px",
+        "demo-cool-light": "48px",
+        "demo-cool-dark": "48px",
+        "demo-soft-light": "48px",
+        "demo-soft-dark": "48px",
+        "demo-warm-light": "48px",
+        "demo-warm-dark": "48px",
         "portfolio-light": "48px",
         "portfolio-dark": "48px"
       },
@@ -800,6 +1094,12 @@
       "resolved": {
         "base-light": "64px",
         "base-dark": "64px",
+        "demo-cool-light": "64px",
+        "demo-cool-dark": "64px",
+        "demo-soft-light": "64px",
+        "demo-soft-dark": "64px",
+        "demo-warm-light": "64px",
+        "demo-warm-dark": "64px",
         "portfolio-light": "64px",
         "portfolio-dark": "64px"
       },
@@ -816,6 +1116,12 @@
       "resolved": {
         "base-light": "300",
         "base-dark": "300",
+        "demo-cool-light": "300",
+        "demo-cool-dark": "300",
+        "demo-soft-light": "300",
+        "demo-soft-dark": "300",
+        "demo-warm-light": "300",
+        "demo-warm-dark": "300",
         "portfolio-light": "300",
         "portfolio-dark": "300"
       },
@@ -832,6 +1138,12 @@
       "resolved": {
         "base-light": "400",
         "base-dark": "400",
+        "demo-cool-light": "400",
+        "demo-cool-dark": "400",
+        "demo-soft-light": "400",
+        "demo-soft-dark": "400",
+        "demo-warm-light": "400",
+        "demo-warm-dark": "400",
         "portfolio-light": "400",
         "portfolio-dark": "400"
       },
@@ -848,6 +1160,12 @@
       "resolved": {
         "base-light": "500",
         "base-dark": "500",
+        "demo-cool-light": "500",
+        "demo-cool-dark": "500",
+        "demo-soft-light": "500",
+        "demo-soft-dark": "500",
+        "demo-warm-light": "500",
+        "demo-warm-dark": "500",
         "portfolio-light": "500",
         "portfolio-dark": "500"
       },
@@ -864,6 +1182,12 @@
       "resolved": {
         "base-light": "600",
         "base-dark": "600",
+        "demo-cool-light": "600",
+        "demo-cool-dark": "600",
+        "demo-soft-light": "600",
+        "demo-soft-dark": "600",
+        "demo-warm-light": "600",
+        "demo-warm-dark": "600",
         "portfolio-light": "600",
         "portfolio-dark": "600"
       },
@@ -880,6 +1204,12 @@
       "resolved": {
         "base-light": "700",
         "base-dark": "700",
+        "demo-cool-light": "700",
+        "demo-cool-dark": "700",
+        "demo-soft-light": "700",
+        "demo-soft-dark": "700",
+        "demo-warm-light": "700",
+        "demo-warm-dark": "700",
         "portfolio-light": "700",
         "portfolio-dark": "700"
       },
@@ -896,6 +1226,12 @@
       "resolved": {
         "base-light": "800",
         "base-dark": "800",
+        "demo-cool-light": "800",
+        "demo-cool-dark": "800",
+        "demo-soft-light": "800",
+        "demo-soft-dark": "800",
+        "demo-warm-light": "800",
+        "demo-warm-dark": "800",
         "portfolio-light": "800",
         "portfolio-dark": "800"
       },
@@ -912,6 +1248,12 @@
       "resolved": {
         "base-light": "1.125",
         "base-dark": "1.125",
+        "demo-cool-light": "1.125",
+        "demo-cool-dark": "1.125",
+        "demo-soft-light": "1.125",
+        "demo-soft-dark": "1.125",
+        "demo-warm-light": "1.125",
+        "demo-warm-dark": "1.125",
         "portfolio-light": "1.125",
         "portfolio-dark": "1.125"
       },
@@ -928,6 +1270,12 @@
       "resolved": {
         "base-light": "1.25",
         "base-dark": "1.25",
+        "demo-cool-light": "1.25",
+        "demo-cool-dark": "1.25",
+        "demo-soft-light": "1.25",
+        "demo-soft-dark": "1.25",
+        "demo-warm-light": "1.25",
+        "demo-warm-dark": "1.25",
         "portfolio-light": "1.25",
         "portfolio-dark": "1.25"
       },
@@ -944,6 +1292,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -960,6 +1314,12 @@
       "resolved": {
         "base-light": "20px",
         "base-dark": "20px",
+        "demo-cool-light": "20px",
+        "demo-cool-dark": "20px",
+        "demo-soft-light": "20px",
+        "demo-soft-dark": "20px",
+        "demo-warm-light": "20px",
+        "demo-warm-dark": "20px",
         "portfolio-light": "20px",
         "portfolio-dark": "20px"
       },
@@ -976,6 +1336,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -992,6 +1358,12 @@
       "resolved": {
         "base-light": "28px",
         "base-dark": "28px",
+        "demo-cool-light": "28px",
+        "demo-cool-dark": "28px",
+        "demo-soft-light": "28px",
+        "demo-soft-dark": "28px",
+        "demo-warm-light": "28px",
+        "demo-warm-dark": "28px",
         "portfolio-light": "28px",
         "portfolio-dark": "28px"
       },
@@ -1008,6 +1380,12 @@
       "resolved": {
         "base-light": "32px",
         "base-dark": "32px",
+        "demo-cool-light": "32px",
+        "demo-cool-dark": "32px",
+        "demo-soft-light": "32px",
+        "demo-soft-dark": "32px",
+        "demo-warm-light": "32px",
+        "demo-warm-dark": "32px",
         "portfolio-light": "32px",
         "portfolio-dark": "32px"
       },
@@ -1024,6 +1402,12 @@
       "resolved": {
         "base-light": "40px",
         "base-dark": "40px",
+        "demo-cool-light": "40px",
+        "demo-cool-dark": "40px",
+        "demo-soft-light": "40px",
+        "demo-soft-dark": "40px",
+        "demo-warm-light": "40px",
+        "demo-warm-dark": "40px",
         "portfolio-light": "40px",
         "portfolio-dark": "40px"
       },
@@ -1040,6 +1424,12 @@
       "resolved": {
         "base-light": "60px",
         "base-dark": "60px",
+        "demo-cool-light": "60px",
+        "demo-cool-dark": "60px",
+        "demo-soft-light": "60px",
+        "demo-soft-dark": "60px",
+        "demo-warm-light": "60px",
+        "demo-warm-dark": "60px",
         "portfolio-light": "60px",
         "portfolio-dark": "60px"
       },
@@ -1056,6 +1446,12 @@
       "resolved": {
         "base-light": "80px",
         "base-dark": "80px",
+        "demo-cool-light": "80px",
+        "demo-cool-dark": "80px",
+        "demo-soft-light": "80px",
+        "demo-soft-dark": "80px",
+        "demo-warm-light": "80px",
+        "demo-warm-dark": "80px",
         "portfolio-light": "80px",
         "portfolio-dark": "80px"
       },
@@ -1072,6 +1468,12 @@
       "resolved": {
         "base-light": "0px",
         "base-dark": "0px",
+        "demo-cool-light": "0px",
+        "demo-cool-dark": "0px",
+        "demo-soft-light": "0px",
+        "demo-soft-dark": "0px",
+        "demo-warm-light": "0px",
+        "demo-warm-dark": "0px",
         "portfolio-light": "0px",
         "portfolio-dark": "0px"
       },
@@ -1088,6 +1490,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -1104,6 +1512,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -1120,6 +1534,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -1136,6 +1556,12 @@
       "resolved": {
         "base-light": "20px",
         "base-dark": "20px",
+        "demo-cool-light": "20px",
+        "demo-cool-dark": "20px",
+        "demo-soft-light": "20px",
+        "demo-soft-dark": "20px",
+        "demo-warm-light": "20px",
+        "demo-warm-dark": "20px",
         "portfolio-light": "20px",
         "portfolio-dark": "20px"
       },
@@ -1152,6 +1578,12 @@
       "resolved": {
         "base-light": "9999px",
         "base-dark": "9999px",
+        "demo-cool-light": "9999px",
+        "demo-cool-dark": "9999px",
+        "demo-soft-light": "9999px",
+        "demo-soft-dark": "9999px",
+        "demo-warm-light": "9999px",
+        "demo-warm-dark": "9999px",
         "portfolio-light": "9999px",
         "portfolio-dark": "9999px"
       },
@@ -1168,6 +1600,12 @@
       "resolved": {
         "base-light": "0ms",
         "base-dark": "0ms",
+        "demo-cool-light": "0ms",
+        "demo-cool-dark": "0ms",
+        "demo-soft-light": "0ms",
+        "demo-soft-dark": "0ms",
+        "demo-warm-light": "0ms",
+        "demo-warm-dark": "0ms",
         "portfolio-light": "0ms",
         "portfolio-dark": "0ms"
       },
@@ -1184,6 +1622,12 @@
       "resolved": {
         "base-light": "100ms",
         "base-dark": "100ms",
+        "demo-cool-light": "100ms",
+        "demo-cool-dark": "100ms",
+        "demo-soft-light": "100ms",
+        "demo-soft-dark": "100ms",
+        "demo-warm-light": "100ms",
+        "demo-warm-dark": "100ms",
         "portfolio-light": "100ms",
         "portfolio-dark": "100ms"
       },
@@ -1200,6 +1644,12 @@
       "resolved": {
         "base-light": "200ms",
         "base-dark": "200ms",
+        "demo-cool-light": "200ms",
+        "demo-cool-dark": "200ms",
+        "demo-soft-light": "200ms",
+        "demo-soft-dark": "200ms",
+        "demo-warm-light": "200ms",
+        "demo-warm-dark": "200ms",
         "portfolio-light": "200ms",
         "portfolio-dark": "200ms"
       },
@@ -1216,6 +1666,12 @@
       "resolved": {
         "base-light": "400ms",
         "base-dark": "400ms",
+        "demo-cool-light": "400ms",
+        "demo-cool-dark": "400ms",
+        "demo-soft-light": "400ms",
+        "demo-soft-dark": "400ms",
+        "demo-warm-light": "400ms",
+        "demo-warm-dark": "400ms",
         "portfolio-light": "400ms",
         "portfolio-dark": "400ms"
       },
@@ -1232,6 +1688,12 @@
       "resolved": {
         "base-light": "650ms",
         "base-dark": "650ms",
+        "demo-cool-light": "650ms",
+        "demo-cool-dark": "650ms",
+        "demo-soft-light": "650ms",
+        "demo-soft-dark": "650ms",
+        "demo-warm-light": "650ms",
+        "demo-warm-dark": "650ms",
         "portfolio-light": "650ms",
         "portfolio-dark": "650ms"
       },
@@ -1248,6 +1710,12 @@
       "resolved": {
         "base-light": "200ms",
         "base-dark": "200ms",
+        "demo-cool-light": "200ms",
+        "demo-cool-dark": "200ms",
+        "demo-soft-light": "200ms",
+        "demo-soft-dark": "200ms",
+        "demo-warm-light": "200ms",
+        "demo-warm-dark": "200ms",
         "portfolio-light": "200ms",
         "portfolio-dark": "200ms"
       },
@@ -1264,6 +1732,12 @@
       "resolved": {
         "base-light": "cubic-bezier(0.4, 0, 0.2, 1)",
         "base-dark": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "demo-cool-light": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "demo-cool-dark": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "demo-soft-light": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "demo-soft-dark": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "demo-warm-light": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "demo-warm-dark": "cubic-bezier(0.4, 0, 0.2, 1)",
         "portfolio-light": "cubic-bezier(0.4, 0, 0.2, 1)",
         "portfolio-dark": "cubic-bezier(0.4, 0, 0.2, 1)"
       },
@@ -1280,6 +1754,12 @@
       "resolved": {
         "base-light": "cubic-bezier(0.4, 0, 1, 1)",
         "base-dark": "cubic-bezier(0.4, 0, 1, 1)",
+        "demo-cool-light": "cubic-bezier(0.4, 0, 1, 1)",
+        "demo-cool-dark": "cubic-bezier(0.4, 0, 1, 1)",
+        "demo-soft-light": "cubic-bezier(0.4, 0, 1, 1)",
+        "demo-soft-dark": "cubic-bezier(0.4, 0, 1, 1)",
+        "demo-warm-light": "cubic-bezier(0.4, 0, 1, 1)",
+        "demo-warm-dark": "cubic-bezier(0.4, 0, 1, 1)",
         "portfolio-light": "cubic-bezier(0.4, 0, 1, 1)",
         "portfolio-dark": "cubic-bezier(0.4, 0, 1, 1)"
       },
@@ -1296,6 +1776,12 @@
       "resolved": {
         "base-light": "cubic-bezier(0, 0, 0.2, 1)",
         "base-dark": "cubic-bezier(0, 0, 0.2, 1)",
+        "demo-cool-light": "cubic-bezier(0, 0, 0.2, 1)",
+        "demo-cool-dark": "cubic-bezier(0, 0, 0.2, 1)",
+        "demo-soft-light": "cubic-bezier(0, 0, 0.2, 1)",
+        "demo-soft-dark": "cubic-bezier(0, 0, 0.2, 1)",
+        "demo-warm-light": "cubic-bezier(0, 0, 0.2, 1)",
+        "demo-warm-dark": "cubic-bezier(0, 0, 0.2, 1)",
         "portfolio-light": "cubic-bezier(0, 0, 0.2, 1)",
         "portfolio-dark": "cubic-bezier(0, 0, 0.2, 1)"
       },
@@ -1312,6 +1798,12 @@
       "resolved": {
         "base-light": "0.05",
         "base-dark": "0.05",
+        "demo-cool-light": "0.05",
+        "demo-cool-dark": "0.05",
+        "demo-soft-light": "0.05",
+        "demo-soft-dark": "0.05",
+        "demo-warm-light": "0.05",
+        "demo-warm-dark": "0.05",
         "portfolio-light": "0.05",
         "portfolio-dark": "0.05"
       },
@@ -1328,6 +1820,12 @@
       "resolved": {
         "base-light": "0.1",
         "base-dark": "0.1",
+        "demo-cool-light": "0.1",
+        "demo-cool-dark": "0.1",
+        "demo-soft-light": "0.1",
+        "demo-soft-dark": "0.1",
+        "demo-warm-light": "0.1",
+        "demo-warm-dark": "0.1",
         "portfolio-light": "0.1",
         "portfolio-dark": "0.1"
       },
@@ -1344,6 +1842,12 @@
       "resolved": {
         "base-light": "0.3",
         "base-dark": "0.3",
+        "demo-cool-light": "0.3",
+        "demo-cool-dark": "0.3",
+        "demo-soft-light": "0.3",
+        "demo-soft-dark": "0.3",
+        "demo-warm-light": "0.3",
+        "demo-warm-dark": "0.3",
         "portfolio-light": "0.3",
         "portfolio-dark": "0.3"
       },
@@ -1360,6 +1864,12 @@
       "resolved": {
         "base-light": "0.7",
         "base-dark": "0.7",
+        "demo-cool-light": "0.7",
+        "demo-cool-dark": "0.7",
+        "demo-soft-light": "0.7",
+        "demo-soft-dark": "0.7",
+        "demo-warm-light": "0.7",
+        "demo-warm-dark": "0.7",
         "portfolio-light": "0.7",
         "portfolio-dark": "0.7"
       },
@@ -1376,6 +1886,12 @@
       "resolved": {
         "base-light": "#FEF2F2",
         "base-dark": "#FEF2F2",
+        "demo-cool-light": "#FEF2F2",
+        "demo-cool-dark": "#FEF2F2",
+        "demo-soft-light": "#FEF2F2",
+        "demo-soft-dark": "#FEF2F2",
+        "demo-warm-light": "#FEF2F2",
+        "demo-warm-dark": "#FEF2F2",
         "portfolio-light": "#FEF2F2",
         "portfolio-dark": "#FEF2F2"
       },
@@ -1392,6 +1908,12 @@
       "resolved": {
         "base-light": "#e05c4b",
         "base-dark": "#e05c4b",
+        "demo-cool-light": "#e05c4b",
+        "demo-cool-dark": "#e05c4b",
+        "demo-soft-light": "#e05c4b",
+        "demo-soft-dark": "#e05c4b",
+        "demo-warm-light": "#e05c4b",
+        "demo-warm-dark": "#e05c4b",
         "portfolio-light": "#e05c4b",
         "portfolio-dark": "#e05c4b"
       },
@@ -1408,6 +1930,12 @@
       "resolved": {
         "base-light": "#c0392b",
         "base-dark": "#c0392b",
+        "demo-cool-light": "#c0392b",
+        "demo-cool-dark": "#c0392b",
+        "demo-soft-light": "#c0392b",
+        "demo-soft-dark": "#c0392b",
+        "demo-warm-light": "#c0392b",
+        "demo-warm-dark": "#c0392b",
         "portfolio-light": "#c0392b",
         "portfolio-dark": "#c0392b"
       },
@@ -1424,6 +1952,12 @@
       "resolved": {
         "base-light": "#a93226",
         "base-dark": "#a93226",
+        "demo-cool-light": "#a93226",
+        "demo-cool-dark": "#a93226",
+        "demo-soft-light": "#a93226",
+        "demo-soft-dark": "#a93226",
+        "demo-warm-light": "#a93226",
+        "demo-warm-dark": "#a93226",
         "portfolio-light": "#a93226",
         "portfolio-dark": "#a93226"
       },
@@ -1440,6 +1974,12 @@
       "resolved": {
         "base-light": "#F0FDF4",
         "base-dark": "#F0FDF4",
+        "demo-cool-light": "#F0FDF4",
+        "demo-cool-dark": "#F0FDF4",
+        "demo-soft-light": "#F0FDF4",
+        "demo-soft-dark": "#F0FDF4",
+        "demo-warm-light": "#F0FDF4",
+        "demo-warm-dark": "#F0FDF4",
         "portfolio-light": "#F0FDF4",
         "portfolio-dark": "#F0FDF4"
       },
@@ -1456,6 +1996,12 @@
       "resolved": {
         "base-light": "#16A34A",
         "base-dark": "#16A34A",
+        "demo-cool-light": "#16A34A",
+        "demo-cool-dark": "#16A34A",
+        "demo-soft-light": "#16A34A",
+        "demo-soft-dark": "#16A34A",
+        "demo-warm-light": "#16A34A",
+        "demo-warm-dark": "#16A34A",
         "portfolio-light": "#16A34A",
         "portfolio-dark": "#16A34A"
       },
@@ -1472,6 +2018,12 @@
       "resolved": {
         "base-light": "#15803D",
         "base-dark": "#15803D",
+        "demo-cool-light": "#15803D",
+        "demo-cool-dark": "#15803D",
+        "demo-soft-light": "#15803D",
+        "demo-soft-dark": "#15803D",
+        "demo-warm-light": "#15803D",
+        "demo-warm-dark": "#15803D",
         "portfolio-light": "#15803D",
         "portfolio-dark": "#15803D"
       },
@@ -1488,6 +2040,12 @@
       "resolved": {
         "base-light": "#FFFBEB",
         "base-dark": "#FFFBEB",
+        "demo-cool-light": "#FFFBEB",
+        "demo-cool-dark": "#FFFBEB",
+        "demo-soft-light": "#FFFBEB",
+        "demo-soft-dark": "#FFFBEB",
+        "demo-warm-light": "#FFFBEB",
+        "demo-warm-dark": "#FFFBEB",
         "portfolio-light": "#FFFBEB",
         "portfolio-dark": "#FFFBEB"
       },
@@ -1504,6 +2062,12 @@
       "resolved": {
         "base-light": "#D97706",
         "base-dark": "#D97706",
+        "demo-cool-light": "#D97706",
+        "demo-cool-dark": "#D97706",
+        "demo-soft-light": "#D97706",
+        "demo-soft-dark": "#D97706",
+        "demo-warm-light": "#D97706",
+        "demo-warm-dark": "#D97706",
         "portfolio-light": "#D97706",
         "portfolio-dark": "#D97706"
       },
@@ -1520,6 +2084,12 @@
       "resolved": {
         "base-light": "#B45309",
         "base-dark": "#B45309",
+        "demo-cool-light": "#B45309",
+        "demo-cool-dark": "#B45309",
+        "demo-soft-light": "#B45309",
+        "demo-soft-dark": "#B45309",
+        "demo-warm-light": "#B45309",
+        "demo-warm-dark": "#B45309",
         "portfolio-light": "#B45309",
         "portfolio-dark": "#B45309"
       },
@@ -1536,6 +2106,12 @@
       "resolved": {
         "base-light": "#EFF6FF",
         "base-dark": "#EFF6FF",
+        "demo-cool-light": "#EFF6FF",
+        "demo-cool-dark": "#EFF6FF",
+        "demo-soft-light": "#EFF6FF",
+        "demo-soft-dark": "#EFF6FF",
+        "demo-warm-light": "#EFF6FF",
+        "demo-warm-dark": "#EFF6FF",
         "portfolio-light": "#EFF6FF",
         "portfolio-dark": "#EFF6FF"
       },
@@ -1552,6 +2128,12 @@
       "resolved": {
         "base-light": "#2563EB",
         "base-dark": "#2563EB",
+        "demo-cool-light": "#2563EB",
+        "demo-cool-dark": "#2563EB",
+        "demo-soft-light": "#2563EB",
+        "demo-soft-dark": "#2563EB",
+        "demo-warm-light": "#2563EB",
+        "demo-warm-dark": "#2563EB",
         "portfolio-light": "#2563EB",
         "portfolio-dark": "#2563EB"
       },
@@ -1568,6 +2150,12 @@
       "resolved": {
         "base-light": "#1D4ED8",
         "base-dark": "#1D4ED8",
+        "demo-cool-light": "#1D4ED8",
+        "demo-cool-dark": "#1D4ED8",
+        "demo-soft-light": "#1D4ED8",
+        "demo-soft-dark": "#1D4ED8",
+        "demo-warm-light": "#1D4ED8",
+        "demo-warm-dark": "#1D4ED8",
         "portfolio-light": "#1D4ED8",
         "portfolio-dark": "#1D4ED8"
       },
@@ -1584,6 +2172,12 @@
       "resolved": {
         "base-light": "none",
         "base-dark": "none",
+        "demo-cool-light": "none",
+        "demo-cool-dark": "none",
+        "demo-soft-light": "none",
+        "demo-soft-dark": "none",
+        "demo-warm-light": "none",
+        "demo-warm-dark": "none",
         "portfolio-light": "none",
         "portfolio-dark": "none"
       },
@@ -1600,6 +2194,12 @@
       "resolved": {
         "base-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
         "base-dark": "0 1px 2px 0 rgba(0,0,0,0.05)",
+        "demo-cool-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
+        "demo-cool-dark": "0 1px 2px 0 rgba(0,0,0,0.05)",
+        "demo-soft-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
+        "demo-soft-dark": "0 1px 2px 0 rgba(0,0,0,0.05)",
+        "demo-warm-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
+        "demo-warm-dark": "0 1px 2px 0 rgba(0,0,0,0.05)",
         "portfolio-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
         "portfolio-dark": "0 1px 2px 0 rgba(0,0,0,0.05)"
       },
@@ -1616,6 +2216,12 @@
       "resolved": {
         "base-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
         "base-dark": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+        "demo-cool-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+        "demo-cool-dark": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+        "demo-soft-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+        "demo-soft-dark": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+        "demo-warm-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+        "demo-warm-dark": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
         "portfolio-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
         "portfolio-dark": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)"
       },
@@ -1632,6 +2238,12 @@
       "resolved": {
         "base-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
         "base-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-cool-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-cool-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-soft-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-soft-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-warm-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-warm-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
         "portfolio-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
         "portfolio-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)"
       },
@@ -1648,6 +2260,12 @@
       "resolved": {
         "base-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
         "base-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-cool-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-cool-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-soft-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-soft-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-warm-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-warm-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
         "portfolio-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
         "portfolio-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)"
       },
@@ -1664,6 +2282,12 @@
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "12px",
+        "demo-soft-dark": "12px",
+        "demo-warm-light": "12px",
+        "demo-warm-dark": "12px",
         "portfolio-light": "12px",
         "portfolio-dark": "12px"
       },
@@ -1680,6 +2304,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -1696,6 +2326,12 @@
       "resolved": {
         "base-light": "20px",
         "base-dark": "20px",
+        "demo-cool-light": "20px",
+        "demo-cool-dark": "20px",
+        "demo-soft-light": "20px",
+        "demo-soft-dark": "20px",
+        "demo-warm-light": "20px",
+        "demo-warm-dark": "20px",
         "portfolio-light": "20px",
         "portfolio-dark": "20px"
       },
@@ -1712,6 +2348,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -1728,6 +2370,12 @@
       "resolved": {
         "base-light": "32px",
         "base-dark": "32px",
+        "demo-cool-light": "32px",
+        "demo-cool-dark": "32px",
+        "demo-soft-light": "32px",
+        "demo-soft-dark": "32px",
+        "demo-warm-light": "32px",
+        "demo-warm-dark": "32px",
         "portfolio-light": "32px",
         "portfolio-dark": "32px"
       },
@@ -1744,6 +2392,12 @@
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
+        "demo-cool-light": "1px",
+        "demo-cool-dark": "1px",
+        "demo-soft-light": "1px",
+        "demo-soft-dark": "1px",
+        "demo-warm-light": "1px",
+        "demo-warm-dark": "1px",
         "portfolio-light": "1px",
         "portfolio-dark": "1px"
       },
@@ -1760,6 +2414,12 @@
       "resolved": {
         "base-light": "2px",
         "base-dark": "2px",
+        "demo-cool-light": "2px",
+        "demo-cool-dark": "2px",
+        "demo-soft-light": "2px",
+        "demo-soft-dark": "2px",
+        "demo-warm-light": "2px",
+        "demo-warm-dark": "2px",
         "portfolio-light": "2px",
         "portfolio-dark": "2px"
       },
@@ -1776,6 +2436,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -1792,6 +2458,12 @@
       "resolved": {
         "base-light": "28px",
         "base-dark": "28px",
+        "demo-cool-light": "28px",
+        "demo-cool-dark": "28px",
+        "demo-soft-light": "28px",
+        "demo-soft-dark": "28px",
+        "demo-warm-light": "28px",
+        "demo-warm-dark": "28px",
         "portfolio-light": "28px",
         "portfolio-dark": "28px"
       },
@@ -1808,6 +2480,12 @@
       "resolved": {
         "base-light": "44px",
         "base-dark": "44px",
+        "demo-cool-light": "44px",
+        "demo-cool-dark": "44px",
+        "demo-soft-light": "44px",
+        "demo-soft-dark": "44px",
+        "demo-warm-light": "44px",
+        "demo-warm-dark": "44px",
         "portfolio-light": "44px",
         "portfolio-dark": "44px"
       },
@@ -1824,6 +2502,12 @@
       "resolved": {
         "base-light": "480px",
         "base-dark": "480px",
+        "demo-cool-light": "480px",
+        "demo-cool-dark": "480px",
+        "demo-soft-light": "480px",
+        "demo-soft-dark": "480px",
+        "demo-warm-light": "480px",
+        "demo-warm-dark": "480px",
         "portfolio-light": "480px",
         "portfolio-dark": "480px"
       },
@@ -1840,6 +2524,12 @@
       "resolved": {
         "base-light": "560px",
         "base-dark": "560px",
+        "demo-cool-light": "560px",
+        "demo-cool-dark": "560px",
+        "demo-soft-light": "560px",
+        "demo-soft-dark": "560px",
+        "demo-warm-light": "560px",
+        "demo-warm-dark": "560px",
         "portfolio-light": "560px",
         "portfolio-dark": "560px"
       },
@@ -1856,6 +2546,12 @@
       "resolved": {
         "base-light": "720px",
         "base-dark": "720px",
+        "demo-cool-light": "720px",
+        "demo-cool-dark": "720px",
+        "demo-soft-light": "720px",
+        "demo-soft-dark": "720px",
+        "demo-warm-light": "720px",
+        "demo-warm-dark": "720px",
         "portfolio-light": "720px",
         "portfolio-dark": "720px"
       },
@@ -1872,6 +2568,12 @@
       "resolved": {
         "base-light": "1024px",
         "base-dark": "1024px",
+        "demo-cool-light": "1024px",
+        "demo-cool-dark": "1024px",
+        "demo-soft-light": "1024px",
+        "demo-soft-dark": "1024px",
+        "demo-warm-light": "1024px",
+        "demo-warm-dark": "1024px",
         "portfolio-light": "1024px",
         "portfolio-dark": "1024px"
       },
@@ -1888,6 +2590,12 @@
       "resolved": {
         "base-light": "1200px",
         "base-dark": "1200px",
+        "demo-cool-light": "1200px",
+        "demo-cool-dark": "1200px",
+        "demo-soft-light": "1200px",
+        "demo-soft-dark": "1200px",
+        "demo-warm-light": "1200px",
+        "demo-warm-dark": "1200px",
         "portfolio-light": "1200px",
         "portfolio-dark": "1200px"
       },
@@ -1904,6 +2612,12 @@
       "resolved": {
         "base-light": "1440px",
         "base-dark": "1440px",
+        "demo-cool-light": "1440px",
+        "demo-cool-dark": "1440px",
+        "demo-soft-light": "1440px",
+        "demo-soft-dark": "1440px",
+        "demo-warm-light": "1440px",
+        "demo-warm-dark": "1440px",
         "portfolio-light": "1440px",
         "portfolio-dark": "1440px"
       },
@@ -1920,6 +2634,12 @@
       "resolved": {
         "base-light": "45rem",
         "base-dark": "45rem",
+        "demo-cool-light": "45rem",
+        "demo-cool-dark": "45rem",
+        "demo-soft-light": "45rem",
+        "demo-soft-dark": "45rem",
+        "demo-warm-light": "45rem",
+        "demo-warm-dark": "45rem",
         "portfolio-light": "45rem",
         "portfolio-dark": "45rem"
       },
@@ -1936,6 +2656,12 @@
       "resolved": {
         "base-light": "60rem",
         "base-dark": "60rem",
+        "demo-cool-light": "60rem",
+        "demo-cool-dark": "60rem",
+        "demo-soft-light": "60rem",
+        "demo-soft-dark": "60rem",
+        "demo-warm-light": "60rem",
+        "demo-warm-dark": "60rem",
         "portfolio-light": "60rem",
         "portfolio-dark": "60rem"
       },
@@ -1952,6 +2678,12 @@
       "resolved": {
         "base-light": "80rem",
         "base-dark": "80rem",
+        "demo-cool-light": "80rem",
+        "demo-cool-dark": "80rem",
+        "demo-soft-light": "80rem",
+        "demo-soft-dark": "80rem",
+        "demo-warm-light": "80rem",
+        "demo-warm-dark": "80rem",
         "portfolio-light": "80rem",
         "portfolio-dark": "80rem"
       },
@@ -1968,6 +2700,12 @@
       "resolved": {
         "base-light": "90rem",
         "base-dark": "90rem",
+        "demo-cool-light": "90rem",
+        "demo-cool-dark": "90rem",
+        "demo-soft-light": "90rem",
+        "demo-soft-dark": "90rem",
+        "demo-warm-light": "90rem",
+        "demo-warm-dark": "90rem",
         "portfolio-light": "90rem",
         "portfolio-dark": "90rem"
       },
@@ -1984,6 +2722,12 @@
       "resolved": {
         "base-light": "90vw",
         "base-dark": "90vw",
+        "demo-cool-light": "90vw",
+        "demo-cool-dark": "90vw",
+        "demo-soft-light": "90vw",
+        "demo-soft-dark": "90vw",
+        "demo-warm-light": "90vw",
+        "demo-warm-dark": "90vw",
         "portfolio-light": "90vw",
         "portfolio-dark": "90vw"
       },
@@ -2000,6 +2744,12 @@
       "resolved": {
         "base-light": "768px",
         "base-dark": "768px",
+        "demo-cool-light": "768px",
+        "demo-cool-dark": "768px",
+        "demo-soft-light": "768px",
+        "demo-soft-dark": "768px",
+        "demo-warm-light": "768px",
+        "demo-warm-dark": "768px",
         "portfolio-light": "768px",
         "portfolio-dark": "768px"
       },
@@ -2016,6 +2766,12 @@
       "resolved": {
         "base-light": "1024px",
         "base-dark": "1024px",
+        "demo-cool-light": "1024px",
+        "demo-cool-dark": "1024px",
+        "demo-soft-light": "1024px",
+        "demo-soft-dark": "1024px",
+        "demo-warm-light": "1024px",
+        "demo-warm-dark": "1024px",
         "portfolio-light": "1024px",
         "portfolio-dark": "1024px"
       },
@@ -2032,6 +2788,12 @@
       "resolved": {
         "base-light": "#FAFAFA",
         "base-dark": "#171717",
+        "demo-cool-light": "#F8FBFA",
+        "demo-cool-dark": "#111916",
+        "demo-soft-light": "#FAF9FF",
+        "demo-soft-dark": "#17122C",
+        "demo-warm-light": "#FFF9F4",
+        "demo-warm-dark": "#1E150E",
         "portfolio-light": "#FAFAF9",
         "portfolio-dark": "#1c1917"
       },
@@ -2048,6 +2810,12 @@
       "resolved": {
         "base-light": "#F5F5F5",
         "base-dark": "#262626",
+        "demo-cool-light": "#F1F7F4",
+        "demo-cool-dark": "#1F2925",
+        "demo-soft-light": "#F5F4FC",
+        "demo-soft-dark": "#26223D",
+        "demo-warm-light": "#FEF3EB",
+        "demo-warm-dark": "#2F241A",
         "portfolio-light": "#F4F0EB",
         "portfolio-dark": "#292524"
       },
@@ -2064,6 +2832,12 @@
       "resolved": {
         "base-light": "#E5E5E5",
         "base-dark": "#404040",
+        "demo-cool-light": "#DFE7E4",
+        "demo-cool-dark": "#37433E",
+        "demo-soft-light": "#E5E4EE",
+        "demo-soft-dark": "#3F3C56",
+        "demo-warm-light": "#F0E2D8",
+        "demo-warm-dark": "#4B3D31",
         "portfolio-light": "#E2DDD9",
         "portfolio-dark": "#44403c"
       },
@@ -2080,6 +2854,12 @@
       "resolved": {
         "base-light": "#D4D4D4",
         "base-dark": "#525252",
+        "demo-cool-light": "#CDD7D3",
+        "demo-cool-dark": "#485650",
+        "demo-soft-light": "#D4D2E0",
+        "demo-soft-dark": "#524F67",
+        "demo-warm-light": "#E0D1C6",
+        "demo-warm-dark": "#5F4F42",
         "portfolio-light": "#C8C3BE",
         "portfolio-dark": "#57534e"
       },
@@ -2096,6 +2876,12 @@
       "resolved": {
         "base-light": "#A3A3A3",
         "base-dark": "#737373",
+        "demo-cool-light": "#9AA6A1",
+        "demo-cool-dark": "#687771",
+        "demo-soft-light": "#A2A1B2",
+        "demo-soft-dark": "#737087",
+        "demo-warm-light": "#AFA094",
+        "demo-warm-dark": "#817062",
         "portfolio-light": "#A8A29E",
         "portfolio-dark": "#78716c"
       },
@@ -2112,6 +2898,12 @@
       "resolved": {
         "base-light": "#737373",
         "base-dark": "#A3A3A3",
+        "demo-cool-light": "#687771",
+        "demo-cool-dark": "#9AA6A1",
+        "demo-soft-light": "#737087",
+        "demo-soft-dark": "#A2A1B2",
+        "demo-warm-light": "#817062",
+        "demo-warm-dark": "#AFA094",
         "portfolio-light": "#78716C",
         "portfolio-dark": "#a8a29e"
       },
@@ -2128,6 +2920,12 @@
       "resolved": {
         "base-light": "#525252",
         "base-dark": "#D4D4D4",
+        "demo-cool-light": "#485650",
+        "demo-cool-dark": "#CDD7D3",
+        "demo-soft-light": "#524F67",
+        "demo-soft-dark": "#D4D2E0",
+        "demo-warm-light": "#5F4F42",
+        "demo-warm-dark": "#E0D1C6",
         "portfolio-light": "#57534E",
         "portfolio-dark": "#c8c3be"
       },
@@ -2144,6 +2942,12 @@
       "resolved": {
         "base-light": "#404040",
         "base-dark": "#E5E5E5",
+        "demo-cool-light": "#37433E",
+        "demo-cool-dark": "#DFE7E4",
+        "demo-soft-light": "#3F3C56",
+        "demo-soft-dark": "#E5E4EE",
+        "demo-warm-light": "#4B3D31",
+        "demo-warm-dark": "#F0E2D8",
         "portfolio-light": "#44403C",
         "portfolio-dark": "#e2ddd9"
       },
@@ -2160,6 +2964,12 @@
       "resolved": {
         "base-light": "#262626",
         "base-dark": "#F5F5F5",
+        "demo-cool-light": "#1F2925",
+        "demo-cool-dark": "#F1F7F4",
+        "demo-soft-light": "#26223D",
+        "demo-soft-dark": "#F5F4FC",
+        "demo-warm-light": "#2F241A",
+        "demo-warm-dark": "#FEF3EB",
         "portfolio-light": "#292524",
         "portfolio-dark": "#f4f0eb"
       },
@@ -2176,6 +2986,12 @@
       "resolved": {
         "base-light": "#171717",
         "base-dark": "#FAFAFA",
+        "demo-cool-light": "#111916",
+        "demo-cool-dark": "#F8FBFA",
+        "demo-soft-light": "#17122C",
+        "demo-soft-dark": "#FAF9FF",
+        "demo-warm-light": "#1E150E",
+        "demo-warm-dark": "#FFF9F4",
         "portfolio-light": "#1C1917",
         "portfolio-dark": "#fafaf9"
       },
@@ -2192,6 +3008,12 @@
       "resolved": {
         "base-light": "#FAFAFA",
         "base-dark": "#171717",
+        "demo-cool-light": "#F8FBFA",
+        "demo-cool-dark": "#111916",
+        "demo-soft-light": "#FAF9FF",
+        "demo-soft-dark": "#17122C",
+        "demo-warm-light": "#FFF9F4",
+        "demo-warm-dark": "#1E150E",
         "portfolio-light": "#FAFAF9",
         "portfolio-dark": "#1c1917"
       },
@@ -2221,6 +3043,12 @@
       "resolved": {
         "base-light": "#F5F5F5",
         "base-dark": "#262626",
+        "demo-cool-light": "#F1F7F4",
+        "demo-cool-dark": "#1F2925",
+        "demo-soft-light": "#F5F4FC",
+        "demo-soft-dark": "#26223D",
+        "demo-warm-light": "#FEF3EB",
+        "demo-warm-dark": "#2F241A",
         "portfolio-light": "#F4F0EB",
         "portfolio-dark": "#292524"
       },
@@ -2255,6 +3083,12 @@
       "resolved": {
         "base-light": "#E5E5E5",
         "base-dark": "#404040",
+        "demo-cool-light": "#DFE7E4",
+        "demo-cool-dark": "#37433E",
+        "demo-soft-light": "#E5E4EE",
+        "demo-soft-dark": "#3F3C56",
+        "demo-warm-light": "#F0E2D8",
+        "demo-warm-dark": "#4B3D31",
         "portfolio-light": "#E2DDD9",
         "portfolio-dark": "#44403c"
       },
@@ -2277,6 +3111,12 @@
       "resolved": {
         "base-light": "#171717",
         "base-dark": "#FAFAFA",
+        "demo-cool-light": "#111916",
+        "demo-cool-dark": "#F8FBFA",
+        "demo-soft-light": "#17122C",
+        "demo-soft-dark": "#FAF9FF",
+        "demo-warm-light": "#1E150E",
+        "demo-warm-dark": "#FFF9F4",
         "portfolio-light": "#1C1917",
         "portfolio-dark": "#fafaf9"
       },
@@ -2291,10 +3131,16 @@
       "type": "color",
       "category": "color",
       "description": "Body copy and headings.",
-      "rawValue": "{color.black}",
+      "rawValue": "#1E130E",
       "resolved": {
         "base-light": "#0A0A0A",
         "base-dark": "#FAFAFA",
+        "demo-cool-light": "#0A110F",
+        "demo-cool-dark": "#F8FBFA",
+        "demo-soft-light": "#241F3A",
+        "demo-soft-dark": "#FAF9FF",
+        "demo-warm-light": "#1E130E",
+        "demo-warm-dark": "#FFF9F4",
         "portfolio-light": "#0A0A0A",
         "portfolio-dark": "#fafaf9"
       },
@@ -2333,6 +3179,12 @@
       "resolved": {
         "base-light": "#525252",
         "base-dark": "#D4D4D4",
+        "demo-cool-light": "#485650",
+        "demo-cool-dark": "#CDD7D3",
+        "demo-soft-light": "#524F67",
+        "demo-soft-dark": "#D4D2E0",
+        "demo-warm-light": "#5F4F42",
+        "demo-warm-dark": "#E0D1C6",
         "portfolio-light": "#57534E",
         "portfolio-dark": "#c8c3be"
       },
@@ -2375,6 +3227,12 @@
       "resolved": {
         "base-light": "#FAFAFA",
         "base-dark": "#171717",
+        "demo-cool-light": "#F8FBFA",
+        "demo-cool-dark": "#111916",
+        "demo-soft-light": "#FAF9FF",
+        "demo-soft-dark": "#17122C",
+        "demo-warm-light": "#FFF9F4",
+        "demo-warm-dark": "#1E150E",
         "portfolio-light": "#FAFAF9",
         "portfolio-dark": "#1c1917"
       },
@@ -2389,10 +3247,16 @@
       "type": "color",
       "category": "color",
       "description": "Primary actions and selected states: filled buttons, checked controls, the active tab. Near-black in base; a brand puts its own colour here.",
-      "rawValue": "{color-neutral-800}",
+      "rawValue": "#CB3000",
       "resolved": {
         "base-light": "#262626",
         "base-dark": "#F5F5F5",
+        "demo-cool-light": "#117555",
+        "demo-cool-dark": "#5BC99E",
+        "demo-soft-light": "#BCB4F4",
+        "demo-soft-dark": "#B6AEEE",
+        "demo-warm-light": "#CB3000",
+        "demo-warm-dark": "#F98942",
         "portfolio-light": "#292524",
         "portfolio-dark": "#f4f0eb"
       },
@@ -2404,7 +3268,6 @@
         "Tabs",
         "Button",
         "Checkbox",
-        "Link",
         "Radio",
         "SkipLink",
         "Switch",
@@ -2417,17 +3280,22 @@
       "type": "color",
       "category": "color",
       "description": "Hover state of color-accent-default.",
-      "rawValue": "{color-neutral-900}",
+      "rawValue": "#AF2E00",
       "resolved": {
         "base-light": "#171717",
         "base-dark": "#FAFAFA",
+        "demo-cool-light": "#00694A",
+        "demo-cool-dark": "#69D6AA",
+        "demo-soft-light": "#B4ADEB",
+        "demo-soft-dark": "#BCB4EF",
+        "demo-warm-light": "#AF2E00",
+        "demo-warm-dark": "#FF9B5A",
         "portfolio-light": "#1C1917",
         "portfolio-dark": "#fafaf9"
       },
       "axisAware": true,
       "usedBy": [
-        "Button",
-        "Link"
+        "Button"
       ]
     },
     {
@@ -2436,10 +3304,16 @@
       "type": "color",
       "category": "color",
       "description": "Pressed state of color-accent-default, one step past hover: while a Button is held down.",
-      "rawValue": "{color.black}",
+      "rawValue": "#9C2800",
       "resolved": {
         "base-light": "#0A0A0A",
         "base-dark": "#FFFFFF",
+        "demo-cool-light": "#005C41",
+        "demo-cool-dark": "#80E2B9",
+        "demo-soft-light": "#ADA5E1",
+        "demo-soft-dark": "#C2BBF1",
+        "demo-warm-light": "#9C2800",
+        "demo-warm-dark": "#FFAF7A",
         "portfolio-light": "#0A0A0A",
         "portfolio-dark": "#ffffff"
       },
@@ -2454,10 +3328,16 @@
       "type": "color",
       "category": "color",
       "description": "Text and icons on an accent fill.",
-      "rawValue": "{color.white}",
+      "rawValue": "#FFFFFF",
       "resolved": {
         "base-light": "#FFFFFF",
         "base-dark": "#171717",
+        "demo-cool-light": "#FDFEFE",
+        "demo-cool-dark": "#0A110F",
+        "demo-soft-light": "#241F3A",
+        "demo-soft-dark": "#241F3A",
+        "demo-warm-light": "#FFFFFF",
+        "demo-warm-dark": "#1E130E",
         "portfolio-light": "#FFFFFF",
         "portfolio-dark": "#1c1917"
       },
@@ -2472,15 +3352,69 @@
       ]
     },
     {
+      "name": "color-accent-text",
+      "cssVar": "--color-accent-text",
+      "type": "color",
+      "category": "color",
+      "description": "The accent as text on a surface: links, and anything else that colours text or a thin line with the accent. The same as color-accent-default in base; a brand whose accent is a fill too light to read as text (a pastel) sets a darker one here.",
+      "rawValue": "#5E4DA1",
+      "resolved": {
+        "base-light": "#262626",
+        "base-dark": "#F5F5F5",
+        "demo-cool-light": "#117555",
+        "demo-cool-dark": "#5BC99E",
+        "demo-soft-light": "#5E4DA1",
+        "demo-soft-dark": "#B6AEEE",
+        "demo-warm-light": "#CB3000",
+        "demo-warm-dark": "#F98942",
+        "portfolio-light": "#292524",
+        "portfolio-dark": "#f4f0eb"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Link"
+      ]
+    },
+    {
+      "name": "color-accent-text-hover",
+      "cssVar": "--color-accent-text-hover",
+      "type": "color",
+      "category": "color",
+      "description": "Hover state of color-accent-text.",
+      "rawValue": "#4E3C8E",
+      "resolved": {
+        "base-light": "#171717",
+        "base-dark": "#FAFAFA",
+        "demo-cool-light": "#00694A",
+        "demo-cool-dark": "#69D6AA",
+        "demo-soft-light": "#4E3C8E",
+        "demo-soft-dark": "#BCB4EF",
+        "demo-warm-light": "#AF2E00",
+        "demo-warm-dark": "#FF9B5A",
+        "portfolio-light": "#1C1917",
+        "portfolio-dark": "#fafaf9"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Link"
+      ]
+    },
+    {
       "name": "color-border-default",
       "cssVar": "--color-border-default",
       "type": "color",
       "category": "color",
       "description": "Dividers and the outlines of cards, tables, menus and fields.",
-      "rawValue": "{color-neutral-200}",
+      "rawValue": "{color-text-primary}",
       "resolved": {
         "base-light": "#E5E5E5",
         "base-dark": "#404040",
+        "demo-cool-light": "#DFE7E4",
+        "demo-cool-dark": "#37433E",
+        "demo-soft-light": "#F5F4FC",
+        "demo-soft-dark": "#3F3C56",
+        "demo-warm-light": "#1E130E",
+        "demo-warm-dark": "#FFF9F4",
         "portfolio-light": "#E2DDD9",
         "portfolio-dark": "#57534e"
       },
@@ -2515,6 +3449,12 @@
       "resolved": {
         "base-light": "#A3A3A3",
         "base-dark": "#737373",
+        "demo-cool-light": "#9AA6A1",
+        "demo-cool-dark": "#687771",
+        "demo-soft-light": "#A2A1B2",
+        "demo-soft-dark": "#737087",
+        "demo-warm-light": "#AFA094",
+        "demo-warm-dark": "#817062",
         "portfolio-light": "#A8A29E",
         "portfolio-dark": "#78716c"
       },
@@ -2535,10 +3475,16 @@
       "type": "color",
       "category": "color",
       "description": "The focus ring. Pairs with focus-ring-width and focus-ring-offset.",
-      "rawValue": "{color.black}",
+      "rawValue": "#1E130E",
       "resolved": {
         "base-light": "#0A0A0A",
         "base-dark": "#FAFAFA",
+        "demo-cool-light": "#0A110F",
+        "demo-cool-dark": "#F8FBFA",
+        "demo-soft-light": "#241F3A",
+        "demo-soft-dark": "#FAF9FF",
+        "demo-warm-light": "#1E130E",
+        "demo-warm-dark": "#FFF9F4",
         "portfolio-light": "#0A0A0A",
         "portfolio-dark": "#fafaf9"
       },
@@ -2579,6 +3525,12 @@
       "resolved": {
         "base-light": "#D4D4D4",
         "base-dark": "#525252",
+        "demo-cool-light": "#CDD7D3",
+        "demo-cool-dark": "#485650",
+        "demo-soft-light": "#D4D2E0",
+        "demo-soft-dark": "#524F67",
+        "demo-warm-light": "#E0D1C6",
+        "demo-warm-dark": "#5F4F42",
         "portfolio-light": "#C8C3BE",
         "portfolio-dark": "#44403c"
       },
@@ -2595,6 +3547,12 @@
       "resolved": {
         "base-light": "#c0392b",
         "base-dark": "#f87171",
+        "demo-cool-light": "#c0392b",
+        "demo-cool-dark": "#f87171",
+        "demo-soft-light": "#c0392b",
+        "demo-soft-dark": "#f87171",
+        "demo-warm-light": "#c0392b",
+        "demo-warm-dark": "#f87171",
         "portfolio-light": "#c0392b",
         "portfolio-dark": "#f87171"
       },
@@ -2616,6 +3574,12 @@
       "resolved": {
         "base-light": "#FEF2F2",
         "base-dark": "#262626",
+        "demo-cool-light": "#FEF2F2",
+        "demo-cool-dark": "#1F2925",
+        "demo-soft-light": "#FEF2F2",
+        "demo-soft-dark": "#26223D",
+        "demo-warm-light": "#FEF2F2",
+        "demo-warm-dark": "#2F241A",
         "portfolio-light": "#FEF2F2",
         "portfolio-dark": "#292524"
       },
@@ -2636,6 +3600,12 @@
       "resolved": {
         "base-light": "#a93226",
         "base-dark": "#f87171",
+        "demo-cool-light": "#a93226",
+        "demo-cool-dark": "#f87171",
+        "demo-soft-light": "#a93226",
+        "demo-soft-dark": "#f87171",
+        "demo-warm-light": "#a93226",
+        "demo-warm-dark": "#f87171",
         "portfolio-light": "#a93226",
         "portfolio-dark": "#f87171"
       },
@@ -2656,6 +3626,12 @@
       "resolved": {
         "base-light": "#c0392b",
         "base-dark": "#f87171",
+        "demo-cool-light": "#c0392b",
+        "demo-cool-dark": "#f87171",
+        "demo-soft-light": "#c0392b",
+        "demo-soft-dark": "#f87171",
+        "demo-warm-light": "#c0392b",
+        "demo-warm-dark": "#f87171",
         "portfolio-light": "#c0392b",
         "portfolio-dark": "#f87171"
       },
@@ -2676,6 +3652,12 @@
       "resolved": {
         "base-light": "#F0FDF4",
         "base-dark": "#262626",
+        "demo-cool-light": "#F0FDF4",
+        "demo-cool-dark": "#1F2925",
+        "demo-soft-light": "#F0FDF4",
+        "demo-soft-dark": "#26223D",
+        "demo-warm-light": "#F0FDF4",
+        "demo-warm-dark": "#2F241A",
         "portfolio-light": "#F0FDF4",
         "portfolio-dark": "#292524"
       },
@@ -2695,6 +3677,12 @@
       "resolved": {
         "base-light": "#15803D",
         "base-dark": "#f0fdf4",
+        "demo-cool-light": "#15803D",
+        "demo-cool-dark": "#f0fdf4",
+        "demo-soft-light": "#15803D",
+        "demo-soft-dark": "#f0fdf4",
+        "demo-warm-light": "#15803D",
+        "demo-warm-dark": "#f0fdf4",
         "portfolio-light": "#15803D",
         "portfolio-dark": "#f0fdf4"
       },
@@ -2715,6 +3703,12 @@
       "resolved": {
         "base-light": "#16A34A",
         "base-dark": "#4ade80",
+        "demo-cool-light": "#16A34A",
+        "demo-cool-dark": "#4ade80",
+        "demo-soft-light": "#16A34A",
+        "demo-soft-dark": "#4ade80",
+        "demo-warm-light": "#16A34A",
+        "demo-warm-dark": "#4ade80",
         "portfolio-light": "#16A34A",
         "portfolio-dark": "#4ade80"
       },
@@ -2735,6 +3729,12 @@
       "resolved": {
         "base-light": "#FFFBEB",
         "base-dark": "#262626",
+        "demo-cool-light": "#FFFBEB",
+        "demo-cool-dark": "#1F2925",
+        "demo-soft-light": "#FFFBEB",
+        "demo-soft-dark": "#26223D",
+        "demo-warm-light": "#FFFBEB",
+        "demo-warm-dark": "#2F241A",
         "portfolio-light": "#FFFBEB",
         "portfolio-dark": "#292524"
       },
@@ -2754,6 +3754,12 @@
       "resolved": {
         "base-light": "#B45309",
         "base-dark": "#fffbeb",
+        "demo-cool-light": "#B45309",
+        "demo-cool-dark": "#fffbeb",
+        "demo-soft-light": "#B45309",
+        "demo-soft-dark": "#fffbeb",
+        "demo-warm-light": "#B45309",
+        "demo-warm-dark": "#fffbeb",
         "portfolio-light": "#B45309",
         "portfolio-dark": "#fffbeb"
       },
@@ -2774,6 +3780,12 @@
       "resolved": {
         "base-light": "#D97706",
         "base-dark": "#fcd34d",
+        "demo-cool-light": "#D97706",
+        "demo-cool-dark": "#fcd34d",
+        "demo-soft-light": "#D97706",
+        "demo-soft-dark": "#fcd34d",
+        "demo-warm-light": "#D97706",
+        "demo-warm-dark": "#fcd34d",
         "portfolio-light": "#D97706",
         "portfolio-dark": "#fcd34d"
       },
@@ -2794,6 +3806,12 @@
       "resolved": {
         "base-light": "#EFF6FF",
         "base-dark": "#262626",
+        "demo-cool-light": "#EFF6FF",
+        "demo-cool-dark": "#1F2925",
+        "demo-soft-light": "#EFF6FF",
+        "demo-soft-dark": "#26223D",
+        "demo-warm-light": "#EFF6FF",
+        "demo-warm-dark": "#2F241A",
         "portfolio-light": "#EFF6FF",
         "portfolio-dark": "#292524"
       },
@@ -2813,6 +3831,12 @@
       "resolved": {
         "base-light": "#1D4ED8",
         "base-dark": "#eff6ff",
+        "demo-cool-light": "#1D4ED8",
+        "demo-cool-dark": "#eff6ff",
+        "demo-soft-light": "#1D4ED8",
+        "demo-soft-dark": "#eff6ff",
+        "demo-warm-light": "#1D4ED8",
+        "demo-warm-dark": "#eff6ff",
         "portfolio-light": "#1D4ED8",
         "portfolio-dark": "#eff6ff"
       },
@@ -2833,6 +3857,12 @@
       "resolved": {
         "base-light": "#2563EB",
         "base-dark": "#60a5fa",
+        "demo-cool-light": "#2563EB",
+        "demo-cool-dark": "#60a5fa",
+        "demo-soft-light": "#2563EB",
+        "demo-soft-dark": "#60a5fa",
+        "demo-warm-light": "#2563EB",
+        "demo-warm-dark": "#60a5fa",
         "portfolio-light": "#2563EB",
         "portfolio-dark": "#60a5fa"
       },
@@ -2853,6 +3883,12 @@
       "resolved": {
         "base-light": "#E5E5E5",
         "base-dark": "#404040",
+        "demo-cool-light": "#DFE7E4",
+        "demo-cool-dark": "#37433E",
+        "demo-soft-light": "#E5E4EE",
+        "demo-soft-dark": "#3F3C56",
+        "demo-warm-light": "#F0E2D8",
+        "demo-warm-dark": "#4B3D31",
         "portfolio-light": "#E2DDD9",
         "portfolio-dark": "#44403c"
       },
@@ -2871,6 +3907,12 @@
       "resolved": {
         "base-light": "#F5F5F5",
         "base-dark": "#262626",
+        "demo-cool-light": "#F1F7F4",
+        "demo-cool-dark": "#1F2925",
+        "demo-soft-light": "#F5F4FC",
+        "demo-soft-dark": "#26223D",
+        "demo-warm-light": "#FEF3EB",
+        "demo-warm-dark": "#2F241A",
         "portfolio-light": "#F4F0EB",
         "portfolio-dark": "#292524"
       },
@@ -2889,6 +3931,12 @@
       "resolved": {
         "base-light": "400ms",
         "base-dark": "400ms",
+        "demo-cool-light": "400ms",
+        "demo-cool-dark": "400ms",
+        "demo-soft-light": "400ms",
+        "demo-soft-dark": "400ms",
+        "demo-warm-light": "400ms",
+        "demo-warm-dark": "400ms",
         "portfolio-light": "400ms",
         "portfolio-dark": "400ms"
       },
@@ -2907,6 +3955,12 @@
       "resolved": {
         "base-light": "2px",
         "base-dark": "2px",
+        "demo-cool-light": "2px",
+        "demo-cool-dark": "2px",
+        "demo-soft-light": "2px",
+        "demo-soft-dark": "2px",
+        "demo-warm-light": "2px",
+        "demo-warm-dark": "2px",
         "portfolio-light": "2px",
         "portfolio-dark": "2px"
       },
@@ -2946,6 +4000,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -2982,14 +4042,20 @@
       "type": "shadow",
       "category": "shadow",
       "description": "Resting shadow for a raised surface, such as a framed preview. Card has none at rest; it takes shadow-card-hover on hover.",
-      "rawValue": "{shadow.xs}",
+      "rawValue": "{shadow.none}",
       "resolved": {
         "base-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
         "base-dark": "0 1px 2px 0 rgba(0,0,0,0.05)",
+        "demo-cool-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
+        "demo-cool-dark": "0 1px 2px 0 rgba(0,0,0,0.05)",
+        "demo-soft-light": "0 1px 2px 0 rgba(36,31,58,0.06), 0 8px 24px 0 rgba(36,31,58,0.08)",
+        "demo-soft-dark": "0 1px 2px 0 rgba(36,31,58,0.06), 0 8px 24px 0 rgba(36,31,58,0.08)",
+        "demo-warm-light": "none",
+        "demo-warm-dark": "none",
         "portfolio-light": "0 1px 2px 0 rgba(0,0,0,0.05)",
         "portfolio-dark": "0 1px 2px 0 rgba(0,0,0,0.05)"
       },
-      "axisAware": false,
+      "axisAware": true,
       "usedBy": []
     },
     {
@@ -2998,14 +4064,20 @@
       "type": "shadow",
       "category": "shadow",
       "description": "Shadow a clickable Card lifts to on hover.",
-      "rawValue": "{shadow.sm}",
+      "rawValue": "{shadow.none}",
       "resolved": {
         "base-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
         "base-dark": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+        "demo-cool-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+        "demo-cool-dark": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
+        "demo-soft-light": "0 2px 4px 0 rgba(36,31,58,0.08), 0 12px 32px 0 rgba(36,31,58,0.10)",
+        "demo-soft-dark": "0 2px 4px 0 rgba(36,31,58,0.08), 0 12px 32px 0 rgba(36,31,58,0.10)",
+        "demo-warm-light": "none",
+        "demo-warm-dark": "none",
         "portfolio-light": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)",
         "portfolio-dark": "0 1px 3px 0 rgba(0,0,0,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)"
       },
-      "axisAware": false,
+      "axisAware": true,
       "usedBy": [
         "Card"
       ]
@@ -3020,6 +4092,12 @@
       "resolved": {
         "base-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
         "base-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-cool-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-cool-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-soft-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-soft-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-warm-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-warm-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
         "portfolio-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
         "portfolio-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)"
       },
@@ -3040,6 +4118,12 @@
       "resolved": {
         "base-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
         "base-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-cool-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-cool-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-soft-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-soft-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-warm-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
+        "demo-warm-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
         "portfolio-light": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)",
         "portfolio-dark": "0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10)"
       },
@@ -3058,6 +4142,12 @@
       "resolved": {
         "base-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
         "base-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-cool-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-cool-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-soft-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-soft-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-warm-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+        "demo-warm-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
         "portfolio-light": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
         "portfolio-dark": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)"
       },
@@ -3077,6 +4167,12 @@
       "resolved": {
         "base-light": "100",
         "base-dark": "100",
+        "demo-cool-light": "100",
+        "demo-cool-dark": "100",
+        "demo-soft-light": "100",
+        "demo-soft-dark": "100",
+        "demo-warm-light": "100",
+        "demo-warm-dark": "100",
         "portfolio-light": "100",
         "portfolio-dark": "100"
       },
@@ -3093,6 +4189,12 @@
       "resolved": {
         "base-light": "200",
         "base-dark": "200",
+        "demo-cool-light": "200",
+        "demo-cool-dark": "200",
+        "demo-soft-light": "200",
+        "demo-soft-dark": "200",
+        "demo-warm-light": "200",
+        "demo-warm-dark": "200",
         "portfolio-light": "200",
         "portfolio-dark": "200"
       },
@@ -3111,6 +4213,12 @@
       "resolved": {
         "base-light": "300",
         "base-dark": "300",
+        "demo-cool-light": "300",
+        "demo-cool-dark": "300",
+        "demo-soft-light": "300",
+        "demo-soft-dark": "300",
+        "demo-warm-light": "300",
+        "demo-warm-dark": "300",
         "portfolio-light": "300",
         "portfolio-dark": "300"
       },
@@ -3127,6 +4235,12 @@
       "resolved": {
         "base-light": "400",
         "base-dark": "400",
+        "demo-cool-light": "400",
+        "demo-cool-dark": "400",
+        "demo-soft-light": "400",
+        "demo-soft-dark": "400",
+        "demo-warm-light": "400",
+        "demo-warm-dark": "400",
         "portfolio-light": "400",
         "portfolio-dark": "400"
       },
@@ -3143,6 +4257,12 @@
       "resolved": {
         "base-light": "500",
         "base-dark": "500",
+        "demo-cool-light": "500",
+        "demo-cool-dark": "500",
+        "demo-soft-light": "500",
+        "demo-soft-dark": "500",
+        "demo-warm-light": "500",
+        "demo-warm-dark": "500",
         "portfolio-light": "500",
         "portfolio-dark": "500"
       },
@@ -3161,6 +4281,12 @@
       "resolved": {
         "base-light": "600",
         "base-dark": "600",
+        "demo-cool-light": "600",
+        "demo-cool-dark": "600",
+        "demo-soft-light": "600",
+        "demo-soft-dark": "600",
+        "demo-warm-light": "600",
+        "demo-warm-dark": "600",
         "portfolio-light": "600",
         "portfolio-dark": "600"
       },
@@ -3179,6 +4305,12 @@
       "resolved": {
         "base-light": "700",
         "base-dark": "700",
+        "demo-cool-light": "700",
+        "demo-cool-dark": "700",
+        "demo-soft-light": "700",
+        "demo-soft-dark": "700",
+        "demo-warm-light": "700",
+        "demo-warm-dark": "700",
         "portfolio-light": "700",
         "portfolio-dark": "700"
       },
@@ -3197,6 +4329,12 @@
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "12px",
+        "demo-soft-dark": "12px",
+        "demo-warm-light": "12px",
+        "demo-warm-dark": "12px",
         "portfolio-light": "12px",
         "portfolio-dark": "12px"
       },
@@ -3215,6 +4353,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -3236,6 +4380,12 @@
       "resolved": {
         "base-light": "20px",
         "base-dark": "20px",
+        "demo-cool-light": "20px",
+        "demo-cool-dark": "20px",
+        "demo-soft-light": "20px",
+        "demo-soft-dark": "20px",
+        "demo-warm-light": "20px",
+        "demo-warm-dark": "20px",
         "portfolio-light": "20px",
         "portfolio-dark": "20px"
       },
@@ -3257,6 +4407,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -3275,6 +4431,12 @@
       "resolved": {
         "base-light": "32px",
         "base-dark": "32px",
+        "demo-cool-light": "32px",
+        "demo-cool-dark": "32px",
+        "demo-soft-light": "32px",
+        "demo-soft-dark": "32px",
+        "demo-warm-light": "32px",
+        "demo-warm-dark": "32px",
         "portfolio-light": "32px",
         "portfolio-dark": "32px"
       },
@@ -3291,6 +4453,12 @@
       "resolved": {
         "base-light": "700ms",
         "base-dark": "700ms",
+        "demo-cool-light": "700ms",
+        "demo-cool-dark": "700ms",
+        "demo-soft-light": "700ms",
+        "demo-soft-dark": "700ms",
+        "demo-warm-light": "700ms",
+        "demo-warm-dark": "700ms",
         "portfolio-light": "700ms",
         "portfolio-dark": "700ms"
       },
@@ -3309,6 +4477,12 @@
       "resolved": {
         "base-light": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         "base-dark": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "demo-cool-light": "'Atkinson Hyperlegible Next', sans-serif",
+        "demo-cool-dark": "'Atkinson Hyperlegible Next', sans-serif",
+        "demo-soft-light": "'Nunito', sans-serif",
+        "demo-soft-dark": "'Nunito', sans-serif",
+        "demo-warm-light": "'Instrument Sans', sans-serif",
+        "demo-warm-dark": "'Instrument Sans', sans-serif",
         "portfolio-light": "'Schibsted Grotesk', sans-serif",
         "portfolio-dark": "'Schibsted Grotesk', sans-serif"
       },
@@ -3352,6 +4526,12 @@
       "resolved": {
         "base-light": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         "base-dark": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "demo-cool-light": "'Archivo', sans-serif",
+        "demo-cool-dark": "'Archivo', sans-serif",
+        "demo-soft-light": "'Fraunces', serif",
+        "demo-soft-dark": "'Fraunces', serif",
+        "demo-warm-light": "'Bricolage Grotesque', sans-serif",
+        "demo-warm-dark": "'Bricolage Grotesque', sans-serif",
         "portfolio-light": "'Schibsted Grotesk', sans-serif",
         "portfolio-dark": "'Schibsted Grotesk', sans-serif"
       },
@@ -3372,10 +4552,16 @@
       "resolved": {
         "base-light": "'JetBrains Mono', monospace",
         "base-dark": "'JetBrains Mono', monospace",
+        "demo-cool-light": "'Atkinson Hyperlegible Mono', monospace",
+        "demo-cool-dark": "'Atkinson Hyperlegible Mono', monospace",
+        "demo-soft-light": "'JetBrains Mono', monospace",
+        "demo-soft-dark": "'JetBrains Mono', monospace",
+        "demo-warm-light": "'JetBrains Mono', monospace",
+        "demo-warm-dark": "'JetBrains Mono', monospace",
         "portfolio-light": "'JetBrains Mono', monospace",
         "portfolio-dark": "'JetBrains Mono', monospace"
       },
-      "axisAware": false,
+      "axisAware": true,
       "usedBy": []
     },
     {
@@ -3388,6 +4574,12 @@
       "resolved": {
         "base-light": "18px",
         "base-dark": "18px",
+        "demo-cool-light": "18px",
+        "demo-cool-dark": "18px",
+        "demo-soft-light": "18px",
+        "demo-soft-dark": "18px",
+        "demo-warm-light": "18px",
+        "demo-warm-dark": "18px",
         "portfolio-light": "18px",
         "portfolio-dark": "18px"
       },
@@ -3408,6 +4600,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -3441,6 +4639,12 @@
       "resolved": {
         "base-light": "14px",
         "base-dark": "14px",
+        "demo-cool-light": "14px",
+        "demo-cool-dark": "14px",
+        "demo-soft-light": "14px",
+        "demo-soft-dark": "14px",
+        "demo-warm-light": "14px",
+        "demo-warm-dark": "14px",
         "portfolio-light": "14px",
         "portfolio-dark": "14px"
       },
@@ -3466,6 +4670,12 @@
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "12px",
+        "demo-soft-dark": "12px",
+        "demo-warm-light": "12px",
+        "demo-warm-dark": "12px",
         "portfolio-light": "12px",
         "portfolio-dark": "12px"
       },
@@ -3489,6 +4699,12 @@
       "resolved": {
         "base-light": "64px",
         "base-dark": "64px",
+        "demo-cool-light": "64px",
+        "demo-cool-dark": "64px",
+        "demo-soft-light": "64px",
+        "demo-soft-dark": "64px",
+        "demo-warm-light": "64px",
+        "demo-warm-dark": "64px",
         "portfolio-light": "64px",
         "portfolio-dark": "64px"
       },
@@ -3505,6 +4721,12 @@
       "resolved": {
         "base-light": "clamp(2rem, 0.75rem + 5vw, 5rem)",
         "base-dark": "clamp(2rem, 0.75rem + 5vw, 5rem)",
+        "demo-cool-light": "clamp(2rem, 0.75rem + 5vw, 5rem)",
+        "demo-cool-dark": "clamp(2rem, 0.75rem + 5vw, 5rem)",
+        "demo-soft-light": "clamp(2rem, 0.75rem + 5vw, 5rem)",
+        "demo-soft-dark": "clamp(2rem, 0.75rem + 5vw, 5rem)",
+        "demo-warm-light": "clamp(2rem, 0.75rem + 5vw, 5rem)",
+        "demo-warm-dark": "clamp(2rem, 0.75rem + 5vw, 5rem)",
         "portfolio-light": "clamp(2rem, 0.75rem + 5vw, 5rem)",
         "portfolio-dark": "clamp(2rem, 0.75rem + 5vw, 5rem)"
       },
@@ -3521,6 +4743,12 @@
       "resolved": {
         "base-light": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
         "base-dark": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
+        "demo-cool-light": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
+        "demo-cool-dark": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
+        "demo-soft-light": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
+        "demo-soft-dark": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
+        "demo-warm-light": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
+        "demo-warm-dark": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
         "portfolio-light": "clamp(1.75rem, 0.75rem + 4vw, 4rem)",
         "portfolio-dark": "clamp(1.75rem, 0.75rem + 4vw, 4rem)"
       },
@@ -3540,6 +4768,12 @@
       "resolved": {
         "base-light": "48px",
         "base-dark": "48px",
+        "demo-cool-light": "48px",
+        "demo-cool-dark": "48px",
+        "demo-soft-light": "48px",
+        "demo-soft-dark": "48px",
+        "demo-warm-light": "48px",
+        "demo-warm-dark": "48px",
         "portfolio-light": "48px",
         "portfolio-dark": "48px"
       },
@@ -3556,6 +4790,12 @@
       "resolved": {
         "base-light": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
         "base-dark": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
+        "demo-cool-light": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
+        "demo-cool-dark": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
+        "demo-soft-light": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
+        "demo-soft-dark": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
+        "demo-warm-light": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
+        "demo-warm-dark": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
         "portfolio-light": "clamp(1.625rem, 1rem + 2.5vw, 3rem)",
         "portfolio-dark": "clamp(1.625rem, 1rem + 2.5vw, 3rem)"
       },
@@ -3574,6 +4814,12 @@
       "resolved": {
         "base-light": "32px",
         "base-dark": "32px",
+        "demo-cool-light": "32px",
+        "demo-cool-dark": "32px",
+        "demo-soft-light": "32px",
+        "demo-soft-dark": "32px",
+        "demo-warm-light": "32px",
+        "demo-warm-dark": "32px",
         "portfolio-light": "32px",
         "portfolio-dark": "32px"
       },
@@ -3590,6 +4836,12 @@
       "resolved": {
         "base-light": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
         "base-dark": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
+        "demo-cool-light": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
+        "demo-cool-dark": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
+        "demo-soft-light": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
+        "demo-soft-dark": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
+        "demo-warm-light": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
+        "demo-warm-dark": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
         "portfolio-light": "clamp(1.5rem, 1rem + 2vw, 2.5rem)",
         "portfolio-dark": "clamp(1.5rem, 1rem + 2vw, 2.5rem)"
       },
@@ -3604,14 +4856,20 @@
       "type": "dimension",
       "category": "typography",
       "description": "H4 size: 24px. Pairs with line-height-h4.",
-      "rawValue": "{font-size.lg}",
+      "rawValue": "28px",
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "28px",
+        "demo-warm-dark": "28px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
-      "axisAware": false,
+      "axisAware": true,
       "usedBy": [
         "Dialog",
         "Heading"
@@ -3627,6 +4885,12 @@
       "resolved": {
         "base-light": "20px",
         "base-dark": "20px",
+        "demo-cool-light": "20px",
+        "demo-cool-dark": "20px",
+        "demo-soft-light": "20px",
+        "demo-soft-dark": "20px",
+        "demo-warm-light": "20px",
+        "demo-warm-dark": "20px",
         "portfolio-light": "20px",
         "portfolio-dark": "20px"
       },
@@ -3646,6 +4910,12 @@
       "resolved": {
         "base-light": "400",
         "base-dark": "400",
+        "demo-cool-light": "400",
+        "demo-cool-dark": "400",
+        "demo-soft-light": "400",
+        "demo-soft-dark": "400",
+        "demo-warm-light": "400",
+        "demo-warm-dark": "400",
         "portfolio-light": "400",
         "portfolio-dark": "400"
       },
@@ -3658,14 +4928,20 @@
       "type": "fontWeight",
       "category": "typography",
       "description": "Weight for headings.",
-      "rawValue": "{font-weight.semibold}",
+      "rawValue": "{font-weight.extrabold}",
       "resolved": {
         "base-light": "600",
         "base-dark": "600",
+        "demo-cool-light": "600",
+        "demo-cool-dark": "600",
+        "demo-soft-light": "500",
+        "demo-soft-dark": "500",
+        "demo-warm-light": "800",
+        "demo-warm-dark": "800",
         "portfolio-light": "600",
         "portfolio-dark": "600"
       },
-      "axisAware": false,
+      "axisAware": true,
       "usedBy": [
         "Heading"
       ]
@@ -3680,6 +4956,12 @@
       "resolved": {
         "base-light": "500",
         "base-dark": "500",
+        "demo-cool-light": "500",
+        "demo-cool-dark": "500",
+        "demo-soft-light": "500",
+        "demo-soft-dark": "500",
+        "demo-warm-light": "500",
+        "demo-warm-dark": "500",
         "portfolio-light": "500",
         "portfolio-dark": "500"
       },
@@ -3701,14 +4983,20 @@
       "type": "fontWeight",
       "category": "typography",
       "description": "Weight for large display text, such as a page's opening headline.",
-      "rawValue": "{font-weight.semibold}",
+      "rawValue": "{font-weight.extrabold}",
       "resolved": {
         "base-light": "600",
         "base-dark": "600",
+        "demo-cool-light": "600",
+        "demo-cool-dark": "600",
+        "demo-soft-light": "500",
+        "demo-soft-dark": "500",
+        "demo-warm-light": "800",
+        "demo-warm-dark": "800",
         "portfolio-light": "600",
         "portfolio-dark": "600"
       },
-      "axisAware": false,
+      "axisAware": true,
       "usedBy": []
     },
     {
@@ -3717,14 +5005,20 @@
       "type": "fontWeight",
       "category": "typography",
       "description": "Title weight for card/dialog/drawer-style container headers. See decisions/0004.",
-      "rawValue": "{font-weight.bold}",
+      "rawValue": "{font-weight.extrabold}",
       "resolved": {
         "base-light": "700",
         "base-dark": "700",
+        "demo-cool-light": "700",
+        "demo-cool-dark": "700",
+        "demo-soft-light": "500",
+        "demo-soft-dark": "500",
+        "demo-warm-light": "800",
+        "demo-warm-dark": "800",
         "portfolio-light": "700",
         "portfolio-dark": "700"
       },
-      "axisAware": false,
+      "axisAware": true,
       "usedBy": [
         "Dialog",
         "Heading"
@@ -3740,6 +5034,12 @@
       "resolved": {
         "base-light": "500",
         "base-dark": "500",
+        "demo-cool-light": "500",
+        "demo-cool-dark": "500",
+        "demo-soft-light": "500",
+        "demo-soft-dark": "500",
+        "demo-warm-light": "500",
+        "demo-warm-dark": "500",
         "portfolio-light": "500",
         "portfolio-dark": "500"
       },
@@ -3760,6 +5060,12 @@
       "resolved": {
         "base-light": "1.125",
         "base-dark": "1.125",
+        "demo-cool-light": "1.125",
+        "demo-cool-dark": "1.125",
+        "demo-soft-light": "1.125",
+        "demo-soft-dark": "1.125",
+        "demo-warm-light": "1.125",
+        "demo-warm-dark": "1.125",
         "portfolio-light": "1.125",
         "portfolio-dark": "1.125"
       },
@@ -3779,6 +5085,12 @@
       "resolved": {
         "base-light": "28px",
         "base-dark": "28px",
+        "demo-cool-light": "28px",
+        "demo-cool-dark": "28px",
+        "demo-soft-light": "28px",
+        "demo-soft-dark": "28px",
+        "demo-warm-light": "28px",
+        "demo-warm-dark": "28px",
         "portfolio-light": "28px",
         "portfolio-dark": "28px"
       },
@@ -3800,6 +5112,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -3830,6 +5148,12 @@
       "resolved": {
         "base-light": "20px",
         "base-dark": "20px",
+        "demo-cool-light": "20px",
+        "demo-cool-dark": "20px",
+        "demo-soft-light": "20px",
+        "demo-soft-dark": "20px",
+        "demo-warm-light": "20px",
+        "demo-warm-dark": "20px",
         "portfolio-light": "20px",
         "portfolio-dark": "20px"
       },
@@ -3852,6 +5176,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -3873,6 +5203,12 @@
       "resolved": {
         "base-light": "80px",
         "base-dark": "80px",
+        "demo-cool-light": "80px",
+        "demo-cool-dark": "80px",
+        "demo-soft-light": "80px",
+        "demo-soft-dark": "80px",
+        "demo-warm-light": "80px",
+        "demo-warm-dark": "80px",
         "portfolio-light": "80px",
         "portfolio-dark": "80px"
       },
@@ -3889,6 +5225,12 @@
       "resolved": {
         "base-light": "60px",
         "base-dark": "60px",
+        "demo-cool-light": "60px",
+        "demo-cool-dark": "60px",
+        "demo-soft-light": "60px",
+        "demo-soft-dark": "60px",
+        "demo-warm-light": "60px",
+        "demo-warm-dark": "60px",
         "portfolio-light": "60px",
         "portfolio-dark": "60px"
       },
@@ -3905,6 +5247,12 @@
       "resolved": {
         "base-light": "40px",
         "base-dark": "40px",
+        "demo-cool-light": "40px",
+        "demo-cool-dark": "40px",
+        "demo-soft-light": "40px",
+        "demo-soft-dark": "40px",
+        "demo-warm-light": "40px",
+        "demo-warm-dark": "40px",
         "portfolio-light": "40px",
         "portfolio-dark": "40px"
       },
@@ -3917,10 +5265,16 @@
       "type": "dimension",
       "category": "typography",
       "description": "Strict-4px-grid line-height for font-size-h4 (24px) — see decisions/0012.",
-      "rawValue": "{line-height.fixed-32}",
+      "rawValue": "32px",
       "resolved": {
         "base-light": "32px",
         "base-dark": "32px",
+        "demo-cool-light": "32px",
+        "demo-cool-dark": "32px",
+        "demo-soft-light": "32px",
+        "demo-soft-dark": "32px",
+        "demo-warm-light": "32px",
+        "demo-warm-dark": "32px",
         "portfolio-light": "32px",
         "portfolio-dark": "32px"
       },
@@ -3940,6 +5294,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -3959,6 +5319,12 @@
       "resolved": {
         "base-light": "1.25",
         "base-dark": "1.25",
+        "demo-cool-light": "1.25",
+        "demo-cool-dark": "1.25",
+        "demo-soft-light": "1.25",
+        "demo-soft-dark": "1.25",
+        "demo-warm-light": "1.25",
+        "demo-warm-dark": "1.25",
         "portfolio-light": "1.25",
         "portfolio-dark": "1.25"
       },
@@ -3977,6 +5343,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -3999,10 +5371,42 @@
       "resolved": {
         "base-light": "-0.02em",
         "base-dark": "-0.02em",
+        "demo-cool-light": "-0.03em",
+        "demo-cool-dark": "-0.03em",
+        "demo-soft-light": "-0.01em",
+        "demo-soft-dark": "-0.01em",
+        "demo-warm-light": "-0.02em",
+        "demo-warm-dark": "-0.02em",
         "portfolio-light": "-0.02em",
         "portfolio-dark": "-0.02em"
       },
-      "axisAware": false,
+      "axisAware": true,
+      "usedBy": [
+        "Dialog",
+        "Hero",
+        "Heading"
+      ]
+    },
+    {
+      "name": "font-variation-heading",
+      "cssVar": "--font-variation-heading",
+      "type": "string",
+      "category": "typography",
+      "description": "Variable-font axis settings for headings, as font-variation-settings (e.g. 'wdth' 112.5 for a wide cut). normal in base; a brand whose heading font has extra axes sets them here, and scripts/build-fonts.mjs requests those axes from Google Fonts.",
+      "rawValue": "'SOFT' 100, 'WONK' 0",
+      "resolved": {
+        "base-light": "normal",
+        "base-dark": "normal",
+        "demo-cool-light": "'wdth' 112.5",
+        "demo-cool-dark": "'wdth' 112.5",
+        "demo-soft-light": "'SOFT' 100, 'WONK' 0",
+        "demo-soft-dark": "'SOFT' 100, 'WONK' 0",
+        "demo-warm-light": "normal",
+        "demo-warm-dark": "normal",
+        "portfolio-light": "normal",
+        "portfolio-dark": "normal"
+      },
+      "axisAware": true,
       "usedBy": [
         "Dialog",
         "Hero",
@@ -4019,6 +5423,12 @@
       "resolved": {
         "base-light": "-0.01em",
         "base-dark": "-0.01em",
+        "demo-cool-light": "-0.01em",
+        "demo-cool-dark": "-0.01em",
+        "demo-soft-light": "-0.01em",
+        "demo-soft-dark": "-0.01em",
+        "demo-warm-light": "-0.01em",
+        "demo-warm-dark": "-0.01em",
         "portfolio-light": "-0.01em",
         "portfolio-dark": "-0.01em"
       },
@@ -4035,6 +5445,12 @@
       "resolved": {
         "base-light": "0",
         "base-dark": "0",
+        "demo-cool-light": "0",
+        "demo-cool-dark": "0",
+        "demo-soft-light": "0",
+        "demo-soft-dark": "0",
+        "demo-warm-light": "0",
+        "demo-warm-dark": "0",
         "portfolio-light": "0",
         "portfolio-dark": "0"
       },
@@ -4051,6 +5467,12 @@
       "resolved": {
         "base-light": "0.01em",
         "base-dark": "0.01em",
+        "demo-cool-light": "0.01em",
+        "demo-cool-dark": "0.01em",
+        "demo-soft-light": "0.01em",
+        "demo-soft-dark": "0.01em",
+        "demo-warm-light": "0.01em",
+        "demo-warm-dark": "0.01em",
         "portfolio-light": "0.01em",
         "portfolio-dark": "0.01em"
       },
@@ -4067,6 +5489,12 @@
       "resolved": {
         "base-light": "0.08em",
         "base-dark": "0.08em",
+        "demo-cool-light": "0.08em",
+        "demo-cool-dark": "0.08em",
+        "demo-soft-light": "0.08em",
+        "demo-soft-dark": "0.08em",
+        "demo-warm-light": "0.08em",
+        "demo-warm-dark": "0.08em",
         "portfolio-light": "0.08em",
         "portfolio-dark": "0.08em"
       },
@@ -4083,6 +5511,12 @@
       "resolved": {
         "base-light": "clamp(1.25rem, 4vw, 2rem)",
         "base-dark": "clamp(1.25rem, 4vw, 2rem)",
+        "demo-cool-light": "clamp(1.25rem, 4vw, 2rem)",
+        "demo-cool-dark": "clamp(1.25rem, 4vw, 2rem)",
+        "demo-soft-light": "clamp(1.25rem, 4vw, 2rem)",
+        "demo-soft-dark": "clamp(1.25rem, 4vw, 2rem)",
+        "demo-warm-light": "clamp(1.25rem, 4vw, 2rem)",
+        "demo-warm-dark": "clamp(1.25rem, 4vw, 2rem)",
         "portfolio-light": "clamp(1.25rem, 4vw, 2rem)",
         "portfolio-dark": "clamp(1.25rem, 4vw, 2rem)"
       },
@@ -4099,6 +5533,12 @@
       "resolved": {
         "base-light": "clamp(3rem, 8vw, 5rem)",
         "base-dark": "clamp(3rem, 8vw, 5rem)",
+        "demo-cool-light": "clamp(3rem, 8vw, 5rem)",
+        "demo-cool-dark": "clamp(3rem, 8vw, 5rem)",
+        "demo-soft-light": "clamp(3rem, 8vw, 5rem)",
+        "demo-soft-dark": "clamp(3rem, 8vw, 5rem)",
+        "demo-warm-light": "clamp(3rem, 8vw, 5rem)",
+        "demo-warm-dark": "clamp(3rem, 8vw, 5rem)",
         "portfolio-light": "clamp(3rem, 8vw, 5rem)",
         "portfolio-dark": "clamp(3rem, 8vw, 5rem)"
       },
@@ -4115,6 +5555,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -4135,6 +5581,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -4156,6 +5608,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -4191,6 +5649,12 @@
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "12px",
+        "demo-soft-dark": "12px",
+        "demo-warm-light": "12px",
+        "demo-warm-dark": "12px",
         "portfolio-light": "12px",
         "portfolio-dark": "12px"
       },
@@ -4210,14 +5674,20 @@
       "type": "dimension",
       "category": "radius",
       "description": "Corners of containers: cards, dialogs, menus, alerts, tables.",
-      "rawValue": "{border-radius.md}",
+      "rawValue": "{border-radius.none}",
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "0px",
+        "demo-warm-dark": "0px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
-      "axisAware": false,
+      "axisAware": true,
       "usedBy": [
         "Alert",
         "Card",
@@ -4235,14 +5705,20 @@
       "type": "dimension",
       "category": "radius",
       "description": "Corners of controls: inputs, menu items, tab triggers, close buttons.",
-      "rawValue": "{border-radius.sm}",
+      "rawValue": "2px",
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "9999px",
+        "demo-soft-dark": "9999px",
+        "demo-warm-light": "2px",
+        "demo-warm-dark": "2px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
-      "axisAware": false,
+      "axisAware": true,
       "usedBy": [
         "Alert",
         "Dialog",
@@ -4267,14 +5743,20 @@
       "type": "dimension",
       "category": "radius",
       "description": "Corners of images inside a Card.",
-      "rawValue": "0.75rem",
+      "rawValue": "{border-radius.none}",
       "resolved": {
         "base-light": "0.75rem",
         "base-dark": "0.75rem",
+        "demo-cool-light": "0.75rem",
+        "demo-cool-dark": "0.75rem",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "0px",
+        "demo-warm-dark": "0px",
         "portfolio-light": "0.75rem",
         "portfolio-dark": "0.75rem"
       },
-      "axisAware": false,
+      "axisAware": true,
       "usedBy": [
         "Card"
       ]
@@ -4289,6 +5771,12 @@
       "resolved": {
         "base-light": "9999px",
         "base-dark": "9999px",
+        "demo-cool-light": "9999px",
+        "demo-cool-dark": "9999px",
+        "demo-soft-light": "9999px",
+        "demo-soft-dark": "9999px",
+        "demo-warm-light": "9999px",
+        "demo-warm-dark": "9999px",
         "portfolio-light": "9999px",
         "portfolio-dark": "9999px"
       },
@@ -4312,6 +5800,12 @@
       "resolved": {
         "base-light": "200ms",
         "base-dark": "200ms",
+        "demo-cool-light": "200ms",
+        "demo-cool-dark": "200ms",
+        "demo-soft-light": "200ms",
+        "demo-soft-dark": "200ms",
+        "demo-warm-light": "200ms",
+        "demo-warm-dark": "200ms",
         "portfolio-light": "200ms",
         "portfolio-dark": "200ms"
       },
@@ -4351,6 +5845,12 @@
       "resolved": {
         "base-light": "400ms",
         "base-dark": "400ms",
+        "demo-cool-light": "400ms",
+        "demo-cool-dark": "400ms",
+        "demo-soft-light": "400ms",
+        "demo-soft-dark": "400ms",
+        "demo-warm-light": "400ms",
+        "demo-warm-dark": "400ms",
         "portfolio-light": "400ms",
         "portfolio-dark": "400ms"
       },
@@ -4372,6 +5872,12 @@
       "resolved": {
         "base-light": "600ms",
         "base-dark": "600ms",
+        "demo-cool-light": "600ms",
+        "demo-cool-dark": "600ms",
+        "demo-soft-light": "600ms",
+        "demo-soft-dark": "600ms",
+        "demo-warm-light": "600ms",
+        "demo-warm-dark": "600ms",
         "portfolio-light": "600ms",
         "portfolio-dark": "600ms"
       },
@@ -4388,6 +5894,12 @@
       "resolved": {
         "base-light": "400ms",
         "base-dark": "400ms",
+        "demo-cool-light": "400ms",
+        "demo-cool-dark": "400ms",
+        "demo-soft-light": "400ms",
+        "demo-soft-dark": "400ms",
+        "demo-warm-light": "400ms",
+        "demo-warm-dark": "400ms",
         "portfolio-light": "400ms",
         "portfolio-dark": "400ms"
       },
@@ -4404,6 +5916,12 @@
       "resolved": {
         "base-light": "300ms",
         "base-dark": "300ms",
+        "demo-cool-light": "300ms",
+        "demo-cool-dark": "300ms",
+        "demo-soft-light": "300ms",
+        "demo-soft-dark": "300ms",
+        "demo-warm-light": "300ms",
+        "demo-warm-dark": "300ms",
         "portfolio-light": "300ms",
         "portfolio-dark": "300ms"
       },
@@ -4420,6 +5938,12 @@
       "resolved": {
         "base-light": "0.3",
         "base-dark": "0.3",
+        "demo-cool-light": "0.3",
+        "demo-cool-dark": "0.3",
+        "demo-soft-light": "0.3",
+        "demo-soft-dark": "0.3",
+        "demo-warm-light": "0.3",
+        "demo-warm-dark": "0.3",
         "portfolio-light": "0.3",
         "portfolio-dark": "0.3"
       },
@@ -4436,6 +5960,12 @@
       "resolved": {
         "base-light": "0.1",
         "base-dark": "0.1",
+        "demo-cool-light": "0.1",
+        "demo-cool-dark": "0.1",
+        "demo-soft-light": "0.1",
+        "demo-soft-dark": "0.1",
+        "demo-warm-light": "0.1",
+        "demo-warm-dark": "0.1",
         "portfolio-light": "0.1",
         "portfolio-dark": "0.1"
       },
@@ -4464,6 +5994,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -4491,6 +6027,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -4517,6 +6059,12 @@
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "12px",
+        "demo-soft-dark": "12px",
+        "demo-warm-light": "12px",
+        "demo-warm-dark": "12px",
         "portfolio-light": "12px",
         "portfolio-dark": "12px"
       },
@@ -4540,6 +6088,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -4560,6 +6114,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -4580,6 +6140,12 @@
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "12px",
+        "demo-soft-dark": "12px",
+        "demo-warm-light": "12px",
+        "demo-warm-dark": "12px",
         "portfolio-light": "12px",
         "portfolio-dark": "12px"
       },
@@ -4599,6 +6165,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -4620,6 +6192,12 @@
       "resolved": {
         "base-light": "32px",
         "base-dark": "32px",
+        "demo-cool-light": "32px",
+        "demo-cool-dark": "32px",
+        "demo-soft-light": "32px",
+        "demo-soft-dark": "32px",
+        "demo-warm-light": "32px",
+        "demo-warm-dark": "32px",
         "portfolio-light": "32px",
         "portfolio-dark": "32px"
       },
@@ -4641,6 +6219,12 @@
       "resolved": {
         "base-light": "48px",
         "base-dark": "48px",
+        "demo-cool-light": "48px",
+        "demo-cool-dark": "48px",
+        "demo-soft-light": "48px",
+        "demo-soft-dark": "48px",
+        "demo-warm-light": "48px",
+        "demo-warm-dark": "48px",
         "portfolio-light": "48px",
         "portfolio-dark": "48px"
       },
@@ -4660,6 +6244,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -4678,6 +6268,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -4696,6 +6292,12 @@
       "resolved": {
         "base-light": "32px",
         "base-dark": "32px",
+        "demo-cool-light": "32px",
+        "demo-cool-dark": "32px",
+        "demo-soft-light": "32px",
+        "demo-soft-dark": "32px",
+        "demo-warm-light": "32px",
+        "demo-warm-dark": "32px",
         "portfolio-light": "32px",
         "portfolio-dark": "32px"
       },
@@ -4714,6 +6316,12 @@
       "resolved": {
         "base-light": "1200px",
         "base-dark": "1200px",
+        "demo-cool-light": "1200px",
+        "demo-cool-dark": "1200px",
+        "demo-soft-light": "1200px",
+        "demo-soft-dark": "1200px",
+        "demo-warm-light": "1200px",
+        "demo-warm-dark": "1200px",
         "portfolio-light": "1200px",
         "portfolio-dark": "1200px"
       },
@@ -4730,6 +6338,12 @@
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
+        "demo-cool-light": "1px",
+        "demo-cool-dark": "1px",
+        "demo-soft-light": "1px",
+        "demo-soft-dark": "1px",
+        "demo-warm-light": "1px",
+        "demo-warm-dark": "1px",
         "portfolio-light": "1px",
         "portfolio-dark": "1px"
       },
@@ -4751,14 +6365,20 @@
       "type": "dimension",
       "category": "border",
       "description": "Static, non-interactive borders (cards, dialogs, dividers, badges). See decisions/0004.",
-      "rawValue": "{border-width.thin}",
+      "rawValue": "{border-width.medium}",
       "resolved": {
         "base-light": "1px",
         "base-dark": "1px",
+        "demo-cool-light": "1px",
+        "demo-cool-dark": "1px",
+        "demo-soft-light": "1px",
+        "demo-soft-dark": "1px",
+        "demo-warm-light": "2px",
+        "demo-warm-dark": "2px",
         "portfolio-light": "1px",
         "portfolio-dark": "1px"
       },
-      "axisAware": false,
+      "axisAware": true,
       "usedBy": [
         "Alert",
         "Card",
@@ -4788,6 +6408,12 @@
       "resolved": {
         "base-light": "560px",
         "base-dark": "560px",
+        "demo-cool-light": "560px",
+        "demo-cool-dark": "560px",
+        "demo-soft-light": "560px",
+        "demo-soft-dark": "560px",
+        "demo-warm-light": "560px",
+        "demo-warm-dark": "560px",
         "portfolio-light": "560px",
         "portfolio-dark": "560px"
       },
@@ -4804,6 +6430,12 @@
       "resolved": {
         "base-light": "45rem",
         "base-dark": "45rem",
+        "demo-cool-light": "45rem",
+        "demo-cool-dark": "45rem",
+        "demo-soft-light": "45rem",
+        "demo-soft-dark": "45rem",
+        "demo-warm-light": "45rem",
+        "demo-warm-dark": "45rem",
         "portfolio-light": "45rem",
         "portfolio-dark": "45rem"
       },
@@ -4820,6 +6452,12 @@
       "resolved": {
         "base-light": "60rem",
         "base-dark": "60rem",
+        "demo-cool-light": "60rem",
+        "demo-cool-dark": "60rem",
+        "demo-soft-light": "60rem",
+        "demo-soft-dark": "60rem",
+        "demo-warm-light": "60rem",
+        "demo-warm-dark": "60rem",
         "portfolio-light": "60rem",
         "portfolio-dark": "60rem"
       },
@@ -4836,6 +6474,12 @@
       "resolved": {
         "base-light": "80rem",
         "base-dark": "80rem",
+        "demo-cool-light": "80rem",
+        "demo-cool-dark": "80rem",
+        "demo-soft-light": "80rem",
+        "demo-soft-dark": "80rem",
+        "demo-warm-light": "80rem",
+        "demo-warm-dark": "80rem",
         "portfolio-light": "80rem",
         "portfolio-dark": "80rem"
       },
@@ -4852,6 +6496,12 @@
       "resolved": {
         "base-light": "90rem",
         "base-dark": "90rem",
+        "demo-cool-light": "90rem",
+        "demo-cool-dark": "90rem",
+        "demo-soft-light": "90rem",
+        "demo-soft-dark": "90rem",
+        "demo-warm-light": "90rem",
+        "demo-warm-dark": "90rem",
         "portfolio-light": "90rem",
         "portfolio-dark": "90rem"
       },
@@ -4868,11 +6518,113 @@
       "resolved": {
         "base-light": "90vw",
         "base-dark": "90vw",
+        "demo-cool-light": "90vw",
+        "demo-cool-dark": "90vw",
+        "demo-soft-light": "90vw",
+        "demo-soft-dark": "90vw",
+        "demo-warm-light": "90vw",
+        "demo-warm-dark": "90vw",
         "portfolio-light": "90vw",
         "portfolio-dark": "90vw"
       },
       "axisAware": false,
       "usedBy": []
+    },
+    {
+      "name": "button-border-radius",
+      "cssVar": "--button-border-radius",
+      "type": "dimension",
+      "category": "component",
+      "description": "Corner radius of every Button variant. A pill in base; a brand can set its own shape here without changing other pill-shaped components (Badge, Tag, Avatar).",
+      "rawValue": "{border-radius-pill}",
+      "resolved": {
+        "base-light": "9999px",
+        "base-dark": "9999px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "9999px",
+        "demo-soft-dark": "9999px",
+        "demo-warm-light": "2px",
+        "demo-warm-dark": "2px",
+        "portfolio-light": "9999px",
+        "portfolio-dark": "9999px"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Button"
+      ]
+    },
+    {
+      "name": "button-outline-border-width",
+      "cssVar": "--button-outline-border-width",
+      "type": "dimension",
+      "category": "component",
+      "description": "Border width of the Button variants that draw a border.",
+      "rawValue": "{border-width.medium}",
+      "resolved": {
+        "base-light": "2px",
+        "base-dark": "2px",
+        "demo-cool-light": "1px",
+        "demo-cool-dark": "1px",
+        "demo-soft-light": "2px",
+        "demo-soft-dark": "2px",
+        "demo-warm-light": "2px",
+        "demo-warm-dark": "2px",
+        "portfolio-light": "2px",
+        "portfolio-dark": "2px"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Button"
+      ]
+    },
+    {
+      "name": "button-secondary-foreground",
+      "cssVar": "--button-secondary-foreground",
+      "type": "color",
+      "category": "component",
+      "description": "Text colour of the secondary Button.",
+      "rawValue": "{color-accent-default}",
+      "resolved": {
+        "base-light": "#262626",
+        "base-dark": "#A3A3A3",
+        "demo-cool-light": "#117555",
+        "demo-cool-dark": "#5BC99E",
+        "demo-soft-light": "#5E4DA1",
+        "demo-soft-dark": "#B6AEEE",
+        "demo-warm-light": "#CB3000",
+        "demo-warm-dark": "#F98942",
+        "portfolio-light": "#292524",
+        "portfolio-dark": "#a8a29e"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Button"
+      ]
+    },
+    {
+      "name": "button-secondary-border",
+      "cssVar": "--button-secondary-border",
+      "type": "color",
+      "category": "component",
+      "description": "Border colour of the secondary Button.",
+      "rawValue": "{color-accent-default}",
+      "resolved": {
+        "base-light": "#262626",
+        "base-dark": "#A3A3A3",
+        "demo-cool-light": "#117555",
+        "demo-cool-dark": "#5BC99E",
+        "demo-soft-light": "#5E4DA1",
+        "demo-soft-dark": "#B6AEEE",
+        "demo-warm-light": "#CB3000",
+        "demo-warm-dark": "#F98942",
+        "portfolio-light": "#292524",
+        "portfolio-dark": "#a8a29e"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Button"
+      ]
     },
     {
       "name": "color-surface-spotlight",
@@ -4884,6 +6636,12 @@
       "resolved": {
         "base-light": null,
         "base-dark": null,
+        "demo-cool-light": null,
+        "demo-cool-dark": null,
+        "demo-soft-light": null,
+        "demo-soft-dark": null,
+        "demo-warm-light": null,
+        "demo-warm-dark": null,
         "portfolio-light": "#1C1917",
         "portfolio-dark": "#0F4750"
       },
@@ -4900,6 +6658,12 @@
       "resolved": {
         "base-light": null,
         "base-dark": null,
+        "demo-cool-light": null,
+        "demo-cool-dark": null,
+        "demo-soft-light": null,
+        "demo-soft-dark": null,
+        "demo-warm-light": null,
+        "demo-warm-dark": null,
         "portfolio-light": "#1C1917",
         "portfolio-dark": "#1C1917"
       },
@@ -4916,6 +6680,12 @@
       "resolved": {
         "base-light": null,
         "base-dark": null,
+        "demo-cool-light": null,
+        "demo-cool-dark": null,
+        "demo-soft-light": null,
+        "demo-soft-dark": null,
+        "demo-warm-light": null,
+        "demo-warm-dark": null,
         "portfolio-light": "#57534E",
         "portfolio-dark": "#57534E"
       },
@@ -4932,6 +6702,12 @@
       "resolved": {
         "base-light": null,
         "base-dark": null,
+        "demo-cool-light": null,
+        "demo-cool-dark": null,
+        "demo-soft-light": null,
+        "demo-soft-dark": null,
+        "demo-warm-light": null,
+        "demo-warm-dark": null,
         "portfolio-light": "#15616D33",
         "portfolio-dark": "#15616D80"
       },
@@ -4948,6 +6724,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -4966,6 +6748,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -4984,6 +6772,12 @@
       "resolved": {
         "base-light": "650ms",
         "base-dark": "650ms",
+        "demo-cool-light": "650ms",
+        "demo-cool-dark": "650ms",
+        "demo-soft-light": "650ms",
+        "demo-soft-dark": "650ms",
+        "demo-warm-light": "650ms",
+        "demo-warm-dark": "650ms",
         "portfolio-light": "650ms",
         "portfolio-dark": "650ms"
       },
@@ -5002,6 +6796,12 @@
       "resolved": {
         "base-light": "200ms",
         "base-dark": "200ms",
+        "demo-cool-light": "200ms",
+        "demo-cool-dark": "200ms",
+        "demo-soft-light": "200ms",
+        "demo-soft-dark": "200ms",
+        "demo-warm-light": "200ms",
+        "demo-warm-dark": "200ms",
         "portfolio-light": "200ms",
         "portfolio-dark": "200ms"
       },
@@ -5020,6 +6820,12 @@
       "resolved": {
         "base-light": "600",
         "base-dark": "600",
+        "demo-cool-light": "600",
+        "demo-cool-dark": "600",
+        "demo-soft-light": "600",
+        "demo-soft-dark": "600",
+        "demo-warm-light": "600",
+        "demo-warm-dark": "600",
         "portfolio-light": "600",
         "portfolio-dark": "600"
       },
@@ -5038,6 +6844,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -5056,6 +6868,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -5074,6 +6892,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -5092,6 +6916,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -5110,6 +6940,12 @@
       "resolved": {
         "base-light": "32px",
         "base-dark": "32px",
+        "demo-cool-light": "32px",
+        "demo-cool-dark": "32px",
+        "demo-soft-light": "32px",
+        "demo-soft-dark": "32px",
+        "demo-warm-light": "32px",
+        "demo-warm-dark": "32px",
         "portfolio-light": "32px",
         "portfolio-dark": "32px"
       },
@@ -5128,6 +6964,12 @@
       "resolved": {
         "base-light": "40px",
         "base-dark": "40px",
+        "demo-cool-light": "40px",
+        "demo-cool-dark": "40px",
+        "demo-soft-light": "40px",
+        "demo-soft-dark": "40px",
+        "demo-warm-light": "40px",
+        "demo-warm-dark": "40px",
         "portfolio-light": "40px",
         "portfolio-dark": "40px"
       },
@@ -5147,6 +6989,12 @@
       "resolved": {
         "base-light": "64px",
         "base-dark": "64px",
+        "demo-cool-light": "64px",
+        "demo-cool-dark": "64px",
+        "demo-soft-light": "64px",
+        "demo-soft-dark": "64px",
+        "demo-warm-light": "64px",
+        "demo-warm-dark": "64px",
         "portfolio-light": "64px",
         "portfolio-dark": "64px"
       },
@@ -5165,6 +7013,12 @@
       "resolved": {
         "base-light": "2px",
         "base-dark": "2px",
+        "demo-cool-light": "2px",
+        "demo-cool-dark": "2px",
+        "demo-soft-light": "2px",
+        "demo-soft-dark": "2px",
+        "demo-warm-light": "2px",
+        "demo-warm-dark": "2px",
         "portfolio-light": "2px",
         "portfolio-dark": "2px"
       },
@@ -5183,6 +7037,12 @@
       "resolved": {
         "base-light": "14px",
         "base-dark": "14px",
+        "demo-cool-light": "14px",
+        "demo-cool-dark": "14px",
+        "demo-soft-light": "14px",
+        "demo-soft-dark": "14px",
+        "demo-warm-light": "14px",
+        "demo-warm-dark": "14px",
         "portfolio-light": "14px",
         "portfolio-dark": "14px"
       },
@@ -5201,6 +7061,12 @@
       "resolved": {
         "base-light": "600",
         "base-dark": "600",
+        "demo-cool-light": "600",
+        "demo-cool-dark": "600",
+        "demo-soft-light": "600",
+        "demo-soft-dark": "600",
+        "demo-warm-light": "600",
+        "demo-warm-dark": "600",
         "portfolio-light": "600",
         "portfolio-dark": "600"
       },
@@ -5219,6 +7085,12 @@
       "resolved": {
         "base-light": "-8px",
         "base-dark": "-8px",
+        "demo-cool-light": "-8px",
+        "demo-cool-dark": "-8px",
+        "demo-soft-light": "-8px",
+        "demo-soft-dark": "-8px",
+        "demo-warm-light": "-8px",
+        "demo-warm-dark": "-8px",
         "portfolio-light": "-8px",
         "portfolio-dark": "-8px"
       },
@@ -5237,6 +7109,12 @@
       "resolved": {
         "base-light": "500",
         "base-dark": "500",
+        "demo-cool-light": "500",
+        "demo-cool-dark": "500",
+        "demo-soft-light": "500",
+        "demo-soft-dark": "500",
+        "demo-warm-light": "500",
+        "demo-warm-dark": "500",
         "portfolio-light": "500",
         "portfolio-dark": "500"
       },
@@ -5255,6 +7133,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -5273,6 +7157,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -5291,6 +7181,12 @@
       "resolved": {
         "base-light": "20px",
         "base-dark": "20px",
+        "demo-cool-light": "20px",
+        "demo-cool-dark": "20px",
+        "demo-soft-light": "20px",
+        "demo-soft-dark": "20px",
+        "demo-warm-light": "20px",
+        "demo-warm-dark": "20px",
         "portfolio-light": "20px",
         "portfolio-dark": "20px"
       },
@@ -5309,6 +7205,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -5327,6 +7229,12 @@
       "resolved": {
         "base-light": "14px",
         "base-dark": "14px",
+        "demo-cool-light": "14px",
+        "demo-cool-dark": "14px",
+        "demo-soft-light": "14px",
+        "demo-soft-dark": "14px",
+        "demo-warm-light": "14px",
+        "demo-warm-dark": "14px",
         "portfolio-light": "14px",
         "portfolio-dark": "14px"
       },
@@ -5345,6 +7253,12 @@
       "resolved": {
         "base-light": "200px",
         "base-dark": "200px",
+        "demo-cool-light": "200px",
+        "demo-cool-dark": "200px",
+        "demo-soft-light": "200px",
+        "demo-soft-dark": "200px",
+        "demo-warm-light": "200px",
+        "demo-warm-dark": "200px",
         "portfolio-light": "200px",
         "portfolio-dark": "200px"
       },
@@ -5363,6 +7277,12 @@
       "resolved": {
         "base-light": "240px",
         "base-dark": "240px",
+        "demo-cool-light": "240px",
+        "demo-cool-dark": "240px",
+        "demo-soft-light": "240px",
+        "demo-soft-dark": "240px",
+        "demo-warm-light": "240px",
+        "demo-warm-dark": "240px",
         "portfolio-light": "240px",
         "portfolio-dark": "240px"
       },
@@ -5381,6 +7301,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -5399,26 +7325,14 @@
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "12px",
+        "demo-soft-dark": "12px",
+        "demo-warm-light": "12px",
+        "demo-warm-dark": "12px",
         "portfolio-light": "12px",
         "portfolio-dark": "12px"
-      },
-      "axisAware": false,
-      "usedBy": [
-        "Button"
-      ]
-    },
-    {
-      "name": "button-outline-border-width",
-      "cssVar": "--button-outline-border-width",
-      "type": "dimension",
-      "category": "component",
-      "description": "Border width of the Button variants that draw a border.",
-      "rawValue": "{border-width.medium}",
-      "resolved": {
-        "base-light": "2px",
-        "base-dark": "2px",
-        "portfolio-light": "2px",
-        "portfolio-dark": "2px"
       },
       "axisAware": false,
       "usedBy": [
@@ -5435,46 +7349,16 @@
       "resolved": {
         "base-light": "transparent",
         "base-dark": "transparent",
+        "demo-cool-light": "transparent",
+        "demo-cool-dark": "transparent",
+        "demo-soft-light": "transparent",
+        "demo-soft-dark": "transparent",
+        "demo-warm-light": "transparent",
+        "demo-warm-dark": "transparent",
         "portfolio-light": "transparent",
         "portfolio-dark": "transparent"
       },
       "axisAware": false,
-      "usedBy": [
-        "Button"
-      ]
-    },
-    {
-      "name": "button-secondary-foreground",
-      "cssVar": "--button-secondary-foreground",
-      "type": "color",
-      "category": "component",
-      "description": "Text colour of the secondary Button.",
-      "rawValue": "{color-accent-default}",
-      "resolved": {
-        "base-light": "#262626",
-        "base-dark": "#A3A3A3",
-        "portfolio-light": "#292524",
-        "portfolio-dark": "#a8a29e"
-      },
-      "axisAware": true,
-      "usedBy": [
-        "Button"
-      ]
-    },
-    {
-      "name": "button-secondary-border",
-      "cssVar": "--button-secondary-border",
-      "type": "color",
-      "category": "component",
-      "description": "Border colour of the secondary Button.",
-      "rawValue": "{color-accent-default}",
-      "resolved": {
-        "base-light": "#262626",
-        "base-dark": "#A3A3A3",
-        "portfolio-light": "#292524",
-        "portfolio-dark": "#a8a29e"
-      },
-      "axisAware": true,
       "usedBy": [
         "Button"
       ]
@@ -5489,6 +7373,12 @@
       "resolved": {
         "base-light": "#262626",
         "base-dark": "#A3A3A3",
+        "demo-cool-light": "#117555",
+        "demo-cool-dark": "#5BC99E",
+        "demo-soft-light": "#BCB4F4",
+        "demo-soft-dark": "#B6AEEE",
+        "demo-warm-light": "#CB3000",
+        "demo-warm-dark": "#F98942",
         "portfolio-light": "#292524",
         "portfolio-dark": "#a8a29e"
       },
@@ -5507,6 +7397,12 @@
       "resolved": {
         "base-light": "transparent",
         "base-dark": "transparent",
+        "demo-cool-light": "transparent",
+        "demo-cool-dark": "transparent",
+        "demo-soft-light": "transparent",
+        "demo-soft-dark": "transparent",
+        "demo-warm-light": "transparent",
+        "demo-warm-dark": "transparent",
         "portfolio-light": "transparent",
         "portfolio-dark": "transparent"
       },
@@ -5525,6 +7421,12 @@
       "resolved": {
         "base-light": "transparent",
         "base-dark": "transparent",
+        "demo-cool-light": "transparent",
+        "demo-cool-dark": "transparent",
+        "demo-soft-light": "transparent",
+        "demo-soft-dark": "transparent",
+        "demo-warm-light": "transparent",
+        "demo-warm-dark": "transparent",
         "portfolio-light": "transparent",
         "portfolio-dark": "transparent"
       },
@@ -5543,6 +7445,12 @@
       "resolved": {
         "base-light": "750ms",
         "base-dark": "750ms",
+        "demo-cool-light": "750ms",
+        "demo-cool-dark": "750ms",
+        "demo-soft-light": "750ms",
+        "demo-soft-dark": "750ms",
+        "demo-warm-light": "750ms",
+        "demo-warm-dark": "750ms",
         "portfolio-light": "750ms",
         "portfolio-dark": "750ms"
       },
@@ -5561,6 +7469,12 @@
       "resolved": {
         "base-light": "550ms",
         "base-dark": "550ms",
+        "demo-cool-light": "550ms",
+        "demo-cool-dark": "550ms",
+        "demo-soft-light": "550ms",
+        "demo-soft-dark": "550ms",
+        "demo-warm-light": "550ms",
+        "demo-warm-dark": "550ms",
         "portfolio-light": "550ms",
         "portfolio-dark": "550ms"
       },
@@ -5577,6 +7491,12 @@
       "resolved": {
         "base-light": "220ms",
         "base-dark": "220ms",
+        "demo-cool-light": "220ms",
+        "demo-cool-dark": "220ms",
+        "demo-soft-light": "220ms",
+        "demo-soft-dark": "220ms",
+        "demo-warm-light": "220ms",
+        "demo-warm-dark": "220ms",
         "portfolio-light": "220ms",
         "portfolio-dark": "220ms"
       },
@@ -5593,6 +7513,12 @@
       "resolved": {
         "base-light": "400ms",
         "base-dark": "400ms",
+        "demo-cool-light": "400ms",
+        "demo-cool-dark": "400ms",
+        "demo-soft-light": "400ms",
+        "demo-soft-dark": "400ms",
+        "demo-warm-light": "400ms",
+        "demo-warm-dark": "400ms",
         "portfolio-light": "400ms",
         "portfolio-dark": "400ms"
       },
@@ -5609,6 +7535,12 @@
       "resolved": {
         "base-light": "180ms",
         "base-dark": "180ms",
+        "demo-cool-light": "180ms",
+        "demo-cool-dark": "180ms",
+        "demo-soft-light": "180ms",
+        "demo-soft-dark": "180ms",
+        "demo-warm-light": "180ms",
+        "demo-warm-dark": "180ms",
         "portfolio-light": "180ms",
         "portfolio-dark": "180ms"
       },
@@ -5625,6 +7557,12 @@
       "resolved": {
         "base-light": "2px",
         "base-dark": "2px",
+        "demo-cool-light": "2px",
+        "demo-cool-dark": "2px",
+        "demo-soft-light": "2px",
+        "demo-soft-dark": "2px",
+        "demo-warm-light": "2px",
+        "demo-warm-dark": "2px",
         "portfolio-light": "2px",
         "portfolio-dark": "2px"
       },
@@ -5643,6 +7581,12 @@
       "resolved": {
         "base-light": "52px",
         "base-dark": "52px",
+        "demo-cool-light": "52px",
+        "demo-cool-dark": "52px",
+        "demo-soft-light": "52px",
+        "demo-soft-dark": "52px",
+        "demo-warm-light": "52px",
+        "demo-warm-dark": "52px",
         "portfolio-light": "52px",
         "portfolio-dark": "52px"
       },
@@ -5661,6 +7605,12 @@
       "resolved": {
         "base-light": "rgba(255, 255, 255, 0.45)",
         "base-dark": "rgba(255, 255, 255, 0.45)",
+        "demo-cool-light": "rgba(255, 255, 255, 0.45)",
+        "demo-cool-dark": "rgba(255, 255, 255, 0.45)",
+        "demo-soft-light": "rgba(255, 255, 255, 0.45)",
+        "demo-soft-dark": "rgba(255, 255, 255, 0.45)",
+        "demo-warm-light": "rgba(255, 255, 255, 0.45)",
+        "demo-warm-dark": "rgba(255, 255, 255, 0.45)",
         "portfolio-light": "rgba(255, 255, 255, 0.45)",
         "portfolio-dark": "rgba(255, 255, 255, 0.45)"
       },
@@ -5679,6 +7629,12 @@
       "resolved": {
         "base-light": "200px",
         "base-dark": "200px",
+        "demo-cool-light": "200px",
+        "demo-cool-dark": "200px",
+        "demo-soft-light": "200px",
+        "demo-soft-dark": "200px",
+        "demo-warm-light": "200px",
+        "demo-warm-dark": "200px",
         "portfolio-light": "200px",
         "portfolio-dark": "200px"
       },
@@ -5697,6 +7653,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -5715,6 +7677,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -5733,6 +7701,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -5751,6 +7725,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -5769,6 +7749,12 @@
       "resolved": {
         "base-light": "560px",
         "base-dark": "560px",
+        "demo-cool-light": "560px",
+        "demo-cool-dark": "560px",
+        "demo-soft-light": "560px",
+        "demo-soft-dark": "560px",
+        "demo-warm-light": "560px",
+        "demo-warm-dark": "560px",
         "portfolio-light": "560px",
         "portfolio-dark": "560px"
       },
@@ -5787,6 +7773,12 @@
       "resolved": {
         "base-light": "28px",
         "base-dark": "28px",
+        "demo-cool-light": "28px",
+        "demo-cool-dark": "28px",
+        "demo-soft-light": "28px",
+        "demo-soft-dark": "28px",
+        "demo-warm-light": "28px",
+        "demo-warm-dark": "28px",
         "portfolio-light": "28px",
         "portfolio-dark": "28px"
       },
@@ -5805,6 +7797,12 @@
       "resolved": {
         "base-light": "480px",
         "base-dark": "480px",
+        "demo-cool-light": "480px",
+        "demo-cool-dark": "480px",
+        "demo-soft-light": "480px",
+        "demo-soft-dark": "480px",
+        "demo-warm-light": "480px",
+        "demo-warm-dark": "480px",
         "portfolio-light": "480px",
         "portfolio-dark": "480px"
       },
@@ -5823,6 +7821,12 @@
       "resolved": {
         "base-light": "720px",
         "base-dark": "720px",
+        "demo-cool-light": "720px",
+        "demo-cool-dark": "720px",
+        "demo-soft-light": "720px",
+        "demo-soft-dark": "720px",
+        "demo-warm-light": "720px",
+        "demo-warm-dark": "720px",
         "portfolio-light": "720px",
         "portfolio-dark": "720px"
       },
@@ -5841,6 +7845,12 @@
       "resolved": {
         "base-light": "1024px",
         "base-dark": "1024px",
+        "demo-cool-light": "1024px",
+        "demo-cool-dark": "1024px",
+        "demo-soft-light": "1024px",
+        "demo-soft-dark": "1024px",
+        "demo-warm-light": "1024px",
+        "demo-warm-dark": "1024px",
         "portfolio-light": "1024px",
         "portfolio-dark": "1024px"
       },
@@ -5859,6 +7869,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -5877,6 +7893,12 @@
       "resolved": {
         "base-light": "28px",
         "base-dark": "28px",
+        "demo-cool-light": "28px",
+        "demo-cool-dark": "28px",
+        "demo-soft-light": "28px",
+        "demo-soft-dark": "28px",
+        "demo-warm-light": "28px",
+        "demo-warm-dark": "28px",
         "portfolio-light": "28px",
         "portfolio-dark": "28px"
       },
@@ -5895,6 +7917,12 @@
       "resolved": {
         "base-light": "320px",
         "base-dark": "320px",
+        "demo-cool-light": "320px",
+        "demo-cool-dark": "320px",
+        "demo-soft-light": "320px",
+        "demo-soft-dark": "320px",
+        "demo-warm-light": "320px",
+        "demo-warm-dark": "320px",
         "portfolio-light": "320px",
         "portfolio-dark": "320px"
       },
@@ -5913,6 +7941,12 @@
       "resolved": {
         "base-light": "480px",
         "base-dark": "480px",
+        "demo-cool-light": "480px",
+        "demo-cool-dark": "480px",
+        "demo-soft-light": "480px",
+        "demo-soft-dark": "480px",
+        "demo-warm-light": "480px",
+        "demo-warm-dark": "480px",
         "portfolio-light": "480px",
         "portfolio-dark": "480px"
       },
@@ -5931,6 +7965,12 @@
       "resolved": {
         "base-light": "640px",
         "base-dark": "640px",
+        "demo-cool-light": "640px",
+        "demo-cool-dark": "640px",
+        "demo-soft-light": "640px",
+        "demo-soft-dark": "640px",
+        "demo-warm-light": "640px",
+        "demo-warm-dark": "640px",
         "portfolio-light": "640px",
         "portfolio-dark": "640px"
       },
@@ -5949,6 +7989,12 @@
       "resolved": {
         "base-light": "40vh",
         "base-dark": "40vh",
+        "demo-cool-light": "40vh",
+        "demo-cool-dark": "40vh",
+        "demo-soft-light": "40vh",
+        "demo-soft-dark": "40vh",
+        "demo-warm-light": "40vh",
+        "demo-warm-dark": "40vh",
         "portfolio-light": "40vh",
         "portfolio-dark": "40vh"
       },
@@ -5967,6 +8013,12 @@
       "resolved": {
         "base-light": "90vh",
         "base-dark": "90vh",
+        "demo-cool-light": "90vh",
+        "demo-cool-dark": "90vh",
+        "demo-soft-light": "90vh",
+        "demo-soft-dark": "90vh",
+        "demo-warm-light": "90vh",
+        "demo-warm-dark": "90vh",
         "portfolio-light": "90vh",
         "portfolio-dark": "90vh"
       },
@@ -5985,6 +8037,12 @@
       "resolved": {
         "base-light": "75vh",
         "base-dark": "75vh",
+        "demo-cool-light": "75vh",
+        "demo-cool-dark": "75vh",
+        "demo-soft-light": "75vh",
+        "demo-soft-dark": "75vh",
+        "demo-warm-light": "75vh",
+        "demo-warm-dark": "75vh",
         "portfolio-light": "75vh",
         "portfolio-dark": "75vh"
       },
@@ -6003,6 +8061,12 @@
       "resolved": {
         "base-light": "100vh",
         "base-dark": "100vh",
+        "demo-cool-light": "100vh",
+        "demo-cool-dark": "100vh",
+        "demo-soft-light": "100vh",
+        "demo-soft-dark": "100vh",
+        "demo-warm-light": "100vh",
+        "demo-warm-dark": "100vh",
         "portfolio-light": "100vh",
         "portfolio-dark": "100vh"
       },
@@ -6021,6 +8085,12 @@
       "resolved": {
         "base-light": "2px",
         "base-dark": "2px",
+        "demo-cool-light": "2px",
+        "demo-cool-dark": "2px",
+        "demo-soft-light": "2px",
+        "demo-soft-dark": "2px",
+        "demo-warm-light": "2px",
+        "demo-warm-dark": "2px",
         "portfolio-light": "2px",
         "portfolio-dark": "2px"
       },
@@ -6039,6 +8109,12 @@
       "resolved": {
         "base-light": "96px",
         "base-dark": "96px",
+        "demo-cool-light": "96px",
+        "demo-cool-dark": "96px",
+        "demo-soft-light": "96px",
+        "demo-soft-dark": "96px",
+        "demo-warm-light": "96px",
+        "demo-warm-dark": "96px",
         "portfolio-light": "96px",
         "portfolio-dark": "96px"
       },
@@ -6057,6 +8133,12 @@
       "resolved": {
         "base-light": "64px",
         "base-dark": "64px",
+        "demo-cool-light": "64px",
+        "demo-cool-dark": "64px",
+        "demo-soft-light": "64px",
+        "demo-soft-dark": "64px",
+        "demo-warm-light": "64px",
+        "demo-warm-dark": "64px",
         "portfolio-light": "64px",
         "portfolio-dark": "64px"
       },
@@ -6075,6 +8157,12 @@
       "resolved": {
         "base-light": "96px",
         "base-dark": "96px",
+        "demo-cool-light": "96px",
+        "demo-cool-dark": "96px",
+        "demo-soft-light": "96px",
+        "demo-soft-dark": "96px",
+        "demo-warm-light": "96px",
+        "demo-warm-dark": "96px",
         "portfolio-light": "96px",
         "portfolio-dark": "96px"
       },
@@ -6093,6 +8181,12 @@
       "resolved": {
         "base-light": "14px",
         "base-dark": "14px",
+        "demo-cool-light": "14px",
+        "demo-cool-dark": "14px",
+        "demo-soft-light": "14px",
+        "demo-soft-dark": "14px",
+        "demo-warm-light": "14px",
+        "demo-warm-dark": "14px",
         "portfolio-light": "14px",
         "portfolio-dark": "14px"
       },
@@ -6111,6 +8205,12 @@
       "resolved": {
         "base-light": "600",
         "base-dark": "600",
+        "demo-cool-light": "600",
+        "demo-cool-dark": "600",
+        "demo-soft-light": "600",
+        "demo-soft-dark": "600",
+        "demo-warm-light": "600",
+        "demo-warm-dark": "600",
         "portfolio-light": "600",
         "portfolio-dark": "600"
       },
@@ -6129,6 +8229,12 @@
       "resolved": {
         "base-light": "0.01em",
         "base-dark": "0.01em",
+        "demo-cool-light": "0.01em",
+        "demo-cool-dark": "0.01em",
+        "demo-soft-light": "0.01em",
+        "demo-soft-dark": "0.01em",
+        "demo-warm-light": "0.01em",
+        "demo-warm-dark": "0.01em",
         "portfolio-light": "0.01em",
         "portfolio-dark": "0.01em"
       },
@@ -6147,6 +8253,12 @@
       "resolved": {
         "base-light": "800",
         "base-dark": "800",
+        "demo-cool-light": "800",
+        "demo-cool-dark": "800",
+        "demo-soft-light": "800",
+        "demo-soft-dark": "800",
+        "demo-warm-light": "800",
+        "demo-warm-dark": "800",
         "portfolio-light": "800",
         "portfolio-dark": "800"
       },
@@ -6165,6 +8277,12 @@
       "resolved": {
         "base-light": "20px",
         "base-dark": "20px",
+        "demo-cool-light": "20px",
+        "demo-cool-dark": "20px",
+        "demo-soft-light": "20px",
+        "demo-soft-dark": "20px",
+        "demo-warm-light": "20px",
+        "demo-warm-dark": "20px",
         "portfolio-light": "20px",
         "portfolio-dark": "20px"
       },
@@ -6183,6 +8301,12 @@
       "resolved": {
         "base-light": "800px",
         "base-dark": "800px",
+        "demo-cool-light": "800px",
+        "demo-cool-dark": "800px",
+        "demo-soft-light": "800px",
+        "demo-soft-dark": "800px",
+        "demo-warm-light": "800px",
+        "demo-warm-dark": "800px",
         "portfolio-light": "800px",
         "portfolio-dark": "800px"
       },
@@ -6201,6 +8325,12 @@
       "resolved": {
         "base-light": "60ch",
         "base-dark": "60ch",
+        "demo-cool-light": "60ch",
+        "demo-cool-dark": "60ch",
+        "demo-soft-light": "60ch",
+        "demo-soft-dark": "60ch",
+        "demo-warm-light": "60ch",
+        "demo-warm-dark": "60ch",
         "portfolio-light": "60ch",
         "portfolio-dark": "60ch"
       },
@@ -6219,6 +8349,12 @@
       "resolved": {
         "base-light": "48px",
         "base-dark": "48px",
+        "demo-cool-light": "48px",
+        "demo-cool-dark": "48px",
+        "demo-soft-light": "48px",
+        "demo-soft-dark": "48px",
+        "demo-warm-light": "48px",
+        "demo-warm-dark": "48px",
         "portfolio-light": "48px",
         "portfolio-dark": "48px"
       },
@@ -6237,6 +8373,12 @@
       "resolved": {
         "base-light": "transparent",
         "base-dark": "transparent",
+        "demo-cool-light": "transparent",
+        "demo-cool-dark": "transparent",
+        "demo-soft-light": "transparent",
+        "demo-soft-dark": "transparent",
+        "demo-warm-light": "transparent",
+        "demo-warm-dark": "transparent",
         "portfolio-light": "transparent",
         "portfolio-dark": "transparent"
       },
@@ -6255,6 +8397,12 @@
       "resolved": {
         "base-light": "14px",
         "base-dark": "14px",
+        "demo-cool-light": "14px",
+        "demo-cool-dark": "14px",
+        "demo-soft-light": "14px",
+        "demo-soft-dark": "14px",
+        "demo-warm-light": "14px",
+        "demo-warm-dark": "14px",
         "portfolio-light": "14px",
         "portfolio-dark": "14px"
       },
@@ -6273,6 +8421,12 @@
       "resolved": {
         "base-light": "500",
         "base-dark": "500",
+        "demo-cool-light": "500",
+        "demo-cool-dark": "500",
+        "demo-soft-light": "500",
+        "demo-soft-dark": "500",
+        "demo-warm-light": "500",
+        "demo-warm-dark": "500",
         "portfolio-light": "500",
         "portfolio-dark": "500"
       },
@@ -6291,6 +8445,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -6309,6 +8469,12 @@
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "12px",
+        "demo-soft-dark": "12px",
+        "demo-warm-light": "12px",
+        "demo-warm-dark": "12px",
         "portfolio-light": "12px",
         "portfolio-dark": "12px"
       },
@@ -6327,6 +8493,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -6345,6 +8517,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -6363,6 +8541,12 @@
       "resolved": {
         "base-light": "240px",
         "base-dark": "240px",
+        "demo-cool-light": "240px",
+        "demo-cool-dark": "240px",
+        "demo-soft-light": "240px",
+        "demo-soft-dark": "240px",
+        "demo-warm-light": "240px",
+        "demo-warm-dark": "240px",
         "portfolio-light": "240px",
         "portfolio-dark": "240px"
       },
@@ -6381,6 +8565,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -6399,6 +8589,12 @@
       "resolved": {
         "base-light": "1em",
         "base-dark": "1em",
+        "demo-cool-light": "1em",
+        "demo-cool-dark": "1em",
+        "demo-soft-light": "1em",
+        "demo-soft-dark": "1em",
+        "demo-warm-light": "1em",
+        "demo-warm-dark": "1em",
         "portfolio-light": "1em",
         "portfolio-dark": "1em"
       },
@@ -6417,6 +8613,12 @@
       "resolved": {
         "base-light": "48px",
         "base-dark": "48px",
+        "demo-cool-light": "48px",
+        "demo-cool-dark": "48px",
+        "demo-soft-light": "48px",
+        "demo-soft-dark": "48px",
+        "demo-warm-light": "48px",
+        "demo-warm-dark": "48px",
         "portfolio-light": "48px",
         "portfolio-dark": "48px"
       },
@@ -6435,6 +8637,12 @@
       "resolved": {
         "base-light": "2px",
         "base-dark": "2px",
+        "demo-cool-light": "2px",
+        "demo-cool-dark": "2px",
+        "demo-soft-light": "2px",
+        "demo-soft-dark": "2px",
+        "demo-warm-light": "2px",
+        "demo-warm-dark": "2px",
         "portfolio-light": "2px",
         "portfolio-dark": "2px"
       },
@@ -6453,6 +8661,12 @@
       "resolved": {
         "base-light": "44px",
         "base-dark": "44px",
+        "demo-cool-light": "44px",
+        "demo-cool-dark": "44px",
+        "demo-soft-light": "44px",
+        "demo-soft-dark": "44px",
+        "demo-warm-light": "44px",
+        "demo-warm-dark": "44px",
         "portfolio-light": "44px",
         "portfolio-dark": "44px"
       },
@@ -6471,6 +8685,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -6489,6 +8709,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -6507,6 +8733,12 @@
       "resolved": {
         "base-light": "600",
         "base-dark": "600",
+        "demo-cool-light": "600",
+        "demo-cool-dark": "600",
+        "demo-soft-light": "600",
+        "demo-soft-dark": "600",
+        "demo-warm-light": "600",
+        "demo-warm-dark": "600",
         "portfolio-light": "600",
         "portfolio-dark": "600"
       },
@@ -6525,6 +8757,12 @@
       "resolved": {
         "base-light": "2px",
         "base-dark": "2px",
+        "demo-cool-light": "2px",
+        "demo-cool-dark": "2px",
+        "demo-soft-light": "2px",
+        "demo-soft-dark": "2px",
+        "demo-warm-light": "2px",
+        "demo-warm-dark": "2px",
         "portfolio-light": "2px",
         "portfolio-dark": "2px"
       },
@@ -6543,6 +8781,12 @@
       "resolved": {
         "base-light": "16px",
         "base-dark": "16px",
+        "demo-cool-light": "16px",
+        "demo-cool-dark": "16px",
+        "demo-soft-light": "16px",
+        "demo-soft-dark": "16px",
+        "demo-warm-light": "16px",
+        "demo-warm-dark": "16px",
         "portfolio-light": "16px",
         "portfolio-dark": "16px"
       },
@@ -6561,6 +8805,12 @@
       "resolved": {
         "base-light": "12px",
         "base-dark": "12px",
+        "demo-cool-light": "12px",
+        "demo-cool-dark": "12px",
+        "demo-soft-light": "12px",
+        "demo-soft-dark": "12px",
+        "demo-warm-light": "12px",
+        "demo-warm-dark": "12px",
         "portfolio-light": "12px",
         "portfolio-dark": "12px"
       },
@@ -6579,6 +8829,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -6597,6 +8853,12 @@
       "resolved": {
         "base-light": "500",
         "base-dark": "500",
+        "demo-cool-light": "500",
+        "demo-cool-dark": "500",
+        "demo-soft-light": "500",
+        "demo-soft-dark": "500",
+        "demo-warm-light": "500",
+        "demo-warm-dark": "500",
         "portfolio-light": "500",
         "portfolio-dark": "500"
       },
@@ -6615,6 +8877,12 @@
       "resolved": {
         "base-light": "transparent",
         "base-dark": "transparent",
+        "demo-cool-light": "transparent",
+        "demo-cool-dark": "transparent",
+        "demo-soft-light": "transparent",
+        "demo-soft-dark": "transparent",
+        "demo-warm-light": "transparent",
+        "demo-warm-dark": "transparent",
         "portfolio-light": "transparent",
         "portfolio-dark": "transparent"
       },
@@ -6633,6 +8901,12 @@
       "resolved": {
         "base-light": "380px",
         "base-dark": "380px",
+        "demo-cool-light": "380px",
+        "demo-cool-dark": "380px",
+        "demo-soft-light": "380px",
+        "demo-soft-dark": "380px",
+        "demo-warm-light": "380px",
+        "demo-warm-dark": "380px",
         "portfolio-light": "380px",
         "portfolio-dark": "380px"
       },
@@ -6651,6 +8925,12 @@
       "resolved": {
         "base-light": "600",
         "base-dark": "600",
+        "demo-cool-light": "600",
+        "demo-cool-dark": "600",
+        "demo-soft-light": "600",
+        "demo-soft-dark": "600",
+        "demo-warm-light": "600",
+        "demo-warm-dark": "600",
         "portfolio-light": "600",
         "portfolio-dark": "600"
       },
@@ -6669,6 +8949,12 @@
       "resolved": {
         "base-light": "14px",
         "base-dark": "14px",
+        "demo-cool-light": "14px",
+        "demo-cool-dark": "14px",
+        "demo-soft-light": "14px",
+        "demo-soft-dark": "14px",
+        "demo-warm-light": "14px",
+        "demo-warm-dark": "14px",
         "portfolio-light": "14px",
         "portfolio-dark": "14px"
       },
@@ -6687,6 +8973,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -6705,6 +8997,12 @@
       "resolved": {
         "base-light": "24px",
         "base-dark": "24px",
+        "demo-cool-light": "24px",
+        "demo-cool-dark": "24px",
+        "demo-soft-light": "24px",
+        "demo-soft-dark": "24px",
+        "demo-warm-light": "24px",
+        "demo-warm-dark": "24px",
         "portfolio-light": "24px",
         "portfolio-dark": "24px"
       },
@@ -6723,6 +9021,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -6741,6 +9045,12 @@
       "resolved": {
         "base-light": "500",
         "base-dark": "500",
+        "demo-cool-light": "500",
+        "demo-cool-dark": "500",
+        "demo-soft-light": "500",
+        "demo-soft-dark": "500",
+        "demo-warm-light": "500",
+        "demo-warm-dark": "500",
         "portfolio-light": "500",
         "portfolio-dark": "500"
       },
@@ -6759,6 +9069,12 @@
       "resolved": {
         "base-light": "4px",
         "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
         "portfolio-light": "4px",
         "portfolio-dark": "4px"
       },
@@ -6777,6 +9093,12 @@
       "resolved": {
         "base-light": "260px",
         "base-dark": "260px",
+        "demo-cool-light": "260px",
+        "demo-cool-dark": "260px",
+        "demo-soft-light": "260px",
+        "demo-soft-dark": "260px",
+        "demo-warm-light": "260px",
+        "demo-warm-dark": "260px",
         "portfolio-light": "260px",
         "portfolio-dark": "260px"
       },
@@ -6795,6 +9117,12 @@
       "resolved": {
         "base-light": "8px",
         "base-dark": "8px",
+        "demo-cool-light": "8px",
+        "demo-cool-dark": "8px",
+        "demo-soft-light": "8px",
+        "demo-soft-dark": "8px",
+        "demo-warm-light": "8px",
+        "demo-warm-dark": "8px",
         "portfolio-light": "8px",
         "portfolio-dark": "8px"
       },
@@ -6813,6 +9141,12 @@
       "resolved": {
         "base-light": "400",
         "base-dark": "400",
+        "demo-cool-light": "400",
+        "demo-cool-dark": "400",
+        "demo-soft-light": "400",
+        "demo-soft-dark": "400",
+        "demo-warm-light": "400",
+        "demo-warm-dark": "400",
         "portfolio-light": "400",
         "portfolio-dark": "400"
       },
@@ -6829,6 +9163,12 @@
       "resolved": {
         "base-light": "6",
         "base-dark": "6",
+        "demo-cool-light": "6",
+        "demo-cool-dark": "6",
+        "demo-soft-light": "6",
+        "demo-soft-dark": "6",
+        "demo-warm-light": "6",
+        "demo-warm-dark": "6",
         "portfolio-light": "6",
         "portfolio-dark": "6"
       },

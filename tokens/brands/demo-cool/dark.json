@@ -1,0 +1,79 @@
+{
+  "color-neutral-50": {
+    "$value": "#111916",
+    "$type": "color"
+  },
+  "color-neutral-100": {
+    "$value": "#1F2925",
+    "$type": "color"
+  },
+  "color-neutral-200": {
+    "$value": "#37433E",
+    "$type": "color"
+  },
+  "color-neutral-300": {
+    "$value": "#485650",
+    "$type": "color"
+  },
+  "color-neutral-400": {
+    "$value": "#687771",
+    "$type": "color"
+  },
+  "color-neutral-500": {
+    "$value": "#9AA6A1",
+    "$type": "color"
+  },
+  "color-neutral-600": {
+    "$value": "#CDD7D3",
+    "$type": "color"
+  },
+  "color-neutral-700": {
+    "$value": "#DFE7E4",
+    "$type": "color"
+  },
+  "color-neutral-800": {
+    "$value": "#F1F7F4",
+    "$type": "color"
+  },
+  "color-neutral-900": {
+    "$value": "#F8FBFA",
+    "$type": "color"
+  },
+  "color-text-primary": {
+    "$value": "{color-neutral-900}",
+    "$type": "color",
+    "$description": "Re-declared: the light file's tinted ink also loads in dark mode, so dark takes the light end of the ramp back."
+  },
+  "color-border-focus": {
+    "$value": "{color-neutral-900}",
+    "$type": "color"
+  },
+  "color-accent-default": {
+    "$value": "#5BC99E",
+    "$type": "color"
+  },
+  "color-accent-hover": {
+    "$value": "#69D6AA",
+    "$type": "color"
+  },
+  "color-accent-pressed": {
+    "$value": "#80E2B9",
+    "$type": "color"
+  },
+  "color-accent-foreground": {
+    "$value": "#0A110F",
+    "$type": "color"
+  },
+  "button-secondary-foreground": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "button-secondary-border": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  },
+  "button-secondary-background-hover": {
+    "$value": "{color-accent-default}",
+    "$type": "color"
+  }
+}
