@@ -2,7 +2,8 @@
  * portfolio-scoped.css must give a [data-brand="portfolio"] panel exactly what
  * portfolio-light.css + portfolio-dark.css give a whole page, for every token,
  * in every mode arrangement a page can put a panel in — while the rest of the
- * page stays base. Runs in Chromium so the real cascade decides, not a reading
+ * page stays base. And base-scoped.css must give a [data-brand="base"] panel
+ * exactly base, on a page that wears another brand. Runs in Chromium so the real cascade decides, not a reading
  * of the selectors (decisions/0001, 2026-10-01 amendment).
  */
 
@@ -10,6 +11,8 @@ import { afterEach, describe, expect, it } from 'vitest'
 
 import baseDark from '../styles/brands/base-dark.css?raw'
 import baseLight from '../styles/brands/base-light.css?raw'
+import baseScoped from '../styles/brands/base-scoped.css?raw'
+import demoCoolScoped from '../styles/brands/demo-cool-scoped.css?raw'
 import portfolioDark from '../styles/brands/portfolio-dark.css?raw'
 import portfolioLight from '../styles/brands/portfolio-light.css?raw'
 import portfolioScoped from '../styles/brands/portfolio-scoped.css?raw'
@@ -105,5 +108,55 @@ describe('portfolio-scoped.css', () => {
         expect(valuesOf('#nested-back')).toEqual(expected.portfolio[page])
       })
     })
+  }
+})
+
+// The other way round: a page that wears a brand, with a panel that goes back
+// to base (decisions/0023). Once as a whole page in portfolio's unscoped
+// files, once inside a demo-cool scope, which is how a docs site wears a brand.
+describe('base-scoped.css', () => {
+  const layouts = {
+    'a page in portfolio': { css: [...BASE, portfolioLight, portfolioDark, baseScoped], open: '', close: '' },
+    'a page scoped to demo-cool': {
+      css: [...BASE, demoCoolScoped, baseScoped],
+      open: '<div data-brand="demo-cool">',
+      close: '</div>',
+    },
+  }
+
+  for (const [name, layout] of Object.entries(layouts)) {
+    for (const page of ['light', 'dark'] as const) {
+      describe(`on ${name}, ${page}`, () => {
+        const scoped = () =>
+          load(
+            layout.css,
+            page,
+            `${layout.open}
+             <div id="panel" data-brand="base">
+               <div id="nested" data-mode="${opposite(page)}">
+                 <div id="nested-back" data-mode="${page}"></div>
+               </div>
+             </div>
+             <div id="panel-own-mode" data-brand="base" data-mode="${opposite(page)}"></div>
+             ${layout.close}`,
+          )
+
+        it('gives a panel the page’s mode in base', () => {
+          scoped()
+          expect(valuesOf('#panel')).toEqual(expected.base[page])
+        })
+
+        it('lets a panel’s own data-mode win over the page’s', () => {
+          scoped()
+          expect(valuesOf('#panel-own-mode')).toEqual(expected.base[opposite(page)])
+        })
+
+        it('follows a mode switch nested inside a panel, and back', () => {
+          scoped()
+          expect(valuesOf('#nested')).toEqual(expected.base[opposite(page)])
+          expect(valuesOf('#nested-back')).toEqual(expected.base[page])
+        })
+      })
+    }
   }
 })
