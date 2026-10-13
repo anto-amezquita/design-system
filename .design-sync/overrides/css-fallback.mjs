@@ -1,4 +1,4 @@
-// forked from design-sync lib/css-fallback.mjs - scrapeRemoteImports returns [] here: the only remote stylesheet in iframe.html is .storybook/preview-head.html's Google Fonts link (DM Sans, DM Serif Display, Inter, JetBrains Mono 400/500) - Storybook chrome, not DS fonts. The DS's fonts (Schibsted Grotesk, JetBrains Mono) are self-hosted via cfg.extraFonts.
+// forked from design-sync lib/css-fallback.mjs - scrapeRemoteImports returns [] here: the only remote stylesheets in iframe.html are the brands' Google Fonts links that .storybook/main.ts adds from tokens/fonts.json. Designs get the same fonts self-hosted via cfg.extraFonts, so importing the remote links too would duplicate them and depend on the network.
 // Storybook-only CSS fallbacks - storybook-static's iframe.html is the source
 // for both the compiled-stylesheet fallback (when _ds_bundle.css is a
 // bundler-resolve-only stub) and remote webfont <link> scraping.

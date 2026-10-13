@@ -30,10 +30,10 @@ Read this before every re-sync.
   decorates every story with). The provider chain only shapes the cards;
   designs default to base. `.design-sync/conventions.md` says so explicitly,
   because the generated README prints the chain as if it were required.
-- [GENERAL] Fonts: `.storybook/storybook.css` sets `Schibsted Grotesk`, but
-  `.storybook/preview-head.html` never loads it. It loads DM Sans, DM Serif
-  Display, Inter and JetBrains Mono, so the repo's own Storybook renders a
-  fallback sans-serif. The sync self-hosts Schibsted Grotesk and JetBrains Mono
+- [GENERAL] Fonts: since 2026-10-14 `.storybook/main.ts` adds every brand's
+  Google Fonts link from `tokens/fonts.json` to the preview head (it replaced
+  `preview-head.html`, which loaded DM Sans, DM Serif Display, Inter and
+  JetBrains Mono and never Schibsted Grotesk). The sync still self-hosts Schibsted Grotesk and JetBrains Mono
   (Google Fonts, OFL, latin + latin-ext, variable) in `.design-sync/fonts/`,
   shipped through `cfg.extraFonts`. To fetch them again, request the Google
   Fonts css2 API with a Chrome user agent and keep the latin/latin-ext blocks.
@@ -49,9 +49,10 @@ Read this before every re-sync.
   compare oracle renders the real typeface. After EVERY reference rebuild:
   `npx storybook build -c .storybook -o .design-sync/sb-reference && node .design-sync/patch-reference.mjs`.
 - [GENERAL] Fork `overrides/css-fallback.mjs`: `scrapeRemoteImports` returns
-  `[]`. Without it, the Google Fonts `<link>` from preview-head (Storybook
-  chrome, unused DS families) would be `@import`ed into `styles.css` for every
-  design.
+  `[]`. Without it, the Google Fonts `<link>`s Storybook's preview head
+  carries (the brands' fonts, from `tokens/fonts.json`) would be `@import`ed
+  into `styles.css` for every design, on top of the self-hosted copies and
+  depending on the network.
 - [GENERAL] Playwright: `.ds-sync` pins `playwright@1.62.1` to match the repo's
   own pin and the cached `chromium-1234`. The latest version wants a browser
   that isn't installed here.
@@ -145,8 +146,9 @@ Read this before every re-sync.
 - **Reference patch**: `sb-reference` must be patched with
   `patch-reference.mjs` after every rebuild, or the oracle falls back to a
   default font. A green compare against an unpatched reference means nothing.
-  If `.storybook/preview-head.html` starts loading Schibsted Grotesk itself,
-  the patch and the `css-fallback` fork can both go.
+  Storybook now loads Schibsted Grotesk itself (from Google, 2026-10-14), but
+  the patch stays: it makes the oracle use the same self-hosted files the
+  bundle ships, with no network.
 - **Fonts are a snapshot** of Google Fonts: Schibsted Grotesk 400–900 and
   JetBrains Mono 100–800 as of 2026-10-09, the seven demo-brand families as of
   2026-10-13 (all variable, latin + latin-ext). If `tokens/fonts.json` gains
