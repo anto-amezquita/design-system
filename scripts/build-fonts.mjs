@@ -11,7 +11,7 @@
  * theme axis, rather than resolving the token files a second way:
  *   - families: each `font-family-*` token's first family, when it's a named
  *     web font rather than a system stack. Base's text stacks are system fonts,
- *     so base needs only its mono font; portfolio is a skin on base, so it
+ *     so base needs only its mono font; a brand is a skin on base, so it
  *     needs its own font plus base's mono.
  *   - weights: every value the brand's font-weight tokens (semantic and
  *     component) resolve to. Both families are variable fonts on Google Fonts,
@@ -29,13 +29,14 @@
 
 import { readFileSync, writeFileSync } from 'fs'
 import { fileURLToPath } from 'url'
+import { listBrands } from './brands.mjs'
 
 // Families this system loads from Google Fonts. Adding a font to a brand means
 // adding it here, which is the moment to check Google Fonts actually has it.
 const GOOGLE_FONTS = new Set(['JetBrains Mono', 'Schibsted Grotesk'])
 
 // The light axis of each brand. Fonts don't change with the mode.
-const BRANDS = { base: 'base-light', portfolio: 'portfolio-light' }
+const BRANDS = Object.fromEntries([['base', 'base-light'], ...listBrands().map(b => [b, `${b}-light`])])
 
 const PRECONNECT = ['https://fonts.googleapis.com', 'https://fonts.gstatic.com']
 

@@ -5,7 +5,7 @@
  * This is the enforcement half: a component token must be either
  *   - literal (no {reference}), or
  *   - a reference that resolves DIFFERENTLY from its referent in at least
- *     one theme mode (base-light / base-dark / portfolio-light / portfolio-dark)
+ *     one theme mode (base-light / base-dark / <brand>-light / <brand>-dark)
  * Anything else — an alias that resolves identically everywhere — is a
  * rename with extra steps and fails the lint.
  *
@@ -45,6 +45,8 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { makeResolver } from '../lib/resolve-token.mjs'
+import { loadBrands } from './brands.mjs'
+
 
 const IGNORE_KEY = 'amezquita.lint-ignore'
 const RULE_ID = 'no-collapsible-token'
@@ -88,8 +90,7 @@ function runLinter() {
   const globalTokens = loadJson('tokens/global.json')
   const baseLightTokens = loadJson('tokens/brands/base/light.json')
   const baseDarkOverrides = loadJson('tokens/brands/base/dark.json')
-  const portfolioLightOverrides = loadJson('tokens/brands/portfolio/tokens.json')
-  const portfolioDarkOverrides = loadJson('tokens/brands/portfolio/dark.json')
+  const brands = loadBrands()
 
   // { fileName: { tokenName: tokenDef } } — kept per-file so violations can
   // be reported against the file the token actually lives in.
@@ -103,12 +104,14 @@ function runLinter() {
   }
 
   // Same axis construction as build-token-reference.mjs — cascade order
-  // matters (portfolio overrides win over base for shared token names).
+  // matters (a brand's overrides win over base for shared token names).
   const AXES = {
     'base-light':      { ...baseLightTokens, ...componentTokens },
     'base-dark':       { ...baseLightTokens, ...componentTokens, ...baseDarkOverrides },
-    'portfolio-light': { ...baseLightTokens, ...componentTokens, ...portfolioLightOverrides },
-    'portfolio-dark':  { ...baseLightTokens, ...componentTokens, ...baseDarkOverrides, ...portfolioLightOverrides, ...portfolioDarkOverrides },
+    ...Object.fromEntries(brands.flatMap(b => [
+      [`${b.name}-light`, { ...baseLightTokens, ...componentTokens, ...b.light }],
+      [`${b.name}-dark`,  { ...baseLightTokens, ...componentTokens, ...baseDarkOverrides, ...b.light, ...b.dark }],
+    ])),
   }
   const AXIS_NAMES = Object.keys(AXES)
   const resolvers = Object.fromEntries(

@@ -3,17 +3,22 @@
  * pairs defined in tokens/contrast-pairs.json (semantic brand tokens and
  * component tokens from tokens/components/*.json alike).
  *
- * Checks four theme layers independently:
- *   base-light      — components + tokens/brands/base/light.json
- *   base-dark       — base-light + tokens/brands/base/dark.json overrides
- *   portfolio-light — base-light + tokens/brands/portfolio/tokens.json overrides
- *   portfolio-dark  — base-light + base-dark + portfolio-light + tokens/brands/portfolio/dark.json overrides
+ * Checks every theme layer independently:
+ *   base-light     — components + tokens/brands/base/light.json
+ *   base-dark      — base-light + tokens/brands/base/dark.json overrides
+ *   <brand>-light  — base-light + tokens/brands/<brand>/tokens.json overrides
+ *   <brand>-dark   — base-light + base-dark + <brand>-light + tokens/brands/<brand>/dark.json overrides
+ * for every brand in tokens/brands (scripts/brands.mjs).
+ *
+ * Both sides of a pair have to resolve to hex. A value in any other format is
+ * skipped, so brand colours are written as hex.
  *
  * Exit codes: 0 = all pairs pass, 1 = one or more failures.
  * On failure, writes contrast-failures.json for downstream processing.
  */
 
 import { readFileSync, writeFileSync, readdirSync } from 'fs'
+import { loadBrands } from './brands.mjs'
 
 // WCAG 2.1 relative luminance and contrast ratio formulae
 function toLinear(c) {
@@ -93,17 +98,18 @@ const globalTokens = loadJson('tokens/global.json')
 const componentTokens = loadComponentTokens()
 const baseLight = loadJson('tokens/brands/base/light.json')
 const baseDark = loadJson('tokens/brands/base/dark.json')
-const portfolioLight = loadJson('tokens/brands/portfolio/tokens.json')
-const portfolioDark = loadJson('tokens/brands/portfolio/dark.json')
+const brands = loadBrands()
 const pairs = loadJson('tokens/contrast-pairs.json')
 
 const modes = {
   'base-light': { ...componentTokens, ...baseLight },
   'base-dark': { ...componentTokens, ...baseLight, ...baseDark },
-  'portfolio-light': { ...componentTokens, ...baseLight, ...portfolioLight },
-  // The combined layer state — portfolio wins the cascade over base (loads
-  // last), so its overrides must also pass on top of base-dark.
-  'portfolio-dark': { ...componentTokens, ...baseLight, ...baseDark, ...portfolioLight, ...portfolioDark },
+  // A brand wins the cascade over base (it loads last), so its dark overrides
+  // must also pass on top of base-dark and its own light layer.
+  ...Object.fromEntries(brands.flatMap(b => [
+    [`${b.name}-light`, { ...componentTokens, ...baseLight, ...b.light }],
+    [`${b.name}-dark`, { ...componentTokens, ...baseLight, ...baseDark, ...b.light, ...b.dark }],
+  ])),
 }
 
 const failures = []
@@ -144,7 +150,7 @@ const modeCount  = Object.keys(modes).length
 
 if (failures.length === 0) {
   console.log(
-    `✓ Contrast check passed — ${totalPairs} pairs checked across ${modeCount} modes (base-light, base-dark, portfolio-light, portfolio-dark)`
+    `✓ Contrast check passed — ${totalPairs} pairs checked across ${modeCount} modes (${Object.keys(modes).join(', ')})`
   )
   process.exit(0)
 }
