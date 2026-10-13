@@ -52,9 +52,27 @@ Also accepts all props of: `Omit<React.HTMLAttributes<HTMLElement>, 'onClick' | 
 
 † resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
 
+## Best practices
+
+### Do
+
+- Use one `primary` Button per view, for the action most people came to do.
+- Name the action with a verb: "Save changes", "Send invite".
+- Use `href` for anything that goes somewhere, and a plain Button for anything that acts on the page.
+- Use `loading` while an action runs, instead of disabling the Button and changing its label.
+- Give an icon-only Button an `aria-label`.
+
+### Don't
+
+- Don't put two `primary` Buttons side by side; make one of them `secondary`.
+- Don't use a Button for a link inside running text; that's what `Link` is for.
+- Don't disable a Button without saying nearby why. A disabled Button can't explain itself.
+- Don't turn on `arrow` for an action that stays on the page; the arrow promises a destination.
+- Don't make `motion="expressive"` the default in a shared wrapper unless the brand calls for it (ADR 0016).
+
 ## Accessibility
 
 - Semantic element: `<button>` by default; `<a>` when `href` is passed
-- When rendered as `<a>`: no `disabled` attribute — use visual suppression only if truly needed
+- When rendered as `<a>`: there's no native `disabled`, so `disabled` sets `aria-disabled`, drops the `href` and removes it from the tab order
 - ARIA: use `aria-label` for icon-only buttons; `disabled` on `<button>` removes it from tab order
 - Keyboard: `Enter` + `Space` activate `<button>`; `Enter` follows `<a>`

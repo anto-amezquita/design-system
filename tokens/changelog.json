@@ -704,7 +704,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "c0eaeba",
+      "type": "docs",
+      "scope": "button",
+      "message": "describe every Button prop",
+      "date": "2026-10-13",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
