@@ -36,7 +36,7 @@ lib/, hooks/       — shared utilities and hooks (e.g. useUncontrolledValue,
                      for the NavItem type NavigationMenu and SideNav share)
 tokens/
   global.json           — Tier 1: primitives
-  brands/<name>/*.json  — Tier 2: semantic, per brand (base, portfolio) and mode (light/dark)
+  brands/<name>/*.json  — Tier 2: semantic, per brand (base, portfolio, demo-*) and mode (light/dark)
   components/<name>.json — Tier 3: component-scoped tokens
   component-registry.json, token-reference.json, fonts.json, changelog.json — generated, do not hand-edit
 styles/brands/     — compiled CSS output (generated)
@@ -90,7 +90,7 @@ Three tiers, strictly layered — no skipping:
 
 ## 4. Multi-brand / theming
 
-Two brands today, each with light + dark: `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)) and `portfolio` (thin override skin on top of `base`). `sd.config.mjs` outputs five CSS files: `base-light.css`, `base-dark.css`, `portfolio-light.css`, `portfolio-dark.css`, and `portfolio-scoped.css`, the same portfolio overrides scoped to `[data-brand="portfolio"]` instead of `:root`, so one page can show both brands (0001's 2026-10-01 amendment). The `ThemeScope` component sets that attribute, and `data-mode`, on a part of a page, and the overlays that portal to `<body>` carry the same two attributes, so they match the part they were opened from (ADR [`0021`](../decisions/0021-theme-scope.md)). A third brand with a scoped file also needs adding to `ThemeScope`'s `brand` type, which isn't generated. A third brand would follow the same shape as `portfolio` — a thin skin, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
+Every folder in `tokens/brands/` is a brand, each with light (`tokens.json`, or `light.json` for base) + dark (`dark.json`): `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)), `portfolio` (the portfolio site's skin), and `demo-cool`, `demo-warm` and `demo-soft` (demo skins for the docs site's hero, ADR [`0023`](../decisions/0023-demo-brands-and-n-brand-build.md)). Every brand but base is a thin override skin on `base`. `scripts/brands.mjs` lists them, and `sd.config.mjs` outputs `base-light.css` and `base-dark.css` plus three files per brand: `<brand>-light.css`, `<brand>-dark.css`, and `<brand>-scoped.css`, the same overrides scoped to `[data-brand="<brand>"]` instead of `:root`, so one page can show several brands (0001's 2026-10-01 amendment). The `ThemeScope` component sets that attribute, and `data-mode`, on a part of a page, and the overlays that portal to `<body>` carry the same two attributes, so they match the part they were opened from (ADR [`0021`](../decisions/0021-theme-scope.md)). Its `brand` type is generated from the `*-scoped.css` files into `lib/theme-brands.ts`. A new brand follows the same shape — a thin skin, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
 
 ## 5. Code conventions
 

@@ -27,8 +27,8 @@ npm run validate = tokens:lint && tokens:lint-architecture && tokens:contrast &&
 | Step | What it checks | Script |
 |---|---|---|
 | `tokens:lint` | 10 rules against component CSS (below) | `scripts/lint-tokens.mjs` |
-| `tokens:lint-architecture` | Component tokens that are pass-throughs or chain-skips to their referent in all 4 modes | `scripts/lint-token-architecture.mjs` |
-| `tokens:contrast` | Color contrast across all 4 brand/mode combinations | `scripts/check-contrast.mjs` |
+| `tokens:lint-architecture` | Component tokens that are pass-throughs or chain-skips to their referent in every brand/mode | `scripts/lint-token-architecture.mjs` |
+| `tokens:contrast` | Color contrast across every brand/mode combination (10 today: base, portfolio and the three demo brands, light and dark) | `scripts/check-contrast.mjs` |
 | `check-components-doc.mjs` | Every component in `tokens/component-registry.json` has a `docs/components.md` entry, and its Storybook path matches the `title` in the component's story file | — |
 | `check-stories.mjs` | Every public component has a Storybook story | — |
 | `check-client-directives.mjs` | Every component that uses client-only React (state and effect hooks, context, Radix, inline event handlers) starts with `'use client'`, so a Next.js App Router consumer can render it from a Server Component. Tests and Storybook run in a browser and can't see this | — |
@@ -68,7 +68,7 @@ Enforced, not just reviewed:
 
 - Tokens used instead of arbitrary values — enforced by `tokens:lint` (§2), not a review step.
 - Every push runs Chromatic; a PR with unreviewed visual changes doesn't merge clean.
-- Cross-brand/mode consistency: currently `portfolio-light`/`portfolio-dark` have story-level Chromatic coverage; `base-light`/`base-dark` do not yet (same gap `bold` had before it was removed — noted in `docs/backlog.md`'s token-architecture backlog). Don't claim 4-mode visual coverage until this is closed.
+- Cross-brand/mode consistency: currently `portfolio-light`/`portfolio-dark` have story-level Chromatic coverage; `base-light`/`base-dark` do not yet (same gap `bold` had before it was removed — noted in `docs/backlog.md`'s token-architecture backlog). The demo brands (ADR 0023) have no story-level coverage either. Don't claim every-mode visual coverage until these are closed.
 
 ## 5. Technical quality
 
