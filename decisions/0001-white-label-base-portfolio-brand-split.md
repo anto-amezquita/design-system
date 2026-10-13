@@ -55,6 +55,6 @@ The panel has to follow the page's mode, its own `data-mode` and a mode switch n
 
 - **The selectors next to `:root`, as first decided.** Rejected once built, for the reason above.
 - **Scope only: drop `:root` from the portfolio files.** Cleaner, one file per mode, but every portfolio consumer would have to add `data-brand="portfolio"` to `<html>`. Breaking, so a major. Still the better long-term shape; the scoped file is what a later major could fold into the existing ones.
-- **A `[data-brand="base"]` scope in the base files, so a page could switch back to base inside a portfolio page.** Rejected: it needs the same mode handling in reverse, and nobody needs base inside portfolio.
+- **A `[data-brand="base"]` scope in the base files, so a page could switch back to base inside a portfolio page.** Rejected: it needs the same mode handling in reverse, and nobody needs base inside portfolio. (Reversed 2026-10-13: the docs site wears a brand on every page and needs `base` back for one panel. `base-scoped.css` declares every token and gets the same mode handling as the brands' scoped files; see [`0023`](0023-demo-brands-and-n-brand-build.md)'s 2026-10-13 amendment.)
 
 **Consequences:** five CSS files instead of four, and a rule consumers have to know: `portfolio-scoped.css` *or* `portfolio-light.css` + `portfolio-dark.css`, never both. The README says so. The scoped file covers one level of brand: a base region nested inside a portfolio panel isn't supported.
