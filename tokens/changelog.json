@@ -706,7 +706,15 @@
   ],
   "unreleased": [
     {
-      "sha": "d60c0df",
+      "sha": "19d365c",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "demo-warm and demo-soft brands; color-accent-text",
+      "date": "2026-10-13",
+      "breaking": false
+    },
+    {
+      "sha": "55d1681",
       "type": "feat",
       "scope": "tokens",
       "message": "demo-cool brand, heading font axes, Button radius token",
@@ -714,7 +722,7 @@
       "breaking": false
     },
     {
-      "sha": "755e86a",
+      "sha": "60c4bae",
       "type": "refactor",
       "scope": "tokens",
       "message": "build any number of brand skins, not just portfolio",
