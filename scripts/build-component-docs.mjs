@@ -10,7 +10,8 @@
  *   - components/{tier}/{name}/{name}.tsx        → props, parsed from the type alias
  *   - tokens/components/<file>.json + token-reference.json → token list + resolved values
  *   - components/{tier}/{name}/{name}.stories.tsx → usage example, from the Default story
- *   - docs/components.md              → Accessibility bullets, where present
+ *   - docs/components.md              → Accessibility bullets, and Do / Don't bullets
+ *                                        (Best practices), where present
  *
  * Components flagged `internal` in the registry get no twin (no twin for BaseSheet) —
  * same rule Task 1.1 applies to llms.txt/llms-full.txt.
@@ -618,15 +619,20 @@ function resolveComponentTokenFile(name) {
 
 // ── Accessibility, from docs/components.md ─────────────────────────
 
-function parseAccessibilitySections() {
+// One bold-labelled bullet block per component entry (`**Accessibility**`,
+// `**Do**`, `**Don't**`), keyed by component name. The block ends at the next
+// bold label or the entry's `---`, so the order of blocks in an entry doesn't
+// matter.
+function parseBulletBlocks(label) {
   const md = readFileSync('docs/components.md', 'utf8')
   const withoutFences = md.replace(/```[\s\S]*?```/g, '')
   const parts = withoutFences.split(/^### /m).slice(1)
+  const pattern = new RegExp(`\\*\\*${label}\\*\\*\\n([\\s\\S]*?)(?:\\n\\*\\*|\\n---|$)`)
   const map = new Map()
   for (const part of parts) {
     const name = part.split('\n')[0].trim()
     if (!name) continue
-    const m = part.match(/\*\*Accessibility\*\*\n([\s\S]*?)(?:\n\*\*|\n---|$)/)
+    const m = part.match(pattern)
     if (!m) continue
     const bullets = m[1].split('\n').map(l => l.trim()).filter(l => l.startsWith('-'))
     if (bullets.length > 0) map.set(name, bullets)
@@ -634,10 +640,26 @@ function parseAccessibilitySections() {
   return map
 }
 
+function parseAccessibilitySections() {
+  return parseBulletBlocks('Accessibility')
+}
+
+// Do / Don't, rendered together as one Best practices section. A component
+// with only one of the two still gets the half it has.
+function parseBestPracticeSections() {
+  const dos = parseBulletBlocks('Do')
+  const donts = parseBulletBlocks("Don't")
+  const map = new Map()
+  for (const name of new Set([...dos.keys(), ...donts.keys()])) {
+    map.set(name, { dos: dos.get(name) ?? [], donts: donts.get(name) ?? [] })
+  }
+  return map
+}
+
 // ── Assembling one component's .md twin ────────────────────────────
 
 function buildComponentMd(component, ctx) {
-  const { pkg, tokenByName, a11ySections, componentsBySlug } = ctx
+  const { pkg, tokenByName, a11ySections, bestPracticeSections, componentsBySlug } = ctx
   const { name, tier, purpose, storybookPath, parent } = component
 
   // A sub-component (CardHeader) lives inside its parent's file and directory
@@ -732,6 +754,13 @@ function buildComponentMd(component, ctx) {
     }
   }
 
+  const practices = bestPracticeSections.get(name)
+  if (practices) {
+    lines.push('', '## Best practices')
+    if (practices.dos.length > 0) lines.push('', '### Do', '', ...practices.dos)
+    if (practices.donts.length > 0) lines.push('', "### Don't", '', ...practices.donts)
+  }
+
   const a11y = a11ySections.get(name)
   if (a11y && a11y.length > 0) {
     lines.push('', '## Accessibility', '', ...a11y)
@@ -748,6 +777,7 @@ export function buildComponentDocs() {
   const tokenReference = loadJson('tokens/token-reference.json')
   const tokenByName = new Map(tokenReference.tokens.map(t => [t.name, t]))
   const a11ySections = parseAccessibilitySections()
+  const bestPracticeSections = parseBestPracticeSections()
   const componentsBySlug = new Map(registry.components.map(c => [c.slug, c]))
 
   if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true })
@@ -756,7 +786,7 @@ export function buildComponentDocs() {
   let written = 0
   for (const component of registry.components) {
     if (component.internal) continue
-    const md = buildComponentMd(component, { pkg, tokenByName, a11ySections, componentsBySlug })
+    const md = buildComponentMd(component, { pkg, tokenByName, a11ySections, bestPracticeSections, componentsBySlug })
     const fileName = `${component.slug}.md`
     writeFileSync(join(OUTPUT_DIR, fileName), md)
     expectedFiles.add(fileName)

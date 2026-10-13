@@ -94,6 +94,11 @@
     "$type": "color",
     "$description": "Hover state of color-accent-default."
   },
+  "color-accent-pressed": {
+    "$value": "{color.black}",
+    "$type": "color",
+    "$description": "Pressed state of color-accent-default, one step past hover: while a Button is held down."
+  },
   "color-accent-foreground": {
     "$value": "{color.white}",
     "$type": "color",

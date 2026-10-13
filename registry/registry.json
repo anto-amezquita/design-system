@@ -8,7 +8,7 @@
       "name": "theme",
       "type": "registry:theme",
       "title": "Design tokens",
-      "description": "137 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
+      "description": "138 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
       "cssVars": {
         "light": {
           "color-neutral-50": "#FAFAFA",
@@ -30,6 +30,7 @@
           "color-text-inverse": "#FAFAFA",
           "color-accent-default": "#262626",
           "color-accent-hover": "#171717",
+          "color-accent-pressed": "#0A0A0A",
           "color-accent-foreground": "#FFFFFF",
           "color-border-default": "#E5E5E5",
           "color-border-strong": "#A3A3A3",
@@ -169,6 +170,7 @@
           "color-text-inverse": "#171717",
           "color-accent-default": "#F5F5F5",
           "color-accent-hover": "#FAFAFA",
+          "color-accent-pressed": "#FFFFFF",
           "color-accent-foreground": "#171717",
           "color-border-default": "#404040",
           "color-border-strong": "#737373",

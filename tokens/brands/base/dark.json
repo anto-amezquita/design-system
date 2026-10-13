@@ -75,6 +75,10 @@
     "$value": "{color-neutral-900}",
     "$type": "color"
   },
+  "color-accent-pressed": {
+    "$value": "{color.white}",
+    "$type": "color"
+  },
   "color-accent-foreground": {
     "$value": "{color-neutral-50}",
     "$type": "color"
