@@ -3,7 +3,7 @@
   "name": "theme",
   "type": "registry:theme",
   "title": "Design tokens",
-  "description": "138 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
+  "description": "139 resolved semantic tokens (color, spacing, typography, motion, and more) every component in this registry depends on for theming.",
   "cssVars": {
     "light": {
       "color-neutral-50": "#FAFAFA",
@@ -102,6 +102,7 @@
       "line-height-heading": "1.25",
       "line-height-label": "16px",
       "letter-spacing-heading": "-0.02em",
+      "font-variation-heading": "normal",
       "letter-spacing-subheading": "-0.01em",
       "letter-spacing-body": "0",
       "letter-spacing-label": "0.01em",
@@ -242,6 +243,7 @@
       "line-height-heading": "1.25",
       "line-height-label": "16px",
       "letter-spacing-heading": "-0.02em",
+      "font-variation-heading": "normal",
       "letter-spacing-subheading": "-0.01em",
       "letter-spacing-body": "0",
       "letter-spacing-label": "0.01em",

@@ -479,6 +479,11 @@
     "$type": "dimension",
     "$description": "Tightened tracking for headings and titles."
   },
+  "font-variation-heading": {
+    "$value": "normal",
+    "$type": "string",
+    "$description": "Variable-font axis settings for headings, as font-variation-settings (e.g. 'wdth' 112.5 for a wide cut). normal in base; a brand whose heading font has extra axes sets them here, and scripts/build-fonts.mjs requests those axes from Google Fonts."
+  },
   "letter-spacing-subheading": {
     "$value": "-0.01em",
     "$type": "dimension",

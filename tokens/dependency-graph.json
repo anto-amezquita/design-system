@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 33,
-    "tokenCount": 212
+    "tokenCount": 214
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -153,6 +153,9 @@
       "components/patterns/Breadcrumb/Breadcrumb.css"
     ],
     "button-arrow-nudge": [
+      "components/primitives/Button/Button.css"
+    ],
+    "button-border-radius": [
       "components/primitives/Button/Button.css"
     ],
     "button-ghost-background": [
@@ -712,6 +715,11 @@
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
+    ],
+    "font-variation-heading": [
+      "components/composition/Dialog/Dialog.css",
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/Heading/Heading.css"
     ],
     "font-weight-control": [
       "components/patterns/Accordion/Accordion.css",

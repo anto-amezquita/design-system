@@ -14,7 +14,7 @@
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-accent-foreground
-  --font-weight-control, --border-radius-pill, --border-width-interactive, --duration-interaction
+  --font-weight-control, --button-border-radius, --border-width-interactive, --duration-interaction
   --color-accent-hover, --space-inline-gap
 */
 
@@ -27,7 +27,7 @@
   font-size: var(--font-size-control);
   font-weight: var(--font-weight-control);
   line-height: 1;
-  border-radius: var(--border-radius-pill);
+  border-radius: var(--button-border-radius);
   border: var(--border-width-interactive) solid var(--color-accent-default);
   background: var(--color-accent-default);
   color: var(--color-accent-foreground);

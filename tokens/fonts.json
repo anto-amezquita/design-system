@@ -22,6 +22,60 @@
         "https://fonts.gstatic.com"
       ]
     },
+    "demo-cool": {
+      "families": [
+        {
+          "family": "Atkinson Hyperlegible Next",
+          "tokens": [
+            "font-family-base"
+          ],
+          "weights": [
+            400,
+            500,
+            600,
+            700,
+            800
+          ]
+        },
+        {
+          "family": "Archivo",
+          "tokens": [
+            "font-family-heading"
+          ],
+          "weights": [
+            400,
+            500,
+            600,
+            700,
+            800
+          ],
+          "axes": {
+            "wdth": [
+              62,
+              125
+            ]
+          }
+        },
+        {
+          "family": "Atkinson Hyperlegible Mono",
+          "tokens": [
+            "font-family-mono"
+          ],
+          "weights": [
+            400,
+            500,
+            600,
+            700,
+            800
+          ]
+        }
+      ],
+      "href": "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;600;700;800&family=Archivo:wdth,wght@62..125,400..800&family=Atkinson+Hyperlegible+Mono:wght@400;500;600;700;800&display=swap",
+      "preconnect": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com"
+      ]
+    },
     "portfolio": {
       "families": [
         {

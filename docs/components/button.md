@@ -33,11 +33,12 @@ Also accepts all props of: `Omit<React.HTMLAttributes<HTMLElement>, 'onClick' | 
 | Token | Type | Value |
 |---|---|---|
 | `--button-arrow-nudge` | dimension | `2px` |
+| `--button-border-radius` | dimension | `9999px` † |
 | `--button-ghost-background` | color | `transparent` |
 | `--button-ghost-border` | color | `transparent` |
 | `--button-glow-color` | color | `rgba(255, 255, 255, 0.45)` |
 | `--button-glow-size` | dimension | `52px` |
-| `--button-outline-border-width` | dimension | `2px` |
+| `--button-outline-border-width` | dimension | `2px` † |
 | `--button-padding-x` | dimension | `24px` |
 | `--button-padding-y` | dimension | `12px` |
 | `--button-secondary-background` | color | `transparent` |
@@ -50,7 +51,7 @@ Also accepts all props of: `Omit<React.HTMLAttributes<HTMLElement>, 'onClick' | 
 | `--button-wipe-duration-enter` | duration | `550ms` |
 | `--button-wipe-duration-exit` | duration | `400ms` |
 
-† resolves differently across base/portfolio and light/dark themes — see `tokens.json` for all four values.
+† resolves differently across brands and light/dark themes — see `tokens.json` for every value.
 
 ## Best practices
 

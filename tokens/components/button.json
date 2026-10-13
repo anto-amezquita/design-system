@@ -17,6 +17,11 @@
       "amezquita.reason": "x matches Prominent but y doesn't (12px, not 16px) — genuine outlier, deliberately left, see decisions/0004."
     }
   },
+  "button-border-radius": {
+    "$value": "{border-radius-pill}",
+    "$type": "dimension",
+    "$description": "Corner radius of every Button variant. A pill in base; a brand can set its own shape here without changing other pill-shaped components (Badge, Tag, Avatar)."
+  },
   "button-outline-border-width": {
     "$value": "{border-width.medium}",
     "$type": "dimension",

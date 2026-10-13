@@ -706,6 +706,14 @@
   ],
   "unreleased": [
     {
+      "sha": "755e86a",
+      "type": "refactor",
+      "scope": "tokens",
+      "message": "build any number of brand skins, not just portfolio",
+      "date": "2026-10-13",
+      "breaking": false
+    },
+    {
       "sha": "0506d37",
       "type": "feat",
       "scope": "button",

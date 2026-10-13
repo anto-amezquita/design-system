@@ -99,12 +99,17 @@ export function buildTokenReference() {
   const baseDarkOverrides = loadJson('tokens/brands/base/dark.json');
   const brands = loadBrands();
   const brandLightOverrides = Object.assign({}, ...brands.map(b => b.light));
-  // Every semantic token that can appear as a source key on any layer —
-  // used only for the component-token collision check below.
-  const semanticNamespace = { ...baseLightTokens, ...brandLightOverrides };
 
   // Load all component tokens into a single flat map
   const componentFiles = readdirSync('tokens/components').filter(f => f.endsWith('.json'));
+  // Every semantic token that can appear as a source key on any layer —
+  // used only for the component-token collision check below. A brand may
+  // override a component token (button-border-radius); that key isn't a new
+  // semantic token, so it doesn't count.
+  const componentNames = new Set(componentFiles.flatMap(f => Object.keys(loadJson(`tokens/components/${f}`))));
+  const semanticNamespace = Object.fromEntries(
+    Object.entries({ ...baseLightTokens, ...brandLightOverrides }).filter(([name]) => !componentNames.has(name) || name in baseLightTokens),
+  );
   const componentTokens = {};
   for (const file of componentFiles) {
     const fileTokens = loadJson(`tokens/components/${file}`);
