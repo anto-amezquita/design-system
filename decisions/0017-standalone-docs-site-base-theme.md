@@ -101,7 +101,17 @@ The tokens stay the single source. The site defines no colours, type or spacing 
   The constraint this accepts: a preview can't sit inside a branded element. Where a preview's card is branded, the card's frame and the preview area are siblings, not parent and child. The Day 4 templates are drawn to that rule.
 - The new brand ships in one minor release under [`0022`](0022-release-at-most-weekly.md).
 
-**Update (2026-10-13):** the site brand became `demo-cool`, one of three demo brands ([`0023`](0023-demo-brands-and-n-brand-build.md)). One exception to "everything that shows a component stays in `base`": the landing hero shows one real Card under a brand switch (`demo-cool`, `demo-warm`, `demo-soft`), labelled with each brand's name, because its job is to show the same components in different brands. Component previews elsewhere stay in `base`.
+**Update (2026-10-13):** the site brand became `demo-cool`, one of three demo brands ([`0023`](0023-demo-brands-and-n-brand-build.md)). One exception to "everything that shows a component stays in `base`": the landing hero shows one real Card under a brand switch (`demo-cool`, `demo-warm`, `demo-soft`), labelled with each brand's name, because its job is to show the same components in different brands. Component previews elsewhere stay in `base`. (Superseded the next day; see the 2026-10-14 amendment below.)
+
+## Amendment (2026-10-14): the whole site wears the brand picked in the hero
+
+**Decision:** the brand switch in the landing hero sets the brand for the whole site, previews included, not one Card. `demo-cool` by default; a visitor's pick is remembered in the browser and applied before first paint. Foundations prints each token's values for the brand the site wears.
+
+**Why:** a switch that re-skins one card reads as a demo. One that re-skins every page, every component preview with it, shows what a brand built on this system changes, and that the components hold up under each.
+
+**What this reverses:** the 2026-10-07 amendment's rejected option above ("brand the whole page and add a `[data-brand="base"]` scope"), and its rule that previews stay in `base`. The promise that a preview is exactly what `npm install` gives no longer holds on most pages: a preview shows the component in the picked brand. The Themes page keeps the promise where `base` is the subject: its Base panel is a `ThemeScope brand="base"`, using `base-scoped.css` ([`0023`](0023-demo-brands-and-n-brand-build.md), 2026-10-13 amendment). Getting started still installs `base`, and says so.
+
+**The cost:** the site no longer shows `base` by default, so a visitor sees the unbranded system only on Themes. And it needed the library change the rejected option named, `base-scoped.css`; until a release ships it, the site derives the file itself.
 
 **Unchanged:** the site is still a consumer installing from npm, still built with the system's own components, and the Themes page still shows `base` and `portfolio` side by side, now with the site brand as a third, real example of the split.
 
