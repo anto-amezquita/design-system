@@ -201,13 +201,9 @@
       "components/primitives/Checkbox/Checkbox.css"
     ],
     "color-accent-default": [
-      "components/composition/Card/Card.css",
       "components/patterns/Pagination/Pagination.css",
-      "components/patterns/Table/Table.css",
-      "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
-      "components/primitives/Radio/Radio.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css"
@@ -227,7 +223,12 @@
       "components/primitives/Button/Button.css"
     ],
     "color-accent-text": [
-      "components/primitives/Link/Link.css"
+      "components/composition/Card/Card.css",
+      "components/patterns/Table/Table.css",
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Link/Link.css",
+      "components/primitives/Radio/Radio.css"
     ],
     "color-accent-text-hover": [
       "components/primitives/Link/Link.css"

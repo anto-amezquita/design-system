@@ -11,7 +11,7 @@
   --font-family-base, --easing-default, --color-border-focus, --opacity-disabled
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
-  --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-accent-default
+  --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-accent-text
   --space-control-padding-x, --space-control-padding-y, --font-weight-control, --space-tight-gap
   --border-radius-interactive, --space-compact-padding-y, --space-compact-padding-x, --duration-interaction
 */
@@ -98,7 +98,7 @@
   left: 0;
   right: 0;
   height: var(--tabs-indicator-height);
-  background: var(--color-accent-default);
+  background: var(--color-accent-text);
   transform: scaleX(0);
   transition: transform var(--duration-interaction) var(--easing-default);
 }

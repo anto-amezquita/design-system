@@ -7,7 +7,7 @@
   --opacity-disabled, --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
-  --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-surface-primary, --color-accent-foreground
+  --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-accent-text, --color-surface-primary, --color-accent-foreground
   --color-border-strong, --border-width-interactive, --border-radius-interactive, --space-label-gap
 */
 
@@ -56,7 +56,7 @@
 }
 
 .checkbox__root:hover:not([disabled]) {
-  border-color: var(--color-accent-default);
+  border-color: var(--color-accent-text);
 }
 
 .checkbox__root:focus-visible {
