@@ -12,6 +12,8 @@
 //
 // Run from the repo root when tokens/fonts.json gains or changes a family:
 //   node .design-sync/fetch-demo-fonts.mjs
+// A new family also needs its OFL.txt in .design-sync/fonts/licenses/ (see
+// the README there).
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
