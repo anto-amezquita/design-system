@@ -11,21 +11,33 @@ type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'link'
 type ButtonMotion = 'functional' | 'expressive'
 
 type ButtonOwnProps = {
+  /** How much emphasis the action gets. `primary` (default) for the one main action in a view, `secondary` for actions beside it, `ghost` for low-emphasis actions, `link` for an action that should read as text. */
   variant?: ButtonVariant
+  /** The label. Name the action ("Save changes"), not the element ("Click here"). */
   children: React.ReactNode
+  /** Runs on click. It doesn't run on a disabled or loading Button, or on an internal link that `onNavigate` handles. */
   onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
+  /** Blocks the action. A `<button>` gets the native `disabled` attribute and leaves the tab order; an `<a>` gets `aria-disabled`, loses its `href` and is removed from the tab order. */
   disabled?: boolean
+  /** Shows a spinner over the label and blocks the action like `disabled`, with `aria-busy` set. The label stays in place, invisible, so the Button keeps its width and the layout doesn't jump. */
   loading?: boolean
+  /** Stretches the Button to the width of its container. Meant for narrow layouts and stacked forms. */
   fullWidth?: boolean
+  /** The native button type. Defaults to `'button'`, so a Button inside a form doesn't submit it by accident; set `'submit'` for the form's main action. Ignored when `href` is set. */
   type?: 'button' | 'submit' | 'reset'
+  /** An icon beside the label, hidden from screen readers; the label carries the meaning. For an icon-only Button, also set `aria-label`. */
   icon?: React.ReactNode
+  /** Which side of the label the icon goes on. Defaults to `'start'`. An icon at `'end'` takes the arrow's place, so `arrow` is ignored then. */
   iconPosition?: 'start' | 'end'
-  /** Trailing arrow after the label. Off by default — turn it on for a call to action that leads somewhere. Ignored on the `link` variant and while loading. */
+  /** Trailing arrow after the label. Off by default — turn it on for a call to action that leads somewhere. Ignored on the `link` variant, while loading, and when an icon sits at the end. */
   arrow?: boolean
   /** `'expressive'` adds the hover wipe and glow, and loads GSAP on demand. Left at `'functional'`, hover is a plain background change and no animation code is fetched. See decisions/0016. */
   motion?: ButtonMotion
+  /** An accessible name for when the visible label isn't enough, e.g. an icon-only Button. */
   'aria-label'?: string
+  /** Renders an `<a>` instead of a `<button>`, for an action that navigates. */
   href?: string
+  /** A colour passed to `onNavigate` along with the link, for a route transition that needs one. Does nothing on its own. */
   curtainColor?: string
   /** Called instead of a plain navigation when set and the link is internal — lets host apps inject route-transition behavior (e.g. a page-curtain animation) without Button depending on any specific router or transition system. Omit for a plain internal navigation. */
   onNavigate?: (href: string, curtainColor?: string) => void

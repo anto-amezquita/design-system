@@ -10,20 +10,20 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `variant?` | `'primary' \| 'secondary' \| 'ghost' \| 'link'` |  |
-| `children` | `React.ReactNode` |  |
-| `onClick?` | `(event: React.MouseEvent<HTMLButtonElement \| HTMLAnchorElement>) => void` |  |
-| `disabled?` | `boolean` |  |
-| `loading?` | `boolean` |  |
-| `fullWidth?` | `boolean` |  |
-| `type?` | `'button' \| 'submit' \| 'reset'` |  |
-| `icon?` | `React.ReactNode` |  |
-| `iconPosition?` | `'start' \| 'end'` |  |
-| `arrow?` | `boolean` | Trailing arrow after the label. Off by default — turn it on for a call to action that leads somewhere. Ignored on the `link` variant and while loading. |
+| `variant?` | `'primary' \| 'secondary' \| 'ghost' \| 'link'` | How much emphasis the action gets. `primary` (default) for the one main action in a view, `secondary` for actions beside it, `ghost` for low-emphasis actions, `link` for an action that should read as text. |
+| `children` | `React.ReactNode` | The label. Name the action ("Save changes"), not the element ("Click here"). |
+| `onClick?` | `(event: React.MouseEvent<HTMLButtonElement \| HTMLAnchorElement>) => void` | Runs on click. It doesn't run on a disabled or loading Button, or on an internal link that `onNavigate` handles. |
+| `disabled?` | `boolean` | Blocks the action. A `<button>` gets the native `disabled` attribute and leaves the tab order; an `<a>` gets `aria-disabled`, loses its `href` and is removed from the tab order. |
+| `loading?` | `boolean` | Shows a spinner over the label and blocks the action like `disabled`, with `aria-busy` set. The label stays in place, invisible, so the Button keeps its width and the layout doesn't jump. |
+| `fullWidth?` | `boolean` | Stretches the Button to the width of its container. Meant for narrow layouts and stacked forms. |
+| `type?` | `'button' \| 'submit' \| 'reset'` | The native button type. Defaults to `'button'`, so a Button inside a form doesn't submit it by accident; set `'submit'` for the form's main action. Ignored when `href` is set. |
+| `icon?` | `React.ReactNode` | An icon beside the label, hidden from screen readers; the label carries the meaning. For an icon-only Button, also set `aria-label`. |
+| `iconPosition?` | `'start' \| 'end'` | Which side of the label the icon goes on. Defaults to `'start'`. An icon at `'end'` takes the arrow's place, so `arrow` is ignored then. |
+| `arrow?` | `boolean` | Trailing arrow after the label. Off by default — turn it on for a call to action that leads somewhere. Ignored on the `link` variant, while loading, and when an icon sits at the end. |
 | `motion?` | `'functional' \| 'expressive'` | `'expressive'` adds the hover wipe and glow, and loads GSAP on demand. Left at `'functional'`, hover is a plain background change and no animation code is fetched. See decisions/0016. |
-| `aria-label?` | `string` |  |
-| `href?` | `string` |  |
-| `curtainColor?` | `string` |  |
+| `aria-label?` | `string` | An accessible name for when the visible label isn't enough, e.g. an icon-only Button. |
+| `href?` | `string` | Renders an `<a>` instead of a `<button>`, for an action that navigates. |
+| `curtainColor?` | `string` | A colour passed to `onNavigate` along with the link, for a route transition that needs one. Does nothing on its own. |
 | `onNavigate?` | `(href: string, curtainColor?: string) => void` | Called instead of a plain navigation when set and the link is internal — lets host apps inject route-transition behavior (e.g. a page-curtain animation) without Button depending on any specific router or transition system. Omit for a plain internal navigation. |
 
 Also accepts all props of: `Omit<React.HTMLAttributes<HTMLElement>, 'onClick' | 'type'>`
