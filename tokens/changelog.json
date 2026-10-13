@@ -760,7 +760,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "0a124ba",
+      "type": "feat",
+      "scope": "tokens",
+      "message": "base-scoped.css, so part of a branded page can go back to base",
+      "date": "2026-10-13",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
