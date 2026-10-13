@@ -13,7 +13,11 @@ const { ToastProvider, TooltipProvider } = window.AmezquitaDesignSystem;
 
 `Tooltip` throws without `TooltipProvider`, and `useToast()` does nothing without `ToastProvider` (call `toast({ title, description, variant })` with variant `success | warning | error | info | neutral`).
 
-**Brand: `base` is the default.** It's white-label, with neutral greys and the system font stack. Don't add a brand unless the user asks for one. For the Amezquita portfolio brand (warm neutrals, Schibsted Grotesk), wrap that region in `<ThemeScope brand="portfolio">`. The provider chain further down this README shows `ThemeScope brand="portfolio"` only because the preview cards render in that brand. It is optional, not a requirement. `ThemeScope mode="dark"` (or `"light"`) gives a region its own mode, and the overlays opened inside it (Dialog, Drawer, Menu, Select, Tooltip) follow it.
+**Brand: `base` is the default.** It's white-label, with neutral greys and the system font stack. Don't add a brand unless the user asks for one. For the Amezquita portfolio brand (warm neutrals, Schibsted Grotesk), wrap that region in `<ThemeScope brand="portfolio">`. The provider chain further down this README shows `ThemeScope brand="portfolio"` only because the preview cards render in that brand. It is optional, not a requirement.
+
+Three demo brands also ship, made to show how far a brand can move the same components: `demo-cool` (viridian accent, Archivo headings, Atkinson Hyperlegible body), `demo-warm` (vermilion accent, square corners and 2px ink borders, Bricolage Grotesque headings) and `demo-soft` (lavender accent, pill controls, Fraunces headings, Nunito body). Use one only when the user asks for it by name or asks to see the system re-branded: `<ThemeScope brand="demo-warm">`. Their fonts load from `styles.css`, nothing else to add.
+
+`ThemeScope mode="dark"` (or `"light"`) gives a region its own mode, and the overlays opened inside it (Dialog, Drawer, Menu, Select, Tooltip) follow it.
 
 ## Styling: semantic CSS custom properties
 
@@ -48,7 +52,7 @@ const { Card, CardHeader, CardTitle, CardBody, CardDescription, CardFooter, Butt
   <Card>
     <CardHeader>
       <CardTitle>Token audit</CardTitle>
-      <Badge variant="success">Passing</Badge>
+      <Badge variant="success" style={{ alignSelf: 'flex-start' }}>Passing</Badge>
     </CardHeader>
     <CardBody>
       <CardDescription>All 35 components resolve every token they reference.</CardDescription>
@@ -59,3 +63,5 @@ const { Card, CardHeader, CardTitle, CardBody, CardDescription, CardFooter, Butt
   </Card>
 </div>
 ```
+
+`CardHeader` stacks its children in a column and stretches them, so a `Badge` there needs `alignSelf: 'flex-start'` to keep its own width.

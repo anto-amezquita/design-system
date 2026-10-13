@@ -10,8 +10,10 @@
 //   index.ts        barrel: `export *` from every public components/*/*/index.ts
 //                   (BaseSheet is internal - Drawer's overlay primitive), plus
 //                   the shipped stylesheets: base light/dark at :root (the
-//                   white-label default), portfolio-scoped.css (opt-in via
-//                   <ThemeScope brand="portfolio">), and reset.css.
+//                   white-label default), every styles/brands/*-scoped.css
+//                   (a brand is opt-in via <ThemeScope brand="...">, and
+//                   ThemeScope's `brand` type is built from the same files,
+//                   so the type and the loaded CSS can't drift), and reset.css.
 //   types/          tsc declaration emit of components/ and lib/, with
 //                   types/index.d.ts mirroring the barrel.
 //   package.json    name/version from the repo root, types -> types/index.d.ts.
@@ -28,7 +30,7 @@ const INTERNAL = new Set(['BaseSheet']);
 const STYLESHEETS = [
   'styles/brands/base-light.css',
   'styles/brands/base-dark.css',
-  'styles/brands/portfolio-scoped.css',
+  ...readdirSync(join(ROOT, 'styles', 'brands')).filter((f) => f.endsWith('-scoped.css')).sort().map((f) => `styles/brands/${f}`),
   'styles/reset.css',
 ];
 
