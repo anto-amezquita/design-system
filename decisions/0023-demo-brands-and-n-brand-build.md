@@ -47,8 +47,16 @@ Brand colours are written as hex: `scripts/check-contrast.mjs` skips any pair wh
 - Card has no border token of its own, so `demo-soft` can't drop the border it would rather not have; it uses a border close to its surface instead. Inputs and tables keep theirs.
 - `GOOGLE_FONTS` in `scripts/build-fonts.mjs` records each font's ranges by hand. A wrong range breaks that brand's link; it was checked by opening each generated link when the brands were added.
 
+## Amendment, 2026-10-13: `base-scoped.css`
+
+The docs site now wears a demo brand on every page, and its Themes page still compares base with portfolio. Its Base panel has to go back to base on a page that isn't, and base was the one brand with no scoped file: it was always the page, never a part of one.
+
+`sd.config.mjs` now also builds `base-scoped.css`: base under `[data-brand="base"]`, with the same selectors and block order (dark first) as every `<brand>-scoped.css`. Unlike a brand's scoped file it declares every token, not overrides: inside another brand's scope any token could hold that brand's value. Tokens a brand adds that base lacks (portfolio's `color-accent-glow`, `color-surface-spotlight` and `color-text-frozen-*`) are reset to `initial` in both blocks, so they're undefined in a base panel as on a base page. `ThemeBrand` picks up `'base'` from the file, as for any brand. `lib/brand-scope.test.ts` checks a base panel against a whole base page, on a page in portfolio and inside a demo-cool scope, in every mode arrangement; `scripts/base-scoped.test.mjs` checks the file's shape.
+
+The cost: about 770 lines of CSS a consumer only loads if they import it.
+
 ## Related files
 
-- `scripts/brands.mjs`, `sd.config.mjs`, `scripts/build-fonts.mjs`, `scripts/check-contrast.mjs`, `scripts/build-token-reference.mjs`, `scripts/lint-token-architecture.mjs`
+- `scripts/brands.mjs`, `sd.config.mjs` (and `buildBaseScoped`), `scripts/base-scoped.test.mjs`, `lib/brand-scope.test.ts`, `scripts/build-fonts.mjs`, `scripts/check-contrast.mjs`, `scripts/build-token-reference.mjs`, `scripts/lint-token-architecture.mjs`
 - `tokens/brands/demo-cool/`, `tokens/brands/demo-warm/`, `tokens/brands/demo-soft/`
 - `design-system-site`: `specs/2026-10-07-site-redesign.md` (Day 3), `specs/2026-10-12-brand-demo-warm.md`, `specs/2026-10-12-brand-demo-soft.md`
