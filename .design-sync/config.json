@@ -10,7 +10,8 @@
   "tsconfig": "../../../tsconfig.json",
   "docsDir": "../../../docs/components",
   "extraFonts": [
-    "../../fonts/fonts.css"
+    "../../fonts/fonts.css",
+    "../../fonts/demo-brands.css"
   ],
   "provider": {
     "component": "ThemeScope",

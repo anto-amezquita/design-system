@@ -13,11 +13,15 @@ Read this before every re-sync.
   and a `package.json` with `types`. `cfg.entry` points at the staged
   `index.ts`. Run it before every converter/driver run. A component added
   upstream is picked up automatically if it has an `index.ts`.
-- [GENERAL] The stylesheets in the barrel follow the user's brand decision
-  (2026-10-09): **base is the default, portfolio is opt-in**. `base-light.css`
-  and `base-dark.css` sit at `:root` / `[data-mode]`, `portfolio-scoped.css`
-  applies under `[data-brand="portfolio"]`, and `reset.css` comes last. The
-  unscoped `portfolio-light/dark.css` are NOT shipped.
+- [GENERAL] The stylesheets in the barrel follow the user's brand decisions:
+  **base is the default, every other brand is opt-in** (2026-10-09 for
+  portfolio; 2026-10-13 the user chose to ship the three demo brands from ADR
+  0023 too). `base-light.css` and `base-dark.css` sit at `:root` /
+  `[data-mode]`, every `styles/brands/*-scoped.css` applies under its own
+  `[data-brand="..."]`, and `reset.css` comes last. `build-package.mjs` globs
+  the scoped files, the same files `ThemeScope`'s `brand` type is generated
+  from, so a new brand folder ships on the next sync without an edit. The
+  unscoped `<brand>-light/dark.css` are NOT shipped.
 - [GENERAL] The repo's Storybook loads base and portfolio at `:root`, so every
   story renders in the portfolio brand. To grade like for like, `cfg.provider`
   wraps preview cards in `<ThemeScope brand="portfolio">`, outermost so that
@@ -33,6 +37,14 @@ Read this before every re-sync.
   (Google Fonts, OFL, latin + latin-ext, variable) in `.design-sync/fonts/`,
   shipped through `cfg.extraFonts`. To fetch them again, request the Google
   Fonts css2 API with a Chrome user agent and keep the latin/latin-ext blocks.
+- [GENERAL] Demo-brand fonts: `node .design-sync/fetch-demo-fonts.mjs` reads
+  each brand's Google Fonts link from `tokens/fonts.json`, downloads the
+  latin + latin-ext woff2 files into `.design-sync/fonts/` and writes
+  `fonts/demo-brands.css` (the second `cfg.extraFonts` entry). It skips
+  Schibsted Grotesk and JetBrains Mono, which `fonts.css` already covers in
+  wider ranges. The converter merges both stylesheets into one
+  `ds-bundle/fonts/fonts.css`, so `styles.css` still shows a single font
+  `@import`. That's expected.
 - [GENERAL] The reference Storybook is patched with those same fonts so the
   compare oracle renders the real typeface. After EVERY reference rebuild:
   `npx storybook build -c .storybook -o .design-sync/sb-reference && node .design-sync/patch-reference.mjs`.
@@ -104,6 +116,23 @@ Read this before every re-sync.
   That's faithful, not a bug, but it means their open overlays are not
   pixel-verified here.
 
+- Re-sync 2026-10-13 (package 1.4.0: demo brands, Button pressed state and
+  radius token, `font-variation-heading`, `color-accent-text`): no story
+  source changed, so all 35 grades carried. Spot-checked nine fresh sheets
+  against their recorded grades, all still `match`: the driver's five
+  (DataTable, Drawer, NavigationMenu, Heading, Skeleton) plus the four whose
+  CSS changed (Button, Link, Dialog, Hero).
+- The demo brands have no stories, so the compare oracle never sees them. They
+  were checked by eye instead: a page built from `ds-bundle/` (`styles.css`
+  only, like a design) rendering Heading, Link, Card, Badge, Button, Input,
+  Tag and Switch under each brand in light and dark. Every family loaded from
+  `fonts/`, no failed requests, and the computed styles matched the brand CSS
+  (Archivo at `'wdth' 112.5`, Fraunces at `'SOFT' 100, 'WONK' 0`, demo-warm's
+  2px button radius, demo-soft's pill).
+- `CardHeader` is a column flex container, so a `Badge` placed in it stretches
+  to full width. The conventions example sets `alignSelf: 'flex-start'` on it
+  and says why.
+
 ## Known render warns
 
 - None at the end of the first sync (validate exits clean, no warnings).
@@ -118,15 +147,27 @@ Read this before every re-sync.
   default font. A green compare against an unpatched reference means nothing.
   If `.storybook/preview-head.html` starts loading Schibsted Grotesk itself,
   the patch and the `css-fallback` fork can both go.
-- **Fonts are a snapshot** of Google Fonts as of 2026-10-09 (variable
-  Schibsted Grotesk 400–900, JetBrains Mono 100–800, latin + latin-ext). If
-  `tokens/fonts.json` changes families, refetch them.
-- **Brand CSS list** is hard-coded in `build-package.mjs` (base-light,
-  base-dark, portfolio-scoped, reset). A new brand or a renamed stylesheet
-  needs an edit there.
+- **Fonts are a snapshot** of Google Fonts: Schibsted Grotesk 400–900 and
+  JetBrains Mono 100–800 as of 2026-10-09, the seven demo-brand families as of
+  2026-10-13 (all variable, latin + latin-ext). If `tokens/fonts.json` gains
+  or changes a family, run `node .design-sync/fetch-demo-fonts.mjs` before the
+  driver. A brand whose font is missing renders a fallback in designs, and
+  nothing in the sync flags it, because no story uses the demo brands.
+- **Brands ship by glob** (`styles/brands/*-scoped.css`), so a new brand's CSS
+  arrives on its own, but its fonts don't (see above), and
+  `.design-sync/conventions.md` names the brands by hand. A new, renamed or
+  removed brand needs that paragraph updated.
+- **Demo brands are not oracle-verified.** Repeat the by-eye check from
+  Verification learnings when a demo brand's tokens change.
 - **Story cap**: compare captures up to 14 stories per component. Only Button
   has 14. Raise `--max-stories` if any component grows past that.
 - **Not pixel-verified**: open Dialog, AlertDialog, Drawer, Toast and Tooltip
-  overlays, and SideNav's mobile drawer (see above).
+  overlays, SideNav's mobile drawer (see above), and anything under a demo
+  brand.
+- **Local git exclude**: on the machine that ran the first two syncs,
+  `.git/info/exclude` lists `.design-sync/`, so a NEW file under it (a font, an
+  owned preview, a script) never shows in `git status`. Check with
+  `git status --short --ignored .design-sync` and add new durable files with
+  `git add -f`.
 - **Toolchain**: built with node 26.2, Storybook 10.3, playwright 1.62.1 /
   chromium-1234.
