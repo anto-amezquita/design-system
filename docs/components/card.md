@@ -23,7 +23,10 @@
 
 | Token | Type | Value |
 |---|---|---|
+| `--card-border-color` | color | `#E5E5E5` † |
 | `--card-horizontal-media-width` | dimension | `200px` |
+
+† resolves differently across brands and light/dark themes — see `tokens.json` for every value.
 
 ## Usage example
 

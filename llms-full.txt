@@ -20,10 +20,10 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-378 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+379 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
-- component: 107
+- component: 108
 - color: 46
 - typography: 40
 - spacing: 19
@@ -206,7 +206,7 @@ Confirmation gate for an action the user must explicitly accept or decline — r
 Compound container for grouped content — composed from named sub-components
 
 - Import: `import { Card } from '@amezquita/design-system/components/composition/Card'`
-- Token prefix: `card-horizontal-media-*` (1 tokens)
+- Token prefix: `card-*` (2 tokens)
 - Storybook: Components/Card
 - Stories: Default, Ghost, Interactive, Horizontal, Compact, Featured, WithBody, WithMedia, AllVariants, DarkMode
 

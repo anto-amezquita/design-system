@@ -6,6 +6,7 @@
   --button-secondary-foreground: #a8a29e;
   --button-secondary-border: #a8a29e;
   --button-secondary-background-hover: #a8a29e;
+  --card-border-color: var(--color-border-default);
   --color-neutral-50: #1c1917;
   --color-neutral-100: #292524;
   --color-neutral-200: #44403c;

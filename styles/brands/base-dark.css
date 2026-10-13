@@ -6,6 +6,7 @@
   --button-secondary-foreground: var(--color-neutral-500);
   --button-secondary-border: var(--color-neutral-500);
   --button-secondary-background-hover: var(--color-neutral-500);
+  --card-border-color: var(--color-border-default);
   --color-neutral-50: #171717;
   --color-neutral-100: #262626;
   --color-neutral-200: #404040;
