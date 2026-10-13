@@ -83,6 +83,28 @@ Individual component pages and the playground render in the browser and did not 
 - Blocked on 0015 and, for the first release the changelog announces, on 0016.
 - Templates are deferred, so for now the landing composite is the only place the system is shown working as a whole.
 
+## Amendment (2026-10-07): the site gets its own brand; the previews stay in base
+
+Shipped as decided, the site looks like what it is: the unskinned `base` theme, top to bottom. That proves the default, but it reads as a template rather than a product, and nothing on the page belongs only to this system. Astryx, Stripe and Material all carry a strong identity of their own while documenting something themeable.
+
+**Decision:** the site frame (top bar, side nav, landing hero, headings and prose) wears a third brand, defined in this repo under `tokens/brands/` like `base` and `portfolio`. Its name and values come out of the redesign (Claude Design for direction, Figma for the docs templates), not out of this entry. Everything that shows a component (the Components cards, the landing composite, the Foundations samples) stays in `base`, so the original promise holds: what you see in a preview is what `npm install` gives you.
+
+The tokens stay the single source. The site defines no colours, type or spacing of its own; Figma variables are generated from the same files.
+
+**What this needs from the library:**
+
+- A scoped CSS file for the new brand, as `portfolio-scoped.css` does for portfolio ([`0001`](0001-white-label-base-portfolio-brand-split.md), 2026-10-01 amendment). `npm run tokens` then adds it to `ThemeBrand`, so `ThemeScope` accepts it with no hand edit.
+- No `base` scope. The page stays `base` on `:root`, and the brand goes only on the frame's parts with `ThemeScope`: top bar, side nav, hero, headings, prose, section backgrounds, and the frames and labels around each preview. The previews sit outside those scopes, so they render in `base` with nothing to undo. The 0001 amendment's rejection of a `[data-brand="base"]` scope stands.
+
+  Considered: brand the whole page and add a `[data-brand="base"]` scope to switch previews back. More layout freedom, but it is a library change for a case this approach avoids. Also considered: letting the previews take the site brand, for cohesion. Rejected: it breaks the promise above. Cohesion comes from the setting around each component, the way Material's site keeps its demos neutral and brands the page around them.
+
+  The constraint this accepts: a preview can't sit inside a branded element. Where a preview's card is branded, the card's frame and the preview area are siblings, not parent and child. The Day 4 templates are drawn to that rule.
+- The new brand ships in one minor release under [`0022`](0022-release-at-most-weekly.md).
+
+**Update (2026-10-13):** the site brand became `demo-cool`, one of three demo brands ([`0023`](0023-demo-brands-and-n-brand-build.md)). One exception to "everything that shows a component stays in `base`": the landing hero shows one real Card under a brand switch (`demo-cool`, `demo-warm`, `demo-soft`), labelled with each brand's name, because its job is to show the same components in different brands. Component previews elsewhere stay in `base`.
+
+**Unchanged:** the site is still a consumer installing from npm, still built with the system's own components, and the Themes page still shows `base` and `portfolio` side by side, now with the site brand as a third, real example of the split.
+
 ## Related files
 
 - `decisions/0001-white-label-base-portfolio-brand-split.md` — the base/portfolio split the Themes page demonstrates
