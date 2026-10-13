@@ -166,6 +166,15 @@
   pointer-events: none;
 }
 
+/* Loading is "busy, wait", not "unavailable": it keeps the variant's colours
+   at full strength, with only the label swapped for the spinner. The native
+   <button> is still disabled while loading, so this has to outrank
+   .button:disabled. Before, primary went pale grey and the spinner was hard
+   to see (found on the docs site's Button page). */
+.button.button--loading {
+  opacity: 1;
+}
+
 .button__spinner {
   position: absolute;
   inset: 0;

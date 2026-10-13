@@ -14,7 +14,7 @@
 | `children` | `React.ReactNode` | The label. Name the action ("Save changes"), not the element ("Click here"). |
 | `onClick?` | `(event: React.MouseEvent<HTMLButtonElement \| HTMLAnchorElement>) => void` | Runs on click. It doesn't run on a disabled or loading Button, or on an internal link that `onNavigate` handles. |
 | `disabled?` | `boolean` | Blocks the action. A `<button>` gets the native `disabled` attribute and leaves the tab order; an `<a>` gets `aria-disabled`, loses its `href` and is removed from the tab order. |
-| `loading?` | `boolean` | Shows a spinner over the label and blocks the action like `disabled`, with `aria-busy` set. The label stays in place, invisible, so the Button keeps its width and the layout doesn't jump. |
+| `loading?` | `boolean` | Shows a spinner over the label and blocks the action like `disabled`, with `aria-busy` set. The label stays in place, invisible, so the Button keeps its width and the layout doesn't jump. Unlike `disabled`, it keeps the variant's colours: busy, not unavailable. |
 | `fullWidth?` | `boolean` | Stretches the Button to the width of its container. Meant for narrow layouts and stacked forms. |
 | `type?` | `'button' \| 'submit' \| 'reset'` | The native button type. Defaults to `'button'`, so a Button inside a form doesn't submit it by accident; set `'submit'` for the form's main action. Ignored when `href` is set. |
 | `icon?` | `React.ReactNode` | An icon beside the label, hidden from screen readers; the label carries the meaning. For an icon-only Button, also set `aria-label`. |

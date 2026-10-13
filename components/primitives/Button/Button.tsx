@@ -19,7 +19,7 @@ type ButtonOwnProps = {
   onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
   /** Blocks the action. A `<button>` gets the native `disabled` attribute and leaves the tab order; an `<a>` gets `aria-disabled`, loses its `href` and is removed from the tab order. */
   disabled?: boolean
-  /** Shows a spinner over the label and blocks the action like `disabled`, with `aria-busy` set. The label stays in place, invisible, so the Button keeps its width and the layout doesn't jump. */
+  /** Shows a spinner over the label and blocks the action like `disabled`, with `aria-busy` set. The label stays in place, invisible, so the Button keeps its width and the layout doesn't jump. Unlike `disabled`, it keeps the variant's colours: busy, not unavailable. */
   loading?: boolean
   /** Stretches the Button to the width of its container. Meant for narrow layouts and stacked forms. */
   fullWidth?: boolean
