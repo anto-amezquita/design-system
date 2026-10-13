@@ -72,6 +72,7 @@ Copy this for each new component. Fill in every field before the component ships
 - [x] default
 - [x] hover (background shifts; arrow translates 2px right when `arrow` is on)
 - [x] focus-visible (2px ring)
+- [x] pressed (`:active`, mouse and touch: one step past hover via `--color-accent-pressed`; ghost uses `--color-surface-tertiary`)
 - [x] disabled (opacity, not-allowed cursor)
 
 **Tokens consumed**

@@ -117,6 +117,12 @@
   border-width: var(--button-outline-border-width);
 }
 
+/* The base .button:hover darkens the border for primary and secondary; a
+   ghost has no border, so it keeps its transparent one on hover too. */
+.button--ghost:hover {
+  border-color: var(--button-ghost-border);
+}
+
 .button--ghost:not(.button--expressive):hover {
   background: var(--color-surface-secondary);
 }
@@ -240,24 +246,31 @@
   fill: var(--color-surface-secondary);
 }
 
-@media (hover: none) {
-  .button:active {
-    background: var(--color-accent-hover);
-  }
+/* Pressed: one step past hover, from the color-accent-pressed token. Applies to
+   mouse and touch alike — before, :active only existed under hover: none and
+   reused the hover colour, so a mouse click had no feedback of its own.
+   Expressive buttons keep their wipe on hover; the pressed fill sits under it
+   and shows once the wipe has covered the button. */
 
-  .button--secondary:active {
-    background: var(--button-secondary-background-hover);
-    color: var(--color-accent-foreground);
-    border-color: var(--button-secondary-background-hover);
-  }
+.button:active:not(:disabled, .button--disabled, .button--loading) {
+  background: var(--color-accent-pressed);
+  border-color: var(--color-accent-pressed);
+}
 
-  .button--ghost:active {
-    background: var(--color-surface-secondary);
-  }
+.button--secondary:active:not(:disabled, .button--disabled, .button--loading) {
+  background: var(--color-accent-pressed);
+  color: var(--color-accent-foreground);
+  border-color: var(--color-accent-pressed);
+}
 
-  .button--link:active {
-    background: none;
-  }
+.button--ghost:active:not(:disabled, .button--disabled, .button--loading) {
+  background: var(--color-surface-tertiary);
+  border-color: var(--button-ghost-border);
+}
+
+.button--link:active:not(:disabled, .button--disabled, .button--loading) {
+  background: none;
+  border-color: transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {

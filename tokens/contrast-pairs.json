@@ -43,6 +43,13 @@
     "minRatio": 4.5
   },
   {
+    "bg": "color-accent-pressed",
+    "fg": "color-accent-foreground",
+    "role": "button-label-pressed",
+    "minRatio": 4.5,
+    "note": "Button's label while pressed."
+  },
+  {
     "bg": "color-surface-primary",
     "fg": "color-accent-default",
     "role": "accent-on-surface",

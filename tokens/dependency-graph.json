@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 33,
-    "tokenCount": 211
+    "tokenCount": 212
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -222,6 +222,9 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Link/Link.css"
     ],
+    "color-accent-pressed": [
+      "components/primitives/Button/Button.css"
+    ],
     "color-border-default": [
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
@@ -384,6 +387,7 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/patterns/Table/Table.css",
+      "components/primitives/Button/Button.css",
       "components/primitives/Switch/Switch.css"
     ],
     "color-text-inverse": [
