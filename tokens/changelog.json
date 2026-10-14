@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "bdf8bba",
+      "type": "feat",
+      "scope": "segmented-control",
+      "message": "single choice from a few, side by side",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "c422b79",
       "type": "feat",
       "scope": "toggle-button",
