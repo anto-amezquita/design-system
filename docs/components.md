@@ -483,6 +483,55 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### IconButton
+
+| Field | Value |
+|---|---|
+| **Purpose** | An action shown only as an icon, for toolbars, cards and dense rows |
+| **Figma name** | `IconButton` |
+| **Code name** | `IconButton` |
+| **Storybook path** | `Components/IconButton` |
+
+**Props / variants**
+- `icon` (required): the icon element; sized by the component (20px at `md`, 16px at `sm`)
+- `label` (required): the action's name, used as `aria-label`
+- `variant`: `ghost` (default), `secondary`, `primary`, styled by Button
+- `size`: `md` (default, 44px square) or `sm` (28px square, 44px hit area)
+- `onClick`, `disabled`, `loading`, `type`, `href`, as on Button; native attributes and `ref` pass through
+- No `motion="expressive"`: the hover wipe needs more room than a square
+
+**Required states**
+- [x] default
+- [x] hover and pressed (Button's, per variant)
+- [x] focus-visible (Button's ring)
+- [x] disabled (opacity, not-allowed cursor)
+- [x] loading (spinner replaces the icon, `aria-busy`)
+
+**Tokens consumed**
+- Button's tokens, plus `--size-touch-target`, `--size-icon-interactive`, `--size-icon-md`, `--size-icon-sm`
+
+**Accessibility**
+- Semantic element: `<button>`, or `<a>` with `href` (Button's rules)
+- The `label` is the only accessible name, so it's required; the icon is `aria-hidden`
+- Hit area is 44×44px at both sizes; `sm` extends it past the visible square
+- Keyboard: `Enter` and `Space`, as Button
+
+**Do**
+- Use an icon people already know for the action: a cross to close, a magnifier to search, a bin to delete.
+- Write the `label` as the action ("Delete row"), not the icon ("Bin").
+- Add a Tooltip showing the label when the icon alone may not be clear.
+- Use `ghost` for repeated actions in a list, so the row isn't a wall of filled circles.
+
+**Don't**
+- Don't use an IconButton for the main action of a view; give that a Button with a visible label.
+- Don't put two different actions behind the same icon on one screen.
+- Don't use `sm` where people tap a lot on touch screens; the square looks small even though the target isn't.
+
+**Chromatic stories**
+- `Default`, `Variants`, `Sizes`, `States`, `DarkMode`
+
+---
+
 ### Kbd
 
 | Field | Value |

@@ -1,0 +1,46 @@
+/*
+  Tokens consumed (on top of Button's):
+
+  --size-touch-target (md square and sm hit area), --size-icon-interactive
+  (sm square), --size-icon-md, --size-icon-sm
+
+  No component tokens: the sizes are the semantic touch-target and icon sizes.
+
+  Two classes (.button.icon-button) so these win over Button's own padding
+  whatever order the stylesheets load in.
+*/
+
+.button.icon-button {
+  inline-size: var(--size-touch-target);
+  block-size: var(--size-touch-target);
+  padding: 0;
+  flex-shrink: 0;
+  /* Button clips for its expressive wipe; IconButton has none, and the sm hit area must reach past the edge. */
+  overflow: visible;
+}
+
+.icon-button__icon {
+  display: inline-flex;
+}
+
+.icon-button__icon svg {
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+}
+
+.button.icon-button--sm {
+  inline-size: var(--size-icon-interactive);
+  block-size: var(--size-icon-interactive);
+}
+
+.icon-button--sm .icon-button__icon svg {
+  inline-size: var(--size-icon-sm);
+  block-size: var(--size-icon-sm);
+}
+
+/* sm: the square is small, the target isn't (WCAG 2.5.8, and 44px to match the rest of the system). */
+.icon-button--sm::before {
+  content: '';
+  position: absolute;
+  inset: calc((var(--size-touch-target) - var(--size-icon-interactive)) / -2);
+}
