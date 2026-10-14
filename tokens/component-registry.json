@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 67,
-    "publicComponentCount": 43,
+    "componentCount": 68,
+    "publicComponentCount": 44,
     "subComponentCount": 23
   },
   "components": [
@@ -389,6 +389,27 @@
         "DarkMode"
       ],
       "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "Slider",
+      "slug": "slider",
+      "tier": "primitives",
+      "purpose": "One value from a range, by dragging or with the keyboard: volume, a price limit, opacity",
+      "storybookPath": "Components/Slider",
+      "storybookTitleId": "components-slider",
+      "defaultStoryId": "components-slider--default",
+      "tokenPrefix": "slider-track",
+      "stories": [
+        "Default",
+        "Formatted",
+        "WithHint",
+        "HiddenLabel",
+        "Disabled",
+        "Controlled",
+        "DarkMode"
+      ],
+      "tokenCount": 1,
       "internal": false
     },
     {

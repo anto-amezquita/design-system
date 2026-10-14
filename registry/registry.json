@@ -704,6 +704,27 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "slider",
+      "type": "registry:component",
+      "title": "Slider",
+      "description": "One value from a range, by dragging or with the keyboard: volume, a price limit, opacity",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json"
+      ],
+      "cssVars": {
+        "light": {
+          "slider-track-height": "4px"
+        },
+        "dark": {
+          "slider-track-height": "4px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "spinner",
       "type": "registry:component",
       "title": "Spinner",

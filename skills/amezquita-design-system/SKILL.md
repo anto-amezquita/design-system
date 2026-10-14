@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 40 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 41 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 43 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 44 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (24)
+### Primitives (25)
 
 | Component | Reference |
 |---|---|
@@ -56,6 +56,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Select | [select](https://design.amezquita.dk/components/select.md) — Dropdown for choosing a single value from a list; supports grouped options |
 | Skeleton | [skeleton](https://design.amezquita.dk/components/skeleton.md) — Placeholder loading state that mirrors the geometry of the content it replaces |
 | SkipLink | [skip-link](https://design.amezquita.dk/components/skip-link.md) — First Tab stop on the page that lets keyboard users jump past the header to the main content |
+| Slider | [slider](https://design.amezquita.dk/components/slider.md) — One value from a range, by dragging or with the keyboard: volume, a price limit, opacity |
 | Spinner | [spinner](https://design.amezquita.dk/components/spinner.md) — Indeterminate loading indicator for in-progress operations |
 | Switch | [switch](https://design.amezquita.dk/components/switch.md) — Binary toggle for on/off settings; renders as a styled checkbox under the hood |
 | Tag | [tag](https://design.amezquita.dk/components/tag.md) — Inline label for categorising or annotating content — non-interactive |

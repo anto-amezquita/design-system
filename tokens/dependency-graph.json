@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 41,
-    "tokenCount": 222
+    "filesScanned": 42,
+    "tokenCount": 225
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -80,7 +80,8 @@
     ],
     "border-radius-full": [
       "components/primitives/ProgressBar/ProgressBar.css",
-      "components/primitives/Skeleton/Skeleton.css"
+      "components/primitives/Skeleton/Skeleton.css",
+      "components/primitives/Slider/Slider.css"
     ],
     "border-radius-image": [
       "components/composition/Card/Card.css"
@@ -148,6 +149,9 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
+    ],
+    "border-width-medium": [
+      "components/primitives/Slider/Slider.css"
     ],
     "breadcrumb-current-max-width": [
       "components/patterns/Breadcrumb/Breadcrumb.css"
@@ -245,7 +249,8 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Link/Link.css",
       "components/primitives/ProgressBar/ProgressBar.css",
-      "components/primitives/Radio/Radio.css"
+      "components/primitives/Radio/Radio.css",
+      "components/primitives/Slider/Slider.css"
     ],
     "color-accent-text-hover": [
       "components/primitives/Link/Link.css"
@@ -291,6 +296,7 @@
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -391,6 +397,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "color-surface-secondary": [
@@ -411,6 +418,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css",
       "components/primitives/ToggleButton/ToggleButton.css"
@@ -421,6 +429,7 @@
       "components/patterns/Table/Table.css",
       "components/primitives/Button/Button.css",
       "components/primitives/ProgressBar/ProgressBar.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css"
     ],
     "color-text-inverse": [
@@ -449,6 +458,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -476,6 +486,7 @@
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -562,6 +573,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -602,6 +614,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -638,6 +651,7 @@
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -663,6 +677,7 @@
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -693,6 +708,7 @@
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -715,6 +731,7 @@
       "components/patterns/Table/Table.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -764,6 +781,7 @@
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "font-variation-heading": [
@@ -788,6 +806,7 @@
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "font-weight-medium": [
@@ -850,6 +869,7 @@
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Table/Table.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "line-height-control": [
@@ -888,6 +908,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "line-height-small": [
@@ -909,6 +930,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -990,6 +1012,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/primitives/IconButton/IconButton.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Spinner/Spinner.css"
     ],
     "size-icon-sm": [
@@ -1015,6 +1038,7 @@
       "components/primitives/IconButton/IconButton.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css"
     ],
     "skeleton-border-radius": [
@@ -1025,6 +1049,12 @@
     ],
     "skeleton-height-text": [
       "components/primitives/Skeleton/Skeleton.css"
+    ],
+    "slider-fill": [
+      "components/primitives/Slider/Slider.css"
+    ],
+    "slider-track-height": [
+      "components/primitives/Slider/Slider.css"
     ],
     "space-compact-padding-x": [
       "components/composition/Tooltip/Tooltip.css",
@@ -1106,6 +1136,7 @@
       "components/primitives/Select/Select.css",
       "components/primitives/Skeleton/Skeleton.css",
       "components/primitives/SkipLink/SkipLink.css",
+      "components/primitives/Slider/Slider.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -1139,7 +1170,8 @@
       "components/primitives/Link/Link.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
-      "components/primitives/Select/Select.css"
+      "components/primitives/Select/Select.css",
+      "components/primitives/Slider/Slider.css"
     ],
     "spinner-stroke-width": [
       "components/primitives/Spinner/Spinner.css"
