@@ -217,6 +217,15 @@ Multi-line text entry with label, hint, and error states — mirrors Input API
 - Storybook: Components/Textarea
 - Stories: Default, WithHint, WithError, Disabled, WithCharacterCount, AllStates, DarkMode
 
+### ToggleButton
+
+A button that stays on or off, like bold in an editor or a grid overlay
+
+- Import: `import { ToggleButton } from '@amezquita/design-system/components/primitives/ToggleButton'`
+- Token prefix: `togglebutton-*` (0 tokens)
+- Storybook: Components/ToggleButton
+- Stories: Default, States, IconOnly, Controlled, DarkMode
+
 ### VisuallyHidden
 
 Text screen readers announce but sighted users don't see

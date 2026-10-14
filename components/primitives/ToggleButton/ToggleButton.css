@@ -1,0 +1,16 @@
+/*
+  Tokens consumed (on top of Button's and IconButton's):
+
+  --color-surface-secondary (hover while off)
+
+  Off is Button's secondary, on is Button's primary. Secondary's own hover
+  fills with the accent, which would make an off toggle look on while the
+  pointer is over it. So off hovers with the neutral surface instead and
+  keeps its outline and accent text; the fill only ever means "on".
+*/
+
+.button--secondary.toggle-button:not(.toggle-button--pressed):hover {
+  background: var(--color-surface-secondary);
+  color: var(--button-secondary-foreground);
+  border-color: var(--button-secondary-border);
+}

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 38,
+    "filesScanned": 39,
     "tokenCount": 222
   },
   "byToken": {
@@ -190,10 +190,12 @@
       "components/primitives/Button/Button.css"
     ],
     "button-secondary-border": [
-      "components/primitives/Button/Button.css"
+      "components/primitives/Button/Button.css",
+      "components/primitives/ToggleButton/ToggleButton.css"
     ],
     "button-secondary-foreground": [
-      "components/primitives/Button/Button.css"
+      "components/primitives/Button/Button.css",
+      "components/primitives/ToggleButton/ToggleButton.css"
     ],
     "button-spinner-duration": [
       "components/primitives/Button/Button.css"
@@ -213,7 +215,8 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
-      "components/primitives/Tag/Tag.css"
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/ToggleButton/ToggleButton.css"
     ],
     "color-accent-foreground": [
       "components/patterns/Pagination/Pagination.css",
@@ -399,7 +402,8 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css",
-      "components/primitives/Textarea/Textarea.css"
+      "components/primitives/Textarea/Textarea.css",
+      "components/primitives/ToggleButton/ToggleButton.css"
     ],
     "color-surface-tertiary": [
       "components/composition/Dialog/Dialog.css",
