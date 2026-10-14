@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 59,
-    "publicComponentCount": 35,
+    "componentCount": 60,
+    "publicComponentCount": 36,
     "subComponentCount": 23
   },
   "components": [
@@ -154,6 +154,25 @@
         "Clearable",
         "Search",
         "AllStates",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "Kbd",
+      "slug": "kbd",
+      "tier": "primitives",
+      "purpose": "A key the user presses, drawn as a keycap",
+      "storybookPath": "Components/Kbd",
+      "storybookTitleId": "components-kbd",
+      "defaultStoryId": "components-kbd--default",
+      "tokenPrefix": "kbd",
+      "stories": [
+        "Default",
+        "InText",
+        "Combination",
+        "Sizes",
         "DarkMode"
       ],
       "tokenCount": 0,
