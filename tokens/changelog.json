@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "e4f18ab",
+      "type": "feat",
+      "scope": "card",
+      "message": "card-border-color token; cards rest on shadow-card",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "6981c21",
       "type": "fix",
       "scope": "tokens",
