@@ -199,7 +199,7 @@ Confirmation gate for an action the user must explicitly accept or decline — r
 - Import: `import { AlertDialog } from '@amezquita/design-system/components/composition/AlertDialog'`
 - Token prefix: `alertdialog-*` (0 tokens)
 - Storybook: Components/AlertDialog
-- Stories: Default, WithBody, NoDescription, AllSizes, DarkMode
+- Stories: Default, WithBody, NoDescription, AllSizes, DarkMode, Open
 
 ### Card
 
@@ -217,7 +217,7 @@ Overlay for tasks or information requiring focused attention
 - Import: `import { Dialog } from '@amezquita/design-system/components/composition/Dialog'`
 - Token prefix: `dialog-*` (6 tokens)
 - Storybook: Components/Dialog
-- Stories: Default, Small, Large, Scrollable, WithForm, NoDescription, AllSizes, DarkMode
+- Stories: Default, Small, Large, Scrollable, WithForm, NoDescription, AllSizes, DarkMode, Open
 
 ### Drawer
 
@@ -226,7 +226,7 @@ Side-anchored slide-in panel for supplemental content or secondary navigation
 - Import: `import { Drawer } from '@amezquita/design-system/components/composition/Drawer'`
 - Token prefix: `drawer-*` (9 tokens)
 - Storybook: Components/Drawer
-- Stories: Default, FilterPanel, AllSides, Sizes, DarkMode
+- Stories: Default, FilterPanel, AllSides, Sizes, DarkMode, Open
 
 ### Menu
 
@@ -262,7 +262,7 @@ Ephemeral notification pushed to a corner of the viewport; auto-dismisses after 
 - Import: `import { Toast } from '@amezquita/design-system/components/composition/Toast'`
 - Token prefix: `toast-*` (6 tokens)
 - Storybook: Components/Toast
-- Stories: Default, AllVariants, TitleOnly, DarkMode
+- Stories: Default, AllVariants, TitleOnly, DarkMode, Open
 
 ### Tooltip
 
@@ -271,7 +271,7 @@ Contextual label revealed on hover or focus — supplements an icon or truncated
 - Import: `import { Tooltip } from '@amezquita/design-system/components/composition/Tooltip'`
 - Token prefix: `tooltip-*` (6 tokens)
 - Storybook: Components/Tooltip
-- Stories: Default, AllSides, IconButtons, LongContent, NoDelay, DarkMode
+- Stories: Default, AllSides, IconButtons, LongContent, NoDelay, DarkMode, Open
 
 ## Patterns
 

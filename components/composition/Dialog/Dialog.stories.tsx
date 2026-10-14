@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { expect, waitFor, within } from 'storybook/test'
 import { Dialog } from './Dialog'
 import { Button } from '@/components/primitives/Button/Button'
 import { Input } from '@/components/primitives/Input/Input'
@@ -167,4 +168,51 @@ export const DarkMode: Story = {
   ...Default,
   name: 'Dark mode',
   decorators: [darkModeDecorator],
+}
+
+// Renders open from the start, for Chromatic and /design-sync: both capture a
+// story without running clicks, so the closed stories above only ever showed
+// the trigger. Kept off the docs page, where an open overlay would cover it.
+export const Open: Story = {
+  name: 'Open',
+  tags: ['!autodocs'],
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            // While a modal is open, the page behind it is inert and hidden
+            // from assistive tech, and the backdrop dims its trigger to
+            // ~1.3:1. Contrast is checked where it matters: the open dialog
+            // and everything in it. Every other rule checks the whole page.
+            id: 'color-contrast',
+            selector: '[role="dialog"], [role="dialog"] *',
+          },
+        ],
+      },
+    },
+  },
+  play: async () => {
+    const overlay = await within(document.body).findByRole('dialog', { name: 'Confirm action' })
+    // Past its entrance animation.
+    await waitFor(() => expect(overlay).toBeVisible())
+  },
+  render: () => (
+    <Dialog
+      defaultOpen
+      trigger={<Button>Open dialog</Button>}
+      title="Confirm action"
+      description="This action cannot be undone. Are you sure you want to continue?"
+      footer={
+        <>
+          <Button variant="ghost">Cancel</Button>
+          <Button variant="primary">Confirm</Button>
+        </>
+      }
+    >
+      <p style={{ margin: 0, fontSize: 'var(--font-size-body)', color: 'var(--color-text-secondary)', lineHeight: 'var(--line-height-body)' }}>
+        Proceeding will permanently delete the selected items from your account.
+      </p>
+    </Dialog>
+  ),
 }

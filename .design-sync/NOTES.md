@@ -163,9 +163,13 @@ Read this before every re-sync.
   Verification learnings when a demo brand's tokens change.
 - **Story cap**: compare captures up to 14 stories per component. Only Button
   has 14. Raise `--max-stories` if any component grows past that.
-- **Not pixel-verified**: open Dialog, AlertDialog, Drawer, Toast and Tooltip
-  overlays, SideNav's mobile drawer (see above), and anything under a demo
-  brand.
+- **Open overlays** (2026-10-14): Dialog, AlertDialog, Drawer, Toast and
+  Tooltip each have an `Open` story that renders open with no interaction
+  (a `play` step only asserts it). The reference and the previews both show
+  them open, so the next sync can compare them; check they're within the
+  story cap. **Still not pixel-verified**: SideNav's drawer (its provider
+  closes the drawer from 1024px up, and SideNav is captured at 1280; Chromatic
+  covers it at 375 through `MobileDrawer`), and anything under a demo brand.
 - **Local git exclude**: on the machine that ran the first two syncs,
   `.git/info/exclude` lists `.design-sync/`, so a NEW file under it (a font, an
   owned preview, a script) never shows in `git status`. Check with
