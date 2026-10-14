@@ -762,7 +762,7 @@
   ],
   "unreleased": [
     {
-      "sha": "70d4064",
+      "sha": "89e3fdb",
       "type": "feat",
       "scope": "button-group",
       "message": "related actions, spaced or attached",
@@ -770,7 +770,7 @@
       "breaking": false
     },
     {
-      "sha": "1af8276",
+      "sha": "55734a8",
       "type": "feat",
       "scope": "segmented-control",
       "message": "single choice from a few, side by side",
