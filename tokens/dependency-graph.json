@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 40,
+    "filesScanned": 41,
     "tokenCount": 222
   },
   "byToken": {
@@ -178,7 +178,8 @@
       "components/primitives/Button/Button.css"
     ],
     "button-outline-border-width": [
-      "components/primitives/Button/Button.css"
+      "components/primitives/Button/Button.css",
+      "components/primitives/ButtonGroup/ButtonGroup.css"
     ],
     "button-padding-x": [
       "components/primitives/Button/Button.css"
@@ -1097,6 +1098,7 @@
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
       "components/primitives/Button/Button.css",
+      "components/primitives/ButtonGroup/ButtonGroup.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 66,
-    "publicComponentCount": 42,
+    "componentCount": 67,
+    "publicComponentCount": 43,
     "subComponentCount": 23
   },
   "components": [
@@ -87,6 +87,24 @@
         "DarkMode"
       ],
       "tokenCount": 18,
+      "internal": false
+    },
+    {
+      "name": "ButtonGroup",
+      "slug": "button-group",
+      "tier": "primitives",
+      "purpose": "Related actions kept together: Undo / Redo, zoom out / in, Cancel / Save",
+      "storybookPath": "Components/ButtonGroup",
+      "storybookTitleId": "components-buttongroup",
+      "defaultStoryId": "components-buttongroup--default",
+      "tokenPrefix": "buttongroup",
+      "stories": [
+        "Default",
+        "Attached",
+        "Vertical",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {

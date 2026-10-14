@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 39 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 40 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 42 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 43 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,13 +34,14 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (23)
+### Primitives (24)
 
 | Component | Reference |
 |---|---|
 | Avatar | [avatar](https://design.amezquita.dk/components/avatar.md) — User profile picture with fallback to initials when no image is provided |
 | Badge | [badge](https://design.amezquita.dk/components/badge.md) — Small status indicator or numeric count overlay attached to another element |
 | Button | [button](https://design.amezquita.dk/components/button.md) — Trigger for user actions; renders as `<button>` or `<a>` depending on context |
+| ButtonGroup | [button-group](https://design.amezquita.dk/components/button-group.md) — Related actions kept together: Undo / Redo, zoom out / in, Cancel / Save |
 | Checkbox | [checkbox](https://design.amezquita.dk/components/checkbox.md) — Single boolean selection with an associated label; supports indeterminate state |
 | Divider | [divider](https://design.amezquita.dk/components/divider.md) — A line that separates groups of content, horizontally or vertically |
 | Heading | [heading](https://design.amezquita.dk/components/heading.md) — Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level |

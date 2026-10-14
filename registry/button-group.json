@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group",
+  "type": "registry:component",
+  "title": "ButtonGroup",
+  "description": "Related actions kept together: Undo / Redo, zoom out / in, Cancel / Save",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}
