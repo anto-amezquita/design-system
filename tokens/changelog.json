@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "beb01ad",
+      "type": "feat",
+      "scope": "visually-hidden",
+      "message": "screen-reader-only text primitive",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "1688b9e",
       "type": "feat",
       "scope": "divider",
