@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "6e08807",
+      "type": "feat",
+      "scope": "progress-bar",
+      "message": "determinate and indeterminate progress primitive",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "b0885b9",
       "type": "feat",
       "scope": "kbd",
