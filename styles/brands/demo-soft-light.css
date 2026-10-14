@@ -30,7 +30,7 @@
   --color-accent-text: #5e4da1;
   --color-accent-text-hover: #4e3c8e;
   --color-border-default: var(--color-neutral-100);
-  --color-border-strong: var(--color-neutral-400);
+  --color-border-strong: var(--color-neutral-500);
   --color-border-focus: #241f3a;
   --color-curtain: var(--color-neutral-300);
   --color-skeleton-base: var(--color-neutral-200);

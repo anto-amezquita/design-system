@@ -3434,10 +3434,8 @@
         "Tabs",
         "Avatar",
         "Badge",
-        "Input",
         "Select",
-        "Tag",
-        "Textarea"
+        "Tag"
       ]
     },
     {
@@ -3445,18 +3443,18 @@
       "cssVar": "--color-border-strong",
       "type": "color",
       "category": "color",
-      "description": "Outlines that must read as interactive: form fields, checkboxes, radios, switches.",
-      "rawValue": "{color-neutral-400}",
+      "description": "Outlines that must read as interactive: form fields at rest, checkboxes, radios, the off switch track, an interactive card's hover ring. At least 3:1 on both surfaces (WCAG 1.4.11; the control-boundary pairs check it), so it's a step darker in light than in dark.",
+      "rawValue": "{color-border-default}",
       "resolved": {
-        "base-light": "#A3A3A3",
+        "base-light": "#737373",
         "base-dark": "#737373",
-        "demo-cool-light": "#9AA6A1",
+        "demo-cool-light": "#687771",
         "demo-cool-dark": "#687771",
-        "demo-soft-light": "#A2A1B2",
+        "demo-soft-light": "#737087",
         "demo-soft-dark": "#737087",
-        "demo-warm-light": "#AFA094",
-        "demo-warm-dark": "#817062",
-        "portfolio-light": "#A8A29E",
+        "demo-warm-light": "#1E130E",
+        "demo-warm-dark": "#FFF9F4",
+        "portfolio-light": "#78716C",
         "portfolio-dark": "#78716c"
       },
       "axisAware": true,

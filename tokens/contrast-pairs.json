@@ -83,5 +83,19 @@
     "role": "menu-destructive-item-highlighted",
     "minRatio": 4.5,
     "note": "Menu's destructive item label while highlighted."
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-border-strong",
+    "role": "control-boundary",
+    "minRatio": 3.0,
+    "note": "The edge of form fields, checkboxes, radios and the off switch track (WCAG 1.4.11)."
+  },
+  {
+    "bg": "color-surface-secondary",
+    "fg": "color-border-strong",
+    "role": "control-boundary-on-secondary",
+    "minRatio": 3.0,
+    "note": "Same, on the secondary surface (filters, panels)."
   }
 ]
