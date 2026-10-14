@@ -6,7 +6,7 @@
 
 
   --line-height-control, --color-text-secondary
-  --color-border-strong, --color-border-focus, --color-accent-default
+  --color-border-strong, --color-border-focus, --color-accent-text
   --space-inline-gap, --border-radius-image
   --duration-interaction, --easing-default
 
@@ -97,7 +97,7 @@ button.card {
 /* Featured modifier — accent border */
 
 .card--featured {
-  border-color: var(--color-accent-default);
+  border-color: var(--color-accent-text);
 }
 
 /* Slots */
@@ -169,7 +169,7 @@ button.card {
 }
 
 [data-mode="dark"] .card--featured {
-  border-color: var(--color-accent-default);
+  border-color: var(--color-accent-text);
 }
 
 @media (prefers-reduced-motion: reduce) {

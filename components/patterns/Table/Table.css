@@ -9,7 +9,7 @@
   --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
-  --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-accent-default
+  --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-accent-text
   --space-control-padding-x, --space-control-padding-y, --color-surface-tertiary, --border-radius-component, --space-tight-gap, --font-size-caption, --line-height-caption
 */
 
@@ -100,11 +100,11 @@
 /* Active direction highlights the relevant arrow */
 
 .table__header--sort-asc .table__sort-arrow--up {
-  fill: var(--color-accent-default);
+  fill: var(--color-accent-text);
 }
 
 .table__header--sort-desc .table__sort-arrow--down {
-  fill: var(--color-accent-default);
+  fill: var(--color-accent-text);
 }
 
 /* Body */

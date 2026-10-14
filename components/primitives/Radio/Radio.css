@@ -9,7 +9,7 @@
   --opacity-disabled, --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
-  --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-surface-primary
+  --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-text, --color-surface-primary
   --color-border-strong, --border-width-interactive, --space-label-gap
 */
 
@@ -71,7 +71,7 @@
 }
 
 .radio__item:hover:not([disabled]) {
-  border-color: var(--color-accent-default);
+  border-color: var(--color-accent-text);
 }
 
 .radio__item:focus-visible {
@@ -81,7 +81,7 @@
 
 .radio__item[data-state='checked'] {
   background: var(--color-surface-primary);
-  border-color: var(--color-accent-default);
+  border-color: var(--color-accent-text);
 }
 
 .radio__item[disabled] {
@@ -95,7 +95,7 @@
   display: block;
   width: var(--radio-indicator-size);
   height: var(--radio-indicator-size);
-  background: var(--color-accent-default);
+  background: var(--color-accent-text);
   border-radius: 50%;
 }
 
