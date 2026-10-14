@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 64,
-    "publicComponentCount": 40,
+    "componentCount": 65,
+    "publicComponentCount": 41,
     "subComponentCount": 23
   },
   "components": [
@@ -430,6 +430,25 @@
         "Disabled",
         "WithCharacterCount",
         "AllStates",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "ToggleButton",
+      "slug": "toggle-button",
+      "tier": "primitives",
+      "purpose": "A button that stays on or off, like bold in an editor or a grid overlay",
+      "storybookPath": "Components/ToggleButton",
+      "storybookTitleId": "components-togglebutton",
+      "defaultStoryId": "components-togglebutton--default",
+      "tokenPrefix": "togglebutton",
+      "stories": [
+        "Default",
+        "States",
+        "IconOnly",
+        "Controlled",
         "DarkMode"
       ],
       "tokenCount": 0,

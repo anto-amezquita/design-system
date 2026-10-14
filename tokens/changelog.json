@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "190f32e",
+      "type": "feat",
+      "scope": "icon-button",
+      "message": "icon-only action built on Button",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "2760fbe",
       "type": "docs",
       "scope": "kbd",

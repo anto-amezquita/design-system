@@ -803,6 +803,54 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### ToggleButton
+
+| Field | Value |
+|---|---|
+| **Purpose** | A button that stays on or off, like bold in an editor or a grid overlay |
+| **Figma name** | `ToggleButton` |
+| **Code name** | `ToggleButton` |
+| **Storybook path** | `Components/ToggleButton` |
+
+**Props / variants**
+- `label` (required): what the toggle turns on; the same in both states
+- `icon`: beside the label, or alone with `hideLabel`
+- `hideLabel`: icon only, as a square (IconButton); `label` becomes the accessible name
+- `pressed` + `onPressedChange` (controlled) or `defaultPressed` (uncontrolled)
+- `size`: `md` or `sm`, for icon-only toggles
+- `disabled`, `onClick` (runs first; `preventDefault()` cancels the toggle); native attributes and `ref` pass through
+
+**Required states**
+- [x] off (Button's `secondary`: outline)
+- [x] on (Button's `primary`: filled)
+- [x] hover while off (neutral surface, never the accent fill)
+- [x] focus-visible (Button's ring)
+- [x] disabled, off and on
+
+**Tokens consumed**
+- Button's and IconButton's tokens, plus `--color-surface-secondary` for the off hover
+
+**Accessibility**
+- Native `<button>` with `aria-pressed`; screen readers announce "toggle button, pressed / not pressed"
+- The name never changes with the state; changing it would announce a different control
+- On is a fill and off an outline, so the state doesn't rely on colour alone
+- Keyboard: `Space` and `Enter` toggle
+
+**Do**
+- Use it for a setting that takes effect right away and stays: formatting, a view option, mute.
+- Keep the label the same in both states: "Bold", not "Make bold" / "Remove bold".
+- Group related toggles in an element with `role="group"` and an `aria-label`.
+
+**Don't**
+- Don't use a ToggleButton to pick one option from several; that's SegmentedControl.
+- Don't use it for an action that happens once, like "Save"; that's Button.
+- Don't use it for a setting in a form that's saved later; that's Switch or Checkbox.
+
+**Chromatic stories**
+- `Default`, `States`, `IconOnly`, `Controlled`, `DarkMode`
+
+---
+
 ### VisuallyHidden
 
 | Field | Value |
