@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 33,
+    "filesScanned": 34,
     "tokenCount": 218
   },
   "byToken": {
@@ -129,6 +129,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
+      "components/primitives/Divider/Divider.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css"
@@ -250,6 +251,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
+      "components/primitives/Divider/Divider.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css"
     ],

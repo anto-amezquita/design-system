@@ -73,6 +73,15 @@ Single boolean selection with an associated label; supports indeterminate state
 - Storybook: Components/Checkbox
 - Stories: Default, Checked, Indeterminate, Disabled, DisabledChecked, Controlled, AllStates, NoLabel, DarkMode
 
+### Divider
+
+A line that separates groups of content, horizontally or vertically
+
+- Import: `import { Divider } from '@amezquita/design-system/components/primitives/Divider'`
+- Token prefix: `divider-*` (0 tokens)
+- Storybook: Components/Divider
+- Stories: Default, Vertical, DarkMode
+
 ### Heading
 
 Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level
