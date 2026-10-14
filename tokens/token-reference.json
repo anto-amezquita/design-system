@@ -3441,6 +3441,7 @@
         "Avatar",
         "Badge",
         "Divider",
+        "Kbd",
         "Select",
         "Tag"
       ]
@@ -6414,6 +6415,7 @@
         "Avatar",
         "Badge",
         "Divider",
+        "Kbd",
         "Link",
         "Select",
         "Tag"

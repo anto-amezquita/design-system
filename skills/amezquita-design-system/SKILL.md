@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 33 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 36 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 36 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 39 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (17)
+### Primitives (20)
 
 | Component | Reference |
 |---|---|
