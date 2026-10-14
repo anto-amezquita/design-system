@@ -770,6 +770,14 @@
       "breaking": false
     },
     {
+      "sha": "9186949",
+      "type": "fix",
+      "scope": "card",
+      "message": "a header that ends the card pads its bottom",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "0a124ba",
       "type": "feat",
       "scope": "tokens",
