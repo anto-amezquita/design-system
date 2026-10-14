@@ -7,7 +7,7 @@
   --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
-  --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --font-size-control, --color-surface-primary
+  --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-surface-primary
   --border-width-interactive, --color-border-strong, --color-feedback-error
   --border-radius-interactive, --space-control-padding-x, --space-control-padding-y, --font-weight-label, --font-size-small, --line-height-label, --font-size-caption, --line-height-caption
 */
@@ -34,14 +34,14 @@
   gap: var(--space-inline-gap);
   padding: var(--space-control-padding-y) var(--space-control-padding-x);
   background: var(--color-surface-primary);
-  border: var(--border-width-interactive) solid var(--color-border-default);
+  border: var(--border-width-interactive) solid var(--color-border-strong);
   border-radius: var(--border-radius-interactive);
   transition: border-color var(--duration-interaction) var(--easing-default);
   box-sizing: border-box;
 }
 
 .input-field__wrapper:hover:not(.input-field__wrapper--disabled) {
-  border-color: var(--color-border-strong);
+  border-color: var(--color-text-secondary);
 }
 
 .input-field__wrapper:focus-within:not(.input-field__wrapper--disabled) {

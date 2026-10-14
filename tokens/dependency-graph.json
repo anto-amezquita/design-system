@@ -250,10 +250,8 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
-      "components/primitives/Input/Input.css",
       "components/primitives/Select/Select.css",
-      "components/primitives/Tag/Tag.css",
-      "components/primitives/Textarea/Textarea.css"
+      "components/primitives/Tag/Tag.css"
     ],
     "color-border-focus": [
       "components/composition/Alert/Alert.css",

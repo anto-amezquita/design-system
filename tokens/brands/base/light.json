@@ -120,9 +120,9 @@
     "$description": "Dividers and the outlines of cards, tables, menus and fields."
   },
   "color-border-strong": {
-    "$value": "{color-neutral-400}",
+    "$value": "{color-neutral-500}",
     "$type": "color",
-    "$description": "Outlines that must read as interactive: form fields, checkboxes, radios, switches."
+    "$description": "Outlines that must read as interactive: form fields at rest, checkboxes, radios, the off switch track, an interactive card's hover ring. At least 3:1 on both surfaces (WCAG 1.4.11; the control-boundary pairs check it), so it's a step darker in light than in dark."
   },
   "color-border-focus": {
     "$value": "{color.black}",

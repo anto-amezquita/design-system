@@ -34,7 +34,7 @@
   --color-accent-text: var(--color-accent-default);
   --color-accent-text-hover: var(--color-accent-hover);
   --color-border-default: var(--color-neutral-900);
-  --color-border-strong: var(--color-neutral-400);
+  --color-border-strong: var(--color-border-default);
   --color-border-focus: var(--color-neutral-900);
   --color-curtain: var(--color-neutral-300);
   --color-feedback-error-background: var(--color-neutral-100);
@@ -93,7 +93,7 @@
   --color-accent-text: var(--color-accent-default);
   --color-accent-text-hover: var(--color-accent-hover);
   --color-border-default: var(--color-text-primary);
-  --color-border-strong: var(--color-neutral-400);
+  --color-border-strong: var(--color-border-default);
   --color-border-focus: #1e130e;
   --color-curtain: var(--color-neutral-300);
   --color-feedback-error-background: #fef2f2;
