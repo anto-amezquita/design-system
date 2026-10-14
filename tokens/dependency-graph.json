@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 34,
-    "tokenCount": 219
+    "tokenCount": 218
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -130,7 +130,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
-      "components/primitives/Kbd/Kbd.css",
+      "components/primitives/Divider/Divider.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css"
@@ -252,7 +252,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
-      "components/primitives/Kbd/Kbd.css",
+      "components/primitives/Divider/Divider.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css"
     ],

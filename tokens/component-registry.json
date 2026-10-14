@@ -113,6 +113,23 @@
       "internal": false
     },
     {
+      "name": "Divider",
+      "slug": "divider",
+      "tier": "primitives",
+      "purpose": "A line that separates groups of content, horizontally or vertically",
+      "storybookPath": "Components/Divider",
+      "storybookTitleId": "components-divider",
+      "defaultStoryId": "components-divider--default",
+      "tokenPrefix": "divider",
+      "stories": [
+        "Default",
+        "Vertical",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
       "name": "Heading",
       "slug": "heading",
       "tier": "primitives",
@@ -374,6 +391,23 @@
         "Disabled",
         "WithCharacterCount",
         "AllStates",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "VisuallyHidden",
+      "slug": "visually-hidden",
+      "tier": "primitives",
+      "purpose": "Text screen readers announce but sighted users don't see",
+      "storybookPath": "Components/VisuallyHidden",
+      "storybookTitleId": "components-visuallyhidden",
+      "defaultStoryId": "components-visuallyhidden--icon-button-label",
+      "tokenPrefix": "visuallyhidden",
+      "stories": [
+        "IconButtonLabel",
+        "LinkSuffix",
         "DarkMode"
       ],
       "tokenCount": 0,
