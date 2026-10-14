@@ -122,6 +122,17 @@ button.card {
   gap: var(--space-element-gap);
 }
 
+/* A header that is the card's last part pads its own bottom, as the footer
+   would. Without it, a card of media and header ended flush under the
+   text (found by the docs site's hero card). */
+.card__header:last-child {
+  padding-bottom: var(--space-container-padding);
+}
+
+.card--compact .card__header:last-child {
+  padding-bottom: calc(var(--space-container-padding) / 2);
+}
+
 .card__body {
   padding: var(--space-element-gap);
   flex: 1;
