@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 34,
-    "tokenCount": 218
+    "filesScanned": 37,
+    "tokenCount": 221
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -132,6 +132,7 @@
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Divider/Divider.css",
+      "components/primitives/Kbd/Kbd.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css"
@@ -255,6 +256,7 @@
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Divider/Divider.css",
+      "components/primitives/Kbd/Kbd.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css"
     ],
@@ -768,7 +770,8 @@
     ],
     "font-weight-medium": [
       "components/patterns/Breadcrumb/Breadcrumb.css",
-      "components/primitives/Kbd/Kbd.css"
+      "components/primitives/Kbd/Kbd.css",
+      "components/primitives/ProgressBar/ProgressBar.css"
     ],
     "font-weight-title": [
       "components/composition/Dialog/Dialog.css",
