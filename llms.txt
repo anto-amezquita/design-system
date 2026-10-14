@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 36 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 38 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -35,7 +35,6 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Divider](https://design.amezquita.dk/components/divider.md): A line that separates groups of content, horizontally or vertically
 - [Heading](https://design.amezquita.dk/components/heading.md): Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level
 - [Input](https://design.amezquita.dk/components/input.md): Labelled single-line text entry with hint and error states
-- [Kbd](https://design.amezquita.dk/components/kbd.md): A key the user presses, drawn as a keycap
 - [Label](https://design.amezquita.dk/components/label.md): Standalone form label element — used when a label must be decoupled from its input
 - [Link](https://design.amezquita.dk/components/link.md): Navigation to another page or resource; use Link for navigation and Button for actions
 - [ProgressBar](https://design.amezquita.dk/components/progress-bar.md): Shows how far a task has got, or that it's running when the end isn't known
