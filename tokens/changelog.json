@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "2760fbe",
+      "type": "docs",
+      "scope": "kbd",
+      "message": "restore the Kbd index entry lost in the merge",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "6e08807",
       "type": "feat",
       "scope": "progress-bar",
