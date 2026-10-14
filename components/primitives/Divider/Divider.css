@@ -1,0 +1,29 @@
+/*
+  Tokens consumed:
+
+  --color-border-default, --border-width-default
+
+  No component tokens: a Divider is the default border, so its own tokens
+  would only pass through (decisions/0004, 0005).
+
+  The line is a border, not a background, so it stays visible in forced-colors
+  mode, where backgrounds are dropped and borders take the system colour.
+*/
+
+.divider {
+  flex-shrink: 0;
+  margin: 0;
+  border: 0 solid var(--color-border-default);
+}
+
+.divider--horizontal {
+  inline-size: 100%;
+  border-block-start-width: var(--border-width-default);
+}
+
+/* Stretches in a flex row; min-block-size keeps it visible anywhere else. */
+.divider--vertical {
+  align-self: stretch;
+  min-block-size: 1em;
+  border-inline-start-width: var(--border-width-default);
+}

@@ -441,6 +441,23 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "divider",
+      "type": "registry:component",
+      "title": "Divider",
+      "description": "A line that separates groups of content, horizontally or vertically",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "heading",
       "type": "registry:component",
       "title": "Heading",
@@ -462,6 +479,23 @@
       "type": "registry:component",
       "title": "Input",
       "description": "Labelled single-line text entry with hint and error states",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "kbd",
+      "type": "registry:component",
+      "title": "Kbd",
+      "description": "A key the user presses, drawn as a keycap",
       "dependencies": [
         "@amezquita/design-system"
       ],
@@ -695,6 +729,23 @@
       "type": "registry:component",
       "title": "Textarea",
       "description": "Multi-line text entry with label, hint, and error states — mirrors Input API",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "visually-hidden",
+      "type": "registry:component",
+      "title": "VisuallyHidden",
+      "description": "Text screen readers announce but sighted users don't see",
       "dependencies": [
         "@amezquita/design-system"
       ],

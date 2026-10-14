@@ -762,6 +762,30 @@
   ],
   "unreleased": [
     {
+      "sha": "b0885b9",
+      "type": "feat",
+      "scope": "kbd",
+      "message": "keycap primitive for keyboard keys",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
+      "sha": "beb01ad",
+      "type": "feat",
+      "scope": "visually-hidden",
+      "message": "screen-reader-only text primitive",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
+      "sha": "1688b9e",
+      "type": "feat",
+      "scope": "divider",
+      "message": "horizontal and vertical separator primitive",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "cb5866a",
       "type": "fix",
       "scope": "tokens",
