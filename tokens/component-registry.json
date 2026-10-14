@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 59,
-    "publicComponentCount": 35,
+    "componentCount": 60,
+    "publicComponentCount": 36,
     "subComponentCount": 23
   },
   "components": [
@@ -110,6 +110,23 @@
         "DarkMode"
       ],
       "tokenCount": 1,
+      "internal": false
+    },
+    {
+      "name": "Divider",
+      "slug": "divider",
+      "tier": "primitives",
+      "purpose": "A line that separates groups of content, horizontally or vertically",
+      "storybookPath": "Components/Divider",
+      "storybookTitleId": "components-divider",
+      "defaultStoryId": "components-divider--default",
+      "tokenPrefix": "divider",
+      "stories": [
+        "Default",
+        "Vertical",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {
