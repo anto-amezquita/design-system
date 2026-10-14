@@ -91,6 +91,15 @@ Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a 
 - Storybook: Components/Heading
 - Stories: H1, H2, H3, H4, H5, AllLevels, LevelAsDecoupling, DarkMode
 
+### IconButton
+
+An action shown only as an icon, for toolbars, cards and dense rows
+
+- Import: `import { IconButton } from '@amezquita/design-system/components/primitives/IconButton'`
+- Token prefix: `iconbutton-*` (0 tokens)
+- Storybook: Components/IconButton
+- Stories: Default, Variants, Sizes, States, DarkMode
+
 ### Input
 
 Labelled single-line text entry with hint and error states

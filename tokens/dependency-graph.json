@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 37,
-    "tokenCount": 221
+    "filesScanned": 38,
+    "tokenCount": 222
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -955,6 +955,9 @@
     "side-nav-width": [
       "components/patterns/SideNav/SideNav.css"
     ],
+    "size-icon-interactive": [
+      "components/primitives/IconButton/IconButton.css"
+    ],
     "size-icon-lg": [
       "components/primitives/Spinner/Spinner.css"
     ],
@@ -962,12 +965,14 @@
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/primitives/IconButton/IconButton.css",
       "components/primitives/Spinner/Spinner.css"
     ],
     "size-icon-sm": [
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/primitives/IconButton/IconButton.css",
       "components/primitives/Spinner/Spinner.css"
     ],
     "size-icon-xs": [
@@ -983,6 +988,7 @@
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/IconButton/IconButton.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Switch/Switch.css"
     ],

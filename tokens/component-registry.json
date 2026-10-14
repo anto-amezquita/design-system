@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 63,
-    "publicComponentCount": 39,
+    "componentCount": 64,
+    "publicComponentCount": 40,
     "subComponentCount": 23
   },
   "components": [
@@ -146,6 +146,25 @@
         "H5",
         "AllLevels",
         "LevelAsDecoupling",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "IconButton",
+      "slug": "icon-button",
+      "tier": "primitives",
+      "purpose": "An action shown only as an icon, for toolbars, cards and dense rows",
+      "storybookPath": "Components/IconButton",
+      "storybookTitleId": "components-iconbutton",
+      "defaultStoryId": "components-iconbutton--default",
+      "tokenPrefix": "iconbutton",
+      "stories": [
+        "Default",
+        "Variants",
+        "Sizes",
+        "States",
         "DarkMode"
       ],
       "tokenCount": 0,
