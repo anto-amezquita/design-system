@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { expect, within } from 'storybook/test'
 import { Tooltip } from './Tooltip'
 import { Button } from '@/components/primitives/Button/Button'
 import { CopyIcon, HeartIcon, TrashIcon, InfoIcon, PencilIcon, ShareIcon } from '@phosphor-icons/react'
@@ -94,4 +95,22 @@ export const DarkMode: Story = {
   ...Default,
   name: 'Dark mode',
   decorators: [darkModeDecorator],
+}
+
+// Renders open from the start, for Chromatic and /design-sync: both capture a
+// story without running clicks, so the closed stories above only ever showed
+// the trigger. Kept off the docs page, where an open overlay would cover it.
+export const Open: Story = {
+  name: 'Open',
+  tags: ['!autodocs'],
+  play: async () => {
+    await expect(await within(document.body).findByRole('tooltip')).toHaveTextContent('Copy to clipboard')
+  },
+  render: () => (
+    <Tooltip content="Copy to clipboard" defaultOpen>
+      <Button variant="ghost" icon={<CopyIcon size={16} aria-hidden="true" />} aria-label="Copy to clipboard">
+        Copy
+      </Button>
+    </Tooltip>
+  ),
 }

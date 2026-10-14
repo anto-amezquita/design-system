@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { expect, waitFor, within } from 'storybook/test'
 import { useToast } from './Toast'
 
 const meta: Meta = {
@@ -135,4 +137,33 @@ export const DarkMode: Story = {
       />
     </div>
   ),
+}
+
+// Renders open from the start, for Chromatic and /design-sync: both capture a
+// story without running clicks, so the closed stories above only ever showed
+// the trigger. Kept off the docs page, where an open overlay would cover it.
+// Fires once on mount; the ref keeps React's double effect in dev from
+// showing two.
+function ShowOnMount() {
+  const { toast } = useToast()
+  const shown = useRef(false)
+  useEffect(() => {
+    if (shown.current) return
+    shown.current = true
+    toast({ title: 'Changes saved', description: 'Your settings have been updated.', variant: 'neutral' })
+  }, [toast])
+  return null
+}
+
+export const Open: Story = {
+  name: 'Open',
+  tags: ['!autodocs'],
+  play: async () => {
+    const body = within(document.body)
+    const title = await body.findByText('Changes saved')
+    await waitFor(() => expect(title).toBeVisible())
+    // Once, though React runs effects twice in development.
+    await expect(body.getAllByText('Changes saved')).toHaveLength(1)
+  },
+  render: () => <ShowOnMount />,
 }

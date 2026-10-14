@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { expect, waitFor, within } from 'storybook/test'
 import { useState } from 'react'
 import { Drawer } from './Drawer'
 import { Button } from '@/components/primitives/Button'
@@ -185,4 +186,51 @@ export const DarkMode: Story = {
       </Drawer>
     )
   },
+}
+
+// Renders open from the start, for Chromatic and /design-sync: both capture a
+// story without running clicks, so the closed stories above only ever showed
+// the trigger. Kept off the docs page, where an open overlay would cover it.
+export const Open: Story = {
+  name: 'Open',
+  tags: ['!autodocs'],
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            // While a modal is open, the page behind it is inert and hidden
+            // from assistive tech, and the backdrop dims its trigger to
+            // ~1.3:1. Contrast is checked where it matters: the open dialog
+            // and everything in it. Every other rule checks the whole page.
+            id: 'color-contrast',
+            selector: '[role="dialog"], [role="dialog"] *',
+          },
+        ],
+      },
+    },
+  },
+  play: async () => {
+    const overlay = await within(document.body).findByRole('dialog', { name: 'Settings' })
+    // Past its entrance animation.
+    await waitFor(() => expect(overlay).toBeVisible())
+  },
+  render: () => (
+    <Drawer
+      defaultOpen
+      trigger={<Button>Open drawer</Button>}
+      title="Settings"
+      description="Configure your preferences below."
+      footer={
+        <>
+          <Button variant="ghost">Cancel</Button>
+          <Button>Save changes</Button>
+        </>
+      }
+    >
+      <p style={{ margin: 0, color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)' }}>
+        Drawer body content goes here.
+      </p>
+    </Drawer>
+  ),
 }

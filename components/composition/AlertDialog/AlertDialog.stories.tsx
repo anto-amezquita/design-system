@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { expect, waitFor, within } from 'storybook/test'
 import { AlertDialog } from './AlertDialog'
 import { Button } from '../../primitives/Button'
 import { darkModeDecorator } from '@/lib/storybook'
@@ -144,4 +145,35 @@ export const DarkMode: Story = {
   ...Default,
   name: 'Dark mode',
   decorators: [darkModeDecorator],
+}
+
+// Renders open from the start, for Chromatic and /design-sync: both capture a
+// story without running clicks, so the closed stories above only ever showed
+// the trigger. Kept off the docs page, where an open overlay would cover it.
+export const Open: Story = {
+  name: 'Open',
+  tags: ['!autodocs'],
+  play: async () => {
+    const overlay = await within(document.body).findByRole('alertdialog', { name: 'Delete this item?' })
+    // Past its entrance animation.
+    await waitFor(() => expect(overlay).toBeVisible())
+  },
+  render: () => {
+    const [open, setOpen] = useState(true)
+    return (
+      <>
+        <button type="button" onClick={() => setOpen(true)}>
+          Delete item
+        </button>
+        <AlertDialog
+          open={open}
+          onOpenChange={setOpen}
+          title="Delete this item?"
+          description="This action cannot be undone."
+          cancel={<Button variant="secondary">Cancel</Button>}
+          action={<Button onClick={() => setOpen(false)}>Delete</Button>}
+        />
+      </>
+    )
+  },
 }
