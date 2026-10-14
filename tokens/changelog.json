@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "b0885b9",
+      "type": "feat",
+      "scope": "kbd",
+      "message": "keycap primitive for keyboard keys",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "beb01ad",
       "type": "feat",
       "scope": "visually-hidden",
