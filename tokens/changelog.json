@@ -778,6 +778,14 @@
       "breaking": false
     },
     {
+      "sha": "88006a4",
+      "type": "fix",
+      "scope": "button",
+      "message": "loading keeps the variant's colours",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "9186949",
       "type": "fix",
       "scope": "card",
