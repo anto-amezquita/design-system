@@ -44,7 +44,7 @@ Brand colours are written as hex: `scripts/check-contrast.mjs` skips any pair wh
 
 - The package ships three brands no product uses: 9 CSS files a consumer only pays for if they import one, and more entries in `tokens.json`, `token-reference.json` and `fonts.json`.
 - `demo-soft`'s pastel accent still fills a few things where contrast isn't checked: the selected Radio ring, the active Tabs indicator, Card's selected border. A brand built on a pastel fill would want those on `color-accent-text` too; the demo doesn't show them. (Done 2026-10-14: Radio's ring, dot and hover border, the Tabs indicator, Card's featured border, Checkbox's hover border and Table's sort arrows use `color-accent-text`, which `accent-on-surface` checks at 3:1. `lib/accent-marks.test.tsx` checks them in demo-soft.)
-- Card has no border token of its own, so `demo-soft` can't drop the border it would rather not have; it uses a border close to its surface instead. Inputs and tables keep theirs.
+- Card has no border token of its own, so `demo-soft` can't drop the border it would rather not have; it uses a border close to its surface instead. Inputs and tables keep theirs. (Done 2026-10-14: `card-border-color`, transparent in demo-soft; its cards get their edge from the shadow in light and the fill in dark.)
 - `GOOGLE_FONTS` in `scripts/build-fonts.mjs` records each font's ranges by hand. A wrong range breaks that brand's link; it was checked by opening each generated link when the brands were added.
 
 ## Amendment, 2026-10-13: `base-scoped.css`

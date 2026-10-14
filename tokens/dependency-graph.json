@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 33,
-    "tokenCount": 216
+    "tokenCount": 218
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -193,6 +193,9 @@
     ],
     "button-spinner-duration": [
       "components/primitives/Button/Button.css"
+    ],
+    "card-border-color": [
+      "components/composition/Card/Card.css"
     ],
     "card-horizontal-media-width": [
       "components/composition/Card/Card.css"
@@ -902,6 +905,9 @@
     ],
     "select-item-padding-y": [
       "components/primitives/Select/Select.css"
+    ],
+    "shadow-card": [
+      "components/composition/Card/Card.css"
     ],
     "shadow-card-hover": [
       "components/composition/Card/Card.css"

@@ -5,20 +5,23 @@
 
 
 
-  --line-height-control, --color-text-secondary
+  --line-height-control, --color-text-secondary, --card-border-color
   --color-border-strong, --color-border-focus, --color-accent-text
   --space-inline-gap, --border-radius-image
   --duration-interaction, --easing-default
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
-  --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-surface-primary
-  --border-radius-component, --space-container-padding, --space-element-gap, --shadow-card-hover
+  --color-surface-secondary, --border-width-default, --font-size-control, --color-surface-primary
+  --border-radius-component, --space-container-padding, --space-element-gap, --shadow-card, --shadow-card-hover
 */
 
 .card {
   background: var(--color-surface-primary);
-  border: var(--border-width-default) solid var(--color-border-default);
+  border: var(--border-width-default) solid var(--card-border-color);
   border-radius: var(--border-radius-component);
+  /* shadow-card was defined in every brand and used by nothing; a card with
+     no outline (demo-soft) gets its edge from it. */
+  box-shadow: var(--shadow-card);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -27,6 +30,7 @@
 .card--ghost {
   background: var(--color-surface-secondary);
   border-color: transparent;
+  box-shadow: none;
 }
 
 /* Interactive modifier — hover ring and border animation, no cursor change */
@@ -172,7 +176,7 @@ button.card {
 /* Dark mode overrides — component tokens compile to static hex */
 [data-mode="dark"] .card {
   background: var(--color-surface-secondary);
-  border-color: var(--color-border-default);
+  border-color: var(--card-border-color);
 }
 
 [data-mode="dark"] .card--ghost {

@@ -13,10 +13,12 @@
   ],
   "cssVars": {
     "light": {
-      "card-horizontal-media-width": "200px"
+      "card-horizontal-media-width": "200px",
+      "card-border-color": "#E5E5E5"
     },
     "dark": {
-      "card-horizontal-media-width": "200px"
+      "card-horizontal-media-width": "200px",
+      "card-border-color": "#404040"
     }
   }
 }

@@ -3,5 +3,10 @@
     "$value": "200px",
     "$type": "dimension",
     "$description": "Width of the image column in a horizontal Card."
+  },
+  "card-border-color": {
+    "$value": "{color-border-default}",
+    "$type": "color",
+    "$description": "Card's outline. The default border in base; a brand whose cards get their edge from a shadow or a fill sets it to transparent (demo-soft)."
   }
 }

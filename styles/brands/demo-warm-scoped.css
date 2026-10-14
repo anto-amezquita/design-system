@@ -9,6 +9,7 @@
   --button-secondary-foreground: var(--color-accent-default);
   --button-secondary-border: var(--color-accent-default);
   --button-secondary-background-hover: var(--color-accent-default);
+  --card-border-color: var(--color-border-default);
   --color-neutral-50: #1e150e;
   --color-neutral-100: #2f241a;
   --color-neutral-200: #4b3d31;
@@ -67,6 +68,7 @@
   --button-secondary-foreground: var(--color-accent-default);
   --button-secondary-border: var(--color-accent-default);
   --button-secondary-background-hover: var(--color-accent-default);
+  --card-border-color: var(--color-border-default);
   --color-neutral-50: #fff9f4;
   --color-neutral-100: #fef3eb;
   --color-neutral-200: #f0e2d8;

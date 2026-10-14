@@ -420,7 +420,7 @@
       "storybookPath": "Components/Card",
       "storybookTitleId": "components-card",
       "defaultStoryId": "components-card--default",
-      "tokenPrefix": "card-horizontal-media",
+      "tokenPrefix": "card",
       "stories": [
         "Default",
         "Ghost",
@@ -433,7 +433,7 @@
         "AllVariants",
         "DarkMode"
       ],
-      "tokenCount": 1,
+      "tokenCount": 2,
       "internal": false
     },
     {
