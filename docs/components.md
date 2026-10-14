@@ -109,6 +109,50 @@ Copy this for each new component. Fill in every field before the component ships
 
 ---
 
+### ButtonGroup
+
+| Field | Value |
+|---|---|
+| **Purpose** | Related actions kept together: Undo / Redo, zoom out / in, Cancel / Save |
+| **Figma name** | `ButtonGroup` |
+| **Code name** | `ButtonGroup` |
+| **Storybook path** | `Components/ButtonGroup` |
+
+**Props / variants**
+- `children` (required): Buttons, IconButtons or ToggleButtons
+- `label`: names the group for screen readers; recommended when the buttons don't say what they act on
+- `attached`: joins the buttons into one shape (shared edges, round corners only at the ends); default is separate buttons with a gap
+- `orientation`: `horizontal` (default) or `vertical`
+- Native `div` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] spaced and attached, horizontal and vertical
+- [x] hover and focus on an attached button sit on top, so the whole outline and ring show
+- [x] each child keeps its own states (Button's)
+
+**Tokens consumed**
+- `--space-inline-gap`, `--button-outline-border-width`
+
+**Accessibility**
+- `role="group"`, named by `label`
+- Every button stays its own Tab stop: each is a separate action. (A single choice with arrow keys is SegmentedControl.)
+- No `aria-orientation`: `role="group"` doesn't take it; the layout is visual
+
+**Do**
+- Group actions that act on the same thing, in a fixed order people learn: Undo before Redo.
+- Use `attached` with `secondary` buttons for tool-like sets.
+- Put the main action last in a spaced group, as in dialogs.
+
+**Don't**
+- Don't use ButtonGroup to pick one option; that's SegmentedControl.
+- Don't attach buttons of different variants; a filled button in an outlined row looks chosen.
+- Don't group more than five or so actions; move the rest into a Menu.
+
+**Chromatic stories**
+- `Default`, `Attached`, `Vertical`, `DarkMode`
+
+---
+
 ### Card
 
 | Field | Value |

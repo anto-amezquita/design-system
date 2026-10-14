@@ -762,7 +762,7 @@
   ],
   "unreleased": [
     {
-      "sha": "bdf8bba",
+      "sha": "1af8276",
       "type": "feat",
       "scope": "segmented-control",
       "message": "single choice from a few, side by side",

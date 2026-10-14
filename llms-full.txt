@@ -64,6 +64,15 @@ Trigger for user actions; renders as `<button>` or `<a>` depending on context
 - Storybook: Components/Button
 - Stories: Primary, Secondary, Ghost, Link, Loading, LoadingSecondary, FullWidth, WithIcon, Disabled, WithArrow, Motion, AllVariants, AllStates, DarkMode
 
+### ButtonGroup
+
+Related actions kept together: Undo / Redo, zoom out / in, Cancel / Save
+
+- Import: `import { ButtonGroup } from '@amezquita/design-system/components/primitives/ButtonGroup'`
+- Token prefix: `buttongroup-*` (0 tokens)
+- Storybook: Components/ButtonGroup
+- Stories: Default, Attached, Vertical, DarkMode
+
 ### Checkbox
 
 Single boolean selection with an associated label; supports indeterminate state
