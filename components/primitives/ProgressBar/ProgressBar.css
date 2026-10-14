@@ -1,0 +1,94 @@
+/*
+  Tokens consumed:
+
+  --progress-bar-height
+
+  Semantic, referenced directly:
+  --color-surface-tertiary (track), --color-accent-text (fill: the
+  progress-fill pairs keep it 3:1 on the track and on the page in every
+  brand and mode), --color-text-primary, --color-text-secondary,
+  --font-family-base, --font-size-small, --line-height-small,
+  --font-weight-medium, --space-tight-gap, --space-inline-gap,
+  --border-radius-full, --duration-transition, --duration-entrance,
+  --easing-default
+*/
+
+.progress-bar {
+  display: grid;
+  gap: var(--space-tight-gap);
+  inline-size: 100%;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.progress-bar__header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-inline-gap);
+}
+
+/* Same clip as VisuallyHidden: the label stays the bar's accessible name. */
+.progress-bar__header--hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.progress-bar__label {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.progress-bar__value {
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-bar__track {
+  position: relative;
+  block-size: var(--progress-bar-height);
+  overflow: hidden;
+  border-radius: var(--border-radius-full);
+  background: var(--color-surface-tertiary);
+}
+
+.progress-bar__fill {
+  block-size: 100%;
+  border-radius: inherit;
+  background: var(--color-accent-text);
+  transition: inline-size var(--duration-transition) var(--easing-default);
+}
+
+/* Indeterminate: a segment slides across, because the end isn't known. */
+.progress-bar--indeterminate .progress-bar__fill {
+  position: absolute;
+  inset-block: 0;
+  inline-size: 40%;
+  animation: progress-bar-slide calc(var(--duration-entrance) * 2.5) var(--easing-default) infinite;
+}
+
+@keyframes progress-bar-slide {
+  from { inset-inline-start: -40%; }
+  to { inset-inline-start: 100%; }
+}
+
+/* Forced colors drop backgrounds; draw the track's edge and keep the fill. */
+@media (forced-colors: active) {
+  .progress-bar__track { border: 1px solid CanvasText; }
+  .progress-bar__fill { background: Highlight; forced-color-adjust: none; }
+}
+
+/* No movement: the indeterminate segment rests in the middle, and value changes jump. */
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar__fill { transition: none; }
+
+  .progress-bar--indeterminate .progress-bar__fill {
+    animation: none;
+    inset-inline-start: 30%;
+  }
+}

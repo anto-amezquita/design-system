@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 32 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 33 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 35 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 36 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (16)
+### Primitives (17)
 
 | Component | Reference |
 |---|---|
@@ -46,6 +46,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Input | [input](https://design.amezquita.dk/components/input.md) — Labelled single-line text entry with hint and error states |
 | Label | [label](https://design.amezquita.dk/components/label.md) — Standalone form label element — used when a label must be decoupled from its input |
 | Link | [link](https://design.amezquita.dk/components/link.md) — Navigation to another page or resource; use Link for navigation and Button for actions |
+| ProgressBar | [progress-bar](https://design.amezquita.dk/components/progress-bar.md) — Shows how far a task has got, or that it's running when the end isn't known |
 | Radio | [radio](https://design.amezquita.dk/components/radio.md) — Single-selection control within a mutually exclusive group |
 | Select | [select](https://design.amezquita.dk/components/select.md) — Dropdown for choosing a single value from a list; supports grouped options |
 | Skeleton | [skeleton](https://design.amezquita.dk/components/skeleton.md) — Placeholder loading state that mirrors the geometry of the content it replaces |

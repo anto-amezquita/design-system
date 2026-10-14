@@ -97,5 +97,19 @@
     "role": "control-boundary-on-secondary",
     "minRatio": 3.0,
     "note": "Same, on the secondary surface (filters, panels)."
+  },
+  {
+    "bg": "color-surface-tertiary",
+    "fg": "color-accent-text",
+    "role": "progress-fill-on-track",
+    "minRatio": 3.0,
+    "note": "ProgressBar's fill against its track (WCAG 1.4.11): the filled length is the information."
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-accent-text",
+    "role": "progress-fill-on-page",
+    "minRatio": 3.0,
+    "note": "ProgressBar's fill against the page, where the track ends."
   }
 ]

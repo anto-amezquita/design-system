@@ -509,6 +509,27 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "progress-bar",
+      "type": "registry:component",
+      "title": "ProgressBar",
+      "description": "Shows how far a task has got, or that it's running when the end isn't known",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json"
+      ],
+      "cssVars": {
+        "light": {
+          "progress-bar-height": "8px"
+        },
+        "dark": {
+          "progress-bar-height": "8px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "radio",
       "type": "registry:component",
       "title": "Radio",
