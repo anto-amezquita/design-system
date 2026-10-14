@@ -762,7 +762,7 @@
   ],
   "unreleased": [
     {
-      "sha": "190f32e",
+      "sha": "5a5cce7",
       "type": "feat",
       "scope": "icon-button",
       "message": "icon-only action built on Button",
