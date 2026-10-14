@@ -394,7 +394,8 @@
         "WithBody",
         "NoDescription",
         "AllSizes",
-        "DarkMode"
+        "DarkMode",
+        "Open"
       ],
       "tokenCount": 0,
       "internal": false
@@ -537,7 +538,8 @@
         "WithForm",
         "NoDescription",
         "AllSizes",
-        "DarkMode"
+        "DarkMode",
+        "Open"
       ],
       "tokenCount": 6,
       "internal": false
@@ -556,7 +558,8 @@
         "FilterPanel",
         "AllSides",
         "Sizes",
-        "DarkMode"
+        "DarkMode",
+        "Open"
       ],
       "tokenCount": 9,
       "internal": false
@@ -630,7 +633,8 @@
         "Default",
         "AllVariants",
         "TitleOnly",
-        "DarkMode"
+        "DarkMode",
+        "Open"
       ],
       "tokenCount": 6,
       "internal": false
@@ -650,7 +654,8 @@
         "IconButtons",
         "LongContent",
         "NoDelay",
-        "DarkMode"
+        "DarkMode",
+        "Open"
       ],
       "tokenCount": 6,
       "internal": false
