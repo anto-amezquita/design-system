@@ -657,6 +657,45 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### VisuallyHidden
+
+| Field | Value |
+|---|---|
+| **Purpose** | Text screen readers announce but sighted users don't see |
+| **Figma name** | `VisuallyHidden` |
+| **Code name** | `VisuallyHidden` |
+| **Storybook path** | `Components/VisuallyHidden` |
+
+**Props / variants**
+- `as`: `span` (default, inline) or `div` (block)
+- Native attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] default (nothing visible; no interactive states)
+
+**Tokens consumed**
+- None
+
+**Accessibility**
+- Clipped to a 1px box with `clip-path: inset(50%)`, so it stays in the accessibility tree; `display: none` and `hidden` would remove it
+- `white-space: nowrap` keeps screen readers from reading the clipped text one word at a time
+- Not focusable. For a link that appears on focus, use `SkipLink`
+
+**Do**
+- Name an icon-only control with it when there's no visible label.
+- Add context a sighted user gets from the layout, like "(opens in a new tab)" or which row a "Delete" button belongs to.
+- Keep the hidden text short; it's read every time.
+
+**Don't**
+- Don't hide something sighted users need too; if it matters, show it.
+- Don't put focusable content inside it: a keyboard user would land on something they can't see.
+- Don't use it to hide text from screen readers; that's `aria-hidden`.
+
+**Chromatic stories**
+- `IconButtonLabel`, `LinkSuffix`, `DarkMode`
+
+---
+
 ### Alert
 
 | Field | Value |

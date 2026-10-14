@@ -55,6 +55,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Switch | [switch](https://design.amezquita.dk/components/switch.md) — Binary toggle for on/off settings; renders as a styled checkbox under the hood |
 | Tag | [tag](https://design.amezquita.dk/components/tag.md) — Inline label for categorising or annotating content — non-interactive |
 | Textarea | [textarea](https://design.amezquita.dk/components/textarea.md) — Multi-line text entry with label, hint, and error states — mirrors Input API |
+| VisuallyHidden | [visually-hidden](https://design.amezquita.dk/components/visually-hidden.md) — Text screen readers announce but sighted users don't see |
 
 ### Composition (10)
 
