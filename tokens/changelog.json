@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "cb5866a",
+      "type": "fix",
+      "scope": "tokens",
+      "message": "form controls get a 3:1 edge",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "e4f18ab",
       "type": "feat",
       "scope": "card",
