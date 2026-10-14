@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "c422b79",
+      "type": "feat",
+      "scope": "toggle-button",
+      "message": "on/off button with aria-pressed",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "5a5cce7",
       "type": "feat",
       "scope": "icon-button",
