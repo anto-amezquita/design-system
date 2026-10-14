@@ -1,0 +1,194 @@
+/*
+  Tokens consumed:
+
+  --slider-track-height
+
+  Semantic, referenced directly:
+  --color-surface-tertiary (track), --color-accent-text (fill and the
+  thumb's edge: the progress-fill pairs keep it 3:1 on the track and on the
+  page), --color-surface-primary (thumb), --color-surface-secondary (thumb
+  on hover), --size-icon-md (thumb), --size-touch-target (input height, so
+  the whole row is the target), --border-width-medium,
+  --color-border-focus, --focus-ring-width, --focus-ring-offset,
+  --opacity-disabled, --font-family-base, --font-size-small,
+  --font-weight-label, --line-height-label, --font-size-caption,
+  --line-height-caption, --color-text-primary, --color-text-secondary,
+  --space-tight-gap, --space-inline-gap, --duration-interaction,
+  --easing-default
+
+  The fill is a gradient on the track, stopped at --slider-fill, which the
+  component sets from the value. Firefox draws it with ::-moz-range-progress
+  instead.
+*/
+
+.slider {
+  display: grid;
+  gap: var(--space-tight-gap);
+  inline-size: 100%;
+  font-family: var(--font-family-base);
+}
+
+.slider__header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-inline-gap);
+}
+
+/* Same clip as VisuallyHidden: the label stays the input's accessible name. */
+.slider__header--hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.slider__label {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-label);
+  line-height: var(--line-height-label);
+}
+
+.slider__value {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-label);
+  font-variant-numeric: tabular-nums;
+}
+
+.slider__hint {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+}
+
+/* The input itself: full row height, so the whole 44px band is the target. */
+.slider__input {
+  /* Private: the component overrides it inline from the value. */
+  --slider-fill: 0%;
+  appearance: none;
+  inline-size: 100%;
+  block-size: var(--size-touch-target);
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slider__input:focus-visible {
+  outline: none;
+}
+
+/* Track (WebKit / Blink): filled up to the thumb. */
+.slider__input::-webkit-slider-runnable-track {
+  block-size: var(--slider-track-height);
+  border-radius: var(--border-radius-full);
+  background: linear-gradient(
+    to right,
+    var(--color-accent-text) var(--slider-fill),
+    var(--color-surface-tertiary) var(--slider-fill)
+  );
+}
+
+/* Right-to-left: the range runs the other way, so the fill does too. */
+.slider__input:dir(rtl)::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to left,
+    var(--color-accent-text) var(--slider-fill),
+    var(--color-surface-tertiary) var(--slider-fill)
+  );
+}
+
+/* Track (Firefox) */
+.slider__input::-moz-range-track {
+  block-size: var(--slider-track-height);
+  border-radius: var(--border-radius-full);
+  background: var(--color-surface-tertiary);
+}
+
+.slider__input::-moz-range-progress {
+  block-size: var(--slider-track-height);
+  border-radius: var(--border-radius-full);
+  background: var(--color-accent-text);
+}
+
+/* Thumb */
+.slider__input::-webkit-slider-thumb {
+  appearance: none;
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+  /* Centre on the track: half the track minus half the thumb. */
+  margin-block-start: calc((var(--slider-track-height) - var(--size-icon-md)) / 2);
+  border: var(--border-width-medium) solid var(--color-accent-text);
+  border-radius: var(--border-radius-full);
+  background: var(--color-surface-primary);
+  transition: background var(--duration-interaction) var(--easing-default);
+}
+
+.slider__input::-moz-range-thumb {
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+  box-sizing: border-box;
+  border: var(--border-width-medium) solid var(--color-accent-text);
+  border-radius: var(--border-radius-full);
+  background: var(--color-surface-primary);
+  transition: background var(--duration-interaction) var(--easing-default);
+}
+
+.slider__input:hover:not(:disabled)::-webkit-slider-thumb {
+  background: var(--color-surface-secondary);
+}
+
+.slider__input:hover:not(:disabled)::-moz-range-thumb {
+  background: var(--color-surface-secondary);
+}
+
+/* Focus ring on the thumb: a gap in the page colour, then the ring. */
+.slider__input:focus-visible::-webkit-slider-thumb {
+  box-shadow:
+    0 0 0 var(--focus-ring-offset) var(--color-surface-primary),
+    0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--color-border-focus);
+}
+
+.slider__input:focus-visible::-moz-range-thumb {
+  box-shadow:
+    0 0 0 var(--focus-ring-offset) var(--color-surface-primary),
+    0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--color-border-focus);
+}
+
+/* Only the track and thumb fade. The label stays readable (4.5:1): it still
+   says what the value is, and axe checks it like any other text. */
+.slider__input:disabled {
+  opacity: var(--opacity-disabled);
+}
+
+.slider__input:disabled {
+  cursor: not-allowed;
+}
+
+@media (forced-colors: active) {
+  .slider__input::-webkit-slider-runnable-track {
+    background: CanvasText;
+  }
+
+  .slider__input::-webkit-slider-thumb {
+    background: Highlight;
+    border-color: Highlight;
+    forced-color-adjust: none;
+  }
+}
+
+/* Vendor pseudo-elements stay in separate rules: one unknown selector in a
+   list drops the whole rule in the other engine. */
+@media (prefers-reduced-motion: reduce) {
+  .slider__input::-webkit-slider-thumb {
+    transition: none;
+  }
+
+  .slider__input::-moz-range-thumb {
+    transition: none;
+  }
+}

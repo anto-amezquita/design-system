@@ -759,6 +759,61 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Slider
+
+| Field | Value |
+|---|---|
+| **Purpose** | One value from a range, by dragging or with the keyboard: volume, a price limit, opacity |
+| **Figma name** | `Slider` |
+| **Code name** | `Slider` |
+| **Storybook path** | `Components/Slider` |
+
+**Props / variants**
+- `label` (required): the input's accessible name; shown above the track unless `hideLabel`
+- `value` + `onValueChange` (controlled) or `defaultValue` (uncontrolled; defaults to `min`)
+- `min` (0), `max` (100), `step` (1)
+- `showValue`: the current value beside the label
+- `formatValue`: words for the value, shown and read as `aria-valuetext` (`v => \`${v} kr.\``)
+- `hint`: help text under the track (`aria-describedby`)
+- `disabled`, `name`, `id`; native input attributes and `ref` reach the `<input>`
+- One thumb only. A two-thumb range is not supported yet
+
+**Required states**
+- [x] default (track filled up to the thumb)
+- [x] hover (thumb on the neutral surface)
+- [x] focus-visible (ring around the thumb)
+- [x] disabled (track and thumb fade; the label stays readable)
+
+**Tokens consumed**
+- `--slider-track-height`
+- `--color-surface-tertiary` (track), `--color-accent-text` (fill and thumb edge), `--color-surface-primary`, `--color-surface-secondary`
+- `--size-icon-md` (thumb), `--size-touch-target` (row height), `--border-width-medium`, `--border-radius-full`
+- `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`, `--opacity-disabled`
+- `--font-family-base`, `--font-size-small`, `--font-weight-label`, `--line-height-label`, `--font-size-caption`, `--line-height-caption`, `--color-text-primary`, `--color-text-secondary`
+- `--space-tight-gap`, `--space-inline-gap`, `--duration-interaction`, `--easing-default`
+
+**Accessibility**
+- Native `<input type="range">` with a `<label>`: announced as a slider with its value
+- Keyboard: arrows step, Page Up / Down take bigger steps, Home / End jump to the ends
+- Fill and thumb edge 3:1 on the track and the page in every brand and mode (the progress-fill pairs, tested)
+- The whole 44px row is the target; the fill runs the other way in right-to-left layouts
+- Forced colors: the thumb uses `Highlight`
+
+**Do**
+- Use a Slider when the exact number matters less than the feel: volume, brightness, a rough limit.
+- Show the value (`showValue`) when people need to know it, and format it with its unit.
+- Pick a `step` that matches what people can tell apart.
+
+**Don't**
+- Don't use a Slider for a precise number, like an age or a quantity; that's a number input.
+- Don't use it for a choice from a few named options; that's SegmentedControl.
+- Don't apply each change to something slow while dragging; wait until the value settles.
+
+**Chromatic stories**
+- `Default`, `Formatted`, `WithHint`, `HiddenLabel`, `Disabled`, `Controlled`, `DarkMode`
+
+---
+
 ### Spinner
 
 | Field | Value |

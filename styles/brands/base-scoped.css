@@ -217,6 +217,7 @@
   --skeleton-border-radius: 4px;
   --skeleton-height-text: 1em;
   --skeleton-height-rect: 48px;
+  --slider-track-height: 4px;
   --spinner-stroke-width: 2px;
   --switch-track-width: 44px;
   --switch-track-height: 24px;
@@ -603,6 +604,7 @@
   --skeleton-border-radius: 4px;
   --skeleton-height-text: 1em;
   --skeleton-height-rect: 48px;
+  --slider-track-height: 4px;
   --spinner-stroke-width: 2px;
   --switch-track-width: 44px;
   --switch-track-height: 24px;
