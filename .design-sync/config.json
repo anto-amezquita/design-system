@@ -33,7 +33,7 @@
     "ToastProvider": "../../../docs/components/toast.md"
   },
   "libOverrides": {
-    "css-fallback.mjs": "drop storybook preview-head's Google Fonts link (DM Sans/Inter/etc. are storybook chrome); DS fonts are self-hosted via extraFonts",
+    "css-fallback.mjs": "drop the preview head's Google Fonts links (the brands' fonts, from tokens/fonts.json via .storybook/main.ts); designs get them self-hosted via extraFonts",
     "source-storybook.mjs": "group components by source tier folder (primitives/composition/patterns) - story title prefixes are inconsistent"
   },
   "overrides": {

@@ -2,11 +2,10 @@
 // the design-sync bundle ships, so the compare oracle grades against the real
 // typeface instead of a fallback on both sides.
 //
-// Why: .storybook/storybook.css sets --font-family-base/heading to 'Schibsted
-// Grotesk', but .storybook/preview-head.html only loads DM Sans, DM Serif
-// Display, Inter and JetBrains Mono - Schibsted Grotesk never loads, so the
-// repo's storybook renders the fallback sans-serif. The bundle self-hosts
-// Schibsted Grotesk + JetBrains Mono from .design-sync/fonts/.
+// Why: the reference storybook loads the brands' fonts from Google (via
+// .storybook/main.ts, since 2026-10-14; before that it never loaded Schibsted
+// Grotesk at all). The bundle self-hosts them from .design-sync/fonts/, and the
+// oracle should grade against those same files, with no network.
 //
 // Run after every reference rebuild:
 //   npx storybook build -c .storybook -o .design-sync/sb-reference
