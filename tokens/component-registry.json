@@ -177,6 +177,25 @@
       "internal": false
     },
     {
+      "name": "Kbd",
+      "slug": "kbd",
+      "tier": "primitives",
+      "purpose": "A key the user presses, drawn as a keycap",
+      "storybookPath": "Components/Kbd",
+      "storybookTitleId": "components-kbd",
+      "defaultStoryId": "components-kbd--default",
+      "tokenPrefix": "kbd",
+      "stories": [
+        "Default",
+        "InText",
+        "Combination",
+        "Sizes",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
       "name": "Label",
       "slug": "label",
       "tier": "primitives",

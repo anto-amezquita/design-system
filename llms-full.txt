@@ -100,6 +100,15 @@ Labelled single-line text entry with hint and error states
 - Storybook: Components/Input
 - Stories: Default, WithHint, WithError, Disabled, NoLabel, WithPrefix, WithSuffix, Clearable, Search, AllStates, DarkMode
 
+### Kbd
+
+A key the user presses, drawn as a keycap
+
+- Import: `import { Kbd } from '@amezquita/design-system/components/primitives/Kbd'`
+- Token prefix: `kbd-*` (0 tokens)
+- Storybook: Components/Kbd
+- Stories: Default, InText, Combination, Sizes, DarkMode
+
 ### Label
 
 Standalone form label element — used when a label must be decoupled from its input

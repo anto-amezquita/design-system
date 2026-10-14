@@ -45,6 +45,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Divider | [divider](https://design.amezquita.dk/components/divider.md) — A line that separates groups of content, horizontally or vertically |
 | Heading | [heading](https://design.amezquita.dk/components/heading.md) — Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level |
 | Input | [input](https://design.amezquita.dk/components/input.md) — Labelled single-line text entry with hint and error states |
+| Kbd | [kbd](https://design.amezquita.dk/components/kbd.md) — A key the user presses, drawn as a keycap |
 | Label | [label](https://design.amezquita.dk/components/label.md) — Standalone form label element — used when a label must be decoupled from its input |
 | Link | [link](https://design.amezquita.dk/components/link.md) — Navigation to another page or resource; use Link for navigation and Button for actions |
 | Radio | [radio](https://design.amezquita.dk/components/radio.md) — Single-selection control within a mutually exclusive group |

@@ -1,0 +1,41 @@
+/*
+  Tokens consumed:
+
+  --font-family-mono, --font-weight-medium, --line-height-heading,
+  --color-surface-secondary, --color-text-primary,
+  --color-border-default, --color-border-strong, --border-width-default,
+  --border-radius-sm
+
+  No component tokens: every value is a semantic token as-is (decisions/0004).
+
+  Sizes and padding in em, so a Kbd matches the text it sits in, from a caption to a
+  heading. The keycap's lower edge uses color-border-strong, which the
+  control-boundary pairs keep at 3:1 on the surfaces; the other sides use
+  the default border. Text on color-surface-secondary is a card-text pair,
+  4.5:1 in every brand and mode.
+*/
+
+.kbd {
+  display: inline-block;
+  min-inline-size: 1.75em;
+  padding: 0.125em 0.375em;
+  border: var(--border-width-default) solid var(--color-border-default);
+  border-block-end-color: var(--color-border-strong);
+  border-radius: var(--border-radius-sm);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-mono);
+  font-size: 0.85em;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-heading);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: 0.1em;
+}
+
+/* The spec's combination wrapper: an outer <kbd> around Kbd keys stays plain text. */
+kbd:has(> .kbd) {
+  font-family: inherit;
+  font-size: inherit;
+  white-space: nowrap;
+}

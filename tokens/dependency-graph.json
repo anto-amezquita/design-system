@@ -113,7 +113,8 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Tabs/Tabs.css",
-      "components/primitives/Input/Input.css"
+      "components/primitives/Input/Input.css",
+      "components/primitives/Kbd/Kbd.css"
     ],
     "border-width-default": [
       "components/composition/Alert/Alert.css",
@@ -284,6 +285,7 @@
       "components/composition/Card/Card.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Kbd/Kbd.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
@@ -389,6 +391,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Kbd/Kbd.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css",
@@ -421,6 +424,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Heading/Heading.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Kbd/Kbd.css",
       "components/primitives/Label/Label.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
@@ -665,6 +669,9 @@
       "components/patterns/Hero/Hero.css",
       "components/primitives/Heading/Heading.css"
     ],
+    "font-family-mono": [
+      "components/primitives/Kbd/Kbd.css"
+    ],
     "font-size-body": [
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
@@ -748,7 +755,8 @@
       "components/primitives/Textarea/Textarea.css"
     ],
     "font-weight-medium": [
-      "components/patterns/Breadcrumb/Breadcrumb.css"
+      "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/primitives/Kbd/Kbd.css"
     ],
     "font-weight-title": [
       "components/composition/Dialog/Dialog.css",
@@ -835,7 +843,8 @@
       "components/primitives/Heading/Heading.css"
     ],
     "line-height-heading": [
-      "components/primitives/Heading/Heading.css"
+      "components/primitives/Heading/Heading.css",
+      "components/primitives/Kbd/Kbd.css"
     ],
     "line-height-label": [
       "components/composition/Menu/Menu.css",
