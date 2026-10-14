@@ -235,6 +235,26 @@
       "internal": false
     },
     {
+      "name": "ProgressBar",
+      "slug": "progress-bar",
+      "tier": "primitives",
+      "purpose": "Shows how far a task has got, or that it's running when the end isn't known",
+      "storybookPath": "Components/ProgressBar",
+      "storybookTitleId": "components-progressbar",
+      "defaultStoryId": "components-progressbar--default",
+      "tokenPrefix": "progress-bar",
+      "stories": [
+        "Default",
+        "States",
+        "ValueText",
+        "Indeterminate",
+        "HiddenLabel",
+        "DarkMode"
+      ],
+      "tokenCount": 1,
+      "internal": false
+    },
+    {
       "name": "Radio",
       "slug": "radio",
       "tier": "primitives",

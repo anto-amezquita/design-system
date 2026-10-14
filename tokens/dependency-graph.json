@@ -79,6 +79,7 @@
       "components/primitives/Select/Select.css"
     ],
     "border-radius-full": [
+      "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Skeleton/Skeleton.css"
     ],
     "border-radius-image": [
@@ -233,6 +234,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css"
     ],
     "color-accent-text-hover": [
@@ -402,6 +404,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/patterns/Table/Table.css",
       "components/primitives/Button/Button.css",
+      "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Switch/Switch.css"
     ],
     "color-text-inverse": [
@@ -426,6 +429,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
@@ -452,6 +456,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
@@ -512,6 +517,9 @@
     "drawer-max-width-sm": [
       "components/composition/Drawer/Drawer.css"
     ],
+    "duration-entrance": [
+      "components/primitives/ProgressBar/ProgressBar.css"
+    ],
     "duration-instant": [
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css"
@@ -550,7 +558,8 @@
       "components/composition/Alert/Alert.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
-      "components/composition/Toast/Toast.css"
+      "components/composition/Toast/Toast.css",
+      "components/primitives/ProgressBar/ProgressBar.css"
     ],
     "easing-default": [
       "components/composition/Alert/Alert.css",
@@ -571,6 +580,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
@@ -657,6 +667,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
@@ -728,6 +739,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -858,7 +870,8 @@
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
-      "components/patterns/Hero/Hero.css"
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/ProgressBar/ProgressBar.css"
     ],
     "opacity-disabled": [
       "components/composition/Menu/Menu.css",
@@ -887,6 +900,9 @@
     ],
     "pagination-button-size": [
       "components/patterns/Pagination/Pagination.css"
+    ],
+    "progress-bar-height": [
+      "components/primitives/ProgressBar/ProgressBar.css"
     ],
     "radio-indicator-size": [
       "components/primitives/Radio/Radio.css"
@@ -1049,6 +1065,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Skeleton/Skeleton.css",
       "components/primitives/SkipLink/SkipLink.css",
@@ -1083,6 +1100,7 @@
       "components/primitives/Badge/Badge.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Select/Select.css"
     ],
     "spinner-stroke-width": [

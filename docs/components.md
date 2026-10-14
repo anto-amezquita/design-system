@@ -494,6 +494,60 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### ProgressBar
+
+| Field | Value |
+|---|---|
+| **Purpose** | Shows how far a task has got, or that it's running when the end isn't known |
+| **Figma name** | `ProgressBar` |
+| **Code name** | `ProgressBar` |
+| **Storybook path** | `Components/ProgressBar` |
+
+**Props / variants**
+- `value`: 0 to `max`; leave it out (or `null`) for indeterminate. Out-of-range values are clamped
+- `max`: default `100`
+- `label` (required): what is progressing; always the accessible name
+- `hideLabel`: keeps the label for screen readers only
+- `showValue`: shows the percentage (or `valueText`) beside the label
+- `valueText`: words instead of a percentage, e.g. "3 of 10 files"; read as `aria-valuetext`
+- Native `div` attributes, `className` and `ref` pass through to the wrapper
+
+**Required states**
+- [x] determinate (fill grows over `--duration-transition`)
+- [x] empty (0) and complete (`max`)
+- [x] indeterminate (a segment slides across; `aria-busy`)
+- [x] reduced motion (no slide: the segment rests in the middle; value changes jump)
+
+**Tokens consumed**
+- `--progress-bar-height`
+- `--color-surface-tertiary` (track), `--color-accent-text` (fill), `--color-text-primary`, `--color-text-secondary`
+- `--font-family-base`, `--font-size-small`, `--line-height-small`, `--font-weight-medium`
+- `--space-tight-gap`, `--space-inline-gap`, `--border-radius-full`
+- `--duration-transition`, `--duration-entrance`, `--easing-default`
+
+**Accessibility**
+- `role="progressbar"` named by the label (`aria-labelledby`), with `aria-valuemin`, `aria-valuemax` and `aria-valuenow`; none of the three while indeterminate
+- The visible percentage is `aria-hidden`; screen readers get the value from the bar itself
+- The fill is 3:1 against the track and the page in every brand and mode (`progress-fill-on-track`, `progress-fill-on-page` pairs)
+- Forced colors: the track gets an outline and the fill uses `Highlight`
+- Not focusable; it reports, it isn't a control. For a value the user sets, use a Slider
+
+**Do**
+- Name the task in the label: "Uploading photos", not "Progress".
+- Use `valueText` when a count says more than a percentage.
+- Switch from indeterminate to a value as soon as you know the total.
+- Say when it's done, with a message or by moving on; a full bar alone is easy to miss.
+
+**Don't**
+- Don't show a bar for something that takes under a second; it flashes and is gone.
+- Don't let the value go backwards. If a step restarts, say so in the label.
+- Don't use ProgressBar for a score or a quota; that's a meter, not progress.
+
+**Chromatic stories**
+- `Default`, `States`, `ValueText`, `Indeterminate`, `HiddenLabel`, `DarkMode`
+
+---
+
 ### Radio
 
 | Field | Value |

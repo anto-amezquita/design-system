@@ -208,6 +208,7 @@
   --pagination-button-background: rgba(0, 0, 0, 0);
   --pagination-button-font-size: 14px;
   --pagination-button-font-weight: 500;
+  --progress-bar-height: 8px;
   --radio-size: 24px;
   --radio-indicator-size: 12px;
   --select-item-padding-x: 16px;
@@ -593,6 +594,7 @@
   --pagination-button-background: rgba(0, 0, 0, 0);
   --pagination-button-font-size: 14px;
   --pagination-button-font-weight: 500;
+  --progress-bar-height: 8px;
   --radio-size: 24px;
   --radio-indicator-size: 12px;
   --select-item-padding-x: 16px;

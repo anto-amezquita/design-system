@@ -48,6 +48,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Kbd | [kbd](https://design.amezquita.dk/components/kbd.md) — A key the user presses, drawn as a keycap |
 | Label | [label](https://design.amezquita.dk/components/label.md) — Standalone form label element — used when a label must be decoupled from its input |
 | Link | [link](https://design.amezquita.dk/components/link.md) — Navigation to another page or resource; use Link for navigation and Button for actions |
+| ProgressBar | [progress-bar](https://design.amezquita.dk/components/progress-bar.md) — Shows how far a task has got, or that it's running when the end isn't known |
 | Radio | [radio](https://design.amezquita.dk/components/radio.md) — Single-selection control within a mutually exclusive group |
 | Select | [select](https://design.amezquita.dk/components/select.md) — Dropdown for choosing a single value from a list; supports grouped options |
 | Skeleton | [skeleton](https://design.amezquita.dk/components/skeleton.md) — Placeholder loading state that mirrors the geometry of the content it replaces |

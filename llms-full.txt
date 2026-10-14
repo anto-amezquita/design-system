@@ -20,10 +20,10 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-379 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+380 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
-- component: 108
+- component: 109
 - color: 46
 - typography: 40
 - spacing: 19
@@ -126,6 +126,15 @@ Navigation to another page or resource; use Link for navigation and Button for a
 - Token prefix: `link-*` (0 tokens)
 - Storybook: Primitives/Link
 - Stories: Default, Standalone, External, AsChild, AllVariants, DarkMode
+
+### ProgressBar
+
+Shows how far a task has got, or that it's running when the end isn't known
+
+- Import: `import { ProgressBar } from '@amezquita/design-system/components/primitives/ProgressBar'`
+- Token prefix: `progress-bar-*` (1 tokens)
+- Storybook: Components/ProgressBar
+- Stories: Default, States, ValueText, Indeterminate, HiddenLabel, DarkMode
 
 ### Radio
 

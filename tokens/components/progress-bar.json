@@ -1,0 +1,11 @@
+{
+  "progress-bar-height": {
+    "$value": "{space.2}",
+    "$type": "dimension",
+    "$description": "Thickness of the ProgressBar track.",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
+  }
+}
