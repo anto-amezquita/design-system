@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 35 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 36 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -44,6 +44,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Switch](https://design.amezquita.dk/components/switch.md): Binary toggle for on/off settings; renders as a styled checkbox under the hood
 - [Tag](https://design.amezquita.dk/components/tag.md): Inline label for categorising or annotating content — non-interactive
 - [Textarea](https://design.amezquita.dk/components/textarea.md): Multi-line text entry with label, hint, and error states — mirrors Input API
+- [VisuallyHidden](https://design.amezquita.dk/components/visually-hidden.md): Text screen readers announce but sighted users don't see
 
 ## Composition
 

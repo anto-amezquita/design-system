@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 59,
-    "publicComponentCount": 35,
+    "componentCount": 60,
+    "publicComponentCount": 36,
     "subComponentCount": 23
   },
   "components": [
@@ -355,6 +355,23 @@
         "Disabled",
         "WithCharacterCount",
         "AllStates",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "VisuallyHidden",
+      "slug": "visually-hidden",
+      "tier": "primitives",
+      "purpose": "Text screen readers announce but sighted users don't see",
+      "storybookPath": "Components/VisuallyHidden",
+      "storybookTitleId": "components-visuallyhidden",
+      "defaultStoryId": "components-visuallyhidden--icon-button-label",
+      "tokenPrefix": "visuallyhidden",
+      "stories": [
+        "IconButtonLabel",
+        "LinkSuffix",
         "DarkMode"
       ],
       "tokenCount": 0,
