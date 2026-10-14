@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 44 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 45 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -71,6 +71,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 - [Accordion](https://design.amezquita.dk/components/accordion.md): Collapsible content sections with animated expand/collapse; supports single or multi-open modes
 - [Breadcrumb](https://design.amezquita.dk/components/breadcrumb.md): Hierarchical page location trail; the last item is the current page (non-linked)
+- [Carousel](https://design.amezquita.dk/components/carousel.md): A row of slides shown a few at a time, moved with buttons, dots, swipe or arrow keys
 - [DataTable](https://design.amezquita.dk/components/data-table.md): Sortable, filterable, paginated table for structured datasets
 - [EmptyState](https://design.amezquita.dk/components/empty-state.md): Placeholder for zero-content states — icon, heading, supporting text, and an optional action
 - [Hero](https://design.amezquita.dk/components/hero.md): Page-level section header with eyebrow, title, lead text, and an action slot

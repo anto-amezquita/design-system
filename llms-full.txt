@@ -20,10 +20,10 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-381 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+383 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
-- component: 110
+- component: 112
 - color: 46
 - typography: 40
 - spacing: 19
@@ -373,6 +373,15 @@ Hierarchical page location trail; the last item is the current page (non-linked)
 - Token prefix: `breadcrumb-*` (3 tokens)
 - Storybook: Patterns/Breadcrumb
 - Stories: Default, TwoLevels, SingleLevel, CustomSeparator, LongLabels, DarkMode
+
+### Carousel
+
+A row of slides shown a few at a time, moved with buttons, dots, swipe or arrow keys
+
+- Import: `import { Carousel } from '@amezquita/design-system/components/patterns/Carousel'`
+- Token prefix: `carousel-*` (2 tokens)
+- Storybook: Components/Carousel
+- Stories: Default, ThreePerView, Autoplay, NoDots, DarkMode
 
 ### DataTable
 

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 42,
-    "tokenCount": 225
+    "filesScanned": 43,
+    "tokenCount": 227
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -79,6 +79,7 @@
       "components/primitives/Select/Select.css"
     ],
     "border-radius-full": [
+      "components/patterns/Carousel/Carousel.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Skeleton/Skeleton.css",
       "components/primitives/Slider/Slider.css"
@@ -214,6 +215,12 @@
     "card-horizontal-media-width": [
       "components/composition/Card/Card.css"
     ],
+    "carousel-dot-size": [
+      "components/patterns/Carousel/Carousel.css"
+    ],
+    "carousel-per-view": [
+      "components/patterns/Carousel/Carousel.css"
+    ],
     "checkbox-size": [
       "components/primitives/Checkbox/Checkbox.css"
     ],
@@ -244,6 +251,7 @@
     ],
     "color-accent-text": [
       "components/composition/Card/Card.css",
+      "components/patterns/Carousel/Carousel.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Checkbox/Checkbox.css",
@@ -283,6 +291,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Carousel/Carousel.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
@@ -303,6 +312,7 @@
     ],
     "color-border-strong": [
       "components/composition/Card/Card.css",
+      "components/patterns/Carousel/Carousel.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Kbd/Kbd.css",
@@ -562,6 +572,7 @@
       "components/composition/Toast/Toast.css",
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Carousel/Carousel.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
@@ -602,6 +613,7 @@
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Carousel/Carousel.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
@@ -638,6 +650,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Carousel/Carousel.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
@@ -665,6 +678,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Carousel/Carousel.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
@@ -1031,6 +1045,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
+      "components/patterns/Carousel/Carousel.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Tabs/Tabs.css",
@@ -1113,6 +1128,7 @@
     "space-element-gap": [
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
+      "components/patterns/Carousel/Carousel.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Pagination/Pagination.css"
     ],
@@ -1123,6 +1139,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Carousel/Carousel.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
       "components/patterns/Pagination/Pagination.css",
