@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "2780652",
+      "type": "feat",
+      "scope": "slider",
+      "message": "single-value range on a native input",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "89e3fdb",
       "type": "feat",
       "scope": "button-group",
