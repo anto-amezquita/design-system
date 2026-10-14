@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-13"
+    "generatedAt": "2026-10-14"
   },
   "versions": [
     {
@@ -761,6 +761,14 @@
     }
   ],
   "unreleased": [
+    {
+      "sha": "6981c21",
+      "type": "fix",
+      "scope": "tokens",
+      "message": "accent lines and marks use color-accent-text",
+      "date": "2026-10-14",
+      "breaking": false
+    },
     {
       "sha": "0a124ba",
       "type": "feat",
