@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 39,
+    "filesScanned": 40,
     "tokenCount": 222
   },
   "byToken": {
@@ -107,6 +107,7 @@
       "components/primitives/Badge/Badge.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css"
     ],
@@ -134,6 +135,7 @@
       "components/primitives/Divider/Divider.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css"
     ],
@@ -160,7 +162,8 @@
       "components/primitives/Button/Button.css"
     ],
     "button-border-radius": [
-      "components/primitives/Button/Button.css"
+      "components/primitives/Button/Button.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css"
     ],
     "button-ghost-background": [
       "components/primitives/Button/Button.css"
@@ -213,6 +216,7 @@
       "components/patterns/Pagination/Pagination.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
@@ -222,6 +226,7 @@
       "components/patterns/Pagination/Pagination.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css"
@@ -282,6 +287,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
@@ -294,6 +300,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
@@ -381,6 +388,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -400,6 +408,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css",
@@ -437,6 +446,7 @@
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
@@ -549,6 +559,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
@@ -588,6 +599,7 @@
       "components/primitives/Link/Link.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
@@ -622,6 +634,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
@@ -646,6 +659,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
@@ -675,6 +689,7 @@
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
@@ -715,6 +730,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
@@ -757,7 +773,8 @@
     "font-weight-control": [
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Tabs/Tabs.css",
-      "components/primitives/Button/Button.css"
+      "components/primitives/Button/Button.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css"
     ],
     "font-weight-heading": [
       "components/primitives/Heading/Heading.css"
@@ -889,6 +906,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
@@ -970,6 +988,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/primitives/IconButton/IconButton.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Spinner/Spinner.css"
     ],
     "size-icon-sm": [
@@ -994,6 +1013,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/IconButton/IconButton.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Switch/Switch.css"
     ],
     "skeleton-border-radius": [
@@ -1007,7 +1027,8 @@
     ],
     "space-compact-padding-x": [
       "components/composition/Tooltip/Tooltip.css",
-      "components/patterns/Tabs/Tabs.css"
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css"
     ],
     "space-compact-padding-y": [
       "components/composition/Menu/Menu.css",
@@ -1079,6 +1100,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Skeleton/Skeleton.css",
       "components/primitives/SkipLink/SkipLink.css",
@@ -1114,6 +1136,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/ProgressBar/ProgressBar.css",
+      "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css"
     ],
     "spinner-stroke-width": [

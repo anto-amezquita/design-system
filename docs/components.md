@@ -651,6 +651,59 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### SegmentedControl
+
+| Field | Value |
+|---|---|
+| **Purpose** | One choice from a few, shown side by side: a view switch, a time range |
+| **Figma name** | `SegmentedControl` |
+| **Code name** | `SegmentedControl` |
+| **Storybook path** | `Components/SegmentedControl` |
+
+**Props / variants**
+- `options` (required): `{ value, label, icon?, disabled? }[]`, two to five
+- `label` (required): the group's accessible name
+- `value` + `onValueChange` (controlled) or `defaultValue` (uncontrolled; defaults to the first option)
+- `hideLabels`: icons only, square segments; each `label` becomes the segment's name
+- `fullWidth`: stretches, segments share the width equally
+- `disabled` (whole control) or per option; `name` submits with a form; native attributes and `ref` reach the group
+
+**Required states**
+- [x] chosen (accent fill)
+- [x] not chosen, and hover (neutral surface)
+- [x] focus-visible (ring on the focused segment)
+- [x] disabled, per option and whole control
+
+**Tokens consumed**
+- `--button-border-radius` (matches the brand's Button shape)
+- `--border-width-default`, `--color-border-strong`, `--color-surface-primary`, `--color-surface-secondary`
+- `--color-text-primary`, `--color-accent-default`, `--color-accent-foreground`
+- `--font-family-base`, `--font-size-control`, `--font-weight-control`
+- `--space-tight-gap`, `--space-compact-padding-x`, `--space-inline-gap`, `--size-touch-target`, `--size-icon-md`
+- `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`, `--opacity-disabled`, `--duration-interaction`, `--easing-default`
+
+**Accessibility**
+- A radio group (Radix): `role="radiogroup"` named by `label`, segments are `role="radio"` with `aria-checked`
+- Keyboard: one Tab stop (the chosen segment); arrow keys move and choose, wrap at the ends and skip disabled segments
+- Chosen text 4.5:1 on the fill and the outline 3:1 on the page in every brand and mode (tested); the chosen segment is filled, so the state doesn't rely on colour alone
+- 44px tall; forced colors: the chosen segment uses `Highlight`
+
+**Do**
+- Use it when the choice changes what's shown right away: a chart's range, list or grid.
+- Keep labels to one or two short words, about the same length.
+- Name the group with `label` ("Time range"), even when the context makes it obvious to sighted users.
+
+**Don't**
+- Don't use more than five segments; use a Select.
+- Don't use it for actions; each segment is a choice, not a command. That's ButtonGroup.
+- Don't use it for navigation between pages; that's Tabs or NavigationMenu.
+- Don't mix icon-only and labelled segments in one control.
+
+**Chromatic stories**
+- `Default`, `WithIcons`, `IconsOnly`, `FullWidth`, `Disabled`, `Controlled`, `DarkMode`
+
+---
+
 ### Skeleton
 
 | Field | Value |

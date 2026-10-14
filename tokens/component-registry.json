@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 65,
-    "publicComponentCount": 41,
+    "componentCount": 66,
+    "publicComponentCount": 42,
     "subComponentCount": 23
   },
   "components": [
@@ -293,6 +293,27 @@
         "DarkMode"
       ],
       "tokenCount": 2,
+      "internal": false
+    },
+    {
+      "name": "SegmentedControl",
+      "slug": "segmented-control",
+      "tier": "primitives",
+      "purpose": "One choice from a few, shown side by side: a view switch, a time range",
+      "storybookPath": "Components/SegmentedControl",
+      "storybookTitleId": "components-segmentedcontrol",
+      "defaultStoryId": "components-segmentedcontrol--default",
+      "tokenPrefix": "segmentedcontrol",
+      "stories": [
+        "Default",
+        "WithIcons",
+        "IconsOnly",
+        "FullWidth",
+        "Disabled",
+        "Controlled",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {

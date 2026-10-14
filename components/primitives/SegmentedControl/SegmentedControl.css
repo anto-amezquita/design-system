@@ -1,0 +1,114 @@
+/*
+  Tokens consumed:
+
+  --button-border-radius (so the control matches the brand's Button shape),
+  --border-width-default, --color-border-strong (the outline: a
+  control-boundary pair, 3:1 on the surfaces), --space-tight-gap,
+  --color-surface-primary, --color-surface-secondary,
+  --color-text-primary, --color-accent-default, --color-accent-foreground
+  (the chosen segment: a 4.5:1 pair), --font-family-base,
+  --font-size-control, --font-weight-control, --space-compact-padding-x,
+  --space-inline-gap, --size-touch-target, --size-icon-md,
+  --color-border-focus, --focus-ring-width, --focus-ring-offset,
+  --opacity-disabled, --duration-interaction, --easing-default
+
+  No component tokens.
+*/
+
+.segmented-control {
+  display: inline-flex;
+  gap: var(--space-tight-gap);
+  padding: var(--space-tight-gap);
+  border: var(--border-width-default) solid var(--color-border-strong);
+  border-radius: var(--button-border-radius);
+  background: var(--color-surface-primary);
+}
+
+.segmented-control--full-width {
+  display: flex;
+  inline-size: 100%;
+}
+
+.segmented-control__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-inline-gap);
+  /* The control's 44px height minus its padding and border on both sides. */
+  min-block-size: calc(var(--size-touch-target) - 2 * (var(--space-tight-gap) + var(--border-width-default)));
+  padding-inline: var(--space-compact-padding-x);
+  border: 0;
+  border-radius: var(--button-border-radius);
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-control);
+  font-weight: var(--font-weight-control);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background var(--duration-interaction) var(--easing-default),
+    color var(--duration-interaction) var(--easing-default);
+}
+
+.segmented-control--full-width .segmented-control__item {
+  flex: 1 1 0;
+}
+
+.segmented-control--icons .segmented-control__item {
+  aspect-ratio: 1;
+  padding-inline: 0;
+}
+
+.segmented-control__icon {
+  display: inline-flex;
+}
+
+.segmented-control__icon svg {
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+}
+
+.segmented-control__item:hover:not([data-state='checked'], [data-disabled]) {
+  background: var(--color-surface-secondary);
+}
+
+.segmented-control__item[data-state='checked'] {
+  background: var(--color-accent-default);
+  color: var(--color-accent-foreground);
+}
+
+.segmented-control__item:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+  position: relative;
+  z-index: 1;
+}
+
+.segmented-control__item[data-disabled] {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+.segmented-control[data-disabled] {
+  opacity: var(--opacity-disabled);
+}
+
+.segmented-control[data-disabled] .segmented-control__item[data-disabled] {
+  opacity: 1;
+}
+
+@media (forced-colors: active) {
+  .segmented-control__item[data-state='checked'] {
+    background: Highlight;
+    color: HighlightText;
+    forced-color-adjust: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .segmented-control__item {
+    transition: none;
+  }
+}
