@@ -762,7 +762,15 @@
   ],
   "unreleased": [
     {
-      "sha": "1af8276",
+      "sha": "89e3fdb",
+      "type": "feat",
+      "scope": "button-group",
+      "message": "related actions, spaced or attached",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
+      "sha": "55734a8",
       "type": "feat",
       "scope": "segmented-control",
       "message": "single choice from a few, side by side",
