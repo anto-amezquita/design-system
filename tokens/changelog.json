@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "e38a4bc",
+      "type": "feat",
+      "scope": "hover-card",
+      "message": "link preview that works from the keyboard",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "fe5cd5e",
       "type": "feat",
       "scope": "tag-input",
