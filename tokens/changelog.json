@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "f38fb76",
+      "type": "feat",
+      "scope": "otp-input",
+      "message": "one-time code as one input over drawn boxes",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "dd4e422",
       "type": "feat",
       "scope": "search",
