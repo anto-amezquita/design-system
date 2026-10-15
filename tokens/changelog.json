@@ -762,7 +762,7 @@
   ],
   "unreleased": [
     {
-      "sha": "670fc3d",
+      "sha": "dd4e422",
       "type": "feat",
       "scope": "search",
       "message": "search landmark with Enter, Escape and a shortcut",
@@ -770,7 +770,7 @@
       "breaking": false
     },
     {
-      "sha": "3b0df80",
+      "sha": "f1937bd",
       "type": "feat",
       "scope": "number-input",
       "message": "spinbutton built from InputGroup",
@@ -778,7 +778,15 @@
       "breaking": false
     },
     {
-      "sha": "e080c1c",
+      "sha": "848d8c2",
+      "type": "feat",
+      "scope": "field",
+      "message": "label, hint and error for any control",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
+      "sha": "f30811e",
       "type": "feat",
       "scope": "input-group",
       "message": "Input joined to its addons and buttons",
@@ -786,18 +794,10 @@
       "breaking": false
     },
     {
-      "sha": "aed2583",
+      "sha": "796ff19",
       "type": "fix",
       "scope": "field",
       "message": "say Required once to screen readers",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "2d7d6ca",
-      "type": "feat",
-      "scope": "field",
-      "message": "label, hint and error for any control",
       "date": "2026-10-15",
       "breaking": false
     },
