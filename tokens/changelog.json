@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "8b4d741",
+      "type": "feat",
+      "scope": "toolbar",
+      "message": "one Tab stop, arrow keys between controls",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "2248698",
       "type": "feat",
       "scope": "context-menu",
