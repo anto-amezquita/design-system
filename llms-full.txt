@@ -446,6 +446,15 @@ Placeholder for zero-content states — icon, heading, supporting text, and an o
 - Storybook: Patterns/EmptyState
 - Stories: Default, AllVariants, Compact, DarkMode
 
+### FormLayout
+
+The frame of a form: spacing, sections, rows, actions, and an error summary after a failed submit
+
+- Import: `import { FormLayout } from '@amezquita/design-system/components/patterns/FormLayout'`
+- Token prefix: `formlayout-*` (0 tokens)
+- Storybook: Components/FormLayout
+- Stories: Default, Validating, Narrow, DarkMode
+
 ### Hero
 
 Page-level section header with eyebrow, title, lead text, and an action slot

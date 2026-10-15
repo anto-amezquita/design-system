@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 47 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 48 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 50 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 51 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -84,7 +84,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Toast | [toast](https://design.amezquita.dk/components/toast.md) — Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout |
 | Tooltip | [tooltip](https://design.amezquita.dk/components/tooltip.md) — Contextual label revealed on hover or focus — supplements an icon or truncated text |
 
-### Patterns (10)
+### Patterns (11)
 
 | Component | Reference |
 |---|---|
@@ -93,6 +93,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Carousel | [carousel](https://design.amezquita.dk/components/carousel.md) — A row of slides shown a few at a time, moved with buttons, dots, swipe or arrow keys |
 | DataTable | [data-table](https://design.amezquita.dk/components/data-table.md) — Sortable, filterable, paginated table for structured datasets |
 | EmptyState | [empty-state](https://design.amezquita.dk/components/empty-state.md) — Placeholder for zero-content states — icon, heading, supporting text, and an optional action |
+| FormLayout | [form-layout](https://design.amezquita.dk/components/form-layout.md) — The frame of a form: spacing, sections, rows, actions, and an error summary after a failed submit |
 | Hero | [hero](https://design.amezquita.dk/components/hero.md) — Page-level section header with eyebrow, title, lead text, and an action slot |
 | Pagination | [pagination](https://design.amezquita.dk/components/pagination.md) — Page navigation controls for multi-page data sets; exposes current page and total page count |
 | SideNav | [side-nav](https://design.amezquita.dk/components/side-nav.md) — Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider` |
