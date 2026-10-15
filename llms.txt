@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 67 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 68 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -101,6 +101,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [TableOfContents](https://design.amezquita.dk/components/table-of-contents.md): The sections of a long page as links, with the one being read marked: docs, articles, policies
 - [Tabs](https://design.amezquita.dk/components/tabs.md): Segmented view switcher with full keyboard navigation; built on Radix Tabs
 - [Toolbar](https://design.amezquita.dk/components/toolbar.md): A row of controls for one area: the formatting buttons over an editor, the actions over a table or canvas
+- [TopNav](https://design.amezquita.dk/components/top-nav.md): The bar across the top of a site or app: brand, main navigation, actions
 
 ## MCP server
 

@@ -644,6 +644,15 @@ A row of controls for one area: the formatting buttons over an editor, the actio
 - Storybook: Components/Toolbar
 - Stories: Default, Vertical, Danish, Keyboard, DarkMode
 
+### TopNav
+
+The bar across the top of a site or app: brand, main navigation, actions
+
+- Import: `import { TopNav } from '@amezquita/design-system/components/patterns/TopNav'`
+- Token prefix: `topnav-*` (0 tokens)
+- Storybook: Components/TopNav
+- Stories: Default, WithButton, Narrow, Danish, DarkMode
+
 ## MCP server
 
 Read-only tools over the same files this package ships, read live instead of from a snapshot. The server isn't in the npm package: clone [the repo](https://github.com/anto-amezquita/design-system) and run `node scripts/mcp-server.mjs` (stdio).

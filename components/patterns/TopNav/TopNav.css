@@ -1,0 +1,120 @@
+/*
+  Tokens consumed:
+
+  --color-surface-primary, --color-border-default, --border-width-default,
+  --size-touch-target, --space-tight-gap, --space-inline-gap,
+  --space-element-gap, --space-control-padding-x, --z-sticky,
+  --color-text-primary, --color-text-secondary, --color-surface-secondary,
+  --font-family-base, --font-size-control, --font-size-small,
+  --line-height-control, --font-weight-label, --border-radius-interactive,
+  --focus-ring-width, --focus-ring-offset, --color-border-focus
+
+  The navigation is NavigationMenu; the small-screen menu is a Drawer.
+*/
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  min-block-size: calc(var(--size-touch-target) + var(--space-inline-gap) * 2);
+  padding-inline: var(--space-element-gap);
+  border-block-end: var(--border-width-default) solid var(--color-border-default);
+  background: var(--color-surface-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  box-sizing: border-box;
+}
+
+.top-nav--sticky {
+  position: sticky;
+  inset-block-start: 0;
+  /* Above the page as it scrolls under; menus and dialogs are portalled and paint later. */
+  z-index: var(--z-sticky);
+}
+
+.top-nav__brand {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  font-weight: var(--font-weight-label);
+}
+
+.top-nav__nav {
+  flex: 1;
+  min-inline-size: 0;
+}
+
+.top-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-tight-gap);
+  margin-inline-start: auto;
+}
+
+/* Small screens first: the Menu button; from desktop up, NavigationMenu takes over. */
+.top-nav__menu {
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .top-nav__menu {
+    display: none;
+  }
+}
+
+/* The drawer is portalled out of the header, so it sets its own font. */
+.top-nav__drawer-nav {
+  font-family: var(--font-family-base);
+}
+
+/* The drawer's list: the same items, stacked. */
+.top-nav__drawer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-tight-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.top-nav__drawer-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-tight-gap);
+  margin-block-start: var(--space-inline-gap);
+}
+
+.top-nav__drawer-group-label {
+  padding-inline: var(--space-control-padding-x);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-label);
+}
+
+.top-nav__drawer-link {
+  display: flex;
+  align-items: center;
+  min-block-size: var(--size-touch-target);
+  padding-inline: var(--space-control-padding-x);
+  border-radius: var(--border-radius-interactive);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  text-decoration: none;
+}
+
+.top-nav__drawer-link:hover {
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
+}
+
+.top-nav__drawer-link[aria-current='page'] {
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-label);
+}
+
+.top-nav__drawer-link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}

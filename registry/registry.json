@@ -1800,6 +1800,26 @@
         "light": {},
         "dark": {}
       }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "top-nav",
+      "type": "registry:component",
+      "title": "TopNav",
+      "description": "The bar across the top of a site or app: brand, main navigation, actions",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/drawer.json",
+        "https://design.amezquita.dk/r/icon-button.json",
+        "https://design.amezquita.dk/r/navigation-menu.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
     }
   ]
 }
