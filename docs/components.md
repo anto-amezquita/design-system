@@ -2282,6 +2282,49 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### TableOfContents
+
+| Field | Value |
+|---|---|
+| **Purpose** | The sections of a long page as links, with the one being read marked: docs, articles, policies |
+| **Figma name** | `TableOfContents` |
+| **Code name** | `TableOfContents` (+ `headingsToItems`, `TableOfContentsItem` type) |
+| **Storybook path** | `Components/TableOfContents` |
+
+**Props / variants**
+- `items`: `{ id, label, children? }`, where `id` is the target heading's id; `headingsToItems(element, 'h2, h3')` builds them from the page
+- `aria-label` (default "On this page"); `title` (shown above, defaults to the label; `null` for none)
+- `offset` (px below the top where a heading counts as reached, default 96), `root` (a scrolling container instead of the page)
+- `activeId` to set the current section yourself; `onActiveChange(id)`
+
+**Required states**
+- [x] no section reached yet, a section current, a nested section current
+- [x] link hover and focus
+- [x] the end of the page, where a short last section still becomes current
+
+**Tokens consumed**
+- `--color-border-default` (track), `--color-accent-text` (current bar), `--color-text-primary`, `--color-text-secondary`, `--border-width-interactive`, plus type, spacing and focus tokens
+
+**Accessibility**
+- A `nav` landmark named "On this page", with a nested list of ordinary in-page links
+- The current link has `aria-current="location"`; it's also darker, heavier and has a bar, so it doesn't rely on colour
+- The visible title is hidden from screen readers, which hear the nav's name instead of hearing it twice
+- A click marks the link straight away; native in-page links move focus to the target
+
+**Do**
+- Give every heading it lists an id, and keep labels the same as the headings.
+- Set `offset` to the height of a sticky header, so the right section is marked.
+- Use it for pages long enough to need it: four sections or more.
+
+**Don't**
+- Don't nest deeper than two levels.
+- Don't use it for site navigation; that's SideNav or NavigationMenu.
+
+**Chromatic stories**
+- `Default`, `FromHeadings`, `Danish`, `DarkMode`
+
+---
+
 ### Toolbar
 
 | Field | Value |

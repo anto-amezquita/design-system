@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 64 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 65 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -96,6 +96,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [SideNav](https://design.amezquita.dk/components/side-nav.md): Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider`
 - [Stepper](https://design.amezquita.dk/components/stepper.md): Where someone is in a process with a fixed order: checkout, sign-up, an application
 - [Table](https://design.amezquita.dk/components/table.md): Static data table with semantic header, body, and row structure
+- [TableOfContents](https://design.amezquita.dk/components/table-of-contents.md): The sections of a long page as links, with the one being read marked: docs, articles, policies
 - [Tabs](https://design.amezquita.dk/components/tabs.md): Segmented view switcher with full keyboard navigation; built on Radix Tabs
 - [Toolbar](https://design.amezquita.dk/components/toolbar.md): A row of controls for one area: the formatting buttons over an editor, the actions over a table or canvas
 

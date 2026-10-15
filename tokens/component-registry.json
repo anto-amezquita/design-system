@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 102,
-    "publicComponentCount": 64,
+    "componentCount": 103,
+    "publicComponentCount": 65,
     "subComponentCount": 37
   },
   "components": [
@@ -1721,6 +1721,24 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "table"
+    },
+    {
+      "name": "TableOfContents",
+      "slug": "table-of-contents",
+      "tier": "patterns",
+      "purpose": "The sections of a long page as links, with the one being read marked: docs, articles, policies",
+      "storybookPath": "Components/TableOfContents",
+      "storybookTitleId": "components-tableofcontents",
+      "defaultStoryId": "components-tableofcontents--default",
+      "tokenPrefix": "tableofcontents",
+      "stories": [
+        "Default",
+        "FromHeadings",
+        "Danish",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
     },
     {
       "name": "TableRow",

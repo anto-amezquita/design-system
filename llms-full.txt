@@ -599,6 +599,15 @@ Static data table with semantic header, body, and row structure
 - Storybook: Patterns/Table
 - Stories: Default, Striped, Bordered, Compact, AllVariants, WithCaption, WithFoot, HorizontalScroll, DarkMode
 
+### TableOfContents
+
+The sections of a long page as links, with the one being read marked: docs, articles, policies
+
+- Import: `import { TableOfContents } from '@amezquita/design-system/components/patterns/TableOfContents'`
+- Token prefix: `tableofcontents-*` (0 tokens)
+- Storybook: Components/TableOfContents
+- Stories: Default, FromHeadings, Danish, DarkMode
+
 ### Tabs
 
 Segmented view switcher with full keyboard navigation; built on Radix Tabs
