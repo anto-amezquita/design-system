@@ -190,6 +190,15 @@ Single-selection control within a mutually exclusive group
 - Storybook: Components/RadioGroup
 - Stories: Default, WithDefault, Horizontal, Disabled, WithDisabledOption, Controlled, AllStates, DarkMode
 
+### Search
+
+A site or list search: a search landmark with Enter to search, Escape to clear and an optional shortcut
+
+- Import: `import { Search } from '@amezquita/design-system/components/primitives/Search'`
+- Token prefix: `search-*` (0 tokens)
+- Storybook: Components/Search
+- Stories: Default, WithShortcut, WithSubmit, Loading, AsYouType, DarkMode
+
 ### SegmentedControl
 
 One choice from a few, shown side by side: a view switch, a time range

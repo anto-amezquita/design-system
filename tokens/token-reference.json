@@ -5709,6 +5709,7 @@
         "InputGroup",
         "Label",
         "ProgressBar",
+        "Search",
         "SegmentedControl",
         "Select",
         "Skeleton",

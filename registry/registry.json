@@ -676,6 +676,27 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "search",
+      "type": "registry:component",
+      "title": "Search",
+      "description": "A site or list search: a search landmark with Enter to search, Escape to clear and an optional shortcut",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/button.json",
+        "https://design.amezquita.dk/r/input.json",
+        "https://design.amezquita.dk/r/kbd.json",
+        "https://design.amezquita.dk/r/spinner.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "segmented-control",
       "type": "registry:component",
       "title": "SegmentedControl",

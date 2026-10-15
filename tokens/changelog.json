@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "3b0df80",
+      "type": "feat",
+      "scope": "number-input",
+      "message": "spinbutton built from InputGroup",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "e080c1c",
       "type": "feat",
       "scope": "input-group",

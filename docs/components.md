@@ -848,6 +848,53 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Search
+
+| Field | Value |
+|---|---|
+| **Purpose** | A site or list search: a search landmark with Enter to search, Escape to clear and an optional shortcut |
+| **Figma name** | `Search` |
+| **Code name** | `Search` |
+| **Storybook path** | `Components/Search` |
+
+**Props / variants**
+- `label`: names the landmark and the field (default "Search"); make it specific when there's more than one
+- `value` + `onValueChange` (controlled, for search-as-you-type) or `defaultValue`
+- `onSearch(query)`: Enter or the button
+- `showSubmit`: a Search button after the field
+- `shortcut`: one key that jumps to the field from anywhere ("/"), shown as a Kbd hint while empty and unfocused
+- `loading`: spinner in place of the hint, `aria-busy` on the field
+- `disabled`, `name` (default `q`), `placeholder`; native `form` attributes reach the `<form>`; `ref` reaches the input
+
+**Required states**
+- [x] empty (with shortcut hint), typing (clear button), loading
+- [x] focus (Input's ring), disabled
+
+**Tokens consumed**
+- `--space-inline-gap`; the rest is Input's search mode, Button, Kbd and Spinner
+
+**Accessibility**
+- A `<form role="search">` landmark and a searchbox (`type="search"`), both named by `label`
+- Enter searches without reloading; Escape clears, a second Escape leaves the field
+- The shortcut is announced with `aria-keyshortcuts` and ignored while someone types in another field, so "/" still types a slash there
+- Loading sets `aria-busy`; announce the result count yourself with a `role="status"` near the results (see the "Search as you type" story)
+- Each search landmark on a page needs its own name (axe: landmark-unique)
+
+**Do**
+- Name it after what it searches: "Search components", not just "Search", when the page has other searches.
+- Say how many results there are in a status region, so screen-reader users know it worked.
+- Keep the query in the field after searching, so it can be refined.
+
+**Don't**
+- Don't use Search to filter a short list that fits on screen; that can be a plain Input.
+- Don't pick a shortcut that a browser or screen reader already uses; single keys like "/" are safest.
+- Don't use a placeholder as the only label; `label` names it for screen readers either way.
+
+**Chromatic stories**
+- `Default`, `WithShortcut`, `WithSubmit`, `Loading`, `AsYouType`, `DarkMode`
+
+---
+
 ### SegmentedControl
 
 | Field | Value |
