@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "4ca59ce",
+      "type": "feat",
+      "scope": "date-range-picker",
+      "message": "two typed dates and a range calendar",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "2404a69",
       "type": "feat",
       "scope": "date-picker",
