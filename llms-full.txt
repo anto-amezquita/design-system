@@ -408,6 +408,15 @@ Compound container for grouped content — composed from named sub-components
 - Storybook: Components/Card
 - Stories: Default, Ghost, Interactive, Horizontal, Compact, Featured, WithBody, WithMedia, AllVariants, DarkMode
 
+### ContextMenu
+
+The actions for one thing, opened where the pointer is: a file row, a card, a canvas
+
+- Import: `import { ContextMenu } from '@amezquita/design-system/components/composition/ContextMenu'`
+- Token prefix: `contextmenu-*` (0 tokens)
+- Storybook: Components/ContextMenu
+- Stories: FileRows, Canvas, Danish, Open, DarkMode
+
 ### Dialog
 
 Overlay for tasks or information requiring focused attention
