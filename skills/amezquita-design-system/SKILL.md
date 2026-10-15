@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 59 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 60 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 62 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 63 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -95,7 +95,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Toast | [toast](https://design.amezquita.dk/components/toast.md) — Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout |
 | Tooltip | [tooltip](https://design.amezquita.dk/components/tooltip.md) — Contextual label revealed on hover or focus — supplements an icon or truncated text |
 
-### Patterns (11)
+### Patterns (12)
 
 | Component | Reference |
 |---|---|
@@ -110,6 +110,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | SideNav | [side-nav](https://design.amezquita.dk/components/side-nav.md) — Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider` |
 | Table | [table](https://design.amezquita.dk/components/table.md) — Static data table with semantic header, body, and row structure |
 | Tabs | [tabs](https://design.amezquita.dk/components/tabs.md) — Segmented view switcher with full keyboard navigation; built on Radix Tabs |
+| Toolbar | [toolbar](https://design.amezquita.dk/components/toolbar.md) — A row of controls for one area: the formatting buttons over an editor, the actions over a table or canvas |
 
 ## Tokens
 

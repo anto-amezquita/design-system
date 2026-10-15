@@ -1703,6 +1703,24 @@
           "tabs-content-padding-top": "16px"
         }
       }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "toolbar",
+      "type": "registry:component",
+      "title": "Toolbar",
+      "description": "A row of controls for one area: the formatting buttons over an editor, the actions over a table or canvas",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/divider.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
     }
   ]
 }
