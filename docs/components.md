@@ -537,6 +537,55 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Combobox
+
+| Field | Value |
+|---|---|
+| **Purpose** | One value from a long list, found by typing: a country, a town, a person |
+| **Figma name** | `Combobox` |
+| **Code name** | `Combobox` (+ `ComboboxOption` type) |
+| **Storybook path** | `Components/Combobox` |
+
+**Props / variants**
+- `label` (required), `hint`, `error`, `required`, `disabled`, `placeholder`, `id`
+- `options`: strings, or `{ value, label?, description?, disabled? }`; the description is a second line and is searched too
+- `value` + `onValueChange` (controlled, the option's `value` or `null`) or `defaultValue`; `name` submits the value
+- `allowCustom`: keep typed text that isn't in the list
+- `onInputChange`, `loading`, `filter={false}`: for options fetched as people type
+- `emptyMessage(text)`: the "no matches" text, for other languages
+
+**Required states**
+- [x] empty, chosen, typing (filtered, match in bold)
+- [x] list open: active option (band and bar), chosen option (filled), unavailable option (struck through)
+- [x] loading, no matches
+- [x] typed text not in the list (error with a reason), error, disabled
+
+**Tokens consumed**
+- `--color-surface-secondary`, `--color-accent-text` (active), `--color-accent-default`, `--color-accent-foreground` (chosen), `--color-text-secondary` (descriptions, messages), `--font-weight-heading` (match), `--border-radius-pill`, `--size-touch-target`; Field, InputGroup, Input, IconButton and Popover style the rest
+
+**Accessibility**
+- The WAI-ARIA combobox with list autocomplete: `role="combobox"` with `aria-autocomplete="list"`, `aria-expanded`, `aria-controls` and `aria-activedescendant`, so focus never leaves the field
+- Arrow Down / Up open the list and move, skipping unavailable options; Alt + Arrow Down opens without moving; Enter picks; Escape closes, and a second Escape clears
+- The number of results ("4 results", "No matches for “oslo”", "Loading…") is announced in a polite live region
+- Matching ignores case and accents ("peru" finds "Perú"); starts of words rank first
+- "Clear" is a labelled button that returns focus to the field; the list button is out of the tab order, as in the WAI-ARIA example
+- Each option is at least 44px tall
+
+**Do**
+- Use it when the list is too long to scan: about 15 options or more.
+- Add a description when labels repeat or need context: an email under a name.
+- Translate `emptyMessage` with the rest of the form.
+
+**Don't**
+- Don't use it for a handful of options; use Select or Radio, where everything is visible.
+- Don't pick the first match on Tab or blur; people only get what they chose or typed exactly.
+- Don't turn on `allowCustom` when the value must be one of the options.
+
+**Chromatic stories**
+- `Default`, `Chosen`, `WithDescriptions`, `Danish`, `AllowCustom`, `Unavailable`, `Async`, `Error`, `Disabled`, `Open`, `DarkMode`
+
+---
+
 ### DatePicker
 
 | Field | Value |

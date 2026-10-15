@@ -1,0 +1,118 @@
+/*
+  Tokens consumed:
+
+  --space-tight-gap, --space-inline-gap, --space-control-padding-x,
+  --size-touch-target (each option is at least a 44px row),
+  --border-radius-interactive, --border-radius-pill (the active bar), --color-surface-secondary (active option),
+  --color-accent-default, --color-accent-foreground (chosen option, a 4.5:1
+  pair), --color-accent-text (active edge), --color-text-primary,
+  --color-text-secondary (descriptions, unavailable options, messages; 4.5:1
+  on both surfaces), --font-family-base, --font-size-control,
+  --font-size-small, --font-weight-heading (the matched text),
+  --focus-ring-width
+
+  The field is an InputGroup; the list sits in a Popover.
+*/
+
+.combobox__popover {
+  padding: var(--space-tight-gap);
+  min-inline-size: var(--radix-popover-trigger-width);
+}
+
+.combobox__list {
+  max-block-size: calc(var(--size-touch-target) * 6);
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+  overscroll-behavior: contain;
+}
+
+.combobox__option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-block-size: var(--size-touch-target);
+  padding-block: var(--space-tight-gap);
+  padding-inline: var(--space-control-padding-x);
+  border-radius: var(--border-radius-interactive);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-control);
+  cursor: pointer;
+}
+
+.combobox__option-description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+}
+
+/* The typed text inside each option: weight, not colour, so it works on every background. */
+.combobox__match {
+  background: none;
+  color: inherit;
+  font-weight: var(--font-weight-heading);
+}
+
+/* The option the arrows are on: a neutral band, plus a bar, so it doesn't rely on colour alone.
+   The bar is its own shape, so it stays straight inside a very round option (demo-soft). */
+.combobox__option--active {
+  position: relative;
+  background: var(--color-surface-secondary);
+}
+
+.combobox__option--active::before {
+  position: absolute;
+  inset-block: var(--space-tight-gap);
+  inset-inline-start: var(--space-tight-gap);
+  inline-size: var(--space-tight-gap);
+  border-radius: var(--border-radius-pill);
+  background: var(--color-accent-text);
+  content: '';
+}
+
+.combobox__option--selected,
+.combobox__option--selected .combobox__option-description {
+  background: var(--color-accent-default);
+  color: var(--color-accent-foreground);
+}
+
+/* Unavailable: struck through and quieter, but still readable (4.5:1). */
+.combobox__option--disabled {
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.combobox__message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  min-block-size: var(--size-touch-target);
+  padding-inline: var(--space-control-padding-x);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-control);
+}
+
+.combobox__spinner {
+  display: inline-flex;
+}
+
+@media (forced-colors: active) {
+  .combobox__option--active {
+    outline: var(--focus-ring-width) solid Highlight;
+    outline-offset: calc(-1 * var(--focus-ring-width));
+  }
+
+  .combobox__option--selected,
+  .combobox__option--selected .combobox__option-description {
+    background: Highlight;
+    color: HighlightText;
+    forced-color-adjust: none;
+  }
+
+  .combobox__option--disabled {
+    color: GrayText;
+  }
+}

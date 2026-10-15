@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 91,
-    "publicComponentCount": 57,
+    "componentCount": 92,
+    "publicComponentCount": 58,
     "subComponentCount": 33
   },
   "components": [
@@ -147,6 +147,31 @@
         "DarkMode"
       ],
       "tokenCount": 1,
+      "internal": false
+    },
+    {
+      "name": "Combobox",
+      "slug": "combobox",
+      "tier": "primitives",
+      "purpose": "One value from a long list, found by typing: a country, a town, a person",
+      "storybookPath": "Components/Combobox",
+      "storybookTitleId": "components-combobox",
+      "defaultStoryId": "components-combobox--default",
+      "tokenPrefix": "combobox",
+      "stories": [
+        "Default",
+        "Chosen",
+        "WithDescriptions",
+        "Danish",
+        "AllowCustom",
+        "Unavailable",
+        "Async",
+        "Error",
+        "Disabled",
+        "Open",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {

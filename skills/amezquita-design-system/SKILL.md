@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 54 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 55 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 57 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 58 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (35)
+### Primitives (36)
 
 | Component | Reference |
 |---|---|
@@ -44,6 +44,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | ButtonGroup | [button-group](https://design.amezquita.dk/components/button-group.md) — Related actions kept together: Undo / Redo, zoom out / in, Cancel / Save |
 | Calendar | [calendar](https://design.amezquita.dk/components/calendar.md) — A month of days to choose one date or a range; the base for DatePicker and DateRangePicker |
 | Checkbox | [checkbox](https://design.amezquita.dk/components/checkbox.md) — Single boolean selection with an associated label; supports indeterminate state |
+| Combobox | [combobox](https://design.amezquita.dk/components/combobox.md) — One value from a long list, found by typing: a country, a town, a person |
 | DatePicker | [date-picker](https://design.amezquita.dk/components/date-picker.md) — A date typed or picked from a calendar: delivery dates, bookings, deadlines |
 | DateRangePicker | [date-range-picker](https://design.amezquita.dk/components/date-range-picker.md) — A start and an end date: a stay, a report period, leave |
 | Divider | [divider](https://design.amezquita.dk/components/divider.md) — A line that separates groups of content, horizontally or vertically |
