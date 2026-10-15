@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "848d8c2",
+      "type": "feat",
+      "scope": "field",
+      "message": "label, hint and error for any control",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "933967b",
       "type": "feat",
       "scope": "carousel",
