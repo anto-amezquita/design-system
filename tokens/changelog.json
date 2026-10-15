@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "63f1c85",
+      "type": "feat",
+      "scope": "form-layout",
+      "message": "sections, rows, actions and an error summary",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "f38fb76",
       "type": "feat",
       "scope": "otp-input",
