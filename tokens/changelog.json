@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "8ae0180",
+      "type": "feat",
+      "scope": "combobox",
+      "message": "typeahead list with live result count",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "88ce640",
       "type": "feat",
       "scope": "time-picker",
