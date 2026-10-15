@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "19a4b6e",
+      "type": "feat",
+      "scope": "mobile-nav",
+      "message": "bottom bar for an app's main places",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "a8a0cf2",
       "type": "feat",
       "scope": "top-nav",
