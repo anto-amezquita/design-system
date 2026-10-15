@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "2248698",
+      "type": "feat",
+      "scope": "context-menu",
+      "message": "right-click, long press and Shift+F10 menu",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "e38a4bc",
       "type": "feat",
       "scope": "hover-card",
