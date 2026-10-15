@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 56 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 57 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 59 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 60 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (37)
+### Primitives (38)
 
 | Component | Reference |
 |---|---|
@@ -70,7 +70,8 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Slider | [slider](https://design.amezquita.dk/components/slider.md) — One value from a range, by dragging or with the keyboard: volume, a price limit, opacity |
 | Spinner | [spinner](https://design.amezquita.dk/components/spinner.md) — Indeterminate loading indicator for in-progress operations |
 | Switch | [switch](https://design.amezquita.dk/components/switch.md) — Binary toggle for on/off settings; renders as a styled checkbox under the hood |
-| Tag | [tag](https://design.amezquita.dk/components/tag.md) — Inline label for categorising or annotating content — non-interactive |
+| Tag | [tag](https://design.amezquita.dk/components/tag.md) — A short label on content: a category, a status word, a chosen value; optionally removable or clickable |
+| TagInput | [tag-input](https://design.amezquita.dk/components/tag-input.md) — Free-text values as tags: keywords, email addresses, ingredients |
 | Textarea | [textarea](https://design.amezquita.dk/components/textarea.md) — Multi-line text entry with label, hint, and error states — mirrors Input API |
 | TimePicker | [time-picker](https://design.amezquita.dk/components/time-picker.md) — One time of day: an appointment, a delivery slot, opening hours |
 | ToggleButton | [toggle-button](https://design.amezquita.dk/components/toggle-button.md) — A button that stays on or off, like bold in an editor or a grid overlay |

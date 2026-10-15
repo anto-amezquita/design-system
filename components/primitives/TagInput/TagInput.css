@@ -1,0 +1,14 @@
+/*
+  Tokens consumed:
+
+  --space-tight-gap
+
+  The field is an InputGroup; suggestions use Combobox's list styles; the
+  tags, their list and Remove all use Tag and MultiSelect's styles.
+*/
+
+.tag-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-tight-gap);
+}

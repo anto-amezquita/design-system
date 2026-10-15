@@ -383,32 +383,41 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 | Field | Value |
 |---|---|
-| **Purpose** | Inline label for categorising or annotating content — non-interactive |
+| **Purpose** | A short label on content: a category, a status word, a chosen value; optionally removable or clickable |
 | **Figma name** | `Tag` |
 | **Code name** | `Tag` |
 | **Storybook path** | `Components/Tag` |
 
 **Props / variants**
-- `variant`: `default` (secondary background, bordered), `accent` (teal fill), `muted` (transparent, muted text)
+- `variant`: `default` (secondary background, bordered), `accent` (accent fill), `muted` (transparent, muted text)
+- `icon`: a small icon before the text, hidden from screen readers
+- `removable` + `onRemove`: adds a Remove button ("Remove React")
+- `onClick` (+ `label` when the children aren't plain text): makes the whole tag a button
 
 **Required states**
-- [x] default
-- [x] accent
-- [x] muted
+- [x] default, accent, muted
+- [x] with icon, removable (Remove button hover and focus), clickable
 
 **Tokens consumed**
-- `--tag-background`, `--tag-foreground`, `--tag-border`, `--tag-border-width`
-- `--tag-border-radius`, `--tag-padding-x`, `--tag-padding-y`
-- `--font-size-caption`, `--tag-font-weight`
-- `--tag-accent-background`, `--tag-accent-foreground`, `--tag-accent-border`
-- `--tag-muted-background`, `--tag-muted-foreground`, `--tag-muted-border`
+- `--tag-padding-x`, `--tag-padding-y`, `--tag-font-weight`, `--tag-muted-background`
+- `--color-surface-secondary`, `--color-text-secondary`, `--color-border-default`, `--border-width-default`, `--color-accent-default`, `--color-accent-foreground`
+- `--border-radius-pill`, `--font-size-caption`, `--space-inline-gap`; `--size-icon-sm`, `--size-icon-xs`, `--space-tight-gap` (Remove button)
 
 **Accessibility**
-- Renders `<span>` — purely presentational; no ARIA requirements
-- Never use Tag as an interactive element; wrap in `<button>` or `<a>` if the tag must be clickable
+- A plain tag is a `<span>` with no role
+- The Remove button is named after the tag, draws in the tag's own text colour at full strength (4.5:1, so over the 3:1 an icon needs) and has a 24px target (WCAG 2.5.8)
+- A clickable and removable tag is a `span role="button"` so the Remove `<button>` inside stays valid HTML; Enter and Space activate it
+
+**Do**
+- Keep tag text to a word or two.
+- Use removable tags for values people chose (MultiSelect, TagInput), so each can be taken back.
+
+**Don't**
+- Don't use a tag as the only way to reach something; tags are small targets in a row.
+- Don't use colour alone to tell tags apart; say it in the text.
 
 **Chromatic stories**
-- `Default`, `Accent`, `Muted`, `AllVariants`, `InContext`
+- `Default`, `Accent`, `Muted`, `WithIcon`, `Removable`, `AllVariants`, `InContext`, `DarkMode`
 
 ---
 
@@ -629,6 +638,52 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 **Chromatic stories**
 - `Default`, `Chosen`, `WithDescriptions`, `Max`, `Danish`, `Error`, `Disabled`, `Open`, `DarkMode`
+
+---
+
+### TagInput
+
+| Field | Value |
+|---|---|
+| **Purpose** | Free-text values as tags: keywords, email addresses, ingredients |
+| **Figma name** | `TagInput` |
+| **Code name** | `TagInput` (+ `splitTags`) |
+| **Storybook path** | `Components/TagInput` |
+
+**Props / variants**
+- `label` (required), `hint` (followed by "Separate with commas or press Enter."), `error`, `required`, `disabled`, `placeholder`, `id`
+- `value` + `onValueChange` (controlled, tags in the order added) or `defaultValue`; `name` submits each tag
+- `validate(tag)`: return a reason to refuse a tag
+- `max`: the most tags allowed; said in the hint
+- `suggestions`: offered as people type, filtered; anything else can still be added
+
+**Required states**
+- [x] empty, with tags (below the field, "Remove all" from two)
+- [x] duplicate, invalid (`validate`), over `max`: each with its own reason, the refused text kept in the field
+- [x] suggestions open (active option band and bar)
+- [x] error, disabled (tags without Remove buttons)
+
+**Tokens consumed**
+- `--space-tight-gap`; the field is an InputGroup, suggestions use Combobox's list styles, and the tags and Remove all use Tag and MultiSelect's styles
+
+**Accessibility**
+- A labelled textbox, or a combobox with list autocomplete when there are suggestions
+- The hint says how to add ("Separate with commas or press Enter."); Enter, comma or semicolon add; Backspace in the empty field removes the last tag
+- A pasted list is split on commas, semicolons and new lines; what can't be added stays in the field with the first reason as the error
+- Leaving the field adds what's typed, so nothing is lost on submit
+- The field is described by its tags ("2 tags: CSS, React."), and each change is announced ("React added, 3 tags")
+- Duplicates are matched without case or accents
+
+**Do**
+- Pass `validate` when tags have a format, like email addresses, and say the format in the reason.
+- Offer `suggestions` when people should reuse existing tags.
+
+**Don't**
+- Don't use it when the values come from a fixed list; use MultiSelect.
+- Don't drop refused text; TagInput keeps it in the field so people can fix it.
+
+**Chromatic stories**
+- `Default`, `WithTags`, `Suggestions`, `Emails`, `Danish`, `Error`, `Disabled`, `DarkMode`
 
 ---
 

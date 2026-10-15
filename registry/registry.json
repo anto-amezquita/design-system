@@ -996,7 +996,7 @@
       "name": "tag",
       "type": "registry:component",
       "title": "Tag",
-      "description": "Inline label for categorising or annotating content — non-interactive",
+      "description": "A short label on content: a category, a status word, a chosen value; optionally removable or clickable",
       "dependencies": [
         "@amezquita/design-system"
       ],
@@ -1016,6 +1016,28 @@
           "tag-font-weight": "500",
           "tag-muted-background": "transparent"
         }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "tag-input",
+      "type": "registry:component",
+      "title": "TagInput",
+      "description": "Free-text values as tags: keywords, email addresses, ingredients",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/input.json",
+        "https://design.amezquita.dk/r/input-group.json",
+        "https://design.amezquita.dk/r/popover.json",
+        "https://design.amezquita.dk/r/tag.json",
+        "https://design.amezquita.dk/r/visually-hidden.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
       }
     },
     {

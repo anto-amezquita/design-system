@@ -327,12 +327,21 @@ Binary toggle for on/off settings; renders as a styled checkbox under the hood
 
 ### Tag
 
-Inline label for categorising or annotating content — non-interactive
+A short label on content: a category, a status word, a chosen value; optionally removable or clickable
 
 - Import: `import { Tag } from '@amezquita/design-system/components/primitives/Tag'`
 - Token prefix: `tag-*` (4 tokens)
 - Storybook: Components/Tag
 - Stories: Default, Accent, Muted, WithIcon, Removable, AllVariants, InContext, DarkMode
+
+### TagInput
+
+Free-text values as tags: keywords, email addresses, ingredients
+
+- Import: `import { TagInput } from '@amezquita/design-system/components/primitives/TagInput'`
+- Token prefix: `taginput-*` (0 tokens)
+- Storybook: Components/TagInput
+- Stories: Default, WithTags, Suggestions, Emails, Danish, Error, Disabled, DarkMode
 
 ### Textarea
 

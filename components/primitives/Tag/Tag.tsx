@@ -1,5 +1,6 @@
 'use client'
 
+import { XIcon } from '@phosphor-icons/react'
 import { cn } from '../../../lib/cn'
 import './Tag.css'
 
@@ -34,7 +35,7 @@ export function Tag({ variant = 'default', children, label, icon, removable, onR
           onClick={(e) => { e.stopPropagation(); onRemove() }}
           aria-label={`Remove ${typeof children === 'string' ? children : 'tag'}`}
         >
-          ×
+          <XIcon weight="bold" aria-hidden="true" />
         </button>
       )}
     </>

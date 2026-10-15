@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 57,
+    "filesScanned": 58,
     "tokenCount": 235
   },
   "byToken": {
@@ -1206,10 +1206,12 @@
       "components/patterns/SideNav/SideNav.css",
       "components/primitives/Field/Field.css",
       "components/primitives/IconButton/IconButton.css",
-      "components/primitives/Spinner/Spinner.css"
+      "components/primitives/Spinner/Spinner.css",
+      "components/primitives/Tag/Tag.css"
     ],
     "size-icon-xs": [
-      "components/primitives/Link/Link.css"
+      "components/primitives/Link/Link.css",
+      "components/primitives/Tag/Tag.css"
     ],
     "size-touch-target": [
       "components/composition/Alert/Alert.css",
@@ -1394,6 +1396,8 @@
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Slider/Slider.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/TagInput/TagInput.css",
       "components/primitives/TimePicker/TimePicker.css"
     ],
     "spinner-stroke-width": [

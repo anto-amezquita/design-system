@@ -3,7 +3,7 @@
   "name": "tag",
   "type": "registry:component",
   "title": "Tag",
-  "description": "Inline label for categorising or annotating content — non-interactive",
+  "description": "A short label on content: a category, a status word, a chosen value; optionally removable or clickable",
   "dependencies": [
     "@amezquita/design-system"
   ],

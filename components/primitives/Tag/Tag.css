@@ -10,6 +10,7 @@
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-surface-secondary, --color-border-default, --border-width-default, --color-accent-default, --color-accent-foreground
   --border-radius-pill, --font-size-caption
+  --size-icon-sm, --size-icon-xs, --space-tight-gap (remove button)
 */
 
 .tag {
@@ -79,37 +80,43 @@ button.tag:focus-visible,
   font-size: 0.9em;
 }
 
-/* Remove button */
+/* Remove button: the tag's own text colour at full strength (4.5:1, so well over
+   the 3:1 an icon needs), and a 24px target around a 16px circle (WCAG 2.5.8). */
 
 .tag__remove {
-  display: flex;
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  background: none;
-  border: none;
+  inline-size: var(--size-icon-sm);
+  block-size: var(--size-icon-sm);
+  margin-block: calc(var(--space-tight-gap) * -1);
+  margin-inline-end: calc(var(--space-tight-gap) * -1);
   padding: 0;
-  margin: -2px -2px -2px 0;
-  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius-pill);
+  background: none;
   color: currentColor;
-  opacity: 0.6;
-  font-size: 1.1em;
-  line-height: 1;
-  /* Expand tap area without increasing visual size */
-  position: relative;
+  cursor: pointer;
+}
+
+.tag__remove svg {
+  inline-size: var(--size-icon-xs);
+  block-size: var(--size-icon-xs);
 }
 
 .tag__remove::after {
-  content: '';
   position: absolute;
-  inset: -6px;
+  inset: calc(var(--space-tight-gap) * -1);
+  content: '';
 }
 
 .tag__remove:hover {
-  opacity: 1;
+  background: color-mix(in srgb, currentColor 16%, transparent);
 }
 
 .tag__remove:focus-visible {
   outline: var(--focus-ring-width) solid var(--color-border-focus);
   outline-offset: var(--focus-ring-offset);
-  border-radius: 2px;
 }

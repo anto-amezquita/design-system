@@ -1,6 +1,6 @@
 # Tag
 
-> Inline label for categorising or annotating content — non-interactive
+> A short label on content: a category, a status word, a chosen value; optionally removable or clickable
 
 - Tier: primitives
 - Storybook: `Components/Tag`
@@ -35,7 +35,20 @@
 >Default</Tag>
 ```
 
+## Best practices
+
+### Do
+
+- Keep tag text to a word or two.
+- Use removable tags for values people chose (MultiSelect, TagInput), so each can be taken back.
+
+### Don't
+
+- Don't use a tag as the only way to reach something; tags are small targets in a row.
+- Don't use colour alone to tell tags apart; say it in the text.
+
 ## Accessibility
 
-- Renders `<span>` — purely presentational; no ARIA requirements
-- Never use Tag as an interactive element; wrap in `<button>` or `<a>` if the tag must be clickable
+- A plain tag is a `<span>` with no role
+- The Remove button is named after the tag, draws in the tag's own text colour at full strength (4.5:1, so over the 3:1 an icon needs) and has a 24px target (WCAG 2.5.8)
+- A clickable and removable tag is a `span role="button"` so the Remove `<button>` inside stays valid HTML; Enter and Space activate it
