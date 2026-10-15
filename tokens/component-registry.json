@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 107,
-    "publicComponentCount": 68,
+    "componentCount": 108,
+    "publicComponentCount": 69,
     "subComponentCount": 38
   },
   "components": [
@@ -1576,6 +1576,24 @@
         "DarkMode"
       ],
       "tokenCount": 8,
+      "internal": false
+    },
+    {
+      "name": "MobileNav",
+      "slug": "mobile-nav",
+      "tier": "patterns",
+      "purpose": "The bar at the bottom of a small screen with an app's main places",
+      "storybookPath": "Components/MobileNav",
+      "storybookTitleId": "components-mobilenav",
+      "defaultStoryId": "components-mobilenav--default",
+      "tokenPrefix": "mobilenav",
+      "stories": [
+        "Default",
+        "ThreeItems",
+        "Danish",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {

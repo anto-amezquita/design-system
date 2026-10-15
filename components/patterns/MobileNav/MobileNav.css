@@ -1,0 +1,121 @@
+/*
+  Tokens consumed:
+
+  --color-surface-primary, --color-border-default, --border-width-default,
+  --color-text-secondary (other items, 4.5:1), --color-text-primary,
+  --color-accent-default, --color-accent-foreground (the current pill, a
+  4.5:1 pair), --color-feedback-error, --color-feedback-error-background,
+  --color-feedback-error-border (badge, as Badge's error style), --font-family-base, --font-size-small, --line-height-small, --font-weight-label,
+  --size-touch-target, --size-icon-md, --space-tight-gap,
+  --space-inline-gap, --border-radius-pill, --z-sticky, --focus-ring-width,
+  --color-border-focus
+*/
+
+.mobile-nav {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: var(--z-sticky);
+  /* Clear of the phone's home indicator. */
+  padding-block-end: env(safe-area-inset-bottom, 0);
+  border-block-start: var(--border-width-default) solid var(--color-border-default);
+  background: var(--color-surface-primary);
+  font-family: var(--font-family-base);
+}
+
+/* From desktop up, TopNav or SideNav carries the navigation. */
+@media (min-width: 1024px) {
+  .mobile-nav:not(.mobile-nav--always) {
+    display: none;
+  }
+}
+
+.mobile-nav__list {
+  display: flex;
+  margin: 0;
+  padding: var(--space-tight-gap);
+  list-style: none;
+}
+
+.mobile-nav__item {
+  flex: 1 1 0;
+  min-inline-size: 0;
+}
+
+.mobile-nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-tight-gap);
+  min-block-size: calc(var(--size-touch-target) + var(--space-inline-gap));
+  padding-block: var(--space-tight-gap);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-nav__link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: calc(var(--focus-ring-width) * -1);
+}
+
+.mobile-nav__icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-tight-gap) var(--space-inline-gap);
+  border-radius: var(--border-radius-pill);
+}
+
+.mobile-nav__icon svg {
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+}
+
+.mobile-nav__label {
+  max-inline-size: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Current: a filled pill behind the icon, and the label darker and heavier. */
+.mobile-nav__link[aria-current='page'] {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-label);
+}
+
+.mobile-nav__link[aria-current='page'] .mobile-nav__icon {
+  background: var(--color-accent-default);
+  color: var(--color-accent-foreground);
+}
+
+.mobile-nav__badge {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  min-inline-size: var(--size-icon-md);
+  padding-inline: var(--space-tight-gap);
+  border-radius: var(--border-radius-pill);
+  box-sizing: border-box;
+  /* Badge's error colours: a tested 4.5:1 pair, with a border for the edge. */
+  border: var(--border-width-default) solid var(--color-feedback-error-border);
+  background: var(--color-feedback-error-background);
+  color: var(--color-feedback-error);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-label);
+  line-height: var(--line-height-small);
+  text-align: center;
+  transform: translate(25%, -25%);
+}
+
+@media (forced-colors: active) {
+  .mobile-nav__link[aria-current='page'] .mobile-nav__icon {
+    background: Highlight;
+    color: HighlightText;
+    forced-color-adjust: none;
+  }
+}
