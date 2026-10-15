@@ -2457,6 +2457,50 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### TopNav
+
+| Field | Value |
+|---|---|
+| **Purpose** | The bar across the top of a site or app: brand, main navigation, actions |
+| **Figma name** | `TopNav` |
+| **Code name** | `TopNav` |
+| **Storybook path** | `Components/TopNav` |
+
+**Props / variants**
+- `brand` (required): the logo or name, usually a link home
+- `items` (required): the same `NavItem[]` as NavigationMenu, links and groups of links; `currentHref`, `LinkComponent`
+- `actions`: search, a Command Palette button, the account menu
+- `sticky`; `navLabel` (both navigations' name and the drawer heading, default "Main"); `menuLabel` (default "Menu")
+
+**Required states**
+- [x] wide: NavigationMenu with the current page marked, a group open
+- [x] narrow: the Menu button, the drawer open with the current link marked
+- [x] sticky
+
+**Tokens consumed**
+- `--color-surface-primary`, `--color-border-default`, `--border-width-default`, `--size-touch-target`, `--z-sticky`, plus text, type, spacing and focus tokens; the navigation is NavigationMenu and the small-screen menu a Drawer
+
+**Accessibility**
+- A `<header>` (the banner landmark when it's the page's top header)
+- From 1024px up, NavigationMenu is the "Main" navigation; below it, a Menu button opens a Drawer with the same links, so there's one list of items and one "Main" navigation on the page at a time
+- The current link has `aria-current="page"` in both; groups become labelled lists in the drawer
+- Following a link in the drawer closes it, so the new page isn't covered
+- CSS decides which shows, so there's no flash before the page is interactive
+
+**Do**
+- Keep the main navigation to about five items; put the rest in groups or the footer.
+- Put the same `actions` in reach on small screens; they stay in the bar.
+- Use `sticky` on long pages where people need the navigation often.
+
+**Don't**
+- Don't use TopNav and SideNav's header items for the same links; pick one place.
+- Don't hide primary actions behind the Menu button on small screens.
+
+**Chromatic stories**
+- `Default`, `WithButton`, `Narrow`, `Danish`, `DarkMode`
+
+---
+
 ### Tabs
 
 | Field | Value |

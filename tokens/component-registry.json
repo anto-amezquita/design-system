@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 106,
-    "publicComponentCount": 67,
+    "componentCount": 107,
+    "publicComponentCount": 68,
     "subComponentCount": 38
   },
   "components": [
@@ -1913,6 +1913,25 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "toolbar"
+    },
+    {
+      "name": "TopNav",
+      "slug": "top-nav",
+      "tier": "patterns",
+      "purpose": "The bar across the top of a site or app: brand, main navigation, actions",
+      "storybookPath": "Components/TopNav",
+      "storybookTitleId": "components-topnav",
+      "defaultStoryId": "components-topnav--default",
+      "tokenPrefix": "topnav",
+      "stories": [
+        "Default",
+        "WithButton",
+        "Narrow",
+        "Danish",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
     }
   ]
 }
