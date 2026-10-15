@@ -1831,6 +1831,51 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### Lightbox
+
+| Field | Value |
+|---|---|
+| **Purpose** | Images large, one at a time, over the page: a product's photos, a portfolio piece |
+| **Figma name** | `Lightbox` |
+| **Code name** | `Lightbox` (+ `LightboxGallery`, `LightboxImage` type) |
+| **Storybook path** | `Components/Lightbox` |
+
+**Props / variants**
+- `images`: `{ src, alt, caption?, width?, height?, thumbnail? }`; `alt` is required
+- `open` + `onOpenChange`, `index` + `onIndexChange` (controlled)
+- `title` (names the dialog, with the position: "Places 2 of 4"), `labels` (`previous`, `next`, `close`, `of`) for other languages
+- `LightboxGallery`: thumbnails that open it at the one chosen
+
+**Required states**
+- [x] one image (no previous and next), several images, with and without captions
+- [x] wide (arrows at the sides), narrow (arrows at the bottom)
+- [x] thumbnail hover and focus
+
+**Tokens consumed**
+- `--color-surface-primary` (the whole screen, so the brand's tested contrast holds), `--color-text-primary`, `--color-text-secondary`, `--color-border-default`, plus type, spacing, focus and motion tokens; the buttons are IconButtons
+
+**Accessibility**
+- A modal dialog named by its title and position; focus starts on Close and stays inside
+- Previous and Next buttons, Left and Right, Home and End, and a sideways swipe move through the images, wrapping at the ends so no button is ever disabled
+- Each change is announced: "3 of 4: Skanderborg Lake at night"
+- Escape or Close shuts it and focus returns to what opened it, such as the thumbnail
+- Each thumbnail is a button named "Open <alt>"; the thumbnail image itself is decorative
+- Images are fitted, never cropped, and keep their space while loading when `width` and `height` are given
+
+**Do**
+- Write `alt` for what the image shows, and put credits or places in `caption`.
+- Pass a smaller `thumbnail` for galleries.
+- Give `width` and `height`, so nothing jumps while images load.
+
+**Don't**
+- Don't use a Lightbox for content people need to act on; use a Dialog.
+- Don't autoplay through images; people move at their own pace.
+
+**Chromatic stories**
+- `Gallery`, `Open`, `Single`, `Danish`, `DarkMode`
+
+---
+
 ### Menu
 
 | Field | Value |

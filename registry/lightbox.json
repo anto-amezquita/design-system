@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lightbox",
+  "type": "registry:component",
+  "title": "Lightbox",
+  "description": "Images large, one at a time, over the page: a product's photos, a portfolio piece",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/icon-button.json",
+    "https://design.amezquita.dk/r/visually-hidden.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}

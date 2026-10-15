@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 64,
+    "filesScanned": 65,
     "tokenCount": 239
   },
   "byToken": {
@@ -73,6 +73,7 @@
       "components/composition/Card/Card.css",
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
@@ -143,6 +144,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
@@ -320,6 +322,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
@@ -344,6 +347,7 @@
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
@@ -477,6 +481,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
@@ -538,6 +543,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
@@ -579,6 +585,7 @@
       "components/composition/ContextMenu/ContextMenu.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
@@ -716,6 +723,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Toast/Toast.css",
       "components/primitives/ProgressBar/ProgressBar.css"
     ],
@@ -756,7 +764,8 @@
     "easing-out": [
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
-      "components/composition/Drawer/Drawer.css"
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css"
     ],
     "emptystate-padding-x": [
       "components/patterns/EmptyState/EmptyState.css"
@@ -769,6 +778,7 @@
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
@@ -802,6 +812,7 @@
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
@@ -836,6 +847,7 @@
     "font-family-base": [
       "components/composition/Alert/Alert.css",
       "components/composition/CommandPalette/CommandPalette.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
@@ -908,6 +920,7 @@
       "components/composition/Alert/Alert.css",
       "components/composition/Card/Card.css",
       "components/composition/CommandPalette/CommandPalette.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
@@ -955,6 +968,7 @@
     ],
     "font-size-small": [
       "components/composition/CommandPalette/CommandPalette.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
@@ -994,6 +1008,7 @@
     ],
     "font-weight-label": [
       "components/composition/CommandPalette/CommandPalette.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/SideNav/SideNav.css",
@@ -1278,6 +1293,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Carousel/Carousel.css",
@@ -1327,6 +1343,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Hero/Hero.css"
     ],
@@ -1378,6 +1395,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/ContextMenu/ContextMenu.css",
       "components/composition/Dialog/Dialog.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Popover/Popover.css",
       "components/patterns/Carousel/Carousel.css",
       "components/patterns/EmptyState/EmptyState.css",
@@ -1391,6 +1409,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",

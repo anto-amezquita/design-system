@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 66 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 67 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -77,6 +77,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Dialog](https://design.amezquita.dk/components/dialog.md): Overlay for tasks or information requiring focused attention
 - [Drawer](https://design.amezquita.dk/components/drawer.md): Side-anchored slide-in panel for supplemental content or secondary navigation
 - [HoverCard](https://design.amezquita.dk/components/hover-card.md): A preview of what a link leads to: a person's profile, a page's summary
+- [Lightbox](https://design.amezquita.dk/components/lightbox.md): Images large, one at a time, over the page: a product's photos, a portfolio piece
 - [Menu](https://design.amezquita.dk/components/menu.md): Dropdown list of actions opened from a trigger: account menus, overflow ("more") menus, row actions
 - [NavigationMenu](https://design.amezquita.dk/components/navigation-menu.md): The site's header navigation: top-level links, plus groups that open a dropdown of links. Hidden below 1024px, where SideNav's drawer carries the same links (its `headerItems`)
 - [Popover](https://design.amezquita.dk/components/popover.md): Content shown next to its trigger without blocking the page: a filter panel, a date picker, a short form
