@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "d1d3bc2",
+      "type": "feat",
+      "scope": "calendar",
+      "message": "WAI-ARIA date grid for a date or a range",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "0480d01",
       "type": "feat",
       "scope": "file-upload",
