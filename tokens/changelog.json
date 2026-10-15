@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "88ce640",
+      "type": "feat",
+      "scope": "time-picker",
+      "message": "typed time with a slot list",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "4ca59ce",
       "type": "feat",
       "scope": "date-range-picker",
