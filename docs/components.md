@@ -540,7 +540,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - `label` (required): names the control (`<label htmlFor>`)
 - `hint`: help text, linked with `aria-describedby`
 - `error`: replaces the hint, sets `aria-invalid`, shown with an icon in the error colour
-- `required`: sets `required` on the control and shows "Required" beside the label
+- `required`: sets `required` on the control and shows "Required" beside the label (visual only: the control's `required` is what screen readers announce; in a `group` the word is read with the legend)
 - `disabled`, `id` (generated if left out; a control's own `id` wins)
 - `group`: a `<fieldset>` with the label as `<legend>`, for radios, checkboxes or a SegmentedControl
 - Children: one control. A native element or a component that passes props through gets `id`, `aria-describedby`, `aria-invalid`, `required`, `disabled`, never overriding what it already sets. Select reads them from `useField()`

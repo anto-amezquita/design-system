@@ -70,8 +70,10 @@ export const Field = forwardRef<HTMLElement, FieldProps>(function Field({
     disabled,
   }
 
+  // A control's `required` already announces it, so the word is visual only there.
+  // A fieldset has no `required`, so in a group the word is read with the legend.
   const requiredMark = required && (
-    <span className="field__required">Required</span>
+    <span className="field__required" aria-hidden={group ? undefined : true}>Required</span>
   )
 
   const messageNode = message && (
