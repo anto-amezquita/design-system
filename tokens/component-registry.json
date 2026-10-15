@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 101,
-    "publicComponentCount": 63,
+    "componentCount": 102,
+    "publicComponentCount": 64,
     "subComponentCount": 37
   },
   "components": [
@@ -1593,6 +1593,27 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "side-nav"
+    },
+    {
+      "name": "Stepper",
+      "slug": "stepper",
+      "tier": "patterns",
+      "purpose": "Where someone is in a process with a fixed order: checkout, sign-up, an application",
+      "storybookPath": "Components/Stepper",
+      "storybookTitleId": "components-stepper",
+      "defaultStoryId": "components-stepper--default",
+      "tokenPrefix": "stepper",
+      "stories": [
+        "Default",
+        "GoBack",
+        "WithError",
+        "Vertical",
+        "Narrow",
+        "Danish",
+        "DarkMode"
+      ],
+      "tokenCount": 2,
+      "internal": false
     },
     {
       "name": "Table",

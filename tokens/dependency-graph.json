@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 61,
-    "tokenCount": 236
+    "filesScanned": 62,
+    "tokenCount": 238
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -100,6 +100,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Combobox/Combobox.css",
@@ -114,6 +115,7 @@
       "components/primitives/TimePicker/TimePicker.css"
     ],
     "border-radius-pill": [
+      "components/patterns/Stepper/Stepper.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Button/Button.css",
@@ -159,6 +161,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
@@ -254,6 +257,7 @@
     ],
     "color-accent-default": [
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
@@ -269,6 +273,7 @@
     ],
     "color-accent-foreground": [
       "components/patterns/Pagination/Pagination.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
@@ -289,6 +294,7 @@
     "color-accent-text": [
       "components/composition/Card/Card.css",
       "components/patterns/Carousel/Carousel.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Calendar/Calendar.css",
@@ -339,6 +345,7 @@
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
@@ -362,6 +369,7 @@
     "color-border-strong": [
       "components/composition/Card/Card.css",
       "components/patterns/Carousel/Carousel.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
@@ -378,6 +386,7 @@
     "color-feedback-error": [
       "components/composition/Menu/Menu.css",
       "components/patterns/FormLayout/FormLayout.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
@@ -464,6 +473,7 @@
       "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Hero/Hero.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Toolbar/Toolbar.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/FileUpload/FileUpload.css",
@@ -528,6 +538,7 @@
       "components/patterns/Hero/Hero.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
@@ -567,6 +578,7 @@
       "components/patterns/Hero/Hero.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
@@ -748,6 +760,7 @@
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
@@ -779,6 +792,7 @@
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
@@ -815,6 +829,7 @@
       "components/patterns/Hero/Hero.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Avatar/Avatar.css",
@@ -875,6 +890,7 @@
       "components/composition/Popover/Popover.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
@@ -918,6 +934,7 @@
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Field/Field.css",
@@ -953,6 +970,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/primitives/Field/Field.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
@@ -1342,6 +1360,7 @@
       "components/patterns/Hero/Hero.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Toolbar/Toolbar.css",
       "components/primitives/Button/Button.css",
       "components/primitives/ButtonGroup/ButtonGroup.css",
@@ -1392,6 +1411,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Stepper/Stepper.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/patterns/Toolbar/Toolbar.css",
@@ -1413,6 +1433,12 @@
     ],
     "spinner-stroke-width": [
       "components/primitives/Spinner/Spinner.css"
+    ],
+    "stepper-connector-width": [
+      "components/patterns/Stepper/Stepper.css"
+    ],
+    "stepper-indicator-size": [
+      "components/patterns/Stepper/Stepper.css"
     ],
     "switch-thumb-size": [
       "components/primitives/Switch/Switch.css"

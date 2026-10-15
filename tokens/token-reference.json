@@ -2,8 +2,8 @@
   "meta": {
     "primitiveCount": 126,
     "semanticCount": 145,
-    "componentCount": 115,
-    "total": 386
+    "componentCount": 117,
+    "total": 388
   },
   "tokens": [
     {
@@ -3027,6 +3027,7 @@
         "Popover",
         "Toast",
         "Hero",
+        "Stepper",
         "Toolbar",
         "Checkbox",
         "FileUpload",
@@ -3175,6 +3176,7 @@
         "Hero",
         "Pagination",
         "SideNav",
+        "Stepper",
         "Table",
         "Tabs",
         "Button",
@@ -3235,6 +3237,7 @@
         "Hero",
         "Pagination",
         "SideNav",
+        "Stepper",
         "Table",
         "Tabs",
         "Avatar",
@@ -3302,6 +3305,7 @@
       "axisAware": true,
       "usedBy": [
         "Pagination",
+        "Stepper",
         "Button",
         "Calendar",
         "Checkbox",
@@ -3386,6 +3390,7 @@
       "axisAware": true,
       "usedBy": [
         "Pagination",
+        "Stepper",
         "Button",
         "Calendar",
         "Checkbox",
@@ -3421,6 +3426,7 @@
       "usedBy": [
         "Card",
         "Carousel",
+        "Stepper",
         "Table",
         "Tabs",
         "Calendar",
@@ -3524,6 +3530,7 @@
       "usedBy": [
         "Card",
         "Carousel",
+        "Stepper",
         "Checkbox",
         "FileUpload",
         "Input",
@@ -3571,6 +3578,7 @@
         "FormLayout",
         "Pagination",
         "SideNav",
+        "Stepper",
         "Table",
         "Tabs",
         "Avatar",
@@ -3637,6 +3645,7 @@
       "usedBy": [
         "Menu",
         "FormLayout",
+        "Stepper",
         "Field",
         "FileUpload",
         "Input",
@@ -4063,6 +4072,7 @@
         "FormLayout",
         "Pagination",
         "SideNav",
+        "Stepper",
         "Table",
         "Tabs",
         "Button",
@@ -4118,6 +4128,7 @@
         "FormLayout",
         "Pagination",
         "SideNav",
+        "Stepper",
         "Table",
         "Tabs",
         "Avatar",
@@ -4618,6 +4629,7 @@
         "Hero",
         "Pagination",
         "SideNav",
+        "Stepper",
         "Table",
         "Tabs",
         "Avatar",
@@ -4749,6 +4761,7 @@
         "Popover",
         "Accordion",
         "SideNav",
+        "Stepper",
         "Table",
         "Tabs",
         "Button",
@@ -4791,6 +4804,7 @@
         "DataTable",
         "EmptyState",
         "FormLayout",
+        "Stepper",
         "Tabs",
         "Combobox",
         "Field",
@@ -5126,6 +5140,7 @@
         "Menu",
         "NavigationMenu",
         "SideNav",
+        "Stepper",
         "Field",
         "Input",
         "Label",
@@ -5811,6 +5826,7 @@
         "Hero",
         "Pagination",
         "SideNav",
+        "Stepper",
         "Toolbar",
         "Button",
         "ButtonGroup",
@@ -5930,6 +5946,7 @@
         "Toast",
         "Pagination",
         "SideNav",
+        "Stepper",
         "Tabs",
         "Checkbox",
         "Combobox",
@@ -5989,6 +6006,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Stepper",
         "Avatar",
         "Badge",
         "Button",
@@ -6236,6 +6254,7 @@
         "Toast",
         "FormLayout",
         "SideNav",
+        "Stepper",
         "Table",
         "Tabs",
         "Toolbar",
@@ -6596,6 +6615,7 @@
         "Menu",
         "NavigationMenu",
         "Popover",
+        "Stepper",
         "Button",
         "Checkbox",
         "Input",
@@ -9098,6 +9118,54 @@
       "axisAware": false,
       "usedBy": [
         "Spinner"
+      ]
+    },
+    {
+      "name": "stepper-indicator-size",
+      "cssVar": "--stepper-indicator-size",
+      "type": "dimension",
+      "category": "component",
+      "description": "Diameter of a Stepper step's circle: the number, tick or warning sign.",
+      "rawValue": "{space.8}",
+      "resolved": {
+        "base-light": "32px",
+        "base-dark": "32px",
+        "demo-cool-light": "32px",
+        "demo-cool-dark": "32px",
+        "demo-soft-light": "32px",
+        "demo-soft-dark": "32px",
+        "demo-warm-light": "32px",
+        "demo-warm-dark": "32px",
+        "portfolio-light": "32px",
+        "portfolio-dark": "32px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Stepper"
+      ]
+    },
+    {
+      "name": "stepper-connector-width",
+      "cssVar": "--stepper-connector-width",
+      "type": "dimension",
+      "category": "component",
+      "description": "Thickness of the line between Stepper steps; done stretches are drawn in the accent.",
+      "rawValue": "{space.1}",
+      "resolved": {
+        "base-light": "4px",
+        "base-dark": "4px",
+        "demo-cool-light": "4px",
+        "demo-cool-dark": "4px",
+        "demo-soft-light": "4px",
+        "demo-soft-dark": "4px",
+        "demo-warm-light": "4px",
+        "demo-warm-dark": "4px",
+        "portfolio-light": "4px",
+        "portfolio-dark": "4px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Stepper"
       ]
     },
     {

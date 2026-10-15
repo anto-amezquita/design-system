@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stepper",
+  "type": "registry:component",
+  "title": "Stepper",
+  "description": "Where someone is in a process with a fixed order: checkout, sign-up, an application",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/visually-hidden.json"
+  ],
+  "cssVars": {
+    "light": {
+      "stepper-indicator-size": "32px",
+      "stepper-connector-width": "4px"
+    },
+    "dark": {
+      "stepper-indicator-size": "32px",
+      "stepper-connector-width": "4px"
+    }
+  }
+}

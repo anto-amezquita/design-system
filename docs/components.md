@@ -2227,6 +2227,50 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### Stepper
+
+| Field | Value |
+|---|---|
+| **Purpose** | Where someone is in a process with a fixed order: checkout, sign-up, an application |
+| **Figma name** | `Stepper` |
+| **Code name** | `Stepper` (+ `StepperStep` type) |
+| **Storybook path** | `Components/Stepper` |
+
+**Props / variants**
+- `steps`: `{ id, label, description?, error?, href? }`
+- `current`: index of the current step from 0; earlier steps are done, later ones still to come; `steps.length` when all are done
+- `onStepClick(index)`: finished steps become buttons back to them (or give a step an `href` for a link)
+- `orientation`: `horizontal` (default) or `vertical`; `aria-label` (default "Progress"); `statusLabels` to translate the hidden state words
+
+**Required states**
+- [x] done (filled, tick), current (thick accent ring, bold label), still to come (outline, quieter label), needs attention (warning, red description)
+- [x] finished steps as buttons or links, with hover and focus
+- [x] horizontal, vertical, narrow horizontal (only the current label shows)
+
+**Tokens consumed**
+- `--stepper-indicator-size` (32 px), `--stepper-connector-width` (4 px); `--color-accent-default`, `--color-accent-foreground`, `--color-accent-text`, `--color-border-strong`, `--color-feedback-error`, `--color-text-primary`, `--color-text-secondary`, `--color-surface-primary`, plus type, spacing and focus tokens
+
+**Accessibility**
+- An ordered list named "Progress" (or your `aria-label`); the current step has `aria-current="step"`
+- Each step's state is in words, hidden visually: "Address (Completed)", "Payment (Current step)", so nothing relies on colour, ticks or numbers; the circles are `aria-hidden`
+- Only reached steps can be revisited; upcoming steps are plain text, never disabled buttons
+- When narrow, the other labels are hidden visually but stay in the accessibility tree
+- Not a navigation landmark: it shows progress, and going back is a convenience
+
+**Do**
+- Keep labels to one or two words, and the number of steps small (three to six).
+- Mark a finished step with `error` and say what's missing in its description.
+- Let people go back to finished steps, and keep what they entered.
+
+**Don't**
+- Don't use a Stepper for steps people can do in any order; use Tabs or a checklist.
+- Don't make upcoming steps clickable to skip ahead.
+
+**Chromatic stories**
+- `Default`, `GoBack`, `WithError`, `Vertical`, `Narrow`, `Danish`, `DarkMode`
+
+---
+
 ### Table
 
 | Field | Value |
