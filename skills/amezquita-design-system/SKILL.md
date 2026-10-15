@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 46 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 47 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 49 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 50 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (29)
+### Primitives (30)
 
 | Component | Reference |
 |---|---|
@@ -53,6 +53,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Label | [label](https://design.amezquita.dk/components/label.md) — Standalone form label element — used when a label must be decoupled from its input |
 | Link | [link](https://design.amezquita.dk/components/link.md) — Navigation to another page or resource; use Link for navigation and Button for actions |
 | NumberInput | [number-input](https://design.amezquita.dk/components/number-input.md) — A number typed or stepped: a quantity, an amount, a percentage |
+| OtpInput | [otp-input](https://design.amezquita.dk/components/otp-input.md) — A short code sent by text or email, shown as one box per character |
 | ProgressBar | [progress-bar](https://design.amezquita.dk/components/progress-bar.md) — Shows how far a task has got, or that it's running when the end isn't known |
 | Radio | [radio](https://design.amezquita.dk/components/radio.md) — Single-selection control within a mutually exclusive group |
 | Search | [search](https://design.amezquita.dk/components/search.md) — A site or list search: a search landmark with Enter to search, Escape to clear and an optional shortcut |

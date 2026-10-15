@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 75,
-    "publicComponentCount": 49,
+    "componentCount": 76,
+    "publicComponentCount": 50,
     "subComponentCount": 25
   },
   "components": [
@@ -341,6 +341,27 @@
         "NoSteppers",
         "States",
         "Controlled",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "OtpInput",
+      "slug": "otp-input",
+      "tier": "primitives",
+      "purpose": "A short code sent by text or email, shown as one box per character",
+      "storybookPath": "Components/OtpInput",
+      "storybookTitleId": "components-otpinput",
+      "defaultStoryId": "components-otpinput--default",
+      "tokenPrefix": "otpinput",
+      "stories": [
+        "Default",
+        "PartlyFilled",
+        "FourCharacters",
+        "Error",
+        "Disabled",
+        "SubmitsWhenComplete",
         "DarkMode"
       ],
       "tokenCount": 0,
