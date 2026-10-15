@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "fe5cd5e",
+      "type": "feat",
+      "scope": "tag-input",
+      "message": "free-text values as tags",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "f8e5b32",
       "type": "feat",
       "scope": "multi-select",
