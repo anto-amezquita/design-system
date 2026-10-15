@@ -1,0 +1,14 @@
+/*
+  Tokens consumed: --space-inline-gap (popover padding). InputGroup, Input, IconButton,
+  Popover and Calendar style themselves.
+
+  Dates line up by digit; the popover hugs the calendar.
+*/
+
+.date-picker .input-field__input {
+  font-variant-numeric: tabular-nums;
+}
+
+.date-picker__popover {
+  padding: var(--space-inline-gap);
+}

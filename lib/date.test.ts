@@ -34,3 +34,29 @@ describe('date helpers', () => {
     expect(clampDay(new Date(2026, 9, 30), min, max)).toEqual(max)
   })
 })
+
+import { dateOrder, formatShortDate, parseTypedDate, toISODate } from './date'
+
+describe('typed dates', () => {
+  test('order and short format follow the locale', () => {
+    expect(dateOrder('da-DK')).toEqual(['day', 'month', 'year'])
+    expect(dateOrder('en-US')).toEqual(['month', 'day', 'year'])
+    expect(formatShortDate(new Date(2026, 9, 5), 'da-DK')).toBe('05.10.2026')
+    expect(formatShortDate(new Date(2026, 9, 5), 'en-US')).toBe('10/05/2026')
+    expect(toISODate(new Date(2026, 9, 5))).toBe('2026-10-05')
+  })
+
+  test.each([
+    ['15.10.2026', 'da-DK', new Date(2026, 9, 15)],
+    ['15/10/26', 'da-DK', new Date(2026, 9, 15)],
+    ['15 10 2026', 'da-DK', new Date(2026, 9, 15)],
+    ['10/15/2026', 'en-US', new Date(2026, 9, 15)],
+    ['2026-10-15', 'en-US', new Date(2026, 9, 15)],
+    ['', 'da-DK', null],
+    ['31.02.2026', 'da-DK', undefined],
+    ['15.10', 'da-DK', undefined],
+    ['soon', 'da-DK', undefined],
+  ])('%j (%s)', (text, locale, expected) => {
+    expect(parseTypedDate(text, locale)).toEqual(expected)
+  })
+})

@@ -537,6 +537,52 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### DatePicker
+
+| Field | Value |
+|---|---|
+| **Purpose** | A date typed or picked from a calendar: delivery dates, bookings, deadlines |
+| **Figma name** | `DatePicker` |
+| **Code name** | `DatePicker` (+ `datePattern`; typed-date helpers in `lib/date`) |
+| **Storybook path** | `Components/DatePicker` |
+
+**Props / variants**
+- `label` (required), `hint` (defaults to the format to type, e.g. "dd.mm.åååå"), `error`, `required`, `disabled`, `id`
+- `value` + `onValueChange` (controlled; `null` when cleared) or `defaultValue`
+- `min`, `max`, `isDateDisabled`: shared with the calendar, and checked on typed dates too
+- `locale`: format, order and calendar names (15.10.2026 in `da-DK`, 10/15/2026 in `en-US`); `showWeekNumbers`
+- `name`: submits the date as `yyyy-mm-dd` in a hidden input
+
+**Required states**
+- [x] empty (format as placeholder and hint), with a date
+- [x] typing (nothing is checked until blur or Enter)
+- [x] unreadable date ("Enter a date like 15.10.2026."), outside the limits ("Choose 10 October 2026 or later."), unavailable day
+- [x] calendar open (on the chosen date), error, disabled
+
+**Tokens consumed**
+- `--space-inline-gap`; the rest is InputGroup, Input, IconButton, Popover and Calendar
+
+**Accessibility**
+- A text field named by the label, described by the format or the error; typing in the reader's own format works ("15/10/26", "15 10 2026", "2026-10-15")
+- The calendar button says what's chosen ("Choose Delivery date, 22 October 2026 chosen"); Alt + Arrow Down in the field opens it, as on a native date field
+- The calendar opens on the chosen date with focus on it, and picking closes it and returns focus (Popover); all of Calendar's keyboard support applies
+- Reasons are in words, never just "invalid"
+
+**Do**
+- Leave typing on: it's the quickest way to enter a birthday or a date years away.
+- Set `min`, `max` and `isDateDisabled`, so the calendar and the typed check agree.
+- Set `locale` to the reader's, so the format they type is the format they see.
+
+**Don't**
+- Don't use three Selects for day, month and year; type it.
+- Don't validate while someone is still typing; DatePicker waits for blur or Enter.
+- Don't use a DatePicker for a range of dates; that's DateRangePicker.
+
+**Chromatic stories**
+- `Default`, `Limits`, `English`, `Error`, `Disabled`, `Open`, `DarkMode`
+
+---
+
 ### Divider
 
 | Field | Value |

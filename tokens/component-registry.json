@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 88,
-    "publicComponentCount": 54,
+    "componentCount": 89,
+    "publicComponentCount": 55,
     "subComponentCount": 33
   },
   "components": [
@@ -147,6 +147,27 @@
         "DarkMode"
       ],
       "tokenCount": 1,
+      "internal": false
+    },
+    {
+      "name": "DatePicker",
+      "slug": "date-picker",
+      "tier": "primitives",
+      "purpose": "A date typed or picked from a calendar: delivery dates, bookings, deadlines",
+      "storybookPath": "Components/DatePicker",
+      "storybookTitleId": "components-datepicker",
+      "defaultStoryId": "components-datepicker--default",
+      "tokenPrefix": "datepicker",
+      "stories": [
+        "Default",
+        "Limits",
+        "English",
+        "Error",
+        "Disabled",
+        "Open",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {
