@@ -123,6 +123,8 @@ describe('Calendar limits', () => {
     )
     const sat = getByRole('gridcell', { name: 'Saturday 17 October 2026' })
     expect(sat.getAttribute('aria-disabled')).toBe('true')
+    // Struck through where it's drawn: on the number, not only the cell.
+    expect(getComputedStyle(sat.querySelector('.calendar__day-number')!).textDecorationLine).toBe('line-through')
     getByRole('gridcell', { name: 'Friday 16 October 2026' }).focus()
     await userEvent.keyboard('{ArrowRight}{Enter}')
     expect(focusedName()).toBe('Saturday 17 October 2026')
