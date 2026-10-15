@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "dd4e422",
+      "type": "feat",
+      "scope": "search",
+      "message": "search landmark with Enter, Escape and a shortcut",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "f1937bd",
       "type": "feat",
       "scope": "number-input",
