@@ -5,7 +5,7 @@
 
   --switch-thumb-size
   --switch-label-gap
-  --easing-default, --opacity-disabled, --color-border-focus
+  --easing-default, --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --font-size-control, --color-accent-default, --color-accent-foreground
@@ -20,8 +20,9 @@
   cursor: pointer;
 }
 
+/* Disabled: no fade. The shared disabled opacity (0.1) left this close to
+   invisible; quieter colours from tested pairs keep it readable. */
 .switch--disabled {
-  opacity: var(--opacity-disabled);
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -53,8 +54,24 @@
 }
 
 .switch__track[data-disabled] {
-  background: var(--color-surface-tertiary);
+  box-shadow: inset 0 0 0 var(--border-width-interactive) var(--color-border-default);
+  background: var(--color-surface-secondary);
   cursor: not-allowed;
+}
+
+/* Off and disabled: a secondary-text thumb on the quiet track (4.5:1). */
+.switch__track[data-disabled] .switch__thumb {
+  background: var(--color-text-secondary);
+}
+
+/* On and disabled: a secondary-text track with a page-coloured thumb (4.5:1). */
+.switch__track[data-disabled][data-state='checked'] {
+  box-shadow: none;
+  background: var(--color-text-secondary);
+}
+
+.switch__track[data-disabled][data-state='checked'] .switch__thumb {
+  background: var(--color-surface-primary);
 }
 
 .switch__track:focus-visible {

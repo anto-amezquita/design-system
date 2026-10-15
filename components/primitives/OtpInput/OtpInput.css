@@ -6,7 +6,7 @@
   --border-radius-interactive, --color-surface-primary,
   --color-text-primary, --font-family-mono, --font-size-h5 (20px: large enough to check each character),
   --color-border-focus, --focus-ring-width, --color-feedback-error,
-  --opacity-disabled, --duration-interaction, --easing-default
+  --duration-interaction, --easing-default
 
   --otp-length is private: the component sets it from `length`.
 
@@ -72,9 +72,13 @@
   cursor: not-allowed;
 }
 
+/* Disabled: no fade. The shared disabled opacity (0.1) left this close to
+   invisible; quieter colours from tested pairs keep it readable. */
 .otp-input__native:disabled ~ .otp-input__box,
 .otp-input__boxes:has(.otp-input__native:disabled) .otp-input__box {
-  opacity: var(--opacity-disabled);
+  border-color: var(--color-border-default);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
 }
 
 @media (forced-colors: active) {

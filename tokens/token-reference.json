@@ -3041,6 +3041,7 @@
         "SegmentedControl",
         "Select",
         "Slider",
+        "Switch",
         "Textarea"
       ]
     },
@@ -3085,10 +3086,12 @@
         "Input",
         "InputGroup",
         "Kbd",
+        "OtpInput",
         "Radio",
         "SegmentedControl",
         "Select",
         "Slider",
+        "Switch",
         "Tag",
         "Textarea",
         "TimePicker",
@@ -3121,8 +3124,7 @@
         "Table",
         "Button",
         "ProgressBar",
-        "Slider",
-        "Switch"
+        "Slider"
       ]
     },
     {
@@ -3258,6 +3260,7 @@
         "TopNav",
         "Avatar",
         "Badge",
+        "Button",
         "Calendar",
         "Checkbox",
         "Combobox",
@@ -3267,6 +3270,7 @@
         "Input",
         "InputGroup",
         "Label",
+        "OtpInput",
         "ProgressBar",
         "Radio",
         "SegmentedControl",
@@ -3526,13 +3530,20 @@
         "TopNav",
         "Avatar",
         "Badge",
+        "Button",
+        "Checkbox",
         "Divider",
         "FileUpload",
         "IconButton",
+        "Input",
         "Kbd",
+        "OtpInput",
+        "Radio",
         "SegmentedControl",
         "Select",
-        "Tag"
+        "Switch",
+        "Tag",
+        "Textarea"
       ]
     },
     {
@@ -6301,21 +6312,7 @@
         "portfolio-dark": "0.1"
       },
       "axisAware": false,
-      "usedBy": [
-        "Accordion",
-        "Pagination",
-        "Tabs",
-        "Button",
-        "Checkbox",
-        "Field",
-        "Input",
-        "OtpInput",
-        "Radio",
-        "Select",
-        "Slider",
-        "Switch",
-        "Textarea"
-      ]
+      "usedBy": []
     },
     {
       "name": "space-tight-gap",
@@ -6721,6 +6718,7 @@
         "OtpInput",
         "Radio",
         "Select",
+        "Switch",
         "Textarea"
       ]
     },

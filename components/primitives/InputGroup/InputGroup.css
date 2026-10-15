@@ -4,8 +4,7 @@
   --space-inline-gap, --space-control-padding-x, --border-width-interactive,
   --color-border-strong, --border-radius-interactive,
   --color-surface-secondary, --color-text-secondary (addon text: 4.5:1 on
-  the secondary surface), --color-feedback-error, --font-family-base, --font-size-control,
-  --opacity-disabled
+  the secondary surface), --color-feedback-error, --font-family-base, --font-size-control
 
   The label and message reuse Field's classes (field__label,
   field__message), so a group, a Field and an Input read the same.

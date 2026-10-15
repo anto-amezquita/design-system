@@ -5,7 +5,7 @@
   --accordion-content-padding-x, --accordion-content-padding-bottom
 
   --accordion-duration-expand, --accordion-duration-collapse
-  --font-family-base, --easing-default, --color-border-focus, --border-radius-sm, --opacity-disabled
+  --font-family-base, --easing-default, --color-border-focus, --border-radius-sm
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control
@@ -29,9 +29,14 @@
   border-top: var(--border-width-default) solid var(--color-border-default);
 }
 
+/* Disabled: no fade. The shared disabled opacity (0.1) left this close to
+   invisible; quieter colours from tested pairs keep it readable. */
 .accordion__item[data-disabled] {
-  opacity: var(--opacity-disabled);
   pointer-events: none;
+}
+
+.accordion__item[data-disabled] .accordion__trigger {
+  color: var(--color-text-secondary);
 }
 
 /* Header — reset to block */

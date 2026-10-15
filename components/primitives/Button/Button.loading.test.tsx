@@ -1,7 +1,8 @@
 /**
  * Loading keeps the variant's colours: it means "busy, wait", not
  * "unavailable". The native <button> is disabled while loading, so the
- * disabled opacity used to apply too, and primary went pale. Runs in
+ * disabled styles must not apply to it: first the disabled opacity turned
+ * primary pale; now disabled has its own quieter colours instead. Runs in
  * Chromium with the base CSS, so the cascade decides.
  */
 
@@ -20,21 +21,25 @@ beforeAll(() => {
 afterEach(cleanup)
 
 const opacity = (el: Element) => getComputedStyle(el).opacity
+const look = (el: Element) => { const s = getComputedStyle(el); return `${s.backgroundColor} ${s.color}` }
 
 describe('Button loading vs disabled', () => {
   for (const variant of ['primary', 'secondary', 'ghost'] as const) {
-    test(`${variant}: loading stays at full opacity; disabled is dimmed`, () => {
+    test(`${variant}: loading keeps the variant's look; disabled looks different`, () => {
       const { getByText } = render(
         <>
+          <Button variant={variant}>Enabled</Button>
           <Button variant={variant} loading>Loading</Button>
           <Button variant={variant} disabled>Disabled</Button>
         </>,
       )
+      const enabled = getByText('Enabled').closest('button')!
       const loading = getByText('Loading').closest('button')!
       const disabled = getByText('Disabled').closest('button')!
       expect(loading.disabled).toBe(true)
       expect(opacity(loading)).toBe('1')
-      expect(Number(opacity(disabled))).toBeLessThan(1)
+      expect(look(loading)).toBe(look(enabled))
+      expect(look(disabled)).not.toBe(look(enabled))
     })
   }
 

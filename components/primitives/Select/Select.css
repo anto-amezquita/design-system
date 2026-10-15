@@ -7,7 +7,7 @@
 
   --select-item-padding-x, --select-item-padding-y
   --font-family-base, --color-text-secondary, --color-text-primary, --color-border-focus, --border-radius-interactive
-  --space-tight-gap, --duration-interaction, --easing-default, --opacity-disabled, --z-dropdown
+  --space-tight-gap, --duration-interaction, --easing-default, --z-dropdown
   --color-feedback-error (invalid, when a Field has an error)
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
@@ -59,8 +59,12 @@
   outline-color: var(--color-feedback-error);
 }
 
+/* Disabled: no fade. The shared disabled opacity (0.1) left this close to
+   invisible; quieter colours from tested pairs keep it readable. */
 .select__trigger[data-disabled] {
-  opacity: var(--opacity-disabled);
+  border-color: var(--color-border-default);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
   cursor: not-allowed;
 }
 
@@ -133,7 +137,8 @@
 }
 
 .select__item[data-disabled] {
-  opacity: var(--opacity-disabled);
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
   cursor: not-allowed;
 }
 
