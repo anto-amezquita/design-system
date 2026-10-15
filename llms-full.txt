@@ -581,6 +581,15 @@ Page-level section header with eyebrow, title, lead text, and an action slot
 - Storybook: Components/Hero
 - Stories: Default, WithEyebrowAndLead, Centered, TitleOnly, PageHeader, DarkMode
 
+### MobileNav
+
+The bar at the bottom of a small screen with an app's main places
+
+- Import: `import { MobileNav } from '@amezquita/design-system/components/patterns/MobileNav'`
+- Token prefix: `mobilenav-*` (0 tokens)
+- Storybook: Components/MobileNav
+- Stories: Default, ThreeItems, Danish, DarkMode
+
 ### Pagination
 
 Page navigation controls for multi-page data sets; exposes current page and total page count

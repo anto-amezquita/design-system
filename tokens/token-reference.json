@@ -3029,6 +3029,7 @@
         "Popover",
         "Toast",
         "Hero",
+        "MobileNav",
         "Stepper",
         "Toolbar",
         "TopNav",
@@ -3180,6 +3181,7 @@
         "Breadcrumb",
         "FormLayout",
         "Hero",
+        "MobileNav",
         "Pagination",
         "SideNav",
         "Stepper",
@@ -3245,6 +3247,7 @@
         "EmptyState",
         "FormLayout",
         "Hero",
+        "MobileNav",
         "Pagination",
         "SideNav",
         "Stepper",
@@ -3316,6 +3319,7 @@
       },
       "axisAware": true,
       "usedBy": [
+        "MobileNav",
         "Pagination",
         "Stepper",
         "Button",
@@ -3401,6 +3405,7 @@
       },
       "axisAware": true,
       "usedBy": [
+        "MobileNav",
         "Pagination",
         "Stepper",
         "Button",
@@ -3508,6 +3513,7 @@
         "Popover",
         "Toast",
         "Accordion",
+        "MobileNav",
         "Pagination",
         "SideNav",
         "Table",
@@ -3594,6 +3600,7 @@
         "Breadcrumb",
         "Carousel",
         "FormLayout",
+        "MobileNav",
         "Pagination",
         "SideNav",
         "Stepper",
@@ -3665,6 +3672,7 @@
       "usedBy": [
         "Menu",
         "FormLayout",
+        "MobileNav",
         "Stepper",
         "Field",
         "FileUpload",
@@ -3700,6 +3708,7 @@
         "Alert",
         "Menu",
         "FormLayout",
+        "MobileNav",
         "Badge"
       ]
     },
@@ -3753,6 +3762,7 @@
       "usedBy": [
         "Alert",
         "Toast",
+        "MobileNav",
         "Badge"
       ]
     },
@@ -4091,6 +4101,7 @@
         "Breadcrumb",
         "Carousel",
         "FormLayout",
+        "MobileNav",
         "Pagination",
         "SideNav",
         "Stepper",
@@ -4320,6 +4331,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "MobileNav",
         "TopNav"
       ]
     },
@@ -4545,6 +4557,7 @@
         "Toast",
         "Accordion",
         "FormLayout",
+        "MobileNav",
         "FileUpload",
         "IconButton",
         "MultiSelect",
@@ -4660,6 +4673,7 @@
         "EmptyState",
         "FormLayout",
         "Hero",
+        "MobileNav",
         "Pagination",
         "SideNav",
         "Stepper",
@@ -4846,6 +4860,7 @@
         "DataTable",
         "EmptyState",
         "FormLayout",
+        "MobileNav",
         "Stepper",
         "TableOfContents",
         "Tabs",
@@ -5185,6 +5200,7 @@
         "Lightbox",
         "Menu",
         "NavigationMenu",
+        "MobileNav",
         "SideNav",
         "Stepper",
         "TableOfContents",
@@ -5392,6 +5408,7 @@
         "EmptyState",
         "FormLayout",
         "Hero",
+        "MobileNav",
         "FileUpload",
         "ProgressBar"
       ]
@@ -5882,6 +5899,7 @@
         "EmptyState",
         "FormLayout",
         "Hero",
+        "MobileNav",
         "Pagination",
         "SideNav",
         "Stepper",
@@ -6070,6 +6088,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "MobileNav",
         "Stepper",
         "Avatar",
         "Badge",
@@ -6321,6 +6340,7 @@
         "NavigationMenu",
         "Toast",
         "FormLayout",
+        "MobileNav",
         "SideNav",
         "Stepper",
         "Table",
@@ -6730,6 +6750,7 @@
         "Menu",
         "Toast",
         "Accordion",
+        "MobileNav",
         "Pagination",
         "SideNav",
         "Table",

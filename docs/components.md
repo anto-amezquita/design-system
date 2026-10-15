@@ -2003,6 +2003,49 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### MobileNav
+
+| Field | Value |
+|---|---|
+| **Purpose** | The bar at the bottom of a small screen with an app's main places |
+| **Figma name** | `MobileNav` |
+| **Code name** | `MobileNav` (+ `MobileNavItem` type) |
+| **Storybook path** | `Components/MobileNav` |
+
+**Props / variants**
+- `items`: three to five `{ id, label, href, icon, badge?, badgeLabel? }`
+- `currentHref`, `LinkComponent` (as NavigationMenu); `aria-label` (default "Main")
+- `alwaysVisible`: keep it on wide screens; by default it hides from 1024px
+
+**Required states**
+- [x] current item (filled pill, heavier label), other items
+- [x] badge (count, "99+" over 99), no badge
+- [x] three to five items, light and dark
+
+**Tokens consumed**
+- `--color-surface-primary`, `--color-border-default`, `--color-text-primary`, `--color-text-secondary`, `--color-accent-default`, `--color-accent-foreground` (current pill), `--color-feedback-error`, `--color-feedback-error-background`, `--color-feedback-error-border` (badge, as Badge's error style), `--size-touch-target`, `--size-icon-md`, `--z-sticky`, plus type, spacing and focus tokens
+
+**Accessibility**
+- A `nav` named "Main" with a list of links; each is named by its label, and a badge adds its count in brackets: "Messages (3 unread)"
+- The current link has `aria-current="page"`, and a filled pill and heavier label, so it doesn't rely on colour
+- Icons and the visible count are hidden; labels are always shown
+- Every link is at least 44px tall; the bar clears the phone's home indicator (`safe-area-inset-bottom`)
+- Hidden from 1024px up by CSS, so there's one "Main" navigation at a time with TopNav or SideNav
+
+**Do**
+- Keep it to three to five places people go often; put the rest in a "More" or profile page.
+- Use short labels, one word where possible.
+- Leave room at the bottom of the page so the bar doesn't cover the last content.
+
+**Don't**
+- Don't hide the labels; icons alone are ambiguous.
+- Don't put actions in it (like "New post"); it's for places.
+
+**Chromatic stories**
+- `Default`, `ThreeItems`, `Danish`, `DarkMode`
+
+---
+
 ### NavigationMenu
 
 | Field | Value |
