@@ -100,6 +100,15 @@ A date typed or picked from a calendar: delivery dates, bookings, deadlines
 - Storybook: Components/DatePicker
 - Stories: Default, Limits, English, Error, Disabled, Open, DarkMode
 
+### DateRangePicker
+
+A start and an end date: a stay, a report period, leave
+
+- Import: `import { DateRangePicker } from '@amezquita/design-system/components/primitives/DateRangePicker'`
+- Token prefix: `daterangepicker-*` (0 tokens)
+- Storybook: Components/DateRangePicker
+- Stories: Default, Booked, Danish, Error, Disabled, Open, DarkMode
+
 ### Divider
 
 A line that separates groups of content, horizontally or vertically
