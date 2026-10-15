@@ -453,6 +453,15 @@ A preview of what a link leads to: a person's profile, a page's summary
 - Storybook: Components/HoverCard
 - Stories: Default, PagePreview, Danish, KeyboardOpen, DarkMode
 
+### Lightbox
+
+Images large, one at a time, over the page: a product's photos, a portfolio piece
+
+- Import: `import { Lightbox } from '@amezquita/design-system/components/composition/Lightbox'`
+- Token prefix: `lightbox-*` (0 tokens)
+- Storybook: Components/Lightbox
+- Stories: Gallery, Open, Single, Danish, DarkMode
+
 ### Menu
 
 Dropdown list of actions opened from a trigger: account menus, overflow ("more") menus, row actions

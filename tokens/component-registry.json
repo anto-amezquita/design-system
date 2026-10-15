@@ -1,8 +1,8 @@
 {
   "meta": {
-    "componentCount": 104,
-    "publicComponentCount": 66,
-    "subComponentCount": 37
+    "componentCount": 106,
+    "publicComponentCount": 67,
+    "subComponentCount": 38
   },
   "components": [
     {
@@ -1108,6 +1108,39 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "hover-card"
+    },
+    {
+      "name": "Lightbox",
+      "slug": "lightbox",
+      "tier": "composition",
+      "purpose": "Images large, one at a time, over the page: a product's photos, a portfolio piece",
+      "storybookPath": "Components/Lightbox",
+      "storybookTitleId": "components-lightbox",
+      "defaultStoryId": "components-lightbox--gallery",
+      "tokenPrefix": "lightbox",
+      "stories": [
+        "Gallery",
+        "Open",
+        "Single",
+        "Danish",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "LightboxGallery",
+      "slug": "lightbox-gallery",
+      "tier": "composition",
+      "purpose": "Sub-component of Lightbox.",
+      "storybookPath": "Components/Lightbox",
+      "storybookTitleId": "components-lightbox",
+      "defaultStoryId": "components-lightbox--gallery",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "lightbox"
     },
     {
       "name": "Menu",

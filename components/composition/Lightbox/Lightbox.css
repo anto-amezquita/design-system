@@ -1,0 +1,155 @@
+/*
+  Tokens consumed:
+
+  --color-surface-primary (the full-screen surface, so the brand's tested
+  contrast holds), --color-text-primary, --color-text-secondary (count and
+  caption, 4.5:1), --color-border-default, --border-width-default,
+  --border-radius-component (thumbnails), --font-family-base,
+  --font-size-control, --font-size-small, --font-weight-label,
+  --space-tight-gap, --space-inline-gap, --space-element-gap,
+  --space-component-gap, --size-touch-target, --focus-ring-width,
+  --focus-ring-offset, --color-border-focus, --duration-transition,
+  --easing-out
+
+  The buttons are IconButtons.
+*/
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: var(--color-surface-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  animation: lightbox-in var(--duration-transition) var(--easing-out);
+}
+
+.lightbox:focus-visible {
+  outline: none;
+}
+
+@keyframes lightbox-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-inline-gap);
+  padding: var(--space-inline-gap) var(--space-element-gap);
+}
+
+.lightbox__title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-inline-gap);
+  margin: 0;
+  font-size: var(--font-size-control);
+  font-weight: var(--font-weight-label);
+}
+
+.lightbox__count {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+  font-weight: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The image fits the space between the bar and the bottom, never cropped. */
+.lightbox__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-inline-gap);
+  min-block-size: 0;
+  margin: 0;
+  /* Narrow first: the buttons sit at the bottom, out of the image's way. */
+  padding: 0 var(--space-inline-gap) calc(var(--size-touch-target) + var(--space-element-gap) * 2);
+}
+
+.lightbox__image {
+  display: block;
+  min-block-size: 0;
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  inline-size: auto;
+  block-size: auto;
+  object-fit: contain;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.lightbox__caption {
+  max-inline-size: 60ch;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+  text-align: center;
+}
+
+.lightbox__nav {
+  position: absolute;
+  inset-block-end: var(--space-element-gap);
+}
+
+.lightbox__nav--prev {
+  inset-inline-start: var(--space-element-gap);
+}
+
+.lightbox__nav--next {
+  inset-inline-end: var(--space-element-gap);
+}
+
+/* From tablet up, the buttons sit at the sides, level with the image. */
+@media (min-width: 768px) {
+  .lightbox__stage {
+    padding: 0 calc(var(--size-touch-target) + var(--space-component-gap)) var(--space-element-gap);
+  }
+
+  .lightbox__nav {
+    inset-block: 50% auto;
+    transform: translateY(-50%);
+  }
+}
+
+.lightbox-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: var(--space-inline-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lightbox-gallery__thumb {
+  display: block;
+  inline-size: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: var(--border-width-default) solid var(--color-border-default);
+  border-radius: var(--border-radius-component);
+  background: none;
+  cursor: zoom-in;
+}
+
+.lightbox-gallery__thumb img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.lightbox-gallery__thumb:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox {
+    animation: none;
+  }
+}
