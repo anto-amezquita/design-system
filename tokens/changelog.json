@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-14"
+    "generatedAt": "2026-10-15"
   },
   "versions": [
     {
@@ -762,7 +762,7 @@
   ],
   "unreleased": [
     {
-      "sha": "865e31d",
+      "sha": "933967b",
       "type": "feat",
       "scope": "carousel",
       "message": "scroll-snap carousel on the WAI-ARIA pattern",
