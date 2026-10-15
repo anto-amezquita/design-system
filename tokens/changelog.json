@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "a8a0cf2",
+      "type": "feat",
+      "scope": "top-nav",
+      "message": "header bar with brand, navigation and actions",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "2232308",
       "type": "feat",
       "scope": "lightbox",
