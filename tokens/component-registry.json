@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 74,
-    "publicComponentCount": 48,
+    "componentCount": 75,
+    "publicComponentCount": 49,
     "subComponentCount": 25
   },
   "components": [
@@ -386,6 +386,26 @@
         "DarkMode"
       ],
       "tokenCount": 2,
+      "internal": false
+    },
+    {
+      "name": "Search",
+      "slug": "search",
+      "tier": "primitives",
+      "purpose": "A site or list search: a search landmark with Enter to search, Escape to clear and an optional shortcut",
+      "storybookPath": "Components/Search",
+      "storybookTitleId": "components-search",
+      "defaultStoryId": "components-search--default",
+      "tokenPrefix": "search",
+      "stories": [
+        "Default",
+        "WithShortcut",
+        "WithSubmit",
+        "Loading",
+        "AsYouType",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {

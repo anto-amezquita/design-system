@@ -1,0 +1,31 @@
+/*
+  Tokens consumed:
+
+  --space-inline-gap
+
+  Everything else is Input's search mode, Button, Kbd and Spinner.
+  The native clear "x" of type="search" is hidden: Input draws its own,
+  named "Clear input".
+*/
+
+.search {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-inline-gap);
+  min-inline-size: 0;
+}
+
+.search > .input-field {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+}
+
+.search__input::-webkit-search-cancel-button,
+.search__input::-webkit-search-decoration {
+  appearance: none;
+}
+
+/* The Kbd hint and spinner are visual: the input carries aria-keyshortcuts and aria-busy. */
+.search .input-field__suffix {
+  pointer-events: none;
+}

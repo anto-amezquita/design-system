@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 48 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 49 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -45,6 +45,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [NumberInput](https://design.amezquita.dk/components/number-input.md): A number typed or stepped: a quantity, an amount, a percentage
 - [ProgressBar](https://design.amezquita.dk/components/progress-bar.md): Shows how far a task has got, or that it's running when the end isn't known
 - [Radio](https://design.amezquita.dk/components/radio.md): Single-selection control within a mutually exclusive group
+- [Search](https://design.amezquita.dk/components/search.md): A site or list search: a search landmark with Enter to search, Escape to clear and an optional shortcut
 - [SegmentedControl](https://design.amezquita.dk/components/segmented-control.md): One choice from a few, shown side by side: a view switch, a time range
 - [Select](https://design.amezquita.dk/components/select.md): Dropdown for choosing a single value from a list; supports grouped options
 - [Skeleton](https://design.amezquita.dk/components/skeleton.md): Placeholder loading state that mirrors the geometry of the content it replaces

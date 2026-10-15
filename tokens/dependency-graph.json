@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 46,
+    "filesScanned": 47,
     "tokenCount": 227
   },
   "byToken": {
@@ -1172,6 +1172,7 @@
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
+      "components/primitives/Search/Search.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Skeleton/Skeleton.css",
