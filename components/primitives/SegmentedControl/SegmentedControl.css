@@ -10,7 +10,8 @@
   --font-size-control, --font-weight-control, --space-compact-padding-x,
   --space-inline-gap, --size-touch-target, --size-icon-md,
   --color-border-focus, --focus-ring-width, --focus-ring-offset,
-  --opacity-disabled, --duration-interaction, --easing-default
+  --color-border-default, --color-text-secondary (disabled),
+  --duration-interaction, --easing-default
 
   No component tokens.
 */
@@ -86,17 +87,23 @@
   z-index: 1;
 }
 
+/* Disabled: no fade (the disabled opacity leaves text almost invisible).
+   An unavailable segment keeps its words in secondary text (4.5:1). */
 .segmented-control__item[data-disabled] {
-  opacity: var(--opacity-disabled);
+  color: var(--color-text-secondary);
   cursor: not-allowed;
 }
 
+/* The whole control disabled: a quieter outline, and the chosen segment
+   stays readable (primary text on the quiet surface, 4.5:1) so you can
+   still see which option is set. */
 .segmented-control[data-disabled] {
-  opacity: var(--opacity-disabled);
+  border-color: var(--color-border-default);
 }
 
-.segmented-control[data-disabled] .segmented-control__item[data-disabled] {
-  opacity: 1;
+.segmented-control[data-disabled] .segmented-control__item[data-state='checked'] {
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
 }
 
 @media (forced-colors: active) {

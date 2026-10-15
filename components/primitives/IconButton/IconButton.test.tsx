@@ -8,7 +8,13 @@ import { afterEach, beforeAll, describe, expect, test, vi } from 'vitest'
 import { cleanup, render } from '@testing-library/react'
 
 import baseLight from '../../../styles/brands/base-light.css?raw'
+import baseDark from '../../../styles/brands/base-dark.css?raw'
+import portfolio from '../../../styles/brands/portfolio-scoped.css?raw'
+import demoCool from '../../../styles/brands/demo-cool-scoped.css?raw'
+import demoWarm from '../../../styles/brands/demo-warm-scoped.css?raw'
+import demoSoft from '../../../styles/brands/demo-soft-scoped.css?raw'
 import { IconButton } from './IconButton'
+import { contrastOf } from '../../../lib/contrast-test-utils'
 
 beforeAll(() => {
   const style = document.createElement('style')
@@ -75,5 +81,28 @@ describe('IconButton', () => {
   test('href renders a link with the same name', () => {
     const { getByRole } = render(<IconButton icon={<Icon />} label="Settings" href="/settings" />)
     expect(getByRole('link', { name: 'Settings' }).getAttribute('href')).toBe('/settings')
+  })
+
+  test('disabled is not faded: the icon stays at 4.5:1 in every variant, brand and mode', () => {
+    const style = document.createElement('style')
+    style.textContent = baseDark + portfolio + demoCool + demoWarm + demoSoft
+    document.head.append(style)
+    const brands = [undefined, 'portfolio', 'demo-cool', 'demo-warm', 'demo-soft']
+    const { getAllByRole } = render(<>
+      {brands.flatMap(b => (['light', 'dark'] as const).map(m => (
+        <div key={`${b}${m}`} data-brand={b} data-mode={m} style={{ background: 'var(--color-surface-primary)' }}>
+          <IconButton icon={<Icon />} label="Primary" disabled />
+          <IconButton icon={<Icon />} label="Secondary" variant="secondary" disabled />
+          <IconButton icon={<Icon />} label="Ghost" variant="ghost" disabled />
+        </div>
+      )))}
+    </>)
+    const buttons = getAllByRole('button')
+    expect(buttons).toHaveLength(30)
+    for (const b of buttons) {
+      expect(getComputedStyle(b).opacity).toBe('1')
+      expect(contrastOf(b)).toBeGreaterThanOrEqual(4.5)
+    }
+    style.remove()
   })
 })

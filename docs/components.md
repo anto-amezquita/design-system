@@ -891,7 +891,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - [x] default
 - [x] hover and pressed (Button's, per variant)
 - [x] focus-visible (Button's ring)
-- [x] disabled (opacity, not-allowed cursor)
+- [x] disabled: not faded; a quiet surface and border with the icon in secondary text (4.5:1), ghost without the surface; not-allowed cursor
 - [x] loading (spinner replaces the icon, `aria-busy`)
 
 **Tokens consumed**
@@ -1257,7 +1257,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - [x] chosen (accent fill)
 - [x] not chosen, and hover (neutral surface)
 - [x] focus-visible (ring on the focused segment)
-- [x] disabled, per option and whole control
+- [x] disabled per option (secondary text, 4.5:1) and whole control (quieter outline, the chosen segment still shown on the quiet surface); never faded
 
 **Tokens consumed**
 - `--button-border-radius` (matches the brand's Button shape)
@@ -1265,7 +1265,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - `--color-text-primary`, `--color-accent-default`, `--color-accent-foreground`
 - `--font-family-base`, `--font-size-control`, `--font-weight-control`
 - `--space-tight-gap`, `--space-compact-padding-x`, `--space-inline-gap`, `--size-touch-target`, `--size-icon-md`
-- `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`, `--opacity-disabled`, `--duration-interaction`, `--easing-default`
+- `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`, `--color-border-default`, `--color-text-secondary`, `--duration-interaction`, `--easing-default`
 
 **Accessibility**
 - A radio group (Radix): `role="radiogroup"` named by `label`, segments are `role="radio"` with `aria-checked`

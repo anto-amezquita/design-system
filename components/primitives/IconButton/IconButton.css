@@ -2,7 +2,8 @@
   Tokens consumed (on top of Button's):
 
   --size-touch-target (md square and sm hit area), --size-icon-interactive
-  (sm square), --size-icon-md, --size-icon-sm
+  (sm square), --size-icon-md, --size-icon-sm; disabled: --color-border-default,
+  --color-surface-secondary, --color-text-secondary (4.5:1 on both surfaces)
 
   No component tokens: the sizes are the semantic touch-target and icon sizes.
 
@@ -43,4 +44,22 @@
   content: '';
   position: absolute;
   inset: calc((var(--size-touch-target) - var(--size-icon-interactive)) / -2);
+}
+
+/* Disabled: no fade (the disabled opacity leaves an icon almost invisible).
+   A quiet surface, the default border and the icon in secondary text, a
+   tested 4.5:1 pair, so it reads as unavailable but you can still see what
+   it is. Ghost stays without a surface or border. */
+.button.icon-button:disabled,
+.button.icon-button.button--disabled {
+  opacity: 1;
+  border-color: var(--color-border-default);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+}
+
+.button.icon-button.button--ghost:disabled,
+.button.icon-button.button--ghost.button--disabled {
+  border-color: transparent;
+  background: none;
 }

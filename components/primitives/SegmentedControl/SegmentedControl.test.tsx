@@ -15,6 +15,7 @@ import demoCool from '../../../styles/brands/demo-cool-scoped.css?raw'
 import demoWarm from '../../../styles/brands/demo-warm-scoped.css?raw'
 import demoSoft from '../../../styles/brands/demo-soft-scoped.css?raw'
 import { SegmentedControl } from './SegmentedControl'
+import { contrastOf } from '../../../lib/contrast-test-utils'
 
 beforeAll(() => {
   const style = document.createElement('style')
@@ -129,4 +130,27 @@ describe('SegmentedControl', () => {
       })
     }
   }
+
+  test('disabled is not faded: segments stay at 4.5:1 and the chosen one is still visible, in every brand and mode', () => {
+    const brands = [undefined, 'portfolio', 'demo-cool', 'demo-warm', 'demo-soft']
+    const { container } = render(<>
+      {brands.flatMap(b => (['light', 'dark'] as const).map(m => (
+        <div key={`${b}${m}`} data-brand={b} data-mode={m} style={{ background: 'var(--color-surface-primary)' }}>
+          <SegmentedControl label="View" options={[...options.slice(0, 2), { ...options[2], disabled: true }]} defaultValue="day" />
+          <SegmentedControl label="Locked" options={options} defaultValue="week" disabled />
+        </div>
+      )))}
+    </>)
+    const items = [...container.querySelectorAll<HTMLElement>('.segmented-control__item')]
+    expect(items).toHaveLength(10 * (3 + options.length))
+    for (const item of items) {
+      expect(getComputedStyle(item).opacity).toBe('1')
+      expect(contrastOf(item)).toBeGreaterThanOrEqual(4.5)
+    }
+    for (const group of container.querySelectorAll<HTMLElement>('.segmented-control')) expect(getComputedStyle(group).opacity).toBe('1')
+    // In the fully disabled control, the chosen segment still stands out from the others.
+    const locked = container.querySelectorAll('[data-disabled].segmented-control')[0]
+    const [, week] = [...locked.querySelectorAll<HTMLElement>('.segmented-control__item')]
+    expect(getComputedStyle(week).backgroundColor).not.toBe(getComputedStyle(locked).backgroundColor)
+  })
 })
