@@ -36,7 +36,7 @@
   ],
   "scripts": {
     "changeset": "changeset",
-    "version": "changeset version",
+    "version": "changeset version && npm install --package-lock-only --ignore-scripts",
     "release": "changeset publish",
     "tokens": "node scripts/build-dependency-graph.mjs && node sd.config.mjs",
     "tokens:watch": "node --watch sd.config.mjs",
