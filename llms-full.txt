@@ -20,10 +20,10 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-383 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+386 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
-- component: 112
+- component: 115
 - color: 46
 - typography: 40
 - spacing: 19
@@ -425,6 +425,15 @@ Side-anchored slide-in panel for supplemental content or secondary navigation
 - Token prefix: `drawer-*` (9 tokens)
 - Storybook: Components/Drawer
 - Stories: Default, FilterPanel, AllSides, Sizes, DarkMode, Open
+
+### HoverCard
+
+A preview of what a link leads to: a person's profile, a page's summary
+
+- Import: `import { HoverCard } from '@amezquita/design-system/components/composition/HoverCard'`
+- Token prefix: `hover-card-*` (3 tokens)
+- Storybook: Components/HoverCard
+- Stories: Default, PagePreview, Danish, KeyboardOpen, DarkMode
 
 ### Menu
 

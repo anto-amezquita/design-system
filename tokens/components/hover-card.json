@@ -1,0 +1,17 @@
+{
+  "hover-card-open-delay": {
+    "$value": "500ms",
+    "$type": "duration",
+    "$description": "How long the pointer or keyboard focus rests on a HoverCard's trigger before the card opens. Longer than a Tooltip's, so passing over a link doesn't flash a card."
+  },
+  "hover-card-close-delay": {
+    "$value": "300ms",
+    "$type": "duration",
+    "$description": "Grace time after the pointer leaves the trigger or card before a HoverCard closes, so the pointer can cross the gap into the card (WCAG 1.4.13, hoverable)."
+  },
+  "hover-card-width": {
+    "$value": "320px",
+    "$type": "dimension",
+    "$description": "Width of a HoverCard; it narrows to fit the screen."
+  }
+}

@@ -1,0 +1,10 @@
+/*
+  Tokens consumed:
+
+  --hover-card-width, --hover-card-open-delay and --hover-card-close-delay
+  (read by HoverCard.tsx); the surface, padding and motion are Popover's.
+*/
+
+.hover-card {
+  inline-size: var(--hover-card-width);
+}

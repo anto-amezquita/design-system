@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 57 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 58 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 60 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 61 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -77,7 +77,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | ToggleButton | [toggle-button](https://design.amezquita.dk/components/toggle-button.md) — A button that stays on or off, like bold in an editor or a grid overlay |
 | VisuallyHidden | [visually-hidden](https://design.amezquita.dk/components/visually-hidden.md) — Text screen readers announce but sighted users don't see |
 
-### Composition (11)
+### Composition (12)
 
 | Component | Reference |
 |---|---|
@@ -86,6 +86,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Card | [card](https://design.amezquita.dk/components/card.md) — Compound container for grouped content — composed from named sub-components |
 | Dialog | [dialog](https://design.amezquita.dk/components/dialog.md) — Overlay for tasks or information requiring focused attention |
 | Drawer | [drawer](https://design.amezquita.dk/components/drawer.md) — Side-anchored slide-in panel for supplemental content or secondary navigation |
+| HoverCard | [hover-card](https://design.amezquita.dk/components/hover-card.md) — A preview of what a link leads to: a person's profile, a page's summary |
 | Menu | [menu](https://design.amezquita.dk/components/menu.md) — Dropdown list of actions opened from a trigger: account menus, overflow ("more") menus, row actions |
 | NavigationMenu | [navigation-menu](https://design.amezquita.dk/components/navigation-menu.md) — The site's header navigation: top-level links, plus groups that open a dropdown of links. Hidden below 1024px, where SideNav's drawer carries the same links (its `headerItems`) |
 | Popover | [popover](https://design.amezquita.dk/components/popover.md) — Content shown next to its trigger without blocking the page: a filter panel, a date picker, a short form |
