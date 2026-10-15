@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 103,
-    "publicComponentCount": 65,
+    "componentCount": 104,
+    "publicComponentCount": 66,
     "subComponentCount": 37
   },
   "components": [
@@ -980,6 +980,25 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "card"
+    },
+    {
+      "name": "CommandPalette",
+      "slug": "command-palette",
+      "tier": "composition",
+      "purpose": "Every action in an app, one search away: Ctrl+K or ⌘K, a few letters, Enter",
+      "storybookPath": "Components/CommandPalette",
+      "storybookTitleId": "components-commandpalette",
+      "defaultStoryId": "components-commandpalette--default",
+      "tokenPrefix": "commandpalette",
+      "stories": [
+        "Default",
+        "Open",
+        "Run",
+        "Danish",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
     },
     {
       "name": "ContextMenu",

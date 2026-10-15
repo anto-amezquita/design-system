@@ -3020,6 +3020,7 @@
       "axisAware": true,
       "usedBy": [
         "Card",
+        "CommandPalette",
         "Dialog",
         "Drawer",
         "Menu",
@@ -3164,6 +3165,7 @@
       },
       "axisAware": true,
       "usedBy": [
+        "CommandPalette",
         "Dialog",
         "Drawer",
         "Menu",
@@ -3224,6 +3226,7 @@
       "axisAware": true,
       "usedBy": [
         "Card",
+        "CommandPalette",
         "ContextMenu",
         "Dialog",
         "Drawer",
@@ -3489,6 +3492,7 @@
       "axisAware": true,
       "usedBy": [
         "Card",
+        "CommandPalette",
         "Dialog",
         "Drawer",
         "Menu",
@@ -4224,6 +4228,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "CommandPalette",
         "Menu",
         "NavigationMenu",
         "Popover",
@@ -4487,6 +4492,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "CommandPalette",
         "Menu",
         "NavigationMenu",
         "SideNav",
@@ -4518,6 +4524,7 @@
       "axisAware": false,
       "usedBy": [
         "Alert",
+        "CommandPalette",
         "Toast",
         "Accordion",
         "FormLayout",
@@ -4623,6 +4630,7 @@
       "axisAware": true,
       "usedBy": [
         "Alert",
+        "CommandPalette",
         "Menu",
         "NavigationMenu",
         "Popover",
@@ -4736,6 +4744,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "CommandPalette",
         "Dialog",
         "Drawer",
         "EmptyState"
@@ -4764,6 +4773,7 @@
       "usedBy": [
         "Alert",
         "Card",
+        "CommandPalette",
         "Menu",
         "NavigationMenu",
         "Popover",
@@ -4809,6 +4819,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "CommandPalette",
         "Menu",
         "DataTable",
         "EmptyState",
@@ -5147,6 +5158,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "CommandPalette",
         "Menu",
         "NavigationMenu",
         "SideNav",
@@ -5766,6 +5778,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "CommandPalette",
         "Dialog",
         "Drawer",
         "FormLayout",
@@ -5794,6 +5807,7 @@
       "axisAware": false,
       "usedBy": [
         "Card",
+        "CommandPalette",
         "ContextMenu",
         "Dialog",
         "Popover",
@@ -5827,6 +5841,7 @@
       "axisAware": false,
       "usedBy": [
         "Card",
+        "CommandPalette",
         "Dialog",
         "Drawer",
         "Menu",
@@ -5919,6 +5934,7 @@
       "usedBy": [
         "Alert",
         "Card",
+        "CommandPalette",
         "Dialog",
         "Menu",
         "NavigationMenu",
@@ -6110,6 +6126,7 @@
       "axisAware": false,
       "usedBy": [
         "Alert",
+        "CommandPalette",
         "Dialog",
         "Drawer",
         "Toast",
@@ -6264,6 +6281,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "CommandPalette",
         "ContextMenu",
         "Menu",
         "NavigationMenu",
@@ -6313,6 +6331,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "CommandPalette",
         "Menu",
         "NavigationMenu",
         "SideNav",
@@ -6668,6 +6687,7 @@
       "usedBy": [
         "Alert",
         "Card",
+        "CommandPalette",
         "Dialog",
         "Drawer",
         "Menu",

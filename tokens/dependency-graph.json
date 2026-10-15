@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 63,
-    "tokenCount": 238
+    "filesScanned": 64,
+    "tokenCount": 239
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -71,6 +71,7 @@
     "border-radius-component": [
       "components/composition/Alert/Alert.css",
       "components/composition/Card/Card.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
@@ -139,6 +140,7 @@
     "border-width-default": [
       "components/composition/Alert/Alert.css",
       "components/composition/Card/Card.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
@@ -315,6 +317,7 @@
     ],
     "color-border-default": [
       "components/composition/Card/Card.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
@@ -471,6 +474,7 @@
     ],
     "color-surface-primary": [
       "components/composition/Card/Card.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
@@ -531,6 +535,7 @@
       "components/composition/Tooltip/Tooltip.css"
     ],
     "color-text-primary": [
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
@@ -570,6 +575,7 @@
     ],
     "color-text-secondary": [
       "components/composition/Card/Card.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/ContextMenu/ContextMenu.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
@@ -707,6 +713,7 @@
     ],
     "duration-transition": [
       "components/composition/Alert/Alert.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Toast/Toast.css",
@@ -747,6 +754,7 @@
       "components/primitives/Textarea/Textarea.css"
     ],
     "easing-out": [
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css"
     ],
@@ -827,6 +835,7 @@
     ],
     "font-family-base": [
       "components/composition/Alert/Alert.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
@@ -877,6 +886,7 @@
       "components/primitives/OtpInput/OtpInput.css"
     ],
     "font-size-body": [
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/patterns/EmptyState/EmptyState.css"
@@ -897,6 +907,7 @@
     "font-size-control": [
       "components/composition/Alert/Alert.css",
       "components/composition/Card/Card.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
@@ -943,6 +954,7 @@
       "components/primitives/OtpInput/OtpInput.css"
     ],
     "font-size-small": [
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Menu/Menu.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
@@ -981,6 +993,7 @@
       "components/primitives/Heading/Heading.css"
     ],
     "font-weight-label": [
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/SideNav/SideNav.css",
@@ -1206,6 +1219,7 @@
       "components/composition/Drawer/Drawer.css"
     ],
     "shadow-dropdown": [
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
@@ -1221,6 +1235,9 @@
     "size-container-text": [
       "components/patterns/FormLayout/FormLayout.css"
     ],
+    "size-dialog-md": [
+      "components/composition/CommandPalette/CommandPalette.css"
+    ],
     "size-icon-interactive": [
       "components/primitives/IconButton/IconButton.css"
     ],
@@ -1230,6 +1247,7 @@
     ],
     "size-icon-md": [
       "components/composition/Alert/Alert.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/FormLayout/FormLayout.css",
@@ -1242,6 +1260,7 @@
       "components/primitives/TimePicker/TimePicker.css"
     ],
     "size-icon-sm": [
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/SideNav/SideNav.css",
@@ -1256,6 +1275,7 @@
     ],
     "size-touch-target": [
       "components/composition/Alert/Alert.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
@@ -1304,6 +1324,7 @@
       "components/patterns/Tabs/Tabs.css"
     ],
     "space-component-gap": [
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/patterns/FormLayout/FormLayout.css",
@@ -1321,6 +1342,7 @@
       "components/patterns/EmptyState/EmptyState.css"
     ],
     "space-control-padding-x": [
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/SideNav/SideNav.css",
@@ -1353,6 +1375,7 @@
     ],
     "space-element-gap": [
       "components/composition/Card/Card.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/ContextMenu/ContextMenu.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Popover/Popover.css",
@@ -1365,6 +1388,7 @@
     ],
     "space-inline-gap": [
       "components/composition/Card/Card.css",
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
@@ -1423,6 +1447,7 @@
       "components/patterns/Accordion/Accordion.css"
     ],
     "space-tight-gap": [
+      "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/ContextMenu/ContextMenu.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
