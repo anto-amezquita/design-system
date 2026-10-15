@@ -1,0 +1,223 @@
+/*
+  Tokens consumed:
+
+  --stepper-indicator-size, --stepper-connector-width (component tokens);
+  --color-accent-default, --color-accent-foreground (done: a 4.5:1 pair),
+  --color-accent-text (current: ring and number, 4.5:1 on the page),
+  --color-border-strong (still to come: ring, 3:1; and the line ahead),
+  --color-feedback-error (needs attention, 4.5:1), --color-surface-primary,
+  --color-text-primary, --color-text-secondary, --border-width-interactive,
+  --border-radius-pill, --border-radius-interactive, --font-family-base,
+  --font-size-control, --font-size-small, --font-weight-label,
+  --space-tight-gap, --space-inline-gap, --focus-ring-width,
+  --focus-ring-offset, --color-border-focus
+*/
+
+.stepper {
+  container-type: inline-size;
+  font-family: var(--font-family-base);
+}
+
+.stepper__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stepper__step {
+  position: relative;
+  flex: 1 1 0;
+  min-inline-size: 0;
+}
+
+/* The line from this step to the next one. */
+.stepper__step:not(:last-child)::after {
+  position: absolute;
+  background: var(--color-border-strong);
+  content: '';
+}
+
+/* Done stretches, up to the current step, in the accent. */
+.stepper__step--passed:not(:last-child)::after {
+  background: var(--color-accent-default);
+}
+
+.stepper__target {
+  display: flex;
+  gap: var(--space-inline-gap);
+  padding: 0;
+  border: none;
+  border-radius: var(--border-radius-interactive);
+  background: none;
+  color: var(--color-text-primary);
+  font: inherit;
+  text-align: start;
+  text-decoration: none;
+}
+
+button.stepper__target,
+a.stepper__target {
+  cursor: pointer;
+}
+
+button.stepper__target:hover .stepper__label,
+a.stepper__target:hover .stepper__label {
+  text-decoration: underline;
+}
+
+.stepper__target:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.stepper__indicator {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--stepper-indicator-size);
+  block-size: var(--stepper-indicator-size);
+  box-sizing: border-box;
+  border: var(--border-width-interactive) solid var(--color-border-strong);
+  border-radius: var(--border-radius-pill);
+  background: var(--color-surface-primary);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-label);
+  font-variant-numeric: tabular-nums;
+}
+
+.stepper__indicator svg {
+  inline-size: 55%;
+  block-size: 55%;
+}
+
+.stepper__step--complete .stepper__indicator {
+  border-color: var(--color-accent-default);
+  background: var(--color-accent-default);
+  color: var(--color-accent-foreground);
+}
+
+/* Current: a thicker accent ring, so it doesn't rely on colour alone. */
+.stepper__step--current .stepper__indicator {
+  border-width: var(--stepper-connector-width);
+  border-color: var(--color-accent-text);
+  color: var(--color-accent-text);
+}
+
+.stepper__step--error .stepper__indicator {
+  border-color: var(--color-feedback-error);
+  color: var(--color-feedback-error);
+}
+
+.stepper__text {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+  padding-block-start: var(--space-tight-gap);
+}
+
+.stepper__label {
+  font-size: var(--font-size-control);
+}
+
+.stepper__step--current .stepper__label {
+  font-weight: var(--font-weight-label);
+}
+
+.stepper__step--upcoming .stepper__label {
+  color: var(--color-text-secondary);
+}
+
+.stepper__description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+}
+
+.stepper__step--error .stepper__description {
+  color: var(--color-feedback-error);
+}
+
+/* Horizontal: circles in a row, labels under them, lines between circles. */
+.stepper--horizontal .stepper__target {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stepper--horizontal .stepper__step {
+  padding-inline-end: var(--space-inline-gap);
+}
+
+.stepper--horizontal .stepper__step:not(:last-child)::after {
+  inset-block-start: calc((var(--stepper-indicator-size) - var(--stepper-connector-width)) / 2);
+  inset-inline: var(--stepper-indicator-size) 0;
+  block-size: var(--stepper-connector-width);
+}
+
+.stepper--horizontal .stepper__step:last-child {
+  flex: 0 0 auto;
+  padding-inline-end: 0;
+}
+
+/* Vertical: circles in a column, labels beside them, lines down between circles. */
+.stepper--vertical .stepper__list {
+  flex-direction: column;
+}
+
+.stepper--vertical .stepper__step {
+  padding-block-end: var(--space-inline-gap);
+}
+
+.stepper--vertical .stepper__step:last-child {
+  padding-block-end: 0;
+}
+
+.stepper--vertical .stepper__text {
+  padding-block-start: 0;
+  justify-content: center;
+  min-block-size: var(--stepper-indicator-size);
+}
+
+.stepper--vertical .stepper__step:not(:last-child)::after {
+  inset-block: var(--stepper-indicator-size) 0;
+  inset-inline-start: calc((var(--stepper-indicator-size) - var(--stepper-connector-width)) / 2);
+  inline-size: var(--stepper-connector-width);
+}
+
+/* Narrow and horizontal: only the current step's label shows; the others stay in the accessibility tree. */
+@container (max-width: 32rem) {
+  .stepper--horizontal .stepper__step:not([aria-current='step']) .stepper__text {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .stepper--horizontal .stepper__step[aria-current='step'] .stepper__text {
+    position: absolute;
+    inset-block-start: 100%;
+    inline-size: max-content;
+    max-inline-size: 80cqi;
+  }
+
+  .stepper--horizontal {
+    padding-block-end: calc(var(--stepper-indicator-size) * 1.5);
+  }
+}
+
+@media (forced-colors: active) {
+  .stepper__step--complete .stepper__indicator {
+    background: Highlight;
+    color: HighlightText;
+    forced-color-adjust: none;
+  }
+
+  .stepper__step:not(:last-child)::after {
+    background: CanvasText;
+  }
+}

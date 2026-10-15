@@ -1662,6 +1662,30 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "stepper",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Where someone is in a process with a fixed order: checkout, sign-up, an application",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/visually-hidden.json"
+      ],
+      "cssVars": {
+        "light": {
+          "stepper-indicator-size": "32px",
+          "stepper-connector-width": "4px"
+        },
+        "dark": {
+          "stepper-indicator-size": "32px",
+          "stepper-connector-width": "4px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "table",
       "type": "registry:component",
       "title": "Table",
@@ -1679,6 +1703,23 @@
         "dark": {
           "table-header-font-weight": "600"
         }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "table-of-contents",
+      "type": "registry:component",
+      "title": "TableOfContents",
+      "description": "The sections of a long page as links, with the one being read marked: docs, articles, policies",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
       }
     },
     {

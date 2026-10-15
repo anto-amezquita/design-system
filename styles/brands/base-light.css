@@ -221,6 +221,8 @@
   --skeleton-height-rect: 48px;
   --slider-track-height: 4px;
   --spinner-stroke-width: 2px;
+  --stepper-indicator-size: 32px;
+  --stepper-connector-width: 4px;
   --switch-track-width: 44px;
   --switch-track-height: 24px;
   --switch-thumb-size: 16px;

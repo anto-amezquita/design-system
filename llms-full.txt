@@ -20,10 +20,10 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-386 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+388 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
-- component: 115
+- component: 117
 - color: 46
 - typography: 40
 - spacing: 19
@@ -581,6 +581,15 @@ Section navigation: inline beside the content (240px wide) from 1024px up; below
 - Storybook: Patterns/SideNav
 - Stories: Default, WithIcons, Collapsed, MobileDrawer, DrawerOnly, PageShell, DarkMode, CollapsedWithoutIcons
 
+### Stepper
+
+Where someone is in a process with a fixed order: checkout, sign-up, an application
+
+- Import: `import { Stepper } from '@amezquita/design-system/components/patterns/Stepper'`
+- Token prefix: `stepper-*` (2 tokens)
+- Storybook: Components/Stepper
+- Stories: Default, GoBack, WithError, Vertical, Narrow, Danish, DarkMode
+
 ### Table
 
 Static data table with semantic header, body, and row structure
@@ -589,6 +598,15 @@ Static data table with semantic header, body, and row structure
 - Token prefix: `table-header-font-*` (1 tokens)
 - Storybook: Patterns/Table
 - Stories: Default, Striped, Bordered, Compact, AllVariants, WithCaption, WithFoot, HorizontalScroll, DarkMode
+
+### TableOfContents
+
+The sections of a long page as links, with the one being read marked: docs, articles, policies
+
+- Import: `import { TableOfContents } from '@amezquita/design-system/components/patterns/TableOfContents'`
+- Token prefix: `tableofcontents-*` (0 tokens)
+- Storybook: Components/TableOfContents
+- Stories: Default, FromHeadings, Danish, DarkMode
 
 ### Tabs
 

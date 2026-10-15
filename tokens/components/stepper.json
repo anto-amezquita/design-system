@@ -1,0 +1,20 @@
+{
+  "stepper-indicator-size": {
+    "$value": "{space.8}",
+    "$type": "dimension",
+    "$description": "Diameter of a Stepper step's circle: the number, tick or warning sign.",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
+  },
+  "stepper-connector-width": {
+    "$value": "{space.1}",
+    "$type": "dimension",
+    "$description": "Thickness of the line between Stepper steps; done stretches are drawn in the accent.",
+    "$extensions": {
+      "amezquita.lint-ignore": ["no-collapsible-token"],
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+    }
+  }
+}

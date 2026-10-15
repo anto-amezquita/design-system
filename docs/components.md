@@ -2227,6 +2227,50 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### Stepper
+
+| Field | Value |
+|---|---|
+| **Purpose** | Where someone is in a process with a fixed order: checkout, sign-up, an application |
+| **Figma name** | `Stepper` |
+| **Code name** | `Stepper` (+ `StepperStep` type) |
+| **Storybook path** | `Components/Stepper` |
+
+**Props / variants**
+- `steps`: `{ id, label, description?, error?, href? }`
+- `current`: index of the current step from 0; earlier steps are done, later ones still to come; `steps.length` when all are done
+- `onStepClick(index)`: finished steps become buttons back to them (or give a step an `href` for a link)
+- `orientation`: `horizontal` (default) or `vertical`; `aria-label` (default "Progress"); `statusLabels` to translate the hidden state words
+
+**Required states**
+- [x] done (filled, tick), current (thick accent ring, bold label), still to come (outline, quieter label), needs attention (warning, red description)
+- [x] finished steps as buttons or links, with hover and focus
+- [x] horizontal, vertical, narrow horizontal (only the current label shows)
+
+**Tokens consumed**
+- `--stepper-indicator-size` (32 px), `--stepper-connector-width` (4 px); `--color-accent-default`, `--color-accent-foreground`, `--color-accent-text`, `--color-border-strong`, `--color-feedback-error`, `--color-text-primary`, `--color-text-secondary`, `--color-surface-primary`, plus type, spacing and focus tokens
+
+**Accessibility**
+- An ordered list named "Progress" (or your `aria-label`); the current step has `aria-current="step"`
+- Each step's state is in words, hidden visually: "Address (Completed)", "Payment (Current step)", so nothing relies on colour, ticks or numbers; the circles are `aria-hidden`
+- Only reached steps can be revisited; upcoming steps are plain text, never disabled buttons
+- When narrow, the other labels are hidden visually but stay in the accessibility tree
+- Not a navigation landmark: it shows progress, and going back is a convenience
+
+**Do**
+- Keep labels to one or two words, and the number of steps small (three to six).
+- Mark a finished step with `error` and say what's missing in its description.
+- Let people go back to finished steps, and keep what they entered.
+
+**Don't**
+- Don't use a Stepper for steps people can do in any order; use Tabs or a checklist.
+- Don't make upcoming steps clickable to skip ahead.
+
+**Chromatic stories**
+- `Default`, `GoBack`, `WithError`, `Vertical`, `Narrow`, `Danish`, `DarkMode`
+
+---
+
 ### Table
 
 | Field | Value |
@@ -2235,6 +2279,49 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 | **Figma name** | `Table` |
 | **Code name** | `Table` |
 | **Storybook path** | `Patterns/Table` |
+
+---
+
+### TableOfContents
+
+| Field | Value |
+|---|---|
+| **Purpose** | The sections of a long page as links, with the one being read marked: docs, articles, policies |
+| **Figma name** | `TableOfContents` |
+| **Code name** | `TableOfContents` (+ `headingsToItems`, `TableOfContentsItem` type) |
+| **Storybook path** | `Components/TableOfContents` |
+
+**Props / variants**
+- `items`: `{ id, label, children? }`, where `id` is the target heading's id; `headingsToItems(element, 'h2, h3')` builds them from the page
+- `aria-label` (default "On this page"); `title` (shown above, defaults to the label; `null` for none)
+- `offset` (px below the top where a heading counts as reached, default 96), `root` (a scrolling container instead of the page)
+- `activeId` to set the current section yourself; `onActiveChange(id)`
+
+**Required states**
+- [x] no section reached yet, a section current, a nested section current
+- [x] link hover and focus
+- [x] the end of the page, where a short last section still becomes current
+
+**Tokens consumed**
+- `--color-border-default` (track), `--color-accent-text` (current bar), `--color-text-primary`, `--color-text-secondary`, `--border-width-interactive`, plus type, spacing and focus tokens
+
+**Accessibility**
+- A `nav` landmark named "On this page", with a nested list of ordinary in-page links
+- The current link has `aria-current="location"`; it's also darker, heavier and has a bar, so it doesn't rely on colour
+- The visible title is hidden from screen readers, which hear the nav's name instead of hearing it twice
+- A click marks the link straight away; native in-page links move focus to the target
+
+**Do**
+- Give every heading it lists an id, and keep labels the same as the headings.
+- Set `offset` to the height of a sticky header, so the right section is marked.
+- Use it for pages long enough to need it: four sections or more.
+
+**Don't**
+- Don't nest deeper than two levels.
+- Don't use it for site navigation; that's SideNav or NavigationMenu.
+
+**Chromatic stories**
+- `Default`, `FromHeadings`, `Danish`, `DarkMode`
 
 ---
 
