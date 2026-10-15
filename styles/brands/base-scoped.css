@@ -206,6 +206,9 @@
   --hero-lead-size: 20px;
   --hero-max-width: 800px;
   --hero-lead-max-width: 60ch;
+  --hover-card-open-delay: 500ms;
+  --hover-card-close-delay: 300ms;
+  --hover-card-width: 320px;
   --pagination-button-size: 48px;
   --pagination-button-background: rgba(0, 0, 0, 0);
   --pagination-button-font-size: 14px;
@@ -595,6 +598,9 @@
   --hero-lead-size: 20px;
   --hero-max-width: 800px;
   --hero-lead-max-width: 60ch;
+  --hover-card-open-delay: 500ms;
+  --hover-card-close-delay: 300ms;
+  --hover-card-width: 320px;
   --pagination-button-size: 48px;
   --pagination-button-background: rgba(0, 0, 0, 0);
   --pagination-button-font-size: 14px;

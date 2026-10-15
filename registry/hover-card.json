@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-card",
+  "type": "registry:component",
+  "title": "HoverCard",
+  "description": "A preview of what a link leads to: a person's profile, a page's summary",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json"
+  ],
+  "cssVars": {
+    "light": {
+      "hover-card-open-delay": "500ms",
+      "hover-card-close-delay": "300ms",
+      "hover-card-width": "320px"
+    },
+    "dark": {
+      "hover-card-open-delay": "500ms",
+      "hover-card-close-delay": "300ms",
+      "hover-card-width": "320px"
+    }
+  }
+}

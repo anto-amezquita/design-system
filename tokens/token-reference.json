@@ -2,8 +2,8 @@
   "meta": {
     "primitiveCount": 126,
     "semanticCount": 145,
-    "componentCount": 112,
-    "total": 383
+    "componentCount": 115,
+    "total": 386
   },
   "tokens": [
     {
@@ -8662,6 +8662,74 @@
       "axisAware": false,
       "usedBy": [
         "Hero"
+      ]
+    },
+    {
+      "name": "hover-card-open-delay",
+      "cssVar": "--hover-card-open-delay",
+      "type": "duration",
+      "category": "component",
+      "description": "How long the pointer or keyboard focus rests on a HoverCard's trigger before the card opens. Longer than a Tooltip's, so passing over a link doesn't flash a card.",
+      "rawValue": "500ms",
+      "resolved": {
+        "base-light": "500ms",
+        "base-dark": "500ms",
+        "demo-cool-light": "500ms",
+        "demo-cool-dark": "500ms",
+        "demo-soft-light": "500ms",
+        "demo-soft-dark": "500ms",
+        "demo-warm-light": "500ms",
+        "demo-warm-dark": "500ms",
+        "portfolio-light": "500ms",
+        "portfolio-dark": "500ms"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "hover-card-close-delay",
+      "cssVar": "--hover-card-close-delay",
+      "type": "duration",
+      "category": "component",
+      "description": "Grace time after the pointer leaves the trigger or card before a HoverCard closes, so the pointer can cross the gap into the card (WCAG 1.4.13, hoverable).",
+      "rawValue": "300ms",
+      "resolved": {
+        "base-light": "300ms",
+        "base-dark": "300ms",
+        "demo-cool-light": "300ms",
+        "demo-cool-dark": "300ms",
+        "demo-soft-light": "300ms",
+        "demo-soft-dark": "300ms",
+        "demo-warm-light": "300ms",
+        "demo-warm-dark": "300ms",
+        "portfolio-light": "300ms",
+        "portfolio-dark": "300ms"
+      },
+      "axisAware": false,
+      "usedBy": []
+    },
+    {
+      "name": "hover-card-width",
+      "cssVar": "--hover-card-width",
+      "type": "dimension",
+      "category": "component",
+      "description": "Width of a HoverCard; it narrows to fit the screen.",
+      "rawValue": "320px",
+      "resolved": {
+        "base-light": "320px",
+        "base-dark": "320px",
+        "demo-cool-light": "320px",
+        "demo-cool-dark": "320px",
+        "demo-soft-light": "320px",
+        "demo-soft-dark": "320px",
+        "demo-warm-light": "320px",
+        "demo-warm-dark": "320px",
+        "portfolio-light": "320px",
+        "portfolio-dark": "320px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "HoverCard"
       ]
     },
     {

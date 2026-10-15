@@ -1767,6 +1767,48 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### HoverCard
+
+| Field | Value |
+|---|---|
+| **Purpose** | A preview of what a link leads to: a person's profile, a page's summary |
+| **Figma name** | `HoverCard` |
+| **Code name** | `HoverCard` (+ `HoverCardTrigger`, `HoverCardContent`) |
+| **Storybook path** | `Components/HoverCard` |
+
+**Props / variants**
+- `HoverCard`: `open` + `onOpenChange` or `defaultOpen`; `openDelay`, `closeDelay` in milliseconds (default from the tokens)
+- `HoverCardTrigger`: wraps the link it previews; the link keeps its own role, name and click
+- `HoverCardContent`: `aria-label` names the card; `side` (`bottom` by default), `align` (`start`), `sideOffset`
+
+**Required states**
+- [x] closed, opening (after the delay), open
+- [x] open from the keyboard, focus inside the card
+- [x] pointer moving from the link into the card (stays open)
+
+**Tokens consumed**
+- `--hover-card-open-delay` (500 ms), `--hover-card-close-delay` (300 ms), `--hover-card-width` (320 px); the surface, padding and motion are Popover's
+
+**Accessibility**
+- Built on Popover, not Radix HoverCard, which is for mouse users only: the card also opens when keyboard focus lands on the link
+- Tab from the link moves into the card when it has links or buttons; Tab past the last one continues to what follows the link, and Shift+Tab goes back
+- Escape closes it and keeps focus on the link; it stays open while the pointer is over it, and closes after a short grace time when the pointer leaves (WCAG 1.4.13)
+- A touch doesn't open it, so tapping the link just follows it
+- The link gets no popup semantics; the card is a named group, not a dialog
+
+**Do**
+- Repeat everything in the card at the link's destination; the card only saves a click.
+- Keep it short: a name, a line or two, at most a couple of actions.
+
+**Don't**
+- Don't put the only way to do something in a hover card; touch users never see it.
+- Don't put a hover card on a button that does something; it belongs on links to things.
+
+**Chromatic stories**
+- `Default`, `PagePreview`, `Danish`, `KeyboardOpen`, `DarkMode`
+
+---
+
 ### Toast
 
 | Field | Value |

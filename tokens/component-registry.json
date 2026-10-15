@@ -1,8 +1,8 @@
 {
   "meta": {
-    "componentCount": 94,
-    "publicComponentCount": 60,
-    "subComponentCount": 33
+    "componentCount": 97,
+    "publicComponentCount": 61,
+    "subComponentCount": 35
   },
   "components": [
     {
@@ -1023,6 +1023,53 @@
       ],
       "tokenCount": 9,
       "internal": false
+    },
+    {
+      "name": "HoverCard",
+      "slug": "hover-card",
+      "tier": "composition",
+      "purpose": "A preview of what a link leads to: a person's profile, a page's summary",
+      "storybookPath": "Components/HoverCard",
+      "storybookTitleId": "components-hovercard",
+      "defaultStoryId": "components-hovercard--default",
+      "tokenPrefix": "hover-card",
+      "stories": [
+        "Default",
+        "PagePreview",
+        "Danish",
+        "KeyboardOpen",
+        "DarkMode"
+      ],
+      "tokenCount": 3,
+      "internal": false
+    },
+    {
+      "name": "HoverCardContent",
+      "slug": "hover-card-content",
+      "tier": "composition",
+      "purpose": "Sub-component of HoverCard.",
+      "storybookPath": "Components/HoverCard",
+      "storybookTitleId": "components-hovercard",
+      "defaultStoryId": "components-hovercard--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "hover-card"
+    },
+    {
+      "name": "HoverCardTrigger",
+      "slug": "hover-card-trigger",
+      "tier": "composition",
+      "purpose": "Sub-component of HoverCard.",
+      "storybookPath": "Components/HoverCard",
+      "storybookTitleId": "components-hovercard",
+      "defaultStoryId": "components-hovercard--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "hover-card"
     },
     {
       "name": "Menu",
