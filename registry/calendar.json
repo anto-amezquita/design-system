@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar",
+  "type": "registry:component",
+  "title": "Calendar",
+  "description": "A month of days to choose one date or a range; the base for DatePicker and DateRangePicker",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/icon-button.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}

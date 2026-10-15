@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 82,
-    "publicComponentCount": 52,
+    "componentCount": 83,
+    "publicComponentCount": 53,
     "subComponentCount": 29
   },
   "components": [
@@ -102,6 +102,25 @@
         "Default",
         "Attached",
         "Vertical",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "Calendar",
+      "slug": "calendar",
+      "tier": "primitives",
+      "purpose": "A month of days to choose one date or a range; the base for DatePicker and DateRangePicker",
+      "storybookPath": "Components/Calendar",
+      "storybookTitleId": "components-calendar",
+      "defaultStoryId": "components-calendar--default",
+      "tokenPrefix": "calendar",
+      "stories": [
+        "Default",
+        "Danish",
+        "Limits",
+        "Range",
         "DarkMode"
       ],
       "tokenCount": 0,

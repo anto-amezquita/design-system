@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 49 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 50 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 52 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 53 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (31)
+### Primitives (32)
 
 | Component | Reference |
 |---|---|
@@ -42,6 +42,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Badge | [badge](https://design.amezquita.dk/components/badge.md) — Small status indicator or numeric count overlay attached to another element |
 | Button | [button](https://design.amezquita.dk/components/button.md) — Trigger for user actions; renders as `<button>` or `<a>` depending on context |
 | ButtonGroup | [button-group](https://design.amezquita.dk/components/button-group.md) — Related actions kept together: Undo / Redo, zoom out / in, Cancel / Save |
+| Calendar | [calendar](https://design.amezquita.dk/components/calendar.md) — A month of days to choose one date or a range; the base for DatePicker and DateRangePicker |
 | Checkbox | [checkbox](https://design.amezquita.dk/components/checkbox.md) — Single boolean selection with an associated label; supports indeterminate state |
 | Divider | [divider](https://design.amezquita.dk/components/divider.md) — A line that separates groups of content, horizontally or vertically |
 | Field | [field](https://design.amezquita.dk/components/field.md) — Label, hint and error for any control, wired the way Input wires its own |
