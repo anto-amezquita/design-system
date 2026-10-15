@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "38991ed",
+      "type": "feat",
+      "scope": "command-palette",
+      "message": "Ctrl+K search over every command",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "f4b86e3",
       "type": "feat",
       "scope": "table-of-contents",
