@@ -41,6 +41,11 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
+          # `npm run version` also brings package-lock.json's own version in
+          # line; `changeset version` alone bumps only package.json, which left
+          # the lockfile at 1.2.0 through 1.3.0 and 1.4.0, and every local
+          # `npm install` then showed it as a change.
+          version: npm run version
           publish: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
