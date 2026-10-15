@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 70,
-    "publicComponentCount": 45,
+    "componentCount": 71,
+    "publicComponentCount": 46,
     "subComponentCount": 24
   },
   "components": [
@@ -142,6 +142,26 @@
       "stories": [
         "Default",
         "Vertical",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "Field",
+      "slug": "field",
+      "tier": "primitives",
+      "purpose": "Label, hint and error for any control, wired the way Input wires its own",
+      "storybookPath": "Components/Field",
+      "storybookTitleId": "components-field",
+      "defaultStoryId": "components-field--with-select",
+      "tokenPrefix": "field",
+      "stories": [
+        "WithSelect",
+        "Error",
+        "NativeControl",
+        "Group",
+        "Validating",
         "DarkMode"
       ],
       "tokenCount": 0,

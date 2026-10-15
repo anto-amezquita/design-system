@@ -350,7 +350,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - `value` + `defaultValue` + `onValueChange`: controlled and uncontrolled modes
 - `placeholder`: string shown when no value is selected; defaults to `'Select…'`
 - `disabled`: disables the trigger
-- `aria-label`: required when no visible label is present in the surrounding context
+- `aria-label`: required on its own; inside a `Field`, the Field's label names the trigger and its hint or error describes it, so it can be left out
 
 **Required states**
 - [x] default (placeholder visible)
@@ -370,7 +370,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 **Accessibility**
 - Trigger is a `<button>` via Radix — do not wrap it in another button
-- `aria-label` is a required prop — the trigger is a `combobox`, which gets no accessible name from its content, so an unnamed control is unshippable by type
+- The trigger is a `combobox`, which gets no accessible name from its content: give it an `aria-label`, or put it in a `Field` (a dev warning fires when it has neither). In a Field with an `error`, the trigger gets `aria-invalid` and the red edge Input uses
 - Keyboard: `Space` / `Enter` / `ArrowDown` opens; arrow keys navigate; `Enter` selects; `Escape` closes
 - Focus returns to trigger on close (Radix default)
 
@@ -524,6 +524,56 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 **Chromatic stories**
 - `Default`, `Vertical`, `DarkMode`
+
+---
+
+### Field
+
+| Field | Value |
+|---|---|
+| **Purpose** | Label, hint and error for any control, wired the way Input wires its own |
+| **Figma name** | `Field` |
+| **Code name** | `Field` (+ `useField` for custom controls) |
+| **Storybook path** | `Components/Field` |
+
+**Props / variants**
+- `label` (required): names the control (`<label htmlFor>`)
+- `hint`: help text, linked with `aria-describedby`
+- `error`: replaces the hint, sets `aria-invalid`, shown with an icon in the error colour
+- `required`: sets `required` on the control and shows "Required" beside the label
+- `disabled`, `id` (generated if left out; a control's own `id` wins)
+- `group`: a `<fieldset>` with the label as `<legend>`, for radios, checkboxes or a SegmentedControl
+- Children: one control. A native element or a component that passes props through gets `id`, `aria-describedby`, `aria-invalid`, `required`, `disabled`, never overriding what it already sets. Select reads them from `useField()`
+
+**Required states**
+- [x] default, with hint
+- [x] error (message with icon; Select's trigger turns red)
+- [x] required
+- [x] disabled
+- [x] group (fieldset)
+
+**Tokens consumed**
+- `--space-inline-gap`, `--space-tight-gap`, `--font-family-base`, `--font-size-small`, `--font-weight-label`, `--line-height-label`
+- `--font-size-caption`, `--line-height-caption`, `--color-text-primary`, `--color-text-secondary`, `--color-feedback-error`, `--size-icon-sm`, `--opacity-disabled`
+
+**Accessibility**
+- The label names the control; the hint or error is its description; an error sets `aria-invalid`
+- Errors carry an icon as well as colour; label, hint and error are 4.5:1 in every brand and mode (tested)
+- `group` uses a real `<fieldset>` / `<legend>`, so a set of radios is announced with its question
+- Inputs with a built-in label (Input, Textarea, Slider) don't need a Field; wrapping them would label them twice
+
+**Do**
+- Use Field for every control that has no label of its own, so forms read the same throughout.
+- Write errors that say how to fix it: "Choose the country the invoice goes to", not "Invalid".
+- Show errors after the person has tried, not while they are still typing.
+
+**Don't**
+- Don't use a placeholder instead of a label; it disappears as soon as someone types.
+- Don't wrap Input, Textarea or Slider in a Field; they label themselves.
+- Don't put more than one control in a Field without `group`; only the first could be labelled.
+
+**Chromatic stories**
+- `WithSelect`, `Error`, `NativeControl`, `Group`, `Validating`, `DarkMode`
 
 ---
 

@@ -1,0 +1,74 @@
+/*
+  Tokens consumed:
+
+  --space-inline-gap, --space-tight-gap, --font-family-base,
+  --font-size-small, --font-weight-label, --line-height-label,
+  --font-size-caption, --line-height-caption, --color-text-primary,
+  --color-text-secondary, --color-feedback-error, --size-icon-sm,
+  --opacity-disabled
+
+  The same label and hint styles as Input, so a Select in a Field and an
+  Input sit side by side without a seam.
+*/
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-inline-gap);
+  min-inline-size: 0;
+}
+
+.field--group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.field__label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-inline-gap);
+  padding: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-label);
+  line-height: var(--line-height-label);
+  color: var(--color-text-primary);
+}
+
+/* A <legend> ignores the fieldset's gap, so it brings its own space. */
+.field--group > .field__label {
+  margin-block-end: var(--space-inline-gap);
+}
+
+.field__required {
+  font-size: var(--font-size-caption);
+  font-weight: normal;
+  color: var(--color-text-secondary);
+}
+
+.field__message {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-tight-gap);
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  color: var(--color-text-secondary);
+}
+
+/* Errors carry an icon as well as the colour, so they don't rely on colour alone. */
+.field__message--error {
+  color: var(--color-feedback-error);
+}
+
+.field__message-icon {
+  flex-shrink: 0;
+  inline-size: var(--size-icon-sm);
+  block-size: var(--size-icon-sm);
+}
+
+.field--disabled > .field__label {
+  opacity: var(--opacity-disabled);
+}

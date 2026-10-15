@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 45 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 46 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -34,6 +34,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [ButtonGroup](https://design.amezquita.dk/components/button-group.md): Related actions kept together: Undo / Redo, zoom out / in, Cancel / Save
 - [Checkbox](https://design.amezquita.dk/components/checkbox.md): Single boolean selection with an associated label; supports indeterminate state
 - [Divider](https://design.amezquita.dk/components/divider.md): A line that separates groups of content, horizontally or vertically
+- [Field](https://design.amezquita.dk/components/field.md): Label, hint and error for any control, wired the way Input wires its own
 - [Heading](https://design.amezquita.dk/components/heading.md): Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level
 - [IconButton](https://design.amezquita.dk/components/icon-button.md): An action shown only as an icon, for toolbars, cards and dense rows
 - [Input](https://design.amezquita.dk/components/input.md): Labelled single-line text entry with hint and error states

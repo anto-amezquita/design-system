@@ -8,6 +8,7 @@
   --select-item-padding-x, --select-item-padding-y
   --font-family-base, --color-text-secondary, --color-text-primary, --color-border-focus, --border-radius-interactive
   --space-tight-gap, --duration-interaction, --easing-default, --opacity-disabled, --z-dropdown
+  --color-feedback-error (invalid, when a Field has an error)
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-surface-secondary, --color-border-default, --border-width-default, --font-size-control, --color-surface-primary
@@ -45,6 +46,17 @@
   border-color: var(--color-border-focus);
   outline: var(--focus-ring-width) solid var(--color-border-focus);
   outline-offset: var(--focus-ring-offset);
+}
+
+/* Invalid (set by a Field with an error): the same red edge as Input. */
+.select__trigger[aria-invalid='true'],
+.select__trigger[aria-invalid='true']:hover:not([data-disabled]) {
+  border-color: var(--color-feedback-error);
+}
+
+.select__trigger[aria-invalid='true']:focus-visible {
+  border-color: var(--color-feedback-error);
+  outline-color: var(--color-feedback-error);
 }
 
 .select__trigger[data-disabled] {

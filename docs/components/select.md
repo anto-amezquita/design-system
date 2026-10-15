@@ -18,7 +18,7 @@
 | `required?` | `boolean` |  |
 | `name?` | `string` |  |
 | `groups` | `{ label?: string; options: { value: string; label: string; disabled?: boolean }[] }[]` |  |
-| `aria-label` | `string` | Required: the trigger is a combobox, which gets no accessible name from its content — without this, screen readers announce an unnamed control. |
+| `aria-label?` | `string` | The trigger is a combobox, which gets no accessible name from its content. Required on its own; inside a Field, the Field's label names it and this can be left out. |
 
 ## Tokens
 
@@ -38,6 +38,6 @@
 ## Accessibility
 
 - Trigger is a `<button>` via Radix — do not wrap it in another button
-- `aria-label` is a required prop — the trigger is a `combobox`, which gets no accessible name from its content, so an unnamed control is unshippable by type
+- The trigger is a `combobox`, which gets no accessible name from its content: give it an `aria-label`, or put it in a `Field` (a dev warning fires when it has neither). In a Field with an `error`, the trigger gets `aria-invalid` and the red edge Input uses
 - Keyboard: `Space` / `Enter` / `ArrowDown` opens; arrow keys navigate; `Enter` selects; `Escape` closes
 - Focus returns to trigger on close (Radix default)

@@ -3,6 +3,7 @@
 import * as RadixSelect from '@radix-ui/react-select'
 import { CaretDownIcon } from '@phosphor-icons/react'
 import { useThemeScopeAttributes } from '../../../lib/theme-scope'
+import { useField } from '../../../lib/field'
 import './Select.css'
 
 type SelectOption = {
@@ -25,9 +26,10 @@ type SelectProps = {
   required?: boolean
   name?: string
   groups: SelectGroup[]
-  /** Required: the trigger is a combobox, which gets no accessible name from
-      its content — without this, screen readers announce an unnamed control. */
-  'aria-label': string
+  /** The trigger is a combobox, which gets no accessible name from its
+      content. Required on its own; inside a Field, the Field's label names
+      it and this can be left out. */
+  'aria-label'?: string
 }
 
 export function Select({
@@ -41,6 +43,11 @@ export function Select({
   groups,
   'aria-label': ariaLabel,
 }: SelectProps) {
+  // Inside a Field: its <label htmlFor> names the trigger, its hint or error describes it.
+  const field = useField()
+  if (process.env.NODE_ENV !== 'production' && !field && !ariaLabel) {
+    console.warn('[Select] Give it an aria-label, or put it in a Field, so the trigger has an accessible name (WCAG 4.1.2).')
+  }
   // Content portals to <body>; this keeps a ThemeScope's brand and mode on it (decisions/0021).
   const scope = useThemeScopeAttributes()
   return (
@@ -48,11 +55,17 @@ export function Select({
       value={value}
       defaultValue={defaultValue}
       onValueChange={onValueChange}
-      disabled={disabled}
-      required={required}
+      disabled={disabled || field?.disabled}
+      required={required || field?.required}
       name={name}
     >
-      <RadixSelect.Trigger className="select__trigger" aria-label={ariaLabel}>
+      <RadixSelect.Trigger
+        className="select__trigger"
+        id={field?.id}
+        aria-label={ariaLabel}
+        aria-describedby={field?.describedBy}
+        aria-invalid={field?.invalid || undefined}
+      >
         <span className="select__value">
           <RadixSelect.Value placeholder={placeholder} />
         </span>
