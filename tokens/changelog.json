@@ -762,23 +762,7 @@
   ],
   "unreleased": [
     {
-      "sha": "e080c1c",
-      "type": "feat",
-      "scope": "input-group",
-      "message": "Input joined to its addons and buttons",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "aed2583",
-      "type": "fix",
-      "scope": "field",
-      "message": "say Required once to screen readers",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "2d7d6ca",
+      "sha": "848d8c2",
       "type": "feat",
       "scope": "field",
       "message": "label, hint and error for any control",
