@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 62 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 63 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 65 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 66 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -77,13 +77,14 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | ToggleButton | [toggle-button](https://design.amezquita.dk/components/toggle-button.md) — A button that stays on or off, like bold in an editor or a grid overlay |
 | VisuallyHidden | [visually-hidden](https://design.amezquita.dk/components/visually-hidden.md) — Text screen readers announce but sighted users don't see |
 
-### Composition (13)
+### Composition (14)
 
 | Component | Reference |
 |---|---|
 | Alert | [alert](https://design.amezquita.dk/components/alert.md) — Contextual inline feedback message with semantic severity levels (info, success, warning, error) |
 | AlertDialog | [alert-dialog](https://design.amezquita.dk/components/alert-dialog.md) — Confirmation gate for an action the user must explicitly accept or decline — real `alertdialog` role, no outside-click/close-button dismiss, unlike Dialog |
 | Card | [card](https://design.amezquita.dk/components/card.md) — Compound container for grouped content — composed from named sub-components |
+| CommandPalette | [command-palette](https://design.amezquita.dk/components/command-palette.md) — Every action in an app, one search away: Ctrl+K or ⌘K, a few letters, Enter |
 | ContextMenu | [context-menu](https://design.amezquita.dk/components/context-menu.md) — The actions for one thing, opened where the pointer is: a file row, a card, a canvas |
 | Dialog | [dialog](https://design.amezquita.dk/components/dialog.md) — Overlay for tasks or information requiring focused attention |
 | Drawer | [drawer](https://design.amezquita.dk/components/drawer.md) — Side-anchored slide-in panel for supplemental content or secondary navigation |

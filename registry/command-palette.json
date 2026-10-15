@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-palette",
+  "type": "registry:component",
+  "title": "CommandPalette",
+  "description": "Every action in an app, one search away: Ctrl+K or ⌘K, a few letters, Enter",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/kbd.json",
+    "https://design.amezquita.dk/r/visually-hidden.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}

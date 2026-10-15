@@ -1,0 +1,148 @@
+/*
+  Tokens consumed:
+
+  --size-dialog-md (width), --color-surface-primary, --color-border-default,
+  --border-width-default, --border-radius-component, --shadow-dropdown,
+  --color-text-primary, --color-text-secondary (icons, group labels, hints,
+  4.5:1), --font-family-base, --font-size-body, --font-size-control,
+  --font-size-small, --font-weight-label, --size-icon-md, --size-icon-sm,
+  --space-tight-gap, --space-inline-gap, --space-element-gap,
+  --space-control-padding-x, --size-touch-target, --space-component-gap,
+  --duration-transition, --easing-out
+
+  The overlay is Dialog's; options use Combobox's list styles.
+*/
+
+.command-palette {
+  position: fixed;
+  inset-block-start: 12vh;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  inline-size: calc(100% - var(--space-component-gap) * 2);
+  max-inline-size: var(--size-dialog-md);
+  max-block-size: 76vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: var(--border-width-default) solid var(--color-border-default);
+  border-radius: var(--border-radius-component);
+  background: var(--color-surface-primary);
+  box-shadow: var(--shadow-dropdown);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  animation: command-palette-in var(--duration-transition) var(--easing-out);
+}
+
+.command-palette:focus-visible {
+  outline: none;
+}
+
+@keyframes command-palette-in {
+  from { opacity: 0; transform: translateX(-50%) scale(0.98); }
+  to { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+.command-palette__search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  padding-inline: var(--space-control-padding-x);
+  border-block-end: var(--border-width-default) solid var(--color-border-default);
+}
+
+.command-palette__search-icon {
+  flex-shrink: 0;
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+  color: var(--color-text-secondary);
+}
+
+/* The search field fills the header; the panel's border is its edge, and its focus shows as the caret plus the active option. */
+.command-palette__input {
+  flex: 1;
+  min-inline-size: 0;
+  min-block-size: calc(var(--size-touch-target) * 1.25);
+  border: none;
+  background: none;
+  color: var(--color-text-primary);
+  font: inherit;
+  font-size: var(--font-size-body);
+  outline: none;
+}
+
+.command-palette__input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.command-palette__list {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--space-tight-gap);
+}
+
+.command-palette__group + .command-palette__group {
+  margin-block-start: var(--space-inline-gap);
+}
+
+.command-palette__group-label {
+  padding: var(--space-tight-gap) var(--space-control-padding-x);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-label);
+}
+
+.command-palette__option {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-inline-gap);
+}
+
+.command-palette__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+}
+
+.command-palette__icon svg {
+  inline-size: var(--size-icon-sm);
+  block-size: var(--size-icon-sm);
+}
+
+.command-palette__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-inline-size: 0;
+}
+
+.command-palette__shortcut {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-tight-gap);
+  color: var(--color-text-secondary);
+  font: inherit;
+}
+
+.command-palette__empty {
+  padding: var(--space-element-gap) var(--space-control-padding-x);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-control);
+}
+
+.command-palette__hint {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-element-gap);
+  padding: var(--space-inline-gap) var(--space-control-padding-x);
+  border-block-start: var(--border-width-default) solid var(--color-border-default);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .command-palette {
+    animation: none;
+  }
+}

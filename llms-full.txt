@@ -408,6 +408,15 @@ Compound container for grouped content — composed from named sub-components
 - Storybook: Components/Card
 - Stories: Default, Ghost, Interactive, Horizontal, Compact, Featured, WithBody, WithMedia, AllVariants, DarkMode
 
+### CommandPalette
+
+Every action in an app, one search away: Ctrl+K or ⌘K, a few letters, Enter
+
+- Import: `import { CommandPalette } from '@amezquita/design-system/components/composition/CommandPalette'`
+- Token prefix: `commandpalette-*` (0 tokens)
+- Storybook: Components/CommandPalette
+- Stories: Default, Open, Run, Danish, DarkMode
+
 ### ContextMenu
 
 The actions for one thing, opened where the pointer is: a file row, a card, a canvas

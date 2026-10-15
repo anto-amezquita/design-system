@@ -1872,6 +1872,49 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### CommandPalette
+
+| Field | Value |
+|---|---|
+| **Purpose** | Every action in an app, one search away: Ctrl+K or ⌘K, a few letters, Enter |
+| **Figma name** | `CommandPalette` |
+| **Code name** | `CommandPalette` (+ `useCommandPaletteShortcut`, `Command`, `CommandGroup` types) |
+| **Storybook path** | `Components/CommandPalette` |
+
+**Props / variants**
+- `open` + `onOpenChange` (controlled); `useCommandPaletteShortcut(setOpen)` adds Ctrl+K / ⌘K
+- `groups`: `{ label, commands }`; a command is `{ id, label, onSelect, description?, icon?, shortcut?, keywords?, disabled? }`
+- `title` (dialog name, default "Command palette"), `placeholder` (search field name, default "Search commands"), `emptyMessage(text)`, `hint` (`null` hides the key hints)
+
+**Required states**
+- [x] open with everything, filtered (match in bold), nothing found
+- [x] active command (band and bar), disabled command (struck through, readable)
+- [x] groups, descriptions, icons, shortcuts
+
+**Tokens consumed**
+- `--size-dialog-md`, `--color-surface-primary`, `--color-border-default`, `--shadow-dropdown`, `--color-text-primary`, `--color-text-secondary`, plus type, spacing and motion tokens; the overlay is Dialog's and the options use Combobox's styles
+
+**Accessibility**
+- A modal dialog named by a hidden title; focus starts in the search field, which is a combobox over a listbox with labelled groups
+- The top match is active, so Enter runs it; Up and Down move, wrap and skip disabled commands; the count ("4 commands", "No commands match …") is announced
+- Enter closes the palette, returns focus to what was focused before, then runs the command; Escape closes it the same way
+- Matching ignores case and accents and also searches `keywords` and descriptions
+- Shortcuts are `aria-keyshortcuts`; the keycaps are hidden so they aren't read twice
+
+**Do**
+- Put every command somewhere visible in the app too; the palette is a shortcut, not the only door.
+- Name commands as verbs ("New page", "Switch to dark mode") and add the words people might type as `keywords`.
+- Show the Ctrl+K hint on the button that opens it.
+
+**Don't**
+- Don't use it for search results from your content; that's Search or Combobox.
+- Don't run destructive commands straight from the palette; ask in an AlertDialog first.
+
+**Chromatic stories**
+- `Default`, `Open`, `Run`, `Danish`, `DarkMode`
+
+---
+
 ### ContextMenu
 
 | Field | Value |
