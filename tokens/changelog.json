@@ -762,7 +762,15 @@
   ],
   "unreleased": [
     {
-      "sha": "63f1c85",
+      "sha": "0480d01",
+      "type": "feat",
+      "scope": "file-upload",
+      "message": "pick or drop files, with reasons and a status",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
+      "sha": "0f39b9f",
       "type": "feat",
       "scope": "form-layout",
       "message": "sections, rows, actions and an error summary",
