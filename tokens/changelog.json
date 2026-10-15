@@ -762,10 +762,34 @@
   ],
   "unreleased": [
     {
+      "sha": "f1937bd",
+      "type": "feat",
+      "scope": "number-input",
+      "message": "spinbutton built from InputGroup",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "848d8c2",
       "type": "feat",
       "scope": "field",
       "message": "label, hint and error for any control",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
+      "sha": "f30811e",
+      "type": "feat",
+      "scope": "input-group",
+      "message": "Input joined to its addons and buttons",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
+      "sha": "796ff19",
+      "type": "fix",
+      "scope": "field",
+      "message": "say Required once to screen readers",
       "date": "2026-10-15",
       "breaking": false
     },
