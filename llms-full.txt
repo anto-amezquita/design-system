@@ -599,6 +599,15 @@ Segmented view switcher with full keyboard navigation; built on Radix Tabs
 - Storybook: Patterns/Tabs
 - Stories: Default, AllVariants, Sizes, WithDisabledTab, DarkMode
 
+### Toolbar
+
+A row of controls for one area: the formatting buttons over an editor, the actions over a table or canvas
+
+- Import: `import { Toolbar } from '@amezquita/design-system/components/patterns/Toolbar'`
+- Token prefix: `toolbar-*` (0 tokens)
+- Storybook: Components/Toolbar
+- Stories: Default, Vertical, Danish, Keyboard, DarkMode
+
 ## MCP server
 
 Read-only tools over the same files this package ships, read live instead of from a snapshot. The server isn't in the npm package: clone [the repo](https://github.com/anto-amezquita/design-system) and run `node scripts/mcp-server.mjs` (stdio).

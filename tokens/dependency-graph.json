@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 60,
+    "filesScanned": 61,
     "tokenCount": 236
   },
   "byToken": {
@@ -78,6 +78,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Table/Table.css",
+      "components/patterns/Toolbar/Toolbar.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Select/Select.css"
     ],
@@ -144,6 +145,7 @@
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
+      "components/patterns/Toolbar/Toolbar.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Divider/Divider.css",
@@ -315,6 +317,7 @@
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
+      "components/patterns/Toolbar/Toolbar.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Divider/Divider.css",
@@ -461,6 +464,7 @@
       "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Hero/Hero.css",
+      "components/patterns/Toolbar/Toolbar.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
@@ -1338,6 +1342,7 @@
       "components/patterns/Hero/Hero.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/patterns/Toolbar/Toolbar.css",
       "components/primitives/Button/Button.css",
       "components/primitives/ButtonGroup/ButtonGroup.css",
       "components/primitives/Calendar/Calendar.css",
@@ -1389,6 +1394,7 @@
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
+      "components/patterns/Toolbar/Toolbar.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Combobox/Combobox.css",

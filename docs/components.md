@@ -2238,6 +2238,50 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### Toolbar
+
+| Field | Value |
+|---|---|
+| **Purpose** | A row of controls for one area: the formatting buttons over an editor, the actions over a table or canvas |
+| **Figma name** | `Toolbar` |
+| **Code name** | `Toolbar` (+ `ToolbarSeparator`, `ToolbarSpacer`) |
+| **Storybook path** | `Components/Toolbar` |
+
+**Props / variants**
+- `aria-label` (required): names the toolbar, e.g. "Text formatting"
+- `orientation`: `horizontal` (default) or `vertical`
+- Children: Buttons, ToggleButtons, IconButtons, Menu triggers, a short input; `ToolbarSeparator` between groups; `ToolbarSpacer` pushes what follows to the end
+
+**Required states**
+- [x] horizontal, vertical, wrapping when narrow
+- [x] pressed toggles, disabled controls (skipped by the arrow keys)
+- [x] keyboard focus moving inside it; a Menu opened from it
+
+**Tokens consumed**
+- `--space-tight-gap`, `--space-inline-gap`, `--border-width-default`, `--border-radius-component`, `--color-border-default`, `--color-surface-primary`; the controls and the separator (Divider) style themselves
+
+**Accessibility**
+- The WAI-ARIA toolbar: `role="toolbar"` with a name; `aria-orientation="vertical"` when vertical
+- One Tab stop for the whole toolbar (roving tabindex); Left and Right (Up and Down when vertical) move between controls, wrap at the ends and skip disabled ones; Home and End jump to the first and last
+- Tab back in returns to the control last used; a click also makes that control the current one
+- A text field keeps its arrow keys for the caret, and keys inside a Menu opened from the toolbar stay in the menu
+- The separator is a real `role="separator"` across the toolbar's direction
+
+**Do**
+- Use ToggleButtons for on/off formatting, so `aria-pressed` says the state.
+- Group related controls with separators, and name the toolbar after what it acts on.
+- Keep the main action at the end with a spacer before it.
+
+**Don't**
+- Don't put a SegmentedControl or Tabs inside; they have their own arrow keys. Use ToggleButtons instead.
+- Don't use a toolbar for page navigation; that's a nav with links.
+- Don't hide controls a keyboard user can't reach another way when the toolbar wraps or shrinks.
+
+**Chromatic stories**
+- `Default`, `Vertical`, `Danish`, `Keyboard`, `DarkMode`
+
+---
+
 ### Tabs
 
 | Field | Value |

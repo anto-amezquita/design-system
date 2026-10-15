@@ -1,0 +1,43 @@
+/*
+  Tokens consumed:
+
+  --space-tight-gap (between controls), --space-inline-gap (around a
+  separator), --border-width-default, --border-radius-component,
+  --color-border-default, --color-surface-primary
+
+  The controls are Buttons, ToggleButtons and IconButtons and style
+  themselves; the separator is a Divider.
+*/
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-tight-gap);
+  padding: var(--space-tight-gap);
+  border: var(--border-width-default) solid var(--color-border-default);
+  border-radius: var(--border-radius-component);
+  background: var(--color-surface-primary);
+}
+
+.toolbar--vertical {
+  flex-direction: column;
+  align-items: stretch;
+  inline-size: max-content;
+}
+
+/* The Divider runs the full height of the row, with a little air either side. */
+.toolbar .toolbar__separator {
+  align-self: stretch;
+  margin-block: 0;
+  margin-inline: var(--space-inline-gap);
+}
+
+.toolbar--vertical .toolbar__separator {
+  margin-block: var(--space-inline-gap);
+  margin-inline: 0;
+}
+
+.toolbar__spacer {
+  flex: 1 1 auto;
+}

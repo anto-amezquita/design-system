@@ -1,8 +1,8 @@
 {
   "meta": {
-    "componentCount": 98,
-    "publicComponentCount": 62,
-    "subComponentCount": 35
+    "componentCount": 101,
+    "publicComponentCount": 63,
+    "subComponentCount": 37
   },
   "components": [
     {
@@ -1775,6 +1775,53 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "tabs"
+    },
+    {
+      "name": "Toolbar",
+      "slug": "toolbar",
+      "tier": "patterns",
+      "purpose": "A row of controls for one area: the formatting buttons over an editor, the actions over a table or canvas",
+      "storybookPath": "Components/Toolbar",
+      "storybookTitleId": "components-toolbar",
+      "defaultStoryId": "components-toolbar--default",
+      "tokenPrefix": "toolbar",
+      "stories": [
+        "Default",
+        "Vertical",
+        "Danish",
+        "Keyboard",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "ToolbarSeparator",
+      "slug": "toolbar-separator",
+      "tier": "patterns",
+      "purpose": "Sub-component of Toolbar.",
+      "storybookPath": "Components/Toolbar",
+      "storybookTitleId": "components-toolbar",
+      "defaultStoryId": "components-toolbar--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "toolbar"
+    },
+    {
+      "name": "ToolbarSpacer",
+      "slug": "toolbar-spacer",
+      "tier": "patterns",
+      "purpose": "Sub-component of Toolbar.",
+      "storybookPath": "Components/Toolbar",
+      "storybookTitleId": "components-toolbar",
+      "defaultStoryId": "components-toolbar--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "toolbar"
     }
   ]
 }
