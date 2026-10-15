@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "f8e5b32",
+      "type": "feat",
+      "scope": "multi-select",
+      "message": "several values from a typeahead list",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "8ae0180",
       "type": "feat",
       "scope": "combobox",
