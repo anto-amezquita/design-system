@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 46 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 48 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -38,9 +38,11 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Heading](https://design.amezquita.dk/components/heading.md): Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level
 - [IconButton](https://design.amezquita.dk/components/icon-button.md): An action shown only as an icon, for toolbars, cards and dense rows
 - [Input](https://design.amezquita.dk/components/input.md): Labelled single-line text entry with hint and error states
+- [InputGroup](https://design.amezquita.dk/components/input-group.md): An Input joined to the text and buttons that belong to it: "https://", "kr.", an Apply button
 - [Kbd](https://design.amezquita.dk/components/kbd.md): A key the user presses, drawn as a keycap
 - [Label](https://design.amezquita.dk/components/label.md): Standalone form label element — used when a label must be decoupled from its input
 - [Link](https://design.amezquita.dk/components/link.md): Navigation to another page or resource; use Link for navigation and Button for actions
+- [NumberInput](https://design.amezquita.dk/components/number-input.md): A number typed or stepped: a quantity, an amount, a percentage
 - [ProgressBar](https://design.amezquita.dk/components/progress-bar.md): Shows how far a task has got, or that it's running when the end isn't known
 - [Radio](https://design.amezquita.dk/components/radio.md): Single-selection control within a mutually exclusive group
 - [SegmentedControl](https://design.amezquita.dk/components/segmented-control.md): One choice from a few, shown side by side: a view switch, a time range

@@ -540,7 +540,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - `label` (required): names the control (`<label htmlFor>`)
 - `hint`: help text, linked with `aria-describedby`
 - `error`: replaces the hint, sets `aria-invalid`, shown with an icon in the error colour
-- `required`: sets `required` on the control and shows "Required" beside the label
+- `required`: sets `required` on the control and shows "Required" beside the label (visual only: the control's `required` is what screen readers announce; in a `group` the word is read with the legend)
 - `disabled`, `id` (generated if left out; a control's own `id` wins)
 - `group`: a `<fieldset>` with the label as `<legend>`, for radios, checkboxes or a SegmentedControl
 - Children: one control. A native element or a component that passes props through gets `id`, `aria-describedby`, `aria-invalid`, `required`, `disabled`, never overriding what it already sets. Select reads them from `useField()`
@@ -623,6 +623,60 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 **Chromatic stories**
 - `Default`, `Variants`, `Sizes`, `States`, `DarkMode`
+
+---
+
+### InputGroup
+
+| Field | Value |
+|---|---|
+| **Purpose** | An Input joined to the text and buttons that belong to it: "https://", "kr.", an Apply button |
+| **Figma name** | `InputGroup` |
+| **Code name** | `InputGroup` (+ `InputAddon`) |
+| **Storybook path** | `Components/InputGroup` |
+
+**Compound structure**
+```tsx
+<InputGroup label="Price" hint="…">
+  <Input />                  {/* no label of its own */}
+  <InputAddon>kr.</InputAddon>
+</InputGroup>
+```
+
+**Props / variants**
+- `label` (required), `hint`, `error`, `required`, `disabled`, `id`, as on Field
+- Children: one Input without a label, plus `InputAddon`s and Buttons / IconButtons before or after it
+- Native `div` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] default, with hint
+- [x] focus (the focused piece draws on top with its ring)
+- [x] error (the whole group's edge turns red; message with icon)
+- [x] disabled (the Input fades; addon text and label stay readable)
+
+**Tokens consumed**
+- `--space-inline-gap`, `--space-control-padding-x`, `--border-width-interactive`, `--color-border-strong`, `--border-radius-interactive`
+- `--color-surface-secondary`, `--color-text-secondary`, `--color-feedback-error`, `--font-family-base`, `--font-size-control`
+- Field's label and message styles
+
+**Accessibility**
+- The label names the Input; addon text and the hint describe it in reading order ("https:// Your site.")
+- Inside a group (or a Field), an Input without a label takes its id, description, `aria-invalid`, `required` and `disabled` from `useField()`
+- Addon text is 4.5:1 on its surface in every brand and mode (tested)
+- Buttons in the group keep their own names and stay separate Tab stops
+
+**Do**
+- Use addons for a fixed part of the value the person doesn't type: a protocol, a unit, a currency.
+- Attach a button when it acts on this one value: Apply a code, Copy a link.
+- Keep addon text short; one word or symbol.
+
+**Don't**
+- Don't put the label in an addon; use `label`.
+- Don't attach more than one button; move other actions out of the group.
+- Don't use an addon for an icon that only decorates; that's Input's `prefix`.
+
+**Chromatic stories**
+- `Default`, `TextAfter`, `WithButton`, `Error`, `Disabled`, `DarkMode`
 
 ---
 
@@ -731,6 +785,55 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 **Chromatic stories**
 - `Default`, `States`, `ValueText`, `Indeterminate`, `HiddenLabel`, `DarkMode`
+
+---
+
+### NumberInput
+
+| Field | Value |
+|---|---|
+| **Purpose** | A number typed or stepped: a quantity, an amount, a percentage |
+| **Figma name** | `NumberInput` |
+| **Code name** | `NumberInput` |
+| **Storybook path** | `Components/NumberInput` |
+
+**Props / variants**
+- `label` (required), `hint`, `error`, `required`, `disabled`, `id`, `name`, `placeholder`
+- `value` + `onValueChange` (controlled; `null` is empty) or `defaultValue`
+- `min`, `max`, `step` (1), `largeStep` (`step × 10`)
+- `unit`: text joined after the field and read with the value ("kr.", "kg", "%")
+- `locale` and `formatOptions`: how the number is shown after editing (`da-DK` shows 1,5)
+- `hideSteppers`: no − / + buttons; the keyboard still steps
+
+**Required states**
+- [x] empty, with a value, at the minimum and maximum (the matching button disables)
+- [x] typing (the value updates on each valid number; nothing is reformatted mid-typing)
+- [x] not a number (text kept, "Enter a number." after blur)
+- [x] error, disabled
+- [x] focus (Input's ring)
+
+**Tokens consumed**
+- None of its own: built from InputGroup, Input, InputAddon and IconButton
+
+**Accessibility**
+- WAI-ARIA spinbutton pattern on a text input: `role="spinbutton"` with `aria-valuemin`, `aria-valuemax`, `aria-valuenow`, and `aria-valuetext` including the unit ("50 kr.")
+- Keyboard: arrows step, Page Up / Down take big steps, Home / End jump to the limits
+- The − / + buttons are named after the field ("Increase Guests") and kept out of the Tab order, as the pattern suggests; the keys do the same
+- `inputMode="decimal"` brings up a number keyboard on phones
+- Not `<input type="number">`: that changes value on scroll and rejects a decimal comma
+
+**Do**
+- Set `min` and `max` whenever there are limits, so the buttons and End / Home can use them.
+- Use `unit` instead of putting the unit in the label.
+- Accept the person's own decimal mark: "1,5" and "1.5" both work.
+
+**Don't**
+- Don't use NumberInput for numbers that aren't amounts, like a phone number, a card or a postcode; use Input.
+- Don't use it for a rough value on a wide range; that's Slider.
+- Don't format with thousand separators while someone types; it happens after.
+
+**Chromatic stories**
+- `Default`, `Money`, `Decimal`, `NoSteppers`, `States`, `Controlled`, `DarkMode`
 
 ---
 

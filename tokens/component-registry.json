@@ -1,8 +1,8 @@
 {
   "meta": {
-    "componentCount": 71,
-    "publicComponentCount": 46,
-    "subComponentCount": 24
+    "componentCount": 74,
+    "publicComponentCount": 48,
+    "subComponentCount": 25
   },
   "components": [
     {
@@ -234,6 +234,40 @@
       "internal": false
     },
     {
+      "name": "InputAddon",
+      "slug": "input-addon",
+      "tier": "primitives",
+      "purpose": "Sub-component of InputGroup.",
+      "storybookPath": "Components/InputGroup",
+      "storybookTitleId": "components-inputgroup",
+      "defaultStoryId": "components-inputgroup--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "input-group"
+    },
+    {
+      "name": "InputGroup",
+      "slug": "input-group",
+      "tier": "primitives",
+      "purpose": "An Input joined to the text and buttons that belong to it: \"https://\", \"kr.\", an Apply button",
+      "storybookPath": "Components/InputGroup",
+      "storybookTitleId": "components-inputgroup",
+      "defaultStoryId": "components-inputgroup--default",
+      "tokenPrefix": "inputgroup",
+      "stories": [
+        "Default",
+        "TextAfter",
+        "WithButton",
+        "Error",
+        "Disabled",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
       "name": "Kbd",
       "slug": "kbd",
       "tier": "primitives",
@@ -286,6 +320,27 @@
         "External",
         "AsChild",
         "AllVariants",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "NumberInput",
+      "slug": "number-input",
+      "tier": "primitives",
+      "purpose": "A number typed or stepped: a quantity, an amount, a percentage",
+      "storybookPath": "Components/NumberInput",
+      "storybookTitleId": "components-numberinput",
+      "defaultStoryId": "components-numberinput--default",
+      "tokenPrefix": "numberinput",
+      "stories": [
+        "Default",
+        "Money",
+        "Decimal",
+        "NoSteppers",
+        "States",
+        "Controlled",
         "DarkMode"
       ],
       "tokenCount": 0,

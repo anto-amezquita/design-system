@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-input",
+  "type": "registry:component",
+  "title": "NumberInput",
+  "description": "A number typed or stepped: a quantity, an amount, a percentage",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/icon-button.json",
+    "https://design.amezquita.dk/r/input.json",
+    "https://design.amezquita.dk/r/input-group.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}

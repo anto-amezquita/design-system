@@ -127,6 +127,15 @@ Labelled single-line text entry with hint and error states
 - Storybook: Components/Input
 - Stories: Default, WithHint, WithError, Disabled, NoLabel, WithPrefix, WithSuffix, Clearable, Search, AllStates, DarkMode
 
+### InputGroup
+
+An Input joined to the text and buttons that belong to it: "https://", "kr.", an Apply button
+
+- Import: `import { InputGroup } from '@amezquita/design-system/components/primitives/InputGroup'`
+- Token prefix: `inputgroup-*` (0 tokens)
+- Storybook: Components/InputGroup
+- Stories: Default, TextAfter, WithButton, Error, Disabled, DarkMode
+
 ### Kbd
 
 A key the user presses, drawn as a keycap
@@ -153,6 +162,15 @@ Navigation to another page or resource; use Link for navigation and Button for a
 - Token prefix: `link-*` (0 tokens)
 - Storybook: Primitives/Link
 - Stories: Default, Standalone, External, AsChild, AllVariants, DarkMode
+
+### NumberInput
+
+A number typed or stepped: a quantity, an amount, a percentage
+
+- Import: `import { NumberInput } from '@amezquita/design-system/components/primitives/NumberInput'`
+- Token prefix: `numberinput-*` (0 tokens)
+- Storybook: Components/NumberInput
+- Stories: Default, Money, Decimal, NoSteppers, States, Controlled, DarkMode
 
 ### ProgressBar
 
