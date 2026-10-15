@@ -1,0 +1,149 @@
+/*
+  Tokens consumed:
+
+  --space-component-gap (between fields; twice that between sections),
+  --space-element-gap, --space-inline-gap, --space-tight-gap,
+  --size-container-text (readable form width), --font-family-base,
+  --font-size-h5, --line-height-h5, --font-weight-heading,
+  --font-size-small, --line-height-small, --color-text-primary,
+  --color-text-secondary, --color-feedback-error,
+  --color-feedback-error-background, --color-feedback-error-foreground,
+  --border-width-thick, --border-radius-component, --size-icon-md,
+  --color-border-focus, --focus-ring-width, --focus-ring-offset
+
+  --form-row-columns is private: FormRow sets it from `columns`.
+*/
+
+.form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-component-gap);
+  max-inline-size: var(--size-container-text);
+  container-type: inline-size;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-component-gap);
+}
+
+/* Sections after the first, and the actions, get twice the field gap, so the
+   parts of the form read as parts. (Not --space-section-gap: that's for page
+   sections and grows with the viewport.) */
+.form-section + .form-section,
+.form-section + .form-actions {
+  margin-block-start: var(--space-component-gap);
+}
+
+.form-section__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-tight-gap);
+}
+
+.form-section__title {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+  font-weight: var(--font-weight-heading);
+  color: var(--color-text-primary);
+}
+
+.form-section__description {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-secondary);
+}
+
+/* Side by side when the form is wide enough (container query), stacked otherwise. */
+.form-row {
+  --form-row-columns: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-component-gap) var(--space-element-gap);
+}
+
+@container (min-width: 26rem) {
+  .form-row {
+    grid-template-columns: repeat(var(--form-row-columns), minmax(0, 1fr));
+  }
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-inline-gap);
+}
+
+/* Narrow: full-width buttons, main action on top (it's last in the markup). */
+@container (max-width: 26rem) {
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions > .button {
+    inline-size: 100%;
+  }
+}
+
+/* Error summary */
+.form-error-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-inline-gap);
+  padding: var(--space-element-gap);
+  border-inline-start: var(--border-width-thick) solid var(--color-feedback-error);
+  border-radius: var(--border-radius-component);
+  background: var(--color-feedback-error-background);
+  color: var(--color-feedback-error-foreground);
+  font-family: var(--font-family-base);
+}
+
+.form-error-summary:focus-visible,
+.form-error-summary:focus {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.form-error-summary__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  margin: 0;
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+  font-weight: var(--font-weight-heading);
+}
+
+.form-error-summary__icon {
+  flex-shrink: 0;
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+}
+
+.form-error-summary__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-tight-gap);
+  margin: 0;
+  padding-inline-start: calc(var(--size-icon-md) + var(--space-inline-gap));
+  list-style: none;
+}
+
+.form-error-summary__link {
+  color: inherit;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.form-error-summary__link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}

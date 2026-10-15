@@ -1569,6 +1569,70 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### FormLayout
+
+| Field | Value |
+|---|---|
+| **Purpose** | The frame of a form: spacing, sections, rows, actions, and an error summary after a failed submit |
+| **Figma name** | `FormLayout` |
+| **Code name** | `FormLayout` (+ `FormSection`, `FormRow`, `FormActions`, `FormErrorSummary`) |
+| **Storybook path** | `Components/FormLayout` |
+
+**Compound structure**
+```tsx
+<FormLayout onSubmit={…} noValidate>
+  <FormErrorSummary errors={errors} />          {/* nothing until there are errors */}
+  <FormSection title="Contact details" description="…">
+    <FormRow>                                   {/* side by side when there's room */}
+      <Input label="First name" /> <Input label="Last name" />
+    </FormRow>
+  </FormSection>
+  <FormActions>
+    <Button variant="secondary">Back</Button>
+    <Button type="submit">Continue</Button>     {/* main action last */}
+  </FormActions>
+</FormLayout>
+```
+
+**Props / variants**
+- `FormLayout`: `as` (`form` default, or `div`); native form attributes
+- `FormSection`: `title` (required), `description`, `headingLevel` (2 default, 3 or 4)
+- `FormRow`: `columns` (2 default, or 3); stacks in a container under 26rem
+- `FormActions`: end-aligned; in a narrow container, full-width and stacked with the main action on top
+- `FormErrorSummary`: `errors` (`{ id, message }[]`), `title` (defaults to "There is a problem" / "There are N problems"), `focusOnChange` (default `true`)
+
+**Required states**
+- [x] wide and narrow container (container queries, not the viewport)
+- [x] error summary shown, focused; link moves focus to its field
+- [x] no errors (the summary renders nothing)
+
+**Tokens consumed**
+- `--space-component-gap`, `--space-element-gap`, `--space-inline-gap`, `--space-tight-gap`, `--size-container-text`
+- `--font-family-base`, `--font-size-h5`, `--line-height-h5`, `--font-weight-heading`, `--font-size-small`, `--line-height-small`
+- `--color-text-primary`, `--color-text-secondary`, `--color-feedback-error`, `--color-feedback-error-background`, `--color-feedback-error-foreground`
+- `--border-width-thick`, `--border-radius-component`, `--size-icon-md`, `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`
+
+**Accessibility**
+- Each FormSection is a region named by its heading, so screen-reader users can jump between parts
+- The error summary (GOV.UK pattern) takes focus after a failed submit, is named by its count, and links to each field; the link moves focus to the field, not just the scroll position
+- Summary text is 4.5:1 on its background in every brand and mode (tested)
+- Show the same message at the field (`error` on Input / Field) as in the summary
+
+**Do**
+- Validate on submit, then show the summary and the field errors together.
+- Give every field an `id` so the summary can link to it.
+- Keep one column for most fields; use FormRow only for short fields that belong together.
+
+**Don't**
+- Don't disable the submit button until the form is valid; let people submit and tell them what's missing.
+- Don't put the main action first in FormActions; it goes last (and on top when stacked).
+- Don't use FormSection for a single question with options; that's Field with `group`.
+
+**Chromatic stories**
+- `Default`, `Validating`, `Narrow`, `DarkMode`
+
+---
+
 ### Pagination
 
 | Field | Value |

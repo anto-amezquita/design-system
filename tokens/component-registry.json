@@ -1,8 +1,8 @@
 {
   "meta": {
-    "componentCount": 76,
-    "publicComponentCount": 50,
-    "subComponentCount": 25
+    "componentCount": 81,
+    "publicComponentCount": 51,
+    "subComponentCount": 29
   },
   "components": [
     {
@@ -1118,6 +1118,80 @@
       ],
       "tokenCount": 2,
       "internal": false
+    },
+    {
+      "name": "FormActions",
+      "slug": "form-actions",
+      "tier": "patterns",
+      "purpose": "Sub-component of FormLayout.",
+      "storybookPath": "Components/FormLayout",
+      "storybookTitleId": "components-formlayout",
+      "defaultStoryId": "components-formlayout--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "form-layout"
+    },
+    {
+      "name": "FormErrorSummary",
+      "slug": "form-error-summary",
+      "tier": "patterns",
+      "purpose": "Sub-component of FormLayout.",
+      "storybookPath": "Components/FormLayout",
+      "storybookTitleId": "components-formlayout",
+      "defaultStoryId": "components-formlayout--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "form-layout"
+    },
+    {
+      "name": "FormLayout",
+      "slug": "form-layout",
+      "tier": "patterns",
+      "purpose": "The frame of a form: spacing, sections, rows, actions, and an error summary after a failed submit",
+      "storybookPath": "Components/FormLayout",
+      "storybookTitleId": "components-formlayout",
+      "defaultStoryId": "components-formlayout--default",
+      "tokenPrefix": "formlayout",
+      "stories": [
+        "Default",
+        "Validating",
+        "Narrow",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "FormRow",
+      "slug": "form-row",
+      "tier": "patterns",
+      "purpose": "Sub-component of FormLayout.",
+      "storybookPath": "Components/FormLayout",
+      "storybookTitleId": "components-formlayout",
+      "defaultStoryId": "components-formlayout--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "form-layout"
+    },
+    {
+      "name": "FormSection",
+      "slug": "form-section",
+      "tier": "patterns",
+      "purpose": "Sub-component of FormLayout.",
+      "storybookPath": "Components/FormLayout",
+      "storybookTitleId": "components-formlayout",
+      "defaultStoryId": "components-formlayout--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "form-layout"
     },
     {
       "name": "Hero",
