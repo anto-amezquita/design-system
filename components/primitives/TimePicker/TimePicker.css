@@ -3,7 +3,7 @@
 
   --space-tight-gap, --space-inline-gap, --space-control-padding-x,
   --size-touch-target (each option is a 44px row), --size-icon-md,
-  --border-radius-interactive, --color-surface-secondary (active option),
+  --border-radius-interactive, --border-radius-pill (the active bar), --color-surface-secondary (active option),
   --color-accent-default, --color-accent-foreground (chosen option, a 4.5:1
   pair), --color-text-primary, --font-family-base, --font-size-control
 
@@ -51,10 +51,21 @@
   cursor: pointer;
 }
 
-/* The option the arrows are on: a neutral band, plus an edge, so it doesn't rely on colour alone. */
+/* The option the arrows are on: a neutral band, plus a bar, so it doesn't rely on colour alone.
+   The bar is its own shape, so it stays straight inside a very round option (demo-soft). */
 .time-picker__option--active {
+  position: relative;
   background: var(--color-surface-secondary);
-  box-shadow: inset var(--space-tight-gap) 0 0 var(--color-accent-text);
+}
+
+.time-picker__option--active::before {
+  position: absolute;
+  inset-block: var(--space-tight-gap);
+  inset-inline-start: var(--space-tight-gap);
+  inline-size: var(--space-tight-gap);
+  border-radius: var(--border-radius-pill);
+  background: var(--color-accent-text);
+  content: '';
 }
 
 .time-picker__option--selected {

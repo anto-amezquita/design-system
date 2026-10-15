@@ -91,6 +91,15 @@ Single boolean selection with an associated label; supports indeterminate state
 - Storybook: Components/Checkbox
 - Stories: Default, Checked, Indeterminate, Disabled, DisabledChecked, Controlled, AllStates, NoLabel, DarkMode
 
+### Combobox
+
+One value from a long list, found by typing: a country, a town, a person
+
+- Import: `import { Combobox } from '@amezquita/design-system/components/primitives/Combobox'`
+- Token prefix: `combobox-*` (0 tokens)
+- Storybook: Components/Combobox
+- Stories: Default, Chosen, WithDescriptions, Danish, AllowCustom, Unavailable, Async, Error, Disabled, Open, DarkMode
+
 ### DatePicker
 
 A date typed or picked from a calendar: delivery dates, bookings, deadlines
