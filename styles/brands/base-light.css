@@ -172,6 +172,8 @@
   --button-glow-color: rgba(255, 255, 255, 0.45);
   --card-horizontal-media-width: 200px;
   --card-border-color: var(--color-border-default);
+  --carousel-dot-size: 8px;
+  --carousel-autoplay-interval: 6000ms;
   --checkbox-size: 24px;
   --datatable-gap: 16px;
   --datatable-footer-gap: 16px;

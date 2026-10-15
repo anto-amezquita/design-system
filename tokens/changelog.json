@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "865e31d",
+      "type": "feat",
+      "scope": "carousel",
+      "message": "scroll-snap carousel on the WAI-ARIA pattern",
+      "date": "2026-10-14",
+      "breaking": false
+    },
+    {
       "sha": "2780652",
       "type": "feat",
       "scope": "slider",

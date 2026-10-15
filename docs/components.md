@@ -1238,6 +1238,67 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### Carousel
+
+| Field | Value |
+|---|---|
+| **Purpose** | A row of slides shown a few at a time, moved with buttons, dots, swipe or arrow keys |
+| **Figma name** | `Carousel` |
+| **Code name** | `Carousel` (+ `CarouselSlide`) |
+| **Storybook path** | `Components/Carousel` |
+
+**Compound structure**
+```tsx
+<Carousel label="Featured projects" perView={2}>
+  <CarouselSlide>…any content: an image, a Card, a quote…</CarouselSlide>
+</Carousel>
+```
+
+**Props / variants**
+- `label` (required): names the carousel region
+- `perView`: 1 (default), 2 or 3 slides at once; narrow screens can override `--carousel-per-view` in CSS
+- `defaultIndex` (uncontrolled) or `index` + `onIndexChange` (controlled; the track scrolls to the prop)
+- `autoplay`: rotate on its own, with `interval` in ms (defaults to `--carousel-autoplay-interval`, 6 s)
+- `showDots`: position dots (default `true`)
+- Native `section` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] first, middle and last position (Previous / Next disabled at the ends)
+- [x] current dot (wider and accent-coloured)
+- [x] focus-visible on the track, buttons and dots
+- [x] rotating, paused by the button, waiting while hovered or focused
+- [x] reduced motion (no rotation, the button offers Play; moves jump instead of scrolling smoothly)
+
+**Tokens consumed**
+- `--carousel-dot-size`, `--carousel-autoplay-interval`
+- `--space-element-gap`, `--space-inline-gap`, `--color-accent-text`, `--color-border-strong`, `--border-radius-full`, `--size-touch-target`
+- `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`, `--duration-interaction`, `--easing-default`
+- IconButton's tokens for the controls
+
+**Accessibility**
+- WAI-ARIA carousel pattern: a `<section>` with `aria-roledescription="carousel"` named by `label`; each slide a group with `aria-roledescription="slide"` and "n of N"
+- Slides out of view are `inert`, so Tab and screen readers skip what can't be seen
+- Previous / Next and the dots point at the track with `aria-controls`; the current dot has `aria-current`
+- A polite status says "Slide n of N" after a user moves it; it's silent while rotating
+- Rotation: the pause button comes first; rotation waits while the pointer or focus is inside, and never starts under reduced motion (WCAG 2.2.2)
+- Keyboard: Tab to the track, then arrow keys move a slide (mirrored right-to-left); every control is a button
+- Dots are 3:1 on the page in every brand and mode (tested), with a 44px target
+
+**Do**
+- Use a Carousel for a set of peers where seeing a few at a time is enough: projects, quotes, product images.
+- Give every slide something worth seeing on its own; many people only see the first.
+- Prefer `autoplay` off. If you turn it on, give each slide time to be read.
+
+**Don't**
+- Don't hide important content or the main call to action in a later slide.
+- Don't use a Carousel for steps in a process; that's a Stepper.
+- Don't put more than about seven slides in one; use a grid with a "show more".
+
+**Chromatic stories**
+- `Default`, `ThreePerView`, `Autoplay`, `NoDots`, `DarkMode`
+
+---
+
 ### DataTable
 
 | Field | Value |

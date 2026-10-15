@@ -1,0 +1,124 @@
+/*
+  Tokens consumed:
+
+  --carousel-dot-size, --carousel-autoplay-interval (read by the component)
+
+  Semantic, referenced directly:
+  --space-element-gap (between slides, and slides to controls),
+  --space-inline-gap (between controls), --color-accent-text (current
+  dot), --color-border-strong (other dots: a control-boundary pair, 3:1 on
+  the surfaces), --border-radius-full, --size-touch-target (dot hit area),
+  --color-border-focus, --focus-ring-width, --focus-ring-offset,
+  --duration-interaction, --easing-default
+
+  --carousel-per-view is private: the component sets it from `perView`.
+*/
+
+.carousel {
+  --carousel-per-view: 1;
+  display: grid;
+  gap: var(--space-element-gap);
+  min-inline-size: 0;
+}
+
+/* Scroll-snap track: swipe, trackpad and buttons all move the same scroll. */
+.carousel__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(
+    (100% - (var(--carousel-per-view) - 1) * var(--space-element-gap)) / var(--carousel-per-view)
+  );
+  gap: var(--space-element-gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__track:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.carousel__slide {
+  scroll-snap-align: start;
+  min-inline-size: 0;
+}
+
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-inline-gap);
+}
+
+.carousel__dots {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+}
+
+/* Small dot, full-size target: the hit area reaches 44px like IconButton sm. */
+.carousel__dot {
+  position: relative;
+  inline-size: var(--carousel-dot-size);
+  block-size: var(--carousel-dot-size);
+  padding: 0;
+  border: 0;
+  border-radius: var(--border-radius-full);
+  background: var(--color-border-strong);
+  cursor: pointer;
+  transition:
+    inline-size var(--duration-interaction) var(--easing-default),
+    background var(--duration-interaction) var(--easing-default);
+}
+
+.carousel__dot::before {
+  content: '';
+  position: absolute;
+  inset-block: calc((var(--size-touch-target) - var(--carousel-dot-size)) / -2);
+  inset-inline: calc(var(--space-inline-gap) / -2);
+}
+
+/* Current: wider as well as accent-coloured, so position doesn't rely on colour. */
+.carousel__dot[aria-current='true'] {
+  inline-size: calc(var(--carousel-dot-size) * 3);
+  background: var(--color-accent-text);
+}
+
+.carousel__dot:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Same clip as VisuallyHidden: the status is for screen readers. */
+.carousel__status {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (forced-colors: active) {
+  .carousel__dot {
+    background: CanvasText;
+    forced-color-adjust: none;
+  }
+
+  .carousel__dot[aria-current='true'] {
+    background: Highlight;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__dot {
+    transition: none;
+  }
+}
