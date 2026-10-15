@@ -163,6 +163,15 @@ Navigation to another page or resource; use Link for navigation and Button for a
 - Storybook: Primitives/Link
 - Stories: Default, Standalone, External, AsChild, AllVariants, DarkMode
 
+### NumberInput
+
+A number typed or stepped: a quantity, an amount, a percentage
+
+- Import: `import { NumberInput } from '@amezquita/design-system/components/primitives/NumberInput'`
+- Token prefix: `numberinput-*` (0 tokens)
+- Storybook: Components/NumberInput
+- Stories: Default, Money, Decimal, NoSteppers, States, Controlled, DarkMode
+
 ### ProgressBar
 
 Shows how far a task has got, or that it's running when the end isn't known

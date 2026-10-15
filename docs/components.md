@@ -788,6 +788,55 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### NumberInput
+
+| Field | Value |
+|---|---|
+| **Purpose** | A number typed or stepped: a quantity, an amount, a percentage |
+| **Figma name** | `NumberInput` |
+| **Code name** | `NumberInput` |
+| **Storybook path** | `Components/NumberInput` |
+
+**Props / variants**
+- `label` (required), `hint`, `error`, `required`, `disabled`, `id`, `name`, `placeholder`
+- `value` + `onValueChange` (controlled; `null` is empty) or `defaultValue`
+- `min`, `max`, `step` (1), `largeStep` (`step × 10`)
+- `unit`: text joined after the field and read with the value ("kr.", "kg", "%")
+- `locale` and `formatOptions`: how the number is shown after editing (`da-DK` shows 1,5)
+- `hideSteppers`: no − / + buttons; the keyboard still steps
+
+**Required states**
+- [x] empty, with a value, at the minimum and maximum (the matching button disables)
+- [x] typing (the value updates on each valid number; nothing is reformatted mid-typing)
+- [x] not a number (text kept, "Enter a number." after blur)
+- [x] error, disabled
+- [x] focus (Input's ring)
+
+**Tokens consumed**
+- None of its own: built from InputGroup, Input, InputAddon and IconButton
+
+**Accessibility**
+- WAI-ARIA spinbutton pattern on a text input: `role="spinbutton"` with `aria-valuemin`, `aria-valuemax`, `aria-valuenow`, and `aria-valuetext` including the unit ("50 kr.")
+- Keyboard: arrows step, Page Up / Down take big steps, Home / End jump to the limits
+- The − / + buttons are named after the field ("Increase Guests") and kept out of the Tab order, as the pattern suggests; the keys do the same
+- `inputMode="decimal"` brings up a number keyboard on phones
+- Not `<input type="number">`: that changes value on scroll and rejects a decimal comma
+
+**Do**
+- Set `min` and `max` whenever there are limits, so the buttons and End / Home can use them.
+- Use `unit` instead of putting the unit in the label.
+- Accept the person's own decimal mark: "1,5" and "1.5" both work.
+
+**Don't**
+- Don't use NumberInput for numbers that aren't amounts, like a phone number, a card or a postcode; use Input.
+- Don't use it for a rough value on a wide range; that's Slider.
+- Don't format with thousand separators while someone types; it happens after.
+
+**Chromatic stories**
+- `Default`, `Money`, `Decimal`, `NoSteppers`, `States`, `Controlled`, `DarkMode`
+
+---
+
 ### Radio
 
 | Field | Value |

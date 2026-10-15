@@ -55,8 +55,9 @@
   border-radius: var(--border-radius-interactive);
 }
 
-/* Error: the whole group's edge, not only the Input's. */
-.input-group--error .input-group__addon {
+/* Error: the whole group's edge, not only the Input's: addons and buttons too. */
+.input-group--error .input-group__addon,
+.input-group--error .input-group__row > .button {
   border-color: var(--color-feedback-error);
 }
 

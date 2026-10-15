@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 73,
-    "publicComponentCount": 47,
+    "componentCount": 74,
+    "publicComponentCount": 48,
     "subComponentCount": 25
   },
   "components": [
@@ -320,6 +320,27 @@
         "External",
         "AsChild",
         "AllVariants",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "NumberInput",
+      "slug": "number-input",
+      "tier": "primitives",
+      "purpose": "A number typed or stepped: a quantity, an amount, a percentage",
+      "storybookPath": "Components/NumberInput",
+      "storybookTitleId": "components-numberinput",
+      "defaultStoryId": "components-numberinput--default",
+      "tokenPrefix": "numberinput",
+      "stories": [
+        "Default",
+        "Money",
+        "Decimal",
+        "NoSteppers",
+        "States",
+        "Controlled",
         "DarkMode"
       ],
       "tokenCount": 0,

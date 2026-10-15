@@ -1,0 +1,14 @@
+/*
+  Tokens consumed: none of its own. InputGroup joins the pieces; Input,
+  InputAddon and IconButton style themselves.
+
+  Numbers line up by digit, and the steppers match the Input's height.
+*/
+
+.number-input .input-field__input {
+  font-variant-numeric: tabular-nums;
+}
+
+.number-input .number-input__step {
+  block-size: auto;
+}
