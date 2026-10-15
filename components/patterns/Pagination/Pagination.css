@@ -7,7 +7,7 @@
 
 
   --font-family-base, --duration-interaction, --easing-default
-  --color-border-focus, --opacity-disabled
+  --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-surface-secondary, --color-border-default, --border-width-default, --color-accent-default, --color-accent-foreground
@@ -56,9 +56,11 @@
   pointer-events: none;
 }
 
+/* Disabled: no fade. The shared disabled opacity (0.1) left this close to
+   invisible; quieter colours from tested pairs keep it readable. */
 .pagination__button:disabled:not(.pagination__button--active),
 .pagination__button[aria-disabled="true"]:not(.pagination__button--active) {
-  opacity: var(--opacity-disabled);
+  color: var(--color-text-secondary);
   cursor: not-allowed;
 }
 

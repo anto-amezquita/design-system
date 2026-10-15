@@ -180,6 +180,7 @@
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "border-width-medium": [
@@ -344,13 +345,20 @@
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
+      "components/primitives/Button/Button.css",
+      "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Divider/Divider.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/IconButton/IconButton.css",
+      "components/primitives/Input/Input.css",
       "components/primitives/Kbd/Kbd.css",
+      "components/primitives/OtpInput/OtpInput.css",
+      "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
-      "components/primitives/Tag/Tag.css"
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/Textarea/Textarea.css"
     ],
     "color-border-focus": [
       "components/composition/Alert/Alert.css",
@@ -514,6 +522,7 @@
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Slider/Slider.css",
+      "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "color-surface-secondary": [
@@ -537,10 +546,12 @@
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Kbd/Kbd.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Slider/Slider.css",
+      "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css",
       "components/primitives/TimePicker/TimePicker.css",
@@ -552,8 +563,7 @@
       "components/patterns/Table/Table.css",
       "components/primitives/Button/Button.css",
       "components/primitives/ProgressBar/ProgressBar.css",
-      "components/primitives/Slider/Slider.css",
-      "components/primitives/Switch/Switch.css"
+      "components/primitives/Slider/Slider.css"
     ],
     "color-text-inverse": [
       "components/composition/Tooltip/Tooltip.css"
@@ -626,6 +636,7 @@
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
+      "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Combobox/Combobox.css",
@@ -635,6 +646,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
@@ -1184,21 +1196,6 @@
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/ProgressBar/ProgressBar.css"
     ],
-    "opacity-disabled": [
-      "components/patterns/Accordion/Accordion.css",
-      "components/patterns/Pagination/Pagination.css",
-      "components/patterns/Tabs/Tabs.css",
-      "components/primitives/Button/Button.css",
-      "components/primitives/Checkbox/Checkbox.css",
-      "components/primitives/Field/Field.css",
-      "components/primitives/Input/Input.css",
-      "components/primitives/OtpInput/OtpInput.css",
-      "components/primitives/Radio/Radio.css",
-      "components/primitives/Select/Select.css",
-      "components/primitives/Slider/Slider.css",
-      "components/primitives/Switch/Switch.css",
-      "components/primitives/Textarea/Textarea.css"
-    ],
     "opacity-high": [
       "components/composition/Alert/Alert.css"
     ],
@@ -1362,6 +1359,9 @@
       "components/primitives/Skeleton/Skeleton.css"
     ],
     "slider-fill": [
+      "components/primitives/Slider/Slider.css"
+    ],
+    "slider-fill-colour": [
       "components/primitives/Slider/Slider.css"
     ],
     "slider-track-height": [

@@ -3,7 +3,7 @@
 
 
   --font-family-base, --duration-interaction, --easing-default
-  --space-element-gap, --space-inline-gap, --opacity-disabled, --border-radius-pill
+  --space-element-gap, --space-inline-gap, --border-radius-pill
   --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
@@ -50,10 +50,18 @@
   outline-offset: var(--focus-ring-offset);
 }
 
+/* Disabled: no fade. The shared disabled opacity (0.1) left this close to
+   invisible; quieter colours from tested pairs keep it readable. */
 .input-field__wrapper--disabled {
+  border-color: var(--color-border-default);
   background: var(--color-surface-secondary);
-  opacity: var(--opacity-disabled);
+  color: var(--color-text-secondary);
   cursor: not-allowed;
+}
+
+.input-field__wrapper--disabled .input-field__input {
+  color: var(--color-text-secondary);
+  -webkit-text-fill-color: var(--color-text-secondary);
 }
 
 /* Input element — no border, inherits wrapper styling */

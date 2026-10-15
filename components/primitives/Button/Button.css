@@ -10,7 +10,7 @@
   --button-secondary-background, --button-secondary-foreground, --button-secondary-border
   --button-secondary-background-hover
   --button-ghost-background, --button-ghost-border
-  --color-border-focus, --font-family-base, --easing-default, --opacity-disabled
+  --color-border-focus, --font-family-base, --easing-default
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-accent-foreground
@@ -62,10 +62,24 @@
   outline-offset: var(--focus-ring-offset);
 }
 
-.button:disabled,
-.button--disabled {
-  opacity: var(--opacity-disabled);
+/* Disabled: no fade. The shared disabled opacity (0.1) left this close to
+   invisible; quieter colours from tested pairs keep it readable. */
+/* A loading Button is natively disabled too, but keeps its variant's colours: busy, not unavailable. */
+.button:disabled:not(.button--loading),
+.button--disabled:not(.button--loading) {
+  border-color: var(--color-border-default);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
   cursor: not-allowed;
+}
+
+/* Ghost and link keep their lack of a surface. */
+.button--ghost:disabled:not(.button--loading),
+.button--ghost.button--disabled:not(.button--loading),
+.button--link:disabled:not(.button--loading),
+.button--link.button--disabled:not(.button--loading) {
+  border-color: transparent;
+  background: none;
 }
 
 /* Label — wraps icon + text + arrow so spinner can overlay cleanly */

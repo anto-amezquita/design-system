@@ -50,16 +50,15 @@
    A quiet surface, the default border and the icon in secondary text, a
    tested 4.5:1 pair, so it reads as unavailable but you can still see what
    it is. Ghost stays without a surface or border. */
-.button.icon-button:disabled,
-.button.icon-button.button--disabled {
-  opacity: 1;
+.button.icon-button:disabled:not(.button--loading),
+.button.icon-button.button--disabled:not(.button--loading) {
   border-color: var(--color-border-default);
   background: var(--color-surface-secondary);
   color: var(--color-text-secondary);
 }
 
-.button.icon-button.button--ghost:disabled,
-.button.icon-button.button--ghost.button--disabled {
+.button.icon-button.button--ghost:disabled:not(.button--loading),
+.button.icon-button.button--ghost.button--disabled:not(.button--loading) {
   border-color: transparent;
   background: none;
 }

@@ -4,7 +4,7 @@
 
 
   --font-family-base, --duration-interaction, --easing-default
-  --space-inline-gap, --opacity-disabled, --color-border-focus, --font-size-xs
+  --space-inline-gap, --color-border-focus, --font-size-xs
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-surface-primary
@@ -45,10 +45,18 @@
   outline-offset: var(--focus-ring-offset);
 }
 
+/* Disabled: no fade. The shared disabled opacity (0.1) left this close to
+   invisible; quieter colours from tested pairs keep it readable. */
 .textarea-field__wrapper--disabled {
+  border-color: var(--color-border-default);
   background: var(--color-surface-secondary);
-  opacity: var(--opacity-disabled);
+  color: var(--color-text-secondary);
   cursor: not-allowed;
+}
+
+.textarea-field__wrapper--disabled .textarea-field__textarea {
+  color: var(--color-text-secondary);
+  -webkit-text-fill-color: var(--color-text-secondary);
 }
 
 .textarea-field__textarea {

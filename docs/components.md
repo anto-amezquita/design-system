@@ -73,7 +73,7 @@ Copy this for each new component. Fill in every field before the component ships
 - [x] hover (background shifts; arrow translates 2px right when `arrow` is on)
 - [x] focus-visible (2px ring)
 - [x] pressed (`:active`, mouse and touch: one step past hover via `--color-accent-pressed`; ghost uses `--color-surface-tertiary`)
-- [x] disabled (opacity, not-allowed cursor)
+- [x] disabled: not faded; a quiet surface and border with secondary text (4.5:1), ghost and link without the surface; not-allowed cursor. Loading keeps the variant's colours
 
 **Tokens consumed**
 - `--button-padding-x`, `--button-padding-y`
@@ -82,7 +82,7 @@ Copy this for each new component. Fill in every field before the component ships
 - `--button-primary-background`, `--button-primary-foreground`, `--button-primary-border`, `--button-primary-background-hover`
 - `--button-secondary-background`, `--button-secondary-foreground`, `--button-secondary-border`, `--button-secondary-background-hover`, `--button-secondary-foreground-hover`
 - `--button-ghost-background`, `--button-ghost-foreground`, `--button-ghost-border`, `--button-ghost-background-hover`
-- `--color-border-focus`, `--font-family-base`, `--easing-default`, `--space-inline-gap`, `--opacity-disabled`
+- `--color-border-focus`, `--font-family-base`, `--easing-default`, `--space-inline-gap`
 
 **Accessibility**
 - Semantic element: `<button>` by default; `<a>` when `href` is passed
@@ -235,7 +235,7 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 - `--input-label-size`, `--input-label-weight`, `--input-label-color`
 - `--font-size-caption`, `--input-hint-color`, `--input-error-color`
 - `--font-family-base`, `--duration-interaction`, `--easing-default`
-- `--space-inline-gap`, `--opacity-disabled`
+- `--space-inline-gap`
 
 **Accessibility**
 - `<label>` is auto-linked via `useId()` — never use placeholder as the only label
@@ -847,7 +847,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 **Tokens consumed**
 - `--space-inline-gap`, `--space-tight-gap`, `--font-family-base`, `--font-size-small`, `--font-weight-label`, `--line-height-label`
-- `--font-size-caption`, `--line-height-caption`, `--color-text-primary`, `--color-text-secondary`, `--color-feedback-error`, `--size-icon-sm`, `--opacity-disabled`
+- `--font-size-caption`, `--line-height-caption`, `--color-text-primary`, `--color-text-secondary`, `--color-feedback-error`, `--size-icon-sm`
 
 **Accessibility**
 - The label names the control; the hint or error is its description; an error sets `aria-invalid`
@@ -945,7 +945,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - [x] default, with hint
 - [x] focus (the focused piece draws on top with its ring)
 - [x] error (the whole group's edge turns red; message with icon)
-- [x] disabled (the Input fades; addon text and label stay readable)
+- [x] disabled (quiet surface and border, secondary text at 4.5:1; nothing faded)
 
 **Tokens consumed**
 - `--space-inline-gap`, `--space-control-padding-x`, `--border-width-interactive`, `--color-border-strong`, `--border-radius-interactive`
@@ -1051,7 +1051,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 **Tokens consumed**
 - `--space-inline-gap`, `--size-touch-target`, `--border-width-interactive`, `--color-border-strong`, `--border-radius-interactive`
 - `--color-surface-primary`, `--color-text-primary`, `--font-family-mono`, `--font-size-h5`
-- `--color-border-focus`, `--focus-ring-width`, `--color-feedback-error`, `--opacity-disabled`, `--duration-interaction`, `--easing-default`
+- `--color-border-focus`, `--focus-ring-width`, `--color-feedback-error`, `--duration-interaction`, `--easing-default`
 - Field's label and message styles
 
 **Accessibility**
@@ -1323,13 +1323,13 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - [x] default (track filled up to the thumb)
 - [x] hover (thumb on the neutral surface)
 - [x] focus-visible (ring around the thumb)
-- [x] disabled (track and thumb fade; the label stays readable)
+- [x] disabled (track fill and thumb in secondary text; nothing faded, the label stays readable)
 
 **Tokens consumed**
 - `--slider-track-height`
 - `--color-surface-tertiary` (track), `--color-accent-text` (fill and thumb edge), `--color-surface-primary`, `--color-surface-secondary`
 - `--size-icon-md` (thumb), `--size-touch-target` (row height), `--border-width-medium`, `--border-radius-full`
-- `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`, `--opacity-disabled`
+- `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`
 - `--font-family-base`, `--font-size-small`, `--font-weight-label`, `--line-height-label`, `--font-size-caption`, `--line-height-caption`, `--color-text-primary`, `--color-text-secondary`
 - `--space-tight-gap`, `--space-inline-gap`, `--duration-interaction`, `--easing-default`
 
@@ -1904,7 +1904,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 - `--color-feedback-error`, `--color-feedback-error-background`
 - `--border-width-interactive`, `--border-width-default`, `--border-radius-component`, `--border-radius-interactive`, `--shadow-dropdown`
 - `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-size-small`, `--line-height-label`, `--font-weight-label`
-- `--space-tight-gap`, `--space-inline-gap`, `--space-compact-padding-y`, `--space-control-padding-x`, `--size-icon-sm`, `--opacity-disabled`
+- `--space-tight-gap`, `--space-inline-gap`, `--space-compact-padding-y`, `--space-control-padding-x`, `--size-icon-sm`
 
 **Accessibility**
 - Built on Radix DropdownMenu: `role="menu"` / `menuitem`, the trigger gets `aria-haspopup` and `aria-expanded`

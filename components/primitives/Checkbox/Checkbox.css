@@ -4,7 +4,7 @@
 
 
   --font-family-base, --duration-interaction, --easing-default
-  --opacity-disabled, --color-border-focus
+  --color-border-focus
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
   --color-text-secondary, --color-text-primary, --color-surface-secondary, --font-size-control, --color-accent-default, --color-accent-text, --color-surface-primary, --color-accent-foreground
@@ -22,8 +22,9 @@
   cursor: pointer;
 }
 
+/* Disabled: no fade. The shared disabled opacity (0.1) left this close to
+   invisible; quieter colours from tested pairs keep it readable. */
 .checkbox--disabled {
-  opacity: var(--opacity-disabled);
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -71,8 +72,20 @@
 }
 
 .checkbox__root[disabled] {
+  border-color: var(--color-border-default);
   background: var(--color-surface-secondary);
   cursor: not-allowed;
+}
+
+/* Ticked and disabled: a secondary-text box with a page-coloured tick (4.5:1). */
+.checkbox__root[disabled][data-state='checked'],
+.checkbox__root[disabled][data-state='indeterminate'] {
+  border-color: var(--color-text-secondary);
+  background: var(--color-text-secondary);
+}
+
+.checkbox__root[disabled] .checkbox__icon {
+  color: var(--color-surface-primary);
 }
 
 /* Indicator — hosts both icons, only one shows at a time */

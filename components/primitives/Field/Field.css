@@ -5,7 +5,6 @@
   --font-size-small, --font-weight-label, --line-height-label,
   --font-size-caption, --line-height-caption, --color-text-primary,
   --color-text-secondary, --color-feedback-error, --size-icon-sm,
-  --opacity-disabled
 
   The same label and hint styles as Input, so a Select in a Field and an
   Input sit side by side without a seam.
@@ -69,6 +68,8 @@
   block-size: var(--size-icon-sm);
 }
 
+/* Disabled: no fade. The shared disabled opacity (0.1) left this close to
+   invisible; quieter colours from tested pairs keep it readable. */
 .field--disabled > .field__label {
-  opacity: var(--opacity-disabled);
+  color: var(--color-text-secondary);
 }

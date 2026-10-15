@@ -10,7 +10,7 @@
   on hover), --size-icon-md (thumb), --size-touch-target (input height, so
   the whole row is the target), --border-width-medium,
   --color-border-focus, --focus-ring-width, --focus-ring-offset,
-  --opacity-disabled, --font-family-base, --font-size-small,
+  --color-text-secondary (disabled fill), --font-family-base, --font-size-small,
   --font-weight-label, --line-height-label, --font-size-caption,
   --line-height-caption, --color-text-primary, --color-text-secondary,
   --space-tight-gap, --space-inline-gap, --duration-interaction,
@@ -22,6 +22,8 @@
 */
 
 .slider {
+  /* The fill and the thumb's edge: the accent, or secondary text when disabled. */
+  --slider-fill-colour: var(--color-accent-text);
   display: grid;
   gap: var(--space-tight-gap);
   inline-size: 100%;
@@ -88,7 +90,7 @@
   border-radius: var(--border-radius-full);
   background: linear-gradient(
     to right,
-    var(--color-accent-text) var(--slider-fill),
+    var(--slider-fill-colour) var(--slider-fill),
     var(--color-surface-tertiary) var(--slider-fill)
   );
 }
@@ -97,7 +99,7 @@
 .slider__input:dir(rtl)::-webkit-slider-runnable-track {
   background: linear-gradient(
     to left,
-    var(--color-accent-text) var(--slider-fill),
+    var(--slider-fill-colour) var(--slider-fill),
     var(--color-surface-tertiary) var(--slider-fill)
   );
 }
@@ -112,7 +114,7 @@
 .slider__input::-moz-range-progress {
   block-size: var(--slider-track-height);
   border-radius: var(--border-radius-full);
-  background: var(--color-accent-text);
+  background: var(--slider-fill-colour);
 }
 
 /* Thumb */
@@ -122,7 +124,7 @@
   block-size: var(--size-icon-md);
   /* Centre on the track: half the track minus half the thumb. */
   margin-block-start: calc((var(--slider-track-height) - var(--size-icon-md)) / 2);
-  border: var(--border-width-medium) solid var(--color-accent-text);
+  border: var(--border-width-medium) solid var(--slider-fill-colour);
   border-radius: var(--border-radius-full);
   background: var(--color-surface-primary);
   transition: background var(--duration-interaction) var(--easing-default);
@@ -132,7 +134,7 @@
   inline-size: var(--size-icon-md);
   block-size: var(--size-icon-md);
   box-sizing: border-box;
-  border: var(--border-width-medium) solid var(--color-accent-text);
+  border: var(--border-width-medium) solid var(--slider-fill-colour);
   border-radius: var(--border-radius-full);
   background: var(--color-surface-primary);
   transition: background var(--duration-interaction) var(--easing-default);
@@ -159,10 +161,10 @@
     0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--color-border-focus);
 }
 
-/* Only the track and thumb fade. The label stays readable (4.5:1): it still
-   says what the value is, and axe checks it like any other text. */
-.slider__input:disabled {
-  opacity: var(--opacity-disabled);
+/* Disabled: no fade (the shared disabled opacity, 0.1, hid the track). The
+   fill and the thumb's edge turn secondary text; the label stays as it is. */
+.slider:has(.slider__input:disabled) {
+  --slider-fill-colour: var(--color-text-secondary);
 }
 
 .slider__input:disabled {
