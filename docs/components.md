@@ -1095,6 +1095,56 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### FileUpload
+
+| Field | Value |
+|---|---|
+| **Purpose** | Pick files by button or by dragging them in, see what's chosen, and remove any |
+| **Figma name** | `FileUpload` |
+| **Code name** | `FileUpload` (+ `matchesAccept`) |
+| **Storybook path** | `Components/FileUpload` |
+
+**Props / variants**
+- `label` (required), `hint` (say what's allowed), `error`, `required`, `disabled`, `id`, `name`
+- `accept` (like the native attribute: `"image/*,.pdf"`), `maxSize` (bytes), `maxFiles` (`1` makes a single-file picker that replaces its file)
+- `files` + `onFilesChange` (controlled) or uncontrolled
+- Uploading is up to the app: FileUpload hands over the chosen `File`s
+
+**Required states**
+- [x] empty, dragging over (solid accent edge), with files
+- [x] files turned away (a reason for each, in the error colour)
+- [x] focus (ring on the "Choose files" face while the real input has focus)
+- [x] error (red zone edge), disabled (flat, nothing faded)
+
+**Tokens consumed**
+- `--space-element-gap`, `--space-inline-gap`, `--space-tight-gap`, `--space-container-padding`, `--border-width-medium`, `--border-radius-component`
+- `--color-border-strong`, `--color-border-default`, `--color-accent-text`, `--color-surface-primary`, `--color-surface-secondary`, `--color-feedback-error`
+- `--color-text-primary`, `--color-text-secondary`, `--font-family-base`, `--font-size-small`, `--line-height-small`, `--font-size-caption`, `--font-weight-control`
+- `--size-icon-md`, `--size-icon-lg`, `--size-touch-target`, `--button-border-radius`, `--button-secondary-foreground`, `--button-secondary-border`, `--button-outline-border-width`
+- `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`, `--duration-interaction`, `--easing-default`
+
+**Accessibility**
+- A real `<input type="file">`, hidden visually but focusable: Tab, Enter / Space and the system picker work as usual; its name reads "Attachments, Choose files" and the hint describes it
+- Dragging is an extra, never the only way; "or drag them here" is hidden from screen readers
+- Each file has a remove button named after it ("Remove portfolio.pdf"); after removing, focus moves to the next file's button, or back to the picker when the list is empty
+- A polite status says what happened: "2 files added.", "cv.pdf removed.", and why a file was turned away
+- Disabled doesn't fade the words, so they stay 4.5:1
+
+**Do**
+- Say in the hint which types and sizes are allowed.
+- Tell people why a file was turned away, as FileUpload does, and keep the ones that were fine.
+- Show upload progress in your app after choosing, with ProgressBar.
+
+**Don't**
+- Don't hide the button and rely on dragging alone.
+- Don't clear the chosen files when another field has an error.
+- Don't set `maxFiles` without saying the limit in the hint.
+
+**Chromatic stories**
+- `Default`, `WithFiles`, `Single`, `Error`, `Disabled`, `DarkMode`
+
+---
+
 ### Heading
 
 | Field | Value |

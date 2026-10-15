@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 49,
+    "filesScanned": 50,
     "tokenCount": 231
   },
   "byToken": {
@@ -77,6 +77,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Table/Table.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Select/Select.css"
     ],
     "border-radius-full": [
@@ -111,6 +112,7 @@
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Button/Button.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Switch/Switch.css",
@@ -157,6 +159,7 @@
       "components/primitives/Textarea/Textarea.css"
     ],
     "border-width-medium": [
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Slider/Slider.css"
     ],
     "border-width-thick": [
@@ -176,6 +179,7 @@
     ],
     "button-border-radius": [
       "components/primitives/Button/Button.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/SegmentedControl/SegmentedControl.css"
     ],
     "button-ghost-background": [
@@ -192,7 +196,8 @@
     ],
     "button-outline-border-width": [
       "components/primitives/Button/Button.css",
-      "components/primitives/ButtonGroup/ButtonGroup.css"
+      "components/primitives/ButtonGroup/ButtonGroup.css",
+      "components/primitives/FileUpload/FileUpload.css"
     ],
     "button-padding-x": [
       "components/primitives/Button/Button.css"
@@ -208,10 +213,12 @@
     ],
     "button-secondary-border": [
       "components/primitives/Button/Button.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/ToggleButton/ToggleButton.css"
     ],
     "button-secondary-foreground": [
       "components/primitives/Button/Button.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/ToggleButton/ToggleButton.css"
     ],
     "button-spinner-duration": [
@@ -236,6 +243,7 @@
       "components/patterns/Pagination/Pagination.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
@@ -263,6 +271,7 @@
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Link/Link.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
@@ -286,6 +295,7 @@
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Divider/Divider.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css"
@@ -308,6 +318,7 @@
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/OtpInput/OtpInput.css",
@@ -324,6 +335,7 @@
       "components/composition/Card/Card.css",
       "components/patterns/Carousel/Carousel.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Kbd/Kbd.css",
@@ -338,6 +350,7 @@
       "components/composition/Menu/Menu.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/primitives/Field/Field.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
@@ -422,6 +435,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Hero/Hero.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
@@ -443,6 +457,7 @@
       "components/primitives/Badge/Badge.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Kbd/Kbd.css",
@@ -483,6 +498,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Field/Field.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Heading/Heading.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Kbd/Kbd.css",
@@ -517,6 +533,7 @@
       "components/primitives/Badge/Badge.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Field/Field.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
@@ -606,6 +623,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/OtpInput/OtpInput.css",
@@ -648,6 +666,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/OtpInput/OtpInput.css",
@@ -688,6 +707,7 @@
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Radio/Radio.css",
@@ -716,6 +736,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/OtpInput/OtpInput.css",
@@ -749,6 +770,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Field/Field.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
@@ -781,6 +803,7 @@
       "components/patterns/Table/Table.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Field/Field.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Tag/Tag.css",
@@ -833,6 +856,7 @@
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Field/Field.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
@@ -849,6 +873,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/SegmentedControl/SegmentedControl.css"
     ],
     "font-weight-heading": [
@@ -982,6 +1007,7 @@
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Hero/Hero.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/ProgressBar/ProgressBar.css"
     ],
     "opacity-disabled": [
@@ -1077,6 +1103,7 @@
       "components/primitives/IconButton/IconButton.css"
     ],
     "size-icon-lg": [
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Spinner/Spinner.css"
     ],
     "size-icon-md": [
@@ -1084,6 +1111,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/FormLayout/FormLayout.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/IconButton/IconButton.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Slider/Slider.css",
@@ -1111,6 +1139,7 @@
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/IconButton/IconButton.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
@@ -1154,7 +1183,8 @@
       "components/composition/Card/Card.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
-      "components/patterns/Hero/Hero.css"
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/FileUpload/FileUpload.css"
     ],
     "space-container-padding-lg": [
       "components/composition/Drawer/Drawer.css",
@@ -1195,7 +1225,8 @@
       "components/patterns/Carousel/Carousel.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
-      "components/patterns/Pagination/Pagination.css"
+      "components/patterns/Pagination/Pagination.css",
+      "components/primitives/FileUpload/FileUpload.css"
     ],
     "space-inline-gap": [
       "components/composition/Card/Card.css",
@@ -1213,6 +1244,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/ButtonGroup/ButtonGroup.css",
       "components/primitives/Field/Field.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
@@ -1255,6 +1287,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Field/Field.css",
+      "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/ProgressBar/ProgressBar.css",

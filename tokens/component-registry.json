@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 81,
-    "publicComponentCount": 51,
+    "componentCount": 82,
+    "publicComponentCount": 52,
     "subComponentCount": 29
   },
   "components": [
@@ -162,6 +162,26 @@
         "NativeControl",
         "Group",
         "Validating",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "FileUpload",
+      "slug": "file-upload",
+      "tier": "primitives",
+      "purpose": "Pick files by button or by dragging them in, see what's chosen, and remove any",
+      "storybookPath": "Components/FileUpload",
+      "storybookTitleId": "components-fileupload",
+      "defaultStoryId": "components-fileupload--default",
+      "tokenPrefix": "fileupload",
+      "stories": [
+        "Default",
+        "WithFiles",
+        "Single",
+        "Error",
+        "Disabled",
         "DarkMode"
       ],
       "tokenCount": 0,

@@ -94,7 +94,7 @@ export const Field = forwardRef<HTMLElement, FieldProps>(function Field({
         aria-describedby={context.describedBy}
         disabled={disabled}
       >
-        <legend className="field__label">
+        <legend id={`${id}-label`} className="field__label">
           {label}
           {requiredMark}
         </legend>
@@ -117,7 +117,7 @@ export const Field = forwardRef<HTMLElement, FieldProps>(function Field({
 
   return (
     <div {...rest} ref={ref as React.Ref<HTMLDivElement>} className={classes}>
-      <label htmlFor={id} className="field__label">
+      <label id={`${id}-label`} htmlFor={id} className="field__label">
         {label}
         {requiredMark}
       </label>

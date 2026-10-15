@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "file-upload",
+  "type": "registry:component",
+  "title": "FileUpload",
+  "description": "Pick files by button or by dragging them in, see what's chosen, and remove any",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/field.json",
+    "https://design.amezquita.dk/r/icon-button.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}
