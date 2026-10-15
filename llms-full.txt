@@ -91,6 +91,15 @@ A line that separates groups of content, horizontally or vertically
 - Storybook: Components/Divider
 - Stories: Default, Vertical, DarkMode
 
+### Field
+
+Label, hint and error for any control, wired the way Input wires its own
+
+- Import: `import { Field } from '@amezquita/design-system/components/primitives/Field'`
+- Token prefix: `field-*` (0 tokens)
+- Storybook: Components/Field
+- Stories: WithSelect, Error, NativeControl, Group, Validating, DarkMode
+
 ### Heading
 
 Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level
