@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "b223df8",
+      "type": "fix",
+      "scope": "disabled",
+      "message": "IconButton and SegmentedControl stay readable",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "19a4b6e",
       "type": "feat",
       "scope": "mobile-nav",
