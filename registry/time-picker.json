@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "time-picker",
+  "type": "registry:component",
+  "title": "TimePicker",
+  "description": "One time of day: an appointment, a delivery slot, opening hours",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/input.json",
+    "https://design.amezquita.dk/r/input-group.json",
+    "https://design.amezquita.dk/r/popover.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 54,
-    "tokenCount": 234
+    "filesScanned": 55,
+    "tokenCount": 235
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -107,7 +107,8 @@
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
-      "components/primitives/Textarea/Textarea.css"
+      "components/primitives/Textarea/Textarea.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "border-radius-pill": [
       "components/primitives/Avatar/Avatar.css",
@@ -254,6 +255,7 @@
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
+      "components/primitives/TimePicker/TimePicker.css",
       "components/primitives/ToggleButton/ToggleButton.css"
     ],
     "color-accent-foreground": [
@@ -264,7 +266,8 @@
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
-      "components/primitives/Tag/Tag.css"
+      "components/primitives/Tag/Tag.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "color-accent-hover": [
       "components/primitives/Button/Button.css"
@@ -283,7 +286,8 @@
       "components/primitives/Link/Link.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
-      "components/primitives/Slider/Slider.css"
+      "components/primitives/Slider/Slider.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "color-accent-text-hover": [
       "components/primitives/Link/Link.css"
@@ -479,6 +483,7 @@
       "components/primitives/Slider/Slider.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css",
+      "components/primitives/TimePicker/TimePicker.css",
       "components/primitives/ToggleButton/ToggleButton.css"
     ],
     "color-surface-tertiary": [
@@ -524,7 +529,8 @@
       "components/primitives/Select/Select.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
-      "components/primitives/Textarea/Textarea.css"
+      "components/primitives/Textarea/Textarea.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "color-text-secondary": [
       "components/composition/Card/Card.css",
@@ -767,7 +773,8 @@
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
-      "components/primitives/Textarea/Textarea.css"
+      "components/primitives/Textarea/Textarea.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "font-family-base": [
       "components/composition/Alert/Alert.css",
@@ -804,7 +811,8 @@
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
-      "components/primitives/Textarea/Textarea.css"
+      "components/primitives/Textarea/Textarea.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "font-family-heading": [
       "components/composition/Dialog/Dialog.css",
@@ -852,7 +860,8 @@
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
-      "components/primitives/Textarea/Textarea.css"
+      "components/primitives/Textarea/Textarea.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "font-size-h1-fluid": [
       "components/patterns/Hero/Hero.css",
@@ -1102,6 +1111,9 @@
     "radix-popover-content-transform-origin": [
       "components/composition/Popover/Popover.css"
     ],
+    "radix-popover-trigger-width": [
+      "components/primitives/TimePicker/TimePicker.css"
+    ],
     "radix-select-trigger-width": [
       "components/primitives/Select/Select.css"
     ],
@@ -1158,7 +1170,8 @@
       "components/primitives/IconButton/IconButton.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Slider/Slider.css",
-      "components/primitives/Spinner/Spinner.css"
+      "components/primitives/Spinner/Spinner.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "size-icon-sm": [
       "components/composition/Menu/Menu.css",
@@ -1189,7 +1202,8 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Slider/Slider.css",
-      "components/primitives/Switch/Switch.css"
+      "components/primitives/Switch/Switch.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "skeleton-border-radius": [
       "components/primitives/Skeleton/Skeleton.css"
@@ -1244,7 +1258,8 @@
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
-      "components/primitives/Textarea/Textarea.css"
+      "components/primitives/Textarea/Textarea.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "space-control-padding-y": [
       "components/patterns/Table/Table.css",
@@ -1306,7 +1321,8 @@
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Tag/Tag.css",
-      "components/primitives/Textarea/Textarea.css"
+      "components/primitives/Textarea/Textarea.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "space-label-gap": [
       "components/composition/Alert/Alert.css",
@@ -1343,7 +1359,8 @@
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
-      "components/primitives/Slider/Slider.css"
+      "components/primitives/Slider/Slider.css",
+      "components/primitives/TimePicker/TimePicker.css"
     ],
     "spinner-stroke-width": [
       "components/primitives/Spinner/Spinner.css"

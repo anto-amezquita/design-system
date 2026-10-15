@@ -325,6 +325,15 @@ Multi-line text entry with label, hint, and error states — mirrors Input API
 - Storybook: Components/Textarea
 - Stories: Default, WithHint, WithError, Disabled, WithCharacterCount, AllStates, DarkMode
 
+### TimePicker
+
+One time of day: an appointment, a delivery slot, opening hours
+
+- Import: `import { TimePicker } from '@amezquita/design-system/components/primitives/TimePicker'`
+- Token prefix: `timepicker-*` (0 tokens)
+- Storybook: Components/TimePicker
+- Stories: Default, Danish, TwelveHour, OpeningHours, Error, Disabled, Open, DarkMode
+
 ### ToggleButton
 
 A button that stays on or off, like bold in an editor or a grid overlay

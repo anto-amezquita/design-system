@@ -1,0 +1,76 @@
+/*
+  Tokens consumed:
+
+  --space-tight-gap, --space-inline-gap, --space-control-padding-x,
+  --size-touch-target (each option is a 44px row), --size-icon-md,
+  --border-radius-interactive, --color-surface-secondary (active option),
+  --color-accent-default, --color-accent-foreground (chosen option, a 4.5:1
+  pair), --color-text-primary, --font-family-base, --font-size-control
+
+  The field is an InputGroup; the list sits in a Popover.
+*/
+
+.time-picker .input-field__input {
+  font-variant-numeric: tabular-nums;
+}
+
+/* The clock: a quiet icon at the start, not a text addon. */
+.time-picker .time-picker__icon {
+  padding-inline: var(--space-inline-gap);
+}
+
+.time-picker__icon svg {
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+}
+
+.time-picker__popover {
+  padding: var(--space-tight-gap);
+  min-inline-size: var(--radix-popover-trigger-width);
+}
+
+.time-picker__list {
+  max-block-size: calc(var(--size-touch-target) * 6);
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+  overscroll-behavior: contain;
+}
+
+.time-picker__option {
+  display: flex;
+  align-items: center;
+  min-block-size: var(--size-touch-target);
+  padding-inline: var(--space-control-padding-x);
+  border-radius: var(--border-radius-interactive);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-control);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+/* The option the arrows are on: a neutral band, plus an edge, so it doesn't rely on colour alone. */
+.time-picker__option--active {
+  background: var(--color-surface-secondary);
+  box-shadow: inset var(--space-tight-gap) 0 0 var(--color-accent-text);
+}
+
+.time-picker__option--selected {
+  background: var(--color-accent-default);
+  color: var(--color-accent-foreground);
+}
+
+@media (forced-colors: active) {
+  .time-picker__option--active {
+    outline: var(--focus-ring-width) solid Highlight;
+    outline-offset: calc(-1 * var(--focus-ring-width));
+  }
+
+  .time-picker__option--selected {
+    background: Highlight;
+    color: HighlightText;
+    forced-color-adjust: none;
+  }
+}
