@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "2232308",
+      "type": "feat",
+      "scope": "lightbox",
+      "message": "images large, one at a time, in a modal",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "38991ed",
       "type": "feat",
       "scope": "command-palette",
