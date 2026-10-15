@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 90,
-    "publicComponentCount": 56,
+    "componentCount": 91,
+    "publicComponentCount": 57,
     "subComponentCount": 33
   },
   "components": [
@@ -687,6 +687,28 @@
         "Disabled",
         "WithCharacterCount",
         "AllStates",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "TimePicker",
+      "slug": "time-picker",
+      "tier": "primitives",
+      "purpose": "One time of day: an appointment, a delivery slot, opening hours",
+      "storybookPath": "Components/TimePicker",
+      "storybookTitleId": "components-timepicker",
+      "defaultStoryId": "components-timepicker--default",
+      "tokenPrefix": "timepicker",
+      "stories": [
+        "Default",
+        "Danish",
+        "TwelveHour",
+        "OpeningHours",
+        "Error",
+        "Disabled",
+        "Open",
         "DarkMode"
       ],
       "tokenCount": 0,
