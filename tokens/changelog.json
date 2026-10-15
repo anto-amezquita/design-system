@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "a8bf66b",
+      "type": "fix",
+      "scope": null,
+      "message": "disabled controls stay readable across all components",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "b223df8",
       "type": "fix",
       "scope": "disabled",
