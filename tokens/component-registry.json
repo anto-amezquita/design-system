@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 92,
-    "publicComponentCount": 58,
+    "componentCount": 93,
+    "publicComponentCount": 59,
     "subComponentCount": 33
   },
   "components": [
@@ -426,6 +426,29 @@
         "External",
         "AsChild",
         "AllVariants",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "MultiSelect",
+      "slug": "multi-select",
+      "tier": "primitives",
+      "purpose": "Several values from a long list, found by typing: skills, reviewers, languages",
+      "storybookPath": "Components/MultiSelect",
+      "storybookTitleId": "components-multiselect",
+      "defaultStoryId": "components-multiselect--default",
+      "tokenPrefix": "multiselect",
+      "stories": [
+        "Default",
+        "Chosen",
+        "WithDescriptions",
+        "Max",
+        "Danish",
+        "Error",
+        "Disabled",
+        "Open",
         "DarkMode"
       ],
       "tokenCount": 0,

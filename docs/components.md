@@ -586,6 +586,52 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### MultiSelect
+
+| Field | Value |
+|---|---|
+| **Purpose** | Several values from a long list, found by typing: skills, reviewers, languages |
+| **Figma name** | `MultiSelect` |
+| **Code name** | `MultiSelect` (+ `MultiSelectOption` type) |
+| **Storybook path** | `Components/MultiSelect` |
+
+**Props / variants**
+- `label` (required), `hint`, `error`, `required`, `disabled`, `placeholder`, `id`
+- `options`: strings, or `{ value, label?, description?, disabled? }`, as in Combobox
+- `value` + `onValueChange` (controlled, values in the order chosen) or `defaultValue`
+- `max`: the most that can be chosen; the hint says so and the other options become unavailable
+- `emptyMessage(text)`; `name` submits every value under that name, like `<select multiple>`
+
+**Required states**
+- [x] none chosen, some chosen (tags below the field, "Remove all" from two)
+- [x] list open: checkbox marks, active option (band and bar), unavailable option (struck through)
+- [x] limit reached (`max`), no matches
+- [x] error, disabled (tags without Remove buttons)
+
+**Tokens consumed**
+- `--color-border-strong` (empty checkbox, 3:1), `--color-accent-default`, `--color-accent-foreground` (ticked), `--border-width-interactive`, `--border-radius-interactive` (as Checkbox), `--size-touch-target` (Remove all target); the list uses Combobox's styles and the chosen items are Tags
+
+**Accessibility**
+- A combobox over a listbox with `aria-multiselectable="true"`; each option's `aria-selected` says whether it's chosen, and a checkbox mark shows it without colour
+- The list stays open while picking: Enter or a click adds or removes; Escape closes, then clears the search
+- The field is described by what's chosen ("2 chosen: Danish, Spanish."), and every change is announced ("Spanish added, 3 chosen")
+- Backspace in the empty field removes the last item; a tag's Remove button moves focus to the next tag, and "Remove all" returns it to the field
+- Picking from a search clears it and keeps the place in the full list
+
+**Do**
+- Use it when the list is long and people pick a few; for up to about seven options, use Checkboxes.
+- Set `max` when there's a real limit, so people learn it before they hit it.
+- Keep the chosen items visible; don't collapse them into "3 selected" only.
+
+**Don't**
+- Don't use it for free text; Tag Input is for values people type.
+- Don't reorder the chosen items; they stay in the order people picked them.
+
+**Chromatic stories**
+- `Default`, `Chosen`, `WithDescriptions`, `Max`, `Danish`, `Error`, `Disabled`, `Open`, `DarkMode`
+
+---
+
 ### DatePicker
 
 | Field | Value |

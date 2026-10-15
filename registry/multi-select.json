@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "multi-select",
+  "type": "registry:component",
+  "title": "MultiSelect",
+  "description": "Several values from a long list, found by typing: skills, reviewers, languages",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/icon-button.json",
+    "https://design.amezquita.dk/r/input.json",
+    "https://design.amezquita.dk/r/input-group.json",
+    "https://design.amezquita.dk/r/popover.json",
+    "https://design.amezquita.dk/r/tag.json",
+    "https://design.amezquita.dk/r/visually-hidden.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}
