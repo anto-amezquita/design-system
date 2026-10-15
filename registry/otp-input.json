@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "otp-input",
+  "type": "registry:component",
+  "title": "OtpInput",
+  "description": "A short code sent by text or email, shown as one box per character",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/field.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}

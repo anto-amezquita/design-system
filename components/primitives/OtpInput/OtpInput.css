@@ -1,0 +1,90 @@
+/*
+  Tokens consumed:
+
+  --space-inline-gap, --size-touch-target, --border-width-interactive,
+  --color-border-strong (box edge: a control-boundary pair, 3:1),
+  --border-radius-interactive, --color-surface-primary,
+  --color-text-primary, --font-family-mono, --font-size-h5 (20px: large enough to check each character),
+  --color-border-focus, --focus-ring-width, --color-feedback-error,
+  --opacity-disabled, --duration-interaction, --easing-default
+
+  --otp-length is private: the component sets it from `length`.
+
+  One transparent input lies over the boxes and takes every click, key,
+  paste and autofill; the boxes only draw what it holds.
+*/
+
+.otp-input__boxes {
+  --otp-length: 6;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--otp-length), var(--size-touch-target));
+  gap: var(--space-inline-gap);
+  inline-size: max-content;
+}
+
+.otp-input__box {
+  display: grid;
+  place-items: center;
+  block-size: calc(var(--size-touch-target) * 1.25);
+  border: var(--border-width-interactive) solid var(--color-border-strong);
+  border-radius: var(--border-radius-interactive);
+  background: var(--color-surface-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-h5);
+  font-variant-numeric: tabular-nums;
+  transition: border-color var(--duration-interaction) var(--easing-default);
+}
+
+/* Where the next character goes: the focus ring, on one box. */
+.otp-input__box--active {
+  border-color: var(--color-border-focus);
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: calc(-1 * var(--border-width-interactive));
+}
+
+.otp-input__boxes--error .otp-input__box {
+  border-color: var(--color-feedback-error);
+}
+
+/* The real input: over every box, invisible, but focusable and readable.
+   16px keeps iOS from zooming in on focus. */
+.otp-input__native {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: transparent;
+  caret-color: transparent;
+  font-size: 16px;
+  letter-spacing: 2em;
+  opacity: 0;
+  cursor: text;
+}
+
+.otp-input__native:disabled {
+  cursor: not-allowed;
+}
+
+.otp-input__native:disabled ~ .otp-input__box,
+.otp-input__boxes:has(.otp-input__native:disabled) .otp-input__box {
+  opacity: var(--opacity-disabled);
+}
+
+@media (forced-colors: active) {
+  .otp-input__box--active {
+    outline-color: Highlight;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .otp-input__box {
+    transition: none;
+  }
+}

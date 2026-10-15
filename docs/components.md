@@ -734,6 +734,54 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### OtpInput
+
+| Field | Value |
+|---|---|
+| **Purpose** | A short code sent by text or email, shown as one box per character |
+| **Figma name** | `OtpInput` |
+| **Code name** | `OtpInput` |
+| **Storybook path** | `Components/OtpInput` |
+
+**Props / variants**
+- `label` (required), `hint` (say where the code was sent), `error`, `disabled`, `name`, `autoFocus`
+- `length`: number of characters (default 6)
+- `mode`: `numeric` (default; digits only, number pad) or `alphanumeric` (letters and digits, uppercased)
+- `value` + `onValueChange` (controlled) or `defaultValue`
+- `onComplete(code)`: once the last character is in, e.g. to submit straight away
+
+**Required states**
+- [x] empty, partly filled, complete
+- [x] focus (ring on the box where the next character goes)
+- [x] error (every box red, message with icon), disabled
+
+**Tokens consumed**
+- `--space-inline-gap`, `--size-touch-target`, `--border-width-interactive`, `--color-border-strong`, `--border-radius-interactive`
+- `--color-surface-primary`, `--color-text-primary`, `--font-family-mono`, `--font-size-h5`
+- `--color-border-focus`, `--focus-ring-width`, `--color-feedback-error`, `--opacity-disabled`, `--duration-interaction`, `--easing-default`
+- Field's label and message styles
+
+**Accessibility**
+- One real input, not one per box: screen readers hear one field with its label and hint, and paste, SMS autofill (`autocomplete="one-time-code"`) and password managers work as usual
+- No `maxlength`: the browser would cut a pasted "482 913" before the space is dropped; the component trims to `length` itself (tested)
+- Characters 4.5:1 and box edges 3:1 in every brand and mode (tested); each box is 44px wide
+- Announce the result of checking the code in a `role="status"` (see the "Submits when complete" story)
+
+**Do**
+- Say in the hint where the code went: "We sent it to +45 •• •• •• 12".
+- Submit on `onComplete` when the code is all that's asked, so there's no extra button to find.
+- Offer a way to send a new code nearby.
+
+**Don't**
+- Don't clear the boxes on an error; let people fix one character.
+- Don't use it for passwords or anything longer than about eight characters; use Input.
+- Don't block paste.
+
+**Chromatic stories**
+- `Default`, `PartlyFilled`, `FourCharacters`, `Error`, `Disabled`, `SubmitsWhenComplete`, `DarkMode`
+
+---
+
 ### ProgressBar
 
 | Field | Value |

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 47,
-    "tokenCount": 227
+    "filesScanned": 48,
+    "tokenCount": 228
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -101,6 +101,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Textarea/Textarea.css"
@@ -149,6 +150,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
@@ -303,6 +305,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
@@ -319,6 +322,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Kbd/Kbd.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
@@ -331,6 +335,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -410,6 +415,7 @@
       "components/patterns/Hero/Hero.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
@@ -472,6 +478,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
@@ -591,6 +598,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
@@ -632,6 +640,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
@@ -697,6 +706,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
@@ -745,7 +755,8 @@
       "components/primitives/Heading/Heading.css"
     ],
     "font-family-mono": [
-      "components/primitives/Kbd/Kbd.css"
+      "components/primitives/Kbd/Kbd.css",
+      "components/primitives/OtpInput/OtpInput.css"
     ],
     "font-size-body": [
       "components/composition/Dialog/Dialog.css",
@@ -798,7 +809,8 @@
     ],
     "font-size-h5": [
       "components/patterns/EmptyState/EmptyState.css",
-      "components/primitives/Heading/Heading.css"
+      "components/primitives/Heading/Heading.css",
+      "components/primitives/OtpInput/OtpInput.css"
     ],
     "font-size-small": [
       "components/composition/Menu/Menu.css",
@@ -960,6 +972,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Field/Field.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
@@ -969,6 +982,9 @@
     ],
     "opacity-high": [
       "components/composition/Alert/Alert.css"
+    ],
+    "otp-length": [
+      "components/primitives/OtpInput/OtpInput.css"
     ],
     "pagination-button-background": [
       "components/patterns/Pagination/Pagination.css"
@@ -1071,6 +1087,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/IconButton/IconButton.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Slider/Slider.css",
@@ -1171,6 +1188,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Search/Search.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",

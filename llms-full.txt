@@ -172,6 +172,15 @@ A number typed or stepped: a quantity, an amount, a percentage
 - Storybook: Components/NumberInput
 - Stories: Default, Money, Decimal, NoSteppers, States, Controlled, DarkMode
 
+### OtpInput
+
+A short code sent by text or email, shown as one box per character
+
+- Import: `import { OtpInput } from '@amezquita/design-system/components/primitives/OtpInput'`
+- Token prefix: `otpinput-*` (0 tokens)
+- Storybook: Components/OtpInput
+- Stories: Default, PartlyFilled, FourCharacters, Error, Disabled, SubmitsWhenComplete, DarkMode
+
 ### ProgressBar
 
 Shows how far a task has got, or that it's running when the end isn't known
