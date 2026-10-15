@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-range-picker",
+  "type": "registry:component",
+  "title": "DateRangePicker",
+  "description": "A start and an end date: a stay, a report period, leave",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/calendar.json",
+    "https://design.amezquita.dk/r/date-picker.json",
+    "https://design.amezquita.dk/r/field.json",
+    "https://design.amezquita.dk/r/icon-button.json",
+    "https://design.amezquita.dk/r/input.json",
+    "https://design.amezquita.dk/r/input-group.json",
+    "https://design.amezquita.dk/r/popover.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}

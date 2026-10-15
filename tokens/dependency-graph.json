@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 53,
+    "filesScanned": 54,
     "tokenCount": 234
   },
   "byToken": {
@@ -1291,6 +1291,7 @@
       "components/primitives/ButtonGroup/ButtonGroup.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/DatePicker/DatePicker.css",
+      "components/primitives/DateRangePicker/DateRangePicker.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",

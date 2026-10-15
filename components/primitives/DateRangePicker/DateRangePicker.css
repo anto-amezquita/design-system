@@ -1,0 +1,18 @@
+/*
+  Tokens consumed: --space-inline-gap (popover padding). The row reuses
+  InputGroup's join (shared edges, round ends, a red edge on error); Field
+  gives the legend, hint and error.
+*/
+
+.date-range-picker .input-field__input {
+  font-variant-numeric: tabular-nums;
+}
+
+/* The "–" between the two dates: a thin joint, not a full addon. */
+.date-range-picker .input-group__addon {
+  padding-inline: var(--space-inline-gap);
+}
+
+.date-range-picker__popover {
+  padding: var(--space-inline-gap);
+}

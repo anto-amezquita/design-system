@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 89,
-    "publicComponentCount": 55,
+    "componentCount": 90,
+    "publicComponentCount": 56,
     "subComponentCount": 33
   },
   "components": [
@@ -162,6 +162,27 @@
         "Default",
         "Limits",
         "English",
+        "Error",
+        "Disabled",
+        "Open",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "DateRangePicker",
+      "slug": "date-range-picker",
+      "tier": "primitives",
+      "purpose": "A start and an end date: a stay, a report period, leave",
+      "storybookPath": "Components/DateRangePicker",
+      "storybookTitleId": "components-daterangepicker",
+      "defaultStoryId": "components-daterangepicker--default",
+      "tokenPrefix": "daterangepicker",
+      "stories": [
+        "Default",
+        "Booked",
+        "Danish",
         "Error",
         "Disabled",
         "Open",

@@ -583,6 +583,52 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### DateRangePicker
+
+| Field | Value |
+|---|---|
+| **Purpose** | A start and an end date: a stay, a report period, leave |
+| **Figma name** | `DateRangePicker` |
+| **Code name** | `DateRangePicker` (+ `CompleteRange` type) |
+| **Storybook path** | `Components/DateRangePicker` |
+
+**Props / variants**
+- `label` (required): the question, shown as the group's legend; `startLabel` / `endLabel` name the two fields ("Start date", "End date" by default)
+- `hint` (defaults to the format to type), `error`, `required`, `disabled`, `id`
+- `value` + `onValueChange` (controlled; only complete, valid ranges, or `null` when both fields are cleared) or `defaultValue`
+- `min`, `max`, `isDateDisabled`: a range that crosses an unavailable day is refused and the day is named
+- `locale`, `showWeekNumbers`; `name` submits `<name>-start` and `<name>-end` as `yyyy-mm-dd`
+
+**Required states**
+- [x] empty, one end typed (waits), complete
+- [x] end before start, outside the limits, crossing an unavailable day, unreadable date (each with its own reason)
+- [x] calendar open (range mode, first end alone, then both; closes when the range is valid)
+- [x] error (whole group red), disabled
+
+**Tokens consumed**
+- `--space-inline-gap`; the row uses InputGroup's join, and Field, Input, IconButton, Popover and Calendar style themselves
+
+**Accessibility**
+- A `<fieldset>` with the label as `<legend>`; each field has its own name ("Check-in", "Check-out"), its own id, and the hint or error as its description, so the reason is heard on the field itself
+- Typing in the reader's format, as in DatePicker; Alt + Arrow Down opens the calendar from either field
+- The calendar button says what's chosen ("Choose Stay, 12 October 2026 to 16 October 2026 chosen")
+- A picked range that can't be used keeps the calendar open with the reason, so it can be changed straight away
+
+**Do**
+- Name the ends in the reader's terms: "Check-in" and "Check-out", "From" and "To".
+- Pass `isDateDisabled` for booked days, so a range across one is caught before submit.
+- Show the number of nights or days next to the picker once both ends are in.
+
+**Don't**
+- Don't use two separate DatePickers for one range; they can't check the range as a whole.
+- Don't report half a range as a value; DateRangePicker waits for both ends.
+- Don't clear the fields on an error; let people change one end.
+
+**Chromatic stories**
+- `Default`, `Booked`, `Danish`, `Error`, `Disabled`, `Open`, `DarkMode`
+
+---
+
 ### Divider
 
 | Field | Value |
