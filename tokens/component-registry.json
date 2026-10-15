@@ -1,8 +1,8 @@
 {
   "meta": {
-    "componentCount": 83,
-    "publicComponentCount": 53,
-    "subComponentCount": 29
+    "componentCount": 89,
+    "publicComponentCount": 55,
+    "subComponentCount": 33
   },
   "components": [
     {
@@ -147,6 +147,27 @@
         "DarkMode"
       ],
       "tokenCount": 1,
+      "internal": false
+    },
+    {
+      "name": "DatePicker",
+      "slug": "date-picker",
+      "tier": "primitives",
+      "purpose": "A date typed or picked from a calendar: delivery dates, bookings, deadlines",
+      "storybookPath": "Components/DatePicker",
+      "storybookTitleId": "components-datepicker",
+      "defaultStoryId": "components-datepicker--default",
+      "tokenPrefix": "datepicker",
+      "stories": [
+        "Default",
+        "Limits",
+        "English",
+        "Error",
+        "Disabled",
+        "Open",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {
@@ -927,6 +948,80 @@
       ],
       "tokenCount": 0,
       "internal": false
+    },
+    {
+      "name": "Popover",
+      "slug": "popover",
+      "tier": "composition",
+      "purpose": "Content shown next to its trigger without blocking the page: a filter panel, a date picker, a short form",
+      "storybookPath": "Components/Popover",
+      "storybookTitleId": "components-popover",
+      "defaultStoryId": "components-popover--default",
+      "tokenPrefix": "popover",
+      "stories": [
+        "Default",
+        "FromIconButton",
+        "Open",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "PopoverAnchor",
+      "slug": "popover-anchor",
+      "tier": "composition",
+      "purpose": "Sub-component of Popover.",
+      "storybookPath": "Components/Popover",
+      "storybookTitleId": "components-popover",
+      "defaultStoryId": "components-popover--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "popover"
+    },
+    {
+      "name": "PopoverClose",
+      "slug": "popover-close",
+      "tier": "composition",
+      "purpose": "Sub-component of Popover.",
+      "storybookPath": "Components/Popover",
+      "storybookTitleId": "components-popover",
+      "defaultStoryId": "components-popover--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "popover"
+    },
+    {
+      "name": "PopoverContent",
+      "slug": "popover-content",
+      "tier": "composition",
+      "purpose": "Sub-component of Popover.",
+      "storybookPath": "Components/Popover",
+      "storybookTitleId": "components-popover",
+      "defaultStoryId": "components-popover--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "popover"
+    },
+    {
+      "name": "PopoverTrigger",
+      "slug": "popover-trigger",
+      "tier": "composition",
+      "purpose": "Sub-component of Popover.",
+      "storybookPath": "Components/Popover",
+      "storybookTitleId": "components-popover",
+      "defaultStoryId": "components-popover--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "popover"
     },
     {
       "name": "ThemeScope",

@@ -137,6 +137,11 @@
 .calendar__day--disabled {
   cursor: not-allowed;
   color: var(--color-text-secondary);
+}
+
+/* On the number itself: a line-through set on the cell doesn't reach an
+   inline-grid child (it's an atomic box), so it never showed. */
+.calendar__day--disabled .calendar__day-number {
   text-decoration: line-through;
 }
 

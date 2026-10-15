@@ -91,6 +91,15 @@ Single boolean selection with an associated label; supports indeterminate state
 - Storybook: Components/Checkbox
 - Stories: Default, Checked, Indeterminate, Disabled, DisabledChecked, Controlled, AllStates, NoLabel, DarkMode
 
+### DatePicker
+
+A date typed or picked from a calendar: delivery dates, bookings, deadlines
+
+- Import: `import { DatePicker } from '@amezquita/design-system/components/primitives/DatePicker'`
+- Token prefix: `datepicker-*` (0 tokens)
+- Storybook: Components/DatePicker
+- Stories: Default, Limits, English, Error, Disabled, Open, DarkMode
+
 ### Divider
 
 A line that separates groups of content, horizontally or vertically
@@ -389,6 +398,15 @@ The site's header navigation: top-level links, plus groups that open a dropdown 
 - Token prefix: `navigationmenu-*` (0 tokens)
 - Storybook: Composition/NavigationMenu
 - Stories: Default, Open, WithIcons, NoCurrentPage, DarkMode
+
+### Popover
+
+Content shown next to its trigger without blocking the page: a filter panel, a date picker, a short form
+
+- Import: `import { Popover } from '@amezquita/design-system/components/composition/Popover'`
+- Token prefix: `popover-*` (0 tokens)
+- Storybook: Components/Popover
+- Stories: Default, FromIconButton, Open, DarkMode
 
 ### ThemeScope
 

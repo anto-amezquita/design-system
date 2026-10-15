@@ -3024,6 +3024,7 @@
         "Drawer",
         "Menu",
         "NavigationMenu",
+        "Popover",
         "Toast",
         "Hero",
         "Checkbox",
@@ -3163,6 +3164,7 @@
         "Drawer",
         "Menu",
         "NavigationMenu",
+        "Popover",
         "Toast",
         "Accordion",
         "Breadcrumb",
@@ -3466,6 +3468,7 @@
         "Drawer",
         "Menu",
         "NavigationMenu",
+        "Popover",
         "Toast",
         "Accordion",
         "Pagination",
@@ -4182,6 +4185,7 @@
       "usedBy": [
         "Menu",
         "NavigationMenu",
+        "Popover",
         "Select"
       ]
     },
@@ -4576,6 +4580,7 @@
         "Alert",
         "Menu",
         "NavigationMenu",
+        "Popover",
         "Toast",
         "Tooltip",
         "Accordion",
@@ -4711,6 +4716,7 @@
         "Card",
         "Menu",
         "NavigationMenu",
+        "Popover",
         "Accordion",
         "SideNav",
         "Table",
@@ -5004,6 +5010,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Popover",
         "EmptyState",
         "FormLayout",
         "Calendar",
@@ -5054,6 +5061,7 @@
       },
       "axisAware": true,
       "usedBy": [
+        "Popover",
         "FormLayout",
         "Calendar",
         "Heading"
@@ -5245,6 +5253,7 @@
         "Card",
         "Menu",
         "NavigationMenu",
+        "Popover",
         "Accordion",
         "SideNav",
         "Table",
@@ -5428,6 +5437,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Popover",
         "EmptyState",
         "FormLayout",
         "Calendar",
@@ -5723,6 +5733,7 @@
       "usedBy": [
         "Card",
         "Dialog",
+        "Popover",
         "Carousel",
         "EmptyState",
         "FormLayout",
@@ -5756,6 +5767,7 @@
         "Drawer",
         "Menu",
         "NavigationMenu",
+        "Popover",
         "Breadcrumb",
         "Carousel",
         "EmptyState",
@@ -5766,6 +5778,7 @@
         "Button",
         "ButtonGroup",
         "Calendar",
+        "DatePicker",
         "Field",
         "FileUpload",
         "Input",
@@ -5838,6 +5851,7 @@
         "Dialog",
         "Menu",
         "NavigationMenu",
+        "Popover",
         "Toast",
         "FormLayout",
         "Table",
@@ -5968,6 +5982,7 @@
         "Drawer",
         "Menu",
         "NavigationMenu",
+        "Popover",
         "Toast",
         "Tooltip",
         "Breadcrumb",
@@ -6525,6 +6540,7 @@
       "usedBy": [
         "Menu",
         "NavigationMenu",
+        "Popover",
         "Button",
         "Checkbox",
         "Input",

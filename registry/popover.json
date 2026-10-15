@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover",
+  "type": "registry:component",
+  "title": "Popover",
+  "description": "Content shown next to its trigger without blocking the page: a filter panel, a date picker, a short form",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/icon-button.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}
