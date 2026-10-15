@@ -762,6 +762,30 @@
   ],
   "unreleased": [
     {
+      "sha": "2404a69",
+      "type": "feat",
+      "scope": "date-picker",
+      "message": "typed date with a calendar popover",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
+      "sha": "8210995",
+      "type": "fix",
+      "scope": "calendar",
+      "message": "strike through unavailable days on the number",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
+      "sha": "064fcd6",
+      "type": "feat",
+      "scope": "popover",
+      "message": "non-modal panel on Radix Popover",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "d1d3bc2",
       "type": "feat",
       "scope": "calendar",
