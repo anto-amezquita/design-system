@@ -9,7 +9,8 @@ import { Spinner } from '../Spinner'
 import { VisuallyHidden } from '../VisuallyHidden'
 import { Popover, PopoverAnchor, PopoverContent } from '../../composition/Popover'
 import { cn } from '../../../lib/cn'
-import { matchRange, normalize, rankMatches } from '../../../lib/match'
+import { normalize, rankMatches } from '../../../lib/match'
+import { Highlight } from '../../../lib/highlight'
 import './Combobox.css'
 
 export type ComboboxOption = {
@@ -53,18 +54,6 @@ type ComboboxProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'defaultValue' |
 
 const toOption = (o: string | ComboboxOption): ComboboxOption => (typeof o === 'string' ? { value: o } : o)
 const labelOf = (o: ComboboxOption) => o.label ?? o.value
-
-function Highlight({ text, query }: { text: string; query: string }) {
-  const range = matchRange(text, query)
-  if (!range) return <>{text}</>
-  return (
-    <>
-      {text.slice(0, range[0])}
-      <mark className="combobox__match">{text.slice(range[0], range[1])}</mark>
-      {text.slice(range[1])}
-    </>
-  )
-}
 
 /**
  * One value from a long list, found by typing: a country, a town, a

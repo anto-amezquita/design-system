@@ -208,6 +208,15 @@ Navigation to another page or resource; use Link for navigation and Button for a
 - Storybook: Primitives/Link
 - Stories: Default, Standalone, External, AsChild, AllVariants, DarkMode
 
+### MultiSelect
+
+Several values from a long list, found by typing: skills, reviewers, languages
+
+- Import: `import { MultiSelect } from '@amezquita/design-system/components/primitives/MultiSelect'`
+- Token prefix: `multiselect-*` (0 tokens)
+- Storybook: Components/MultiSelect
+- Stories: Default, Chosen, WithDescriptions, Max, Danish, Error, Disabled, Open, DarkMode
+
 ### NumberInput
 
 A number typed or stepped: a quantity, an amount, a percentage

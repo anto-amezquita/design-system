@@ -48,6 +48,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input({
   search = false,
   searchLabel = 'Search',
   'aria-label': ariaLabel,
+  'aria-describedby': ariaDescribedBy,
   className,
   ...rest
 }, ref) {
@@ -62,7 +63,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input({
   const hintText = error || hint
   const hasHint = Boolean(hintText)
   const invalid = Boolean(error) || Boolean(field?.invalid)
-  const describedBy = [field?.describedBy, hasHint ? hintId : undefined].filter(Boolean).join(' ') || undefined
+  // A passed aria-describedby is added to the field's, not replaced by it.
+  const describedBy = [...new Set([field?.describedBy, ariaDescribedBy, hasHint ? hintId : undefined]
+    .flatMap(ids => ids?.split(' ') ?? []).filter(Boolean))].join(' ') || undefined
   disabled = disabled || Boolean(field?.disabled)
 
   if (process.env.NODE_ENV !== 'production' && !label && !ariaLabel && !search && !field) {

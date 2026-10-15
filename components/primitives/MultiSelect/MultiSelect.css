@@ -1,0 +1,108 @@
+/*
+  Tokens consumed:
+
+  --space-tight-gap, --space-inline-gap, --size-icon-md,
+  --border-width-interactive, --border-radius-interactive (as Checkbox), --color-border-strong
+  (the empty checkbox, 3:1 on both surfaces), --color-accent-default,
+  --color-accent-foreground (the ticked checkbox), --size-touch-target,
+  --color-text-primary, --font-family-base, --font-size-caption,
+  --color-border-focus, --focus-ring-width, --focus-ring-offset (Remove all)
+
+  The field, list and options use InputGroup, Popover and Combobox's list
+  styles; the chosen items are Tags.
+*/
+
+.multi-select {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-tight-gap);
+}
+
+/* A checkbox mark, so a chosen option reads as "on" without relying on colour. */
+.multi-select__option {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-inline-gap);
+}
+
+.multi-select__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.multi-select__check {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+  border: var(--border-width-interactive) solid var(--color-border-strong);
+  border-radius: var(--border-radius-interactive);
+}
+
+.multi-select__option--chosen .multi-select__check {
+  border-color: var(--color-accent-default);
+  background: var(--color-accent-default);
+  color: var(--color-accent-foreground);
+}
+
+.multi-select__check svg {
+  inline-size: 80%;
+  block-size: 80%;
+}
+
+.multi-select__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-tight-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Sized to the tags beside it; the target isn't small (WCAG 2.5.8; 44px, as IconButton sm). */
+.multi-select__clear {
+  position: relative;
+  padding-block: 0;
+  padding-inline: var(--space-tight-gap);
+  border: none;
+  border-radius: var(--border-radius-interactive);
+  background: none;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.multi-select__clear::before {
+  position: absolute;
+  inset-block: calc((var(--size-touch-target) - 100%) / -2);
+  inset-inline: 0;
+  content: '';
+}
+
+.multi-select__clear:hover {
+  text-decoration-thickness: var(--border-width-interactive);
+}
+
+.multi-select__clear:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (forced-colors: active) {
+  .multi-select__check {
+    border-color: CanvasText;
+  }
+
+  .multi-select__option--chosen .multi-select__check {
+    background: Highlight;
+    color: HighlightText;
+    forced-color-adjust: none;
+  }
+}

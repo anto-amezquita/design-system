@@ -41,4 +41,12 @@ describe('Input ref forwarding and className merge', () => {
     const element = <Input aria-label="Song title" value="hi" onChange={() => {}} children="nope" />
     void element
   })
+
+  test('a consumer aria-describedby is added to the hint, not replaced, and ids are not repeated', () => {
+    const ref = createRef<HTMLInputElement>()
+    render(<><span id="extra">3 chosen</span><Input ref={ref} label="Tags" hint="Up to 5." aria-describedby="extra extra" /></>)
+    const ids = ref.current?.getAttribute('aria-describedby')?.split(' ')
+    expect(ids).toHaveLength(2)
+    expect(ids?.[0]).toBe('extra')
+  })
 })
