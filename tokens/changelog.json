@@ -762,6 +762,22 @@
   ],
   "unreleased": [
     {
+      "sha": "f4b86e3",
+      "type": "feat",
+      "scope": "table-of-contents",
+      "message": "in-page links that follow the scroll",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
+      "sha": "57f1d03",
+      "type": "feat",
+      "scope": "stepper",
+      "message": "progress through ordered steps, said in words",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "8b4d741",
       "type": "feat",
       "scope": "toolbar",
