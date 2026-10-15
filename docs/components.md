@@ -1427,6 +1427,61 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### Popover
+
+| Field | Value |
+|---|---|
+| **Purpose** | Content shown next to its trigger without blocking the page: a filter panel, a date picker, a short form |
+| **Figma name** | `Popover` |
+| **Code name** | `Popover` (+ `PopoverTrigger`, `PopoverContent`, `PopoverClose`, `PopoverAnchor`) |
+| **Storybook path** | `Components/Popover` |
+
+**Compound structure**
+```tsx
+<Popover>                                   {/* open / onOpenChange, or defaultOpen */}
+  <PopoverTrigger asChild><Button variant="secondary">Filters</Button></PopoverTrigger>
+  <PopoverContent title="Filters" showClose>
+    …
+    <PopoverClose asChild><Button>Apply</Button></PopoverClose>
+  </PopoverContent>
+</Popover>
+```
+
+**Props / variants**
+- `Popover`: `open` + `onOpenChange`, or `defaultOpen`; `modal` (default `false`)
+- `PopoverContent`: `title` (a heading that names it; otherwise pass `aria-label`), `showClose`, `showArrow`, and Radix positioning: `side`, `align`, `sideOffset` (8), `collisionPadding` (16)
+- `PopoverAnchor`: position against something other than the trigger, such as a whole field
+
+**Required states**
+- [x] closed, open (fade and scale in; none under reduced motion)
+- [x] with title and close button, with arrow
+- [x] inside a ThemeScope (follows its brand and mode into the portal, decisions/0021)
+
+**Tokens consumed**
+- `--color-surface-primary`, `--border-width-interactive`, `--color-border-default`, `--border-radius-component`, `--shadow-dropdown` (the same surface as Select's dropdown)
+- `--space-element-gap`, `--space-inline-gap`, `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-size-h5`, `--line-height-h5`, `--font-weight-heading`, `--color-text-primary`, `--duration-interaction`, `--easing-default`
+
+**Accessibility**
+- Radix Popover: a non-modal `role="dialog"`, named by `title` or `aria-label`
+- The trigger gets `aria-expanded` and `aria-controls`
+- Focus moves into the panel on open and back to the trigger on close; Escape and a click outside close it
+- No z-index: like Select, it's portalled and mounts last, so it paints on top, including inside a Dialog
+
+**Do**
+- Use a Popover for something short that belongs to its trigger and can be dismissed without losing work.
+- Give it a `title` when it holds a form or several controls.
+- Put the confirming action in a `PopoverClose`, so applying also closes it.
+
+**Don't**
+- Don't use a Popover for a plain text hint; that's Tooltip.
+- Don't use it for a list of actions; that's Menu.
+- Don't put a long or important task in it; use Dialog or a page.
+
+**Chromatic stories**
+- `Default`, `FromIconButton`, `Open`, `DarkMode`
+
+---
+
 ### Toast
 
 | Field | Value |

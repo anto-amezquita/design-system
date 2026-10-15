@@ -390,6 +390,15 @@ The site's header navigation: top-level links, plus groups that open a dropdown 
 - Storybook: Composition/NavigationMenu
 - Stories: Default, Open, WithIcons, NoCurrentPage, DarkMode
 
+### Popover
+
+Content shown next to its trigger without blocking the page: a filter panel, a date picker, a short form
+
+- Import: `import { Popover } from '@amezquita/design-system/components/composition/Popover'`
+- Token prefix: `popover-*` (0 tokens)
+- Storybook: Components/Popover
+- Stories: Default, FromIconButton, Open, DarkMode
+
 ### ThemeScope
 
 Gives one part of a page its own brand, mode, or both; overlays opened inside it (Dialog, Drawer, AlertDialog, Menu, Select, Tooltip) take the same, although they render at the end of the page

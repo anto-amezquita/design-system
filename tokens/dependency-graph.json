@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 51,
-    "tokenCount": 231
+    "filesScanned": 52,
+    "tokenCount": 234
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -74,6 +74,7 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Table/Table.css",
@@ -150,6 +151,7 @@
     "border-width-interactive": [
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
@@ -292,6 +294,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Pagination/Pagination.css",
@@ -439,6 +442,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Hero/Hero.css",
       "components/primitives/Checkbox/Checkbox.css",
@@ -494,6 +498,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
@@ -623,6 +628,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
@@ -666,6 +672,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Accordion/Accordion.css",
@@ -766,6 +773,7 @@
       "components/composition/Alert/Alert.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Accordion/Accordion.css",
@@ -829,6 +837,7 @@
       "components/composition/Card/Card.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
@@ -860,6 +869,7 @@
       "components/primitives/Heading/Heading.css"
     ],
     "font-size-h5": [
+      "components/composition/Popover/Popover.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/primitives/Calendar/Calendar.css",
@@ -895,6 +905,7 @@
       "components/primitives/SegmentedControl/SegmentedControl.css"
     ],
     "font-weight-heading": [
+      "components/composition/Popover/Popover.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Heading/Heading.css"
@@ -983,6 +994,7 @@
       "components/composition/Card/Card.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
@@ -1002,6 +1014,7 @@
       "components/primitives/Heading/Heading.css"
     ],
     "line-height-h5": [
+      "components/composition/Popover/Popover.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/primitives/Calendar/Calendar.css",
@@ -1080,6 +1093,15 @@
     "radix-dropdown-menu-trigger-width": [
       "components/composition/Menu/Menu.css"
     ],
+    "radix-popover-content-available-height": [
+      "components/composition/Popover/Popover.css"
+    ],
+    "radix-popover-content-available-width": [
+      "components/composition/Popover/Popover.css"
+    ],
+    "radix-popover-content-transform-origin": [
+      "components/composition/Popover/Popover.css"
+    ],
     "radix-select-trigger-width": [
       "components/primitives/Select/Select.css"
     ],
@@ -1107,6 +1129,7 @@
     "shadow-dropdown": [
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/primitives/Select/Select.css"
     ],
     "shadow-toast": [
@@ -1243,6 +1266,7 @@
     "space-element-gap": [
       "components/composition/Card/Card.css",
       "components/composition/Dialog/Dialog.css",
+      "components/composition/Popover/Popover.css",
       "components/patterns/Carousel/Carousel.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
@@ -1255,6 +1279,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/composition/Popover/Popover.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Carousel/Carousel.css",
       "components/patterns/EmptyState/EmptyState.css",

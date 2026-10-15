@@ -1,0 +1,82 @@
+/*
+  Tokens consumed:
+
+  The same surface as Select's dropdown, so overlays match:
+  --color-surface-primary, --border-width-interactive,
+  --color-border-default, --border-radius-component, --shadow-dropdown
+  Plus: --space-element-gap, --space-inline-gap, --font-family-base,
+  --font-size-control, --line-height-control, --font-size-h5,
+  --line-height-h5, --font-weight-heading, --color-text-primary,
+  --duration-interaction, --easing-default
+
+  No z-index, for the reason Select.css gives (decisions/0007): portalled
+  content mounts last, so it paints on top, including inside a Dialog.
+*/
+
+.popover {
+  box-sizing: border-box;
+  max-inline-size: min(calc(100vw - 2 * var(--space-element-gap)), var(--radix-popover-content-available-width));
+  max-block-size: var(--radix-popover-content-available-height);
+  overflow: auto;
+  padding: var(--space-element-gap);
+  border: var(--border-width-interactive) solid var(--color-border-default);
+  border-radius: var(--border-radius-component);
+  background: var(--color-surface-primary);
+  box-shadow: var(--shadow-dropdown);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  transform-origin: var(--radix-popover-content-transform-origin);
+  animation: popover-in var(--duration-interaction) var(--easing-default);
+}
+
+.popover:focus-visible {
+  outline: none;
+}
+
+.popover[data-state='closed'] {
+  animation: popover-out var(--duration-interaction) var(--easing-default);
+}
+
+.popover__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-inline-gap);
+  margin-block-end: var(--space-inline-gap);
+}
+
+.popover__title {
+  margin: 0;
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+  font-weight: var(--font-weight-heading);
+}
+
+/* A close button alone sits at the end. */
+.popover__close:only-child {
+  margin-inline-start: auto;
+}
+
+.popover__arrow {
+  fill: var(--color-surface-primary);
+  stroke: var(--color-border-default);
+}
+
+@keyframes popover-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes popover-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.96); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popover,
+  .popover[data-state='closed'] {
+    animation: none;
+  }
+}
