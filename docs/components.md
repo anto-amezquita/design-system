@@ -626,6 +626,60 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### InputGroup
+
+| Field | Value |
+|---|---|
+| **Purpose** | An Input joined to the text and buttons that belong to it: "https://", "kr.", an Apply button |
+| **Figma name** | `InputGroup` |
+| **Code name** | `InputGroup` (+ `InputAddon`) |
+| **Storybook path** | `Components/InputGroup` |
+
+**Compound structure**
+```tsx
+<InputGroup label="Price" hint="…">
+  <Input />                  {/* no label of its own */}
+  <InputAddon>kr.</InputAddon>
+</InputGroup>
+```
+
+**Props / variants**
+- `label` (required), `hint`, `error`, `required`, `disabled`, `id`, as on Field
+- Children: one Input without a label, plus `InputAddon`s and Buttons / IconButtons before or after it
+- Native `div` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] default, with hint
+- [x] focus (the focused piece draws on top with its ring)
+- [x] error (the whole group's edge turns red; message with icon)
+- [x] disabled (the Input fades; addon text and label stay readable)
+
+**Tokens consumed**
+- `--space-inline-gap`, `--space-control-padding-x`, `--border-width-interactive`, `--color-border-strong`, `--border-radius-interactive`
+- `--color-surface-secondary`, `--color-text-secondary`, `--color-feedback-error`, `--font-family-base`, `--font-size-control`
+- Field's label and message styles
+
+**Accessibility**
+- The label names the Input; addon text and the hint describe it in reading order ("https:// Your site.")
+- Inside a group (or a Field), an Input without a label takes its id, description, `aria-invalid`, `required` and `disabled` from `useField()`
+- Addon text is 4.5:1 on its surface in every brand and mode (tested)
+- Buttons in the group keep their own names and stay separate Tab stops
+
+**Do**
+- Use addons for a fixed part of the value the person doesn't type: a protocol, a unit, a currency.
+- Attach a button when it acts on this one value: Apply a code, Copy a link.
+- Keep addon text short; one word or symbol.
+
+**Don't**
+- Don't put the label in an addon; use `label`.
+- Don't attach more than one button; move other actions out of the group.
+- Don't use an addon for an icon that only decorates; that's Input's `prefix`.
+
+**Chromatic stories**
+- `Default`, `TextAfter`, `WithButton`, `Error`, `Disabled`, `DarkMode`
+
+---
+
 ### Kbd
 
 | Field | Value |

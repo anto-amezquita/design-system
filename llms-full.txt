@@ -127,6 +127,15 @@ Labelled single-line text entry with hint and error states
 - Storybook: Components/Input
 - Stories: Default, WithHint, WithError, Disabled, NoLabel, WithPrefix, WithSuffix, Clearable, Search, AllStates, DarkMode
 
+### InputGroup
+
+An Input joined to the text and buttons that belong to it: "https://", "kr.", an Apply button
+
+- Import: `import { InputGroup } from '@amezquita/design-system/components/primitives/InputGroup'`
+- Token prefix: `inputgroup-*` (0 tokens)
+- Storybook: Components/InputGroup
+- Stories: Default, TextAfter, WithButton, Error, Disabled, DarkMode
+
 ### Kbd
 
 A key the user presses, drawn as a keycap

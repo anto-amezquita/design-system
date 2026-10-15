@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 44,
+    "filesScanned": 45,
     "tokenCount": 227
   },
   "byToken": {
@@ -99,6 +99,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
@@ -147,6 +148,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
@@ -315,6 +317,7 @@
       "components/patterns/Carousel/Carousel.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
@@ -326,6 +329,7 @@
       "components/composition/Menu/Menu.css",
       "components/primitives/Field/Field.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Textarea/Textarea.css"
@@ -426,6 +430,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
@@ -496,6 +501,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Field/Field.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
@@ -721,6 +727,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Field/Field.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
@@ -767,6 +774,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
@@ -1116,6 +1124,7 @@
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Textarea/Textarea.css"
@@ -1160,6 +1169,7 @@
       "components/primitives/ButtonGroup/ButtonGroup.css",
       "components/primitives/Field/Field.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",

@@ -1,0 +1,91 @@
+/*
+  Tokens consumed:
+
+  --space-inline-gap, --space-control-padding-x, --border-width-interactive,
+  --color-border-strong, --border-radius-interactive,
+  --color-surface-secondary, --color-text-secondary (addon text: 4.5:1 on
+  the secondary surface), --color-feedback-error, --font-family-base, --font-size-control,
+  --opacity-disabled
+
+  The label and message reuse Field's classes (field__label,
+  field__message), so a group, a Field and an Input read the same.
+  Pieces join like ButtonGroup attached: each after the first slides back
+  by one border, and only the ends keep round corners.
+*/
+
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-inline-gap);
+  min-inline-size: 0;
+}
+
+.input-group__row {
+  display: flex;
+  align-items: stretch;
+}
+
+/* The Input stretches; addons and buttons keep their size. */
+.input-group__row > .input-field {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+}
+
+.input-group__row > .input-field .input-field__wrapper {
+  block-size: 100%;
+}
+
+.input-group__addon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-inline: var(--space-control-padding-x);
+  border: var(--border-width-interactive) solid var(--color-border-strong);
+  border-radius: var(--border-radius-interactive);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-control);
+  white-space: nowrap;
+}
+
+/* One shape: buttons take the Input's corners, not Button's own (often a pill). */
+.input-group__row > .button {
+  border-radius: var(--border-radius-interactive);
+}
+
+/* Error: the whole group's edge, not only the Input's. */
+.input-group--error .input-group__addon {
+  border-color: var(--color-feedback-error);
+}
+
+/* Join: overlap one border, square the inner corners. */
+.input-group__row > * + * {
+  margin-inline-start: calc(-1 * var(--border-width-interactive));
+}
+
+.input-group__row > .input-group__addon:not(:last-child),
+.input-group__row > .button:not(:last-child),
+.input-group__row > .input-field:not(:last-child) .input-field__wrapper {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.input-group__row > .input-group__addon:not(:first-child),
+.input-group__row > .button:not(:first-child),
+.input-group__row > .input-field:not(:first-child) .input-field__wrapper {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+
+/* The focused or hovered piece draws on top, so its whole edge and ring show. */
+.input-group__row > .input-field:focus-within,
+.input-group__row > .button:hover,
+.input-group__row > .button:focus-visible {
+  position: relative;
+  z-index: 1;
+}
+
+/* Disabled: the Input fades (Input's own rule). Addon text and the label
+   stay 4.5:1: they are words, and axe checks them like any text. */

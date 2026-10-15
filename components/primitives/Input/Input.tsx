@@ -4,6 +4,7 @@ import { forwardRef, useId } from 'react'
 import { MagnifyingGlassIcon, XIcon } from '@phosphor-icons/react'
 import { useUncontrolledValue } from '../../../lib/useUncontrolledValue'
 import { cn } from '../../../lib/cn'
+import { useField } from '../../../lib/field'
 import './Input.css'
 
 // `children` excluded (same latent gap the code review flagged on Textarea,
@@ -50,14 +51,21 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input({
   className,
   ...rest
 }, ref) {
+  // Inside a Field or InputGroup (no label of its own): take its id, description,
+  // invalid, required and disabled, the way Select does.
+  const fieldContext = useField()
+  const field = label ? null : fieldContext
   const generatedId = useId()
-  const id = idProp ?? generatedId
+  const id = idProp ?? field?.id ?? generatedId
   const hintId = `${id}-hint`
   // Truthy error overrides hint; falsy error (including '') falls through to hint — consistent with fieldClass and aria-invalid.
   const hintText = error || hint
   const hasHint = Boolean(hintText)
+  const invalid = Boolean(error) || Boolean(field?.invalid)
+  const describedBy = [field?.describedBy, hasHint ? hintId : undefined].filter(Boolean).join(' ') || undefined
+  disabled = disabled || Boolean(field?.disabled)
 
-  if (process.env.NODE_ENV !== 'production' && !label && !ariaLabel && !search) {
+  if (process.env.NODE_ENV !== 'production' && !label && !ariaLabel && !search && !field) {
     console.warn('[Input] Provide a label, aria-label, or search prop so the input has an accessible name (WCAG 4.1.2).')
   }
 
@@ -85,7 +93,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input({
 
   const fieldClass = cn(
     'input-field',
-    error && 'input-field--error',
+    invalid && 'input-field--error',
     search && 'input-field--search',
   )
 
@@ -113,8 +121,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input({
           onChange={handleChange}
           disabled={disabled}
           aria-label={!label ? (ariaLabel ?? (search ? searchLabel : undefined)) : undefined}
-          aria-describedby={hasHint ? hintId : undefined}
-          aria-invalid={error ? true : undefined}
+          aria-describedby={describedBy}
+          aria-invalid={invalid ? true : undefined}
+          required={rest.required ?? (field?.required || undefined)}
         />
         {suffix && (
           <span className="input-field__suffix" aria-hidden="true">

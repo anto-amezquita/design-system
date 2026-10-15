@@ -762,6 +762,22 @@
   ],
   "unreleased": [
     {
+      "sha": "aed2583",
+      "type": "fix",
+      "scope": "field",
+      "message": "say Required once to screen readers",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
+      "sha": "2d7d6ca",
+      "type": "feat",
+      "scope": "field",
+      "message": "label, hint and error for any control",
+      "date": "2026-10-15",
+      "breaking": false
+    },
+    {
       "sha": "933967b",
       "type": "feat",
       "scope": "carousel",
