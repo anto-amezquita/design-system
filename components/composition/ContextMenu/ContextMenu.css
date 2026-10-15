@@ -1,0 +1,25 @@
+/*
+  Tokens consumed:
+
+  --space-element-gap (between label and shortcut), --space-tight-gap,
+  --color-text-secondary (the + between keycaps)
+
+  The panel, items, labels and separators are Menu's (Menu.css); the
+  keycaps are Kbd's.
+*/
+
+/* The shortcut sits at the end of the row, apart from the label. */
+.context-menu__shortcut {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-tight-gap);
+  margin-inline-start: auto;
+  padding-inline-start: var(--space-element-gap);
+  color: var(--color-text-secondary);
+  font: inherit;
+}
+
+/* Items take the full width so shortcuts line up. */
+.context-menu .menu__item {
+  justify-content: flex-start;
+}

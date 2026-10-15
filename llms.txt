@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 61 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 62 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -72,6 +72,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Alert](https://design.amezquita.dk/components/alert.md): Contextual inline feedback message with semantic severity levels (info, success, warning, error)
 - [AlertDialog](https://design.amezquita.dk/components/alert-dialog.md): Confirmation gate for an action the user must explicitly accept or decline — real `alertdialog` role, no outside-click/close-button dismiss, unlike Dialog
 - [Card](https://design.amezquita.dk/components/card.md): Compound container for grouped content — composed from named sub-components
+- [ContextMenu](https://design.amezquita.dk/components/context-menu.md): The actions for one thing, opened where the pointer is: a file row, a card, a canvas
 - [Dialog](https://design.amezquita.dk/components/dialog.md): Overlay for tasks or information requiring focused attention
 - [Drawer](https://design.amezquita.dk/components/drawer.md): Side-anchored slide-in panel for supplemental content or secondary navigation
 - [HoverCard](https://design.amezquita.dk/components/hover-card.md): A preview of what a link leads to: a person's profile, a page's summary

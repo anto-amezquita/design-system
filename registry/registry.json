@@ -1183,6 +1183,24 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "context-menu",
+      "type": "registry:component",
+      "title": "ContextMenu",
+      "description": "The actions for one thing, opened where the pointer is: a file row, a card, a canvas",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/kbd.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "dialog",
       "type": "registry:component",
       "title": "Dialog",

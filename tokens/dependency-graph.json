@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 59,
+    "filesScanned": 60,
     "tokenCount": 236
   },
   "byToken": {
@@ -549,6 +549,7 @@
     ],
     "color-text-secondary": [
       "components/composition/Card/Card.css",
+      "components/composition/ContextMenu/ContextMenu.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/composition/Menu/Menu.css",
@@ -1081,7 +1082,6 @@
       "components/primitives/ProgressBar/ProgressBar.css"
     ],
     "opacity-disabled": [
-      "components/composition/Menu/Menu.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/Tabs/Tabs.css",
@@ -1315,6 +1315,7 @@
     ],
     "space-element-gap": [
       "components/composition/Card/Card.css",
+      "components/composition/ContextMenu/ContextMenu.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Popover/Popover.css",
       "components/patterns/Carousel/Carousel.css",
@@ -1380,6 +1381,7 @@
       "components/patterns/Accordion/Accordion.css"
     ],
     "space-tight-gap": [
+      "components/composition/ContextMenu/ContextMenu.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",

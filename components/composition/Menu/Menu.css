@@ -9,7 +9,7 @@
   --font-family-base, --font-size-control, --line-height-control
   --font-size-small, --line-height-label, --font-weight-label
   --space-tight-gap, --space-inline-gap, --space-compact-padding-y, --space-control-padding-x
-  --size-icon-sm, --opacity-disabled
+  --size-icon-sm
   --duration-interaction, --easing-default
 
   No component tokens: the panel matches Select's dropdown, and every value
@@ -53,7 +53,9 @@
 }
 
 .menu__item[data-disabled] {
-  opacity: var(--opacity-disabled);
+  /* Quieter but still readable (4.5:1): faded text fails contrast, and the
+     label still says what the action is. The icon follows the text colour. */
+  color: var(--color-text-secondary);
   cursor: not-allowed;
 }
 

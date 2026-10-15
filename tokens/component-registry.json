@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 97,
-    "publicComponentCount": 61,
+    "componentCount": 98,
+    "publicComponentCount": 62,
     "subComponentCount": 35
   },
   "components": [
@@ -980,6 +980,25 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "card"
+    },
+    {
+      "name": "ContextMenu",
+      "slug": "context-menu",
+      "tier": "composition",
+      "purpose": "The actions for one thing, opened where the pointer is: a file row, a card, a canvas",
+      "storybookPath": "Components/ContextMenu",
+      "storybookTitleId": "components-contextmenu",
+      "defaultStoryId": "components-contextmenu--file-rows",
+      "tokenPrefix": "contextmenu",
+      "stories": [
+        "FileRows",
+        "Canvas",
+        "Danish",
+        "Open",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
     },
     {
       "name": "Dialog",

@@ -1872,6 +1872,49 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### ContextMenu
+
+| Field | Value |
+|---|---|
+| **Purpose** | The actions for one thing, opened where the pointer is: a file row, a card, a canvas |
+| **Figma name** | `ContextMenu` |
+| **Code name** | `ContextMenu` (+ `ContextMenuItem`, `ContextMenuGroup` types) |
+| **Storybook path** | `Components/ContextMenu` |
+
+**Props / variants**
+- `children`: the one element that has the menu; made focusable (`tabIndex={0}`) unless it's a native control or sets its own
+- `groups`: the same shape as Menu's, plus `shortcut` on an item: one key per entry, `['Ctrl', 'C']`
+- `aria-label` (names the menu, e.g. "Actions for report.pdf"), `onOpenChange`, `disabled` (the browser's own menu comes back)
+
+**Required states**
+- [x] closed, open at the pointer, open from the keyboard
+- [x] highlighted item, disabled item (quieter text, still 4.5:1), destructive item
+- [x] groups with labels and separators, items with icons and shortcuts
+
+**Tokens consumed**
+- `--space-element-gap`, `--space-tight-gap`, `--color-text-secondary` (the shortcut column); the panel and items are Menu's, the keycaps Kbd's
+
+**Accessibility**
+- Built on Radix ContextMenu: `role="menu"` / `menuitem`, opened by right-click, a long press on touch, or Shift+F10 or the Menu key on the focused area
+- From the keyboard, focus lands on the first item; after a right-click, on the menu, and the first arrow press moves to the first item
+- Arrows move and skip disabled items, typing jumps to a label, Enter chooses, Escape closes; focus returns to the area
+- Shortcuts are set as `aria-keyshortcuts` (`Control+C`); the keycaps are hidden from screen readers so they aren't read twice
+- Non-modal, as Menu, so the rest of the page isn't hidden with `aria-hidden` while focusable
+
+**Do**
+- Put the same actions on a visible control too, like a "More" button with Menu and the same `groups`; right-click and long press aren't discoverable.
+- Name the menu after its target: "Actions for report.pdf".
+- Show the shortcut when the action has one, so the menu teaches it.
+
+**Don't**
+- Don't make a context menu the only way to reach an action.
+- Don't replace the browser's menu on text people may want to copy, or on links.
+
+**Chromatic stories**
+- `FileRows`, `Canvas`, `Danish`, `Open`, `DarkMode`
+
+---
+
 ### NavigationMenu
 
 | Field | Value |
