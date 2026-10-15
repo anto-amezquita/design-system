@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 59 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 60 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -60,7 +60,8 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Slider](https://design.amezquita.dk/components/slider.md): One value from a range, by dragging or with the keyboard: volume, a price limit, opacity
 - [Spinner](https://design.amezquita.dk/components/spinner.md): Indeterminate loading indicator for in-progress operations
 - [Switch](https://design.amezquita.dk/components/switch.md): Binary toggle for on/off settings; renders as a styled checkbox under the hood
-- [Tag](https://design.amezquita.dk/components/tag.md): Inline label for categorising or annotating content — non-interactive
+- [Tag](https://design.amezquita.dk/components/tag.md): A short label on content: a category, a status word, a chosen value; optionally removable or clickable
+- [TagInput](https://design.amezquita.dk/components/tag-input.md): Free-text values as tags: keywords, email addresses, ingredients
 - [Textarea](https://design.amezquita.dk/components/textarea.md): Multi-line text entry with label, hint, and error states — mirrors Input API
 - [TimePicker](https://design.amezquita.dk/components/time-picker.md): One time of day: an appointment, a delivery slot, opening hours
 - [ToggleButton](https://design.amezquita.dk/components/toggle-button.md): A button that stays on or off, like bold in an editor or a grid overlay

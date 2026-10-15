@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 93,
-    "publicComponentCount": 59,
+    "componentCount": 94,
+    "publicComponentCount": 60,
     "subComponentCount": 33
   },
   "components": [
@@ -701,7 +701,7 @@
       "name": "Tag",
       "slug": "tag",
       "tier": "primitives",
-      "purpose": "Inline label for categorising or annotating content — non-interactive",
+      "purpose": "A short label on content: a category, a status word, a chosen value; optionally removable or clickable",
       "storybookPath": "Components/Tag",
       "storybookTitleId": "components-tag",
       "defaultStoryId": "components-tag--default",
@@ -717,6 +717,28 @@
         "DarkMode"
       ],
       "tokenCount": 4,
+      "internal": false
+    },
+    {
+      "name": "TagInput",
+      "slug": "tag-input",
+      "tier": "primitives",
+      "purpose": "Free-text values as tags: keywords, email addresses, ingredients",
+      "storybookPath": "Components/TagInput",
+      "storybookTitleId": "components-taginput",
+      "defaultStoryId": "components-taginput--default",
+      "tokenPrefix": "taginput",
+      "stories": [
+        "Default",
+        "WithTags",
+        "Suggestions",
+        "Emails",
+        "Danish",
+        "Error",
+        "Disabled",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {
