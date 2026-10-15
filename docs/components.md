@@ -475,6 +475,57 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Calendar
+
+| Field | Value |
+|---|---|
+| **Purpose** | A month of days to choose one date or a range; the base for DatePicker and DateRangePicker |
+| **Figma name** | `Calendar` |
+| **Code name** | `Calendar` (+ `DateRange` type; date helpers in `lib/date`) |
+| **Storybook path** | `Components/Calendar` |
+
+**Props / variants**
+- `mode`: `single` (default) or `range`
+- `value` + `onValueChange` (controlled) or `defaultValue`; a range is `{ start, end }`, and `end` is `null` after the first press
+- `min`, `max`, `isDateDisabled(date)`: limits; unavailable days stay reachable by keyboard and are announced as unavailable
+- `locale`: month and day names, and the first day of the week (Monday in `da-DK`, Sunday in `en-US`); `weekStartsOn` overrides
+- `showWeekNumbers`: ISO week numbers, as Danish calendars show them
+- `label`: added to the month in the grid's name ("Delivery date, October 2026")
+- `defaultMonth`, `autoFocus`; native `div` attributes and `ref` pass through
+
+**Required states**
+- [x] chosen day (filled), today (ring, bold), unavailable (struck through, still 4.5:1)
+- [x] range: filled ends, band between; dashed preview while choosing the second end
+- [x] hover, focus-visible (ring on the day)
+- [x] first and last month (Previous / Next disable at `min` / `max`)
+
+**Tokens consumed**
+- `--size-touch-target` (each day is 44px), `--space-tight-gap`, `--space-inline-gap`, `--button-border-radius` (day shape follows the brand's buttons)
+- `--font-family-base`, `--font-size-control`, `--font-size-caption`, `--font-size-h5`, `--line-height-h5`, `--font-weight-heading`, `--font-weight-control`
+- `--color-text-primary`, `--color-text-secondary`, `--color-surface-secondary`, `--color-accent-default`, `--color-accent-foreground`, `--color-accent-text`
+- `--border-width-medium`, `--color-border-focus`, `--focus-ring-width`, `--duration-interaction`, `--easing-default`
+
+**Accessibility**
+- WAI-ARIA date grid: a `grid` named by the month (and `label`), `gridcell`s named with the full localised date, `aria-selected`, `aria-current="date"` on today, `aria-disabled` on unavailable days, `aria-multiselectable` for ranges
+- One Tab stop. Arrows move by day and week, Home / End to the ends of the week, Page Up / Down by month, Shift + Page Up / Down by year, Enter or Space chooses; left and right swap in right-to-left layouts
+- The month heading is a polite live region, so moving into a new month is announced
+- Chosen days are 4.5:1, and plain days and weekday names 4.5:1 on the page, in every brand and mode (tested). Chosen, today and range are shown by shape (fill, ring, band), not colour alone
+
+**Do**
+- Set `locale` to the reader's, so the week starts on the right day.
+- Use `min`, `max` and `isDateDisabled` for days that can't be booked, so they're explained by the calendar, not by an error afterwards.
+- Show the chosen date or range in words next to the calendar.
+
+**Don't**
+- Don't use a Calendar for a date far from today, like a birthday; typing it is quicker (DatePicker allows both).
+- Don't hide unavailable days; strike them through so the pattern is visible.
+- Don't make a range from two separate Calendars; use `mode="range"`.
+
+**Chromatic stories**
+- `Default`, `Danish`, `Limits`, `Range`, `DarkMode`
+
+---
+
 ### Checkbox
 
 | Field | Value |

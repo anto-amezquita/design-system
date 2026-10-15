@@ -1,0 +1,160 @@
+/*
+  Tokens consumed:
+
+  --size-touch-target (each day is a 44px target), --space-tight-gap,
+  --space-inline-gap, --font-family-base, --font-size-control,
+  --font-size-caption, --font-size-h5, --line-height-h5,
+  --font-weight-heading, --font-weight-control, --color-text-primary,
+  --color-text-secondary, --color-surface-secondary,
+  --color-accent-default, --color-accent-foreground (chosen days: a 4.5:1
+  pair), --color-accent-text (today's ring), --button-border-radius (day shape),
+  --border-width-medium, --color-border-focus, --focus-ring-width,
+  --duration-interaction, --easing-default
+
+  Chosen days are filled; a range's middle days sit on the neutral
+  surface; today has a ring. None of them rely on colour alone.
+*/
+
+.calendar {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-inline-gap);
+  font-family: var(--font-family-base);
+  color: var(--color-text-primary);
+}
+
+.calendar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-inline-gap);
+}
+
+.calendar__title {
+  margin: 0;
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+  font-weight: var(--font-weight-heading);
+  /* "oktober 2026" in Danish: month names start lowercase there, the heading still reads as a title. */
+  text-transform: capitalize;
+}
+
+.calendar__grid {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.calendar__weekday,
+.calendar__weeknum {
+  block-size: var(--size-touch-target);
+  inline-size: var(--size-touch-target);
+  padding: 0;
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-control);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.calendar__weekday abbr,
+.calendar__weeknum abbr {
+  text-decoration: none;
+}
+
+.calendar__weeknum {
+  font-variant-numeric: tabular-nums;
+}
+
+.calendar__day,
+.calendar__blank {
+  block-size: var(--size-touch-target);
+  inline-size: var(--size-touch-target);
+  padding: 0;
+  text-align: center;
+}
+
+.calendar__day {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  font-size: var(--font-size-control);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The number sits in a circle; range backgrounds run behind it. */
+.calendar__day-number {
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  place-items: center;
+  inline-size: calc(var(--size-touch-target) - 2 * var(--space-tight-gap));
+  block-size: calc(var(--size-touch-target) - 2 * var(--space-tight-gap));
+  /* The brand's button shape: a circle in base, a square in demo-warm. */
+  border-radius: var(--button-border-radius);
+  transition: background var(--duration-interaction) var(--easing-default);
+}
+
+.calendar__day:hover:not(.calendar__day--disabled):not(.calendar__day--selected) .calendar__day-number {
+  background: var(--color-surface-secondary);
+}
+
+.calendar__day--today .calendar__day-number {
+  box-shadow: inset 0 0 0 var(--border-width-medium) var(--color-accent-text);
+  font-weight: var(--font-weight-heading);
+}
+
+.calendar__day--selected .calendar__day-number {
+  background: var(--color-accent-default);
+  color: var(--color-accent-foreground);
+}
+
+/* A range: the days between share a band on the neutral surface. */
+.calendar__day--in-range::before {
+  content: '';
+  position: absolute;
+  inset: var(--space-tight-gap) 0;
+  background: var(--color-surface-secondary);
+}
+
+.calendar__day--range-start::before {
+  inset-inline-start: 50%;
+}
+
+.calendar__day--range-end::before {
+  inset-inline-end: 50%;
+}
+
+.calendar__day--in-range:not(.calendar__day--selected) .calendar__day-number {
+  background: transparent;
+}
+
+/* Previewing a range before the second end is chosen. */
+.calendar__day--preview::before {
+  background: transparent;
+  border-block: var(--border-width-medium) dashed var(--color-accent-text);
+}
+
+/* Unavailable: struck through, still readable and still reachable by keyboard. */
+.calendar__day--disabled {
+  cursor: not-allowed;
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+}
+
+.calendar__day:focus-visible .calendar__day-number {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--space-tight-gap);
+}
+
+@media (forced-colors: active) {
+  .calendar__day--selected .calendar__day-number {
+    background: Highlight;
+    color: HighlightText;
+    forced-color-adjust: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calendar__day-number {
+    transition: none;
+  }
+}
