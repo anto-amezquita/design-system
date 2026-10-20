@@ -13,7 +13,7 @@
 | `variant?` | `'neutral' \| 'success' \| 'warning' \| 'error' \| 'info'` |  |
 | `shape?` | `'dot' \| 'status' \| 'count'` |  |
 | `aria-label?` | `string` |  |
-| `children?` | `never \| React.ReactNode` |  |
+| `children?` | `React.ReactNode` |  |
 
 Also accepts all props of: `Omit<React.HTMLAttributes<HTMLSpanElement>, 'children' | 'aria-label' | 'role'>`
 

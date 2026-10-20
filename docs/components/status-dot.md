@@ -12,8 +12,10 @@
 |---|---|---|
 | `status?` | `'neutral' \| 'info' \| 'success' \| 'warning' \| 'error'` | What the dot means, by role, so each brand sets the colour: `neutral` (default: offline, draft, idle), `info`, `success` (online, live, passing), `warning` (away, degraded), `error` (failed, down). |
 | `pulse?` | `boolean` | A slow pulse, for something live or in progress. Off for anyone who prefers reduced motion. |
+| `children?` | `React.ReactNode` | The words shown next to the dot: "Online". Give this or `label`. |
+| `label?` | `string` | Words read to screen readers only, when there's no room to show them. Give this or `children`; never for an error. |
 
-Also accepts all props of: `Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'>`, `| { children: React.ReactNode; label?: never } | { label: string; children?: never }`
+Also accepts all props of: `Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'>`
 
 ## Tokens
 

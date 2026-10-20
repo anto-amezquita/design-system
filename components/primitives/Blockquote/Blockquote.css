@@ -1,0 +1,67 @@
+/*
+  Tokens consumed:
+
+  --border-width-thick, --color-border-strong (the rule beside the quote),
+  --space-element-gap, --space-tight-gap, --font-family-base,
+  --font-size-body, --line-height-body, --font-weight-body,
+  --font-family-heading, --font-size-h4, --line-height-h4,
+  --font-weight-heading, --letter-spacing-heading,
+  --font-size-small, --line-height-small, --color-text-primary,
+  --color-text-secondary
+
+  No component tokens: the rule, the type and the colours are existing
+  roles (decisions/0004, 0005).
+*/
+
+.blockquote {
+  margin: 0;
+  padding-inline-start: var(--space-element-gap);
+  border-inline-start: var(--border-width-thick) solid var(--color-border-strong);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: var(--font-weight-body);
+  color: var(--color-text-primary);
+}
+
+.blockquote > p {
+  margin: 0;
+}
+
+.blockquote > p + p {
+  margin-block-start: var(--space-element-gap);
+}
+
+/* Pull quote: the heading face at H4, no rule; the size sets it apart. */
+.blockquote--pull {
+  padding-inline-start: 0;
+  border-inline-start: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: var(--font-weight-heading);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.blockquote-figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-tight-gap);
+  margin: 0;
+}
+
+.blockquote-figure__caption {
+  padding-inline-start: calc(var(--space-element-gap) + var(--border-width-thick));
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-secondary);
+}
+
+.blockquote-figure--pull .blockquote-figure__caption {
+  padding-inline-start: 0;
+}
+
+.blockquote-figure__source {
+  font-style: italic;
+}

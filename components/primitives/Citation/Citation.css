@@ -1,0 +1,59 @@
+/*
+  Tokens consumed:
+
+  --color-surface-secondary, --color-surface-tertiary (hover),
+  --color-text-secondary, --color-text-primary (hover),
+  --border-radius-pill, --space-tight-gap, --font-family-base,
+  --font-size-caption, --line-height-caption, --font-weight-label,
+  --color-border-focus, --focus-ring-width, --focus-ring-offset,
+  --duration-interaction, --easing-default
+
+  No component tokens: a chip in existing surface, text and type roles
+  (decisions/0004, 0005).
+*/
+
+.citation {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: calc(var(--line-height-caption) + var(--space-tight-gap));
+  padding-inline: var(--space-tight-gap);
+  margin-inline: var(--space-tight-gap) 0;
+  border-radius: var(--border-radius-pill);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  font-weight: var(--font-weight-label);
+  font-style: normal;
+  text-decoration: none;
+  vertical-align: text-top;
+  transition:
+    background-color var(--duration-interaction) var(--easing-default),
+    color var(--duration-interaction) var(--easing-default);
+}
+
+.citation:hover {
+  background: var(--color-surface-tertiary);
+  color: var(--color-text-primary);
+}
+
+.citation:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .citation {
+    transition: none;
+  }
+}
+
+/* Forced colours: the chip's background goes, so draw it as a link-coloured outline. */
+@media (forced-colors: active) {
+  .citation {
+    outline: var(--focus-ring-width) solid LinkText;
+    color: LinkText;
+  }
+}

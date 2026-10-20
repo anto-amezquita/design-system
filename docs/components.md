@@ -575,6 +575,51 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Blockquote
+
+| Field | Value |
+|---|---|
+| **Purpose** | A quotation set apart from the text around it, with who said it and where |
+| **Figma name** | `Blockquote` |
+| **Code name** | `Blockquote` |
+| **Storybook path** | `Components/Blockquote` |
+
+**Props / variants**
+- `children`: the quoted words, as text or paragraphs
+- `attribution`: who said it; `source`: the work it's from (rendered in a `cite`); `cite`: the source's URL, as the `cite` attribute
+- `size`: `default` (body text with a rule beside it) or `pull` (H4 in the heading face, no rule)
+- Native `blockquote` attributes, `className` and `ref` pass through to the `blockquote`
+
+**Required states**
+- [x] default (static)
+- [x] with attribution (a `figure` with a `figcaption`)
+
+**Tokens consumed**
+- `--border-width-thick`, `--color-border-strong`, `--space-element-gap`, `--space-tight-gap`
+- `--font-family-base`, `--font-size-body`, `--line-height-body`, `--font-weight-body`, `--font-family-heading`, `--font-size-h4`, `--line-height-h4`, `--font-weight-heading`, `--letter-spacing-heading`, `--font-size-small`, `--line-height-small`
+- `--color-text-primary`, `--color-text-secondary` (no component tokens; they would only pass through)
+
+**Accessibility**
+- The attribution sits outside the `blockquote`, in a `figcaption`, as HTML intends, so screen readers don't read the name as part of the quote
+- The work's title is a `cite`; the person's name isn't (HTML reserves `cite` for titles of works)
+- Quote and caption are tested at 4.5:1 on the primary and secondary surfaces in all five brands, light and dark
+- The rule is decoration; the `blockquote` element is what tells assistive tech it's a quote
+
+**Do**
+- Quote real words from a real person or work, and say whose.
+- Use `pull` once or twice on a long page, to surface a line already in the text.
+- Use `cite` to keep the link to the source in the markup.
+
+**Don't**
+- Don't use Blockquote to indent or highlight text that isn't a quote; that's a Card or an Alert.
+- Don't put quotation marks inside it; the layout already says it's a quote.
+- Don't use a pull quote for a line that isn't also in the body; screen-reader users get it either way, so it shouldn't carry anything new.
+
+**Chromatic stories**
+- `Default`, `Bare`, `Pull`, `Paragraphs`, `DarkMode`
+
+---
+
 ### Calendar
 
 | Field | Value |
@@ -623,6 +668,55 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 **Chromatic stories**
 - `Default`, `Danish`, `Limits`, `Range`, `DarkMode`
+
+---
+
+### Citation
+
+| Field | Value |
+|---|---|
+| **Purpose** | A small link from a claim to its source: a numbered marker or a source chip, as in AI answers and articles |
+| **Figma name** | `Citation` |
+| **Code name** | `Citation` |
+| **Storybook path** | `Components/Citation` |
+
+**Props / variants**
+- `href`: the source's URL, or `#source-1` for a list of sources on the page (required)
+- `title`: the source's title (required)
+- `index`: the number shown, **or** `source`: a short name shown instead ("Wikipedia"). The types require one of the two
+- `external`: opens in a new tab with `noopener noreferrer`, and says so
+- Native `a` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] default
+- [x] hover
+- [x] focus-visible
+
+**Tokens consumed**
+- `--color-surface-secondary`, `--color-surface-tertiary`, `--color-text-secondary`, `--color-text-primary`, `--border-radius-pill`, `--space-tight-gap`
+- `--font-family-base`, `--font-size-caption`, `--line-height-caption`, `--font-weight-label`
+- `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`, `--duration-interaction`, `--easing-default` (no component tokens; they would only pass through)
+
+**Accessibility**
+- The link's name says what it is and where it goes: "Source 1: Ten principles for good design". A bare "1" would be meaningless out of context (WCAG 2.4.4)
+- The visible text ("1", "Wikipedia") is inside that name, so speech input ("click source 1") works (WCAG 2.5.3)
+- It's one `aria-label` rather than hidden text around the marker: the chip is a flex box, and the accessible name would otherwise get stray spaces ("Source 1 : …")
+- `external` adds "(opens in a new tab)" to the name
+- The marker is tested at 4.5:1 on its chip, at rest and on hover, in all five brands, light and dark; keyboard focus shows the focus ring. In forced-colors mode it's outlined in the link colour
+- It's an inline link in running text, so the 24px target size doesn't apply (WCAG 2.5.8 exception)
+
+**Do**
+- Put the marker right after the claim it supports, before the punctuation.
+- Link numbered markers to a list of sources on the page, with matching `id`s.
+- Use source chips when there are only one or two sources and no list.
+
+**Don't**
+- Don't number citations without a list to match; a reader can't tell what "2" is.
+- Don't cite something the text doesn't actually say; a citation is a promise.
+- Don't open on-page sources (`#source-1`) in a new tab.
+
+**Chromatic stories**
+- `Default`, `InAnAnswer`, `SourceChips`, `DarkMode`
 
 ---
 

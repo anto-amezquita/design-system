@@ -178,7 +178,8 @@ function splitEntries(text) {
     // A newline inside a /** ... */ block comment doesn't split — only the
     // comment's own terminating newline (after `*/`, never marked inComment)
     // ends its chunk, so a multi-line JSDoc block stays one entry.
-    const isSplitChar = (text[i] === '\n' && !inComment[i]) || (text[i] === ',' && !inComment[i])
+    // `;` too, for one-line object types: `{ index: number; source?: never }`.
+    const isSplitChar = !inComment[i] && (text[i] === '\n' || text[i] === ',' || text[i] === ';')
     if (depths[i] === 0 && isSplitChar) {
       const chunk = text.slice(start, i)
       if (chunk.trim()) entries.push(chunk)
@@ -391,7 +392,11 @@ function decomposeProps(rhs, objectAliases) {
       let allResolved = true
       for (const op of orParts) {
         const resolved = objectAliases.get(op)
-        if (resolved) blocks.push(resolved)
+        // An alias can itself be a union of object literals (StatusDot's
+        // `{ children: …; label?: never } | { label: …; children?: never }`):
+        // each member is its own block, or the brace-stripping in
+        // parseObjectBody would cut across the `|` and garble both.
+        if (resolved) blocks.push(...splitTopLevel(resolved.trim(), ['|']).map(b => b.trim()))
         else allResolved = false
       }
       if (!allResolved) extras.push(collapseExtra(p))
@@ -459,7 +464,13 @@ function mergeEntries(blockEntryLists) {
       }
     }
   }
-  return [...map.values()].map(e => ({ ...e, type: e.types.join(' | ') }))
+  // `prop?: never` only rules a prop out in one branch of a union. It isn't a
+  // type anyone passes, so it's dropped from the type; what it does say is
+  // that the prop is optional overall, which `optional` above already keeps.
+  return [...map.values()].map(e => {
+    const types = e.types.filter(t => t !== 'never')
+    return { ...e, type: (types.length ? types : e.types).join(' | ') }
+  })
 }
 
 function buildPropsSection(source, filePath, propsTypeName) {
