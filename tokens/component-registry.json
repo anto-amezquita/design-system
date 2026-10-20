@@ -1,8 +1,8 @@
 {
   "meta": {
-    "componentCount": 126,
-    "publicComponentCount": 86,
-    "subComponentCount": 39
+    "componentCount": 128,
+    "publicComponentCount": 87,
+    "subComponentCount": 40
   },
   "components": [
     {
@@ -851,6 +851,38 @@
       ],
       "tokenCount": 2,
       "internal": false
+    },
+    {
+      "name": "SelectableCard",
+      "slug": "selectable-card",
+      "tier": "primitives",
+      "purpose": "Choices shown as cards: pick one (radios) or several (checkboxes), with a title, a detail and a description on each",
+      "storybookPath": "Components/SelectableCard",
+      "storybookTitleId": "components-selectablecard",
+      "defaultStoryId": "components-selectablecard--default",
+      "tokenPrefix": "selectablecard",
+      "stories": [
+        "Default",
+        "Columns",
+        "Multiple",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "SelectableCardGroup",
+      "slug": "selectable-card-group",
+      "tier": "primitives",
+      "purpose": "Sub-component of SelectableCard.",
+      "storybookPath": "Components/SelectableCard",
+      "storybookTitleId": "components-selectablecard",
+      "defaultStoryId": "components-selectablecard--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "selectable-card"
     },
     {
       "name": "Skeleton",

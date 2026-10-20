@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 86 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 87 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -68,6 +68,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Section](https://design.amezquita.dk/components/section.md): A band of a page: edge-to-edge background, space above and below, content centred at a set width with the page gutter
 - [SegmentedControl](https://design.amezquita.dk/components/segmented-control.md): One choice from a few, shown side by side: a view switch, a time range
 - [Select](https://design.amezquita.dk/components/select.md): Dropdown for choosing a single value from a list; supports grouped options
+- [SelectableCard](https://design.amezquita.dk/components/selectable-card.md): Choices shown as cards: pick one (radios) or several (checkboxes), with a title, a detail and a description on each
 - [Skeleton](https://design.amezquita.dk/components/skeleton.md): Placeholder loading state that mirrors the geometry of the content it replaces
 - [SkipLink](https://design.amezquita.dk/components/skip-link.md): First Tab stop on the page that lets keyboard users jump past the header to the main content
 - [Slider](https://design.amezquita.dk/components/slider.md): One value from a range, by dragging or with the keyboard: volume, a price limit, opacity

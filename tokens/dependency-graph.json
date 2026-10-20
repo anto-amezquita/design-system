@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 84,
+    "filesScanned": 85,
     "tokenCount": 261
   },
   "byToken": {
@@ -86,11 +86,13 @@
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Item/Item.css",
       "components/primitives/ScrollArea/ScrollArea.css",
-      "components/primitives/Select/Select.css"
+      "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css"
     ],
     "border-radius-full": [
       "components/patterns/Carousel/Carousel.css",
       "components/primitives/ProgressBar/ProgressBar.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Skeleton/Skeleton.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/StatusDot/StatusDot.css"
@@ -122,6 +124,7 @@
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Textarea/Textarea.css",
       "components/primitives/TimePicker/TimePicker.css"
@@ -176,6 +179,7 @@
       "components/primitives/List/List.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Tag/Tag.css"
     ],
     "border-width-interactive": [
@@ -337,6 +341,7 @@
       "components/primitives/Link/Link.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/TimePicker/TimePicker.css"
     ],
@@ -379,6 +384,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css"
@@ -419,6 +425,7 @@
       "components/primitives/ScrollArea/ScrollArea.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
@@ -441,6 +448,7 @@
       "components/primitives/ScrollArea/ScrollArea.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
@@ -556,6 +564,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
@@ -592,6 +601,7 @@
       "components/primitives/Section/Section.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
@@ -657,6 +667,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Switch/Switch.css",
@@ -713,6 +724,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
@@ -810,6 +822,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
@@ -863,6 +876,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
@@ -912,6 +926,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
@@ -954,6 +969,7 @@
       "components/primitives/ScrollArea/ScrollArea.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
@@ -1008,6 +1024,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/StatusDot/StatusDot.css",
@@ -1080,6 +1097,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css",
@@ -1132,6 +1150,7 @@
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Text/Text.css",
@@ -1181,6 +1200,7 @@
       "components/primitives/Item/Item.css",
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Text/Text.css",
@@ -1313,6 +1333,7 @@
       "components/primitives/Item/Item.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
@@ -1361,6 +1382,7 @@
       "components/primitives/Image/Image.css",
       "components/primitives/Item/Item.css",
       "components/primitives/ProgressBar/ProgressBar.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Text/Text.css"
     ],
@@ -1486,6 +1508,7 @@
       "components/primitives/IconButton/IconButton.css",
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Spinner/Spinner.css",
       "components/primitives/TimePicker/TimePicker.css"
@@ -1508,6 +1531,7 @@
     "size-icon-xs": [
       "components/primitives/Icon/Icon.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Tag/Tag.css"
     ],
     "size-touch-target": [
@@ -1604,6 +1628,7 @@
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Item/Item.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Textarea/Textarea.css",
       "components/primitives/TimePicker/TimePicker.css"
@@ -1614,6 +1639,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/Item/Item.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -1692,6 +1718,7 @@
       "components/primitives/Search/Search.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Skeleton/Skeleton.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Slider/Slider.css",
@@ -1707,6 +1734,7 @@
       "components/patterns/EmptyState/EmptyState.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Switch/Switch.css"
     ],
     "space-prominent-padding-x": [
@@ -1761,6 +1789,7 @@
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/SelectableCard/SelectableCard.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Stack/Stack.css",
       "components/primitives/Tag/Tag.css",

@@ -3040,6 +3040,7 @@
         "Radio",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "Slider",
         "Switch",
         "Textarea"
@@ -3097,6 +3098,7 @@
         "Section",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "Slider",
         "Switch",
         "Tag",
@@ -3225,6 +3227,7 @@
         "Radio",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "Slider",
         "StatusDot",
         "Switch",
@@ -3302,6 +3305,7 @@
         "Radio",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "Slider",
         "Switch",
         "Tag",
@@ -3493,6 +3497,7 @@
         "Link",
         "ProgressBar",
         "Radio",
+        "SelectableCard",
         "Slider",
         "TimePicker"
       ]
@@ -3577,6 +3582,7 @@
         "Radio",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "Switch",
         "Tag",
         "Textarea"
@@ -3618,6 +3624,7 @@
         "ScrollArea",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "StatusDot",
         "Switch",
         "Textarea"
@@ -3679,6 +3686,7 @@
         "ScrollArea",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "SkipLink",
         "Slider",
         "Switch",
@@ -4189,6 +4197,7 @@
         "ScrollArea",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "SkipLink",
         "Slider",
         "Switch",
@@ -4248,6 +4257,7 @@
         "Radio",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "SkipLink",
         "Slider",
         "Switch",
@@ -4568,6 +4578,7 @@
       "usedBy": [
         "Icon",
         "Link",
+        "SelectableCard",
         "Tag"
       ]
     },
@@ -4637,6 +4648,7 @@
         "IconButton",
         "MultiSelect",
         "SegmentedControl",
+        "SelectableCard",
         "Slider",
         "Spinner",
         "TimePicker"
@@ -4784,6 +4796,7 @@
         "Radio",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "SkipLink",
         "Slider",
         "StatusDot",
@@ -4924,6 +4937,7 @@
         "Radio",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "SkipLink",
         "Switch",
         "Textarea",
@@ -4974,6 +4988,7 @@
         "Label",
         "ProgressBar",
         "Select",
+        "SelectableCard",
         "Slider",
         "StatusDot",
         "Text",
@@ -5325,6 +5340,7 @@
         "Item",
         "Label",
         "Select",
+        "SelectableCard",
         "SkipLink",
         "Slider",
         "Text",
@@ -5500,6 +5516,7 @@
         "Item",
         "Radio",
         "Select",
+        "SelectableCard",
         "SkipLink",
         "Switch",
         "Textarea"
@@ -5540,6 +5557,7 @@
         "Image",
         "Item",
         "ProgressBar",
+        "SelectableCard",
         "StatusDot",
         "Text"
       ]
@@ -6081,6 +6099,7 @@
         "Search",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "Skeleton",
         "SkipLink",
         "Slider",
@@ -6117,6 +6136,7 @@
         "EmptyState",
         "Checkbox",
         "Radio",
+        "SelectableCard",
         "Switch"
       ]
     },
@@ -6158,7 +6178,8 @@
         "FileUpload",
         "Item",
         "ScrollArea",
-        "Select"
+        "Select",
+        "SelectableCard"
       ]
     },
     {
@@ -6203,6 +6224,7 @@
         "MultiSelect",
         "OtpInput",
         "Select",
+        "SelectableCard",
         "SkipLink",
         "Textarea",
         "TimePicker"
@@ -6321,6 +6343,7 @@
         "Radio",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "Slider",
         "Switch",
         "Tag",
@@ -6525,6 +6548,7 @@
         "ProgressBar",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "Slider",
         "Stack",
         "Tag",
@@ -6565,6 +6589,7 @@
         "InputGroup",
         "Item",
         "Select",
+        "SelectableCard",
         "SkipLink",
         "Textarea",
         "TimePicker"
@@ -6596,6 +6621,7 @@
         "Input",
         "Item",
         "Select",
+        "SelectableCard",
         "SkipLink",
         "Textarea"
       ]
@@ -6942,6 +6968,7 @@
         "List",
         "SegmentedControl",
         "Select",
+        "SelectableCard",
         "Tag"
       ]
     },
