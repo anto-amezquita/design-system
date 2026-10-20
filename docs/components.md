@@ -2901,6 +2901,52 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### MessageList
+
+| Field | Value |
+|---|---|
+| **Purpose** | A conversation's messages in a scrolling list that follows the newest one, waits while you read back, and reads each finished reply aloud once |
+| **Figma name** | `MessageList` |
+| **Code name** | `MessageList` |
+| **Storybook path** | `Components/MessageList` |
+
+**Props / variants**
+- `label` (required): names the conversation ("Conversation with Assistant")
+- `children` (required): the messages, oldest first. ChatMessages, or any `article` elements
+- `announce` (default `true`): read each new message aloud once it's complete; `jumpLabel` (default "Jump to latest")
+- Give it a height (a flex child or grid row); the messages scroll inside. Native `div` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] at the newest message, following a streaming reply as it grows
+- [x] scrolled up: new replies counted behind a "2 new messages" button
+- [x] your own message sent while scrolled up (brings you back down)
+- [x] keyboard: an article focused, moving with Page Up / Page Down
+
+**Tokens consumed**
+- `--space-container-padding`, `--space-element-gap`, `--space-tight-gap` (between a run of messages from one sender), `--shadow-dropdown`, `--color-border-focus`, `--focus-ring-width`, `--border-radius-component`
+- The messages are ChatMessages and the jump button is a Button. No component tokens
+
+**Accessibility**
+- It follows the WAI-ARIA feed pattern: a `feed` named by `label`, each message an `article` with `aria-posinset` and `aria-setsize`, and `aria-busy` on the feed while a reply streams. Page Up and Page Down move between messages, Home and End go to the first and the newest. One message is in the tab order at a time (the newest, or the last one you were on)
+- New messages are read aloud through one polite status region, as "Assistant: …", once each is complete. Streaming text isn't read token by token, the history on screen when the list mounts isn't read, and your own messages aren't read back
+- The list follows the newest message only while you're at the bottom. Scroll up to read and it stays put; a button says how many new messages are waiting, and takes you back and focuses the newest. Sending a message always brings you back down. Under reduced motion the scroll jumps instead of gliding
+- Tested: the feed attributes, the keys, following, waiting, the count, the jump and its focus, and what is and isn't read aloud
+
+**Do**
+- Pair it with ChatComposer under it, and give the pair a fixed height so only the messages scroll.
+- Keep the list's `label` about who the conversation is with.
+- Use `continued` on ChatMessages so a run from one sender sits together.
+
+**Don't**
+- Don't add your own live region for new messages; this one already reads them, once.
+- Don't scroll the page to the newest message yourself; the list does it, and only when you're at the bottom.
+- Don't put non-message content between the articles; the feed counts every article as a message.
+
+**Chromatic stories**
+- `Default`, `LiveConversation`, `DarkMode`
+
+---
+
 ### MobileNav
 
 | Field | Value |

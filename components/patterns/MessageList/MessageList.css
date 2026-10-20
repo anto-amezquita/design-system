@@ -1,0 +1,63 @@
+/*
+  Tokens consumed:
+
+  --space-element-gap, --space-tight-gap, --space-container-padding,
+  --shadow-dropdown, --color-border-focus, --focus-ring-width,
+  --border-radius-component
+
+  No component tokens: the messages are ChatMessages and the jump button
+  is a Button, with their own tokens (decisions/0004, 0005).
+*/
+
+/* Give it a height (a flex child, a grid row): the messages scroll inside. */
+.message-list {
+  position: relative;
+  display: grid;
+  min-block-size: 0;
+}
+
+.message-list__scroller {
+  min-block-size: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.message-list__feed {
+  display: flow-root;
+  padding: var(--space-container-padding);
+}
+
+.message-list__feed > :where(article) {
+  margin-block: 0;
+  border-radius: var(--border-radius-component);
+}
+
+.message-list__feed > :where(article + article) {
+  margin-block-start: var(--space-element-gap);
+}
+
+/* A follow-up from the same sender sits closer: one block, not two. */
+.message-list__feed > :where(article + .chat-message--continued) {
+  margin-block-start: var(--space-tight-gap);
+}
+
+.message-list__feed > article:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--space-tight-gap);
+}
+
+.message-list__feed > article:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.message-list__jump {
+  position: absolute;
+  inset-block-end: var(--space-element-gap);
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  box-shadow: var(--shadow-dropdown);
+}
+
+[dir='rtl'] .message-list__jump {
+  translate: 50% 0;
+}

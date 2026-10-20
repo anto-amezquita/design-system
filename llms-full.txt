@@ -779,6 +779,15 @@ Renders a Markdown string with the system's own components, so release notes, RE
 - Storybook: Components/Markdown
 - Stories: Default, UntrustedInput, DarkMode
 
+### MessageList
+
+A conversation's messages in a scrolling list that follows the newest one, waits while you read back, and reads each finished reply aloud once
+
+- Import: `import { MessageList } from '@amezquita/design-system/components/patterns/MessageList'`
+- Token prefix: `messagelist-*` (0 tokens)
+- Storybook: Components/MessageList
+- Stories: Default, LiveConversation, DarkMode
+
 ### MobileNav
 
 The bar at the bottom of a small screen with an app's main places

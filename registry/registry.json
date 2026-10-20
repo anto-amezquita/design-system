@@ -2062,6 +2062,25 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "message-list",
+      "type": "registry:component",
+      "title": "MessageList",
+      "description": "A conversation's messages in a scrolling list that follows the newest one, waits while you read back, and reads each finished reply aloud once",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/button.json",
+        "https://design.amezquita.dk/r/visually-hidden.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "mobile-nav",
       "type": "registry:component",
       "title": "MobileNav",

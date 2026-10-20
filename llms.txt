@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 93 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 94 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -116,6 +116,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [FormLayout](https://design.amezquita.dk/components/form-layout.md): The frame of a form: spacing, sections, rows, actions, and an error summary after a failed submit
 - [Hero](https://design.amezquita.dk/components/hero.md): Page-level section header with eyebrow, title, lead text, and an action slot
 - [Markdown](https://design.amezquita.dk/components/markdown.md): Renders a Markdown string with the system's own components, so release notes, READMEs and model answers look like the rest of the product
+- [MessageList](https://design.amezquita.dk/components/message-list.md): A conversation's messages in a scrolling list that follows the newest one, waits while you read back, and reads each finished reply aloud once
 - [MobileNav](https://design.amezquita.dk/components/mobile-nav.md): The bar at the bottom of a small screen with an app's main places
 - [Pagination](https://design.amezquita.dk/components/pagination.md): Page navigation controls for multi-page data sets; exposes current page and total page count
 - [PromptForm](https://design.amezquita.dk/components/prompt-form.md): Questions an assistant asks before it goes on, each a set of choices with "Other" for an answer in words, sent together and kept as a summary
