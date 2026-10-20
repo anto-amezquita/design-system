@@ -14,6 +14,10 @@ type StatusDotBaseProps = {
   status?: Status
   /** A slow pulse, for something live or in progress. Off for anyone who prefers reduced motion. */
   pulse?: boolean
+  /** The words shown next to the dot: "Online". Give this or `label`. */
+  children?: React.ReactNode
+  /** Words read to screen readers only, when there's no room to show them. Give this or `children`; never for an error. */
+  label?: string
 }
 
 /*
@@ -21,10 +25,10 @@ type StatusDotBaseProps = {
   words: either visible text as children, or a `label` screen readers read
   when the words are elsewhere (an Avatar's corner, a table cell headed "Status").
 */
-type StatusDotProps = Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'> & StatusDotBaseProps & (
-  | { children: React.ReactNode; label?: never }
-  | { label: string; children?: never }
-)
+/** Words are required: shown (`children`) or read (`label`), not both. */
+type StatusDotWords = { children: React.ReactNode; label?: never } | { label: string; children?: never }
+
+type StatusDotProps = Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'> & StatusDotBaseProps & StatusDotWords
 
 /**
  * A small coloured dot that marks a status, always with words: shown next

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 117,
-    "publicComponentCount": 77,
+    "componentCount": 119,
+    "publicComponentCount": 79,
     "subComponentCount": 39
   },
   "components": [
@@ -78,6 +78,25 @@
         "DarkMode"
       ],
       "tokenCount": 5,
+      "internal": false
+    },
+    {
+      "name": "Blockquote",
+      "slug": "blockquote",
+      "tier": "primitives",
+      "purpose": "A quotation set apart from the text around it, with who said it and where",
+      "storybookPath": "Components/Blockquote",
+      "storybookTitleId": "components-blockquote",
+      "defaultStoryId": "components-blockquote--default",
+      "tokenPrefix": "blockquote",
+      "stories": [
+        "Default",
+        "Bare",
+        "Pull",
+        "Paragraphs",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {
@@ -166,6 +185,24 @@
         "DarkMode"
       ],
       "tokenCount": 1,
+      "internal": false
+    },
+    {
+      "name": "Citation",
+      "slug": "citation",
+      "tier": "primitives",
+      "purpose": "A small link from a claim to its source: a numbered marker or a source chip, as in AI answers and articles",
+      "storybookPath": "Components/Citation",
+      "storybookTitleId": "components-citation",
+      "defaultStoryId": "components-citation--default",
+      "tokenPrefix": "citation",
+      "stories": [
+        "Default",
+        "InAnAnswer",
+        "SourceChips",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {

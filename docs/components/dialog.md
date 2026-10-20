@@ -10,9 +10,9 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `open?` | `boolean \| never` |  |
-| `onOpenChange?` | `(open: boolean) => void \| never` |  |
-| `defaultOpen?` | `never \| boolean` |  |
+| `open?` | `boolean` |  |
+| `onOpenChange?` | `(open: boolean) => void` |  |
+| `defaultOpen?` | `boolean` |  |
 | `trigger?` | `React.ReactElement` | Must be a single DOM element — React.Fragment is not supported (Radix asChild). |
 | `triggerRef?` | `React.Ref<HTMLButtonElement>` | Optional external ref onto the trigger's DOM node, merged with Dialog's own internal one. Useful when a consumer needs the trigger element for something beyond this Dialog's own lifecycle — e.g. restoring focus there after a separate follow-up AlertDialog (opened once this Dialog has already closed) finishes. Dialog's own focus-restore-on-close (modal={false} case) keeps working unaffected either way. |
 | `title` | `string` |  |

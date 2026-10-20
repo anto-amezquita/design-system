@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 75,
+    "filesScanned": 77,
     "tokenCount": 261
   },
   "byToken": {
@@ -128,6 +128,7 @@
       "components/primitives/Badge/Badge.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
@@ -192,7 +193,8 @@
       "components/primitives/Slider/Slider.css"
     ],
     "border-width-thick": [
-      "components/patterns/FormLayout/FormLayout.css"
+      "components/patterns/FormLayout/FormLayout.css",
+      "components/primitives/Blockquote/Blockquote.css"
     ],
     "breadcrumb-current-max-width": [
       "components/patterns/Breadcrumb/Breadcrumb.css"
@@ -388,6 +390,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
@@ -406,6 +409,7 @@
       "components/composition/Card/Card.css",
       "components/patterns/Carousel/Carousel.css",
       "components/patterns/Stepper/Stepper.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
@@ -551,6 +555,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/IconButton/IconButton.css",
@@ -575,6 +580,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/patterns/Table/Table.css",
       "components/primitives/Button/Button.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Slider/Slider.css"
     ],
@@ -602,9 +608,11 @@
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/Tabs/Tabs.css",
       "components/patterns/TopNav/TopNav.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
@@ -652,9 +660,11 @@
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
@@ -756,6 +766,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
@@ -804,6 +815,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
@@ -852,6 +864,7 @@
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
@@ -888,6 +901,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
@@ -929,9 +943,11 @@
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
@@ -956,6 +972,7 @@
     "font-family-heading": [
       "components/composition/Dialog/Dialog.css",
       "components/patterns/Hero/Hero.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Heading/Heading.css"
     ],
     "font-family-mono": [
@@ -967,6 +984,7 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/patterns/EmptyState/EmptyState.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Text/Text.css"
     ],
     "font-size-caption": [
@@ -974,6 +992,7 @@
       "components/patterns/Table/Table.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Calendar/Calendar.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
@@ -1024,6 +1043,7 @@
     ],
     "font-size-h4": [
       "components/composition/Dialog/Dialog.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Heading/Heading.css"
     ],
     "font-size-h5": [
@@ -1046,6 +1066,7 @@
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/Tabs/Tabs.css",
       "components/patterns/TopNav/TopNav.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
@@ -1065,6 +1086,7 @@
       "components/primitives/Heading/Heading.css"
     ],
     "font-weight-body": [
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Text/Text.css"
     ],
     "font-weight-control": [
@@ -1078,6 +1100,7 @@
     "font-weight-heading": [
       "components/composition/Popover/Popover.css",
       "components/patterns/FormLayout/FormLayout.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Heading/Heading.css"
@@ -1092,6 +1115,7 @@
       "components/patterns/Stepper/Stepper.css",
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/TopNav/TopNav.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/Field/Field.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
@@ -1188,6 +1212,7 @@
     "letter-spacing-heading": [
       "components/composition/Dialog/Dialog.css",
       "components/patterns/Hero/Hero.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Heading/Heading.css"
     ],
     "line-height-body": [
@@ -1195,11 +1220,13 @@
       "components/composition/Drawer/Drawer.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Text/Text.css"
     ],
     "line-height-caption": [
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Table/Table.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/Field/Field.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Slider/Slider.css",
@@ -1230,6 +1257,7 @@
     ],
     "line-height-h4": [
       "components/composition/Dialog/Dialog.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Heading/Heading.css"
     ],
     "line-height-h5": [
@@ -1260,6 +1288,7 @@
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Hero/Hero.css",
       "components/patterns/MobileNav/MobileNav.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Image/Image.css",
       "components/primitives/ProgressBar/ProgressBar.css",
@@ -1535,6 +1564,7 @@
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/TopNav/TopNav.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Grid/Grid.css",
       "components/primitives/Section/Section.css",
@@ -1627,7 +1657,9 @@
       "components/patterns/Toolbar/Toolbar.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Badge/Badge.css",
+      "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Calendar/Calendar.css",
+      "components/primitives/Citation/Citation.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",

@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 77 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 79 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -31,10 +31,12 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [AspectRatio](https://design.amezquita.dk/components/aspect-ratio.md): Keeps media at a fixed width-to-height ratio as the width changes, and holds the space before it loads
 - [Avatar](https://design.amezquita.dk/components/avatar.md): User profile picture with fallback to initials when no image is provided
 - [Badge](https://design.amezquita.dk/components/badge.md): Small status indicator or numeric count overlay attached to another element
+- [Blockquote](https://design.amezquita.dk/components/blockquote.md): A quotation set apart from the text around it, with who said it and where
 - [Button](https://design.amezquita.dk/components/button.md): Trigger for user actions; renders as `<button>` or `<a>` depending on context
 - [ButtonGroup](https://design.amezquita.dk/components/button-group.md): Related actions kept together: Undo / Redo, zoom out / in, Cancel / Save
 - [Calendar](https://design.amezquita.dk/components/calendar.md): A month of days to choose one date or a range; the base for DatePicker and DateRangePicker
 - [Checkbox](https://design.amezquita.dk/components/checkbox.md): Single boolean selection with an associated label; supports indeterminate state
+- [Citation](https://design.amezquita.dk/components/citation.md): A small link from a claim to its source: a numbered marker or a source chip, as in AI answers and articles
 - [Combobox](https://design.amezquita.dk/components/combobox.md): One value from a long list, found by typing: a country, a town, a person
 - [DatePicker](https://design.amezquita.dk/components/date-picker.md): A date typed or picked from a calendar: delivery dates, bookings, deadlines
 - [DateRangePicker](https://design.amezquita.dk/components/date-range-picker.md): A start and an end date: a stay, a report period, leave

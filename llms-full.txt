@@ -64,6 +64,15 @@ Small status indicator or numeric count overlay attached to another element
 - Storybook: Components/Badge
 - Stories: Default, Count, Dot, AllVariants, AllShapes, AllVariantsAllShapes, DarkMode
 
+### Blockquote
+
+A quotation set apart from the text around it, with who said it and where
+
+- Import: `import { Blockquote } from '@amezquita/design-system/components/primitives/Blockquote'`
+- Token prefix: `blockquote-*` (0 tokens)
+- Storybook: Components/Blockquote
+- Stories: Default, Bare, Pull, Paragraphs, DarkMode
+
 ### Button
 
 Trigger for user actions; renders as `<button>` or `<a>` depending on context
@@ -99,6 +108,15 @@ Single boolean selection with an associated label; supports indeterminate state
 - Token prefix: `checkbox-*` (1 tokens)
 - Storybook: Components/Checkbox
 - Stories: Default, Checked, Indeterminate, Disabled, DisabledChecked, Controlled, AllStates, NoLabel, DarkMode
+
+### Citation
+
+A small link from a claim to its source: a numbered marker or a source chip, as in AI answers and articles
+
+- Import: `import { Citation } from '@amezquita/design-system/components/primitives/Citation'`
+- Token prefix: `citation-*` (0 tokens)
+- Storybook: Components/Citation
+- Stories: Default, InAnAnswer, SourceChips, DarkMode
 
 ### Combobox
 

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blockquote",
+  "type": "registry:component",
+  "title": "Blockquote",
+  "description": "A quotation set apart from the text around it, with who said it and where",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}
