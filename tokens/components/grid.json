@@ -1,0 +1,17 @@
+{
+  "grid-min-item-sm": {
+    "$value": "192px",
+    "$type": "dimension",
+    "$description": "Narrowest an item gets in a Grid with minItemWidth=\"sm\" before the grid drops a column: small tiles, stat cards, swatches."
+  },
+  "grid-min-item-md": {
+    "$value": "256px",
+    "$type": "dimension",
+    "$description": "Narrowest an item gets in a Grid with minItemWidth=\"md\": content cards with a title and a line or two of text."
+  },
+  "grid-min-item-lg": {
+    "$value": "320px",
+    "$type": "dimension",
+    "$description": "Narrowest an item gets in a Grid with minItemWidth=\"lg\": cards with media or a form. Matches a narrow phone, so one column still fits."
+  }
+}

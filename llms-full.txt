@@ -20,10 +20,10 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-388 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+391 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
-- component: 117
+- component: 120
 - color: 46
 - typography: 40
 - spacing: 19
@@ -144,6 +144,15 @@ Pick files by button or by dragging them in, see what's chosen, and remove any
 - Token prefix: `fileupload-*` (0 tokens)
 - Storybook: Components/FileUpload
 - Stories: Default, WithFiles, Single, Error, Disabled, DarkMode
+
+### Grid
+
+Lays items out in rows and columns: fixed columns per breakpoint, or as many as fit
+
+- Import: `import { Grid } from '@amezquita/design-system/components/primitives/Grid'`
+- Token prefix: `grid-min-item-*` (3 tokens)
+- Storybook: Components/Grid
+- Stories: Default, PerBreakpoint, AsManyAsFit, Spans, DarkMode
 
 ### Heading
 
