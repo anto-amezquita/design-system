@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 81 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 82 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 84 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 85 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (53)
+### Primitives (54)
 
 | Component | Reference |
 |---|---|
@@ -72,6 +72,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | OtpInput | [otp-input](https://design.amezquita.dk/components/otp-input.md) — A short code sent by text or email, shown as one box per character |
 | ProgressBar | [progress-bar](https://design.amezquita.dk/components/progress-bar.md) — Shows how far a task has got, or that it's running when the end isn't known |
 | Radio | [radio](https://design.amezquita.dk/components/radio.md) — Single-selection control within a mutually exclusive group |
+| ScrollArea | [scroll-area](https://design.amezquita.dk/components/scroll-area.md) — A box that scrolls its content, with thin scrollbars in the brand's colours, reachable and scrollable with the keyboard |
 | Search | [search](https://design.amezquita.dk/components/search.md) — A site or list search: a search landmark with Enter to search, Escape to clear and an optional shortcut |
 | Section | [section](https://design.amezquita.dk/components/section.md) — A band of a page: edge-to-edge background, space above and below, content centred at a set width with the page gutter |
 | SegmentedControl | [segmented-control](https://design.amezquita.dk/components/segmented-control.md) — One choice from a few, shown side by side: a view switch, a time range |

@@ -1,0 +1,42 @@
+/*
+  Tokens consumed:
+
+  --color-border-strong (scrollbar thumb), --color-border-focus,
+  --focus-ring-width, --border-radius-component
+
+  No component tokens: the thumb uses the strong border colour, the same
+  role as other non-text marks that have to be seen (decisions/0004, 0005).
+
+  These are the browser's own scrollbars, styled with scrollbar-color and
+  scrollbar-width, not a JavaScript replacement: native scrolling keeps
+  touch, trackpad momentum, middle-click and assistive tech working, and
+  costs no script.
+*/
+
+.scroll-area {
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) transparent;
+  border-radius: var(--border-radius-component);
+}
+
+.scroll-area--vertical {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.scroll-area--horizontal {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.scroll-area--both {
+  overflow: auto;
+}
+
+/* Inside, not outside: the outline would be clipped by a parent that also
+   clips, and an inset ring sits on the area's own edge. */
+.scroll-area:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: calc(var(--focus-ring-width) * -1);
+}

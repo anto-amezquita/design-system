@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 124,
-    "publicComponentCount": 84,
+    "componentCount": 125,
+    "publicComponentCount": 85,
     "subComponentCount": 39
   },
   "components": [
@@ -736,6 +736,23 @@
         "DarkMode"
       ],
       "tokenCount": 2,
+      "internal": false
+    },
+    {
+      "name": "ScrollArea",
+      "slug": "scroll-area",
+      "tier": "primitives",
+      "purpose": "A box that scrolls its content, with thin scrollbars in the brand's colours, reachable and scrollable with the keyboard",
+      "storybookPath": "Components/ScrollArea",
+      "storybookTitleId": "components-scrollarea",
+      "defaultStoryId": "components-scrollarea--default",
+      "tokenPrefix": "scrollarea",
+      "stories": [
+        "Default",
+        "Horizontal",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {
