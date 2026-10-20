@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "6c70a67",
+      "type": "feat",
+      "scope": "markdown",
+      "message": "render Markdown with the system's own components",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "14a9105",
       "type": "feat",
       "scope": "resizable-panels",
