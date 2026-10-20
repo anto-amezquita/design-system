@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 81,
+    "filesScanned": 82,
     "tokenCount": 261
   },
   "byToken": {
@@ -81,6 +81,7 @@
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Toolbar/Toolbar.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Item/Item.css",
       "components/primitives/Select/Select.css"
@@ -111,6 +112,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
@@ -322,6 +324,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Icon/Icon.css",
@@ -333,6 +336,7 @@
       "components/primitives/TimePicker/TimePicker.css"
     ],
     "color-accent-text-hover": [
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Link/Link.css"
     ],
     "color-border-default": [
@@ -398,6 +402,7 @@
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Citation/Citation.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Item/Item.css",
@@ -564,6 +569,7 @@
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Citation/Citation.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/IconButton/IconButton.css",
@@ -622,6 +628,7 @@
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Citation/Citation.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/DescriptionList/DescriptionList.css",
       "components/primitives/Field/Field.css",
@@ -677,6 +684,7 @@
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Citation/Citation.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/DescriptionList/DescriptionList.css",
       "components/primitives/Field/Field.css",
@@ -781,6 +789,7 @@
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Citation/Citation.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Item/Item.css",
@@ -807,6 +816,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/composition/Lightbox/Lightbox.css",
       "components/composition/Toast/Toast.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/ProgressBar/ProgressBar.css"
     ],
     "easing-default": [
@@ -831,6 +841,7 @@
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Citation/Citation.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Item/Item.css",
@@ -881,6 +892,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Citation/Citation.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
@@ -918,6 +930,7 @@
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Citation/Citation.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
@@ -965,6 +978,7 @@
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Citation/Citation.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/DescriptionList/DescriptionList.css",
       "components/primitives/Field/Field.css",
@@ -1041,6 +1055,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/DescriptionList/DescriptionList.css",
       "components/primitives/Input/Input.css",
@@ -1119,6 +1134,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/SegmentedControl/SegmentedControl.css"
     ],
@@ -1273,6 +1289,7 @@
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/DescriptionList/DescriptionList.css",
       "components/primitives/Item/Item.css",
       "components/primitives/Radio/Radio.css",
@@ -1443,6 +1460,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/MobileNav/MobileNav.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Icon/Icon.css",
       "components/primitives/IconButton/IconButton.css",
@@ -1457,6 +1475,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/SideNav/SideNav.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Field/Field.css",
       "components/primitives/Icon/Icon.css",
       "components/primitives/IconButton/IconButton.css",
@@ -1633,6 +1652,7 @@
       "components/primitives/Button/Button.css",
       "components/primitives/ButtonGroup/ButtonGroup.css",
       "components/primitives/Calendar/Calendar.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/DatePicker/DatePicker.css",
       "components/primitives/DateRangePicker/DateRangePicker.css",
@@ -1670,12 +1690,14 @@
     "space-prominent-padding-x": [
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css",
-      "components/patterns/Accordion/Accordion.css"
+      "components/patterns/Accordion/Accordion.css",
+      "components/primitives/Collapsible/Collapsible.css"
     ],
     "space-prominent-padding-y": [
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css",
-      "components/patterns/Accordion/Accordion.css"
+      "components/patterns/Accordion/Accordion.css",
+      "components/primitives/Collapsible/Collapsible.css"
     ],
     "space-section-gap": [
       "components/primitives/Grid/Grid.css",
@@ -1701,6 +1723,7 @@
       "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Citation/Citation.css",
+      "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/DescriptionList/DescriptionList.css",
       "components/primitives/Field/Field.css",

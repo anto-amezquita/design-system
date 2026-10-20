@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 123,
-    "publicComponentCount": 83,
+    "componentCount": 124,
+    "publicComponentCount": 84,
     "subComponentCount": 39
   },
   "components": [
@@ -200,6 +200,24 @@
         "Default",
         "InAnAnswer",
         "SourceChips",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "Collapsible",
+      "slug": "collapsible",
+      "tier": "primitives",
+      "purpose": "One section that shows and hides behind a button (the WAI-ARIA disclosure pattern)",
+      "storybookPath": "Components/Collapsible",
+      "storybookTitleId": "components-collapsible",
+      "defaultStoryId": "components-collapsible--default",
+      "tokenPrefix": "collapsible",
+      "stories": [
+        "Default",
+        "Open",
+        "Inline",
         "DarkMode"
       ],
       "tokenCount": 0,
