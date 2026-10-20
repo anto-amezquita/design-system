@@ -5817,8 +5817,8 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Grid",
         "Section"
-        "Grid"
       ]
     },
     {
@@ -5848,8 +5848,8 @@
         "Lightbox",
         "FormLayout",
         "Hero",
+        "Grid",
         "Section"
-        "Grid"
       ]
     },
     {
@@ -5886,8 +5886,8 @@
         "TableOfContents",
         "TopNav",
         "FileUpload",
+        "Grid",
         "Section"
-        "Grid"
       ]
     },
     {
@@ -9600,7 +9600,8 @@
       ]
     },
     {
-      "name": "toast-max-width",      "cssVar": "--toast-max-width",
+      "name": "toast-max-width",
+      "cssVar": "--toast-max-width",
       "type": "dimension",
       "category": "component",
       "description": "Maximum width of a Toast.",
