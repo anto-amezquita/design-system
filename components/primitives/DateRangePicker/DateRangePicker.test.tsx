@@ -12,6 +12,7 @@ import { userEvent } from 'vitest/browser'
 
 import baseLight from '../../../styles/brands/base-light.css?raw'
 import { DateRangePicker } from './DateRangePicker'
+import { fullDate } from '../../../lib/date-test-utils'
 
 beforeAll(() => {
   const style = document.createElement('style')
@@ -89,10 +90,10 @@ describe('DateRangePicker', () => {
     const { getByRole, start, end, onValueChange } = setup({ defaultValue: { start: oct(1), end: oct(2) } })
     await userEvent.click(getByRole('button', { name: /^Choose Stay/ }))
     await expect.poll(() => document.querySelector('[role="grid"]')).not.toBeNull()
-    await userEvent.click(document.querySelector('[aria-label="Monday 12 October 2026"]')!)
+    await userEvent.click(document.querySelector(`[aria-label="${fullDate(2026, 10, 12)}"]`)!)
     expect(start.value).toBe('12/10/2026')
     expect(end.value).toBe('')
-    await userEvent.click(document.querySelector('[aria-label="Friday 16 October 2026"]')!)
+    await userEvent.click(document.querySelector(`[aria-label="${fullDate(2026, 10, 16)}"]`)!)
     expect(onValueChange).toHaveBeenLastCalledWith({ start: oct(12), end: oct(16) })
     await expect.poll(() => document.querySelector('[role="grid"]')).toBeNull()
     expect(end.value).toBe('16/10/2026')
@@ -101,8 +102,8 @@ describe('DateRangePicker', () => {
   test('a picked range across an unavailable day stays open with the reason', async () => {
     const { getByRole, end } = setup({ defaultValue: { start: oct(1), end: oct(2) }, isDateDisabled: d => d.getDate() === 14 })
     await userEvent.click(getByRole('button', { name: /^Choose Stay/ }))
-    await userEvent.click(document.querySelector('[aria-label="Monday 12 October 2026"]')!)
-    await userEvent.click(document.querySelector('[aria-label="Friday 16 October 2026"]')!)
+    await userEvent.click(document.querySelector(`[aria-label="${fullDate(2026, 10, 12)}"]`)!)
+    await userEvent.click(document.querySelector(`[aria-label="${fullDate(2026, 10, 16)}"]`)!)
     expect(document.querySelector('[role="grid"]')).not.toBeNull()
     expect(described(end)).toBe("The dates include 14 October 2026, which isn't available.")
   })
