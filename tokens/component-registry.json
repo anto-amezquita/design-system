@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 128,
-    "publicComponentCount": 87,
+    "componentCount": 129,
+    "publicComponentCount": 88,
     "subComponentCount": 40
   },
   "components": [
@@ -1748,6 +1748,24 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "accordion"
+    },
+    {
+      "name": "AppShell",
+      "slug": "app-shell",
+      "tier": "patterns",
+      "purpose": "The frame of an app's pages: skip link, header, section navigation, main content, aside, footer and bottom bar, in the right landmarks and laid out per breakpoint",
+      "storybookPath": "Components/AppShell",
+      "storybookTitleId": "components-appshell",
+      "defaultStoryId": "components-appshell--default",
+      "tokenPrefix": "app-shell-aside",
+      "stories": [
+        "Default",
+        "WithAside",
+        "HeaderOnly",
+        "DarkMode"
+      ],
+      "tokenCount": 1,
+      "internal": false
     },
     {
       "name": "Breadcrumb",
