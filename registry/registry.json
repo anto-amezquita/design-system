@@ -1889,6 +1889,25 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "chat-composer",
+      "type": "registry:component",
+      "title": "ChatComposer",
+      "description": "Where a message is written and sent in a conversation: a field that grows with the text, Enter to send, and Stop while a reply streams",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/icon-button.json",
+        "https://design.amezquita.dk/r/kbd.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chat-message",
       "type": "registry:component",
       "title": "ChatMessage",

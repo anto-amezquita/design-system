@@ -3172,6 +3172,56 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### ChatComposer
+
+| Field | Value |
+|---|---|
+| **Purpose** | Where a message is written and sent in a conversation: a field that grows with the text, Enter to send, and Stop while a reply streams |
+| **Figma name** | `ChatComposer` |
+| **Code name** | `ChatComposer` |
+| **Storybook path** | `Components/ChatComposer` |
+
+**Props / variants**
+- `onSubmit(message)` (required): called with the trimmed text on Enter or Send. Uncontrolled, the field then clears itself; controlled (`value` + `onValueChange`), clear it yourself
+- `status`: `idle` (default) or `streaming`, which swaps Send for Stop (`onStop`) and stops Enter from sending, so the next question can be drafted
+- `maxRows` (default 8): the field grows line by line up to this, then scrolls
+- `label` (default "Message", not shown), `placeholder`, `hint` (default: the Enter and Shift + Enter keys as keycaps; `null` hides it)
+- `actions`: controls at the start of the bar (an Attach IconButton); `attachments`: shown above the text (removable Tags)
+- `disabled`; native `form` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] empty (Send disabled), with text, long text past `maxRows` (scrolls)
+- [x] focus: the ring is on the whole box
+- [x] streaming (Stop), disabled (dashed edge, no fade)
+- [x] with actions and attachments
+
+**Tokens consumed**
+- `--color-surface-primary`, `--color-border-strong`, `--color-border-focus`, `--border-width-interactive`, `--focus-ring-width`, `--border-radius-component`, `--space-compact-padding-y`, `--space-control-padding-x`, `--space-inline-gap`, `--space-tight-gap`
+- `--color-text-primary`, `--color-text-secondary`, `--font-family-base`, `--font-size-body`, `--line-height-body`, `--font-size-small`, `--line-height-small`, `--duration-interaction`, `--easing-default`
+- The buttons are IconButtons and the hint's keys are Kbd. No component tokens
+
+**Accessibility**
+- A `form` and a native `textarea`, both named by `label`; the field is described by the hint, so the Enter and Shift + Enter keys are announced, not just shown
+- Enter sends and Shift + Enter adds a line. Enter that confirms a word in an input method (Japanese, Chinese, Korean) never sends: it's checked with `isComposing`
+- Send is a real submit button named "Send". It's disabled while the message is empty or blank, since there's nothing to send and the empty field says why. While streaming it becomes "Stop the reply"
+- Focus stays in the field after sending, from Enter or from the button, so the next message can be typed straight away. A click on the box's padding or empty bar puts the caret in the field
+- The focus ring is drawn on the whole box, which is what reads as the field. Text, placeholder and hint are tested at 4.5:1 and the edge at 3:1, in all five brands, light and dark
+
+**Do**
+- Keep the hint on screens with a keyboard; it's the only place Shift + Enter is explained.
+- Pass `status="streaming"` while a reply arrives, and wire `onStop` to cancel it.
+- Put attachments in `attachments` as removable Tags named after the file.
+
+**Don't**
+- Don't send on Enter in a field where new lines are the norm (a comment, an email); that's a Textarea with a Send button.
+- Don't clear a controlled value before `onSubmit` has the text.
+- Don't put the conversation's announcements here; the message list announces new messages.
+
+**Chromatic stories**
+- `Default`, `WithText`, `WithAttachments`, `Streaming`, `Disabled`, `InConversation`, `DarkMode`
+
+---
+
 ### ChatMessage
 
 | Field | Value |
