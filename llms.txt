@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 88 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 89 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -115,6 +115,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Hero](https://design.amezquita.dk/components/hero.md): Page-level section header with eyebrow, title, lead text, and an action slot
 - [MobileNav](https://design.amezquita.dk/components/mobile-nav.md): The bar at the bottom of a small screen with an app's main places
 - [Pagination](https://design.amezquita.dk/components/pagination.md): Page navigation controls for multi-page data sets; exposes current page and total page count
+- [ResizablePanels](https://design.amezquita.dk/components/resizable-panels.md): Two panes sharing the space, with a separator people drag, or move with the keyboard (the WAI-ARIA window splitter pattern)
 - [SideNav](https://design.amezquita.dk/components/side-nav.md): Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider`
 - [Stepper](https://design.amezquita.dk/components/stepper.md): Where someone is in a process with a fixed order: checkout, sign-up, an application
 - [Table](https://design.amezquita.dk/components/table.md): Static data table with semantic header, body, and row structure
