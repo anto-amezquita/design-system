@@ -780,6 +780,54 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### CodeBlock
+
+| Field | Value |
+|---|---|
+| **Purpose** | A block of code in the monospace face, with a filename or language, a Copy button, line numbers and highlighted lines |
+| **Figma name** | `CodeBlock` |
+| **Code name** | `CodeBlock` |
+| **Storybook path** | `Components/CodeBlock` |
+
+**Props / variants**
+- `code` (required, plain text; leading and trailing blank lines trimmed)
+- `filename` or `language`: shown in the header, and the block's name
+- `copyable` (default `true`), `lineNumbers`, `highlight` (1-based line numbers), `wrap`, `maxHeight`
+- Native `figure` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] default, with and without header
+- [x] Copy: hover, focus-visible, copied
+- [x] long lines: scrolling (default) or wrapped
+
+**Tokens consumed**
+- `--color-surface-secondary`, `--color-surface-tertiary`, `--border-width-default`, `--color-border-default`, `--border-width-thick`, `--color-accent-text`, `--border-radius-component`
+- `--space-element-gap`, `--space-inline-gap`, `--space-tight-gap`, `--font-family-mono`, `--font-family-base`, `--font-size-small`, `--line-height-small`, `--font-size-caption`, `--line-height-caption`, `--font-weight-label`, `--color-text-primary`, `--color-text-secondary` (no component tokens; they would only pass through)
+
+**Accessibility**
+- A `figure` named by its filename or language, with the code in `pre > code`
+- Long lines scroll sideways inside a ScrollArea, which is a named, focusable region, so keyboard users can scroll it; `wrap` wraps them instead
+- Copy is an IconButton named "Copy Save.tsx"; after copying it reads "Copied" and a polite status message says "Copied to clipboard". If the clipboard is blocked the button stays as it was
+- Line numbers are `aria-hidden` and not selectable, so they're neither read out nor copied by hand
+- Highlighted lines are a `<mark>` (which some screen readers announce) with a bar as well as a tint, so colour isn't the only signal; unlike hidden text, the mark adds nothing to a manual copy
+- Code, line numbers, header and highlighted lines are tested at 4.5:1 in all five brands, light and dark
+- **No syntax colouring.** The system has no highlighter dependency (ADR 0002); whether to add one is decided with Markdown
+
+**Do**
+- Give a `filename` when the code is a file someone will create; otherwise the `language`.
+- Highlight the lines the text talks about.
+- Keep examples short enough to read without scrolling vertically; split long ones.
+
+**Don't**
+- Don't use CodeBlock for a single word or short command in a sentence; that's inline `code`.
+- Don't wrap code where indentation carries meaning (Python, YAML); scroll instead.
+- Don't put secrets or real tokens in examples; they get copied.
+
+**Chromatic stories**
+- `Default`, `LineNumbersAndHighlight`, `LanguageOnly`, `Wrapped`, `DarkMode`
+
+---
+
 ### Combobox
 
 | Field | Value |

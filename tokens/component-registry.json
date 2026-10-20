@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 125,
-    "publicComponentCount": 85,
+    "componentCount": 126,
+    "publicComponentCount": 86,
     "subComponentCount": 39
   },
   "components": [
@@ -200,6 +200,25 @@
         "Default",
         "InAnAnswer",
         "SourceChips",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "CodeBlock",
+      "slug": "code-block",
+      "tier": "primitives",
+      "purpose": "A block of code in the monospace face, with a filename or language, a Copy button, line numbers and highlighted lines",
+      "storybookPath": "Components/CodeBlock",
+      "storybookTitleId": "components-codeblock",
+      "defaultStoryId": "components-codeblock--default",
+      "tokenPrefix": "codeblock",
+      "stories": [
+        "Default",
+        "LineNumbersAndHighlight",
+        "LanguageOnly",
+        "Wrapped",
         "DarkMode"
       ],
       "tokenCount": 0,

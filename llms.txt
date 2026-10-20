@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 85 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 86 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -37,6 +37,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Calendar](https://design.amezquita.dk/components/calendar.md): A month of days to choose one date or a range; the base for DatePicker and DateRangePicker
 - [Checkbox](https://design.amezquita.dk/components/checkbox.md): Single boolean selection with an associated label; supports indeterminate state
 - [Citation](https://design.amezquita.dk/components/citation.md): A small link from a claim to its source: a numbered marker or a source chip, as in AI answers and articles
+- [CodeBlock](https://design.amezquita.dk/components/code-block.md): A block of code in the monospace face, with a filename or language, a Copy button, line numbers and highlighted lines
 - [Collapsible](https://design.amezquita.dk/components/collapsible.md): One section that shows and hides behind a button (the WAI-ARIA disclosure pattern)
 - [Combobox](https://design.amezquita.dk/components/combobox.md): One value from a long list, found by typing: a country, a town, a person
 - [DatePicker](https://design.amezquita.dk/components/date-picker.md): A date typed or picked from a calendar: delivery dates, bookings, deadlines

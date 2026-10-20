@@ -118,6 +118,15 @@ A small link from a claim to its source: a numbered marker or a source chip, as 
 - Storybook: Components/Citation
 - Stories: Default, InAnAnswer, SourceChips, DarkMode
 
+### CodeBlock
+
+A block of code in the monospace face, with a filename or language, a Copy button, line numbers and highlighted lines
+
+- Import: `import { CodeBlock } from '@amezquita/design-system/components/primitives/CodeBlock'`
+- Token prefix: `codeblock-*` (0 tokens)
+- Storybook: Components/CodeBlock
+- Stories: Default, LineNumbersAndHighlight, LanguageOnly, Wrapped, DarkMode
+
 ### Collapsible
 
 One section that shows and hides behind a button (the WAI-ARIA disclosure pattern)
