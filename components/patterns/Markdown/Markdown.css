@@ -1,0 +1,44 @@
+/*
+  Tokens consumed:
+
+  --space-element-gap, --space-component-gap, --space-tight-gap,
+  --font-family-mono, --color-surface-secondary, --border-radius-interactive,
+  --color-text-primary, --size-container-text
+
+  No component tokens: the rendered elements are system components with
+  their own tokens; this file only spaces them and styles inline code
+  (decisions/0004, 0005).
+*/
+
+/* A readable measure, and one rhythm: the element gap between blocks, a
+   larger gap before a heading so it groups with what follows it. */
+.markdown {
+  max-inline-size: var(--size-container-text);
+  color: var(--color-text-primary);
+  overflow-wrap: break-word;
+}
+
+.markdown > :where(*) {
+  margin-block: 0;
+}
+
+.markdown > :where(* + *) {
+  margin-block-start: var(--space-element-gap);
+}
+
+.markdown > :where(* + :is(h1, h2, h3, h4, h5, h6)) {
+  margin-block-start: var(--space-component-gap);
+}
+
+.markdown > :where(:is(h1, h2, h3, h4, h5, h6) + *) {
+  margin-block-start: var(--space-tight-gap);
+}
+
+/* Inline code: the mono face on a quiet chip, sized to the text around it. */
+.markdown__code {
+  padding: 0 var(--space-tight-gap);
+  border-radius: var(--border-radius-interactive);
+  background: var(--color-surface-secondary);
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+}

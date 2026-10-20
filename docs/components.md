@@ -2853,6 +2853,50 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### Markdown
+
+| Field | Value |
+|---|---|
+| **Purpose** | Renders a Markdown string with the system's own components, so release notes, READMEs and model answers look like the rest of the product |
+| **Figma name** | `Markdown` |
+| **Code name** | `Markdown` |
+| **Storybook path** | `Components/Markdown` |
+
+**Props / variants**
+- `children` (required): the Markdown source
+- `headingOffset`: `0`–`3`, default `1`, so `#` renders an `h2` under the page's own `h1`
+- Native `div` attributes, `className` and `ref` pass through to the wrapper
+
+**Required states**
+- [x] every element: headings, paragraphs, emphasis, links, lists, quotes, fenced and inline code, tables, images, rules
+- [x] untrusted input: raw HTML and `javascript:` URLs
+
+**Tokens consumed**
+- `--space-element-gap`, `--space-component-gap`, `--space-tight-gap`, `--font-family-mono`, `--color-surface-secondary`, `--border-radius-interactive`, `--color-text-primary`, `--size-container-text`
+- Everything else comes from the components it renders: Heading, Text, Link, List, Blockquote, CodeBlock, Table, Image, Divider
+
+**Accessibility**
+- Each element is the system component, with that component's semantics and tests: headings in the outline (with `id`s for linking), lists announced with their count, tables with header cells, code in a named, keyboard-scrollable CodeBlock, images with their alt text
+- Headings shift down one level by default, so a document's `#` doesn't create a second `h1`; levels beyond six stop at `h6`
+- Raw HTML in the source is shown as text and never rendered, and `javascript:` URLs are dropped: Markdown often comes from people or models. Tests cover both
+- Body text, links and inline code are tested at 4.5:1 in all five brands, light and dark
+- Built on `markdown-to-jsx` (ADR 0025). Fenced code has no syntax colouring yet
+
+**Do**
+- Use it for content written in Markdown: release notes, docs, a model's answer.
+- Set `headingOffset` so the Markdown's headings fit under the page's own.
+- Keep using Text, Heading and List directly for interface copy you write in code.
+
+**Don't**
+- Don't pass HTML expecting it to render; it's shown as text on purpose.
+- Don't use Markdown for interface strings like button labels; it adds a parser for no reason.
+- Don't skip levels in the source (`#` then `###`); the outline keeps the gap.
+
+**Chromatic stories**
+- `Default`, `UntrustedInput`, `DarkMode`
+
+---
+
 ### MobileNav
 
 | Field | Value |

@@ -752,6 +752,15 @@ Page-level section header with eyebrow, title, lead text, and an action slot
 - Storybook: Components/Hero
 - Stories: Default, WithEyebrowAndLead, Centered, TitleOnly, PageHeader, DarkMode
 
+### Markdown
+
+Renders a Markdown string with the system's own components, so release notes, READMEs and model answers look like the rest of the product
+
+- Import: `import { Markdown } from '@amezquita/design-system/components/patterns/Markdown'`
+- Token prefix: `markdown-*` (0 tokens)
+- Storybook: Components/Markdown
+- Stories: Default, UntrustedInput, DarkMode
+
 ### MobileNav
 
 The bar at the bottom of a small screen with an app's main places
