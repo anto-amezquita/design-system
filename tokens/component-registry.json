@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 115,
-    "publicComponentCount": 75,
+    "componentCount": 116,
+    "publicComponentCount": 76,
     "subComponentCount": 39
   },
   "components": [
@@ -380,6 +380,25 @@
         "Variants",
         "Sizes",
         "States",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "Image",
+      "slug": "image",
+      "tier": "primitives",
+      "purpose": "An image with a required `alt`, space held before it loads, a quiet fallback if it fails, and an optional caption",
+      "storybookPath": "Components/Image",
+      "storybookTitleId": "components-image",
+      "defaultStoryId": "components-image--default",
+      "tokenPrefix": "image",
+      "stories": [
+        "Default",
+        "WithRatio",
+        "WithCaption",
+        "Failed",
         "DarkMode"
       ],
       "tokenCount": 0,

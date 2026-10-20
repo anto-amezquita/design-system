@@ -202,6 +202,55 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 
 ---
 
+### Image
+
+| Field | Value |
+|---|---|
+| **Purpose** | An image with a required `alt`, space held before it loads, a quiet fallback if it fails, and an optional caption |
+| **Figma name** | `Image` |
+| **Code name** | `Image` |
+| **Storybook path** | `Components/Image` |
+
+**Props / variants**
+- `src`, `alt` (both required; `alt=""` only for decoration)
+- `width` and `height`: the file's size, so the browser holds the space before it loads
+- `ratio`: frame it at a ratio instead, through AspectRatio; `fit`: `cover` (default) or `contain`
+- `rounded`: corners in the brand's image radius
+- `caption`: renders the image and caption as a `figure`
+- `loading`: `lazy` (default) or `eager`
+- Native `img` attributes, `className` and `ref` pass through to the `img`
+
+**Required states**
+- [x] loading (the secondary surface shows behind it, in its final size)
+- [x] loaded
+- [x] failed (an icon on the secondary surface, same size, same name)
+
+**Tokens consumed**
+- `--color-surface-secondary`, `--color-text-secondary`, `--border-radius-image`, `--size-icon-lg`
+- `--space-tight-gap`, `--font-family-base`, `--font-size-small`, `--line-height-small` (no component tokens; they would only pass through)
+
+**Accessibility**
+- `alt` is required by the types, so an image can't ship without a decision about it
+- A failed image keeps its name (`role="img"` with the `alt`), so a screen reader still hears what should be there; a decorative one stays hidden
+- With `caption`, the `figure` is named by its `figcaption`; the caption doesn't replace `alt`, which still describes the image
+- The fallback icon is tested at 3:1 and the caption at 4.5:1 in all five brands, light and dark
+- `decoding="async"` and lazy loading by default; set `loading="eager"` on the first image of a page so it isn't delayed
+
+**Do**
+- Write `alt` as what the image tells a reader, not "image of".
+- Give `width` and `height`, or a `ratio`, so the page doesn't jump while images load.
+- Use `caption` for credit or context everyone should see.
+
+**Don't**
+- Don't put text in images; it can't be resized, translated or read.
+- Don't lazy-load the image at the top of the page; it's the one people wait for.
+- Don't repeat the caption in `alt`; screen readers would read it twice.
+
+**Chromatic stories**
+- `Default`, `WithRatio`, `WithCaption`, `Failed`, `DarkMode`
+
+---
+
 ### Input
 
 | Field | Value |

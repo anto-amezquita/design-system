@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 75 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 76 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -45,6 +45,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Heading](https://design.amezquita.dk/components/heading.md): Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level
 - [Icon](https://design.amezquita.dk/components/icon.md): A Phosphor icon at one of the brand's icon sizes and colours, hidden from screen readers unless named
 - [IconButton](https://design.amezquita.dk/components/icon-button.md): An action shown only as an icon, for toolbars, cards and dense rows
+- [Image](https://design.amezquita.dk/components/image.md): An image with a required `alt`, space held before it loads, a quiet fallback if it fails, and an optional caption
 - [Input](https://design.amezquita.dk/components/input.md): Labelled single-line text entry with hint and error states
 - [InputGroup](https://design.amezquita.dk/components/input-group.md): An Input joined to the text and buttons that belong to it: "https://", "kr.", an Apply button
 - [Kbd](https://design.amezquita.dk/components/kbd.md): A key the user presses, drawn as a keycap

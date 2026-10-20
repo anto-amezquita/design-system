@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 73,
+    "filesScanned": 74,
     "tokenCount": 258
   },
   "byToken": {
@@ -92,7 +92,8 @@
     ],
     "border-radius-image": [
       "components/composition/Card/Card.css",
-      "components/primitives/AspectRatio/AspectRatio.css"
+      "components/primitives/AspectRatio/AspectRatio.css",
+      "components/primitives/Image/Image.css"
     ],
     "border-radius-interactive": [
       "components/composition/Alert/Alert.css",
@@ -547,6 +548,7 @@
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/IconButton/IconButton.css",
+      "components/primitives/Image/Image.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Kbd/Kbd.css",
@@ -651,6 +653,7 @@
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Icon/Icon.css",
       "components/primitives/IconButton/IconButton.css",
+      "components/primitives/Image/Image.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
@@ -924,6 +927,7 @@
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Image/Image.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
@@ -1036,6 +1040,7 @@
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Image/Image.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
@@ -1246,6 +1251,7 @@
       "components/patterns/Hero/Hero.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Image/Image.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Text/Text.css"
     ],
@@ -1355,6 +1361,7 @@
     "size-icon-lg": [
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Icon/Icon.css",
+      "components/primitives/Image/Image.css",
       "components/primitives/Spinner/Spinner.css"
     ],
     "size-icon-md": [
@@ -1613,6 +1620,7 @@
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Grid/Grid.css",
+      "components/primitives/Image/Image.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Link/Link.css",
       "components/primitives/MultiSelect/MultiSelect.css",
