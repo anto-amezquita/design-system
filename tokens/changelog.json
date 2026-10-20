@@ -1282,6 +1282,14 @@
   ],
   "unreleased": [
     {
+      "sha": "51f72ef",
+      "type": "feat",
+      "scope": "chat-composer",
+      "message": "write and send a message, Stop while a reply streams",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "23f9e8a",
       "type": "fix",
       "scope": "checkbox",
