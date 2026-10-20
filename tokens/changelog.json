@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "97b0ac5",
+      "type": "feat",
+      "scope": "stack",
+      "message": "one-direction layout primitive with brand spacing roles",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "050f713",
       "type": "feat",
       "scope": "aspect-ratio",

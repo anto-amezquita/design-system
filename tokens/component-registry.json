@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 113,
-    "publicComponentCount": 73,
+    "componentCount": 114,
+    "publicComponentCount": 74,
     "subComponentCount": 39
   },
   "components": [
@@ -825,6 +825,25 @@
         "Danish",
         "Error",
         "Disabled",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "Text",
+      "slug": "text",
+      "tier": "primitives",
+      "purpose": "Body text in the brand's type roles (body, small, caption), with a tone and a weight",
+      "storybookPath": "Components/Text",
+      "storybookTitleId": "components-text",
+      "defaultStoryId": "components-text--default",
+      "tokenPrefix": "text",
+      "stories": [
+        "Default",
+        "Sizes",
+        "Emphasis",
+        "Truncated",
         "DarkMode"
       ],
       "tokenCount": 0,

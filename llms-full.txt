@@ -379,6 +379,15 @@ Free-text values as tags: keywords, email addresses, ingredients
 - Storybook: Components/TagInput
 - Stories: Default, WithTags, Suggestions, Emails, Danish, Error, Disabled, DarkMode
 
+### Text
+
+Body text in the brand's type roles (body, small, caption), with a tone and a weight
+
+- Import: `import { Text } from '@amezquita/design-system/components/primitives/Text'`
+- Token prefix: `text-*` (0 tokens)
+- Storybook: Components/Text
+- Stories: Default, Sizes, Emphasis, Truncated, DarkMode
+
 ### Textarea
 
 Multi-line text entry with label, hint, and error states — mirrors Input API

@@ -1,0 +1,73 @@
+/*
+  Tokens consumed:
+
+  --font-family-base, --font-weight-body, --font-weight-label,
+  --letter-spacing-body, --color-text-primary, --color-text-secondary,
+  --font-size-body, --line-height-body,
+  --font-size-small, --line-height-small,
+  --font-size-caption, --line-height-caption
+
+  No component tokens: every value is a type role the brand already sets
+  (decisions/0004, 0005).
+
+  --text-lines is private: Text sets it from `truncate` when it's above 1.
+*/
+
+.text {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-body);
+  font-style: normal;
+  letter-spacing: var(--letter-spacing-body);
+}
+
+.text--body {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.text--small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text--caption {
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+}
+
+.text--tone-primary {
+  color: var(--color-text-primary);
+}
+
+.text--tone-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text--tone-inherit {
+  color: inherit;
+}
+
+.text.text--weight-label {
+  font-weight: var(--font-weight-label);
+}
+
+/* em keeps its italics: there the emphasis is the meaning. */
+em.text {
+  font-style: italic;
+}
+
+.text--truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text--clamp {
+  --text-lines: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--text-lines);
+  line-clamp: var(--text-lines);
+}

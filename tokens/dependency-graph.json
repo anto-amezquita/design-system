@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 71,
-    "tokenCount": 254
+    "filesScanned": 72,
+    "tokenCount": 257
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -610,6 +610,7 @@
       "components/primitives/Select/Select.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
+      "components/primitives/Text/Text.css",
       "components/primitives/Textarea/Textarea.css",
       "components/primitives/TimePicker/TimePicker.css"
     ],
@@ -657,6 +658,7 @@
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
+      "components/primitives/Text/Text.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "datatable-filter-cell-padding-y": [
@@ -930,6 +932,7 @@
       "components/primitives/Slider/Slider.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
+      "components/primitives/Text/Text.css",
       "components/primitives/Textarea/Textarea.css",
       "components/primitives/TimePicker/TimePicker.css"
     ],
@@ -946,7 +949,8 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
-      "components/patterns/EmptyState/EmptyState.css"
+      "components/patterns/EmptyState/EmptyState.css",
+      "components/primitives/Text/Text.css"
     ],
     "font-size-caption": [
       "components/composition/Tooltip/Tooltip.css",
@@ -959,6 +963,7 @@
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Tag/Tag.css",
+      "components/primitives/Text/Text.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "font-size-control": [
@@ -1032,12 +1037,16 @@
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Slider/Slider.css",
+      "components/primitives/Text/Text.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "font-variation-heading": [
       "components/composition/Dialog/Dialog.css",
       "components/patterns/Hero/Hero.css",
       "components/primitives/Heading/Heading.css"
+    ],
+    "font-weight-body": [
+      "components/primitives/Text/Text.css"
     ],
     "font-weight-control": [
       "components/patterns/Accordion/Accordion.css",
@@ -1070,6 +1079,7 @@
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Slider/Slider.css",
+      "components/primitives/Text/Text.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "font-weight-medium": [
@@ -1153,6 +1163,9 @@
     "icon-size-xs": [
       "components/primitives/Checkbox/Checkbox.css"
     ],
+    "letter-spacing-body": [
+      "components/primitives/Text/Text.css"
+    ],
     "letter-spacing-heading": [
       "components/composition/Dialog/Dialog.css",
       "components/patterns/Hero/Hero.css",
@@ -1162,7 +1175,8 @@
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
       "components/patterns/EmptyState/EmptyState.css",
-      "components/patterns/Hero/Hero.css"
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/Text/Text.css"
     ],
     "line-height-caption": [
       "components/composition/Tooltip/Tooltip.css",
@@ -1170,6 +1184,7 @@
       "components/primitives/Field/Field.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Slider/Slider.css",
+      "components/primitives/Text/Text.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "line-height-control": [
@@ -1227,7 +1242,8 @@
       "components/patterns/Hero/Hero.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/primitives/FileUpload/FileUpload.css",
-      "components/primitives/ProgressBar/ProgressBar.css"
+      "components/primitives/ProgressBar/ProgressBar.css",
+      "components/primitives/Text/Text.css"
     ],
     "opacity-high": [
       "components/composition/Alert/Alert.css"
@@ -1636,6 +1652,9 @@
     ],
     "tag-padding-y": [
       "components/primitives/Tag/Tag.css"
+    ],
+    "text-lines": [
+      "components/primitives/Text/Text.css"
     ],
     "toast-accent-width": [
       "components/composition/Toast/Toast.css"
