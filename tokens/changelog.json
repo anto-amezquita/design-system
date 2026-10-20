@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "4e8499f",
+      "type": "feat",
+      "scope": "collapsible",
+      "message": "one section behind a disclosure button",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "26bcfd8",
       "type": "feat",
       "scope": "description-list",
