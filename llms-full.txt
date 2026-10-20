@@ -118,6 +118,15 @@ A small link from a claim to its source: a numbered marker or a source chip, as 
 - Storybook: Components/Citation
 - Stories: Default, InAnAnswer, SourceChips, DarkMode
 
+### Collapsible
+
+One section that shows and hides behind a button (the WAI-ARIA disclosure pattern)
+
+- Import: `import { Collapsible } from '@amezquita/design-system/components/primitives/Collapsible'`
+- Token prefix: `collapsible-*` (0 tokens)
+- Storybook: Components/Collapsible
+- Stories: Default, Open, Inline, DarkMode
+
 ### Combobox
 
 One value from a long list, found by typing: a country, a town, a person

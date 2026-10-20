@@ -731,6 +731,55 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Collapsible
+
+| Field | Value |
+|---|---|
+| **Purpose** | One section that shows and hides behind a button (the WAI-ARIA disclosure pattern) |
+| **Figma name** | `Collapsible` |
+| **Code name** | `Collapsible` |
+| **Storybook path** | `Components/Collapsible` |
+
+**Props / variants**
+- `title` (the button's text) and `children` (what shows and hides), both required
+- `open` + `onOpenChange` (controlled) or `defaultOpen` (uncontrolled)
+- `variant`: `block` (default, a full-width row with the chevron at the end) or `inline` (a text button in the accent colour, for "Show more")
+- `headingLevel`: with `block`, wraps the button in an `h2`–`h6` so the section is in the page outline
+- Native `div` attributes, `className` and `ref` pass through to the wrapper
+
+**Required states**
+- [x] closed, open
+- [x] hover, focus-visible
+- [x] opening and closing (animated; instant for reduced motion)
+
+**Tokens consumed**
+- `--space-prominent-padding-x`, `--space-prominent-padding-y`, `--space-tight-gap`, `--space-inline-gap`
+- `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-weight-control`, `--color-text-primary`, `--color-text-secondary`, `--color-accent-text`, `--color-accent-text-hover`, `--color-surface-secondary`
+- `--border-radius-component`, `--border-radius-interactive`, `--size-icon-md`, `--size-icon-sm`, `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`
+- `--duration-transition`, `--duration-interaction`, `--easing-default` (no component tokens; Accordion has its own durations, and a single disclosure uses the semantic one rather than borrowing them)
+
+**Accessibility**
+- A native `button` with `aria-expanded` and `aria-controls` pointing at the panel; Enter and Space toggle it
+- Closed content is `visibility: hidden`, so it's out of the tab order and the accessibility tree, not just clipped; on close the hiding waits for the collapse to finish, so nothing vanishes mid-animation
+- The height animates by growing a grid row, with no measuring; with `prefers-reduced-motion` it opens and closes instantly
+- The chevron is decoration (`aria-hidden`); the button's name is the title
+- Triggers are tested at 4.5:1 at rest and hovered, and content at 4.5:1, in all five brands, light and dark
+
+**Do**
+- Use it for one optional section: details, advanced settings, the rest of a long text.
+- Write the title as what's inside ("Shipping options"), not as an instruction ("Click to expand").
+- Use `headingLevel` when the section is part of the page's structure.
+
+**Don't**
+- Don't stack several Collapsibles for related sections; that's Accordion.
+- Don't hide content everyone needs, like an error or a price; show it.
+- Don't put the only way to finish a task inside a closed Collapsible.
+
+**Chromatic stories**
+- `Default`, `Open`, `Inline`, `DarkMode`
+
+---
+
 ### Combobox
 
 | Field | Value |

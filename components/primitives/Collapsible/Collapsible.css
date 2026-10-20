@@ -1,0 +1,150 @@
+/*
+  Tokens consumed:
+
+  --space-prominent-padding-x, --space-prominent-padding-y (block trigger),
+  --space-tight-gap, --space-inline-gap, --font-family-base,
+  --font-size-control, --line-height-control, --font-weight-control,
+  --color-text-primary, --color-text-secondary, --color-accent-text,
+  --color-accent-text-hover, --color-surface-secondary (hover),
+  --border-radius-component, --border-radius-interactive,
+  --size-icon-md, --size-icon-sm, --color-border-focus,
+  --focus-ring-width, --focus-ring-offset,
+  --duration-transition, --duration-interaction, --easing-default
+
+  No component tokens: Accordion has its own expand and collapse
+  durations; a single disclosure uses the semantic transition duration
+  instead of borrowing Accordion's (decisions/0004, 0005).
+*/
+
+.collapsible {
+  font-family: var(--font-family-base);
+}
+
+.collapsible__heading {
+  margin: 0;
+  font: inherit;
+}
+
+.collapsible__trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  font-weight: var(--font-weight-control);
+  text-align: start;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-interaction) var(--easing-default),
+    color var(--duration-interaction) var(--easing-default);
+}
+
+.collapsible__trigger:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.collapsible__title {
+  flex: 1;
+}
+
+.collapsible__icon {
+  flex-shrink: 0;
+  transition: transform var(--duration-transition) var(--easing-default);
+}
+
+.collapsible__trigger[data-state='open'] .collapsible__icon {
+  transform: rotate(180deg);
+}
+
+/* Block: a full-width row, chevron at the end. */
+.collapsible--block .collapsible__trigger {
+  inline-size: 100%;
+  padding: var(--space-prominent-padding-y) var(--space-prominent-padding-x);
+  border-radius: var(--border-radius-component);
+  color: var(--color-text-primary);
+}
+
+.collapsible--block .collapsible__trigger:hover {
+  background: var(--color-surface-secondary);
+}
+
+.collapsible--block .collapsible__icon {
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+  color: var(--color-text-secondary);
+}
+
+.collapsible--block .collapsible__content {
+  padding: var(--space-tight-gap) var(--space-prominent-padding-x) var(--space-prominent-padding-y);
+}
+
+/* Inline: a text button in the accent colour, chevron after the words. */
+.collapsible--inline .collapsible__trigger {
+  border-radius: var(--border-radius-interactive);
+  color: var(--color-accent-text);
+}
+
+.collapsible--inline .collapsible__trigger:hover {
+  color: var(--color-accent-text-hover);
+}
+
+.collapsible--inline .collapsible__title {
+  flex: none;
+}
+
+.collapsible--inline .collapsible__icon {
+  inline-size: var(--size-icon-sm);
+  block-size: var(--size-icon-sm);
+}
+
+.collapsible--inline .collapsible__content {
+  padding-block-start: var(--space-inline-gap);
+}
+
+/* The panel animates its height by growing a grid row from 0fr to 1fr, so
+   no height has to be measured. Closed, it's visibility: hidden, which
+   takes the content out of the tab order and the accessibility tree; the
+   visibility change waits for the collapse to finish so the content doesn't
+   vanish mid-animation. */
+.collapsible__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows var(--duration-transition) var(--easing-default),
+    visibility 0s linear var(--duration-transition);
+}
+
+.collapsible__panel[data-state='open'] {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition:
+    grid-template-rows var(--duration-transition) var(--easing-default),
+    visibility 0s;
+}
+
+.collapsible__clip {
+  min-block-size: 0;
+  overflow: hidden;
+}
+
+/* The padding lives inside the clipped box, so it shrinks to nothing with
+   the row instead of jumping at the end. */
+.collapsible__content {
+  color: var(--color-text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collapsible__trigger,
+  .collapsible__icon,
+  .collapsible__panel,
+  .collapsible__panel[data-state='open'] {
+    transition: none;
+  }
+}
