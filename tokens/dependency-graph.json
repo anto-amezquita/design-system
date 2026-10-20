@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 68,
-    "tokenCount": 251
+    "filesScanned": 69,
+    "tokenCount": 254
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -1426,8 +1426,8 @@
       "components/composition/Lightbox/Lightbox.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Hero/Hero.css",
+      "components/primitives/Grid/Grid.css",
       "components/primitives/Section/Section.css"
-      "components/primitives/Grid/Grid.css"
     ],
     "space-container-padding": [
       "components/composition/Card/Card.css",
@@ -1488,8 +1488,8 @@
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Grid/Grid.css",
       "components/primitives/Section/Section.css"
-      "components/primitives/Grid/Grid.css"
     ],
     "space-inline-gap": [
       "components/composition/Card/Card.css",
@@ -1556,8 +1556,8 @@
       "components/patterns/Accordion/Accordion.css"
     ],
     "space-section-gap": [
+      "components/primitives/Grid/Grid.css",
       "components/primitives/Section/Section.css"
-      "components/primitives/Grid/Grid.css"
     ],
     "space-tight-gap": [
       "components/composition/CommandPalette/CommandPalette.css",
