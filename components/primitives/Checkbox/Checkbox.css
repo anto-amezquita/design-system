@@ -42,7 +42,9 @@
   height: var(--checkbox-size);
   background: var(--color-surface-primary);
   border: var(--border-width-interactive) solid var(--color-border-strong);
-  border-radius: var(--border-radius-interactive);
+  /* A quarter of the box at most: rounder than that, a checkbox reads as a
+     radio. Square brands keep their own corner; round ones are capped. */
+  border-radius: min(var(--border-radius-interactive), calc(var(--checkbox-size) / 4));
   cursor: pointer;
   transition:
     background-color var(--duration-interaction) var(--easing-default),
