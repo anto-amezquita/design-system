@@ -1204,6 +1204,55 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Item
+
+| Field | Value |
+|---|---|
+| **Purpose** | One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link |
+| **Figma name** | `Item` |
+| **Code name** | `Item` |
+| **Storybook path** | `Components/Item` |
+
+**Props / variants**
+- `title` (required), `description`
+- `leading`: an Avatar, Icon or thumbnail; `trailing`: a Timestamp, Badge, IconButton or Switch
+- `href`: makes the whole row a link; `current`: marks it as the page you're on
+- `size`: `default` or `compact`
+- `as`: `li` (default) or `div`
+- Native attributes, `className` and `ref` pass through to the row
+
+**Required states**
+- [x] default
+- [x] linked: hover, focus-visible
+- [x] current
+
+**Tokens consumed**
+- `--space-control-padding-x`, `--space-control-padding-y`, `--space-compact-padding-x`, `--space-compact-padding-y`, `--space-element-gap`, `--space-tight-gap`, `--border-radius-component`
+- `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-weight-label`, `--font-size-small`, `--line-height-small`, `--color-text-primary`, `--color-text-secondary`
+- `--color-surface-secondary`, `--border-width-thick`, `--color-accent-text`, `--color-border-focus`, `--focus-ring-width`, `--duration-interaction`, `--easing-default` (no component tokens; they would only pass through)
+
+**Accessibility**
+- A linked row is one link, named by its title, stretched over the row; the description doesn't get read as part of the link name. Trailing buttons sit above the stretch, so they're their own targets and their own Tab stops
+- The focus ring goes around the whole row, where the click target is
+- `current` sets `aria-current="page"` and draws a bar on the leading edge, so the current row isn't marked by colour alone. The bar uses `accent-text`, tested at 3:1 against the row in every brand and mode (`accent-default` was too pale in demo-soft)
+- Title and description are tested at 4.5:1 at rest, hovered and current, in all five brands, light and dark
+- Long titles wrap rather than overflow
+
+**Do**
+- Keep the title short and unique within the list; it's the link's name.
+- Put actions in `trailing` and give icon-only ones a label that names the row ("Share tokens.json").
+- Use `compact` for navigation and dense lists.
+
+**Don't**
+- Don't put a link or button inside `title` or `description` of a linked row; it would sit under the stretched link.
+- Don't make a row both a link and selectable; for choosing rows, use Selectable Card or a Checkbox in `leading`.
+- Don't rely on hover to reveal actions; touch and keyboard users won't see them.
+
+**Chromatic stories**
+- `Default`, `Linked`, `Navigation`, `DarkMode`
+
+---
+
 ### Kbd
 
 | Field | Value |
@@ -1357,6 +1406,49 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 **Chromatic stories**
 - `Default`, `States`, `ValueText`, `Indeterminate`, `HiddenLabel`, `DarkMode`
+
+---
+
+### List
+
+| Field | Value |
+|---|---|
+| **Purpose** | A list, announced as one: rows of Items in an interface, or bullets and numbers in running text |
+| **Figma name** | `List` |
+| **Code name** | `List` |
+| **Storybook path** | `Components/List` |
+
+**Props / variants**
+- `marker`: `none` (default, a list of things in an interface), `bullet` or `number` (lists in text; `number` renders an `ol`)
+- `divided`: a line between items
+- `gap`: `none` (default; Items bring their own padding), `tight`, `inline` or `element`
+- `ordered`: an `ol` without numbers shown, for steps or a ranking
+- Native list attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] default (static; interaction lives in the Items)
+
+**Tokens consumed**
+- `--space-tight-gap`, `--space-inline-gap`, `--space-element-gap`, `--border-width-default`, `--color-border-default`
+- `--font-family-base`, `--font-size-body`, `--line-height-body`, `--color-text-primary` (no component tokens; they would only pass through)
+
+**Accessibility**
+- Screen readers announce a list and its item count, so people know how much is there before they go through it
+- With `marker="none"` it sets `role="list"`, because Safari drops list semantics once `list-style` is `none`; text lists keep their markers and need no role
+- Text is tested at 4.5:1 and dividers are the default border colour in all five brands, light and dark
+
+**Do**
+- Use List with Items for rows: files, people, settings, search results.
+- Use `marker="bullet"` or `number` for lists inside prose.
+- Give a list of rows an `aria-label` when nothing else on screen names it.
+
+**Don't**
+- Don't use a List for tabular data with columns; that's Table.
+- Don't nest interactive lists inside each other; use a Tree View (wave 5) for hierarchies.
+- Don't put a single item in a List.
+
+**Chromatic stories**
+- `Default`, `Bullets`, `Numbered`, `DarkMode`
 
 ---
 

@@ -235,6 +235,15 @@ An Input joined to the text and buttons that belong to it: "https://", "kr.", an
 - Storybook: Components/InputGroup
 - Stories: Default, TextAfter, WithButton, Error, Disabled, DarkMode
 
+### Item
+
+One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link
+
+- Import: `import { Item } from '@amezquita/design-system/components/primitives/Item'`
+- Token prefix: `item-*` (0 tokens)
+- Storybook: Components/Item
+- Stories: Default, Linked, Navigation, DarkMode
+
 ### Kbd
 
 A key the user presses, drawn as a keycap
@@ -261,6 +270,15 @@ Navigation to another page or resource; use Link for navigation and Button for a
 - Token prefix: `link-*` (0 tokens)
 - Storybook: Primitives/Link
 - Stories: Default, Standalone, External, AsChild, AllVariants, DarkMode
+
+### List
+
+A list, announced as one: rows of Items in an interface, or bullets and numbers in running text
+
+- Import: `import { List } from '@amezquita/design-system/components/primitives/List'`
+- Token prefix: `list-*` (0 tokens)
+- Storybook: Components/List
+- Stories: Default, Bullets, Numbered, DarkMode
 
 ### MultiSelect
 

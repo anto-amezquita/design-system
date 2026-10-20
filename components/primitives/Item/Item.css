@@ -1,0 +1,130 @@
+/*
+  Tokens consumed:
+
+  --space-control-padding-x, --space-control-padding-y (default),
+  --space-compact-padding-x, --space-compact-padding-y (compact),
+  --space-element-gap, --space-tight-gap, --border-radius-component,
+  --font-family-base, --font-size-control, --line-height-control,
+  --font-weight-label, --font-size-small, --line-height-small,
+  --color-text-primary, --color-text-secondary,
+  --color-surface-secondary (hover, current), --border-width-thick,
+  --color-accent-text (current bar), --color-border-focus,
+  --focus-ring-width, --duration-interaction, --easing-default
+
+  The current bar uses accent-text, the accent each brand makes readable
+  as text, so it clears 3:1 on every surface. accent-default is a fill
+  colour and measured 1.75:1 in demo-soft light.
+
+  No component tokens: a row in existing control, type and surface roles
+  (decisions/0004, 0005).
+*/
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-element-gap);
+  min-inline-size: 0;
+  padding: var(--space-control-padding-y) var(--space-control-padding-x);
+  border-radius: var(--border-radius-component);
+  font-family: var(--font-family-base);
+  list-style: none;
+}
+
+/* In a divided List the rows are square: a rounded row bends the divider
+   at both ends. */
+.list--divided > .item {
+  border-radius: 0;
+}
+
+.item--compact {
+  gap: var(--space-element-gap);
+  padding: var(--space-compact-padding-y) var(--space-compact-padding-x);
+}
+
+.item__leading,
+.item__trailing {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-tight-gap);
+}
+
+.item__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-inline-size: 0;
+}
+
+.item__title {
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-primary);
+  overflow-wrap: anywhere;
+}
+
+.item__description {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
+}
+
+/* Linked row: the title is the link, stretched over the whole row with a
+   pseudo-element, so the row is one click target with one name. Trailing
+   controls sit above the stretch so they stay their own targets. */
+.item__link {
+  text-decoration: none;
+  outline: none;
+}
+
+.item__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.item--link .item__trailing {
+  position: relative;
+  z-index: 1;
+}
+
+.item--link {
+  transition: background-color var(--duration-interaction) var(--easing-default);
+}
+
+.item--link:hover,
+.item--current {
+  background: var(--color-surface-secondary);
+}
+
+/* The focus ring goes on the row, where the stretched link is. */
+.item--link:has(.item__link:focus-visible) {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+}
+
+/* Current page: a bar on the leading edge, so it isn't colour alone. */
+.item--current::before {
+  content: '';
+  position: absolute;
+  inset-block: var(--space-tight-gap);
+  inset-inline-start: 0;
+  inline-size: var(--border-width-thick);
+  border-radius: var(--border-width-thick);
+  background: var(--color-accent-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item--link {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .item--current::before {
+    background: Highlight;
+  }
+}

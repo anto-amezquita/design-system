@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 77 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 79 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 80 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 82 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (49)
+### Primitives (51)
 
 | Component | Reference |
 |---|---|
@@ -60,9 +60,11 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Image | [image](https://design.amezquita.dk/components/image.md) — An image with a required `alt`, space held before it loads, a quiet fallback if it fails, and an optional caption |
 | Input | [input](https://design.amezquita.dk/components/input.md) — Labelled single-line text entry with hint and error states |
 | InputGroup | [input-group](https://design.amezquita.dk/components/input-group.md) — An Input joined to the text and buttons that belong to it: "https://", "kr.", an Apply button |
+| Item | [item](https://design.amezquita.dk/components/item.md) — One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link |
 | Kbd | [kbd](https://design.amezquita.dk/components/kbd.md) — A key the user presses, drawn as a keycap |
 | Label | [label](https://design.amezquita.dk/components/label.md) — Standalone form label element — used when a label must be decoupled from its input |
 | Link | [link](https://design.amezquita.dk/components/link.md) — Navigation to another page or resource; use Link for navigation and Button for actions |
+| List | [list](https://design.amezquita.dk/components/list.md) — A list, announced as one: rows of Items in an interface, or bullets and numbers in running text |
 | MultiSelect | [multi-select](https://design.amezquita.dk/components/multi-select.md) — Several values from a long list, found by typing: skills, reviewers, languages |
 | NumberInput | [number-input](https://design.amezquita.dk/components/number-input.md) — A number typed or stepped: a quantity, an amount, a percentage |
 | OtpInput | [otp-input](https://design.amezquita.dk/components/otp-input.md) — A short code sent by text or email, shown as one box per character |

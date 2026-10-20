@@ -1,0 +1,67 @@
+/*
+  Tokens consumed:
+
+  --space-tight-gap, --space-inline-gap, --space-element-gap,
+  --border-width-default, --color-border-default,
+  --font-family-base, --font-size-body, --line-height-body,
+  --color-text-primary
+
+  No component tokens: spacing, lines and type are existing roles
+  (decisions/0004, 0005).
+*/
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-primary);
+}
+
+.list--marker-none {
+  list-style: none;
+}
+
+/* Text lists keep their markers, indented by the element gap so they sit
+   inside the column. display: list-item keeps the marker on flex children. */
+.list--marker-bullet,
+.list--marker-number {
+  padding-inline-start: var(--space-element-gap);
+}
+
+.list--marker-bullet {
+  list-style: disc outside;
+}
+
+.list--marker-number {
+  list-style: decimal outside;
+}
+
+.list--marker-bullet > li,
+.list--marker-number > li {
+  display: list-item;
+  padding-inline-start: var(--space-tight-gap);
+}
+
+.list--gap-none {
+  gap: 0;
+}
+
+.list--gap-tight {
+  gap: var(--space-tight-gap);
+}
+
+.list--gap-inline {
+  gap: var(--space-inline-gap);
+}
+
+.list--gap-element {
+  gap: var(--space-element-gap);
+}
+
+.list--divided > li + li {
+  border-block-start: var(--border-width-default) solid var(--color-border-default);
+}

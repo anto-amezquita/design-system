@@ -3088,6 +3088,7 @@
         "Image",
         "Input",
         "InputGroup",
+        "Item",
         "Kbd",
         "OtpInput",
         "Radio",
@@ -3208,8 +3209,10 @@
         "Heading",
         "Icon",
         "Input",
+        "Item",
         "Kbd",
         "Label",
+        "List",
         "MultiSelect",
         "OtpInput",
         "ProgressBar",
@@ -3283,6 +3286,7 @@
         "Image",
         "Input",
         "InputGroup",
+        "Item",
         "Label",
         "OtpInput",
         "ProgressBar",
@@ -3474,6 +3478,7 @@
         "Combobox",
         "FileUpload",
         "Icon",
+        "Item",
         "Link",
         "ProgressBar",
         "Radio",
@@ -3553,6 +3558,7 @@
         "IconButton",
         "Input",
         "Kbd",
+        "List",
         "OtpInput",
         "Radio",
         "SegmentedControl",
@@ -3649,6 +3655,7 @@
         "Citation",
         "FileUpload",
         "Input",
+        "Item",
         "Link",
         "MultiSelect",
         "OtpInput",
@@ -4156,6 +4163,7 @@
         "Combobox",
         "FileUpload",
         "Input",
+        "Item",
         "Link",
         "MultiSelect",
         "OtpInput",
@@ -4743,7 +4751,9 @@
         "Image",
         "Input",
         "InputGroup",
+        "Item",
         "Label",
+        "List",
         "MultiSelect",
         "ProgressBar",
         "Radio",
@@ -4837,6 +4847,7 @@
         "Drawer",
         "EmptyState",
         "Blockquote",
+        "List",
         "Text"
       ]
     },
@@ -4881,6 +4892,7 @@
         "Combobox",
         "Input",
         "InputGroup",
+        "Item",
         "Radio",
         "SegmentedControl",
         "Select",
@@ -4928,6 +4940,7 @@
         "FileUpload",
         "Image",
         "Input",
+        "Item",
         "Label",
         "ProgressBar",
         "Select",
@@ -5276,6 +5289,7 @@
         "Citation",
         "Field",
         "Input",
+        "Item",
         "Label",
         "Select",
         "SkipLink",
@@ -5411,6 +5425,7 @@
         "EmptyState",
         "Hero",
         "Blockquote",
+        "List",
         "Text"
       ]
     },
@@ -5446,6 +5461,7 @@
         "TableOfContents",
         "TopNav",
         "Checkbox",
+        "Item",
         "Radio",
         "Select",
         "SkipLink",
@@ -5484,6 +5500,7 @@
         "Blockquote",
         "FileUpload",
         "Image",
+        "Item",
         "ProgressBar",
         "StatusDot",
         "Text"
@@ -5954,6 +5971,8 @@
         "Blockquote",
         "FileUpload",
         "Grid",
+        "Item",
+        "List",
         "Section",
         "Stack"
       ]
@@ -6011,6 +6030,7 @@
         "Input",
         "InputGroup",
         "Label",
+        "List",
         "MultiSelect",
         "OtpInput",
         "ProgressBar",
@@ -6090,6 +6110,7 @@
         "Table",
         "Toolbar",
         "FileUpload",
+        "Item",
         "Select"
       ]
     },
@@ -6245,6 +6266,7 @@
         "Citation",
         "FileUpload",
         "Input",
+        "Item",
         "Link",
         "OtpInput",
         "Radio",
@@ -6443,7 +6465,9 @@
         "Grid",
         "Image",
         "Input",
+        "Item",
         "Link",
+        "List",
         "MultiSelect",
         "ProgressBar",
         "SegmentedControl",
@@ -6486,6 +6510,7 @@
         "Combobox",
         "Input",
         "InputGroup",
+        "Item",
         "Select",
         "SkipLink",
         "Textarea",
@@ -6516,6 +6541,7 @@
         "Table",
         "Tabs",
         "Input",
+        "Item",
         "Select",
         "SkipLink",
         "Textarea"
@@ -6596,6 +6622,7 @@
       "usedBy": [
         "Tooltip",
         "Tabs",
+        "Item",
         "SegmentedControl"
       ]
     },
@@ -6623,7 +6650,8 @@
         "Menu",
         "NavigationMenu",
         "Tooltip",
-        "Tabs"
+        "Tabs",
+        "Item"
       ]
     },
     {
@@ -6854,6 +6882,7 @@
         "Divider",
         "Kbd",
         "Link",
+        "List",
         "SegmentedControl",
         "Select",
         "Tag"
