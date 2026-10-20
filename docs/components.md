@@ -1733,6 +1733,53 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Text
+
+| Field | Value |
+|---|---|
+| **Purpose** | Body text in the brand's type roles (body, small, caption), with a tone and a weight |
+| **Figma name** | `Text` (text styles `Body`, `Small`, `Caption`) |
+| **Code name** | `Text` |
+| **Storybook path** | `Components/Text` |
+
+**Props / variants**
+- `size`: `body` (default), `small` or `caption`, each the brand's `--font-size-*` and `--line-height-*` pair
+- `tone`: `primary` (default), `secondary`, or `inherit` for text inside a coloured component
+- `weight`: `body` (default) or `label`
+- `truncate`: `true` for one line with an ellipsis, or a number of lines
+- `as`: `p` (default), `span`, `div`, `strong`, `em`, `small`, `figcaption`, `li`, `dd` or `dt`
+- Native attributes, `className`, `style` and `ref` pass through
+
+**Required states**
+- [x] default
+- [x] truncated (one line, or clamped to n lines)
+
+**Tokens consumed**
+- `--font-family-base`, `--font-weight-body`, `--font-weight-label`, `--letter-spacing-body`
+- `--font-size-body`, `--line-height-body`, `--font-size-small`, `--line-height-small`, `--font-size-caption`, `--line-height-caption`
+- `--color-text-primary`, `--color-text-secondary` (no component tokens; they would only pass through)
+
+**Accessibility**
+- Primary and secondary text at every size are tested at 4.5:1 or more on the primary, secondary and tertiary surfaces, in all five brands, light and dark
+- The size and the element are separate: pick `as` for meaning (`strong`, `em`) and `size`/`weight` for looks. `em` keeps its italics
+- Truncated text stays whole in the page, so screen readers read all of it; sighted users only see the start, so show the full text somewhere too (a `title`, a Tooltip, a detail page)
+- Sizes come from tokens in px/rem, so text scales with browser zoom (WCAG 1.4.4)
+
+**Do**
+- Use `body` for running text, `small` for supporting text, `caption` for the smallest labels.
+- Use `tone="secondary"` to step text back; it still meets 4.5:1.
+- Use `as="span"` inside a line, and `as="strong"` when the emphasis changes the meaning.
+
+**Don't**
+- Don't use Text for headings; that's Heading, which puts the text in the page outline.
+- Don't truncate content people need to read in full, like an error or a price.
+- Don't set colours on Text by hand; if a tone is missing, it's a token to add, not a one-off.
+
+**Chromatic stories**
+- `Default`, `Sizes`, `Emphasis`, `Truncated`, `DarkMode`
+
+---
+
 ### TimePicker
 
 | Field | Value |
