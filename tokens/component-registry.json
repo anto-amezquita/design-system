@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 129,
-    "publicComponentCount": 88,
+    "componentCount": 130,
+    "publicComponentCount": 89,
     "subComponentCount": 40
   },
   "components": [
@@ -1992,6 +1992,25 @@
         "DarkMode"
       ],
       "tokenCount": 4,
+      "internal": false
+    },
+    {
+      "name": "ResizablePanels",
+      "slug": "resizable-panels",
+      "tier": "patterns",
+      "purpose": "Two panes sharing the space, with a separator people drag, or move with the keyboard (the WAI-ARIA window splitter pattern)",
+      "storybookPath": "Components/ResizablePanels",
+      "storybookTitleId": "components-resizablepanels",
+      "defaultStoryId": "components-resizablepanels--default",
+      "tokenPrefix": "resizablepanels",
+      "stories": [
+        "Default",
+        "Vertical",
+        "Collapsible",
+        "WithPresets",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {

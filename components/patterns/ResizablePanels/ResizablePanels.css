@@ -1,0 +1,151 @@
+/*
+  Tokens consumed:
+
+  --border-width-default, --color-border-default (the line at rest),
+  --border-width-thick, --color-accent-text (hovered, focused, dragged),
+  --color-border-focus, --focus-ring-width, --size-touch-target,
+  --space-inline-gap, --duration-interaction, --easing-default
+
+  No component tokens (decisions/0004, 0005).
+
+  --resizable-size is private: the component sets the first pane's size
+  from its state.
+*/
+
+.resizable-panels {
+  --resizable-size: 30%;
+  display: flex;
+  min-inline-size: 0;
+  min-block-size: 0;
+  overflow: hidden;
+}
+
+.resizable-panels--horizontal {
+  flex-direction: row;
+}
+
+.resizable-panels--vertical {
+  flex-direction: column;
+}
+
+.resizable-panels__pane {
+  min-inline-size: 0;
+  min-block-size: 0;
+  overflow: auto;
+}
+
+.resizable-panels__pane--first {
+  flex: 0 0 var(--resizable-size);
+}
+
+.resizable-panels__pane--second {
+  flex: 1 1 0;
+}
+
+.resizable-panels__pane[hidden] {
+  display: none;
+}
+
+/* The separator is a line in the border colour; its hit area is wider,
+   centred on the line, without taking layout space. Narrow for a mouse or
+   trackpad, so it doesn't sit over a pane's scrollbar; a full touch
+   target on touch screens, where there's no scrollbar to cover. */
+.resizable-panels__separator {
+  position: relative;
+  flex: 0 0 auto;
+  background: var(--color-border-default);
+  touch-action: none;
+  transition: background-color var(--duration-interaction) var(--easing-default);
+}
+
+.resizable-panels--horizontal > .resizable-panels__separator {
+  inline-size: var(--border-width-default);
+  cursor: col-resize;
+}
+
+.resizable-panels--vertical > .resizable-panels__separator {
+  block-size: var(--border-width-default);
+  cursor: row-resize;
+}
+
+.resizable-panels__separator::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+}
+
+.resizable-panels--horizontal > .resizable-panels__separator::before {
+  inset-block: 0;
+  inset-inline: calc(var(--space-inline-gap) / -2);
+}
+
+.resizable-panels--vertical > .resizable-panels__separator::before {
+  inset-inline: 0;
+  inset-block: calc(var(--space-inline-gap) / -2);
+}
+
+/* Negative insets on both sides centre the hit area on the line in either
+   writing direction (a translate would push it the wrong way in RTL). */
+@media (pointer: coarse) {
+  .resizable-panels--horizontal > .resizable-panels__separator::before {
+    inset-inline: calc((var(--size-touch-target) - var(--border-width-default)) / -2);
+  }
+
+  .resizable-panels--vertical > .resizable-panels__separator::before {
+    inset-block: calc((var(--size-touch-target) - var(--border-width-default)) / -2);
+  }
+}
+
+/* Hovered, focused or dragged: the line thickens in the accent, drawn as
+   an outline-like shadow so the panes don't shift. */
+.resizable-panels__separator:hover,
+.resizable-panels__separator:focus-visible,
+.resizable-panels[data-dragging] > .resizable-panels__separator {
+  background: var(--color-accent-text);
+}
+
+.resizable-panels--horizontal > .resizable-panels__separator:hover,
+.resizable-panels--horizontal > .resizable-panels__separator:focus-visible,
+.resizable-panels--horizontal[data-dragging] > .resizable-panels__separator {
+  box-shadow: 0 0 0 calc((var(--border-width-thick) - var(--border-width-default)) / 2) var(--color-accent-text);
+}
+
+.resizable-panels--vertical > .resizable-panels__separator:hover,
+.resizable-panels--vertical > .resizable-panels__separator:focus-visible,
+.resizable-panels--vertical[data-dragging] > .resizable-panels__separator {
+  box-shadow: 0 0 0 calc((var(--border-width-thick) - var(--border-width-default)) / 2) var(--color-accent-text);
+}
+
+.resizable-panels__separator:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-width);
+}
+
+/* While dragging, text in the panes doesn't get selected and the cursor
+   stays the resize cursor over everything. */
+.resizable-panels[data-dragging] {
+  cursor: col-resize;
+  user-select: none;
+}
+
+.resizable-panels--vertical[data-dragging] {
+  cursor: row-resize;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resizable-panels__separator {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .resizable-panels__separator {
+    background: CanvasText;
+  }
+
+  .resizable-panels__separator:hover,
+  .resizable-panels__separator:focus-visible,
+  .resizable-panels[data-dragging] > .resizable-panels__separator {
+    background: Highlight;
+  }
+}

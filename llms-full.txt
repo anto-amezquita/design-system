@@ -770,6 +770,15 @@ Page navigation controls for multi-page data sets; exposes current page and tota
 - Storybook: Patterns/Pagination
 - Stories: Default, EdgeCases, Compact, DarkMode
 
+### ResizablePanels
+
+Two panes sharing the space, with a separator people drag, or move with the keyboard (the WAI-ARIA window splitter pattern)
+
+- Import: `import { ResizablePanels } from '@amezquita/design-system/components/patterns/ResizablePanels'`
+- Token prefix: `resizablepanels-*` (0 tokens)
+- Storybook: Components/ResizablePanels
+- Stories: Default, Vertical, Collapsible, WithPresets, DarkMode
+
 ### SideNav
 
 Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider`

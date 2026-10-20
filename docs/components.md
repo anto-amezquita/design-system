@@ -3221,6 +3221,54 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### ResizablePanels
+
+| Field | Value |
+|---|---|
+| **Purpose** | Two panes sharing the space, with a separator people drag, or move with the keyboard (the WAI-ARIA window splitter pattern) |
+| **Figma name** | `ResizablePanels` |
+| **Code name** | `ResizablePanels` |
+| **Storybook path** | `Components/ResizablePanels` |
+
+**Props / variants**
+- `children`: exactly two panes; the first is the one sized, the second takes the rest
+- `label` (required): names the separator ("Resize file list")
+- `orientation`: `horizontal` (default, side by side) or `vertical` (stacked)
+- `size` + `onSizeChange` (controlled) or `defaultSize` (uncontrolled, default 30), all in percent of the first pane
+- `minSize` (10), `maxSize` (90), `step` (5), `collapsible`
+- Native `div` attributes, `className`, `style` and `ref` pass through to the wrapper
+
+**Required states**
+- [x] default, hover, focus-visible, dragging
+- [x] at the limits; collapsed (with `collapsible`)
+- [x] horizontal and vertical; left to right and right to left
+
+**Tokens consumed**
+- `--border-width-default`, `--color-border-default`, `--border-width-thick`, `--color-accent-text`, `--color-border-focus`, `--focus-ring-width`, `--size-touch-target`, `--space-inline-gap`, `--duration-interaction`, `--easing-default` (no component tokens; they would only pass through)
+
+**Accessibility**
+- The separator is `role="separator"`, focusable, named by `label`, with `aria-valuenow`, `aria-valuemin`, `aria-valuemax`, `aria-valuetext` ("30%", or "Collapsed") and `aria-controls` pointing at the first pane
+- Keyboard: arrows move it by `step` (Left/Right side by side, Up/Down stacked), Home and End go to the limits, Enter collapses and restores the first pane when `collapsible`
+- Dragging uses pointer capture, so it keeps following the pointer over iframes or off the window; in right-to-left layouts the first pane is on the right and dragging follows
+- Double-click resets to `defaultSize`
+- The line is the default border colour; hovered, focused or dragged it thickens in `accent-text`, tested at 3:1 against the page in all five brands, light and dark. The hit area is wider than the line: narrow for a mouse, so it doesn't cover a pane's scrollbar, and a full touch target on touch screens
+- **Known limit (WCAG 2.5.7, dragging):** a single pointer can reset the size (double-click) but can't set any other size without dragging; the keyboard can. Where pointer users need specific sizes, offer presets and pass `size` in (see the `WithPresets` story)
+
+**Do**
+- Use it where people need to trade space between two views: a file list and an editor, a list and a preview.
+- Name the separator by what it resizes.
+- Keep `minSize` large enough that the first pane is still usable.
+
+**Don't**
+- Don't use it on small screens; stack the views or use a Drawer instead.
+- Don't put more than two panes in one; nest a second ResizablePanels inside a pane.
+- Don't use it for page layout that never changes; that's AppShell or Grid.
+
+**Chromatic stories**
+- `Default`, `Vertical`, `Collapsible`, `WithPresets`, `DarkMode`
+
+---
+
 ### SideNav
 
 | Field | Value |
