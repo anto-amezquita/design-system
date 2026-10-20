@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 136,
-    "publicComponentCount": 95,
+    "componentCount": 137,
+    "publicComponentCount": 96,
     "subComponentCount": 40
   },
   "components": [
@@ -2459,6 +2459,25 @@
         "WithButton",
         "Narrow",
         "Danish",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "TreeView",
+      "slug": "tree-view",
+      "tier": "patterns",
+      "purpose": "Nested items that open and close, such as files and folders, a component library or an outline, to browse, choose one or choose several",
+      "storybookPath": "Components/TreeView",
+      "storybookTitleId": "components-treeview",
+      "defaultStoryId": "components-treeview--default",
+      "tokenPrefix": "treeview",
+      "stories": [
+        "Default",
+        "SingleSelection",
+        "MultipleSelection",
+        "WithoutIcons",
         "DarkMode"
       ],
       "tokenCount": 0,
