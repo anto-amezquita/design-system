@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "4afb9fd",
+      "type": "feat",
+      "scope": "blockquote, citation",
+      "message": "quotes with attribution, links to sources",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "738b450",
       "type": "feat",
       "scope": "status-dot",
