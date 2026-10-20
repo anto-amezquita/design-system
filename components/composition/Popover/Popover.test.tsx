@@ -59,7 +59,9 @@ describe('Popover', () => {
     await expect.poll(() => dialog()?.contains(document.activeElement)).toBe(true)
     await userEvent.keyboard('{Escape}')
     await expect.poll(dialog).toBeNull()
-    expect(document.activeElement).toBe(trigger)
+    // Radix returns focus just after the content unmounts, so wait for it:
+    // under a full test run's load the synchronous check lost that race.
+    await expect.poll(() => document.activeElement).toBe(trigger)
   })
 
   test('a click outside closes it', async () => {

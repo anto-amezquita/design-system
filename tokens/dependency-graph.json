@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 82,
+    "filesScanned": 83,
     "tokenCount": 261
   },
   "byToken": {
@@ -84,6 +84,7 @@
       "components/primitives/Collapsible/Collapsible.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Item/Item.css",
+      "components/primitives/ScrollArea/ScrollArea.css",
       "components/primitives/Select/Select.css"
     ],
     "border-radius-full": [
@@ -410,6 +411,7 @@
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/ScrollArea/ScrollArea.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
@@ -431,6 +433,7 @@
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/ScrollArea/ScrollArea.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/StatusDot/StatusDot.css",
@@ -939,6 +942,7 @@
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/ScrollArea/ScrollArea.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",

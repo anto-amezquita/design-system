@@ -1605,6 +1605,49 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### ScrollArea
+
+| Field | Value |
+|---|---|
+| **Purpose** | A box that scrolls its content, with thin scrollbars in the brand's colours, reachable and scrollable with the keyboard |
+| **Figma name** | `ScrollArea` |
+| **Code name** | `ScrollArea` |
+| **Storybook path** | `Components/ScrollArea` |
+
+**Props / variants**
+- `label` (required): names the area for screen readers
+- `orientation`: `vertical` (default), `horizontal` or `both`
+- `maxHeight`: a CSS length or pixels before it scrolls
+- Native `div` attributes, `className`, `style` and `ref` pass through
+
+**Required states**
+- [x] default (scrolling)
+- [x] focus-visible
+
+**Tokens consumed**
+- `--color-border-strong` (scrollbar thumb), `--color-border-focus`, `--focus-ring-width`, `--border-radius-component` (no component tokens; they would only pass through)
+
+**Accessibility**
+- It takes focus (`tabIndex={0}`), so keyboard users can scroll it with the arrow keys even when nothing inside is focusable (WCAG 2.1.1; axe `scrollable-region-focusable`). That's why `label` is required: a focusable region needs a name, and it's announced as one
+- The focus ring sits inside the edge, so a parent that also clips can't cut it off
+- These are the browser's own scrollbars, styled with `scrollbar-color` and `scrollbar-width`, not a JavaScript replacement: touch, trackpad momentum and assistive tech work as normal, and it costs no script. The thumb is the strong border colour, tested at 3:1 on the primary and secondary surfaces in all five brands, light and dark
+- `overscroll-behavior: contain` stops the page from scrolling when the area reaches its end
+
+**Do**
+- Use it for a bounded list inside a panel or dialog: release notes, a message history, a long menu of options.
+- Give it a label that says what's inside.
+- Show that there's more, with the cut-off content or a count; scrollbars can be hidden by the OS until you scroll.
+
+**Don't**
+- Don't make the main page content scroll in a box; let the page scroll.
+- Don't nest ScrollAreas that scroll the same way; the inner one traps the wheel.
+- Don't put essential actions at the bottom of a scrolling box where they can be missed.
+
+**Chromatic stories**
+- `Default`, `Horizontal`, `DarkMode`
+
+---
+
 ### Search
 
 | Field | Value |

@@ -343,6 +343,15 @@ Single-selection control within a mutually exclusive group
 - Storybook: Components/RadioGroup
 - Stories: Default, WithDefault, Horizontal, Disabled, WithDisabledOption, Controlled, AllStates, DarkMode
 
+### ScrollArea
+
+A box that scrolls its content, with thin scrollbars in the brand's colours, reachable and scrollable with the keyboard
+
+- Import: `import { ScrollArea } from '@amezquita/design-system/components/primitives/ScrollArea'`
+- Token prefix: `scrollarea-*` (0 tokens)
+- Storybook: Components/ScrollArea
+- Stories: Default, Horizontal, DarkMode
+
 ### Search
 
 A site or list search: a search landmark with Enter to search, Escape to clear and an optional shortcut
