@@ -1,0 +1,73 @@
+/*
+  Tokens consumed:
+
+  --size-icon-xs, --size-icon-sm, --size-icon-md, --size-icon-lg,
+  --size-icon-xl, --color-text-primary, --color-text-secondary,
+  --color-accent-text, --color-feedback-error
+
+  Phosphor draws with currentColor, so in forced-colors mode the icon takes
+  the system colour of whatever it sits in (text, a button) with no extra rule.
+
+  No component tokens: sizes and colours are the brand's own icon and
+  text roles (decisions/0004, 0005).
+*/
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 0;
+}
+
+.icon > svg {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.icon--xs {
+  inline-size: var(--size-icon-xs);
+  block-size: var(--size-icon-xs);
+}
+
+.icon--sm {
+  inline-size: var(--size-icon-sm);
+  block-size: var(--size-icon-sm);
+}
+
+.icon--md {
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+}
+
+.icon--lg {
+  inline-size: var(--size-icon-lg);
+  block-size: var(--size-icon-lg);
+}
+
+.icon--xl {
+  inline-size: var(--size-icon-xl);
+  block-size: var(--size-icon-xl);
+}
+
+.icon--tone-current {
+  color: inherit;
+}
+
+.icon--tone-primary {
+  color: var(--color-text-primary);
+}
+
+.icon--tone-secondary {
+  color: var(--color-text-secondary);
+}
+
+.icon--tone-accent {
+  color: var(--color-accent-text);
+}
+
+.icon--tone-error {
+  color: var(--color-feedback-error);
+}

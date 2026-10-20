@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 72,
-    "tokenCount": 257
+    "filesScanned": 73,
+    "tokenCount": 258
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -316,6 +316,7 @@
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Icon/Icon.css",
       "components/primitives/Link/Link.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
@@ -423,6 +424,7 @@
       "components/patterns/Stepper/Stepper.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Icon/Icon.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
@@ -599,6 +601,7 @@
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Heading/Heading.css",
+      "components/primitives/Icon/Icon.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/Label/Label.css",
@@ -646,6 +649,7 @@
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Icon/Icon.css",
       "components/primitives/IconButton/IconButton.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
@@ -1350,6 +1354,7 @@
     ],
     "size-icon-lg": [
       "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Icon/Icon.css",
       "components/primitives/Spinner/Spinner.css"
     ],
     "size-icon-md": [
@@ -1360,6 +1365,7 @@
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Icon/Icon.css",
       "components/primitives/IconButton/IconButton.css",
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
@@ -1373,11 +1379,16 @@
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/SideNav/SideNav.css",
       "components/primitives/Field/Field.css",
+      "components/primitives/Icon/Icon.css",
       "components/primitives/IconButton/IconButton.css",
       "components/primitives/Spinner/Spinner.css",
       "components/primitives/Tag/Tag.css"
     ],
+    "size-icon-xl": [
+      "components/primitives/Icon/Icon.css"
+    ],
     "size-icon-xs": [
+      "components/primitives/Icon/Icon.css",
       "components/primitives/Link/Link.css",
       "components/primitives/Tag/Tag.css"
     ],
