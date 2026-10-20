@@ -762,7 +762,7 @@
   ],
   "unreleased": [
     {
-      "sha": "012f57e",
+      "sha": "26bcfd8",
       "type": "feat",
       "scope": "description-list",
       "message": "labelled values, side by side or stacked",
