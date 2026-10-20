@@ -44,5 +44,6 @@ args => <SelectableCardGroup {...args}><Plans /></SelectableCardGroup>
 - Native radios (`single`) or checkboxes (`multiple`) underneath, visually hidden but focusable: arrow keys move between radios and skip disabled ones, the values reach the form, and `required` blocks an empty submit
 - Each input is named by its card's title and meta ("Pro, 90 kr/mo") and described by the description, rather than by everything in the card
 - The whole card is the input's `label`, so a click anywhere on it chooses it
+- `multiple` shows a square indicator (its corner capped at a quarter of its size, so it stays square in round brands) and `single` a round one, as checkboxes and radios look elsewhere
 - Checked shows twice: the edge doubles in the accent and the indicator fills with a tick. It uses `accent-text` because `accent-default` is too pale in demo-soft
 - Edges and indicators are tested at 3:1, the checked edge, indicator and tick at 3:1, and all text at 4.5:1, disabled cards included, in all five brands, light and dark. Disabled cards don't fade (the rule since #118); they get a dashed edge, because in demo-warm the colours alone barely set them apart

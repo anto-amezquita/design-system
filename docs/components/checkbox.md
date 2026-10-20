@@ -32,3 +32,7 @@ Also accepts all props of: `Omit<React.ComponentPropsWithoutRef<typeof RadixChec
   label="Accept terms and conditions"
 />
 ```
+
+## Accessibility
+
+- The box's corner is the brand's interactive radius, capped at a quarter of the box, so a checkbox never turns into a circle and reads as a radio in a round brand (demo-soft, demo-cool). SelectableCard's `multiple` indicator and MultiSelect's option mark follow the same cap; radios stay round. Tested in all five brands
