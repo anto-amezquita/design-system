@@ -1282,6 +1282,14 @@
   ],
   "unreleased": [
     {
+      "sha": "102e54b",
+      "type": "feat",
+      "scope": "tree-view",
+      "message": "nested items on the WAI-ARIA tree pattern",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "72566bd",
       "type": "feat",
       "scope": "tool-call",
