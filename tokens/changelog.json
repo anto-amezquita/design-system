@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "d0f1c9e",
+      "type": "feat",
+      "scope": "list, item",
+      "message": "lists announced as one, and rows with a stretched link",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "40d830e",
       "type": "feat",
       "scope": "timestamp",
