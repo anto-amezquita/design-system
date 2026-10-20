@@ -2058,6 +2058,55 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Timestamp
+
+| Field | Value |
+|---|---|
+| **Purpose** | A moment in time as people say it ("5 minutes ago", "yesterday") or as a date, in a `time` element |
+| **Figma name** | `Timestamp` |
+| **Code name** | `Timestamp` |
+| **Storybook path** | `Components/Timestamp` |
+
+**Props / variants**
+- `date`: a Date, an ISO string or epoch milliseconds (required)
+- `format`: `relative` (default), `date`, `datetime` or `time`
+- `locale`: the words and date order; default is the browser's
+- `relativeLimitDays`: with `relative`, show the date after this many calendar days (default 7)
+- `live`: with `relative`, keep the text current (default `true`)
+- Native `time` attributes, `className` and `ref` pass through; a `title` you pass replaces the default tooltip
+
+**Required states**
+- [x] relative (now, minutes, hours, days, then a date past the limit)
+- [x] absolute (date, date and time, time)
+- [x] invalid date (shows "—")
+
+**Tokens consumed**
+- None: it takes the type and colour of the text around it
+
+**Accessibility**
+- A `time` element with the exact moment in `dateTime`, so machines and assistive tech that read it get the precise value
+- The words come from `Intl.RelativeTimeFormat` with `numeric: "auto"`: "yesterday" rather than "1 day ago", and "i går" in Danish
+- Days count calendar days: something from 23:50 reads as "yesterday" at 00:10, not "20 minutes ago" rounded into hours
+- The full date and time is the `title`, which only mouse users see. Where the exact moment matters (a contract, a transaction), use an absolute `format` instead
+- Live updates change the text quietly, with no live region, so screen readers aren't interrupted every minute; the timer slows from 15 seconds to hourly as the moment gets older, and nothing runs for absolute formats
+- Tabular figures, so a live value doesn't shift as its digits change
+- Server rendering: the relative text depends on the clock, so the server and first client render can differ by seconds; the hydration warning is suppressed on purpose and the client's text wins
+
+**Do**
+- Use `relative` for recent activity: comments, edits, messages.
+- Use `date` or `datetime` where the exact moment matters, and in tables people scan or sort.
+- Pass `locale` from the user's settings, so the words match the rest of the page.
+
+**Don't**
+- Don't use relative time for future deadlines people plan around; "in 3 days" hides which day.
+- Don't build the string yourself; the date order and the words differ by locale.
+- Don't wrap a Timestamp in a live region; it would announce every minute.
+
+**Chromatic stories**
+- `Default`, `Relative`, `Absolute`, `Locales`, `DarkMode`
+
+---
+
 ### ToggleButton
 
 | Field | Value |

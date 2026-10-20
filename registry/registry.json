@@ -1265,6 +1265,23 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "timestamp",
+      "type": "registry:component",
+      "title": "Timestamp",
+      "description": "A moment in time as people say it (\"5 minutes ago\", \"yesterday\") or as a date, in a `time` element",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "toggle-button",
       "type": "registry:component",
       "title": "ToggleButton",

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 119,
-    "publicComponentCount": 79,
+    "componentCount": 120,
+    "publicComponentCount": 80,
     "subComponentCount": 39
   },
   "components": [
@@ -981,6 +981,25 @@
         "Error",
         "Disabled",
         "Open",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "Timestamp",
+      "slug": "timestamp",
+      "tier": "primitives",
+      "purpose": "A moment in time as people say it (\"5 minutes ago\", \"yesterday\") or as a date, in a `time` element",
+      "storybookPath": "Components/Timestamp",
+      "storybookTitleId": "components-timestamp",
+      "defaultStoryId": "components-timestamp--default",
+      "tokenPrefix": "timestamp",
+      "stories": [
+        "Default",
+        "Relative",
+        "Absolute",
+        "Locales",
         "DarkMode"
       ],
       "tokenCount": 0,

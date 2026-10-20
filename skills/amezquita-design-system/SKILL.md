@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 76 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 77 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 79 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 80 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (48)
+### Primitives (49)
 
 | Component | Reference |
 |---|---|
@@ -84,6 +84,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Text | [text](https://design.amezquita.dk/components/text.md) — Body text in the brand's type roles (body, small, caption), with a tone and a weight |
 | Textarea | [textarea](https://design.amezquita.dk/components/textarea.md) — Multi-line text entry with label, hint, and error states — mirrors Input API |
 | TimePicker | [time-picker](https://design.amezquita.dk/components/time-picker.md) — One time of day: an appointment, a delivery slot, opening hours |
+| Timestamp | [timestamp](https://design.amezquita.dk/components/timestamp.md) — A moment in time as people say it ("5 minutes ago", "yesterday") or as a date, in a `time` element |
 | ToggleButton | [toggle-button](https://design.amezquita.dk/components/toggle-button.md) — A button that stays on or off, like bold in an editor or a grid overlay |
 | VisuallyHidden | [visually-hidden](https://design.amezquita.dk/components/visually-hidden.md) — Text screen readers announce but sighted users don't see |
 
