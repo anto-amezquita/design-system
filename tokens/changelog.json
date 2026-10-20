@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "5a7cde9",
+      "type": "feat",
+      "scope": "code-block",
+      "message": "code with a header, copy, line numbers and highlights",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "84971ba",
       "type": "feat",
       "scope": "scroll-area",
