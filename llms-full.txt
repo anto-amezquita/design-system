@@ -878,6 +878,15 @@ A row of controls for one area: the formatting buttons over an editor, the actio
 - Storybook: Components/Toolbar
 - Stories: Default, Vertical, Danish, Keyboard, DarkMode
 
+### ToolCall
+
+A tool an assistant used or wants to use: what it does, whether it's waiting, running, done or failed, its input and output, and a request for permission when it needs one
+
+- Import: `import { ToolCall } from '@amezquita/design-system/components/patterns/ToolCall'`
+- Token prefix: `toolcall-*` (0 tokens)
+- Storybook: Components/ToolCall
+- Stories: Default, Open, AllStatuses, AskForApproval, DarkMode
+
 ### TopNav
 
 The bar across the top of a site or app: brand, main navigation, actions

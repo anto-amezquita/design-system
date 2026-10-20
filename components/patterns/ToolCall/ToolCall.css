@@ -1,0 +1,121 @@
+/*
+  Tokens consumed:
+
+  --border-width-default, --color-border-default, --border-radius-component,
+  --color-surface-primary, --space-inline-gap, --space-tight-gap,
+  --space-element-gap, --space-prominent-padding-x,
+  --space-prominent-padding-y, --color-text-primary, --color-text-secondary,
+  --color-feedback-success-border, --color-feedback-warning-border,
+  --color-feedback-error, --font-family-mono, --font-size-small,
+  --line-height-small, --font-weight-label, --font-weight-body, --duration-spin
+
+  No component tokens: the disclosure is Collapsible, the details are
+  CodeBlocks and the actions Buttons. The status colours are the ones
+  StatusDot, Alert and Toast use (decisions/0004, 0005).
+*/
+
+.tool-call {
+  display: grid;
+  border: var(--border-width-default) solid var(--color-border-default);
+  border-radius: var(--border-radius-component);
+  background: var(--color-surface-primary);
+  color: var(--color-text-primary);
+}
+
+.tool-call__row {
+  padding: var(--space-prominent-padding-y) var(--space-prominent-padding-x);
+}
+
+.tool-call__summary {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-inline-gap);
+  min-inline-size: 0;
+  text-align: start;
+}
+
+.tool-call__text {
+  display: grid;
+  min-inline-size: 0;
+}
+
+.tool-call__title {
+  font-weight: var(--font-weight-label);
+  overflow-wrap: anywhere;
+}
+
+.tool-call__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-tight-gap) var(--space-inline-gap);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  font-weight: var(--font-weight-body);
+  color: var(--color-text-secondary);
+}
+
+.tool-call__name {
+  font-family: var(--font-family-mono);
+  overflow-wrap: anywhere;
+}
+
+/* Status: an icon of its own shape, in the colour StatusDot uses for it. */
+.tool-call__icon {
+  color: var(--color-text-secondary);
+}
+
+.tool-call--success .tool-call__icon {
+  color: var(--color-feedback-success-border);
+}
+
+.tool-call--error .tool-call__icon {
+  color: var(--color-feedback-error);
+}
+
+.tool-call--awaiting-approval .tool-call__icon {
+  color: var(--color-feedback-warning-border);
+}
+
+.tool-call--running .tool-call__icon {
+  animation: tool-call-spin var(--duration-spin) linear infinite;
+}
+
+@keyframes tool-call-spin {
+  to { rotate: 1turn; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-call--running .tool-call__icon {
+    animation: none;
+  }
+}
+
+.tool-call__details {
+  display: grid;
+  gap: var(--space-inline-gap);
+}
+
+.tool-call__error {
+  margin: 0;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-feedback-error);
+}
+
+.tool-call__approval {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-inline-gap) var(--space-element-gap);
+  padding: var(--space-inline-gap) var(--space-prominent-padding-x) var(--space-prominent-padding-y);
+}
+
+.tool-call__ask {
+  margin: 0;
+}
+
+.tool-call__actions {
+  display: flex;
+  gap: var(--space-inline-gap);
+}

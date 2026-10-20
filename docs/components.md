@@ -3756,6 +3756,55 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### ToolCall
+
+| Field | Value |
+|---|---|
+| **Purpose** | A tool an assistant used or wants to use: what it does, whether it's waiting, running, done or failed, its input and output, and a request for permission when it needs one |
+| **Figma name** | `ToolCall` |
+| **Code name** | `ToolCall` (+ `ToolCallStatus` type) |
+| **Storybook path** | `Components/ToolCall` |
+
+**Props / variants**
+- `name` (required): the tool's name as the model calls it, in the monospace face; `title`: what the call does, in words (defaults to the name)
+- `status` (required): `pending`, `running`, `success`, `error`, `awaiting-approval` or `denied`, each with its own icon and word
+- `input`, `output`: objects (shown as JSON) or strings, in CodeBlocks behind a Collapsible; `error`: why it failed; `durationMs`: shown once it finishes ("820 ms", "1.5 s")
+- `onApprove`, `onDeny`: Allow and Deny, shown while `awaiting-approval`; `defaultOpen`
+- Native `div` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] each status, with and without a title
+- [x] closed and open (input, output, error); nothing to show (no disclosure)
+- [x] awaiting approval, then allowed or denied
+- [x] reduced motion: the running icon stops turning
+
+**Tokens consumed**
+- `--color-surface-primary`, `--color-border-default`, `--border-width-default`, `--border-radius-component`, `--space-prominent-padding-x`, `--space-prominent-padding-y`, `--space-inline-gap`, `--space-tight-gap`, `--space-element-gap`
+- `--color-text-primary`, `--color-text-secondary`, `--color-feedback-success-border`, `--color-feedback-warning-border`, `--color-feedback-error`, `--font-family-mono`, `--font-size-small`, `--line-height-small`, `--font-weight-label`, `--font-weight-body`, `--duration-spin`
+- The disclosure is Collapsible, the details are CodeBlocks, the actions are Buttons. No component tokens
+
+**Accessibility**
+- The summary is Collapsible's button, so the whole line (title, tool name, status in words, time) is its name and `aria-expanded` says whether the details are open. With no input, output or error there is nothing to open, and it's plain text
+- The status is a word ("Running", "Failed", "Needs your approval"), not colour alone; the icon has its own shape for each status and is hidden from screen readers. A running call is `aria-busy`, and its spinning icon stops under reduced motion
+- Input and output are CodeBlocks named "Input" and "Output", with Copy, wrapped lines and a height limit on the output
+- A call that needs permission asks in a group named "Allow this?" plus the call's title, with Allow and Deny as real buttons. It doesn't take focus on its own: it's part of a message the reader gets to
+- Titles, tool names, status words and errors are tested at 4.5:1, and every status icon at 3:1, in all five brands, light and dark
+
+**Do**
+- Write `title` as what the call does for the person ("Search the tokens for “radius”"), and keep `name` for the technical detail.
+- Ask for approval before anything that writes, deletes or spends, and show it as `denied` if refused.
+- Put tool calls inside the assistant's ChatMessage, in the order they ran.
+
+**Don't**
+- Don't show raw output to the person as the answer; the assistant's message says what it means.
+- Don't auto-approve after a timeout; a request for permission waits.
+- Don't use colour to tell statuses apart; the word and the icon's shape do.
+
+**Chromatic stories**
+- `Default`, `Open`, `AllStatuses`, `AskForApproval`, `DarkMode`
+
+---
+
 ### Tabs
 
 | Field | Value |

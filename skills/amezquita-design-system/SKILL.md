@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 91 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 92 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 94 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 95 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -115,7 +115,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Toast | [toast](https://design.amezquita.dk/components/toast.md) — Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout |
 | Tooltip | [tooltip](https://design.amezquita.dk/components/tooltip.md) — Contextual label revealed on hover or focus — supplements an icon or truncated text |
 
-### Patterns (23)
+### Patterns (24)
 
 | Component | Reference |
 |---|---|
@@ -141,6 +141,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | TableOfContents | [table-of-contents](https://design.amezquita.dk/components/table-of-contents.md) — The sections of a long page as links, with the one being read marked: docs, articles, policies |
 | Tabs | [tabs](https://design.amezquita.dk/components/tabs.md) — Segmented view switcher with full keyboard navigation; built on Radix Tabs |
 | Toolbar | [toolbar](https://design.amezquita.dk/components/toolbar.md) — A row of controls for one area: the formatting buttons over an editor, the actions over a table or canvas |
+| ToolCall | [tool-call](https://design.amezquita.dk/components/tool-call.md) — A tool an assistant used or wants to use: what it does, whether it's waiting, running, done or failed, its input and output, and a request for permission when it needs one |
 | TopNav | [top-nav](https://design.amezquita.dk/components/top-nav.md) — The bar across the top of a site or app: brand, main navigation, actions |
 
 ## Tokens

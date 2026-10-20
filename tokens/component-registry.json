@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 135,
-    "publicComponentCount": 94,
+    "componentCount": 136,
+    "publicComponentCount": 95,
     "subComponentCount": 40
   },
   "components": [
@@ -2425,6 +2425,25 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "toolbar"
+    },
+    {
+      "name": "ToolCall",
+      "slug": "tool-call",
+      "tier": "patterns",
+      "purpose": "A tool an assistant used or wants to use: what it does, whether it's waiting, running, done or failed, its input and output, and a request for permission when it needs one",
+      "storybookPath": "Components/ToolCall",
+      "storybookTitleId": "components-toolcall",
+      "defaultStoryId": "components-toolcall--default",
+      "tokenPrefix": "toolcall",
+      "stories": [
+        "Default",
+        "Open",
+        "AllStatuses",
+        "AskForApproval",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
     },
     {
       "name": "TopNav",
