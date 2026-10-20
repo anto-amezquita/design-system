@@ -172,6 +172,15 @@ Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a 
 - Storybook: Components/Heading
 - Stories: H1, H2, H3, H4, H5, AllLevels, LevelAsDecoupling, DarkMode
 
+### Icon
+
+A Phosphor icon at one of the brand's icon sizes and colours, hidden from screen readers unless named
+
+- Import: `import { Icon } from '@amezquita/design-system/components/primitives/Icon'`
+- Token prefix: `icon-*` (0 tokens)
+- Storybook: Components/Icon
+- Stories: Default, Sizes, Tones, WithText, DarkMode
+
 ### IconButton
 
 An action shown only as an icon, for toolbars, cards and dense rows

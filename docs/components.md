@@ -912,6 +912,52 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Icon
+
+| Field | Value |
+|---|---|
+| **Purpose** | A Phosphor icon at one of the brand's icon sizes and colours, hidden from screen readers unless named |
+| **Figma name** | `Icon` |
+| **Code name** | `Icon` |
+| **Storybook path** | `Components/Icon` |
+
+**Props / variants**
+- `icon`: the Phosphor component, `icon={BellIcon}` (required)
+- `size`: `xs`, `sm`, `md` (default), `lg` or `xl`, each the brand's `--size-icon-*` token
+- `weight`: Phosphor's `thin`, `light`, `regular` (default), `bold`, `fill` or `duotone`
+- `tone`: `current` (default, the colour around it), `primary`, `secondary`, `accent` or `error`
+- `label`: a name, for an icon that carries meaning on its own
+- Native `span` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] decorative (default: hidden from screen readers)
+- [x] meaningful (`label` set: an image with a name)
+
+**Tokens consumed**
+- `--size-icon-xs`, `--size-icon-sm`, `--size-icon-md`, `--size-icon-lg`, `--size-icon-xl`
+- `--color-text-primary`, `--color-text-secondary`, `--color-accent-text`, `--color-feedback-error` (no component tokens; they would only pass through)
+
+**Accessibility**
+- Without `label` the wrapper is `aria-hidden`, so an icon next to text that says the same thing isn't read twice
+- With `label` it's `role="img"` with that name; the SVG inside stays hidden and unfocusable, so it's announced once
+- Every tone is tested at 3:1 or more on the primary, secondary and tertiary surfaces in all five brands, light and dark (WCAG 1.4.11, non-text contrast)
+- Drawn in `currentColor`, so in forced-colors mode it takes the system colour of whatever it sits in
+
+**Do**
+- Leave `tone="current"` inside buttons, links and alerts, so the icon follows their colour in every state.
+- Give `label` when the icon is the only thing that says something ("Verified", "Warning").
+- Pair `sm` with small text and `md` with body text.
+
+**Don't**
+- Don't make an icon clickable on its own; use IconButton, which has a name, a focus ring and a 24px target.
+- Don't rely on colour alone: an `error` tone needs words or a label that say it's an error.
+- Don't import a second icon set; Phosphor is the system's set, so weights and style stay consistent.
+
+**Chromatic stories**
+- `Default`, `Sizes`, `Tones`, `WithText`, `DarkMode`
+
+---
+
 ### IconButton
 
 | Field | Value |

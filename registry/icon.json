@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon",
+  "type": "registry:component",
+  "title": "Icon",
+  "description": "A Phosphor icon at one of the brand's icon sizes and colours, hidden from screen readers unless named",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}

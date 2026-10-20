@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 114,
-    "publicComponentCount": 74,
+    "componentCount": 115,
+    "publicComponentCount": 75,
     "subComponentCount": 39
   },
   "components": [
@@ -342,6 +342,25 @@
         "H5",
         "AllLevels",
         "LevelAsDecoupling",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "Icon",
+      "slug": "icon",
+      "tier": "primitives",
+      "purpose": "A Phosphor icon at one of the brand's icon sizes and colours, hidden from screen readers unless named",
+      "storybookPath": "Components/Icon",
+      "storybookTitleId": "components-icon",
+      "defaultStoryId": "components-icon--default",
+      "tokenPrefix": "icon",
+      "stories": [
+        "Default",
+        "Sizes",
+        "Tones",
+        "WithText",
         "DarkMode"
       ],
       "tokenCount": 0,

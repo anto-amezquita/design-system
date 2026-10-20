@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 74 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 75 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -43,6 +43,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [FileUpload](https://design.amezquita.dk/components/file-upload.md): Pick files by button or by dragging them in, see what's chosen, and remove any
 - [Grid](https://design.amezquita.dk/components/grid.md): Lays items out in rows and columns: fixed columns per breakpoint, or as many as fit
 - [Heading](https://design.amezquita.dk/components/heading.md): Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level
+- [Icon](https://design.amezquita.dk/components/icon.md): A Phosphor icon at one of the brand's icon sizes and colours, hidden from screen readers unless named
 - [IconButton](https://design.amezquita.dk/components/icon-button.md): An action shown only as an icon, for toolbars, cards and dense rows
 - [Input](https://design.amezquita.dk/components/input.md): Labelled single-line text entry with hint and error states
 - [InputGroup](https://design.amezquita.dk/components/input-group.md): An Input joined to the text and buttons that belong to it: "https://", "kr.", an Apply button
