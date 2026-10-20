@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 70,
+    "filesScanned": 71,
     "tokenCount": 254
   },
   "byToken": {
@@ -1429,7 +1429,8 @@
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Hero/Hero.css",
       "components/primitives/Grid/Grid.css",
-      "components/primitives/Section/Section.css"
+      "components/primitives/Section/Section.css",
+      "components/primitives/Stack/Stack.css"
     ],
     "space-container-padding": [
       "components/composition/Card/Card.css",
@@ -1491,7 +1492,8 @@
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Grid/Grid.css",
-      "components/primitives/Section/Section.css"
+      "components/primitives/Section/Section.css",
+      "components/primitives/Stack/Stack.css"
     ],
     "space-inline-gap": [
       "components/composition/Card/Card.css",
@@ -1535,6 +1537,7 @@
       "components/primitives/Skeleton/Skeleton.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Slider/Slider.css",
+      "components/primitives/Stack/Stack.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css",
       "components/primitives/TimePicker/TimePicker.css"
@@ -1559,7 +1562,8 @@
     ],
     "space-section-gap": [
       "components/primitives/Grid/Grid.css",
-      "components/primitives/Section/Section.css"
+      "components/primitives/Section/Section.css",
+      "components/primitives/Stack/Stack.css"
     ],
     "space-tight-gap": [
       "components/composition/CommandPalette/CommandPalette.css",
@@ -1589,6 +1593,7 @@
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Slider/Slider.css",
+      "components/primitives/Stack/Stack.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/TagInput/TagInput.css",
       "components/primitives/TimePicker/TimePicker.css"
