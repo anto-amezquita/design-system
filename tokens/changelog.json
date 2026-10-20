@@ -4,6 +4,78 @@
   },
   "versions": [
     {
+      "tag": "v1.6.0",
+      "date": "2026-10-20",
+      "sha": "b0ba48f",
+      "entries": [
+        {
+          "sha": "09177a6",
+          "type": "feat",
+          "scope": "chart",
+          "message": "line and bar charts from tokens, explorable by keyboard",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "102e54b",
+          "type": "feat",
+          "scope": "tree-view",
+          "message": "nested items on the WAI-ARIA tree pattern",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "72566bd",
+          "type": "feat",
+          "scope": "tool-call",
+          "message": "what an assistant's tool did, and asking before it acts",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "1ddb69a",
+          "type": "feat",
+          "scope": "message-list",
+          "message": "a conversation that follows the newest message",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "51f72ef",
+          "type": "feat",
+          "scope": "chat-composer",
+          "message": "write and send a message, Stop while a reply streams",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "23f9e8a",
+          "type": "fix",
+          "scope": "checkbox",
+          "message": "keep checkbox marks square in round brands",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "c6267f5",
+          "type": "feat",
+          "scope": "prompt-form",
+          "message": "questions an assistant asks before it goes on",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "cdd7a6d",
+          "type": "feat",
+          "scope": "chat-message",
+          "message": "one message in a conversation, named by its sender",
+          "date": "2026-10-20",
+          "breaking": false
+        }
+      ],
+      "entryCount": 8
+    },
+    {
       "tag": "v1.5.0",
       "date": "2026-10-20",
       "sha": "37d4426",
@@ -1280,72 +1352,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "09177a6",
-      "type": "feat",
-      "scope": "chart",
-      "message": "line and bar charts from tokens, explorable by keyboard",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "102e54b",
-      "type": "feat",
-      "scope": "tree-view",
-      "message": "nested items on the WAI-ARIA tree pattern",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "72566bd",
-      "type": "feat",
-      "scope": "tool-call",
-      "message": "what an assistant's tool did, and asking before it acts",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "1ddb69a",
-      "type": "feat",
-      "scope": "message-list",
-      "message": "a conversation that follows the newest message",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "51f72ef",
-      "type": "feat",
-      "scope": "chat-composer",
-      "message": "write and send a message, Stop while a reply streams",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "23f9e8a",
-      "type": "fix",
-      "scope": "checkbox",
-      "message": "keep checkbox marks square in round brands",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "c6267f5",
-      "type": "feat",
-      "scope": "prompt-form",
-      "message": "questions an assistant asks before it goes on",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "cdd7a6d",
-      "type": "feat",
-      "scope": "chat-message",
-      "message": "one message in a conversation, named by its sender",
-      "date": "2026-10-20",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
