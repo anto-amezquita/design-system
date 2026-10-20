@@ -66,9 +66,9 @@ docs/              — roadmap/rationale docs that aren't tied to one feature (b
 
 This repo reports three different totals depending on what's being counted, and none of them is wrong:
 
-- **33** — CSS files under `components/{primitives,composition,patterns}/` (`npm run tokens:lint`'s "33 files checked"). Lower than the component count because `AlertDialog`, `BaseSheet` and `ThemeScope` have no CSS file of their own — the first two deliberately reuse `Dialog`'s, and `ThemeScope` has no styles.
-- **35** — public components (`tokens/component-registry.json`'s `publicComponentCount`, `AGENTS.md`'s allow-list). What "35 public components" everywhere else in this repo's docs means. Sub-components (Card's parts, `SideNavProvider`, `SideNavTrigger`) are registered separately and don't count here.
-- **36** — directories on disk under the same three tiers (`check-components-doc.mjs`'s "directories documented"). 35 public + `BaseSheet` (internal).
+- **88** — CSS files under `components/{primitives,composition,patterns}/` (`npm run tokens:lint`'s "88 files checked"). Lower than the directory count because `AlertDialog`, `BaseSheet` and `ThemeScope` have no CSS file of their own — the first two deliberately reuse `Dialog`'s, and `ThemeScope` has no styles.
+- **90** — public components (`tokens/component-registry.json`'s `publicComponentCount`, `AGENTS.md`'s allow-list). What "90 public components" everywhere else in this repo's docs means. Sub-components (40: Card's parts, `SideNavProvider`, `GridItem` and so on) are registered separately and don't count here.
+- **91** — directories on disk under the same three tiers (`check-components-doc.mjs`'s "directories documented"). 90 public + `BaseSheet` (internal).
 
 If a number in one file looks like it contradicts a number in another, check which of these three it's actually counting before assuming drift.
 

@@ -1,6 +1,6 @@
 # Component coverage: from 35 toward 100
 
-Status: research 2026-10-08; build plan chosen 2026-10-08, schedule set 2026-10-14 and re-planned 2026-10-15; progress updated 2026-10-20. Progress is tracked under "Progress" below; the tier tables stay as the 2026-10-08 snapshot.
+Status: research 2026-10-08; build plan chosen 2026-10-08, schedule set 2026-10-14 and re-planned 2026-10-15; progress updated 2026-10-20 (wave 4 complete). Progress is tracked under "Progress" below; the tier tables stay as the 2026-10-08 snapshot.
 
 ## Why
 
@@ -187,7 +187,7 @@ Releases, at most weekly (ADR 0022): 1.5.0 the week of 19 Oct with waves 1 and 2
 
 ## Progress
 
-Checked 2026-10-20 against `main` at `ac063a5`: `registry/registry.json` has 80 components (81 items, one of them the theme), and `tokens/component-registry.json` counts 80 public.
+Checked 2026-10-20 against `main` at `1090851`: `tokens/component-registry.json` counts 90 public components (plus 40 sub-components and the internal BaseSheet), and there are 91 component directories.
 
 | Wave | Planned | Done | PRs | Count after |
 |---|---|---|---|---|
@@ -195,20 +195,21 @@ Checked 2026-10-20 against `main` at `ac063a5`: `registry/registry.json` has 80 
 | 2 Forms | Thu 22 Oct – Wed 11 Nov | 15 Oct | #94–#107 | 59 |
 | Popover (from wave 3) | 12 Nov | 15 Oct, with Date Picker, which needed it | #102 | 60 |
 | 3 Overlays and navigation, the other nine | Fri 16 – Mon 19 Oct (re-planned) | 15 Oct | #109–#116 | 69 |
-| 4 Layout and content, day 1 (11 of 21) | Tue 20 Oct | 20 Oct | #119, #121–#122, #124, #127–#132 | 80 |
+| 4 Layout and content | Tue 20 – Fri 23 Oct (re-planned) | 20 Oct | #119, #121–#122, #124, #127–#132, #135–#143 | 90 |
 
-- **Done bar:** every new component has a story with a dark-mode version, unit tests, a docs entry with accessibility notes and Do / Don't, a doc twin and a registry entry, and was screenshotted in all five brands, light and dark, before merge. `npm run validate` on `main` passes: contrast pairs in all 10 brand and mode combinations, 1,570 tests including axe on every story.
-- **Wave 4 so far:** Stack, Grid, Section, Aspect Ratio, Text, Icon, Image, Status Dot, Blockquote, Citation, Timestamp. Still to come: List, Item, Description List, Collapsible, Scroll Area, Code Block, Selectable Card (Wed 21), App Shell, Resizable Panels (Thu 22), Markdown and the wrap-up (Fri 23).
+- **Done bar:** every new component has a story with a dark-mode version, unit tests, a docs entry with accessibility notes and Do / Don't, a doc twin and a registry entry, and was screenshotted in all five brands, light and dark, before merge. `npm run validate` on `main` passes: contrast pairs in all 10 brand and mode combinations, 1,805 tests including axe on every story (529 stories).
+- **Wave 4:** all 21 merged on 20 Oct, three days ahead of the re-planned schedule. The days set aside for it (21–23 Oct) move to wave 5, which can start on Wed 21 Oct; the done bar stays the same.
 - **Shared pieces added on the way:** `lib/field`, `lib/date`, `lib/time`, `lib/match`, `lib/highlight` (waves 1–3); `lib/relative-time` (Timestamp's wording rules) and `lib/date-test-utils` (wave 4).
-- **New component tokens in wave 4:** `grid-min-item-sm/md/lg`, `status-dot-size`, `status-dot-pulse-duration`. Everything else in wave 4 uses existing semantic roles.
+- **New component tokens in wave 4:** `grid-min-item-sm/md/lg`, `status-dot-size`, `status-dot-pulse-duration`, `app-shell-aside-width`. Everything else in wave 4 uses existing semantic roles.
 - **Fixes found while building:** Select and Input read Field; Input merges a passed `aria-describedby`; Tag's Remove button; Menu's disabled items (waves 1–3). Disabled controls across all components keep readable text instead of fading, IconButton and SegmentedControl included (#117, #118), which closes the follow-up recorded here on 2026-10-15.
 - **CI was red from #101 to #118** and nobody saw it: the Calendar, Date Picker and Date Range Picker tests hardcoded labels like "Thursday 22 October 2026", and CI's Chromium formats them with a comma after the weekday. Fixed in #120 by building expected labels with the component's own `Intl` options. Lesson: check the CI run after each push, not only local `validate`.
 - **Generated artifacts on `main` went stale** after Grid, Section and Aspect Ratio were each brought up to date with "Merge main into" on GitHub, which keeps one side of the generated files instead of rebuilding them. Rebuilt in #126; since then each branch starts from the current `main` and merges before the next one is cut.
 - **Docs generator:** props typed "one or the other" (a union of object types) were garbled or missing from the twins: StatusDot's `label`, and `never` in Badge's and Dialog's prop types. Fixed in `scripts/build-component-docs.mjs` (#131).
-- **Known limits, accepted and documented:** Status Dot's `success` and `warning` dots measure about 2.9:1 on the secondary surface in light mode (3:1 on the primary surface everywhere; the types require words with every dot). For the brand work: demo-soft's `label` weight (500 in Nunito) is barely heavier than body text, and demo-warm's `accent` and `error` colours are hard to tell apart.
-- **Dependencies:** none added in wave 4. Wave 3 added `@radix-ui/react-context-menu` 2.3.7 only.
+- **Found in wave 4's later components:** Code Block doubled blank lines and copied its "highlighted" labels (now `<mark>`); Selectable Card's disabled state was invisible in demo-warm (now a dashed edge); App Shell's content stopped short of the bottom bar and showed two menu buttons with Top Nav and Side Nav together; Resizable Panels kept a stale size mid-drag and covered scrollbars with its handle. Each fixed before merge, with a test. A Popover focus-return test that flaked under load now waits for focus instead of checking once (#138).
+- **Known limits, accepted and documented:** Status Dot's `success` and `warning` dots measure about 2.9:1 on the secondary surface in light mode (3:1 on the primary surface everywhere; the types require words with every dot). For the brand work: demo-soft's `label` weight (500 in Nunito) is barely heavier than body text, and demo-warm's `accent` and `error` colours are hard to tell apart. Resizable Panels needs a drag or the keyboard to resize; there's no single-click alternative yet (WCAG 2.5.7). Code Block and Markdown have no syntax colouring (ADR 0025).
+- **Dependencies:** wave 4 added `markdown-to-jsx` 9.10.3, pinned, for Markdown (ADR 0025). Wave 3 added `@radix-ui/react-context-menu` 2.3.7 only.
 - **Release tooling:** `package-lock.json` now follows `package.json` on release (#108).
-- **Still to do:** 1.5.0 hasn't been released yet; the "Version Packages" PR (#70) holds everything since 1.4.0. The docs site pages for the new components come with that release, which the site syncs on publish.
+- **Still to do:** 1.5.0 hasn't been released yet; the "Version Packages" PR (#70) holds everything since 1.4.0, waves 1–4 included. The docs site pages for the new components come with that release, which the site syncs on publish.
 
 ## Ours only
 
