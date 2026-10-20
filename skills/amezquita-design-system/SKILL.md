@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 90 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 91 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 93 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 94 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -115,7 +115,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Toast | [toast](https://design.amezquita.dk/components/toast.md) — Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout |
 | Tooltip | [tooltip](https://design.amezquita.dk/components/tooltip.md) — Contextual label revealed on hover or focus — supplements an icon or truncated text |
 
-### Patterns (22)
+### Patterns (23)
 
 | Component | Reference |
 |---|---|
@@ -130,6 +130,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | FormLayout | [form-layout](https://design.amezquita.dk/components/form-layout.md) — The frame of a form: spacing, sections, rows, actions, and an error summary after a failed submit |
 | Hero | [hero](https://design.amezquita.dk/components/hero.md) — Page-level section header with eyebrow, title, lead text, and an action slot |
 | Markdown | [markdown](https://design.amezquita.dk/components/markdown.md) — Renders a Markdown string with the system's own components, so release notes, READMEs and model answers look like the rest of the product |
+| MessageList | [message-list](https://design.amezquita.dk/components/message-list.md) — A conversation's messages in a scrolling list that follows the newest one, waits while you read back, and reads each finished reply aloud once |
 | MobileNav | [mobile-nav](https://design.amezquita.dk/components/mobile-nav.md) — The bar at the bottom of a small screen with an app's main places |
 | Pagination | [pagination](https://design.amezquita.dk/components/pagination.md) — Page navigation controls for multi-page data sets; exposes current page and total page count |
 | PromptForm | [prompt-form](https://design.amezquita.dk/components/prompt-form.md) — Questions an assistant asks before it goes on, each a set of choices with "Other" for an answer in words, sent together and kept as a summary |

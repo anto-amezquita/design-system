@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 134,
-    "publicComponentCount": 93,
+    "componentCount": 135,
+    "publicComponentCount": 94,
     "subComponentCount": 40
   },
   "components": [
@@ -2011,6 +2011,23 @@
       "stories": [
         "Default",
         "UntrustedInput",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "MessageList",
+      "slug": "message-list",
+      "tier": "patterns",
+      "purpose": "A conversation's messages in a scrolling list that follows the newest one, waits while you read back, and reads each finished reply aloud once",
+      "storybookPath": "Components/MessageList",
+      "storybookTitleId": "components-messagelist",
+      "defaultStoryId": "components-messagelist--default",
+      "tokenPrefix": "messagelist",
+      "stories": [
+        "Default",
+        "LiveConversation",
         "DarkMode"
       ],
       "tokenCount": 0,
