@@ -4,6 +4,526 @@
   },
   "versions": [
     {
+      "tag": "v1.5.0",
+      "date": "2026-10-20",
+      "sha": "37d4426",
+      "entries": [
+        {
+          "sha": "6c70a67",
+          "type": "feat",
+          "scope": "markdown",
+          "message": "render Markdown with the system's own components",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "14a9105",
+          "type": "feat",
+          "scope": "resizable-panels",
+          "message": "two panes, a separator to drag or key",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "969300f",
+          "type": "feat",
+          "scope": "app-shell",
+          "message": "the frame of an app's pages",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "a8a5bc6",
+          "type": "feat",
+          "scope": "selectable-card",
+          "message": "choices as cards, on native radios and checkboxes",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "5a7cde9",
+          "type": "feat",
+          "scope": "code-block",
+          "message": "code with a header, copy, line numbers and highlights",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "84971ba",
+          "type": "feat",
+          "scope": "scroll-area",
+          "message": "native scrolling, styled, reachable by keyboard",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "4e8499f",
+          "type": "feat",
+          "scope": "collapsible",
+          "message": "one section behind a disclosure button",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "26bcfd8",
+          "type": "feat",
+          "scope": "description-list",
+          "message": "labelled values, side by side or stacked",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "d0f1c9e",
+          "type": "feat",
+          "scope": "list, item",
+          "message": "lists announced as one, and rows with a stretched link",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "40d830e",
+          "type": "feat",
+          "scope": "timestamp",
+          "message": "moments as people say them, kept current",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "4afb9fd",
+          "type": "feat",
+          "scope": "blockquote, citation",
+          "message": "quotes with attribution, links to sources",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "738b450",
+          "type": "feat",
+          "scope": "status-dot",
+          "message": "status by colour, always with words",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "3c0b2c7",
+          "type": "feat",
+          "scope": "image",
+          "message": "img with required alt, held space, fallback and caption",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "98dcd5a",
+          "type": "feat",
+          "scope": "icon",
+          "message": "Phosphor icon at the brand's icon sizes and colours",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "95a008f",
+          "type": "feat",
+          "scope": "text",
+          "message": "body, small and caption text in the brand's type roles",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "72fd9d9",
+          "type": "feat",
+          "scope": "stack",
+          "message": "one-direction layout primitive with brand spacing roles",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "050f713",
+          "type": "feat",
+          "scope": "aspect-ratio",
+          "message": "media at a fixed ratio, space held before it loads",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "4ee3fdf",
+          "type": "feat",
+          "scope": "section",
+          "message": "page band with a centred, token-width container",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "b3c433b",
+          "type": "feat",
+          "scope": "grid",
+          "message": "rows and columns per breakpoint, or as many as fit",
+          "date": "2026-10-20",
+          "breaking": false
+        },
+        {
+          "sha": "a8bf66b",
+          "type": "fix",
+          "scope": null,
+          "message": "disabled controls stay readable across all components",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "b223df8",
+          "type": "fix",
+          "scope": "disabled",
+          "message": "IconButton and SegmentedControl stay readable",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "19a4b6e",
+          "type": "feat",
+          "scope": "mobile-nav",
+          "message": "bottom bar for an app's main places",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "a8a0cf2",
+          "type": "feat",
+          "scope": "top-nav",
+          "message": "header bar with brand, navigation and actions",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "2232308",
+          "type": "feat",
+          "scope": "lightbox",
+          "message": "images large, one at a time, in a modal",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "38991ed",
+          "type": "feat",
+          "scope": "command-palette",
+          "message": "Ctrl+K search over every command",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "f4b86e3",
+          "type": "feat",
+          "scope": "table-of-contents",
+          "message": "in-page links that follow the scroll",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "57f1d03",
+          "type": "feat",
+          "scope": "stepper",
+          "message": "progress through ordered steps, said in words",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "8b4d741",
+          "type": "feat",
+          "scope": "toolbar",
+          "message": "one Tab stop, arrow keys between controls",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "2248698",
+          "type": "feat",
+          "scope": "context-menu",
+          "message": "right-click, long press and Shift+F10 menu",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "e38a4bc",
+          "type": "feat",
+          "scope": "hover-card",
+          "message": "link preview that works from the keyboard",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "fe5cd5e",
+          "type": "feat",
+          "scope": "tag-input",
+          "message": "free-text values as tags",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "f8e5b32",
+          "type": "feat",
+          "scope": "multi-select",
+          "message": "several values from a typeahead list",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "8ae0180",
+          "type": "feat",
+          "scope": "combobox",
+          "message": "typeahead list with live result count",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "88ce640",
+          "type": "feat",
+          "scope": "time-picker",
+          "message": "typed time with a slot list",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "4ca59ce",
+          "type": "feat",
+          "scope": "date-range-picker",
+          "message": "two typed dates and a range calendar",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "2404a69",
+          "type": "feat",
+          "scope": "date-picker",
+          "message": "typed date with a calendar popover",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "8210995",
+          "type": "fix",
+          "scope": "calendar",
+          "message": "strike through unavailable days on the number",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "064fcd6",
+          "type": "feat",
+          "scope": "popover",
+          "message": "non-modal panel on Radix Popover",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "d1d3bc2",
+          "type": "feat",
+          "scope": "calendar",
+          "message": "WAI-ARIA date grid for a date or a range",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "0480d01",
+          "type": "feat",
+          "scope": "file-upload",
+          "message": "pick or drop files, with reasons and a status",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "0f39b9f",
+          "type": "feat",
+          "scope": "form-layout",
+          "message": "sections, rows, actions and an error summary",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "f38fb76",
+          "type": "feat",
+          "scope": "otp-input",
+          "message": "one-time code as one input over drawn boxes",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "dd4e422",
+          "type": "feat",
+          "scope": "search",
+          "message": "search landmark with Enter, Escape and a shortcut",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "f1937bd",
+          "type": "feat",
+          "scope": "number-input",
+          "message": "spinbutton built from InputGroup",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "848d8c2",
+          "type": "feat",
+          "scope": "field",
+          "message": "label, hint and error for any control",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "f30811e",
+          "type": "feat",
+          "scope": "input-group",
+          "message": "Input joined to its addons and buttons",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "796ff19",
+          "type": "fix",
+          "scope": "field",
+          "message": "say Required once to screen readers",
+          "date": "2026-10-15",
+          "breaking": false
+        },
+        {
+          "sha": "933967b",
+          "type": "feat",
+          "scope": "carousel",
+          "message": "scroll-snap carousel on the WAI-ARIA pattern",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "2780652",
+          "type": "feat",
+          "scope": "slider",
+          "message": "single-value range on a native input",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "89e3fdb",
+          "type": "feat",
+          "scope": "button-group",
+          "message": "related actions, spaced or attached",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "55734a8",
+          "type": "feat",
+          "scope": "segmented-control",
+          "message": "single choice from a few, side by side",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "c422b79",
+          "type": "feat",
+          "scope": "toggle-button",
+          "message": "on/off button with aria-pressed",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "5a5cce7",
+          "type": "feat",
+          "scope": "icon-button",
+          "message": "icon-only action built on Button",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "2760fbe",
+          "type": "docs",
+          "scope": "kbd",
+          "message": "restore the Kbd index entry lost in the merge",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "6e08807",
+          "type": "feat",
+          "scope": "progress-bar",
+          "message": "determinate and indeterminate progress primitive",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "b0885b9",
+          "type": "feat",
+          "scope": "kbd",
+          "message": "keycap primitive for keyboard keys",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "beb01ad",
+          "type": "feat",
+          "scope": "visually-hidden",
+          "message": "screen-reader-only text primitive",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "1688b9e",
+          "type": "feat",
+          "scope": "divider",
+          "message": "horizontal and vertical separator primitive",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "cb5866a",
+          "type": "fix",
+          "scope": "tokens",
+          "message": "form controls get a 3:1 edge",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "e4f18ab",
+          "type": "feat",
+          "scope": "card",
+          "message": "card-border-color token; cards rest on shadow-card",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "6981c21",
+          "type": "fix",
+          "scope": "tokens",
+          "message": "accent lines and marks use color-accent-text",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "88006a4",
+          "type": "fix",
+          "scope": "button",
+          "message": "loading keeps the variant's colours",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "9186949",
+          "type": "fix",
+          "scope": "card",
+          "message": "a header that ends the card pads its bottom",
+          "date": "2026-10-14",
+          "breaking": false
+        },
+        {
+          "sha": "0a124ba",
+          "type": "feat",
+          "scope": "tokens",
+          "message": "base-scoped.css, so part of a branded page can go back to base",
+          "date": "2026-10-13",
+          "breaking": false
+        }
+      ],
+      "entryCount": 64
+    },
+    {
       "tag": "v1.4.0",
       "date": "2026-10-13",
       "sha": "8eca259",
@@ -762,515 +1282,11 @@
   ],
   "unreleased": [
     {
-      "sha": "6c70a67",
+      "sha": "cdd7a6d",
       "type": "feat",
-      "scope": "markdown",
-      "message": "render Markdown with the system's own components",
+      "scope": "chat-message",
+      "message": "one message in a conversation, named by its sender",
       "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "14a9105",
-      "type": "feat",
-      "scope": "resizable-panels",
-      "message": "two panes, a separator to drag or key",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "969300f",
-      "type": "feat",
-      "scope": "app-shell",
-      "message": "the frame of an app's pages",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "a8a5bc6",
-      "type": "feat",
-      "scope": "selectable-card",
-      "message": "choices as cards, on native radios and checkboxes",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "5a7cde9",
-      "type": "feat",
-      "scope": "code-block",
-      "message": "code with a header, copy, line numbers and highlights",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "84971ba",
-      "type": "feat",
-      "scope": "scroll-area",
-      "message": "native scrolling, styled, reachable by keyboard",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "4e8499f",
-      "type": "feat",
-      "scope": "collapsible",
-      "message": "one section behind a disclosure button",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "26bcfd8",
-      "type": "feat",
-      "scope": "description-list",
-      "message": "labelled values, side by side or stacked",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "d0f1c9e",
-      "type": "feat",
-      "scope": "list, item",
-      "message": "lists announced as one, and rows with a stretched link",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "40d830e",
-      "type": "feat",
-      "scope": "timestamp",
-      "message": "moments as people say them, kept current",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "4afb9fd",
-      "type": "feat",
-      "scope": "blockquote, citation",
-      "message": "quotes with attribution, links to sources",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "738b450",
-      "type": "feat",
-      "scope": "status-dot",
-      "message": "status by colour, always with words",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "3c0b2c7",
-      "type": "feat",
-      "scope": "image",
-      "message": "img with required alt, held space, fallback and caption",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "98dcd5a",
-      "type": "feat",
-      "scope": "icon",
-      "message": "Phosphor icon at the brand's icon sizes and colours",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "95a008f",
-      "type": "feat",
-      "scope": "text",
-      "message": "body, small and caption text in the brand's type roles",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "72fd9d9",
-      "type": "feat",
-      "scope": "stack",
-      "message": "one-direction layout primitive with brand spacing roles",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "050f713",
-      "type": "feat",
-      "scope": "aspect-ratio",
-      "message": "media at a fixed ratio, space held before it loads",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "4ee3fdf",
-      "type": "feat",
-      "scope": "section",
-      "message": "page band with a centred, token-width container",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "b3c433b",
-      "type": "feat",
-      "scope": "grid",
-      "message": "rows and columns per breakpoint, or as many as fit",
-      "date": "2026-10-20",
-      "breaking": false
-    },
-    {
-      "sha": "a8bf66b",
-      "type": "fix",
-      "scope": null,
-      "message": "disabled controls stay readable across all components",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "b223df8",
-      "type": "fix",
-      "scope": "disabled",
-      "message": "IconButton and SegmentedControl stay readable",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "19a4b6e",
-      "type": "feat",
-      "scope": "mobile-nav",
-      "message": "bottom bar for an app's main places",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "a8a0cf2",
-      "type": "feat",
-      "scope": "top-nav",
-      "message": "header bar with brand, navigation and actions",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "2232308",
-      "type": "feat",
-      "scope": "lightbox",
-      "message": "images large, one at a time, in a modal",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "38991ed",
-      "type": "feat",
-      "scope": "command-palette",
-      "message": "Ctrl+K search over every command",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "f4b86e3",
-      "type": "feat",
-      "scope": "table-of-contents",
-      "message": "in-page links that follow the scroll",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "57f1d03",
-      "type": "feat",
-      "scope": "stepper",
-      "message": "progress through ordered steps, said in words",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "8b4d741",
-      "type": "feat",
-      "scope": "toolbar",
-      "message": "one Tab stop, arrow keys between controls",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "2248698",
-      "type": "feat",
-      "scope": "context-menu",
-      "message": "right-click, long press and Shift+F10 menu",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "e38a4bc",
-      "type": "feat",
-      "scope": "hover-card",
-      "message": "link preview that works from the keyboard",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "fe5cd5e",
-      "type": "feat",
-      "scope": "tag-input",
-      "message": "free-text values as tags",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "f8e5b32",
-      "type": "feat",
-      "scope": "multi-select",
-      "message": "several values from a typeahead list",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "8ae0180",
-      "type": "feat",
-      "scope": "combobox",
-      "message": "typeahead list with live result count",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "88ce640",
-      "type": "feat",
-      "scope": "time-picker",
-      "message": "typed time with a slot list",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "4ca59ce",
-      "type": "feat",
-      "scope": "date-range-picker",
-      "message": "two typed dates and a range calendar",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "2404a69",
-      "type": "feat",
-      "scope": "date-picker",
-      "message": "typed date with a calendar popover",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "8210995",
-      "type": "fix",
-      "scope": "calendar",
-      "message": "strike through unavailable days on the number",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "064fcd6",
-      "type": "feat",
-      "scope": "popover",
-      "message": "non-modal panel on Radix Popover",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "d1d3bc2",
-      "type": "feat",
-      "scope": "calendar",
-      "message": "WAI-ARIA date grid for a date or a range",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "0480d01",
-      "type": "feat",
-      "scope": "file-upload",
-      "message": "pick or drop files, with reasons and a status",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "0f39b9f",
-      "type": "feat",
-      "scope": "form-layout",
-      "message": "sections, rows, actions and an error summary",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "f38fb76",
-      "type": "feat",
-      "scope": "otp-input",
-      "message": "one-time code as one input over drawn boxes",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "dd4e422",
-      "type": "feat",
-      "scope": "search",
-      "message": "search landmark with Enter, Escape and a shortcut",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "f1937bd",
-      "type": "feat",
-      "scope": "number-input",
-      "message": "spinbutton built from InputGroup",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "848d8c2",
-      "type": "feat",
-      "scope": "field",
-      "message": "label, hint and error for any control",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "f30811e",
-      "type": "feat",
-      "scope": "input-group",
-      "message": "Input joined to its addons and buttons",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "796ff19",
-      "type": "fix",
-      "scope": "field",
-      "message": "say Required once to screen readers",
-      "date": "2026-10-15",
-      "breaking": false
-    },
-    {
-      "sha": "933967b",
-      "type": "feat",
-      "scope": "carousel",
-      "message": "scroll-snap carousel on the WAI-ARIA pattern",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "2780652",
-      "type": "feat",
-      "scope": "slider",
-      "message": "single-value range on a native input",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "89e3fdb",
-      "type": "feat",
-      "scope": "button-group",
-      "message": "related actions, spaced or attached",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "55734a8",
-      "type": "feat",
-      "scope": "segmented-control",
-      "message": "single choice from a few, side by side",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "c422b79",
-      "type": "feat",
-      "scope": "toggle-button",
-      "message": "on/off button with aria-pressed",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "5a5cce7",
-      "type": "feat",
-      "scope": "icon-button",
-      "message": "icon-only action built on Button",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "2760fbe",
-      "type": "docs",
-      "scope": "kbd",
-      "message": "restore the Kbd index entry lost in the merge",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "6e08807",
-      "type": "feat",
-      "scope": "progress-bar",
-      "message": "determinate and indeterminate progress primitive",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "b0885b9",
-      "type": "feat",
-      "scope": "kbd",
-      "message": "keycap primitive for keyboard keys",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "beb01ad",
-      "type": "feat",
-      "scope": "visually-hidden",
-      "message": "screen-reader-only text primitive",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "1688b9e",
-      "type": "feat",
-      "scope": "divider",
-      "message": "horizontal and vertical separator primitive",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "cb5866a",
-      "type": "fix",
-      "scope": "tokens",
-      "message": "form controls get a 3:1 edge",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "e4f18ab",
-      "type": "feat",
-      "scope": "card",
-      "message": "card-border-color token; cards rest on shadow-card",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "6981c21",
-      "type": "fix",
-      "scope": "tokens",
-      "message": "accent lines and marks use color-accent-text",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "88006a4",
-      "type": "fix",
-      "scope": "button",
-      "message": "loading keeps the variant's colours",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "9186949",
-      "type": "fix",
-      "scope": "card",
-      "message": "a header that ends the card pads its bottom",
-      "date": "2026-10-14",
-      "breaking": false
-    },
-    {
-      "sha": "0a124ba",
-      "type": "feat",
-      "scope": "tokens",
-      "message": "base-scoped.css, so part of a branded page can go back to base",
-      "date": "2026-10-13",
       "breaking": false
     }
   ],
