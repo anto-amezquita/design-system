@@ -1592,6 +1592,52 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### StatusDot
+
+| Field | Value |
+|---|---|
+| **Purpose** | A small coloured dot that marks a status (online, live, degraded, failed), always with words |
+| **Figma name** | `StatusDot` |
+| **Code name** | `StatusDot` |
+| **Storybook path** | `Components/StatusDot` |
+
+**Props / variants**
+- `status`: `neutral` (default), `info`, `success`, `warning` or `error`
+- `children`: the words shown next to the dot, **or** `label`: words read to screen readers only. The types require one of the two
+- `pulse`: a slow ring for something live or in progress; off under `prefers-reduced-motion`
+- Native `span` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] each status
+- [x] pulsing (and still, for reduced motion)
+
+**Tokens consumed**
+- `--status-dot-size`, `--status-dot-pulse-duration`
+- `--color-border-strong`, `--color-feedback-info-border`, `--color-feedback-success-border`, `--color-feedback-warning-border`, `--color-feedback-error`
+- `--space-inline-gap`, `--border-radius-full`, `--easing-out`, `--font-family-base`, `--font-size-small`, `--line-height-small`, `--color-text-primary`
+
+**Accessibility**
+- Colour never carries the status alone (WCAG 1.4.1): the types won't accept a StatusDot without `children` or `label`. The dot itself is `aria-hidden`
+- `label` hides the words from sighted users, who then see only the colour. Use it only for low-stakes status that's also written out somewhere they can reach (presence next to a name, with the full status on the profile); never for an error or anything that needs action
+- Each dot is its feedback role's solid colour, the same one Alert and Toast use for their edges. It's at least 3:1 on the primary surface in every brand and mode. **Known limit:** in light mode, `success` and `warning` measure about 2.9:1 on the secondary surface, in all five brands. I accepted that rather than darken the feedback colours system-wide or add colour tokens only this component would use, because the dot always comes with words
+- In forced-colors mode the dot is drawn as a border in the system text colour, so it stays visible
+- The pulse is a ring behind the dot, so the dot's own colour never fades; it's removed entirely for reduced motion
+
+**Do**
+- Write the status in words next to the dot wherever there's room.
+- Use `pulse` only for something happening right now (a live stream, a running job), one at a time.
+- Map your states to the five roles: online → `success`, away → `warning`, offline → `neutral`.
+
+**Don't**
+- Don't use `label` for errors or warnings someone has to act on; show the words.
+- Don't pulse several dots on one screen; motion stops meaning "live" and starts being noise.
+- Don't use a StatusDot as a count or a notification badge; that's Badge.
+
+**Chromatic stories**
+- `Default`, `Statuses`, `Pulse`, `LabelOnly`, `DarkMode`
+
+---
+
 ### Switch
 
 | Field | Value |

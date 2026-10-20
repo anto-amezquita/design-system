@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 116,
-    "publicComponentCount": 76,
+    "componentCount": 117,
+    "publicComponentCount": 77,
     "subComponentCount": 39
   },
   "components": [
@@ -800,6 +800,25 @@
         "DarkMode"
       ],
       "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "StatusDot",
+      "slug": "status-dot",
+      "tier": "primitives",
+      "purpose": "A small coloured dot that marks a status (online, live, degraded, failed), always with words",
+      "storybookPath": "Components/StatusDot",
+      "storybookTitleId": "components-statusdot",
+      "defaultStoryId": "components-statusdot--default",
+      "tokenPrefix": "status-dot",
+      "stories": [
+        "Default",
+        "Statuses",
+        "Pulse",
+        "LabelOnly",
+        "DarkMode"
+      ],
+      "tokenCount": 2,
       "internal": false
     },
     {

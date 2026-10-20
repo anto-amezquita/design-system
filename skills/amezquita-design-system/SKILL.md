@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 73 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 74 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 76 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 77 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,7 +34,7 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (45)
+### Primitives (46)
 
 | Component | Reference |
 |---|---|
@@ -75,6 +75,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Slider | [slider](https://design.amezquita.dk/components/slider.md) — One value from a range, by dragging or with the keyboard: volume, a price limit, opacity |
 | Spinner | [spinner](https://design.amezquita.dk/components/spinner.md) — Indeterminate loading indicator for in-progress operations |
 | Stack | [stack](https://design.amezquita.dk/components/stack.md) — Lays children out in one direction with a consistent gap from the brand's spacing roles |
+| StatusDot | [status-dot](https://design.amezquita.dk/components/status-dot.md) — A small coloured dot that marks a status (online, live, degraded, failed), always with words |
 | Switch | [switch](https://design.amezquita.dk/components/switch.md) — Binary toggle for on/off settings; renders as a styled checkbox under the hood |
 | Tag | [tag](https://design.amezquita.dk/components/tag.md) — A short label on content: a category, a status word, a chosen value; optionally removable or clickable |
 | TagInput | [tag-input](https://design.amezquita.dk/components/tag-input.md) — Free-text values as tags: keywords, email addresses, ingredients |

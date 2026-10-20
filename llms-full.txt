@@ -20,10 +20,10 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-391 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+393 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
-- component: 120
+- component: 122
 - color: 46
 - typography: 40
 - spacing: 19
@@ -369,6 +369,15 @@ Lays children out in one direction with a consistent gap from the brand's spacin
 - Token prefix: `stack-*` (0 tokens)
 - Storybook: Components/Stack
 - Stories: Default, Horizontal, Gaps, AsList, DarkMode
+
+### StatusDot
+
+A small coloured dot that marks a status (online, live, degraded, failed), always with words
+
+- Import: `import { StatusDot } from '@amezquita/design-system/components/primitives/StatusDot'`
+- Token prefix: `status-dot-*` (2 tokens)
+- Storybook: Components/StatusDot
+- Stories: Default, Statuses, Pulse, LabelOnly, DarkMode
 
 ### Switch
 
