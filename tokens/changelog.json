@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "738b450",
+      "type": "feat",
+      "scope": "status-dot",
+      "message": "status by colour, always with words",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "3c0b2c7",
       "type": "feat",
       "scope": "image",
