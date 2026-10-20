@@ -1,0 +1,80 @@
+/*
+  Tokens consumed:
+
+  --space-element-gap, --space-inline-gap, --space-tight-gap,
+  --border-width-default, --color-border-default,
+  --font-family-base, --font-size-small, --line-height-small,
+  --font-weight-label, --font-size-control, --line-height-control,
+  --color-text-secondary, --color-text-primary
+
+  No component tokens: spacing, lines and type are existing roles
+  (decisions/0004, 0005). The term column (a third of the width, at most
+  12rem) is layout, not a brand decision.
+*/
+
+.description-list {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-element-gap);
+  margin: 0;
+  font-family: var(--font-family-base);
+}
+
+.description-list__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-tight-gap);
+  min-inline-size: 0;
+}
+
+.description-list__term {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-secondary);
+}
+
+.description-list__description {
+  margin: 0;
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  color: var(--color-text-primary);
+  overflow-wrap: anywhere;
+}
+
+/* Divided: the line sits between pairs, with the gap split around it. */
+.description-list--divided {
+  gap: 0;
+}
+
+.description-list--divided > .description-list__group {
+  padding-block: var(--space-inline-gap);
+}
+
+.description-list--divided > .description-list__group + .description-list__group {
+  border-block-start: var(--border-width-default) solid var(--color-border-default);
+}
+
+/* Inline: term and values side by side once there's room for both. A
+   container query, so it works in a narrow sidebar on a wide screen too. */
+@container (min-width: 30rem) {
+  .description-list--inline > .description-list__group {
+    display: grid;
+    grid-template-columns: minmax(0, min(33%, 12rem)) minmax(0, 1fr);
+    column-gap: var(--space-element-gap);
+    row-gap: var(--space-tight-gap);
+    align-items: baseline;
+  }
+
+  /* The term takes the first row; every value goes in the second column,
+     so a term with several values keeps them stacked beside it. */
+  .description-list--inline .description-list__term {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .description-list--inline .description-list__description {
+    grid-column: 2;
+  }
+}

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 122,
-    "publicComponentCount": 82,
+    "componentCount": 123,
+    "publicComponentCount": 83,
     "subComponentCount": 39
   },
   "components": [
@@ -267,6 +267,25 @@
         "Error",
         "Disabled",
         "Open",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "DescriptionList",
+      "slug": "description-list",
+      "tier": "primitives",
+      "purpose": "Labelled values, like the details panel of a file or an order: terms and their descriptions, side by side or stacked",
+      "storybookPath": "Components/DescriptionList",
+      "storybookTitleId": "components-descriptionlist",
+      "defaultStoryId": "components-descriptionlist--default",
+      "tokenPrefix": "descriptionlist",
+      "stories": [
+        "Default",
+        "Divided",
+        "Stacked",
+        "Narrow",
         "DarkMode"
       ],
       "tokenCount": 0,
