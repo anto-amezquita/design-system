@@ -6,6 +6,25 @@
   },
   "components": [
     {
+      "name": "AspectRatio",
+      "slug": "aspect-ratio",
+      "tier": "primitives",
+      "purpose": "Keeps media at a fixed width-to-height ratio as the width changes, and holds the space before it loads",
+      "storybookPath": "Components/AspectRatio",
+      "storybookTitleId": "components-aspectratio",
+      "defaultStoryId": "components-aspectratio--default",
+      "tokenPrefix": "aspectratio",
+      "stories": [
+        "Default",
+        "Ratios",
+        "Contain",
+        "Placeholder",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
       "name": "Avatar",
       "slug": "avatar",
       "tier": "primitives",

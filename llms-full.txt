@@ -37,6 +37,15 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Primitives
 
+### AspectRatio
+
+Keeps media at a fixed width-to-height ratio as the width changes, and holds the space before it loads
+
+- Import: `import { AspectRatio } from '@amezquita/design-system/components/primitives/AspectRatio'`
+- Token prefix: `aspectratio-*` (0 tokens)
+- Storybook: Components/AspectRatio
+- Stories: Default, Ratios, Contain, Placeholder, DarkMode
+
 ### Avatar
 
 User profile picture with fallback to initials when no image is provided
