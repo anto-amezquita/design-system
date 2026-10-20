@@ -2,8 +2,8 @@
   "meta": {
     "primitiveCount": 126,
     "semanticCount": 145,
-    "componentCount": 117,
-    "total": 388
+    "componentCount": 120,
+    "total": 391
   },
   "tokens": [
     {
@@ -5817,6 +5817,7 @@
       "axisAware": false,
       "usedBy": [
         "Section"
+        "Grid"
       ]
     },
     {
@@ -5847,6 +5848,7 @@
         "FormLayout",
         "Hero",
         "Section"
+        "Grid"
       ]
     },
     {
@@ -5884,6 +5886,7 @@
         "TopNav",
         "FileUpload",
         "Section"
+        "Grid"
       ]
     },
     {
@@ -5935,6 +5938,7 @@
         "DateRangePicker",
         "Field",
         "FileUpload",
+        "Grid",
         "Input",
         "InputGroup",
         "Label",
@@ -6359,6 +6363,7 @@
         "Combobox",
         "Field",
         "FileUpload",
+        "Grid",
         "Input",
         "Link",
         "MultiSelect",
@@ -8613,6 +8618,78 @@
       ]
     },
     {
+      "name": "grid-min-item-sm",
+      "cssVar": "--grid-min-item-sm",
+      "type": "dimension",
+      "category": "component",
+      "description": "Narrowest an item gets in a Grid with minItemWidth=\"sm\" before the grid drops a column: small tiles, stat cards, swatches.",
+      "rawValue": "192px",
+      "resolved": {
+        "base-light": "192px",
+        "base-dark": "192px",
+        "demo-cool-light": "192px",
+        "demo-cool-dark": "192px",
+        "demo-soft-light": "192px",
+        "demo-soft-dark": "192px",
+        "demo-warm-light": "192px",
+        "demo-warm-dark": "192px",
+        "portfolio-light": "192px",
+        "portfolio-dark": "192px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Grid"
+      ]
+    },
+    {
+      "name": "grid-min-item-md",
+      "cssVar": "--grid-min-item-md",
+      "type": "dimension",
+      "category": "component",
+      "description": "Narrowest an item gets in a Grid with minItemWidth=\"md\": content cards with a title and a line or two of text.",
+      "rawValue": "256px",
+      "resolved": {
+        "base-light": "256px",
+        "base-dark": "256px",
+        "demo-cool-light": "256px",
+        "demo-cool-dark": "256px",
+        "demo-soft-light": "256px",
+        "demo-soft-dark": "256px",
+        "demo-warm-light": "256px",
+        "demo-warm-dark": "256px",
+        "portfolio-light": "256px",
+        "portfolio-dark": "256px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Grid"
+      ]
+    },
+    {
+      "name": "grid-min-item-lg",
+      "cssVar": "--grid-min-item-lg",
+      "type": "dimension",
+      "category": "component",
+      "description": "Narrowest an item gets in a Grid with minItemWidth=\"lg\": cards with media or a form. Matches a narrow phone, so one column still fits.",
+      "rawValue": "320px",
+      "resolved": {
+        "base-light": "320px",
+        "base-dark": "320px",
+        "demo-cool-light": "320px",
+        "demo-cool-dark": "320px",
+        "demo-soft-light": "320px",
+        "demo-soft-dark": "320px",
+        "demo-warm-light": "320px",
+        "demo-warm-dark": "320px",
+        "portfolio-light": "320px",
+        "portfolio-dark": "320px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "Grid"
+      ]
+    },
+    {
       "name": "hero-padding-y",
       "cssVar": "--hero-padding-y",
       "type": "dimension",
@@ -9521,8 +9598,7 @@
       ]
     },
     {
-      "name": "toast-max-width",
-      "cssVar": "--toast-max-width",
+      "name": "toast-max-width",      "cssVar": "--toast-max-width",
       "type": "dimension",
       "category": "component",
       "description": "Maximum width of a Toast.",

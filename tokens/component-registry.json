@@ -1,8 +1,8 @@
 {
   "meta": {
-    "componentCount": 109,
+    "componentCount": 110,
     "publicComponentCount": 70,
-    "subComponentCount": 38
+    "subComponentCount": 39
   },
   "components": [
     {
@@ -272,6 +272,39 @@
       ],
       "tokenCount": 0,
       "internal": false
+    },
+    {
+      "name": "Grid",
+      "slug": "grid",
+      "tier": "primitives",
+      "purpose": "Lays items out in rows and columns: fixed columns per breakpoint, or as many as fit",
+      "storybookPath": "Components/Grid",
+      "storybookTitleId": "components-grid",
+      "defaultStoryId": "components-grid--default",
+      "tokenPrefix": "grid-min-item",
+      "stories": [
+        "Default",
+        "PerBreakpoint",
+        "AsManyAsFit",
+        "Spans",
+        "DarkMode"
+      ],
+      "tokenCount": 3,
+      "internal": false
+    },
+    {
+      "name": "GridItem",
+      "slug": "grid-item",
+      "tier": "primitives",
+      "purpose": "Sub-component of Grid.",
+      "storybookPath": "Components/Grid",
+      "storybookTitleId": "components-grid",
+      "defaultStoryId": "components-grid--default",
+      "tokenPrefix": null,
+      "stories": [],
+      "tokenCount": 0,
+      "internal": false,
+      "parent": "grid"
     },
     {
       "name": "Heading",

@@ -1483,6 +1483,62 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Grid
+
+| Field | Value |
+|---|---|
+| **Purpose** | Lays items out in rows and columns: fixed columns per breakpoint, or as many as fit |
+| **Figma name** | `Grid` (auto layout, wrap) |
+| **Code name** | `Grid` (+ `GridItem`) |
+| **Storybook path** | `Components/Grid` |
+
+**Compound structure**
+```tsx
+<Grid columns={{ base: 1, tablet: 2, desktop: 4 }} gap="component">
+  <GridItem span="full">…</GridItem>            {/* only needed to span */}
+  <Card>…</Card>                                {/* plain children take one column */}
+</Grid>
+```
+
+**Props / variants**
+- `columns`: 1–12 equal columns, or one per breakpoint (`{ base, tablet, desktop }`, mobile first; a breakpoint left out takes the one below). Default 1
+- `minItemWidth`: `sm`, `md` or `lg`: as many columns as fit with each item at least that wide; overrides `columns`
+- `gap`: `none`, `tight`, `inline`, `element` (default), `component` or `section`; `rowGap` when rows need a different space
+- `align`: `start`, `center`, `end` or `stretch` (default)
+- `as`: `div` (default), `section`, `ul` or `ol`
+- `GridItem` `span`: a number of columns, `'full'`, or one per breakpoint; `as`: `div`, `li`, `article` or `section`
+- Native attributes, `className`, `style` and `ref` pass through on both
+
+**Required states**
+- [x] default (layout only: no hover, focus or disabled state)
+- [x] responsive: columns and spans per breakpoint (768px tablet, 1024px desktop)
+
+**Tokens consumed**
+- `--space-tight-gap`, `--space-inline-gap`, `--space-element-gap`, `--space-component-gap`, `--space-section-gap`
+- `--grid-min-item-sm`, `--grid-min-item-md`, `--grid-min-item-lg`
+
+**Accessibility**
+- No role of its own: it renders the element in `as`, so pick the one that matches what the items are
+- As `ul` or `ol` it removes markers and indent and sets `role="list"`, because Safari drops list semantics once `list-style` is `none`. A `role` you pass wins
+- Items fill in source order (no `dense` packing, no reordering), so reading and tab order match what's on screen
+- With `minItemWidth`, an item shrinks below the minimum in a container narrower than it, so content reflows at 320px instead of scrolling sideways (WCAG 1.4.10)
+
+**Do**
+- Use `minItemWidth` for collections of like items (cards, swatches) so the grid works in any container, sidebar included.
+- Use per-breakpoint `columns` for page layouts where the column count is a design decision.
+- Render a collection as `as="ul"` with `li` items so screen readers announce how many there are.
+
+**Don't**
+- Don't use Grid for a single row or column; that's Stack.
+- Don't span more columns than the grid has: the browser adds extra columns and squeezes the rest. Use `span="full"` for the whole row.
+- Don't use a Grid to lay out tabular data; that's Table, which keeps row and column headers.
+- Don't reorder items with CSS to change their visual position; change the source order so keyboard and screen-reader order match.
+
+**Chromatic stories**
+- `Default`, `PerBreakpoint`, `AsManyAsFit`, `Spans`, `DarkMode`
+
+---
+
 ### Heading
 
 | Field | Value |

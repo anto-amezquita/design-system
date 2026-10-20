@@ -50,6 +50,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Divider | [divider](https://design.amezquita.dk/components/divider.md) — A line that separates groups of content, horizontally or vertically |
 | Field | [field](https://design.amezquita.dk/components/field.md) — Label, hint and error for any control, wired the way Input wires its own |
 | FileUpload | [file-upload](https://design.amezquita.dk/components/file-upload.md) — Pick files by button or by dragging them in, see what's chosen, and remove any |
+| Grid | [grid](https://design.amezquita.dk/components/grid.md) — Lays items out in rows and columns: fixed columns per breakpoint, or as many as fit |
 | Heading | [heading](https://design.amezquita.dk/components/heading.md) — Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level |
 | IconButton | [icon-button](https://design.amezquita.dk/components/icon-button.md) — An action shown only as an icon, for toolbars, cards and dense rows |
 | Input | [input](https://design.amezquita.dk/components/input.md) — Labelled single-line text entry with hint and error states |

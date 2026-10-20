@@ -195,6 +195,9 @@
   --drawer-close-align-offset: 2px;
   --emptystate-padding-y: 96px;
   --emptystate-padding-x: 64px;
+  --grid-min-item-sm: 192px;
+  --grid-min-item-md: 256px;
+  --grid-min-item-lg: 320px;
   --hero-padding-y: 96px;
   --hero-eyebrow-size: 14px;
   --hero-eyebrow-weight: 600;

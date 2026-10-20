@@ -598,6 +598,31 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "grid",
+      "type": "registry:component",
+      "title": "Grid",
+      "description": "Lays items out in rows and columns: fixed columns per breakpoint, or as many as fit",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json"
+      ],
+      "cssVars": {
+        "light": {
+          "grid-min-item-sm": "192px",
+          "grid-min-item-md": "256px",
+          "grid-min-item-lg": "320px"
+        },
+        "dark": {
+          "grid-min-item-sm": "192px",
+          "grid-min-item-md": "256px",
+          "grid-min-item-lg": "320px"
+        }
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "heading",
       "type": "registry:component",
       "title": "Heading",

@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "b3c433b",
+      "type": "feat",
+      "scope": "grid",
+      "message": "rows and columns per breakpoint, or as many as fit",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "a8bf66b",
       "type": "fix",
       "scope": null,
