@@ -1282,6 +1282,14 @@
   ],
   "unreleased": [
     {
+      "sha": "09177a6",
+      "type": "feat",
+      "scope": "chart",
+      "message": "line and bar charts from tokens, explorable by keyboard",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "102e54b",
       "type": "feat",
       "scope": "tree-view",
