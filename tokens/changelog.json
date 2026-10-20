@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "26bcfd8",
+      "type": "feat",
+      "scope": "description-list",
+      "message": "labelled values, side by side or stacked",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "d0f1c9e",
       "type": "feat",
       "scope": "list, item",
