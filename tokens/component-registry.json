@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 133,
-    "publicComponentCount": 92,
+    "componentCount": 134,
+    "publicComponentCount": 93,
     "subComponentCount": 40
   },
   "components": [
@@ -1819,6 +1819,27 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "carousel"
+    },
+    {
+      "name": "ChatComposer",
+      "slug": "chat-composer",
+      "tier": "patterns",
+      "purpose": "Where a message is written and sent in a conversation: a field that grows with the text, Enter to send, and Stop while a reply streams",
+      "storybookPath": "Components/ChatComposer",
+      "storybookTitleId": "components-chatcomposer",
+      "defaultStoryId": "components-chatcomposer--default",
+      "tokenPrefix": "chatcomposer",
+      "stories": [
+        "Default",
+        "WithText",
+        "WithAttachments",
+        "Streaming",
+        "Disabled",
+        "InConversation",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
     },
     {
       "name": "ChatMessage",

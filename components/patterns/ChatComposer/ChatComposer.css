@@ -1,0 +1,96 @@
+/*
+  Tokens consumed:
+
+  --color-surface-primary, --color-border-strong, --color-border-focus,
+  --border-width-interactive, --focus-ring-width, --border-radius-component,
+  --space-compact-padding-y, --space-control-padding-x, --space-inline-gap,
+  --space-tight-gap, --color-text-primary, --color-text-secondary,
+  --font-family-base, --font-size-body, --line-height-body,
+  --font-size-small, --line-height-small, --duration-interaction,
+  --easing-default
+
+  No component tokens: the box is the field look (Input's edge and focus
+  ring) at the component radius, and the buttons are IconButtons
+  (decisions/0004, 0005).
+*/
+
+.chat-composer {
+  display: grid;
+  gap: var(--space-tight-gap);
+  font-family: var(--font-family-base);
+}
+
+.chat-composer__box {
+  display: grid;
+  gap: var(--space-tight-gap);
+  padding: var(--space-compact-padding-y) var(--space-compact-padding-y) var(--space-compact-padding-y) var(--space-control-padding-x);
+  border: var(--border-width-interactive) solid var(--color-border-strong);
+  border-radius: var(--border-radius-component);
+  background: var(--color-surface-primary);
+  cursor: text;
+  transition: border-color var(--duration-interaction) var(--easing-default);
+}
+
+/* The ring sits on the box, which reads as the field; the textarea itself has none. */
+.chat-composer__box:has(.chat-composer__field:focus-visible) {
+  border-color: var(--color-border-focus);
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: 0;
+}
+
+.chat-composer__attachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-tight-gap);
+}
+
+.chat-composer__field {
+  all: unset;
+  display: block;
+  box-sizing: border-box;
+  inline-size: 100%;
+  padding-block: var(--space-tight-gap);
+  font-family: inherit;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-primary);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  resize: none;
+}
+
+.chat-composer__field::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 1;
+}
+
+.chat-composer__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-inline-gap);
+}
+
+.chat-composer__actions {
+  display: flex;
+  gap: var(--space-tight-gap);
+}
+
+.chat-composer__hint {
+  margin: 0;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-secondary);
+}
+
+/* Disabled: no fade (the rule since #118); the field stops taking text and the edge goes quiet. */
+.chat-composer--disabled .chat-composer__box {
+  border-style: dashed;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-composer__box {
+    transition: none;
+  }
+}
