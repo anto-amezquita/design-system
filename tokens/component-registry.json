@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 131,
-    "publicComponentCount": 90,
+    "componentCount": 132,
+    "publicComponentCount": 91,
     "subComponentCount": 40
   },
   "components": [
@@ -1819,6 +1819,26 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "carousel"
+    },
+    {
+      "name": "ChatMessage",
+      "slug": "chat-message",
+      "tier": "patterns",
+      "purpose": "One message in a conversation, from a person or a model: who wrote it, when, what it says, and whether it's still arriving or failed",
+      "storybookPath": "Components/ChatMessage",
+      "storybookTitleId": "components-chatmessage",
+      "defaultStoryId": "components-chatmessage--default",
+      "tokenPrefix": "chatmessage",
+      "stories": [
+        "Default",
+        "Conversation",
+        "Streaming",
+        "StreamingWithText",
+        "Failed",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
     },
     {
       "name": "DataTable",

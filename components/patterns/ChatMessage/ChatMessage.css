@@ -1,0 +1,148 @@
+/*
+  Tokens consumed:
+
+  --space-inline-gap, --space-tight-gap, --space-compact-padding-y,
+  --space-element-gap, --color-surface-secondary, --color-text-primary,
+  --color-text-secondary, --color-feedback-error, --border-radius-component,
+  --size-container-text, --font-family-base, --font-size-body,
+  --line-height-body, --font-size-small, --line-height-small,
+  --font-weight-label, --duration-skeleton, --easing-default
+
+  No component tokens: the bubble, the type and the colours are existing
+  roles (decisions/0004, 0005).
+*/
+
+.chat-message {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: var(--space-inline-gap);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-primary);
+}
+
+.chat-message__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-tight-gap);
+  min-inline-size: 0;
+}
+
+.chat-message__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-inline-gap);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.chat-message__author {
+  font-weight: var(--font-weight-label);
+}
+
+.chat-message__time {
+  color: var(--color-text-secondary);
+}
+
+.chat-message__content {
+  max-inline-size: var(--size-container-text);
+  overflow-wrap: break-word;
+}
+
+/* Avatar beside the message: start side for the assistant, end for the user. */
+.chat-message--with-avatar {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.chat-message--user.chat-message--with-avatar {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.chat-message--continued .chat-message__avatar {
+  visibility: hidden;
+}
+
+.chat-message--user .chat-message__avatar {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.chat-message--user .chat-message__body {
+  grid-column: 1;
+  grid-row: 1;
+  align-items: flex-end;
+}
+
+/* The user's own words sit in a bubble, narrower than the column. */
+.chat-message--user .chat-message__content {
+  max-inline-size: min(80%, var(--size-container-text));
+  padding: var(--space-compact-padding-y) var(--space-element-gap);
+  border-radius: var(--border-radius-component);
+  background: var(--color-surface-secondary);
+}
+
+/* A note about the conversation: small, quiet, centred. */
+.chat-message--system .chat-message__body {
+  align-items: center;
+  text-align: center;
+}
+
+.chat-message--system .chat-message__content {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-secondary);
+}
+
+.chat-message__error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-tight-gap);
+  margin: 0;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-feedback-error);
+}
+
+.chat-message__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-tight-gap);
+}
+
+/* Typing indicator: three dots that fade in turn while a reply is on its way. */
+.chat-message__typing {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-tight-gap);
+  block-size: var(--line-height-body);
+}
+
+.chat-message__dot {
+  inline-size: calc(var(--space-inline-gap) * 0.75);
+  block-size: calc(var(--space-inline-gap) * 0.75);
+  border-radius: 50%;
+  background: var(--color-text-secondary);
+  animation: chat-message-typing calc(var(--duration-skeleton) * 3) var(--easing-default) infinite;
+}
+
+.chat-message__dot:nth-child(2) {
+  animation-delay: var(--duration-skeleton);
+}
+
+.chat-message__dot:nth-child(3) {
+  animation-delay: calc(var(--duration-skeleton) * 2);
+}
+
+@keyframes chat-message-typing {
+  0%, 100% { opacity: 0.3; }
+  33% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-message__dot {
+    animation: none;
+  }
+}

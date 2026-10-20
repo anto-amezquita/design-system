@@ -3168,6 +3168,56 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### ChatMessage
+
+| Field | Value |
+|---|---|
+| **Purpose** | One message in a conversation, from a person or a model: who wrote it, when, what it says, and whether it's still arriving or failed |
+| **Figma name** | `ChatMessage` |
+| **Code name** | `ChatMessage` |
+| **Storybook path** | `Components/ChatMessage` |
+
+**Props / variants**
+- `role` (required): `user` (a bubble on the end side), `assistant` (plain text on the start side, a reading column wide) or `system` (a small centred note). Named like the messages in most chat SDKs, so `role={message.role}` maps across
+- `author` (required): the sender's name, always read out; `avatar`: an Avatar beside user and assistant messages; `timestamp`: shown as a time with Timestamp
+- `continued`: a follow-up from the same sender; name, time and avatar are hidden from sight but still read out, and the content keeps its column
+- `status`: `complete` (default) or `streaming`, which marks the message busy and, with no content yet, shows a typing indicator (`streamingLabel`, default "Writing a reply")
+- `error`: why the message failed, shown under it; `actions`: controls such as Copy and Retry IconButtons
+- `children`: text or rich content such as Markdown. Native `article` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] user, assistant, system; with and without avatar; continued
+- [x] streaming with no content (typing indicator), streaming with text, complete
+- [x] failed, with a Retry action
+- [x] reduced motion: the typing dots stop and stay visible
+
+**Tokens consumed**
+- `--color-surface-secondary` (the user's bubble), `--border-radius-component`, `--space-compact-padding-y`, `--space-element-gap`, `--space-inline-gap`, `--space-tight-gap`, `--size-container-text`
+- `--color-text-primary`, `--color-text-secondary`, `--color-feedback-error`, `--font-family-base`, `--font-size-body`, `--line-height-body`, `--font-size-small`, `--line-height-small`, `--font-weight-label`, `--duration-skeleton`, `--easing-default`
+- No component tokens
+
+**Accessibility**
+- Each message is an `article` named by its sender and time (`aria-labelledby`), so screen reader users can move message by message and always hear who wrote it, also when the name is hidden from sight on a continued message or a system note
+- The avatar is hidden from screen readers: the name already says who, and initials read out before it are noise
+- A streaming message is `aria-busy` until it's complete. Announcing new messages is the conversation's job (MessageList, a polite log), not each message's
+- A failed message is described by its error (`aria-describedby`), and the error has an icon and words, not colour alone
+- Names, times, bubble text, system notes and errors are tested at 4.5:1, and the typing dots at 3:1, in all five brands, light and dark
+
+**Do**
+- Pass `continued` for consecutive messages from the same sender, so a run reads as one block.
+- Render a model's answer through Markdown inside the message.
+- Give a failed message a way out: a Retry action next to the error.
+
+**Don't**
+- Don't put the conversation's live region on each message; one log around the list announces new messages once.
+- Don't leave out `author` for the user's own messages; "You" is fine, silence isn't.
+- Don't use colour alone to tell user and assistant apart; side and shape already do.
+
+**Chromatic stories**
+- `Default`, `Conversation`, `Streaming`, `StreamingWithText`, `Failed`, `DarkMode`
+
+---
+
 ### DataTable
 
 | Field | Value |

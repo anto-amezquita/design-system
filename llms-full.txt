@@ -716,6 +716,15 @@ A row of slides shown a few at a time, moved with buttons, dots, swipe or arrow 
 - Storybook: Components/Carousel
 - Stories: Default, ThreePerView, Autoplay, NoDots, DarkMode
 
+### ChatMessage
+
+One message in a conversation, from a person or a model: who wrote it, when, what it says, and whether it's still arriving or failed
+
+- Import: `import { ChatMessage } from '@amezquita/design-system/components/patterns/ChatMessage'`
+- Token prefix: `chatmessage-*` (0 tokens)
+- Storybook: Components/ChatMessage
+- Stories: Default, Conversation, Streaming, StreamingWithText, Failed, DarkMode
+
 ### DataTable
 
 Sortable, filterable, paginated table for structured datasets

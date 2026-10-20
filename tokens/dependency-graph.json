@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 88,
+    "filesScanned": 89,
     "tokenCount": 265
   },
   "byToken": {
@@ -87,6 +87,7 @@
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Toolbar/Toolbar.css",
@@ -472,6 +473,7 @@
     ],
     "color-feedback-error": [
       "components/composition/Menu/Menu.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/patterns/Stepper/Stepper.css",
@@ -592,6 +594,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/Markdown/Markdown.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
@@ -653,6 +656,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/AppShell/AppShell.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Hero/Hero.css",
       "components/patterns/Markdown/Markdown.css",
@@ -708,6 +712,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
@@ -851,6 +856,7 @@
       "components/primitives/Textarea/Textarea.css"
     ],
     "duration-skeleton": [
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/primitives/Skeleton/Skeleton.css"
     ],
     "duration-spin": [
@@ -879,6 +885,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Carousel/Carousel.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/ResizablePanels/ResizablePanels.css",
       "components/patterns/SideNav/SideNav.css",
@@ -1013,6 +1020,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/AppShell/AppShell.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
@@ -1075,6 +1083,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/List/List.css",
@@ -1156,6 +1165,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
@@ -1213,6 +1223,7 @@
       "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Stepper/Stepper.css",
@@ -1325,6 +1336,7 @@
     "line-height-body": [
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
       "components/primitives/Blockquote/Blockquote.css",
@@ -1396,6 +1408,7 @@
     "line-height-small": [
       "components/composition/Toast/Toast.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
@@ -1506,6 +1519,7 @@
       "components/primitives/Section/Section.css"
     ],
     "size-container-text": [
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Markdown/Markdown.css",
       "components/primitives/Section/Section.css"
@@ -1620,6 +1634,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Tooltip/Tooltip.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Item/Item.css"
     ],
@@ -1692,6 +1707,7 @@
       "components/composition/Lightbox/Lightbox.css",
       "components/composition/Popover/Popover.css",
       "components/patterns/Carousel/Carousel.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Markdown/Markdown.css",
@@ -1719,6 +1735,7 @@
       "components/composition/Popover/Popover.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Carousel/Carousel.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Hero/Hero.css",
@@ -1794,6 +1811,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
+      "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Markdown/Markdown.css",
       "components/patterns/MobileNav/MobileNav.css",
