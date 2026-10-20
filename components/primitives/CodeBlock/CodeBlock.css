@@ -1,0 +1,112 @@
+/*
+  Tokens consumed:
+
+  --color-surface-secondary (block), --color-surface-tertiary (highlighted
+  line), --border-width-default, --color-border-default,
+  --border-width-thick, --color-accent-text (highlight bar),
+  --border-radius-component, --space-element-gap, --space-inline-gap,
+  --space-tight-gap, --font-family-mono, --font-family-base,
+  --font-size-small, --line-height-small, --font-size-caption,
+  --line-height-caption, --font-weight-label, --color-text-primary,
+  --color-text-secondary
+
+  No component tokens: the block is surfaces, borders and the mono face
+  the brand already sets (decisions/0004, 0005).
+*/
+
+.code-block {
+  margin: 0;
+  overflow: hidden;
+  border: var(--border-width-default) solid var(--color-border-default);
+  border-radius: var(--border-radius-component);
+  background: var(--color-surface-secondary);
+}
+
+.code-block__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+  min-block-size: var(--line-height-small);
+  padding: var(--space-tight-gap) var(--space-tight-gap) var(--space-tight-gap) var(--space-element-gap);
+  border-block-end: var(--border-width-default) solid var(--color-border-default);
+}
+
+.code-block__name {
+  flex: 1;
+  min-inline-size: 0;
+  overflow: hidden;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-secondary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.code-block__copy {
+  margin-inline-start: auto;
+}
+
+.code-block__scroll {
+  border-radius: 0;
+}
+
+.code-block__pre {
+  margin: 0;
+  padding: var(--space-element-gap) 0;
+  inline-size: max-content;
+  min-inline-size: 100%;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-primary);
+  tab-size: 2;
+}
+
+.code-block__pre--wrap {
+  inline-size: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.code-block__line {
+  position: relative;
+  display: block;
+  padding-inline: var(--space-element-gap);
+}
+
+.code-block__number {
+  display: inline-block;
+  min-inline-size: 3ch;
+  margin-inline-end: var(--space-element-gap);
+  color: var(--color-text-secondary);
+  text-align: end;
+  user-select: none;
+}
+
+/* Highlighted lines: a tint and a bar, so colour isn't the only signal.
+   The text is a <mark>; its default yellow is reset to the line's colours. */
+.code-block__line--highlight {
+  background: var(--color-surface-tertiary);
+}
+
+.code-block__line--highlight > mark {
+  background: none;
+  color: inherit;
+}
+
+.code-block__line--highlight::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  inline-size: var(--border-width-thick);
+  background: var(--color-accent-text);
+}
+
+@media (forced-colors: active) {
+  .code-block__line--highlight::before {
+    background: Highlight;
+  }
+}
