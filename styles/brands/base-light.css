@@ -291,6 +291,12 @@
   --color-feedback-info-background: #eff6ff;
   --color-feedback-info-foreground: #1d4ed8;
   --color-feedback-info-border: #2563eb;
+  --color-chart-1: #2a78d6;
+  --color-chart-2: #cf5a22;
+  --color-chart-3: #14876a;
+  --color-chart-4: #a57300;
+  --color-chart-5: #c44a7e;
+  --color-chart-6: #2f7d1f;
   --color-skeleton-base: var(--color-neutral-200);
   --color-skeleton-highlight: var(--color-neutral-100);
   --duration-skeleton: 400ms;

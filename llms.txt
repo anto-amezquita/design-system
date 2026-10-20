@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 96 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 97 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -109,6 +109,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [AppShell](https://design.amezquita.dk/components/app-shell.md): The frame of an app's pages: skip link, header, section navigation, main content, aside, footer and bottom bar, in the right landmarks and laid out per breakpoint
 - [Breadcrumb](https://design.amezquita.dk/components/breadcrumb.md): Hierarchical page location trail; the last item is the current page (non-linked)
 - [Carousel](https://design.amezquita.dk/components/carousel.md): A row of slides shown a few at a time, moved with buttons, dots, swipe or arrow keys
+- [Chart](https://design.amezquita.dk/components/chart.md): A line chart (change over time, an ordered sequence) or a bar chart (amounts compared across categories), keyboard-explorable and one click from a table of the same data
 - [ChatComposer](https://design.amezquita.dk/components/chat-composer.md): Where a message is written and sent in a conversation: a field that grows with the text, Enter to send, and Stop while a reply streams
 - [ChatMessage](https://design.amezquita.dk/components/chat-message.md): One message in a conversation, from a person or a model: who wrote it, when, what it says, and whether it's still arriving or failed
 - [DataTable](https://design.amezquita.dk/components/data-table.md): Sortable, filterable, paginated table for structured datasets
