@@ -1,0 +1,52 @@
+/*
+  Tokens consumed:
+
+  --color-surface-secondary (the held space, before media loads),
+  --border-radius-image
+
+  No component tokens: the ratio is content, set per use, not a design
+  decision a brand would change (decisions/0004, 0005).
+*/
+
+.aspect-ratio {
+  position: relative;
+  inline-size: 100%;
+  overflow: hidden;
+  background: var(--color-surface-secondary);
+}
+
+.aspect-ratio--rounded {
+  border-radius: var(--border-radius-image);
+}
+
+/* The media child fills the box; a picture's img fills the picture. */
+.aspect-ratio > img,
+.aspect-ratio > video,
+.aspect-ratio > iframe,
+.aspect-ratio > picture,
+.aspect-ratio > picture > img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  border: 0;
+}
+
+.aspect-ratio > img,
+.aspect-ratio > video,
+.aspect-ratio > iframe,
+.aspect-ratio > picture {
+  position: absolute;
+  inset: 0;
+}
+
+.aspect-ratio--cover > img,
+.aspect-ratio--cover > video,
+.aspect-ratio--cover > picture > img {
+  object-fit: cover;
+}
+
+.aspect-ratio--contain > img,
+.aspect-ratio--contain > video,
+.aspect-ratio--contain > picture > img {
+  object-fit: contain;
+}

@@ -3075,6 +3075,7 @@
         "Table",
         "Tabs",
         "TopNav",
+        "AspectRatio",
         "Avatar",
         "Badge",
         "Button",
@@ -6080,7 +6081,8 @@
       },
       "axisAware": true,
       "usedBy": [
-        "Card"
+        "Card",
+        "AspectRatio"
       ]
     },
     {

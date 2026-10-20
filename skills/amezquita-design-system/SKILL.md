@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 66 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 67 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 69 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 70 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -34,10 +34,11 @@ Next.js apps also need `transpilePackages: ['@amezquita/design-system']` in `nex
 
 Full prop tables, real tokens, and a usage example for every component: `https://design.amezquita.dk/components/<slug>.md`. Don't guess a prop name or a token — read the twin.
 
-### Primitives (38)
+### Primitives (39)
 
 | Component | Reference |
 |---|---|
+| AspectRatio | [aspect-ratio](https://design.amezquita.dk/components/aspect-ratio.md) — Keeps media at a fixed width-to-height ratio as the width changes, and holds the space before it loads |
 | Avatar | [avatar](https://design.amezquita.dk/components/avatar.md) — User profile picture with fallback to initials when no image is provided |
 | Badge | [badge](https://design.amezquita.dk/components/badge.md) — Small status indicator or numeric count overlay attached to another element |
 | Button | [button](https://design.amezquita.dk/components/button.md) — Trigger for user actions; renders as `<button>` or `<a>` depending on context |

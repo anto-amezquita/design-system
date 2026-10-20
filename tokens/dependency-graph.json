@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 67,
+    "filesScanned": 68,
     "tokenCount": 240
   },
   "byToken": {
@@ -91,7 +91,8 @@
       "components/primitives/Slider/Slider.css"
     ],
     "border-radius-image": [
-      "components/composition/Card/Card.css"
+      "components/composition/Card/Card.css",
+      "components/primitives/AspectRatio/AspectRatio.css"
     ],
     "border-radius-interactive": [
       "components/composition/Alert/Alert.css",
@@ -535,6 +536,7 @@
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/patterns/TopNav/TopNav.css",
+      "components/primitives/AspectRatio/AspectRatio.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Button/Button.css",
