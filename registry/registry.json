@@ -778,6 +778,23 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "item",
+      "type": "registry:component",
+      "title": "Item",
+      "description": "One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "kbd",
       "type": "registry:component",
       "title": "Kbd",
@@ -816,6 +833,23 @@
       "type": "registry:component",
       "title": "Link",
       "description": "Navigation to another page or resource; use Link for navigation and Button for actions",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "list",
+      "type": "registry:component",
+      "title": "List",
+      "description": "A list, announced as one: rows of Items in an interface, or bullets and numbers in running text",
       "dependencies": [
         "@amezquita/design-system"
       ],

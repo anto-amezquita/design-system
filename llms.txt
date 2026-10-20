@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 80 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 82 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -50,9 +50,11 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Image](https://design.amezquita.dk/components/image.md): An image with a required `alt`, space held before it loads, a quiet fallback if it fails, and an optional caption
 - [Input](https://design.amezquita.dk/components/input.md): Labelled single-line text entry with hint and error states
 - [InputGroup](https://design.amezquita.dk/components/input-group.md): An Input joined to the text and buttons that belong to it: "https://", "kr.", an Apply button
+- [Item](https://design.amezquita.dk/components/item.md): One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link
 - [Kbd](https://design.amezquita.dk/components/kbd.md): A key the user presses, drawn as a keycap
 - [Label](https://design.amezquita.dk/components/label.md): Standalone form label element — used when a label must be decoupled from its input
 - [Link](https://design.amezquita.dk/components/link.md): Navigation to another page or resource; use Link for navigation and Button for actions
+- [List](https://design.amezquita.dk/components/list.md): A list, announced as one: rows of Items in an interface, or bullets and numbers in running text
 - [MultiSelect](https://design.amezquita.dk/components/multi-select.md): Several values from a long list, found by typing: skills, reviewers, languages
 - [NumberInput](https://design.amezquita.dk/components/number-input.md): A number typed or stepped: a quantity, an amount, a percentage
 - [OtpInput](https://design.amezquita.dk/components/otp-input.md): A short code sent by text or email, shown as one box per character

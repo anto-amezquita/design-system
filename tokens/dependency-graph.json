@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 78,
+    "filesScanned": 80,
     "tokenCount": 261
   },
   "byToken": {
@@ -82,6 +82,7 @@
       "components/patterns/Table/Table.css",
       "components/patterns/Toolbar/Toolbar.css",
       "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Select/Select.css"
     ],
     "border-radius-full": [
@@ -166,6 +167,7 @@
       "components/primitives/Divider/Divider.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/List/List.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Tag/Tag.css"
@@ -194,7 +196,8 @@
     ],
     "border-width-thick": [
       "components/patterns/FormLayout/FormLayout.css",
-      "components/primitives/Blockquote/Blockquote.css"
+      "components/primitives/Blockquote/Blockquote.css",
+      "components/primitives/Item/Item.css"
     ],
     "breadcrumb-current-max-width": [
       "components/patterns/Breadcrumb/Breadcrumb.css"
@@ -321,6 +324,7 @@
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Icon/Icon.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Link/Link.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
@@ -358,6 +362,7 @@
       "components/primitives/IconButton/IconButton.css",
       "components/primitives/Input/Input.css",
       "components/primitives/Kbd/Kbd.css",
+      "components/primitives/List/List.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
@@ -393,6 +398,7 @@
       "components/primitives/Citation/Citation.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Link/Link.css",
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/OtpInput/OtpInput.css",
@@ -562,6 +568,7 @@
       "components/primitives/Image/Image.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
@@ -619,8 +626,10 @@
       "components/primitives/Heading/Heading.css",
       "components/primitives/Icon/Icon.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/List/List.css",
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/ProgressBar/ProgressBar.css",
@@ -673,6 +682,7 @@
       "components/primitives/Image/Image.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Label/Label.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/ProgressBar/ProgressBar.css",
@@ -769,6 +779,7 @@
       "components/primitives/Citation/Citation.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Link/Link.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
@@ -818,6 +829,7 @@
       "components/primitives/Citation/Citation.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Link/Link.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/ProgressBar/ProgressBar.css",
@@ -905,6 +917,7 @@
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Link/Link.css",
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/OtpInput/OtpInput.css",
@@ -954,7 +967,9 @@
       "components/primitives/Image/Image.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/List/List.css",
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Radio/Radio.css",
@@ -985,6 +1000,7 @@
       "components/composition/Drawer/Drawer.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/primitives/Blockquote/Blockquote.css",
+      "components/primitives/List/List.css",
       "components/primitives/Text/Text.css"
     ],
     "font-size-caption": [
@@ -1023,6 +1039,7 @@
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
@@ -1072,6 +1089,7 @@
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Image/Image.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Label/Label.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Select/Select.css",
@@ -1118,6 +1136,7 @@
       "components/primitives/Citation/Citation.css",
       "components/primitives/Field/Field.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Label/Label.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
@@ -1221,6 +1240,7 @@
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
       "components/primitives/Blockquote/Blockquote.css",
+      "components/primitives/List/List.css",
       "components/primitives/Text/Text.css"
     ],
     "line-height-caption": [
@@ -1245,6 +1265,7 @@
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Checkbox/Checkbox.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Radio/Radio.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
@@ -1291,6 +1312,7 @@
       "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Image/Image.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Text/Text.css"
@@ -1487,13 +1509,15 @@
     "space-compact-padding-x": [
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/SegmentedControl/SegmentedControl.css"
     ],
     "space-compact-padding-y": [
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Tooltip/Tooltip.css",
-      "components/patterns/Tabs/Tabs.css"
+      "components/patterns/Tabs/Tabs.css",
+      "components/primitives/Item/Item.css"
     ],
     "space-component-gap": [
       "components/composition/CommandPalette/CommandPalette.css",
@@ -1529,6 +1553,7 @@
       "components/primitives/Combobox/Combobox.css",
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Textarea/Textarea.css",
@@ -1538,6 +1563,7 @@
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Textarea/Textarea.css"
@@ -1567,6 +1593,8 @@
       "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Grid/Grid.css",
+      "components/primitives/Item/Item.css",
+      "components/primitives/List/List.css",
       "components/primitives/Section/Section.css",
       "components/primitives/Stack/Stack.css"
     ],
@@ -1603,6 +1631,7 @@
       "components/primitives/Input/Input.css",
       "components/primitives/InputGroup/InputGroup.css",
       "components/primitives/Label/Label.css",
+      "components/primitives/List/List.css",
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/ProgressBar/ProgressBar.css",
@@ -1666,7 +1695,9 @@
       "components/primitives/Grid/Grid.css",
       "components/primitives/Image/Image.css",
       "components/primitives/Input/Input.css",
+      "components/primitives/Item/Item.css",
       "components/primitives/Link/Link.css",
+      "components/primitives/List/List.css",
       "components/primitives/MultiSelect/MultiSelect.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",

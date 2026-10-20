@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 120,
-    "publicComponentCount": 80,
+    "componentCount": 122,
+    "publicComponentCount": 82,
     "subComponentCount": 39
   },
   "components": [
@@ -501,6 +501,24 @@
       "internal": false
     },
     {
+      "name": "Item",
+      "slug": "item",
+      "tier": "primitives",
+      "purpose": "One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link",
+      "storybookPath": "Components/Item",
+      "storybookTitleId": "components-item",
+      "defaultStoryId": "components-item--default",
+      "tokenPrefix": "item",
+      "stories": [
+        "Default",
+        "Linked",
+        "Navigation",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
       "name": "Kbd",
       "slug": "kbd",
       "tier": "primitives",
@@ -553,6 +571,24 @@
         "External",
         "AsChild",
         "AllVariants",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "List",
+      "slug": "list",
+      "tier": "primitives",
+      "purpose": "A list, announced as one: rows of Items in an interface, or bullets and numbers in running text",
+      "storybookPath": "Components/List",
+      "storybookTitleId": "components-list",
+      "defaultStoryId": "components-list--default",
+      "tokenPrefix": "list",
+      "stories": [
+        "Default",
+        "Bullets",
+        "Numbered",
         "DarkMode"
       ],
       "tokenCount": 0,
