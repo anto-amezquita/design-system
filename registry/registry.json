@@ -2088,6 +2088,28 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "prompt-form",
+      "type": "registry:component",
+      "title": "PromptForm",
+      "description": "Questions an assistant asks before it goes on, each a set of choices with \"Other\" for an answer in words, sent together and kept as a summary",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/button.json",
+        "https://design.amezquita.dk/r/description-list.json",
+        "https://design.amezquita.dk/r/icon.json",
+        "https://design.amezquita.dk/r/input.json",
+        "https://design.amezquita.dk/r/selectable-card.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "resizable-panels",
       "type": "registry:component",
       "title": "ResizablePanels",

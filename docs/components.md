@@ -3315,6 +3315,56 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### PromptForm
+
+| Field | Value |
+|---|---|
+| **Purpose** | Questions an assistant asks before it goes on, each a set of choices with "Other" for an answer in words, sent together and kept as a summary |
+| **Figma name** | `PromptForm` |
+| **Code name** | `PromptForm` (+ `PromptQuestion`, `PromptAnswers` types) |
+| **Storybook path** | `Components/PromptForm` |
+
+**Props / variants**
+- `title` (required): what the form is for; it names the region and the form
+- `questions` (required): one to four `{ id, question, options: { value, label, description? }[], multiple?, allowOther? }`. `multiple` picks any number; `allowOther` (default `true`) adds "Other" with a text field
+- `onSubmit(answers)`: called once every question has an answer, with each question's id mapped to its values (an "Other" answer is its text). The form then shows a summary
+- `onSkip`: adds a Skip button; the form then shows "Skipped"
+- `answers`: an earlier answer (or `'skipped'`) to show as its summary, for a conversation's history
+- `submitLabel` (default "Send answers"). Native `section` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] unanswered, partly answered, "Other" open
+- [x] sent with a question unanswered; "Other" chosen with no words
+- [x] answered (summary), skipped
+- [x] focus: the first problem after a failed send; the summary after sending or skipping
+
+**Tokens consumed**
+- `--color-surface-primary`, `--color-border-default`, `--border-width-default`, `--border-radius-component`, `--space-container-padding`, `--space-component-gap`, `--space-element-gap`, `--space-inline-gap`, `--space-tight-gap`, `--size-container-text`
+- `--color-text-primary`, `--color-text-secondary`, `--color-feedback-error`, `--color-border-focus`, `--focus-ring-width`, `--font-family-base`, `--font-size-body`, `--line-height-body`, `--font-size-small`, `--line-height-small`, `--font-weight-heading`
+- The choices are SelectableCards and the "Other" field is an Input, with their own tokens. No component tokens
+
+**Accessibility**
+- A `section` region and a `form`, both named by the title. Each question is SelectableCardGroup's `fieldset`, with the question as its `legend` and native radios or checkboxes underneath
+- Send is never disabled: it says what's missing instead. Each unanswered question gets an error under it with an icon and words, linked to its fieldset with `aria-describedby`, and focus moves to the first problem (its first choice, or the empty "Other" field). An error clears as soon as that question is answered
+- With "Other" chosen, the question's block becomes a group named by the question, so the "Your answer" field is heard in context
+- After sending or skipping, the form is replaced by a summary (a DescriptionList of question and answer), and focus moves to it, so keyboard and screen reader users aren't left on a control that's gone. A summary passed in as `answers` doesn't take focus
+- Title, errors and "Skipped" are tested at 4.5:1 in all five brands, light and dark
+
+**Do**
+- Ask only what changes what happens next, and keep it to four questions or fewer.
+- Write each question as a full sentence, and add a description to an option when the label alone doesn't decide it.
+- Keep the summary in the conversation (pass `answers` when you render history), so the record of what was chosen stays.
+
+**Don't**
+- Don't use PromptForm for a long form or a settings page; that's FormLayout.
+- Don't turn off "Other" unless the options really are the only answers.
+- Don't disable Send until everything is filled; people need to hear what's missing.
+
+**Chromatic stories**
+- `Default`, `Unanswered`, `Answered`, `Skipped`, `InConversation`, `DarkMode`
+
+---
+
 ### ResizablePanels
 
 | Field | Value |

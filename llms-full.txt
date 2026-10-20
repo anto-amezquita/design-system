@@ -788,6 +788,15 @@ Page navigation controls for multi-page data sets; exposes current page and tota
 - Storybook: Patterns/Pagination
 - Stories: Default, EdgeCases, Compact, DarkMode
 
+### PromptForm
+
+Questions an assistant asks before it goes on, each a set of choices with "Other" for an answer in words, sent together and kept as a summary
+
+- Import: `import { PromptForm } from '@amezquita/design-system/components/patterns/PromptForm'`
+- Token prefix: `promptform-*` (0 tokens)
+- Storybook: Components/PromptForm
+- Stories: Default, Unanswered, Answered, Skipped, InConversation, DarkMode
+
 ### ResizablePanels
 
 Two panes sharing the space, with a separator people drag, or move with the keyboard (the WAI-ARIA window splitter pattern)
