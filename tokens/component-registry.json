@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 130,
-    "publicComponentCount": 89,
+    "componentCount": 131,
+    "publicComponentCount": 90,
     "subComponentCount": 40
   },
   "components": [
@@ -1956,6 +1956,23 @@
         "DarkMode"
       ],
       "tokenCount": 8,
+      "internal": false
+    },
+    {
+      "name": "Markdown",
+      "slug": "markdown",
+      "tier": "patterns",
+      "purpose": "Renders a Markdown string with the system's own components, so release notes, READMEs and model answers look like the rest of the product",
+      "storybookPath": "Components/Markdown",
+      "storybookTitleId": "components-markdown",
+      "defaultStoryId": "components-markdown--default",
+      "tokenPrefix": "markdown",
+      "stories": [
+        "Default",
+        "UntrustedInput",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
       "internal": false
     },
     {

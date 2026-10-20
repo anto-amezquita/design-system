@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "markdown",
+  "type": "registry:component",
+  "title": "Markdown",
+  "description": "Renders a Markdown string with the system's own components, so release notes, READMEs and model answers look like the rest of the product",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/blockquote.json",
+    "https://design.amezquita.dk/r/code-block.json",
+    "https://design.amezquita.dk/r/divider.json",
+    "https://design.amezquita.dk/r/heading.json",
+    "https://design.amezquita.dk/r/image.json",
+    "https://design.amezquita.dk/r/link.json",
+    "https://design.amezquita.dk/r/list.json",
+    "https://design.amezquita.dk/r/table.json",
+    "https://design.amezquita.dk/r/text.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}
