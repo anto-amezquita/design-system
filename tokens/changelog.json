@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "40d830e",
+      "type": "feat",
+      "scope": "timestamp",
+      "message": "moments as people say them, kept current",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "4afb9fd",
       "type": "feat",
       "scope": "blockquote, citation",
