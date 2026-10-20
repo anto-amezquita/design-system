@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "98dcd5a",
+      "type": "feat",
+      "scope": "icon",
+      "message": "Phosphor icon at the brand's icon sizes and colours",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "95a008f",
       "type": "feat",
       "scope": "text",
