@@ -1,0 +1,184 @@
+/*
+  Tokens consumed:
+
+  --border-width-default, --color-border-strong (edge, like every form
+  control: 3:1), --color-accent-text (checked edge and indicator),
+  --color-surface-primary, --color-surface-secondary (disabled),
+  --border-radius-component, --border-radius-interactive,
+  --border-radius-full, --space-control-padding-x,
+  --space-control-padding-y, --space-inline-gap, --space-tight-gap,
+  --space-label-gap, --font-family-base, --font-size-control,
+  --line-height-control, --font-weight-label, --font-size-small,
+  --line-height-small, --color-text-primary, --color-text-secondary,
+  --size-icon-md, --size-icon-xs, --color-border-focus,
+  --focus-ring-width, --focus-ring-offset, --duration-interaction,
+  --easing-default
+
+  No component tokens (decisions/0004, 0005). Checked uses accent-text,
+  not accent-default: accent-default is a fill and too pale in demo-soft
+  to mark a selection at 3:1.
+*/
+
+.selectable-card-group {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.selectable-card-group__legend {
+  margin-block-end: var(--space-label-gap);
+  padding: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-primary);
+}
+
+.selectable-card-group__stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-inline-gap);
+}
+
+.selectable-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-tight-gap);
+  padding: var(--space-control-padding-y) var(--space-control-padding-x);
+  border: var(--border-width-default) solid var(--color-border-strong);
+  border-radius: var(--border-radius-component);
+  background: var(--color-surface-primary);
+  font-family: var(--font-family-base);
+  cursor: pointer;
+  transition:
+    border-color var(--duration-interaction) var(--easing-default),
+    box-shadow var(--duration-interaction) var(--easing-default);
+}
+
+.selectable-card:hover:not(.selectable-card--disabled) {
+  border-color: var(--color-accent-text);
+}
+
+/* Checked: the edge doubles in the accent with an inset ring, so nothing
+   shifts, and the indicator fills. Two signals, not colour alone. */
+.selectable-card--checked {
+  border-color: var(--color-accent-text);
+  box-shadow: inset 0 0 0 var(--border-width-default) var(--color-accent-text);
+}
+
+.selectable-card:has(.selectable-card__input:focus-visible) {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* The native input stays in the DOM, focusable and in the form, but out
+   of sight (clipped like VisuallyHidden); the card is its label, so a
+   click anywhere on the card reaches it. Not an invisible input stretched
+   over the card: that sits on top of the text and gets in the way of
+   selecting it and of tools that click what they can see. */
+.selectable-card__input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.selectable-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline-gap);
+}
+
+.selectable-card__title {
+  flex: 1;
+  min-inline-size: 0;
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-primary);
+}
+
+.selectable-card__meta {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-secondary);
+}
+
+.selectable-card__description {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-secondary);
+}
+
+.selectable-card__indicator {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--size-icon-md);
+  block-size: var(--size-icon-md);
+  border: var(--border-width-default) solid var(--color-border-strong);
+  border-radius: var(--border-radius-interactive);
+  background: var(--color-surface-primary);
+  color: var(--color-surface-primary);
+}
+
+.selectable-card--single .selectable-card__indicator {
+  border-radius: var(--border-radius-full);
+}
+
+.selectable-card--checked .selectable-card__indicator {
+  border-color: var(--color-accent-text);
+  background: var(--color-accent-text);
+}
+
+.selectable-card__check {
+  inline-size: var(--size-icon-xs);
+  block-size: var(--size-icon-xs);
+}
+
+/* Disabled: no fade (the rule since #118). A quiet surface, secondary
+   text, and a dashed edge: in demo-warm the default border is as dark as
+   the strong one and its secondary surface is close to the page, so
+   colour alone didn't set a disabled card apart. The dash does in every
+   brand. */
+.selectable-card--disabled {
+  border-style: dashed;
+  border-color: var(--color-border-default);
+  background: var(--color-surface-secondary);
+  cursor: not-allowed;
+}
+
+.selectable-card--disabled .selectable-card__title {
+  color: var(--color-text-secondary);
+}
+
+.selectable-card--disabled .selectable-card__indicator {
+  border-color: var(--color-border-default);
+  background: var(--color-surface-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selectable-card {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .selectable-card--checked {
+    border-color: Highlight;
+    box-shadow: inset 0 0 0 var(--border-width-default) Highlight;
+  }
+
+  .selectable-card--checked .selectable-card__indicator {
+    background: Highlight;
+    color: HighlightText;
+  }
+}

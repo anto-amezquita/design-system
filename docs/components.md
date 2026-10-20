@@ -1841,6 +1841,62 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### SelectableCard
+
+| Field | Value |
+|---|---|
+| **Purpose** | Choices shown as cards: pick one (radios) or several (checkboxes), with a title, a detail and a description on each |
+| **Figma name** | `SelectableCard` |
+| **Code name** | `SelectableCard` (+ `SelectableCardGroup`) |
+| **Storybook path** | `Components/SelectableCard` |
+
+**Compound structure**
+```tsx
+<SelectableCardGroup legend="Plan" name="plan" defaultValue={['pro']}>
+  <SelectableCard value="free" title="Free" meta="0 kr" description="One brand." />
+  <SelectableCard value="pro" title="Pro" meta="90 kr/mo" description="Five brands." />
+</SelectableCardGroup>
+```
+
+**Props / variants**
+- Group: `legend` (required, the question), `type` (`single` or `multiple`), `name`, `value` + `onValueChange` or `defaultValue`, `columns` (side by side, as many as fit), `required`, `disabled`
+- Card: `value`, `title` (required), `meta` (a price, a time), `description`, `disabled`
+- Native attributes, `className` and `ref` pass through on both (the group is a `fieldset`, the card a `label`)
+
+**Required states**
+- [x] default, hover, focus-visible
+- [x] checked
+- [x] disabled (card or whole group)
+
+**Tokens consumed**
+- `--border-width-default`, `--color-border-strong`, `--color-border-default`, `--color-accent-text`, `--color-surface-primary`, `--color-surface-secondary`
+- `--border-radius-component`, `--border-radius-interactive`, `--border-radius-full`, `--space-control-padding-x`, `--space-control-padding-y`, `--space-inline-gap`, `--space-tight-gap`, `--space-label-gap`
+- `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-weight-label`, `--font-size-small`, `--line-height-small`, `--color-text-primary`, `--color-text-secondary`, `--size-icon-md`, `--size-icon-xs`
+- `--color-border-focus`, `--focus-ring-width`, `--focus-ring-offset`, `--duration-interaction`, `--easing-default` (no component tokens; they would only pass through)
+
+**Accessibility**
+- A `fieldset` whose `legend` is the question, so screen readers say "Plan, group" before the choices
+- Native radios (`single`) or checkboxes (`multiple`) underneath, visually hidden but focusable: arrow keys move between radios and skip disabled ones, the values reach the form, and `required` blocks an empty submit
+- Each input is named by its card's title and meta ("Pro, 90 kr/mo") and described by the description, rather than by everything in the card
+- The whole card is the input's `label`, so a click anywhere on it chooses it
+- Checked shows twice: the edge doubles in the accent and the indicator fills with a tick. It uses `accent-text` because `accent-default` is too pale in demo-soft
+- Edges and indicators are tested at 3:1, the checked edge, indicator and tick at 3:1, and all text at 4.5:1, disabled cards included, in all five brands, light and dark. Disabled cards don't fade (the rule since #118); they get a dashed edge, because in demo-warm the colours alone barely set them apart
+
+**Do**
+- Use cards when each choice needs a description or a price to decide; otherwise use Radio or Checkbox.
+- Write the legend as the question the cards answer.
+- Say why a disabled choice isn't available, in its description.
+
+**Don't**
+- Don't put links or buttons inside a card; the whole card is a label, and a nested control would be hard to hit and confusing to hear.
+- Don't use SelectableCard to navigate; a card that takes you somewhere is a linked Card.
+- Don't offer one card on its own; that's a Checkbox.
+
+**Chromatic stories**
+- `Default`, `Columns`, `Multiple`, `DarkMode`
+
+---
+
 ### Skeleton
 
 | Field | Value |

@@ -397,6 +397,15 @@ Dropdown for choosing a single value from a list; supports grouped options
 - Storybook: Components/Select
 - Stories: Default, WithDefaultValue, Grouped, Disabled, DarkMode
 
+### SelectableCard
+
+Choices shown as cards: pick one (radios) or several (checkboxes), with a title, a detail and a description on each
+
+- Import: `import { SelectableCard } from '@amezquita/design-system/components/primitives/SelectableCard'`
+- Token prefix: `selectablecard-*` (0 tokens)
+- Storybook: Components/SelectableCard
+- Stories: Default, Columns, Multiple, DarkMode
+
 ### Skeleton
 
 Placeholder loading state that mirrors the geometry of the content it replaces
