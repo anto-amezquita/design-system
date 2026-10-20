@@ -145,7 +145,7 @@ The union of the four lists is 102 concepts, so "100 components" means covering 
 
 ## Build plan (chosen 2026-10-08: credibility first)
 
-Five waves, released at most weekly under [ADR 0022](../decisions/0022-release-at-most-weekly.md), so a long wave ships in parts. Credibility first: close the gaps every reviewer expects before the showcase pieces. Ends at 97 components (35 + 62).
+Five waves, released at most weekly under [ADR 0022](../decisions/0022-release-at-most-weekly.md), so a long wave ships in parts. These components are built without waiting for a consumer, unlike the rule in `component-roadmap-spec.md`; [ADR 0024](../decisions/0024-build-components-for-coverage-not-only-consumers.md) records why and what replaces that check. Credibility first: close the gaps every reviewer expects before the showcase pieces. Ends at 97 components (35 + 62).
 
 | Wave | Area | Components | Count | Running total |
 |---|---|---|---|---|
