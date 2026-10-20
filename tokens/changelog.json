@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "84971ba",
+      "type": "feat",
+      "scope": "scroll-area",
+      "message": "native scrolling, styled, reachable by keyboard",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "4e8499f",
       "type": "feat",
       "scope": "collapsible",
