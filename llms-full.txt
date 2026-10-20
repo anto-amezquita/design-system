@@ -20,10 +20,10 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-388 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+391 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
-- component: 117
+- component: 120
 - color: 46
 - typography: 40
 - spacing: 19
@@ -154,6 +154,15 @@ Pick files by button or by dragging them in, see what's chosen, and remove any
 - Storybook: Components/FileUpload
 - Stories: Default, WithFiles, Single, Error, Disabled, DarkMode
 
+### Grid
+
+Lays items out in rows and columns: fixed columns per breakpoint, or as many as fit
+
+- Import: `import { Grid } from '@amezquita/design-system/components/primitives/Grid'`
+- Token prefix: `grid-min-item-*` (3 tokens)
+- Storybook: Components/Grid
+- Stories: Default, PerBreakpoint, AsManyAsFit, Spans, DarkMode
+
 ### Heading
 
 Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level
@@ -270,6 +279,15 @@ A site or list search: a search landmark with Enter to search, Escape to clear a
 - Token prefix: `search-*` (0 tokens)
 - Storybook: Components/Search
 - Stories: Default, WithShortcut, WithSubmit, Loading, AsYouType, DarkMode
+
+### Section
+
+A band of a page: edge-to-edge background, space above and below, content centred at a set width with the page gutter
+
+- Import: `import { Section } from '@amezquita/design-system/components/primitives/Section'`
+- Token prefix: `section-*` (0 tokens)
+- Storybook: Components/Section
+- Stories: Default, Bands, DarkBand, DarkMode
 
 ### SegmentedControl
 

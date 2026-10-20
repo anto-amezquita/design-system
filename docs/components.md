@@ -1331,6 +1331,51 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Section
+
+| Field | Value |
+|---|---|
+| **Purpose** | A band of a page: edge-to-edge background, space above and below, content centred at a set width with the page gutter |
+| **Figma name** | `Section` |
+| **Code name** | `Section` |
+| **Storybook path** | `Components/Section` |
+
+**Props / variants**
+- `width`: `text`, `media`, `wide`, `page` (default) or `full`, each the brand's `--size-container-*` token
+- `spacing`: `section` (default, grows with the viewport), `component` or `none`
+- `tone`: `default` (no background) or `subtle` (the secondary surface)
+- `as`: `section` (default), `header`, `footer`, `main`, `article`, `aside` or `div`
+- Native attributes, `className` and `ref` pass through to the outer element
+
+**Required states**
+- [x] default (layout only: no hover, focus or disabled state)
+- [x] responsive: the gutter is `--space-element-gap` on a phone and `--space-container-padding` from 768px
+
+**Tokens consumed**
+- `--size-container-text`, `--size-container-media`, `--size-container-wide`, `--size-container-page`
+- `--space-section-gap`, `--space-component-gap`, `--space-element-gap`, `--space-container-padding`, `--color-surface-secondary` (no component tokens; they would only pass through)
+
+**Accessibility**
+- A `<section>` is only a region landmark once it has a name: pass `aria-labelledby` pointing at its heading. Without one it's a plain grouping, which is fine for bands that don't need to be jumped to
+- Named Sections need different names: two regions both called "Pricing" can't be told apart (axe `landmark-unique`, checked in the stories)
+- Primary and secondary text are tested at 4.5:1 or more on the `subtle` band in all five brands, light and dark
+- No dark `tone`: a dark band on a light page needs every component inside to switch, so wrap the Section in `ThemeScope mode="dark"` instead
+
+**Do**
+- Use one Section per band of a page, and let Stack or Grid lay out what's inside.
+- Use `width="text"` for reading content, so lines stay a comfortable length.
+- Alternate `default` and `subtle` to tell neighbouring bands apart.
+
+**Don't**
+- Don't nest Sections; the gutter and spacing would double. Use Stack inside.
+- Don't name every Section as a landmark; a page with twenty regions is as hard to navigate as one with none.
+- Don't set a dark background on a Section by hand; components inside would keep their light colours. Use ThemeScope.
+
+**Chromatic stories**
+- `Default`, `Bands`, `DarkBand`, `DarkMode`
+
+---
+
 ### Skeleton
 
 | Field | Value |
@@ -1477,6 +1522,62 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 **Chromatic stories**
 - `Default`, `WithFiles`, `Single`, `Error`, `Disabled`, `DarkMode`
+
+---
+
+### Grid
+
+| Field | Value |
+|---|---|
+| **Purpose** | Lays items out in rows and columns: fixed columns per breakpoint, or as many as fit |
+| **Figma name** | `Grid` (auto layout, wrap) |
+| **Code name** | `Grid` (+ `GridItem`) |
+| **Storybook path** | `Components/Grid` |
+
+**Compound structure**
+```tsx
+<Grid columns={{ base: 1, tablet: 2, desktop: 4 }} gap="component">
+  <GridItem span="full">…</GridItem>            {/* only needed to span */}
+  <Card>…</Card>                                {/* plain children take one column */}
+</Grid>
+```
+
+**Props / variants**
+- `columns`: 1–12 equal columns, or one per breakpoint (`{ base, tablet, desktop }`, mobile first; a breakpoint left out takes the one below). Default 1
+- `minItemWidth`: `sm`, `md` or `lg`: as many columns as fit with each item at least that wide; overrides `columns`
+- `gap`: `none`, `tight`, `inline`, `element` (default), `component` or `section`; `rowGap` when rows need a different space
+- `align`: `start`, `center`, `end` or `stretch` (default)
+- `as`: `div` (default), `section`, `ul` or `ol`
+- `GridItem` `span`: a number of columns, `'full'`, or one per breakpoint; `as`: `div`, `li`, `article` or `section`
+- Native attributes, `className`, `style` and `ref` pass through on both
+
+**Required states**
+- [x] default (layout only: no hover, focus or disabled state)
+- [x] responsive: columns and spans per breakpoint (768px tablet, 1024px desktop)
+
+**Tokens consumed**
+- `--space-tight-gap`, `--space-inline-gap`, `--space-element-gap`, `--space-component-gap`, `--space-section-gap`
+- `--grid-min-item-sm`, `--grid-min-item-md`, `--grid-min-item-lg`
+
+**Accessibility**
+- No role of its own: it renders the element in `as`, so pick the one that matches what the items are
+- As `ul` or `ol` it removes markers and indent and sets `role="list"`, because Safari drops list semantics once `list-style` is `none`. A `role` you pass wins
+- Items fill in source order (no `dense` packing, no reordering), so reading and tab order match what's on screen
+- With `minItemWidth`, an item shrinks below the minimum in a container narrower than it, so content reflows at 320px instead of scrolling sideways (WCAG 1.4.10)
+
+**Do**
+- Use `minItemWidth` for collections of like items (cards, swatches) so the grid works in any container, sidebar included.
+- Use per-breakpoint `columns` for page layouts where the column count is a design decision.
+- Render a collection as `as="ul"` with `li` items so screen readers announce how many there are.
+
+**Don't**
+- Don't use Grid for a single row or column; that's Stack.
+- Don't span more columns than the grid has: the browser adds extra columns and squeezes the rest. Use `span="full"` for the whole row.
+- Don't use a Grid to lay out tabular data; that's Table, which keeps row and column headers.
+- Don't reorder items with CSS to change their visual position; change the source order so keyboard and screen-reader order match.
+
+**Chromatic stories**
+- `Default`, `PerBreakpoint`, `AsManyAsFit`, `Spans`, `DarkMode`
 
 ---
 

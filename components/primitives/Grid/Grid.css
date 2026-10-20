@@ -1,0 +1,140 @@
+/*
+  Tokens consumed:
+
+  --space-tight-gap, --space-inline-gap, --space-element-gap,
+  --space-component-gap, --space-section-gap,
+  --grid-min-item-sm, --grid-min-item-md, --grid-min-item-lg
+
+  Private (set from props, not tokens): --grid-columns, --grid-columns-tablet,
+  --grid-columns-desktop, --grid-min-item, --grid-item-column,
+  --grid-item-column-tablet, --grid-item-column-desktop. Each breakpoint's
+  value falls back to the one below it, so `{ base: 1, desktop: 3 }` stays
+  1 column on tablet.
+*/
+
+.grid {
+  --grid-columns: 1;
+  --grid-columns-tablet: var(--grid-columns);
+  --grid-columns-desktop: var(--grid-columns-tablet);
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  min-inline-size: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(var(--grid-columns-tablet), minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(var(--grid-columns-desktop), minmax(0, 1fr));
+  }
+}
+
+/* As many columns as fit; min() lets a single item shrink below the minimum
+   in a container narrower than it, instead of overflowing. */
+.grid.grid--auto {
+  --grid-min-item: var(--grid-min-item-md);
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-min-item), 100%), 1fr));
+}
+
+.grid.grid--min-sm {
+  --grid-min-item: var(--grid-min-item-sm);
+}
+
+.grid.grid--min-lg {
+  --grid-min-item: var(--grid-min-item-lg);
+}
+
+/* ul/ol: drop markers and indent; role="list" on the element keeps the semantics. */
+.grid--list {
+  padding: 0;
+  list-style: none;
+}
+
+.grid--gap-none {
+  gap: 0;
+}
+
+.grid--gap-tight {
+  gap: var(--space-tight-gap);
+}
+
+.grid--gap-inline {
+  gap: var(--space-inline-gap);
+}
+
+.grid--gap-element {
+  gap: var(--space-element-gap);
+}
+
+.grid--gap-component {
+  gap: var(--space-component-gap);
+}
+
+.grid--gap-section {
+  gap: var(--space-section-gap);
+}
+
+.grid.grid--row-gap-none {
+  row-gap: 0;
+}
+
+.grid.grid--row-gap-tight {
+  row-gap: var(--space-tight-gap);
+}
+
+.grid.grid--row-gap-inline {
+  row-gap: var(--space-inline-gap);
+}
+
+.grid.grid--row-gap-element {
+  row-gap: var(--space-element-gap);
+}
+
+.grid.grid--row-gap-component {
+  row-gap: var(--space-component-gap);
+}
+
+.grid.grid--row-gap-section {
+  row-gap: var(--space-section-gap);
+}
+
+.grid--align-start {
+  align-items: start;
+}
+
+.grid--align-center {
+  align-items: center;
+}
+
+.grid--align-end {
+  align-items: end;
+}
+
+.grid--align-stretch {
+  align-items: stretch;
+}
+
+.grid-item {
+  --grid-item-column: auto;
+  --grid-item-column-tablet: var(--grid-item-column);
+  --grid-item-column-desktop: var(--grid-item-column-tablet);
+  grid-column: var(--grid-item-column);
+  min-inline-size: 0;
+}
+
+@media (min-width: 768px) {
+  .grid-item {
+    grid-column: var(--grid-item-column-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-item {
+    grid-column: var(--grid-item-column-desktop);
+  }
+}

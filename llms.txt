@@ -41,6 +41,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Divider](https://design.amezquita.dk/components/divider.md): A line that separates groups of content, horizontally or vertically
 - [Field](https://design.amezquita.dk/components/field.md): Label, hint and error for any control, wired the way Input wires its own
 - [FileUpload](https://design.amezquita.dk/components/file-upload.md): Pick files by button or by dragging them in, see what's chosen, and remove any
+- [Grid](https://design.amezquita.dk/components/grid.md): Lays items out in rows and columns: fixed columns per breakpoint, or as many as fit
 - [Heading](https://design.amezquita.dk/components/heading.md): Semantic heading element (H1–H5 visual sizes, any `<h1>`–`<h6>` tag) with a visual size decoupled from its document-outline level
 - [IconButton](https://design.amezquita.dk/components/icon-button.md): An action shown only as an icon, for toolbars, cards and dense rows
 - [Input](https://design.amezquita.dk/components/input.md): Labelled single-line text entry with hint and error states
@@ -54,6 +55,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [ProgressBar](https://design.amezquita.dk/components/progress-bar.md): Shows how far a task has got, or that it's running when the end isn't known
 - [Radio](https://design.amezquita.dk/components/radio.md): Single-selection control within a mutually exclusive group
 - [Search](https://design.amezquita.dk/components/search.md): A site or list search: a search landmark with Enter to search, Escape to clear and an optional shortcut
+- [Section](https://design.amezquita.dk/components/section.md): A band of a page: edge-to-edge background, space above and below, content centred at a set width with the page gutter
 - [SegmentedControl](https://design.amezquita.dk/components/segmented-control.md): One choice from a few, shown side by side: a view switch, a time range
 - [Select](https://design.amezquita.dk/components/select.md): Dropdown for choosing a single value from a list; supports grouped options
 - [Skeleton](https://design.amezquita.dk/components/skeleton.md): Placeholder loading state that mirrors the geometry of the content it replaces

@@ -762,6 +762,22 @@
   ],
   "unreleased": [
     {
+      "sha": "4ee3fdf",
+      "type": "feat",
+      "scope": "section",
+      "message": "page band with a centred, token-width container",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
+      "sha": "b3c433b",
+      "type": "feat",
+      "scope": "grid",
+      "message": "rows and columns per breakpoint, or as many as fit",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "a8bf66b",
       "type": "fix",
       "scope": null,
