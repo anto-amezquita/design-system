@@ -1,6 +1,6 @@
 {
   "meta": {
-    "filesScanned": 92,
+    "filesScanned": 93,
     "tokenCount": 265
   },
   "byToken": {
@@ -93,6 +93,7 @@
       "components/patterns/MessageList/MessageList.css",
       "components/patterns/PromptForm/PromptForm.css",
       "components/patterns/Table/Table.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/patterns/Toolbar/Toolbar.css",
       "components/primitives/CodeBlock/CodeBlock.css",
       "components/primitives/Collapsible/Collapsible.css",
@@ -184,6 +185,7 @@
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Table/Table.css",
       "components/patterns/Tabs/Tabs.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/patterns/Toolbar/Toolbar.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Avatar/Avatar.css",
@@ -389,6 +391,7 @@
       "components/patterns/Table/Table.css",
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/Tabs/Tabs.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/patterns/Toolbar/Toolbar.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Avatar/Avatar.css",
@@ -488,6 +491,7 @@
       "components/patterns/MobileNav/MobileNav.css",
       "components/patterns/PromptForm/PromptForm.css",
       "components/patterns/Stepper/Stepper.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/primitives/Field/Field.css",
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Icon/Icon.css",
@@ -540,6 +544,7 @@
     "color-feedback-success-border": [
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/StatusDot/StatusDot.css"
     ],
@@ -555,6 +560,7 @@
     "color-feedback-warning-border": [
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/StatusDot/StatusDot.css"
     ],
@@ -588,6 +594,7 @@
       "components/patterns/MobileNav/MobileNav.css",
       "components/patterns/PromptForm/PromptForm.css",
       "components/patterns/Stepper/Stepper.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/patterns/Toolbar/Toolbar.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Checkbox/Checkbox.css",
@@ -682,6 +689,7 @@
       "components/patterns/Table/Table.css",
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/Tabs/Tabs.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Button/Button.css",
@@ -741,6 +749,7 @@
       "components/patterns/Table/Table.css",
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/Tabs/Tabs.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Avatar/Avatar.css",
       "components/primitives/Badge/Badge.css",
@@ -878,6 +887,7 @@
       "components/primitives/Skeleton/Skeleton.css"
     ],
     "duration-spin": [
+      "components/patterns/ToolCall/ToolCall.css",
       "components/primitives/Spinner/Spinner.css"
     ],
     "duration-transition": [
@@ -1099,6 +1109,7 @@
     ],
     "font-family-mono": [
       "components/patterns/Markdown/Markdown.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/primitives/CodeBlock/CodeBlock.css",
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/OtpInput/OtpInput.css"
@@ -1201,6 +1212,7 @@
       "components/patterns/Stepper/Stepper.css",
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/Tabs/Tabs.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/CodeBlock/CodeBlock.css",
@@ -1226,6 +1238,7 @@
       "components/primitives/Heading/Heading.css"
     ],
     "font-weight-body": [
+      "components/patterns/ToolCall/ToolCall.css",
       "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/Text/Text.css"
     ],
@@ -1257,6 +1270,7 @@
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Stepper/Stepper.css",
       "components/patterns/TableOfContents/TableOfContents.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Citation/Citation.css",
       "components/primitives/CodeBlock/CodeBlock.css",
@@ -1447,6 +1461,7 @@
       "components/patterns/Hero/Hero.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/patterns/PromptForm/PromptForm.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/CodeBlock/CodeBlock.css",
       "components/primitives/DescriptionList/DescriptionList.css",
@@ -1755,6 +1770,7 @@
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/PromptForm/PromptForm.css",
       "components/patterns/TableOfContents/TableOfContents.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Blockquote/Blockquote.css",
       "components/primitives/CodeBlock/CodeBlock.css",
@@ -1789,6 +1805,7 @@
       "components/patterns/SideNav/SideNav.css",
       "components/patterns/Stepper/Stepper.css",
       "components/patterns/TableOfContents/TableOfContents.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/patterns/Toolbar/Toolbar.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Button/Button.css",
@@ -1836,12 +1853,14 @@
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/primitives/Collapsible/Collapsible.css"
     ],
     "space-prominent-padding-y": [
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/primitives/Collapsible/Collapsible.css"
     ],
     "space-section-gap": [
@@ -1867,6 +1886,7 @@
       "components/patterns/Table/Table.css",
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/Tabs/Tabs.css",
+      "components/patterns/ToolCall/ToolCall.css",
       "components/patterns/Toolbar/Toolbar.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Badge/Badge.css",

@@ -3034,6 +3034,7 @@
         "MobileNav",
         "PromptForm",
         "Stepper",
+        "ToolCall",
         "Toolbar",
         "TopNav",
         "Checkbox",
@@ -3212,6 +3213,7 @@
         "Table",
         "TableOfContents",
         "Tabs",
+        "ToolCall",
         "TopNav",
         "Blockquote",
         "Button",
@@ -3292,6 +3294,7 @@
         "Table",
         "TableOfContents",
         "Tabs",
+        "ToolCall",
         "TopNav",
         "Avatar",
         "Badge",
@@ -3581,6 +3584,7 @@
         "Table",
         "TableOfContents",
         "Tabs",
+        "ToolCall",
         "Toolbar",
         "TopNav",
         "Avatar",
@@ -3765,6 +3769,7 @@
         "MobileNav",
         "PromptForm",
         "Stepper",
+        "ToolCall",
         "Field",
         "FileUpload",
         "Icon",
@@ -3933,6 +3938,7 @@
       "usedBy": [
         "Alert",
         "Toast",
+        "ToolCall",
         "Badge",
         "StatusDot"
       ]
@@ -4011,6 +4017,7 @@
       "usedBy": [
         "Alert",
         "Toast",
+        "ToolCall",
         "Badge",
         "StatusDot"
       ]
@@ -4756,6 +4763,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "ToolCall",
         "Spinner"
       ]
     },
@@ -4890,6 +4898,7 @@
       "axisAware": true,
       "usedBy": [
         "Markdown",
+        "ToolCall",
         "CodeBlock",
         "Kbd",
         "OtpInput"
@@ -5016,6 +5025,7 @@
         "Stepper",
         "TableOfContents",
         "Tabs",
+        "ToolCall",
         "TopNav",
         "Blockquote",
         "CodeBlock",
@@ -5310,6 +5320,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "ToolCall",
         "Blockquote",
         "Text"
       ]
@@ -5374,6 +5385,7 @@
         "SideNav",
         "Stepper",
         "TableOfContents",
+        "ToolCall",
         "TopNav",
         "Citation",
         "CodeBlock",
@@ -5599,6 +5611,7 @@
         "Hero",
         "MobileNav",
         "PromptForm",
+        "ToolCall",
         "Blockquote",
         "CodeBlock",
         "DescriptionList",
@@ -6079,6 +6092,7 @@
         "Pagination",
         "PromptForm",
         "TableOfContents",
+        "ToolCall",
         "TopNav",
         "Blockquote",
         "CodeBlock",
@@ -6134,6 +6148,7 @@
         "SideNav",
         "Stepper",
         "TableOfContents",
+        "ToolCall",
         "Toolbar",
         "TopNav",
         "Button",
@@ -6235,6 +6250,7 @@
         "MessageList",
         "PromptForm",
         "Table",
+        "ToolCall",
         "Toolbar",
         "CodeBlock",
         "Collapsible",
@@ -6597,6 +6613,7 @@
         "Table",
         "TableOfContents",
         "Tabs",
+        "ToolCall",
         "Toolbar",
         "TopNav",
         "Badge",
@@ -6722,6 +6739,7 @@
         "Alert",
         "Toast",
         "Accordion",
+        "ToolCall",
         "Collapsible"
       ]
     },
@@ -6749,6 +6767,7 @@
         "Alert",
         "Toast",
         "Accordion",
+        "ToolCall",
         "Collapsible"
       ]
     },
@@ -7036,6 +7055,7 @@
         "SideNav",
         "Table",
         "Tabs",
+        "ToolCall",
         "Toolbar",
         "TopNav",
         "Avatar",
