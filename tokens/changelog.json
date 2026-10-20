@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "969300f",
+      "type": "feat",
+      "scope": "app-shell",
+      "message": "the frame of an app's pages",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "a8a5bc6",
       "type": "feat",
       "scope": "selectable-card",
