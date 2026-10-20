@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "app-shell",
+  "type": "registry:component",
+  "title": "AppShell",
+  "description": "The frame of an app's pages: skip link, header, section navigation, main content, aside, footer and bottom bar, in the right landmarks and laid out per breakpoint",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/skip-link.json"
+  ],
+  "cssVars": {
+    "light": {
+      "app-shell-aside-width": "320px"
+    },
+    "dark": {
+      "app-shell-aside-width": "320px"
+    }
+  }
+}

@@ -20,10 +20,10 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-393 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+394 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
-- component: 122
+- component: 123
 - color: 46
 - typography: 40
 - spacing: 19
@@ -688,6 +688,15 @@ Collapsible content sections with animated expand/collapse; supports single or m
 - Token prefix: `accordion-*` (4 tokens)
 - Storybook: Patterns/Accordion
 - Stories: Default, Multiple, WithDisabledItem, DefaultOpen, DarkMode
+
+### AppShell
+
+The frame of an app's pages: skip link, header, section navigation, main content, aside, footer and bottom bar, in the right landmarks and laid out per breakpoint
+
+- Import: `import { AppShell } from '@amezquita/design-system/components/patterns/AppShell'`
+- Token prefix: `app-shell-aside-*` (1 tokens)
+- Storybook: Components/AppShell
+- Stories: Default, WithAside, HeaderOnly, DarkMode
 
 ### Breadcrumb
 

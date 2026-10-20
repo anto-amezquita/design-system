@@ -2,8 +2,8 @@
   "meta": {
     "primitiveCount": 126,
     "semanticCount": 145,
-    "componentCount": 122,
-    "total": 393
+    "componentCount": 123,
+    "total": 394
   },
   "tokens": [
     {
@@ -3028,6 +3028,7 @@
         "NavigationMenu",
         "Popover",
         "Toast",
+        "AppShell",
         "Hero",
         "MobileNav",
         "Stepper",
@@ -3192,6 +3193,7 @@
         "Popover",
         "Toast",
         "Accordion",
+        "AppShell",
         "Breadcrumb",
         "FormLayout",
         "Hero",
@@ -3558,6 +3560,7 @@
         "Popover",
         "Toast",
         "Accordion",
+        "AppShell",
         "MobileNav",
         "Pagination",
         "SideNav",
@@ -4759,6 +4762,7 @@
         "Toast",
         "Tooltip",
         "Accordion",
+        "AppShell",
         "Breadcrumb",
         "DataTable",
         "EmptyState",
@@ -6951,6 +6955,7 @@
         "Menu",
         "Toast",
         "Accordion",
+        "AppShell",
         "MobileNav",
         "Pagination",
         "SideNav",
@@ -7520,6 +7525,30 @@
       "axisAware": false,
       "usedBy": [
         "Alert"
+      ]
+    },
+    {
+      "name": "app-shell-aside-width",
+      "cssVar": "--app-shell-aside-width",
+      "type": "dimension",
+      "category": "component",
+      "description": "Width of AppShell's aside column (details, context, activity) from 1024px up. Matches HoverCard's width, the system's other side panel of secondary content.",
+      "rawValue": "320px",
+      "resolved": {
+        "base-light": "320px",
+        "base-dark": "320px",
+        "demo-cool-light": "320px",
+        "demo-cool-dark": "320px",
+        "demo-soft-light": "320px",
+        "demo-soft-dark": "320px",
+        "demo-warm-light": "320px",
+        "demo-warm-dark": "320px",
+        "portfolio-light": "320px",
+        "portfolio-dark": "320px"
+      },
+      "axisAware": false,
+      "usedBy": [
+        "AppShell"
       ]
     },
     {

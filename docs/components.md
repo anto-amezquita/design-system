@@ -2979,6 +2979,76 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### AppShell
+
+| Field | Value |
+|---|---|
+| **Purpose** | The frame of an app's pages: skip link, header, section navigation, main content, aside, footer and bottom bar, in the right landmarks and laid out per breakpoint |
+| **Figma name** | `AppShell` |
+| **Code name** | `AppShell` |
+| **Storybook path** | `Components/AppShell` |
+
+**Compound structure**
+```tsx
+// With a SideNav: the header holds SideNavTrigger, the brand and NavigationMenu.
+<SideNavProvider>                                {/* so the header's SideNavTrigger opens SideNav's drawer */}
+  <AppShell
+    header={<header><SideNavTrigger />{brand}<NavigationMenu items={top} /></header>}
+    sidebar={<SideNav items={…} headerItems={top} aria-label="Docs" />}
+    aside={…} asideLabel="On this page"
+    footer={…}                                   {/* content only: AppShell renders the footer element */}
+    bottomNav={<MobileNav items={…} />}
+  >
+    {page}                                       {/* goes in main */}
+  </AppShell>
+</SideNavProvider>
+
+// Without a SideNav: TopNav, which brings its own menu drawer.
+<AppShell header={<TopNav brand={…} items={top} sticky />} bottomNav={<MobileNav items={…} />}>…</AppShell>
+```
+
+**Which header**
+- **With a SideNav:** a `header` with `SideNavTrigger`, the brand and `NavigationMenu`. NavigationMenu hides below 1024px and SideNav's drawer carries the same links (`headerItems`), so there's one menu button
+- **Without a SideNav:** `TopNav`. Don't combine TopNav with a SideNav: both open a drawer below 1024px, and the phone gets two menu buttons
+
+**Props / variants**
+- `header`, `sidebar`, `aside` (+ `asideLabel`), `footer`, `bottomNav`: all optional slots
+- `children`: the page, inside `main`
+- `mainId` (default `main-content`) and `skipLinkLabel`
+- Native `div` attributes, `className` and `ref` pass through to the wrapper
+
+**Required states**
+- [x] below 1024px: one column, aside after main, SideNav as a drawer, room left for MobileNav
+- [x] from 1024px: sidebar, main and aside side by side; sticky sidebar under a sticky header
+- [x] skip link focused, main focused
+
+**Tokens consumed**
+- `--app-shell-aside-width`, `--color-surface-primary`, `--color-text-primary`, `--font-family-base`, `--border-width-default`, `--color-border-default`
+
+**Accessibility**
+- One of each landmark, in reading order: the `header` (yours, or TopNav's), the section `nav` (SideNav's), `main`, a named `aside`, `footer`. AppShell warns in development when an `aside` has no `asideLabel`
+- A SkipLink comes first and moves focus to `main` (`tabIndex={-1}`), not just the scroll position
+- Reading and tab order follow source order in both layouts: below 1024px the aside comes after main rather than being moved with CSS
+- The sidebar scrolls on its own when the navigation is longer than the window, and starts below a sticky header instead of under it; the header's height is measured, so it stays right when the header wraps
+- MobileNav is fixed to the bottom; its height is measured too, and the footer (or main) leaves that much room, so the bar never covers the last content. From 1024px, where MobileNav hides, the room goes away
+- AppShell draws no colours of its own beyond the page surface and dividers; the navigation components carry their own contrast tests
+
+**Do**
+- Use one AppShell per page layout, and put the page's own sections inside with Section.
+- Wrap it in SideNavProvider when there's a SideNav, so the header's trigger can open the drawer.
+- Pick the header by whether there's a SideNav (see Which header above).
+- Name the aside by what it holds: "On this page", "Details".
+
+**Don't**
+- Don't pass a `main` or `footer` element into the slots; AppShell already renders them, and two of each confuse landmark navigation.
+- Don't nest AppShells; a dialog or drawer is the place for a second layer.
+- Don't hide essential actions in the aside; below 1024px it's at the end of the page.
+
+**Chromatic stories**
+- `Default`, `WithAside`, `HeaderOnly`, `DarkMode`
+
+---
+
 ### Breadcrumb
 
 | Field | Value |

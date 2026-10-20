@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 85,
-    "tokenCount": 261
+    "filesScanned": 86,
+    "tokenCount": 264
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -27,6 +27,15 @@
     ],
     "alert-title-weight": [
       "components/composition/Alert/Alert.css"
+    ],
+    "app-shell-aside-width": [
+      "components/patterns/AppShell/AppShell.css"
+    ],
+    "app-shell-bottom-offset": [
+      "components/patterns/AppShell/AppShell.css"
+    ],
+    "app-shell-header-offset": [
+      "components/patterns/AppShell/AppShell.css"
     ],
     "avatar-fallback-font-size": [
       "components/primitives/Avatar/Avatar.css"
@@ -162,6 +171,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/patterns/AppShell/AppShell.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
@@ -360,6 +370,7 @@
       "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/patterns/AppShell/AppShell.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
@@ -552,6 +563,7 @@
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
+      "components/patterns/AppShell/AppShell.css",
       "components/patterns/Hero/Hero.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/patterns/Stepper/Stepper.css",
@@ -632,6 +644,7 @@
       "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/patterns/AppShell/AppShell.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/Hero/Hero.css",
@@ -987,6 +1000,7 @@
       "components/composition/Toast/Toast.css",
       "components/composition/Tooltip/Tooltip.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/patterns/AppShell/AppShell.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",

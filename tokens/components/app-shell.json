@@ -1,0 +1,7 @@
+{
+  "app-shell-aside-width": {
+    "$value": "320px",
+    "$type": "dimension",
+    "$description": "Width of AppShell's aside column (details, context, activity) from 1024px up. Matches HoverCard's width, the system's other side panel of secondary content."
+  }
+}
