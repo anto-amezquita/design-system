@@ -49,13 +49,13 @@ Component tokens follow `--<component-slug>-*` (e.g. `--button-padding-x`, `--di
 
 ## Components that exist
 
-35 public components. Anything not on this list is provably invented — check `tokens/component-registry.json` if this list is ever stale.
+90 public components. Anything not on this list is provably invented — check `tokens/component-registry.json` if this list is ever stale.
 
-- **Primitives (16):** Avatar, Badge, Button, Checkbox, Heading, Input, Label, Link, Radio, Select, Skeleton, SkipLink, Spinner, Switch, Tag, Textarea
-- **Composition (10):** Alert, AlertDialog, Card, Dialog, Drawer, Menu, NavigationMenu, ThemeScope, Toast, Tooltip
-- **Patterns (9):** Accordion, Breadcrumb, DataTable, EmptyState, Hero, Pagination, SideNav, Table, Tabs
+- **Primitives (56):** AspectRatio, Avatar, Badge, Blockquote, Button, ButtonGroup, Calendar, Checkbox, Citation, CodeBlock, Collapsible, Combobox, DatePicker, DateRangePicker, DescriptionList, Divider, Field, FileUpload, Grid, Heading, Icon, IconButton, Image, Input, InputGroup, Item, Kbd, Label, Link, List, MultiSelect, NumberInput, OtpInput, ProgressBar, Radio, ScrollArea, Search, Section, SegmentedControl, Select, SelectableCard, Skeleton, SkipLink, Slider, Spinner, Stack, StatusDot, Switch, Tag, TagInput, Text, Textarea, TimePicker, Timestamp, ToggleButton, VisuallyHidden
+- **Composition (15):** Alert, AlertDialog, Card, CommandPalette, ContextMenu, Dialog, Drawer, HoverCard, Lightbox, Menu, NavigationMenu, Popover, ThemeScope, Toast, Tooltip
+- **Patterns (19):** Accordion, AppShell, Breadcrumb, Carousel, DataTable, EmptyState, FormLayout, Hero, Markdown, MobileNav, Pagination, ResizablePanels, SideNav, Stepper, Table, TableOfContents, Tabs, Toolbar, TopNav
 
-`SideNav` ships with two sub-components, `SideNavProvider` and `SideNavTrigger`, registered the same way Card's parts are.
+Some ship with sub-components, registered separately (40 in all, listed in `tokens/component-registry.json`): Card's parts, Table's parts, FormLayout's parts, `SideNavProvider` and `SideNavTrigger`, `GridItem`, `SelectableCardGroup`, and others. A sub-component isn't on the list above; it's used inside its parent.
 
 (`BaseSheet` also ships in the package but is internal — Drawer's overlay primitive, not something to reach for directly.)
 
