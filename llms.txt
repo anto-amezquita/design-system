@@ -54,6 +54,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [ProgressBar](https://design.amezquita.dk/components/progress-bar.md): Shows how far a task has got, or that it's running when the end isn't known
 - [Radio](https://design.amezquita.dk/components/radio.md): Single-selection control within a mutually exclusive group
 - [Search](https://design.amezquita.dk/components/search.md): A site or list search: a search landmark with Enter to search, Escape to clear and an optional shortcut
+- [Section](https://design.amezquita.dk/components/section.md): A band of a page: edge-to-edge background, space above and below, content centred at a set width with the page gutter
 - [SegmentedControl](https://design.amezquita.dk/components/segmented-control.md): One choice from a few, shown side by side: a view switch, a time range
 - [Select](https://design.amezquita.dk/components/select.md): Dropdown for choosing a single value from a list; supports grouped options
 - [Skeleton](https://design.amezquita.dk/components/skeleton.md): Placeholder loading state that mirrors the geometry of the content it replaces

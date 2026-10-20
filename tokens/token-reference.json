@@ -3088,6 +3088,7 @@
         "Kbd",
         "OtpInput",
         "Radio",
+        "Section",
         "SegmentedControl",
         "Select",
         "Slider",
@@ -5815,6 +5816,7 @@
       },
       "axisAware": false,
       "usedBy": [
+        "Section"
         "Grid"
       ]
     },
@@ -5845,6 +5847,7 @@
         "Lightbox",
         "FormLayout",
         "Hero",
+        "Section"
         "Grid"
       ]
     },
@@ -5882,6 +5885,7 @@
         "TableOfContents",
         "TopNav",
         "FileUpload",
+        "Section"
         "Grid"
       ]
     },
@@ -6568,7 +6572,8 @@
         "DataTable",
         "EmptyState",
         "Hero",
-        "FileUpload"
+        "FileUpload",
+        "Section"
       ]
     },
     {
@@ -6818,7 +6823,8 @@
       },
       "axisAware": false,
       "usedBy": [
-        "FormLayout"
+        "FormLayout",
+        "Section"
       ]
     },
     {
@@ -6841,7 +6847,9 @@
         "portfolio-dark": "60rem"
       },
       "axisAware": false,
-      "usedBy": []
+      "usedBy": [
+        "Section"
+      ]
     },
     {
       "name": "size-container-wide",
@@ -6863,7 +6871,9 @@
         "portfolio-dark": "80rem"
       },
       "axisAware": false,
-      "usedBy": []
+      "usedBy": [
+        "Section"
+      ]
     },
     {
       "name": "size-container-page",
@@ -6885,7 +6895,9 @@
         "portfolio-dark": "90rem"
       },
       "axisAware": false,
-      "usedBy": []
+      "usedBy": [
+        "Section"
+      ]
     },
     {
       "name": "size-container-site",
@@ -9586,8 +9598,7 @@
       ]
     },
     {
-      "name": "toast-max-width",
-      "cssVar": "--toast-max-width",
+      "name": "toast-max-width",      "cssVar": "--toast-max-width",
       "type": "dimension",
       "category": "component",
       "description": "Maximum width of a Toast.",

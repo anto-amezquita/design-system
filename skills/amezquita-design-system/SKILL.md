@@ -64,6 +64,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | ProgressBar | [progress-bar](https://design.amezquita.dk/components/progress-bar.md) — Shows how far a task has got, or that it's running when the end isn't known |
 | Radio | [radio](https://design.amezquita.dk/components/radio.md) — Single-selection control within a mutually exclusive group |
 | Search | [search](https://design.amezquita.dk/components/search.md) — A site or list search: a search landmark with Enter to search, Escape to clear and an optional shortcut |
+| Section | [section](https://design.amezquita.dk/components/section.md) — A band of a page: edge-to-edge background, space above and below, content centred at a set width with the page gutter |
 | SegmentedControl | [segmented-control](https://design.amezquita.dk/components/segmented-control.md) — One choice from a few, shown side by side: a view switch, a time range |
 | Select | [select](https://design.amezquita.dk/components/select.md) — Dropdown for choosing a single value from a list; supports grouped options |
 | Skeleton | [skeleton](https://design.amezquita.dk/components/skeleton.md) — Placeholder loading state that mirrors the geometry of the content it replaces |

@@ -592,6 +592,24 @@
       "internal": false
     },
     {
+      "name": "Section",
+      "slug": "section",
+      "tier": "primitives",
+      "purpose": "A band of a page: edge-to-edge background, space above and below, content centred at a set width with the page gutter",
+      "storybookPath": "Components/Section",
+      "storybookTitleId": "components-section",
+      "defaultStoryId": "components-section--default",
+      "tokenPrefix": "section",
+      "stories": [
+        "Default",
+        "Bands",
+        "DarkBand",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
       "name": "SegmentedControl",
       "slug": "segmented-control",
       "tier": "primitives",
