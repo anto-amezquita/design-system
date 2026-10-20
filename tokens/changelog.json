@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "3c0b2c7",
+      "type": "feat",
+      "scope": "image",
+      "message": "img with required alt, held space, fallback and caption",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "98dcd5a",
       "type": "feat",
       "scope": "icon",
