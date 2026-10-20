@@ -1289,6 +1289,51 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Section
+
+| Field | Value |
+|---|---|
+| **Purpose** | A band of a page: edge-to-edge background, space above and below, content centred at a set width with the page gutter |
+| **Figma name** | `Section` |
+| **Code name** | `Section` |
+| **Storybook path** | `Components/Section` |
+
+**Props / variants**
+- `width`: `text`, `media`, `wide`, `page` (default) or `full`, each the brand's `--size-container-*` token
+- `spacing`: `section` (default, grows with the viewport), `component` or `none`
+- `tone`: `default` (no background) or `subtle` (the secondary surface)
+- `as`: `section` (default), `header`, `footer`, `main`, `article`, `aside` or `div`
+- Native attributes, `className` and `ref` pass through to the outer element
+
+**Required states**
+- [x] default (layout only: no hover, focus or disabled state)
+- [x] responsive: the gutter is `--space-element-gap` on a phone and `--space-container-padding` from 768px
+
+**Tokens consumed**
+- `--size-container-text`, `--size-container-media`, `--size-container-wide`, `--size-container-page`
+- `--space-section-gap`, `--space-component-gap`, `--space-element-gap`, `--space-container-padding`, `--color-surface-secondary` (no component tokens; they would only pass through)
+
+**Accessibility**
+- A `<section>` is only a region landmark once it has a name: pass `aria-labelledby` pointing at its heading. Without one it's a plain grouping, which is fine for bands that don't need to be jumped to
+- Named Sections need different names: two regions both called "Pricing" can't be told apart (axe `landmark-unique`, checked in the stories)
+- Primary and secondary text are tested at 4.5:1 or more on the `subtle` band in all five brands, light and dark
+- No dark `tone`: a dark band on a light page needs every component inside to switch, so wrap the Section in `ThemeScope mode="dark"` instead
+
+**Do**
+- Use one Section per band of a page, and let Stack or Grid lay out what's inside.
+- Use `width="text"` for reading content, so lines stay a comfortable length.
+- Alternate `default` and `subtle` to tell neighbouring bands apart.
+
+**Don't**
+- Don't nest Sections; the gutter and spacing would double. Use Stack inside.
+- Don't name every Section as a landmark; a page with twenty regions is as hard to navigate as one with none.
+- Don't set a dark background on a Section by hand; components inside would keep their light colours. Use ThemeScope.
+
+**Chromatic stories**
+- `Default`, `Bands`, `DarkBand`, `DarkMode`
+
+---
+
 ### Skeleton
 
 | Field | Value |

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 108,
-    "publicComponentCount": 69,
+    "componentCount": 109,
+    "publicComponentCount": 70,
     "subComponentCount": 38
   },
   "components": [
@@ -553,6 +553,24 @@
         "WithSubmit",
         "Loading",
         "AsYouType",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
+    },
+    {
+      "name": "Section",
+      "slug": "section",
+      "tier": "primitives",
+      "purpose": "A band of a page: edge-to-edge background, space above and below, content centred at a set width with the page gutter",
+      "storybookPath": "Components/Section",
+      "storybookTitleId": "components-section",
+      "defaultStoryId": "components-section--default",
+      "tokenPrefix": "section",
+      "stories": [
+        "Default",
+        "Bands",
+        "DarkBand",
         "DarkMode"
       ],
       "tokenCount": 0,

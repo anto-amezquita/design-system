@@ -262,6 +262,15 @@ A site or list search: a search landmark with Enter to search, Escape to clear a
 - Storybook: Components/Search
 - Stories: Default, WithShortcut, WithSubmit, Loading, AsYouType, DarkMode
 
+### Section
+
+A band of a page: edge-to-edge background, space above and below, content centred at a set width with the page gutter
+
+- Import: `import { Section } from '@amezquita/design-system/components/primitives/Section'`
+- Token prefix: `section-*` (0 tokens)
+- Storybook: Components/Section
+- Stories: Default, Bands, DarkBand, DarkMode
+
 ### SegmentedControl
 
 One choice from a few, shown side by side: a view switch, a time range

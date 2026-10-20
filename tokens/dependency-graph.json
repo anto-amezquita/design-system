@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 67,
-    "tokenCount": 240
+    "filesScanned": 68,
+    "tokenCount": 244
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -548,6 +548,7 @@
       "components/primitives/Kbd/Kbd.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Radio/Radio.css",
+      "components/primitives/Section/Section.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Slider/Slider.css",
@@ -1280,8 +1281,18 @@
     "side-nav-width": [
       "components/patterns/SideNav/SideNav.css"
     ],
+    "size-container-media": [
+      "components/primitives/Section/Section.css"
+    ],
+    "size-container-page": [
+      "components/primitives/Section/Section.css"
+    ],
     "size-container-text": [
-      "components/patterns/FormLayout/FormLayout.css"
+      "components/patterns/FormLayout/FormLayout.css",
+      "components/primitives/Section/Section.css"
+    ],
+    "size-container-wide": [
+      "components/primitives/Section/Section.css"
     ],
     "size-dialog-md": [
       "components/composition/CommandPalette/CommandPalette.css"
@@ -1384,14 +1395,16 @@
       "components/composition/Drawer/Drawer.css",
       "components/composition/Lightbox/Lightbox.css",
       "components/patterns/FormLayout/FormLayout.css",
-      "components/patterns/Hero/Hero.css"
+      "components/patterns/Hero/Hero.css",
+      "components/primitives/Section/Section.css"
     ],
     "space-container-padding": [
       "components/composition/Card/Card.css",
       "components/patterns/DataTable/DataTable.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/Hero/Hero.css",
-      "components/primitives/FileUpload/FileUpload.css"
+      "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Section/Section.css"
     ],
     "space-container-padding-lg": [
       "components/composition/Drawer/Drawer.css",
@@ -1443,7 +1456,8 @@
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/TopNav/TopNav.css",
-      "components/primitives/FileUpload/FileUpload.css"
+      "components/primitives/FileUpload/FileUpload.css",
+      "components/primitives/Section/Section.css"
     ],
     "space-inline-gap": [
       "components/composition/Card/Card.css",
@@ -1507,6 +1521,9 @@
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css"
+    ],
+    "space-section-gap": [
+      "components/primitives/Section/Section.css"
     ],
     "space-tight-gap": [
       "components/composition/CommandPalette/CommandPalette.css",

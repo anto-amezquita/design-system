@@ -1,0 +1,64 @@
+/*
+  Tokens consumed:
+
+  --space-section-gap, --space-component-gap (space above and below),
+  --space-element-gap (phone gutter), --space-container-padding (gutter
+  from tablet up), --size-container-text, --size-container-media,
+  --size-container-wide, --size-container-page, --color-surface-secondary
+
+  No component tokens: widths, gutters and spacing are the brand's own
+  container and spacing roles (decisions/0004, 0005).
+*/
+
+.section {
+  display: block;
+  margin: 0;
+  padding-inline: var(--space-element-gap);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-inline: var(--space-container-padding);
+  }
+}
+
+.section--spacing-none {
+  padding-block: 0;
+}
+
+.section--spacing-component {
+  padding-block: var(--space-component-gap);
+}
+
+.section--spacing-section {
+  padding-block: var(--space-section-gap);
+}
+
+.section--tone-subtle {
+  background: var(--color-surface-secondary);
+}
+
+.section__inner {
+  inline-size: 100%;
+  margin-inline: auto;
+}
+
+.section__inner--text {
+  max-inline-size: var(--size-container-text);
+}
+
+.section__inner--media {
+  max-inline-size: var(--size-container-media);
+}
+
+.section__inner--wide {
+  max-inline-size: var(--size-container-wide);
+}
+
+.section__inner--page {
+  max-inline-size: var(--size-container-page);
+}
+
+.section__inner--full {
+  max-inline-size: none;
+}
