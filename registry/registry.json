@@ -692,6 +692,24 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "image",
+      "type": "registry:component",
+      "title": "Image",
+      "description": "An image with a required `alt`, space held before it loads, a quiet fallback if it fails, and an optional caption",
+      "dependencies": [
+        "@amezquita/design-system"
+      ],
+      "registryDependencies": [
+        "https://design.amezquita.dk/r/theme.json",
+        "https://design.amezquita.dk/r/aspect-ratio.json"
+      ],
+      "cssVars": {
+        "light": {},
+        "dark": {}
+      }
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "input",
       "type": "registry:component",
       "title": "Input",

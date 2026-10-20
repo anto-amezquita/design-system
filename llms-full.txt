@@ -190,6 +190,15 @@ An action shown only as an icon, for toolbars, cards and dense rows
 - Storybook: Components/IconButton
 - Stories: Default, Variants, Sizes, States, DarkMode
 
+### Image
+
+An image with a required `alt`, space held before it loads, a quiet fallback if it fails, and an optional caption
+
+- Import: `import { Image } from '@amezquita/design-system/components/primitives/Image'`
+- Token prefix: `image-*` (0 tokens)
+- Storybook: Components/Image
+- Stories: Default, WithRatio, WithCaption, Failed, DarkMode
+
 ### Input
 
 Labelled single-line text entry with hint and error states

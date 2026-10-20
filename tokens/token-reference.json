@@ -3084,6 +3084,7 @@
         "Combobox",
         "FileUpload",
         "IconButton",
+        "Image",
         "Input",
         "InputGroup",
         "Kbd",
@@ -3272,6 +3273,7 @@
         "FileUpload",
         "Icon",
         "IconButton",
+        "Image",
         "Input",
         "InputGroup",
         "Label",
@@ -4617,6 +4619,7 @@
       "usedBy": [
         "FileUpload",
         "Icon",
+        "Image",
         "Spinner"
       ]
     },
@@ -4719,6 +4722,7 @@
         "Combobox",
         "Field",
         "FileUpload",
+        "Image",
         "Input",
         "InputGroup",
         "Label",
@@ -4900,6 +4904,7 @@
         "Combobox",
         "Field",
         "FileUpload",
+        "Image",
         "Input",
         "Label",
         "ProgressBar",
@@ -5448,6 +5453,7 @@
         "Hero",
         "MobileNav",
         "FileUpload",
+        "Image",
         "ProgressBar",
         "Text"
       ]
@@ -6119,7 +6125,8 @@
       "axisAware": true,
       "usedBy": [
         "Card",
-        "AspectRatio"
+        "AspectRatio",
+        "Image"
       ]
     },
     {
@@ -6394,6 +6401,7 @@
         "Field",
         "FileUpload",
         "Grid",
+        "Image",
         "Input",
         "Link",
         "MultiSelect",

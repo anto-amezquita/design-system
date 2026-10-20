@@ -1,0 +1,60 @@
+/*
+  Tokens consumed:
+
+  --color-surface-secondary (behind the image while it loads, and the
+  fallback), --color-text-secondary (fallback icon and caption),
+  --border-radius-image, --size-icon-lg, --space-tight-gap,
+  --font-family-base, --font-size-small, --line-height-small
+
+  No component tokens: every value is an existing image, surface or type
+  role (decisions/0004, 0005). Inside a `ratio`, AspectRatio does the
+  sizing, fit and rounding.
+*/
+
+.image {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+  background: var(--color-surface-secondary);
+}
+
+.image--rounded {
+  border-radius: var(--border-radius-image);
+}
+
+/* The fallback keeps the image's place: it fills an AspectRatio, or takes
+   the width/height ratio it was given, so the layout doesn't jump. */
+.image__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 100%;
+  min-block-size: var(--size-icon-lg);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+}
+
+.aspect-ratio > .image__fallback {
+  position: absolute;
+  inset: 0;
+}
+
+.image__fallback-icon {
+  inline-size: var(--size-icon-lg);
+  block-size: var(--size-icon-lg);
+}
+
+.image-figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-tight-gap);
+  margin: 0;
+}
+
+.image-figure__caption {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-text-secondary);
+}
