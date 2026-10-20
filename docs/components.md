@@ -3805,6 +3805,55 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### TreeView
+
+| Field | Value |
+|---|---|
+| **Purpose** | Nested items that open and close, such as files and folders, a component library or an outline, to browse, choose one or choose several |
+| **Figma name** | `TreeView` |
+| **Code name** | `TreeView` (+ `TreeNode` type) |
+| **Storybook path** | `Components/TreeView` |
+
+**Props / variants**
+- `items` (required): `{ id, label, icon?, children?, disabled? }[]`. A node with `children` (even an empty list) is a branch
+- `aria-label` (required): names the tree ("Files")
+- `selectionMode`: `none` (default: rows are activated with `onAction`), `single` or `multiple` (a tick per row)
+- `selected` / `defaultSelected` / `onSelectedChange`, `expanded` / `defaultExpanded` / `onExpandedChange`: ids, controlled or not
+- `onAction(node)`: Enter or a click on a row (open a file, go to a page)
+- Native `ul` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] closed and open branches, an empty branch, leaves, icons and no icons
+- [x] hover, keyboard focus (ring on the row), selected (single and multiple), disabled
+- [x] dense rows with a mouse; 44px rows on touch
+
+**Tokens consumed**
+- `--space-component-gap` (the indent per level), `--space-tight-gap`, `--space-inline-gap`, `--space-compact-padding-y`, `--size-touch-target`, `--size-icon-sm`, `--border-radius-interactive`, `--border-width-interactive`, `--border-width-thick`
+- `--color-surface-secondary`, `--color-surface-primary`, `--color-text-primary`, `--color-text-secondary`, `--color-accent-text`, `--color-border-strong`, `--color-border-focus`, `--focus-ring-width`, `--font-family-base`, `--font-size-control`, `--line-height-control`, `--font-weight-label`, `--duration-interaction`, `--easing-default`
+- No component tokens: rows look like SideNav's, and the tick takes Checkbox's capped corner
+
+**Accessibility**
+- The WAI-ARIA tree pattern: a `tree` with `treeitem`s and nested `group`s. Each item has `aria-level`, `aria-posinset` and `aria-setsize`; branches have `aria-expanded`; with selection, every item has `aria-selected` and a multiple tree is `aria-multiselectable`
+- Each item is named by its own label (`aria-labelledby`). Named from its content, an open branch would also read out all its children
+- One Tab stop: the row you were last on, else the selected row, else the first. Down and Up move through visible rows; Right opens a branch, then moves into it; Left closes it, then moves to the parent; Home and End go to the ends; `*` opens every branch beside the focused one; typing letters jumps to the next row that starts with them
+- Enter activates (or selects, in `single`); Space selects or toggles a row in `multiple`. A click on the caret only opens or closes. A disabled row is reachable and read as unavailable, but can't be chosen
+- Selected rows have a bar at the start edge and a heavier label as well as the fill, so it doesn't rest on colour. The focus ring sits on the row, not around the children. Row text, selected rows and disabled rows are tested at 4.5:1, and the caret and the bar at 3:1, in all five brands, light and dark
+
+**Do**
+- Use it when the nesting itself matters: folders, a hierarchy, an outline.
+- Keep labels short and unique among siblings, so typing to find works.
+- Open the path to the selected row on first render (`defaultExpanded`), so it's in view.
+
+**Don't**
+- Don't use a tree for site navigation; that's SideNav, with links.
+- Don't nest a single level; that's a List, or an Accordion for sections.
+- Don't put buttons or links inside rows; a row is one control, activated with Enter.
+
+**Chromatic stories**
+- `Default`, `SingleSelection`, `MultipleSelection`, `WithoutIcons`, `DarkMode`
+
+---
+
 ### Tabs
 
 | Field | Value |

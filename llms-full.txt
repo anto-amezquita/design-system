@@ -896,6 +896,15 @@ The bar across the top of a site or app: brand, main navigation, actions
 - Storybook: Components/TopNav
 - Stories: Default, WithButton, Narrow, Danish, DarkMode
 
+### TreeView
+
+Nested items that open and close, such as files and folders, a component library or an outline, to browse, choose one or choose several
+
+- Import: `import { TreeView } from '@amezquita/design-system/components/patterns/TreeView'`
+- Token prefix: `treeview-*` (0 tokens)
+- Storybook: Components/TreeView
+- Stories: Default, SingleSelection, MultipleSelection, WithoutIcons, DarkMode
+
 ## MCP server
 
 Read-only tools over the same files this package ships, read live instead of from a snapshot. The server isn't in the npm package: clone [the repo](https://github.com/anto-amezquita/design-system) and run `node scripts/mcp-server.mjs` (stdio).

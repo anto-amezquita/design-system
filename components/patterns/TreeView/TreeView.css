@@ -1,0 +1,166 @@
+/*
+  Tokens consumed:
+
+  --space-component-gap (indent per level), --space-tight-gap,
+  --space-inline-gap, --space-compact-padding-y, --size-touch-target,
+  --size-icon-sm, --border-radius-interactive, --border-width-interactive,
+  --border-width-thick, --color-surface-secondary, --color-text-primary,
+  --color-text-secondary, --color-accent-text, --color-surface-primary,
+  --color-border-strong, --color-border-focus, --focus-ring-width,
+  --font-family-base, --font-size-control, --line-height-control,
+  --font-weight-label, --duration-interaction, --easing-default
+
+  No component tokens: rows take SideNav's look (hover and current fill,
+  the interactive radius) and the tick takes Checkbox's capped corner
+  (decisions/0004, 0005).
+*/
+
+.tree-view,
+.tree-view__group {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tree-view {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  color: var(--color-text-primary);
+}
+
+/* The item holds its children, so the focus ring goes on its row instead. */
+.tree-view__item {
+  outline: none;
+}
+
+.tree-view__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-tight-gap);
+  min-block-size: var(--size-touch-target);
+  padding-block: var(--space-compact-padding-y);
+  padding-inline-end: var(--space-inline-gap);
+  border-radius: var(--border-radius-interactive);
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--duration-interaction) var(--easing-default);
+}
+
+/* With a mouse or trackpad, rows can be denser than a 44px touch target. */
+@media (pointer: fine) {
+  .tree-view__row {
+    min-block-size: auto;
+    padding-block: var(--space-tight-gap);
+  }
+}
+
+.tree-view__row:hover {
+  background: var(--color-surface-secondary);
+}
+
+.tree-view__item:focus-visible > .tree-view__row {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: calc(var(--focus-ring-width) * -1);
+}
+
+/* Selected: the fill plus a bar at the start edge and a heavier label, so it doesn't rest on colour. */
+.tree-view__item--selected > .tree-view__row {
+  background: var(--color-surface-secondary);
+  font-weight: var(--font-weight-label);
+}
+
+.tree-view__item--selected > .tree-view__row::before {
+  content: '';
+  position: absolute;
+  inset-block: var(--space-tight-gap);
+  inset-inline-start: 0;
+  inline-size: var(--border-width-thick);
+  border-radius: var(--border-radius-interactive);
+  background: var(--color-accent-text);
+}
+
+/* Disabled: no fade (the rule since #118): quieter text and no pointer. */
+.tree-view__item[aria-disabled='true'] > .tree-view__row {
+  color: var(--color-text-secondary);
+  cursor: not-allowed;
+}
+
+.tree-view__toggle,
+.tree-view__spacer {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--size-icon-sm);
+  block-size: var(--size-icon-sm);
+  color: var(--color-text-secondary);
+}
+
+.tree-view__caret {
+  inline-size: 100%;
+  block-size: 100%;
+  transition: rotate var(--duration-interaction) var(--easing-default);
+}
+
+.tree-view__item[aria-expanded='true'] > .tree-view__row .tree-view__caret {
+  rotate: 90deg;
+}
+
+[dir='rtl'] .tree-view__caret {
+  scale: -1 1;
+}
+
+.tree-view__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  inline-size: var(--size-icon-sm);
+  block-size: var(--size-icon-sm);
+  color: var(--color-text-secondary);
+}
+
+.tree-view__icon > svg {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/* The tick for multiple selection: Checkbox's shape, corner capped at a quarter of the box. */
+.tree-view__check {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--size-icon-sm);
+  block-size: var(--size-icon-sm);
+  border: var(--border-width-interactive) solid var(--color-border-strong);
+  border-radius: min(var(--border-radius-interactive), calc(var(--size-icon-sm) / 4));
+  box-sizing: border-box;
+  background: var(--color-surface-primary);
+  color: var(--color-surface-primary);
+}
+
+.tree-view__item--selected > .tree-view__row .tree-view__check {
+  border-color: var(--color-accent-text);
+  background: var(--color-accent-text);
+}
+
+.tree-view__label {
+  min-inline-size: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tree-view__row,
+  .tree-view__caret {
+    transition: none;
+  }
+}
+
+.tree-view__check > svg {
+  inline-size: 75%;
+  block-size: 75%;
+}
