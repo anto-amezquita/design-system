@@ -1282,6 +1282,14 @@
   ],
   "unreleased": [
     {
+      "sha": "23f9e8a",
+      "type": "fix",
+      "scope": "checkbox",
+      "message": "keep checkbox marks square in round brands",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "c6267f5",
       "type": "feat",
       "scope": "prompt-form",
