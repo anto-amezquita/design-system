@@ -1,0 +1,13 @@
+/*
+  Tokens consumed: none.
+
+  A Timestamp takes the type and colour of the text around it (a caption,
+  a table cell, a message header), so it has no look of its own to set.
+  Tabular figures keep a column of times aligned and stop a live one from
+  shifting as its digits change.
+*/
+
+.timestamp {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}

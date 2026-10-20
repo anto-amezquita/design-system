@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 79 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 80 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -74,6 +74,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Text](https://design.amezquita.dk/components/text.md): Body text in the brand's type roles (body, small, caption), with a tone and a weight
 - [Textarea](https://design.amezquita.dk/components/textarea.md): Multi-line text entry with label, hint, and error states — mirrors Input API
 - [TimePicker](https://design.amezquita.dk/components/time-picker.md): One time of day: an appointment, a delivery slot, opening hours
+- [Timestamp](https://design.amezquita.dk/components/timestamp.md): A moment in time as people say it ("5 minutes ago", "yesterday") or as a date, in a `time` element
 - [ToggleButton](https://design.amezquita.dk/components/toggle-button.md): A button that stays on or off, like bold in an editor or a grid overlay
 - [VisuallyHidden](https://design.amezquita.dk/components/visually-hidden.md): Text screen readers announce but sighted users don't see
 

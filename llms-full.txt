@@ -451,6 +451,15 @@ One time of day: an appointment, a delivery slot, opening hours
 - Storybook: Components/TimePicker
 - Stories: Default, Danish, TwelveHour, OpeningHours, Error, Disabled, Open, DarkMode
 
+### Timestamp
+
+A moment in time as people say it ("5 minutes ago", "yesterday") or as a date, in a `time` element
+
+- Import: `import { Timestamp } from '@amezquita/design-system/components/primitives/Timestamp'`
+- Token prefix: `timestamp-*` (0 tokens)
+- Storybook: Components/Timestamp
+- Stories: Default, Relative, Absolute, Locales, DarkMode
+
 ### ToggleButton
 
 A button that stays on or off, like bold in an editor or a grid overlay
