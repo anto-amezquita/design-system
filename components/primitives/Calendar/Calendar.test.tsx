@@ -17,6 +17,7 @@ import demoCool from '../../../styles/brands/demo-cool-scoped.css?raw'
 import demoWarm from '../../../styles/brands/demo-warm-scoped.css?raw'
 import demoSoft from '../../../styles/brands/demo-soft-scoped.css?raw'
 import { Calendar } from './Calendar'
+import { fullDate } from '../../../lib/date-test-utils'
 
 beforeAll(() => {
   const style = document.createElement('style')
@@ -47,7 +48,7 @@ describe('Calendar structure', () => {
     expect(getByRole('grid', { name: 'October 2026' })).toBeTruthy()
     const cells = getAllByRole('gridcell')
     expect(cells).toHaveLength(31)
-    expect(cells.filter(c => c.tabIndex === 0).map(c => c.getAttribute('aria-label'))).toEqual(['Thursday 15 October 2026'])
+    expect(cells.filter(c => c.tabIndex === 0).map(c => c.getAttribute('aria-label'))).toEqual([fullDate(2026, 10, 15)])
   })
 
   test('a label is added to the month', () => {
@@ -73,45 +74,45 @@ describe('Calendar structure', () => {
   test("today is marked with aria-current", () => {
     const { container } = render(<Calendar locale="en-GB" />)
     const today = container.querySelector('[aria-current="date"]')!
-    expect(today.getAttribute('aria-label')).toBe(new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).replace(',', ''))
+    expect(today.getAttribute('aria-label')).toBe(fullDate(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate()))
   })
 })
 
 describe('Calendar keyboard', () => {
   test('arrows by day and week, Home/End to the week ends, Page by month, Shift+Page by year', async () => {
     const { getByRole } = render(<Calendar locale="en-GB" defaultValue={oct(15)} />)
-    getByRole('gridcell', { name: 'Thursday 15 October 2026' }).focus()
+    getByRole('gridcell', { name: fullDate(2026, 10, 15) }).focus()
     await userEvent.keyboard('{ArrowRight}')
-    expect(focusedName()).toBe('Friday 16 October 2026')
+    expect(focusedName()).toBe(fullDate(2026, 10, 16))
     await userEvent.keyboard('{ArrowDown}')
-    expect(focusedName()).toBe('Friday 23 October 2026')
+    expect(focusedName()).toBe(fullDate(2026, 10, 23))
     await userEvent.keyboard('{Home}')
-    expect(focusedName()).toBe('Monday 19 October 2026')
+    expect(focusedName()).toBe(fullDate(2026, 10, 19))
     await userEvent.keyboard('{End}')
-    expect(focusedName()).toBe('Sunday 25 October 2026')
+    expect(focusedName()).toBe(fullDate(2026, 10, 25))
     await userEvent.keyboard('{PageDown}')
-    expect(focusedName()).toBe('Wednesday 25 November 2026')
+    expect(focusedName()).toBe(fullDate(2026, 11, 25))
     expect(getByRole('grid', { name: 'November 2026' })).toBeTruthy()
     await userEvent.keyboard('{Shift>}{PageUp}{/Shift}')
-    expect(focusedName()).toBe('Tuesday 25 November 2025')
+    expect(focusedName()).toBe(fullDate(2025, 11, 25))
   })
 
   test('arrows cross into the next month', async () => {
     const { getByRole } = render(<Calendar locale="en-GB" defaultValue={oct(31)} />)
-    getByRole('gridcell', { name: 'Saturday 31 October 2026' }).focus()
+    getByRole('gridcell', { name: fullDate(2026, 10, 31) }).focus()
     await userEvent.keyboard('{ArrowRight}')
-    expect(focusedName()).toBe('Sunday 1 November 2026')
+    expect(focusedName()).toBe(fullDate(2026, 11, 1))
   })
 
   test('Enter and Space choose', async () => {
     const onValueChange = vi.fn()
     const { getByRole } = render(<Calendar locale="en-GB" defaultValue={oct(15)} onValueChange={onValueChange} />)
-    getByRole('gridcell', { name: 'Thursday 15 October 2026' }).focus()
+    getByRole('gridcell', { name: fullDate(2026, 10, 15) }).focus()
     await userEvent.keyboard('{ArrowRight}{Enter}')
     expect(onValueChange).toHaveBeenLastCalledWith(oct(16))
     await userEvent.keyboard('{ArrowRight} ')
     expect(onValueChange).toHaveBeenLastCalledWith(oct(17))
-    expect(getByRole('gridcell', { name: 'Saturday 17 October 2026' }).getAttribute('aria-selected')).toBe('true')
+    expect(getByRole('gridcell', { name: fullDate(2026, 10, 17) }).getAttribute('aria-selected')).toBe('true')
   })
 })
 
@@ -121,16 +122,16 @@ describe('Calendar limits', () => {
     const { getByRole } = render(
       <Calendar locale="en-GB" defaultValue={oct(16)} min={oct(6)} max={oct(28)} isDateDisabled={d => d.getDay() === 6} onValueChange={onValueChange} />,
     )
-    const sat = getByRole('gridcell', { name: 'Saturday 17 October 2026' })
+    const sat = getByRole('gridcell', { name: fullDate(2026, 10, 17) })
     expect(sat.getAttribute('aria-disabled')).toBe('true')
     // Struck through where it's drawn: on the number, not only the cell.
     expect(getComputedStyle(sat.querySelector('.calendar__day-number')!).textDecorationLine).toBe('line-through')
-    getByRole('gridcell', { name: 'Friday 16 October 2026' }).focus()
+    getByRole('gridcell', { name: fullDate(2026, 10, 16) }).focus()
     await userEvent.keyboard('{ArrowRight}{Enter}')
-    expect(focusedName()).toBe('Saturday 17 October 2026')
+    expect(focusedName()).toBe(fullDate(2026, 10, 17))
     expect(onValueChange).not.toHaveBeenCalled()
     await userEvent.keyboard('{PageDown}')
-    expect(focusedName()).toBe('Wednesday 28 October 2026')
+    expect(focusedName()).toBe(fullDate(2026, 10, 28))
     expect((getByRole('button', { name: 'Next month' }) as HTMLButtonElement).disabled).toBe(true)
   })
 })
@@ -140,14 +141,14 @@ describe('Calendar range', () => {
     const onValueChange = vi.fn()
     const { getByRole } = render(<Calendar mode="range" locale="en-GB" defaultMonth={oct(1)} onValueChange={onValueChange} />)
     expect(getByRole('grid').getAttribute('aria-multiselectable')).toBe('true')
-    await userEvent.click(getByRole('gridcell', { name: 'Friday 16 October 2026' }))
+    await userEvent.click(getByRole('gridcell', { name: fullDate(2026, 10, 16) }))
     expect(onValueChange).toHaveBeenLastCalledWith({ start: oct(16), end: null })
-    await userEvent.click(getByRole('gridcell', { name: 'Monday 12 October 2026' }))
+    await userEvent.click(getByRole('gridcell', { name: fullDate(2026, 10, 12) }))
     expect(onValueChange).toHaveBeenLastCalledWith({ start: oct(12), end: oct(16) })
-    expect(getByRole('gridcell', { name: 'Wednesday 14 October 2026' }).getAttribute('aria-selected')).toBe('true')
-    expect(getByRole('gridcell', { name: 'Saturday 17 October 2026' }).getAttribute('aria-selected')).toBe('false')
+    expect(getByRole('gridcell', { name: fullDate(2026, 10, 14) }).getAttribute('aria-selected')).toBe('true')
+    expect(getByRole('gridcell', { name: fullDate(2026, 10, 17) }).getAttribute('aria-selected')).toBe('false')
     // A third press starts over.
-    await userEvent.click(getByRole('gridcell', { name: 'Tuesday 20 October 2026' }))
+    await userEvent.click(getByRole('gridcell', { name: fullDate(2026, 10, 20) }))
     expect(onValueChange).toHaveBeenLastCalledWith({ start: oct(20), end: null })
   })
 })

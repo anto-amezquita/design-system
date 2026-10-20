@@ -11,6 +11,7 @@ import { userEvent } from 'vitest/browser'
 
 import baseLight from '../../../styles/brands/base-light.css?raw'
 import { DatePicker, datePattern } from './DatePicker'
+import { fullDate } from '../../../lib/date-test-utils'
 
 beforeAll(() => {
   const style = document.createElement('style')
@@ -88,7 +89,7 @@ describe('DatePicker calendar', () => {
     const onValueChange = vi.fn()
     const { getByRole } = render(<DatePicker label="Delivery date" locale="en-GB" defaultValue={oct(22)} onValueChange={onValueChange} />)
     await userEvent.click(getByRole('button', { name: 'Choose Delivery date, 22 October 2026 chosen' }))
-    await expect.poll(() => document.activeElement?.getAttribute('aria-label')).toBe('Thursday 22 October 2026')
+    await expect.poll(() => document.activeElement?.getAttribute('aria-label')).toBe(fullDate(2026, 10, 22))
     await userEvent.keyboard('{ArrowRight}{Enter}')
     expect(onValueChange).toHaveBeenCalledWith(oct(23))
     await expect.poll(() => document.querySelector('[role="grid"]')).toBeNull()

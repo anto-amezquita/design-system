@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, within } from 'storybook/test'
 import { Calendar, type DateRange } from './Calendar'
 import { darkModeDecorator } from '@/lib/storybook'
+import { fullDate } from '../../../lib/date-test-utils'
 
 const oct = (d: number) => new Date(2026, 9, d)
 
@@ -19,7 +20,7 @@ export const Default: Story = {
   play: async ({ canvasElement }) => {
     const grid = within(canvasElement).getByRole('grid')
     await expect(grid).toHaveAccessibleName('October 2026')
-    await expect(within(grid).getByRole('gridcell', { name: 'Thursday 15 October 2026' })).toHaveAttribute('aria-selected', 'true')
+    await expect(within(grid).getByRole('gridcell', { name: fullDate(2026, 10, 15) })).toHaveAttribute('aria-selected', 'true')
   },
 }
 
