@@ -1282,6 +1282,14 @@
   ],
   "unreleased": [
     {
+      "sha": "c6267f5",
+      "type": "feat",
+      "scope": "prompt-form",
+      "message": "questions an assistant asks before it goes on",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "cdd7a6d",
       "type": "feat",
       "scope": "chat-message",
