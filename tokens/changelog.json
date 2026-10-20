@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "a8a5bc6",
+      "type": "feat",
+      "scope": "selectable-card",
+      "message": "choices as cards, on native radios and checkboxes",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "5a7cde9",
       "type": "feat",
       "scope": "code-block",
