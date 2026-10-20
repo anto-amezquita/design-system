@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "050f713",
+      "type": "feat",
+      "scope": "aspect-ratio",
+      "message": "media at a fixed ratio, space held before it loads",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "4ee3fdf",
       "type": "feat",
       "scope": "section",
