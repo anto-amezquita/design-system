@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chat-message",
+  "type": "registry:component",
+  "title": "ChatMessage",
+  "description": "One message in a conversation, from a person or a model: who wrote it, when, what it says, and whether it's still arriving or failed",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/icon.json",
+    "https://design.amezquita.dk/r/timestamp.json",
+    "https://design.amezquita.dk/r/visually-hidden.json"
+  ],
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  }
+}
