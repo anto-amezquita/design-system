@@ -1,6 +1,6 @@
 # Component coverage: from 35 toward 100
 
-Status: research 2026-10-08; build plan chosen 2026-10-08, schedule set 2026-10-14 and re-planned 2026-10-15; progress updated 2026-10-20 (wave 4 complete). Progress is tracked under "Progress" below; the tier tables stay as the 2026-10-08 snapshot.
+Status: research 2026-10-08; build plan chosen 2026-10-08, schedule set 2026-10-14 and re-planned 2026-10-15; progress updated 2026-10-20 (waves 4 and 5 complete). Progress is tracked under "Progress" below; the tier tables stay as the 2026-10-08 snapshot.
 
 ## Why
 
@@ -187,7 +187,7 @@ Releases, at most weekly (ADR 0022): 1.5.0 the week of 19 Oct with waves 1 and 2
 
 ## Progress
 
-Checked 2026-10-20 against `main` at `1090851`: `tokens/component-registry.json` counts 90 public components (plus 40 sub-components and the internal BaseSheet), and there are 91 component directories.
+Checked 2026-10-20 against `main` at `05ad301`: `tokens/component-registry.json` counts 97 public components (plus 40 sub-components and the internal BaseSheet), and there are 98 component directories. The plan's target, 97, is reached.
 
 | Wave | Planned | Done | PRs | Count after |
 |---|---|---|---|---|
@@ -196,20 +196,24 @@ Checked 2026-10-20 against `main` at `1090851`: `tokens/component-registry.json`
 | Popover (from wave 3) | 12 Nov | 15 Oct, with Date Picker, which needed it | #102 | 60 |
 | 3 Overlays and navigation, the other nine | Fri 16 – Mon 19 Oct (re-planned) | 15 Oct | #109–#116 | 69 |
 | 4 Layout and content | Tue 20 – Fri 23 Oct (re-planned) | 20 Oct | #119, #121–#122, #124, #127–#132, #135–#143 | 90 |
+| 5 Data and AI | Mon 26 – Fri 30 Oct (re-planned) | 20 Oct | #145, #147, #149–#153 | 97 |
 
-- **Done bar:** every new component has a story with a dark-mode version, unit tests, a docs entry with accessibility notes and Do / Don't, a doc twin and a registry entry, and was screenshotted in all five brands, light and dark, before merge. `npm run validate` on `main` passes: contrast pairs in all 10 brand and mode combinations, 1,805 tests including axe on every story (529 stories).
-- **Wave 4:** all 21 merged on 20 Oct, three days ahead of the re-planned schedule. The days set aside for it (21–23 Oct) move to wave 5, which can start on Wed 21 Oct; the done bar stays the same.
+- **Done bar:** every new component has a story with a dark-mode version, unit tests, a docs entry with accessibility notes and Do / Don't, a doc twin and a registry entry, and was screenshotted in all five brands, light and dark, before merge. `npm run validate` on `main` passes: contrast pairs in all 10 brand and mode combinations, 1,994 tests including axe on every story (567 stories).
+- **Wave 4:** all 21 merged on 20 Oct, three days ahead of the re-planned schedule.
+- **Wave 5:** all 7 merged on 20 Oct, ten days ahead: Chat Message, Prompt Form, Chat Composer, Message List, Tool Call (the plan's "Tool Call Display"), Tree View and Chart. The chat set works as one: the Message List story sends a message from the Composer and streams a reply. The case study can start now instead of after the slack week of 2 Nov.
 - **Shared pieces added on the way:** `lib/field`, `lib/date`, `lib/time`, `lib/match`, `lib/highlight` (waves 1–3); `lib/relative-time` (Timestamp's wording rules) and `lib/date-test-utils` (wave 4).
 - **New component tokens in wave 4:** `grid-min-item-sm/md/lg`, `status-dot-size`, `status-dot-pulse-duration`, `app-shell-aside-width`. Everything else in wave 4 uses existing semantic roles.
+- **New semantic tokens in wave 5:** `color-chart-1` to `color-chart-6`, for Chart's series, checked with the dataviz palette validator and held at 3:1 on both surfaces by contrast pairs (ADR 0026). No new component tokens.
 - **Fixes found while building:** Select and Input read Field; Input merges a passed `aria-describedby`; Tag's Remove button; Menu's disabled items (waves 1–3). Disabled controls across all components keep readable text instead of fading, IconButton and SegmentedControl included (#117, #118), which closes the follow-up recorded here on 2026-10-15.
 - **CI was red from #101 to #118** and nobody saw it: the Calendar, Date Picker and Date Range Picker tests hardcoded labels like "Thursday 22 October 2026", and CI's Chromium formats them with a comma after the weekday. Fixed in #120 by building expected labels with the component's own `Intl` options. Lesson: check the CI run after each push, not only local `validate`.
 - **Generated artifacts on `main` went stale** after Grid, Section and Aspect Ratio were each brought up to date with "Merge main into" on GitHub, which keeps one side of the generated files instead of rebuilding them. Rebuilt in #126; since then each branch starts from the current `main` and merges before the next one is cut.
 - **Docs generator:** props typed "one or the other" (a union of object types) were garbled or missing from the twins: StatusDot's `label`, and `never` in Badge's and Dialog's prop types. Fixed in `scripts/build-component-docs.mjs` (#131).
 - **Found in wave 4's later components:** Code Block doubled blank lines and copied its "highlighted" labels (now `<mark>`); Selectable Card's disabled state was invisible in demo-warm (now a dashed edge); App Shell's content stopped short of the bottom bar and showed two menu buttons with Top Nav and Side Nav together; Resizable Panels kept a stale size mid-drag and covered scrollbars with its handle. Each fixed before merge, with a test. A Popover focus-return test that flaked under load now waits for focus instead of checking once (#138).
-- **Known limits, accepted and documented:** Status Dot's `success` and `warning` dots measure about 2.9:1 on the secondary surface in light mode (3:1 on the primary surface everywhere; the types require words with every dot). For the brand work: demo-soft's `label` weight (500 in Nunito) is barely heavier than body text, and demo-warm's `accent` and `error` colours are hard to tell apart. Resizable Panels needs a drag or the keyboard to resize; there's no single-click alternative yet (WCAG 2.5.7). Code Block and Markdown have no syntax colouring (ADR 0025).
-- **Dependencies:** wave 4 added `markdown-to-jsx` 9.10.3, pinned, for Markdown (ADR 0025). Wave 3 added `@radix-ui/react-context-menu` 2.3.7 only.
+- **Found in wave 5:** checkboxes took the brand's interactive radius whole, so in demo-soft and demo-cool they were circles that read as radios; Checkbox, SelectableCard and MultiSelect now cap the corner at a quarter of the box (#148). Chat Message's continued messages lost their column without an avatar slot; Message List's jump button was see-through over messages; a tree item named from its content read out all its children (now named by its own label); Chart's gridlines competed with the data in demo-warm. Each fixed before merge, with a test where it can be measured.
+- **Known limits, accepted and documented:** Status Dot's `success` and `warning` dots measure about 2.9:1 on the secondary surface in light mode (3:1 on the primary surface everywhere; the types require words with every dot). For the brand work: demo-soft's `label` weight (500 in Nunito) is barely heavier than body text, and demo-warm's `accent` and `error` colours are hard to tell apart. Resizable Panels needs a drag or the keyboard to resize; there's no single-click alternative yet (WCAG 2.5.7). Code Block and Markdown have no syntax colouring (ADR 0025). Chart draws at most six series, and grouped bars are told apart by colour and position only (lines also have a line style and marker each); light mode's amber series is a dark gold to reach 3:1 (ADR 0026).
+- **Dependencies:** wave 5 added `d3-scale` 4.0.2 and `d3-shape` 3.2.0, pinned, for Chart's scales and paths (ADR 0026). Wave 4 added `markdown-to-jsx` 9.10.3, pinned, for Markdown (ADR 0025). Wave 3 added `@radix-ui/react-context-menu` 2.3.7 only.
 - **Release tooling:** `package-lock.json` now follows `package.json` on release (#108).
-- **Still to do:** 1.5.0 hasn't been released yet; the "Version Packages" PR (#70) holds everything since 1.4.0, waves 1–4 included. The docs site pages for the new components come with that release, which the site syncs on publish.
+- **Releases:** 1.5.0 went out on 20 Oct with waves 1–4 (#70), and the docs site moved to it the same day. Wave 5 and the checkbox fix wait in the "Version Packages" PR for 1.6.0, the week of 26 Oct (ADR 0022).
 
 ## Ours only
 
