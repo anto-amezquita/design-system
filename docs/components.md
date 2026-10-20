@@ -3218,6 +3218,56 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 
 ---
 
+### Chart
+
+| Field | Value |
+|---|---|
+| **Purpose** | A line chart (change over time, an ordered sequence) or a bar chart (amounts compared across categories), keyboard-explorable and one click from a table of the same data |
+| **Figma name** | `Chart` |
+| **Code name** | `Chart` (+ `ChartDatum`, `ChartSeries` types) |
+| **Storybook path** | `Components/Chart` |
+
+**Props / variants**
+- `type` (required): `line` or `bar` (grouped when there are several series). `area`: with `line`, a faint fill under each line
+- `title` (required): names the figure and the plot; `description`: what to see in it, shown and read with the chart
+- `data` (required): one object per x value; `x` (required): the key of the x value (a Date, a number or a category); `series` (required): up to six `{ key, label }`, in a fixed colour order
+- `formatValue`, `formatX`, `locale`: how values and x values are written on the axes, in the tooltip, the table and speech. Dates default to "Mar 2026", or "12 Mar" when the days differ
+- `xLabel`: the x column's heading in the table; `height` (default 280); `defaultView`: `chart` or `table`
+- Native `figure` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] line, line with area, grouped bar; one series (no legend) and up to six
+- [x] hover (crosshair or band, tooltip), keyboard focus on the plot and on a point
+- [x] missing values (a gap in the line, "no value" read out, a dash in the table)
+- [x] table view
+
+**Tokens consumed**
+- `--color-chart-1` … `--color-chart-6` (series, [ADR 0026](../decisions/0026-chart-colours-and-d3-maths.md)), `--color-text-primary`, `--color-text-secondary`, `--color-border-default`, `--color-border-strong`, `--color-border-focus`, `--color-surface-primary`, `--color-surface-secondary`, `--focus-ring-width`, `--shadow-dropdown`
+- `--border-radius-component`, `--border-radius-interactive`, `--border-width-default`, `--space-element-gap`, `--space-inline-gap`, `--space-tight-gap`, `--space-compact-padding-x`, `--space-compact-padding-y`, `--font-family-base`, `--font-size-body`, `--line-height-body`, `--font-size-small`, `--line-height-small`, `--font-size-caption`, `--font-weight-label`
+- No component tokens. The table view is Table, and the switch is a Button
+
+**Accessibility**
+- A `figure` named by its title. The plot is a focusable group with `aria-roledescription="chart"`, described by the description, a summary written from the data ("Line chart, 3 series: Web, iOS, Android, 12 points, from Jan 2026 to Dec 2026. Values from 600 to 2,470.") and how to explore it. The SVG itself is hidden from screen readers
+- Arrow Left and Right move between points, Up and Down between series, Home and End to the ends, Escape to let go. Each point is read aloud through a polite status: "Q2: iOS, 900. Point 2 of 4." The tooltip follows the keyboard as well as the pointer
+- Colour is never the only cue: each series has its own line style and marker shape, a legend names them for two or more series, and the tooltip, speech and table say the series name. The series colours are tested at 3:1 on both surfaces in all five brands, light and dark (contrast pairs), and the palette was checked for colour-blind separation with the dataviz validator
+- "Show as table" switches to a Table of the same data, with a header for each column and each row
+- Axis text, the description and the tooltip text are tested at 4.5:1. Nothing animates
+
+**Do**
+- Write the title as what the chart shows, and the description as what to notice.
+- Keep series in the same order across charts, so a series keeps its colour.
+- Start bars at zero; the component always does.
+
+**Don't**
+- Don't plot two measures with different units on one chart; make two charts.
+- Don't use more than six series; fold the rest into "Other" or use small multiples.
+- Don't put values on every point; the tooltip, speech and table carry them.
+
+**Chromatic stories**
+- `Line`, `Area`, `Bar`, `AsTable`, `SixSeries`, `DarkMode`
+
+---
+
 ### ChatComposer
 
 | Field | Value |

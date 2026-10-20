@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 93 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 94 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 96 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 97 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -115,7 +115,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Toast | [toast](https://design.amezquita.dk/components/toast.md) — Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout |
 | Tooltip | [tooltip](https://design.amezquita.dk/components/tooltip.md) — Contextual label revealed on hover or focus — supplements an icon or truncated text |
 
-### Patterns (25)
+### Patterns (26)
 
 | Component | Reference |
 |---|---|
@@ -123,6 +123,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | AppShell | [app-shell](https://design.amezquita.dk/components/app-shell.md) — The frame of an app's pages: skip link, header, section navigation, main content, aside, footer and bottom bar, in the right landmarks and laid out per breakpoint |
 | Breadcrumb | [breadcrumb](https://design.amezquita.dk/components/breadcrumb.md) — Hierarchical page location trail; the last item is the current page (non-linked) |
 | Carousel | [carousel](https://design.amezquita.dk/components/carousel.md) — A row of slides shown a few at a time, moved with buttons, dots, swipe or arrow keys |
+| Chart | [chart](https://design.amezquita.dk/components/chart.md) — A line chart (change over time, an ordered sequence) or a bar chart (amounts compared across categories), keyboard-explorable and one click from a table of the same data |
 | ChatComposer | [chat-composer](https://design.amezquita.dk/components/chat-composer.md) — Where a message is written and sent in a conversation: a field that grows with the text, Enter to send, and Stop while a reply streams |
 | ChatMessage | [chat-message](https://design.amezquita.dk/components/chat-message.md) — One message in a conversation, from a person or a model: who wrote it, when, what it says, and whether it's still arriving or failed |
 | DataTable | [data-table](https://design.amezquita.dk/components/data-table.md) — Sortable, filterable, paginated table for structured datasets |
@@ -151,7 +152,7 @@ Every token this system defines, resolved across all four theme axes: https://de
 
 Real semantic token families:
 
-- **color** (46): `--color-accent-*`, `--color-border-*`, `--color-curtain-*`, `--color-feedback-*`, `--color-neutral-*`, `--color-skeleton-*`, `--color-surface-*`, `--color-text-*`
+- **color** (52): `--color-accent-*`, `--color-border-*`, `--color-chart-*`, `--color-curtain-*`, `--color-feedback-*`, `--color-neutral-*`, `--color-skeleton-*`, `--color-surface-*`, `--color-text-*`
 - **typography** (40): `--font-family-*`, `--font-size-*`, `--font-variation-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
 - **spacing** (19): `--space-compact-*`, `--space-component-*`, `--space-container-*`, `--space-control-*`, `--space-dialog-*`, `--space-element-*`, `--space-inline-*`, `--space-label-*`, `--space-layout-*`, `--space-prominent-*`, `--space-section-*`, `--space-tight-*`
 - **size** (13): `--focus-ring-*`, `--size-container-*`, `--size-dialog-*`, `--size-icon-*`

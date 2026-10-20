@@ -20,11 +20,11 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-394 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+400 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
 - component: 123
-- color: 46
+- color: 52
 - typography: 40
 - spacing: 19
 - size: 13
@@ -715,6 +715,15 @@ A row of slides shown a few at a time, moved with buttons, dots, swipe or arrow 
 - Token prefix: `carousel-*` (2 tokens)
 - Storybook: Components/Carousel
 - Stories: Default, ThreePerView, Autoplay, NoDots, DarkMode
+
+### Chart
+
+A line chart (change over time, an ordered sequence) or a bar chart (amounts compared across categories), keyboard-explorable and one click from a table of the same data
+
+- Import: `import { Chart } from '@amezquita/design-system/components/patterns/Chart'`
+- Token prefix: `chart-*` (0 tokens)
+- Storybook: Components/Chart
+- Stories: Line, Area, Bar, AsTable, SixSeries, DarkMode
 
 ### ChatComposer
 

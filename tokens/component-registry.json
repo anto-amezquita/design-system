@@ -1,7 +1,7 @@
 {
   "meta": {
-    "componentCount": 137,
-    "publicComponentCount": 96,
+    "componentCount": 138,
+    "publicComponentCount": 97,
     "subComponentCount": 40
   },
   "components": [
@@ -1819,6 +1819,26 @@
       "tokenCount": 0,
       "internal": false,
       "parent": "carousel"
+    },
+    {
+      "name": "Chart",
+      "slug": "chart",
+      "tier": "patterns",
+      "purpose": "A line chart (change over time, an ordered sequence) or a bar chart (amounts compared across categories), keyboard-explorable and one click from a table of the same data",
+      "storybookPath": "Components/Chart",
+      "storybookTitleId": "components-chart",
+      "defaultStoryId": "components-chart--line",
+      "tokenPrefix": "chart",
+      "stories": [
+        "Line",
+        "Area",
+        "Bar",
+        "AsTable",
+        "SixSeries",
+        "DarkMode"
+      ],
+      "tokenCount": 0,
+      "internal": false
     },
     {
       "name": "ChatComposer",

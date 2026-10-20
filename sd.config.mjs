@@ -14,6 +14,9 @@ const TOKEN_CONTRACTS = {
     'color-text-',
     'color-border-',
     'color-feedback-',
+    // Chart series colours are stepped per mode (a lighter step on a dark
+    // surface), so they're lighting too (decisions/0026).
+    'color-chart-',
     'color-neutral-',
     'color-accent-',
     'button-secondary-',

@@ -1,9 +1,9 @@
 {
   "meta": {
     "primitiveCount": 126,
-    "semanticCount": 145,
+    "semanticCount": 151,
     "componentCount": 123,
-    "total": 394
+    "total": 400
   },
   "tokens": [
     {
@@ -3029,6 +3029,7 @@
         "Popover",
         "Toast",
         "AppShell",
+        "Chart",
         "ChatComposer",
         "Hero",
         "MobileNav",
@@ -3076,6 +3077,7 @@
         "Menu",
         "NavigationMenu",
         "Accordion",
+        "Chart",
         "ChatMessage",
         "Markdown",
         "Pagination",
@@ -3202,6 +3204,7 @@
         "Accordion",
         "AppShell",
         "Breadcrumb",
+        "Chart",
         "ChatComposer",
         "ChatMessage",
         "FormLayout",
@@ -3283,6 +3286,7 @@
         "Toast",
         "Accordion",
         "Breadcrumb",
+        "Chart",
         "ChatComposer",
         "ChatMessage",
         "DataTable",
@@ -3581,6 +3585,7 @@
         "Toast",
         "Accordion",
         "AppShell",
+        "Chart",
         "MobileNav",
         "Pagination",
         "PromptForm",
@@ -3637,6 +3642,7 @@
       "usedBy": [
         "Card",
         "Carousel",
+        "Chart",
         "ChatComposer",
         "Stepper",
         "TreeView",
@@ -3689,6 +3695,7 @@
         "Accordion",
         "Breadcrumb",
         "Carousel",
+        "Chart",
         "ChatComposer",
         "FormLayout",
         "MessageList",
@@ -4108,6 +4115,150 @@
       ]
     },
     {
+      "name": "color-chart-1",
+      "cssVar": "--color-chart-1",
+      "type": "color",
+      "category": "color",
+      "description": "Chart series 1 (blue): the first series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status.",
+      "rawValue": "#2A78D6",
+      "resolved": {
+        "base-light": "#2A78D6",
+        "base-dark": "#3987E5",
+        "demo-cool-light": "#2A78D6",
+        "demo-cool-dark": "#3987E5",
+        "demo-soft-light": "#2A78D6",
+        "demo-soft-dark": "#3987E5",
+        "demo-warm-light": "#2A78D6",
+        "demo-warm-dark": "#3987E5",
+        "portfolio-light": "#2A78D6",
+        "portfolio-dark": "#3987E5"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Chart"
+      ]
+    },
+    {
+      "name": "color-chart-2",
+      "cssVar": "--color-chart-2",
+      "type": "color",
+      "category": "color",
+      "description": "Chart series 2 (orange): the second series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status.",
+      "rawValue": "#CF5A22",
+      "resolved": {
+        "base-light": "#CF5A22",
+        "base-dark": "#D95926",
+        "demo-cool-light": "#CF5A22",
+        "demo-cool-dark": "#D95926",
+        "demo-soft-light": "#CF5A22",
+        "demo-soft-dark": "#D95926",
+        "demo-warm-light": "#CF5A22",
+        "demo-warm-dark": "#D95926",
+        "portfolio-light": "#CF5A22",
+        "portfolio-dark": "#D95926"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Chart"
+      ]
+    },
+    {
+      "name": "color-chart-3",
+      "cssVar": "--color-chart-3",
+      "type": "color",
+      "category": "color",
+      "description": "Chart series 3 (teal): the third series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status.",
+      "rawValue": "#14876A",
+      "resolved": {
+        "base-light": "#14876A",
+        "base-dark": "#199E70",
+        "demo-cool-light": "#14876A",
+        "demo-cool-dark": "#199E70",
+        "demo-soft-light": "#14876A",
+        "demo-soft-dark": "#199E70",
+        "demo-warm-light": "#14876A",
+        "demo-warm-dark": "#199E70",
+        "portfolio-light": "#14876A",
+        "portfolio-dark": "#199E70"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Chart"
+      ]
+    },
+    {
+      "name": "color-chart-4",
+      "cssVar": "--color-chart-4",
+      "type": "color",
+      "category": "color",
+      "description": "Chart series 4 (amber): the fourth series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status.",
+      "rawValue": "#A57300",
+      "resolved": {
+        "base-light": "#A57300",
+        "base-dark": "#C98500",
+        "demo-cool-light": "#A57300",
+        "demo-cool-dark": "#C98500",
+        "demo-soft-light": "#A57300",
+        "demo-soft-dark": "#C98500",
+        "demo-warm-light": "#A57300",
+        "demo-warm-dark": "#C98500",
+        "portfolio-light": "#A57300",
+        "portfolio-dark": "#C98500"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Chart"
+      ]
+    },
+    {
+      "name": "color-chart-5",
+      "cssVar": "--color-chart-5",
+      "type": "color",
+      "category": "color",
+      "description": "Chart series 5 (magenta): the fifth series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status.",
+      "rawValue": "#C44A7E",
+      "resolved": {
+        "base-light": "#C44A7E",
+        "base-dark": "#D55181",
+        "demo-cool-light": "#C44A7E",
+        "demo-cool-dark": "#D55181",
+        "demo-soft-light": "#C44A7E",
+        "demo-soft-dark": "#D55181",
+        "demo-warm-light": "#C44A7E",
+        "demo-warm-dark": "#D55181",
+        "portfolio-light": "#C44A7E",
+        "portfolio-dark": "#D55181"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Chart"
+      ]
+    },
+    {
+      "name": "color-chart-6",
+      "cssVar": "--color-chart-6",
+      "type": "color",
+      "category": "color",
+      "description": "Chart series 6 (green): the sixth series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status.",
+      "rawValue": "#2F7D1F",
+      "resolved": {
+        "base-light": "#2F7D1F",
+        "base-dark": "#008300",
+        "demo-cool-light": "#2F7D1F",
+        "demo-cool-dark": "#008300",
+        "demo-soft-light": "#2F7D1F",
+        "demo-soft-dark": "#008300",
+        "demo-warm-light": "#2F7D1F",
+        "demo-warm-dark": "#008300",
+        "portfolio-light": "#2F7D1F",
+        "portfolio-dark": "#008300"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Chart"
+      ]
+    },
+    {
       "name": "color-skeleton-base",
       "cssVar": "--color-skeleton-base",
       "type": "color",
@@ -4211,6 +4362,7 @@
         "Accordion",
         "Breadcrumb",
         "Carousel",
+        "Chart",
         "ChatComposer",
         "FormLayout",
         "MessageList",
@@ -4382,6 +4534,7 @@
         "Menu",
         "NavigationMenu",
         "Popover",
+        "Chart",
         "MessageList",
         "Select"
       ]
@@ -4808,6 +4961,7 @@
         "Accordion",
         "AppShell",
         "Breadcrumb",
+        "Chart",
         "ChatComposer",
         "ChatMessage",
         "DataTable",
@@ -4938,6 +5092,7 @@
         "CommandPalette",
         "Dialog",
         "Drawer",
+        "Chart",
         "ChatComposer",
         "ChatMessage",
         "EmptyState",
@@ -5026,6 +5181,7 @@
         "CommandPalette",
         "Lightbox",
         "Menu",
+        "Chart",
         "ChatComposer",
         "ChatMessage",
         "DataTable",
@@ -5079,6 +5235,7 @@
       "axisAware": false,
       "usedBy": [
         "Tooltip",
+        "Chart",
         "Table",
         "Badge",
         "Calendar",
@@ -5391,6 +5548,7 @@
         "Lightbox",
         "Menu",
         "NavigationMenu",
+        "Chart",
         "ChatMessage",
         "MobileNav",
         "SideNav",
@@ -5539,6 +5697,7 @@
       "usedBy": [
         "Dialog",
         "Drawer",
+        "Chart",
         "ChatComposer",
         "ChatMessage",
         "EmptyState",
@@ -5616,6 +5775,7 @@
       "usedBy": [
         "Toast",
         "Breadcrumb",
+        "Chart",
         "ChatComposer",
         "ChatMessage",
         "DataTable",
@@ -6097,6 +6257,7 @@
         "Lightbox",
         "Popover",
         "Carousel",
+        "Chart",
         "ChatMessage",
         "EmptyState",
         "FormLayout",
@@ -6149,6 +6310,7 @@
         "Popover",
         "Breadcrumb",
         "Carousel",
+        "Chart",
         "ChatComposer",
         "ChatMessage",
         "EmptyState",
@@ -6258,6 +6420,7 @@
         "NavigationMenu",
         "Popover",
         "Toast",
+        "Chart",
         "ChatComposer",
         "ChatMessage",
         "FormLayout",
@@ -6302,6 +6465,7 @@
         "Menu",
         "NavigationMenu",
         "Toast",
+        "Chart",
         "Markdown",
         "Pagination",
         "SideNav",
@@ -6617,6 +6781,7 @@
         "Menu",
         "NavigationMenu",
         "Toast",
+        "Chart",
         "ChatComposer",
         "ChatMessage",
         "FormLayout",
@@ -6810,6 +6975,7 @@
       "axisAware": false,
       "usedBy": [
         "Tooltip",
+        "Chart",
         "Tabs",
         "Item",
         "SegmentedControl"
@@ -6839,6 +7005,7 @@
         "Menu",
         "NavigationMenu",
         "Tooltip",
+        "Chart",
         "ChatComposer",
         "ChatMessage",
         "Tabs",
@@ -7067,6 +7234,7 @@
         "Toast",
         "Accordion",
         "AppShell",
+        "Chart",
         "MobileNav",
         "Pagination",
         "PromptForm",

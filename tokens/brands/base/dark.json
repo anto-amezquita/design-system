@@ -151,6 +151,30 @@
     "$value": "#60a5fa",
     "$type": "color"
   },
+  "color-chart-1": {
+    "$value": "#3987E5",
+    "$type": "color"
+  },
+  "color-chart-2": {
+    "$value": "#D95926",
+    "$type": "color"
+  },
+  "color-chart-3": {
+    "$value": "#199E70",
+    "$type": "color"
+  },
+  "color-chart-4": {
+    "$value": "#C98500",
+    "$type": "color"
+  },
+  "color-chart-5": {
+    "$value": "#D55181",
+    "$type": "color"
+  },
+  "color-chart-6": {
+    "$value": "#008300",
+    "$type": "color"
+  },
   "button-secondary-foreground": {
     "$value": "{color-neutral-500}",
     "$type": "color"

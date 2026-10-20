@@ -111,5 +111,89 @@
     "role": "progress-fill-on-page",
     "minRatio": 3.0,
     "note": "ProgressBar's fill against the page, where the track ends."
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-chart-1",
+    "role": "chart-series-1",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
+  },
+  {
+    "bg": "color-surface-secondary",
+    "fg": "color-chart-1",
+    "role": "chart-series-1-on-secondary-surface",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-chart-2",
+    "role": "chart-series-2",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
+  },
+  {
+    "bg": "color-surface-secondary",
+    "fg": "color-chart-2",
+    "role": "chart-series-2-on-secondary-surface",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-chart-3",
+    "role": "chart-series-3",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
+  },
+  {
+    "bg": "color-surface-secondary",
+    "fg": "color-chart-3",
+    "role": "chart-series-3-on-secondary-surface",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-chart-4",
+    "role": "chart-series-4",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
+  },
+  {
+    "bg": "color-surface-secondary",
+    "fg": "color-chart-4",
+    "role": "chart-series-4-on-secondary-surface",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-chart-5",
+    "role": "chart-series-5",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
+  },
+  {
+    "bg": "color-surface-secondary",
+    "fg": "color-chart-5",
+    "role": "chart-series-5-on-secondary-surface",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
+  },
+  {
+    "bg": "color-surface-primary",
+    "fg": "color-chart-6",
+    "role": "chart-series-6",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
+  },
+  {
+    "bg": "color-surface-secondary",
+    "fg": "color-chart-6",
+    "role": "chart-series-6-on-secondary-surface",
+    "minRatio": 3,
+    "note": "A chart mark (line, bar, marker) is a graphic needed to read the chart: WCAG 1.4.11, 3:1. See ADR 0026."
   }
 ]

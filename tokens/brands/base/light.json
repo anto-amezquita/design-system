@@ -199,6 +199,36 @@
     "$type": "color",
     "$description": "Border and accent stripe of an info Alert, Toast or Badge."
   },
+  "color-chart-1": {
+    "$value": "#2A78D6",
+    "$type": "color",
+    "$description": "Chart series 1 (blue): the first series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status."
+  },
+  "color-chart-2": {
+    "$value": "#CF5A22",
+    "$type": "color",
+    "$description": "Chart series 2 (orange): the second series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status."
+  },
+  "color-chart-3": {
+    "$value": "#14876A",
+    "$type": "color",
+    "$description": "Chart series 3 (teal): the third series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status."
+  },
+  "color-chart-4": {
+    "$value": "#A57300",
+    "$type": "color",
+    "$description": "Chart series 4 (amber): the fourth series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status."
+  },
+  "color-chart-5": {
+    "$value": "#C44A7E",
+    "$type": "color",
+    "$description": "Chart series 5 (magenta): the fifth series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status."
+  },
+  "color-chart-6": {
+    "$value": "#2F7D1F",
+    "$type": "color",
+    "$description": "Chart series 6 (green): the sixth series' line, bar or marker. In a fixed order, never cycled; at least 3:1 on both surfaces. Not for text or status."
+  },
   "color-skeleton-base": {
     "$value": "{color-neutral-200}",
     "$type": "color",

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 94,
-    "tokenCount": 265
+    "filesScanned": 95,
+    "tokenCount": 272
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -87,6 +87,7 @@
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/FormLayout/FormLayout.css",
@@ -123,6 +124,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/Markdown/Markdown.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/SideNav/SideNav.css",
@@ -179,6 +181,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/AppShell/AppShell.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/PromptForm/PromptForm.css",
@@ -306,6 +309,9 @@
     "carousel-per-view": [
       "components/patterns/Carousel/Carousel.css"
     ],
+    "chart-series-color": [
+      "components/patterns/Chart/Chart.css"
+    ],
     "checkbox-size": [
       "components/primitives/Checkbox/Checkbox.css"
     ],
@@ -387,6 +393,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/AppShell/AppShell.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/patterns/Pagination/Pagination.css",
       "components/patterns/PromptForm/PromptForm.css",
@@ -430,6 +437,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Carousel/Carousel.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/MessageList/MessageList.css",
@@ -470,6 +478,7 @@
     "color-border-strong": [
       "components/composition/Card/Card.css",
       "components/patterns/Carousel/Carousel.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/Stepper/Stepper.css",
       "components/patterns/TreeView/TreeView.css",
@@ -489,6 +498,24 @@
       "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
+    ],
+    "color-chart-1": [
+      "components/patterns/Chart/Chart.css"
+    ],
+    "color-chart-2": [
+      "components/patterns/Chart/Chart.css"
+    ],
+    "color-chart-3": [
+      "components/patterns/Chart/Chart.css"
+    ],
+    "color-chart-4": [
+      "components/patterns/Chart/Chart.css"
+    ],
+    "color-chart-5": [
+      "components/patterns/Chart/Chart.css"
+    ],
+    "color-chart-6": [
+      "components/patterns/Chart/Chart.css"
     ],
     "color-feedback-error": [
       "components/composition/Menu/Menu.css",
@@ -595,6 +622,7 @@
       "components/composition/Popover/Popover.css",
       "components/composition/Toast/Toast.css",
       "components/patterns/AppShell/AppShell.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/Hero/Hero.css",
       "components/patterns/MobileNav/MobileNav.css",
@@ -621,6 +649,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/patterns/Accordion/Accordion.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/Markdown/Markdown.css",
       "components/patterns/Pagination/Pagination.css",
@@ -684,6 +713,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/AppShell/AppShell.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/FormLayout/FormLayout.css",
@@ -744,6 +774,7 @@
       "components/composition/Toast/Toast.css",
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/DataTable/DataTable.css",
@@ -1015,6 +1046,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Carousel/Carousel.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/FormLayout/FormLayout.css",
       "components/patterns/MessageList/MessageList.css",
@@ -1065,6 +1097,7 @@
       "components/patterns/Accordion/Accordion.css",
       "components/patterns/AppShell/AppShell.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/DataTable/DataTable.css",
@@ -1132,6 +1165,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/EmptyState/EmptyState.css",
@@ -1142,6 +1176,7 @@
     ],
     "font-size-caption": [
       "components/composition/Tooltip/Tooltip.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/Table/Table.css",
       "components/primitives/Badge/Badge.css",
       "components/primitives/Calendar/Calendar.css",
@@ -1217,6 +1252,7 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/DataTable/DataTable.css",
@@ -1280,6 +1316,7 @@
       "components/composition/Lightbox/Lightbox.css",
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/MobileNav/MobileNav.css",
       "components/patterns/SideNav/SideNav.css",
@@ -1395,6 +1432,7 @@
     "line-height-body": [
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/EmptyState/EmptyState.css",
@@ -1470,6 +1508,7 @@
     "line-height-small": [
       "components/composition/Toast/Toast.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/DataTable/DataTable.css",
@@ -1568,6 +1607,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Popover/Popover.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/MessageList/MessageList.css",
       "components/primitives/Select/Select.css"
     ],
@@ -1695,6 +1735,7 @@
     ],
     "space-compact-padding-x": [
       "components/composition/Tooltip/Tooltip.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/Tabs/Tabs.css",
       "components/primitives/Item/Item.css",
       "components/primitives/SegmentedControl/SegmentedControl.css"
@@ -1703,6 +1744,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Tooltip/Tooltip.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/Tabs/Tabs.css",
@@ -1782,6 +1824,7 @@
       "components/composition/Lightbox/Lightbox.css",
       "components/composition/Popover/Popover.css",
       "components/patterns/Carousel/Carousel.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/EmptyState/EmptyState.css",
       "components/patterns/FormLayout/FormLayout.css",
@@ -1813,6 +1856,7 @@
       "components/composition/Popover/Popover.css",
       "components/patterns/Breadcrumb/Breadcrumb.css",
       "components/patterns/Carousel/Carousel.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/EmptyState/EmptyState.css",
@@ -1895,6 +1939,7 @@
       "components/composition/Menu/Menu.css",
       "components/composition/NavigationMenu/NavigationMenu.css",
       "components/composition/Toast/Toast.css",
+      "components/patterns/Chart/Chart.css",
       "components/patterns/ChatComposer/ChatComposer.css",
       "components/patterns/ChatMessage/ChatMessage.css",
       "components/patterns/FormLayout/FormLayout.css",

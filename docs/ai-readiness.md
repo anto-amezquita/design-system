@@ -58,7 +58,7 @@ The cautionary tale worth keeping in view: an eight-agent pipeline completed a r
 
 Assessed honestly, the foundation is further along than the benchmarks' median:
 
-- **DTCG-conformant tokens** (`$value` / `$type`), three layers, 394 tokens — this alone puts it in the 3-of-37 club on the hardest signal to verify.
+- **DTCG-conformant tokens** (`$value` / `$type`), three layers, 400 tokens — this alone puts it in the 3-of-37 club on the hardest signal to verify.
 - **Deterministic governance in CI** — token linter (no raw hex, no primitive leakage, no hardcoded motion/spacing), WCAG AA contrast check across all four theme combinations, component-registry check that fails the build if a component ships undocumented.
 - **Constrained component APIs** — literal unions rather than open `string` props across the component set.
 - **A machine-readable component registry already generated** (`tokens/component-registry.json`) from `docs/components.md` + the component tree + stories + component tokens.
