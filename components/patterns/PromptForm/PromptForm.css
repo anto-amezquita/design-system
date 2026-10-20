@@ -1,0 +1,80 @@
+/*
+  Tokens consumed:
+
+  --space-container-padding, --space-component-gap, --space-element-gap,
+  --space-inline-gap, --space-tight-gap, --border-width-default,
+  --color-border-default, --border-radius-component, --color-surface-primary,
+  --color-text-primary, --color-text-secondary, --color-feedback-error,
+  --color-border-focus, --focus-ring-width, --font-family-base,
+  --font-size-body, --line-height-body, --font-size-small,
+  --line-height-small, --font-weight-heading
+
+  No component tokens: the frame, the type and the colours are existing
+  roles (decisions/0004, 0005). The choices are SelectableCards and the
+  "Other" field is an Input, with their own tokens.
+*/
+
+.prompt-form {
+  display: grid;
+  gap: var(--space-element-gap);
+  max-inline-size: var(--size-container-text);
+  padding: var(--space-container-padding);
+  border: var(--border-width-default) solid var(--color-border-default);
+  border-radius: var(--border-radius-component);
+  background: var(--color-surface-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-primary);
+}
+
+.prompt-form__title {
+  margin: 0;
+  font-weight: var(--font-weight-heading);
+}
+
+.prompt-form__form {
+  display: grid;
+  gap: var(--space-component-gap);
+}
+
+.prompt-form__question {
+  display: grid;
+  gap: var(--space-inline-gap);
+}
+
+.prompt-form__error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-tight-gap);
+  margin: 0;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-feedback-error);
+}
+
+.prompt-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-inline-gap);
+}
+
+.prompt-form__summary {
+  display: grid;
+  gap: var(--space-element-gap);
+}
+
+.prompt-form__summary:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-width);
+  border-radius: var(--border-radius-component);
+}
+
+.prompt-form__summary:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.prompt-form__skipped {
+  margin: 0;
+  color: var(--color-text-secondary);
+}

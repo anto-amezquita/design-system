@@ -1,12 +1,12 @@
 ---
 name: amezquita-design-system
-description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 88 other public components.
+description: Build UI with @amezquita/design-system — React 19 components, DTCG design tokens, and a shadcn-spec component registry. Use when writing or reviewing code that imports from `@amezquita/design-system`, references its CSS custom properties, or when a page needs a Button, Dialog, DataTable, or any of its 89 other public components.
 metadata:
   author: Antonio Amezquita
   homepage: https://design.amezquita.dk
 ---
 
-@amezquita/design-system is a token-first, multi-brand React component library — 91 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
+@amezquita/design-system is a token-first, multi-brand React component library — 92 public components across primitives, composition, and pattern tiers, DTCG design tokens resolved across every brand × light/dark, and a real npm package. Not copy-paste source: components are imported, not vendored.
 
 ## Install
 
@@ -115,7 +115,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Toast | [toast](https://design.amezquita.dk/components/toast.md) — Ephemeral notification pushed to a corner of the viewport; auto-dismisses after a timeout |
 | Tooltip | [tooltip](https://design.amezquita.dk/components/tooltip.md) — Contextual label revealed on hover or focus — supplements an icon or truncated text |
 
-### Patterns (20)
+### Patterns (21)
 
 | Component | Reference |
 |---|---|
@@ -131,6 +131,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Markdown | [markdown](https://design.amezquita.dk/components/markdown.md) — Renders a Markdown string with the system's own components, so release notes, READMEs and model answers look like the rest of the product |
 | MobileNav | [mobile-nav](https://design.amezquita.dk/components/mobile-nav.md) — The bar at the bottom of a small screen with an app's main places |
 | Pagination | [pagination](https://design.amezquita.dk/components/pagination.md) — Page navigation controls for multi-page data sets; exposes current page and total page count |
+| PromptForm | [prompt-form](https://design.amezquita.dk/components/prompt-form.md) — Questions an assistant asks before it goes on, each a set of choices with "Other" for an answer in words, sent together and kept as a summary |
 | ResizablePanels | [resizable-panels](https://design.amezquita.dk/components/resizable-panels.md) — Two panes sharing the space, with a separator people drag, or move with the keyboard (the WAI-ARIA window splitter pattern) |
 | SideNav | [side-nav](https://design.amezquita.dk/components/side-nav.md) — Section navigation: inline beside the content (240px wide) from 1024px up; below that, in a left Drawer opened by `SideNavTrigger`, which hides itself from 1024px up. Wrap both in `SideNavProvider` |
 | Stepper | [stepper](https://design.amezquita.dk/components/stepper.md) — Where someone is in a process with a fixed order: checkout, sign-up, an application |
