@@ -1,0 +1,12 @@
+{
+  "status-dot-size": {
+    "$value": "8px",
+    "$type": "dimension",
+    "$description": "Diameter of a StatusDot. Small enough to sit inside a line of small text or on an Avatar's corner."
+  },
+  "status-dot-pulse-duration": {
+    "$value": "2000ms",
+    "$type": "duration",
+    "$description": "One cycle of a StatusDot's opt-in pulse. Slow on purpose: it says 'live', it shouldn't pull the eye. Off under prefers-reduced-motion."
+  }
+}

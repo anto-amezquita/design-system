@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "status-dot",
+  "type": "registry:component",
+  "title": "StatusDot",
+  "description": "A small coloured dot that marks a status (online, live, degraded, failed), always with words",
+  "dependencies": [
+    "@amezquita/design-system"
+  ],
+  "registryDependencies": [
+    "https://design.amezquita.dk/r/theme.json",
+    "https://design.amezquita.dk/r/visually-hidden.json"
+  ],
+  "cssVars": {
+    "light": {
+      "status-dot-size": "8px",
+      "status-dot-pulse-duration": "2000ms"
+    },
+    "dark": {
+      "status-dot-size": "8px",
+      "status-dot-pulse-duration": "2000ms"
+    }
+  }
+}

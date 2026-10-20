@@ -1,7 +1,7 @@
 {
   "meta": {
-    "filesScanned": 74,
-    "tokenCount": 258
+    "filesScanned": 75,
+    "tokenCount": 261
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -88,7 +88,8 @@
       "components/patterns/Carousel/Carousel.css",
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Skeleton/Skeleton.css",
-      "components/primitives/Slider/Slider.css"
+      "components/primitives/Slider/Slider.css",
+      "components/primitives/StatusDot/StatusDot.css"
     ],
     "border-radius-image": [
       "components/composition/Card/Card.css",
@@ -415,6 +416,7 @@
       "components/primitives/Radio/Radio.css",
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -431,6 +433,7 @@
       "components/primitives/Label/Label.css",
       "components/primitives/OtpInput/OtpInput.css",
       "components/primitives/Select/Select.css",
+      "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Textarea/Textarea.css"
     ],
     "color-feedback-error-background": [
@@ -459,7 +462,8 @@
     "color-feedback-info-border": [
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css",
-      "components/primitives/Badge/Badge.css"
+      "components/primitives/Badge/Badge.css",
+      "components/primitives/StatusDot/StatusDot.css"
     ],
     "color-feedback-info-foreground": [
       "components/composition/Alert/Alert.css",
@@ -473,7 +477,8 @@
     "color-feedback-success-border": [
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css",
-      "components/primitives/Badge/Badge.css"
+      "components/primitives/Badge/Badge.css",
+      "components/primitives/StatusDot/StatusDot.css"
     ],
     "color-feedback-success-foreground": [
       "components/composition/Alert/Alert.css",
@@ -487,7 +492,8 @@
     "color-feedback-warning-border": [
       "components/composition/Alert/Alert.css",
       "components/composition/Toast/Toast.css",
-      "components/primitives/Badge/Badge.css"
+      "components/primitives/Badge/Badge.css",
+      "components/primitives/StatusDot/StatusDot.css"
     ],
     "color-feedback-warning-foreground": [
       "components/composition/Alert/Alert.css",
@@ -614,6 +620,7 @@
       "components/primitives/SegmentedControl/SegmentedControl.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Slider/Slider.css",
+      "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Text/Text.css",
       "components/primitives/Textarea/Textarea.css",
@@ -814,7 +821,8 @@
       "components/composition/CommandPalette/CommandPalette.css",
       "components/composition/Dialog/Dialog.css",
       "components/composition/Drawer/Drawer.css",
-      "components/composition/Lightbox/Lightbox.css"
+      "components/composition/Lightbox/Lightbox.css",
+      "components/primitives/StatusDot/StatusDot.css"
     ],
     "emptystate-padding-x": [
       "components/patterns/EmptyState/EmptyState.css"
@@ -938,6 +946,7 @@
       "components/primitives/Select/Select.css",
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Slider/Slider.css",
+      "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Switch/Switch.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Text/Text.css",
@@ -1046,6 +1055,7 @@
       "components/primitives/ProgressBar/ProgressBar.css",
       "components/primitives/Select/Select.css",
       "components/primitives/Slider/Slider.css",
+      "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Text/Text.css",
       "components/primitives/Textarea/Textarea.css"
     ],
@@ -1253,6 +1263,7 @@
       "components/primitives/FileUpload/FileUpload.css",
       "components/primitives/Image/Image.css",
       "components/primitives/ProgressBar/ProgressBar.css",
+      "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Text/Text.css"
     ],
     "opacity-high": [
@@ -1572,6 +1583,7 @@
       "components/primitives/SkipLink/SkipLink.css",
       "components/primitives/Slider/Slider.css",
       "components/primitives/Stack/Stack.css",
+      "components/primitives/StatusDot/StatusDot.css",
       "components/primitives/Tag/Tag.css",
       "components/primitives/Textarea/Textarea.css",
       "components/primitives/TimePicker/TimePicker.css"
@@ -1635,6 +1647,15 @@
     ],
     "spinner-stroke-width": [
       "components/primitives/Spinner/Spinner.css"
+    ],
+    "status-dot-color": [
+      "components/primitives/StatusDot/StatusDot.css"
+    ],
+    "status-dot-pulse-duration": [
+      "components/primitives/StatusDot/StatusDot.css"
+    ],
+    "status-dot-size": [
+      "components/primitives/StatusDot/StatusDot.css"
     ],
     "stepper-connector-width": [
       "components/patterns/Stepper/Stepper.css"

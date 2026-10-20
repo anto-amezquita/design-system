@@ -224,6 +224,8 @@
   --skeleton-height-rect: 48px;
   --slider-track-height: 4px;
   --spinner-stroke-width: 2px;
+  --status-dot-size: 8px;
+  --status-dot-pulse-duration: 2000ms;
   --stepper-indicator-size: 32px;
   --stepper-connector-width: 4px;
   --switch-track-width: 44px;

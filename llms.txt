@@ -2,7 +2,7 @@
 
 > Token-first, multi-brand design system — DTCG tokens, Style Dictionary, CI-enforced linting/contrast/accessibility, Figma sync, and agent-safe governance.
 
-Extracted from and still powering [amezquita.dk](https://amezquita.dk). 76 components across primitives, composition, and pattern tiers.
+Extracted from and still powering [amezquita.dk](https://amezquita.dk). 77 components across primitives, composition, and pattern tiers.
 
 ## Install
 
@@ -65,6 +65,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Slider](https://design.amezquita.dk/components/slider.md): One value from a range, by dragging or with the keyboard: volume, a price limit, opacity
 - [Spinner](https://design.amezquita.dk/components/spinner.md): Indeterminate loading indicator for in-progress operations
 - [Stack](https://design.amezquita.dk/components/stack.md): Lays children out in one direction with a consistent gap from the brand's spacing roles
+- [StatusDot](https://design.amezquita.dk/components/status-dot.md): A small coloured dot that marks a status (online, live, degraded, failed), always with words
 - [Switch](https://design.amezquita.dk/components/switch.md): Binary toggle for on/off settings; renders as a styled checkbox under the hood
 - [Tag](https://design.amezquita.dk/components/tag.md): A short label on content: a category, a status word, a chosen value; optionally removable or clickable
 - [TagInput](https://design.amezquita.dk/components/tag-input.md): Free-text values as tags: keywords, email addresses, ingredients
