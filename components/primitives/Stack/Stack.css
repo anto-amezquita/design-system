@@ -1,0 +1,93 @@
+/*
+  Tokens consumed:
+
+  --space-tight-gap, --space-inline-gap, --space-element-gap,
+  --space-component-gap, --space-section-gap
+
+  No component tokens: the gap is the brand's own spacing roles, so a
+  --stack-gap-* set would only pass through (decisions/0004, 0005).
+*/
+
+.stack {
+  display: flex;
+  min-inline-size: 0;
+  margin: 0;
+}
+
+.stack--vertical {
+  flex-direction: column;
+}
+
+.stack--horizontal {
+  flex-direction: row;
+}
+
+.stack--wrap {
+  flex-wrap: wrap;
+}
+
+/* ul/ol: drop markers and indent; role="list" on the element keeps the semantics. */
+.stack--list {
+  padding: 0;
+  list-style: none;
+}
+
+.stack--gap-none {
+  gap: 0;
+}
+
+.stack--gap-tight {
+  gap: var(--space-tight-gap);
+}
+
+.stack--gap-inline {
+  gap: var(--space-inline-gap);
+}
+
+.stack--gap-element {
+  gap: var(--space-element-gap);
+}
+
+.stack--gap-component {
+  gap: var(--space-component-gap);
+}
+
+.stack--gap-section {
+  gap: var(--space-section-gap);
+}
+
+.stack--align-start {
+  align-items: flex-start;
+}
+
+.stack--align-center {
+  align-items: center;
+}
+
+.stack--align-end {
+  align-items: flex-end;
+}
+
+.stack--align-stretch {
+  align-items: stretch;
+}
+
+.stack--align-baseline {
+  align-items: baseline;
+}
+
+.stack--justify-start {
+  justify-content: flex-start;
+}
+
+.stack--justify-center {
+  justify-content: center;
+}
+
+.stack--justify-end {
+  justify-content: flex-end;
+}
+
+.stack--justify-between {
+  justify-content: space-between;
+}

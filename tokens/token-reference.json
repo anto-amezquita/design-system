@@ -5818,7 +5818,8 @@
       "axisAware": false,
       "usedBy": [
         "Grid",
-        "Section"
+        "Section",
+        "Stack"
       ]
     },
     {
@@ -5849,7 +5850,8 @@
         "FormLayout",
         "Hero",
         "Grid",
-        "Section"
+        "Section",
+        "Stack"
       ]
     },
     {
@@ -5887,7 +5889,8 @@
         "TopNav",
         "FileUpload",
         "Grid",
-        "Section"
+        "Section",
+        "Stack"
       ]
     },
     {
@@ -5952,6 +5955,7 @@
         "Skeleton",
         "SkipLink",
         "Slider",
+        "Stack",
         "Tag",
         "Textarea",
         "TimePicker"
@@ -6373,6 +6377,7 @@
         "SegmentedControl",
         "Select",
         "Slider",
+        "Stack",
         "Tag",
         "TagInput",
         "TimePicker"

@@ -1453,6 +1453,50 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### Stack
+
+| Field | Value |
+|---|---|
+| **Purpose** | Lays children out in one direction with a consistent gap from the brand's spacing roles |
+| **Figma name** | `Stack` (auto layout) |
+| **Code name** | `Stack` |
+| **Storybook path** | `Components/Stack` |
+
+**Props / variants**
+- `direction`: `vertical` (default, a column) or `horizontal` (a row)
+- `gap`: `none`, `tight`, `inline`, `element` (default), `component` or `section`, each the brand's `--space-*-gap` token
+- `align`: `start`, `center`, `end`, `stretch` (default) or `baseline`
+- `justify`: `start` (default), `center`, `end` or `between`
+- `wrap`: lets a horizontal Stack wrap onto more lines
+- `as`: `div` (default), `section`, `article`, `aside`, `header`, `footer`, `nav`, `main`, `ul`, `ol` or `span`
+- Native attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] default (layout only: no hover, focus or disabled state)
+
+**Tokens consumed**
+- `--space-tight-gap`, `--space-inline-gap`, `--space-element-gap`, `--space-component-gap`, `--space-section-gap` (no component tokens; they would only pass through)
+
+**Accessibility**
+- No role of its own: it renders the element in `as`, so pick the one that matches what the group is
+- As `ul` or `ol` it removes markers and indent and sets `role="list"`, because Safari drops list semantics once `list-style` is `none`. A `role` you pass wins
+- Visual order follows source order (no `reverse` prop), so reading and tab order match what's on screen
+
+**Do**
+- Use Stack instead of margins on children, so the spacing lives in one place and follows the brand.
+- Pick the gap by role: `inline` between buttons, `element` between items in a group, `component` between form fields or cards.
+- Use `as="ul"` when the items are a list a reader should hear counted.
+
+**Don't**
+- Don't nest Stacks just to add one extra space; choose a larger gap role.
+- Don't use Stack for two-dimensional layouts; that's Grid.
+- Don't reorder children with CSS on a Stack; change the source order so keyboard and screen-reader order match.
+
+**Chromatic stories**
+- `Default`, `Horizontal`, `Gaps`, `AsList`, `DarkMode`
+
+---
+
 ### Switch
 
 | Field | Value |
