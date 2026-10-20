@@ -964,6 +964,50 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 ---
 
+### DescriptionList
+
+| Field | Value |
+|---|---|
+| **Purpose** | Labelled values, like the details panel of a file or an order: terms and their descriptions, side by side or stacked |
+| **Figma name** | `DescriptionList` |
+| **Code name** | `DescriptionList` |
+| **Storybook path** | `Components/DescriptionList` |
+
+**Props / variants**
+- `items`: `{ term, description, id? }[]`; `description` can be an array for a term with several values, each its own `dd`
+- `layout`: `inline` (default; side by side once the list is 30rem wide, stacked below that) or `stacked`
+- `divided`: a line between pairs
+- Native `dl` attributes, `className` and `ref` pass through
+
+**Required states**
+- [x] default (static)
+- [x] responsive: inline stacks in a container narrower than 30rem (container query, so a sidebar stacks on a wide screen too)
+
+**Tokens consumed**
+- `--space-element-gap`, `--space-inline-gap`, `--space-tight-gap`, `--border-width-default`, `--color-border-default`
+- `--font-family-base`, `--font-size-small`, `--line-height-small`, `--font-weight-label`, `--font-size-control`, `--line-height-control`, `--color-text-secondary`, `--color-text-primary` (no component tokens; they would only pass through)
+
+**Accessibility**
+- A `dl` with `dt` and `dd`, so screen readers announce terms and their definitions as pairs; each pair is wrapped in a `div`, which HTML allows inside a `dl`
+- Visual order matches source order in both layouts, so reading order never jumps
+- Terms and values are tested at 4.5:1 on the primary and secondary surfaces in all five brands, light and dark
+- Long values wrap instead of overflowing, down to 320px wide
+
+**Do**
+- Use it for read-only details: a file's metadata, an order summary, a profile's facts.
+- Keep terms short; they're labels, not sentences.
+- Put rich values in the description (a StatusDot, a Timestamp, a Link) rather than formatting text by hand.
+
+**Don't**
+- Don't use it for editable fields; that's a FormLayout with Fields.
+- Don't use it for data people compare across rows; that's Table.
+- Don't leave a term without a value; show "—" or "None" so the pair still reads.
+
+**Chromatic stories**
+- `Default`, `Divided`, `Stacked`, `Narrow`, `DarkMode`
+
+---
+
 ### Divider
 
 | Field | Value |

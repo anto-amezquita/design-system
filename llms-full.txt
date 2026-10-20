@@ -145,6 +145,15 @@ A start and an end date: a stay, a report period, leave
 - Storybook: Components/DateRangePicker
 - Stories: Default, Booked, Danish, Error, Disabled, Open, DarkMode
 
+### DescriptionList
+
+Labelled values, like the details panel of a file or an order: terms and their descriptions, side by side or stacked
+
+- Import: `import { DescriptionList } from '@amezquita/design-system/components/primitives/DescriptionList'`
+- Token prefix: `descriptionlist-*` (0 tokens)
+- Storybook: Components/DescriptionList
+- Stories: Default, Divided, Stacked, Narrow, DarkMode
+
 ### Divider
 
 A line that separates groups of content, horizontally or vertically
