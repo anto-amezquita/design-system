@@ -762,6 +762,14 @@
   ],
   "unreleased": [
     {
+      "sha": "14a9105",
+      "type": "feat",
+      "scope": "resizable-panels",
+      "message": "two panes, a separator to drag or key",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "969300f",
       "type": "feat",
       "scope": "app-shell",
