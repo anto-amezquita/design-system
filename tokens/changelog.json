@@ -1282,6 +1282,14 @@
   ],
   "unreleased": [
     {
+      "sha": "72566bd",
+      "type": "feat",
+      "scope": "tool-call",
+      "message": "what an assistant's tool did, and asking before it acts",
+      "date": "2026-10-20",
+      "breaking": false
+    },
+    {
       "sha": "1ddb69a",
       "type": "feat",
       "scope": "message-list",
