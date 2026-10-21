@@ -16,6 +16,8 @@
 
 .lightbox {
   position: fixed;
+  /* One shared layer above the page (decisions/0027). */
+  z-index: var(--z-overlay);
   inset: 0;
   display: grid;
   grid-template-rows: auto 1fr;

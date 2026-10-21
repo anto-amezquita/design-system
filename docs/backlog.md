@@ -29,7 +29,7 @@ Opened 2026-09-28, deferred on purpose while building the `decisions/0015` compo
 
 **4. Tests for the other nine `tokens:lint` rules.** `scripts/lint-tokens.test.mjs` covers only `no-unknown-breakpoint`. The file and the exported `lintFile`/`RULES` now make the rest cheap to add.
 
-**5. `--z-dropdown` is referenced again, by NavigationMenu.** `decisions/0007`'s dead-token note listed it as unreferenced; it isn't any more (spec Deviation 6). `--z-overlay` and `--z-modal` are deprecated since `1.3.3` and go in 2.0 (see "Remove in 2.0").
+**5. `--z-dropdown` is referenced again, by NavigationMenu.** `decisions/0007`'s dead-token note listed it as unreferenced; it isn't any more (spec Deviation 6). `--z-modal` is deprecated since `1.3.3` and goes in 2.0 (see "Remove in 2.0"). `--z-overlay` was too, until `decisions/0027` made it the layer every portalled overlay shares.
 
 Status: not started.
 
@@ -43,7 +43,7 @@ Status: not started.
 
 Opened 2026-10-05. Breaking removals, held for the next major, together with whatever else it carries.
 
-**1. Four deprecated tokens.** `1.3.3` deprecated them in their `$description` (so the docs, the doc twins and the MCP tools say so): `z-overlay` and `z-modal` (unused since `decisions/0007`), `opacity-overlay` (Dialog's backdrop uses `color-surface-tertiary`) and `size-dialog-default` (Dialog uses `dialog-max-width`). Before removing, check again that neither site nor any other consumer has started using one: searched 2026-10-05 across this repo, the portfolio and design-system-site, and only comments mentioned them.
+**1. Three deprecated tokens.** `1.3.3` deprecated them in their `$description` (so the docs, the doc twins and the MCP tools say so): `z-modal` (unused since `decisions/0007`), `opacity-overlay` (Dialog's backdrop uses `color-surface-tertiary`) and `size-dialog-default` (Dialog uses `dialog-max-width`). (`z-overlay` was a fourth until `decisions/0027` put it back to use.) Before removing, check again that neither site nor any other consumer has started using one: searched 2026-10-05 across this repo, the portfolio and design-system-site, and only comments mentioned them.
 
 **2. `tokens/changelog.json`.** The copy inside each package is always one release behind: `build-changelog.mjs` groups commits by git tag, and a release's tag is created by `changeset publish`, after the tarball's contents are fixed (the `1.3.2` package ends at `v1.3.1`). Fixing that would mean rebuilding it in `release.yml` before publishing, against `decisions/0019`'s "main owns it". Nothing reads it any more: the docs site builds its changelog from `CHANGELOG.md`, which changesets writes correctly, and the portfolio retired its own copy on 2026-10-05. Decided with the user: accept the lag until 2.0, then remove the file from `package.json`'s `files`, `build-changelog.mjs`, `changelog-sync.mjs`, the `update-changelog` job in `chromatic.yml`, and the mentions in `docs/architecture.md` and 0019.
 

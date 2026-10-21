@@ -2297,7 +2297,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - Semantic element: `<a href="#main-content">`
 - On activation it moves focus to the target, adding `tabindex="-1"` if the target isn't focusable, so the next Tab continues from the main content instead of the top of the page
 - Visible whenever focused (`:focus`, not only `:focus-visible`)
-- The only component with an explicit z-index after decisions/0007: it isn't portalled, so mount order can't lift it
+- Its own z-index (`--z-skip-link`, the highest tier): it isn't portalled, so it can't rely on mount order, and it must show above everything, overlays included (decisions/0007, 0027)
 
 **Chromatic stories**
 - `Default`, `Focused`, `CustomTarget`, `DarkMode`
@@ -2604,7 +2604,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 - Radix Popover: a non-modal `role="dialog"`, named by `title` or `aria-label`
 - The trigger gets `aria-expanded` and `aria-controls`
 - Focus moves into the panel on open and back to the trigger on close; Escape and a click outside close it
-- No z-index: like Select, it's portalled and mounts last, so it paints on top, including inside a Dialog
+- The shared overlay layer, `--z-overlay`, like Select and Dialog (decisions/0027): above a page's sticky header, and since all overlays tie, the one opened last (this Popover inside a Dialog, say) paints on top
 
 **Do**
 - Use a Popover for something short that belongs to its trigger and can be dismissed without losing work.
@@ -2764,7 +2764,7 @@ Marked internal: it ships in the package because Drawer imports it, but it is ex
 - Built on Radix DropdownMenu: `role="menu"` / `menuitem`, the trigger gets `aria-haspopup` and `aria-expanded`
 - Keyboard: `Enter`, `Space` or `ArrowDown` opens and focuses the first item; arrow keys move; typing jumps to a matching item; `Escape` closes and returns focus to the trigger
 - An icon-only trigger needs an `aria-label` on the trigger itself
-- No z-index (decisions/0007): the panel is portalled, so it layers correctly inside a Dialog or Drawer (`Menu.nesting.test.tsx`)
+- The shared overlay layer, `--z-overlay` (decisions/0027): above a page's sticky header, and portalled, so opened inside a Dialog or Drawer it mounts later and paints on top (`Menu.nesting.test.tsx`)
 
 **Chromatic stories**
 - `Default`, `Open`, `WithGroupLabelsAndIcons`, `Overflow`, `DarkMode`

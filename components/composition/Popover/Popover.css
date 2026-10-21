@@ -9,12 +9,15 @@
   --line-height-h5, --font-weight-heading, --color-text-primary,
   --duration-interaction, --easing-default
 
-  No z-index, for the reason Select.css gives (decisions/0007): portalled
-  content mounts last, so it paints on top, including inside a Dialog.
+  --z-overlay: the shared layer every portalled overlay uses
+  (decisions/0027), above a page's sticky header; inside a Dialog, the tie
+  goes to mount order, so it paints on top.
 */
 
 .popover {
   box-sizing: border-box;
+  /* One shared layer above the page (decisions/0027). */
+  z-index: var(--z-overlay);
   max-inline-size: min(calc(100vw - 2 * var(--space-element-gap)), var(--radix-popover-content-available-width));
   max-block-size: var(--radix-popover-content-available-height);
   overflow: auto;

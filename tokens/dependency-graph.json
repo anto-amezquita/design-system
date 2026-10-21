@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 95,
-    "tokenCount": 272
+    "tokenCount": 273
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -2066,6 +2066,15 @@
     ],
     "z-dropdown": [
       "components/composition/NavigationMenu/NavigationMenu.css"
+    ],
+    "z-overlay": [
+      "components/composition/CommandPalette/CommandPalette.css",
+      "components/composition/Dialog/Dialog.css",
+      "components/composition/Drawer/Drawer.css",
+      "components/composition/Lightbox/Lightbox.css",
+      "components/composition/Menu/Menu.css",
+      "components/composition/Popover/Popover.css",
+      "components/primitives/Select/Select.css"
     ],
     "z-skip-link": [
       "components/primitives/SkipLink/SkipLink.css"

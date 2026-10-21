@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted — implemented in full (2026-09-14). `Textarea`, `Badge`, `Checkbox`, `Input` all extended to the passthrough pattern; `className` merged on all four plus `Button`; `Select`-in-`Dialog` z-index fixed. Pre-merge code review then found and fixed a real regression this branch introduced (`Drawer` outranking `Dialog`/`AlertDialog`) plus three narrower correctness gaps of the same shape (`Badge`'s `role`, `Checkbox`'s `children`/`asChild`, `Textarea`/`Input`'s `children`). See Verified below.
+Accepted, then amended by [`0027`](./0027-overlays-share-one-layer-above-sticky.md) (2026-10-21): overlays now share one z-index, `--z-overlay`, instead of none, so they paint above a page's sticky layer; mount order still decides among them. Implemented in full (2026-09-14). `Textarea`, `Badge`, `Checkbox`, `Input` all extended to the passthrough pattern; `className` merged on all four plus `Button`; `Select`-in-`Dialog` z-index fixed. Pre-merge code review then found and fixed a real regression this branch introduced (`Drawer` outranking `Dialog`/`AlertDialog`) plus three narrower correctness gaps of the same shape (`Badge`'s `role`, `Checkbox`'s `children`/`asChild`, `Textarea`/`Input`'s `children`). See Verified below.
 
 ## Context
 

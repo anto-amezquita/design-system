@@ -292,7 +292,7 @@
   "z-overlay": {
     "$value": 300,
     "$type": "number",
-    "$description": "Deprecated, removed in 2.0: unused since decisions/0007 let overlays stack by mount order instead of fixed levels."
+    "$description": "The one layer every portalled overlay shares (Dialog, Drawer, AlertDialog, Select, Popover, HoverCard, Menu, ContextMenu, CommandPalette, Lightbox): above the page's sticky layer, and equal among overlays so the one opened last paints on top (decisions/0027)."
   },
   "z-modal": {
     "$value": 400,
