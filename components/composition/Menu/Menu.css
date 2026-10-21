@@ -16,12 +16,14 @@
   here is a semantic token used as-is (decisions/0005).
 */
 
-/* Panel. No z-index on purpose (decisions/0007): the content is portalled
-   to document.body, so a Menu opened inside a Dialog mounts after it and
+/* Panel. The shared overlay layer (decisions/0027): above a page's sticky
+   header, and tied with a Dialog, so one opened inside it mounts later and
    paints on top. Menu.nesting.test.tsx holds that. */
 
 .menu {
   min-width: var(--radix-dropdown-menu-trigger-width);
+  /* One shared layer above the page (decisions/0027). */
+  z-index: var(--z-overlay);
   padding: var(--space-tight-gap);
   background: var(--color-surface-primary);
   border: var(--border-width-interactive) solid var(--color-border-default);

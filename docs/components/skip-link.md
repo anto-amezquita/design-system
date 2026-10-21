@@ -31,4 +31,4 @@ Also accepts all props of: `Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 
 - Semantic element: `<a href="#main-content">`
 - On activation it moves focus to the target, adding `tabindex="-1"` if the target isn't focusable, so the next Tab continues from the main content instead of the top of the page
 - Visible whenever focused (`:focus`, not only `:focus-visible`)
-- The only component with an explicit z-index after decisions/0007: it isn't portalled, so mount order can't lift it
+- Its own z-index (`--z-skip-link`, the highest tier): it isn't portalled, so it can't rely on mount order, and it must show above everything, overlays included (decisions/0007, 0027)

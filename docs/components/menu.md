@@ -45,4 +45,4 @@
 - Built on Radix DropdownMenu: `role="menu"` / `menuitem`, the trigger gets `aria-haspopup` and `aria-expanded`
 - Keyboard: `Enter`, `Space` or `ArrowDown` opens and focuses the first item; arrow keys move; typing jumps to a matching item; `Escape` closes and returns focus to the trigger
 - An icon-only trigger needs an `aria-label` on the trigger itself
-- No z-index (decisions/0007): the panel is portalled, so it layers correctly inside a Dialog or Drawer (`Menu.nesting.test.tsx`)
+- The shared overlay layer, `--z-overlay` (decisions/0027): above a page's sticky header, and portalled, so opened inside a Dialog or Drawer it mounts later and paints on top (`Menu.nesting.test.tsx`)

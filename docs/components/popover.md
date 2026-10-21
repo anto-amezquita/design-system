@@ -36,4 +36,4 @@
 - Radix Popover: a non-modal `role="dialog"`, named by `title` or `aria-label`
 - The trigger gets `aria-expanded` and `aria-controls`
 - Focus moves into the panel on open and back to the trigger on close; Escape and a click outside close it
-- No z-index: like Select, it's portalled and mounts last, so it paints on top, including inside a Dialog
+- The shared overlay layer, `--z-overlay`, like Select and Dialog (decisions/0027): above a page's sticky header, and since all overlays tie, the one opened last (this Popover inside a Dialog, say) paints on top
