@@ -1,8 +1,15 @@
 {
   "meta": {
-    "generatedAt": "2026-10-20"
+    "generatedAt": "2026-10-21"
   },
   "versions": [
+    {
+      "tag": "v1.6.1",
+      "date": "2026-10-21",
+      "sha": "49b2f5b",
+      "entries": [],
+      "entryCount": 0
+    },
     {
       "tag": "v1.6.0",
       "date": "2026-10-20",
@@ -1352,7 +1359,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "2a7059d",
+      "type": "fix",
+      "scope": "overlays",
+      "message": "share one layer above the page's sticky layer",
+      "date": "2026-10-21",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
