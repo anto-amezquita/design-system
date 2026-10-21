@@ -1,5 +1,11 @@
 # @amezquita/design-system
 
+## 1.6.2
+
+### Patch Changes
+
+- 2a7059d: Overlays open above sticky headers. Dialog, Drawer, AlertDialog, Select, Popover, HoverCard, Menu, ContextMenu, CommandPalette and Lightbox had no z-index (decisions/0007), so anything on the page with one, such as TopNav's or MobileNav's `--z-sticky`, or a site's own sticky header, painted over them: a Drawer's title and Close button sat under the header. They now share one layer, `--z-overlay` (300), above the page's sticky layer; equal values tie, so the overlay opened last still paints on top, as before (decisions/0027). `z-overlay` is no longer deprecated.
+
 ## 1.6.1
 
 ### Patch Changes
