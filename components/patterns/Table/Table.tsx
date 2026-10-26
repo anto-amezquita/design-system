@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import { cn } from '../../../lib/cn'
 import './Table.css'
 
@@ -21,7 +21,12 @@ export function Table({ striped = false, bordered = false, compact = false, clas
   // table actually overflows — otherwise it's an inert extra Tab stop.
   const [scrollable, setScrollable] = useState(false)
 
-  useEffect(() => {
+  // useLayoutEffect, not useEffect: the first measurement must land before the
+  // browser paints, so an overflowing table is a focusable region from its
+  // first frame. With useEffect there was a painted frame where the wrapper
+  // scrolled but had no tabIndex; React 19.3's scheduling made axe land in it
+  // (scrollable-region-focusable), and a fast keyboard user could too.
+  useLayoutEffect(() => {
     const el = wrapperRef.current
     if (!el) return
     const checkOverflow = () => setScrollable(el.scrollWidth > el.clientWidth)
