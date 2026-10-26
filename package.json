@@ -93,14 +93,14 @@
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
     "@testing-library/user-event": "^14.6.3",
-    "@types/node": "latest",
+    "@types/node": "26.1.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitest/browser-playwright": "latest",
-    "@vitest/coverage-v8": "latest",
+    "@vitest/browser-playwright": "4.1.12",
+    "@vitest/coverage-v8": "4.1.12",
     "chromatic": "^18.0.1",
     "glob": "^11.0.0",
-    "playwright": "latest",
+    "playwright": "1.62.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "shadcn": "^4.21.1",
@@ -108,7 +108,7 @@
     "style-dictionary": "^5.4.0",
     "typescript": "^6.0.3",
     "vite": "^6.0.0",
-    "vitest": "latest",
+    "vitest": "4.1.12",
     "zod": "^3.25.76"
   }
 }
