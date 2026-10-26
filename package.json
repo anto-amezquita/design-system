@@ -84,7 +84,7 @@
     "markdown-to-jsx": "9.10.3"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.7",
+    "@changesets/cli": "^3.0.3",
     "@modelcontextprotocol/sdk": "^1.30.0",
     "@storybook/addon-a11y": "^10.3.6",
     "@storybook/addon-docs": "^10.3.6",
@@ -99,16 +99,16 @@
     "@vitest/browser-playwright": "latest",
     "@vitest/coverage-v8": "latest",
     "chromatic": "^18.0.1",
-    "glob": "^11.0.0",
+    "glob": "^13.0.6",
     "playwright": "latest",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "shadcn": "^4.21.1",
     "storybook": "^10.3.6",
     "style-dictionary": "^5.4.0",
-    "typescript": "^6.0.3",
-    "vite": "^6.0.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
     "vitest": "latest",
-    "zod": "^3.25.76"
+    "zod": "^4.6.7"
   }
 }
