@@ -1375,7 +1375,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "62cc545",
+      "type": "fix",
+      "scope": "table",
+      "message": "make overflowing tables focusable from the first frame",
+      "date": "2026-10-26",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
