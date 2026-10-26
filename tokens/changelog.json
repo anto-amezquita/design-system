@@ -4,6 +4,22 @@
   },
   "versions": [
     {
+      "tag": "v1.6.3",
+      "date": "2026-10-26",
+      "sha": "7934568",
+      "entries": [
+        {
+          "sha": "62cc545",
+          "type": "fix",
+          "scope": "table",
+          "message": "make overflowing tables focusable from the first frame",
+          "date": "2026-10-26",
+          "breaking": false
+        }
+      ],
+      "entryCount": 1
+    },
+    {
       "tag": "v1.6.2",
       "date": "2026-10-21",
       "sha": "db04b92",
@@ -1375,16 +1391,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "62cc545",
-      "type": "fix",
-      "scope": "table",
-      "message": "make overflowing tables focusable from the first frame",
-      "date": "2026-10-26",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
