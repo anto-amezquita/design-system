@@ -35,11 +35,15 @@ jobs:
       # Trusted publishing needs a recent npm CLI (11.5.1+) to detect and use
       # the OIDC token — the version bundled with actions/setup-node may lag.
       - name: Ensure npm supports OIDC trusted publishing
-        run: npm install -g npm@latest
+        # Pinned, not @latest: this job publishes to npm, so it must not pick up
+        # an npm release published minutes ago. Bump deliberately (11.5.1+).
+        run: npm install -g npm@11.21.1
 
       - name: Create Release Pull Request or publish to npm
         id: changesets
-        uses: changesets/action@v1
+        # Pinned to a full SHA: this job can publish to npm (id-token: write),
+        # so a moved tag must not be able to change the code it runs.
+        uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
         with:
           # `npm run version` also brings package-lock.json's own version in
           # line; `changeset version` alone bumps only package.json, which left
