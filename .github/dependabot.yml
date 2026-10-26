@@ -1,12 +1,16 @@
 version: 2
 updates:
-  # Routine updates, grouped into a few PRs a week. The cooldown waits 7 days
+  # Routine updates, grouped into a few PRs a month. Monthly, not weekly:
+  # every dependency PR re-snapshots all Storybook stories in Chromatic
+  # (a lockfile change defeats TurboSnap), and weekly runs used up the
+  # free monthly snapshot limit. Security updates are unaffected and still
+  # open as soon as an advisory is published. The cooldown waits 7 days
   # before proposing a new release (security updates skip it), so a hijacked
   # version is usually caught and pulled before it reaches this repo.
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     cooldown:
       default-days: 7
     groups:
@@ -20,4 +24,4 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
