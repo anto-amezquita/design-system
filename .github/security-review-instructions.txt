@@ -1,0 +1,8 @@
+Additional categories for this codebase (React, Next.js or Vite, a token-based design system, GitHub Actions, AI agents):
+
+- Rendering untrusted or model-generated text as HTML: dangerouslySetInnerHTML, innerHTML, Markdown or MDX rendered without sanitising, javascript: URLs in links built from data.
+- Next.js: Server Actions and Route Handlers without auth or input validation, secrets in NEXT_PUBLIC_* variables, user-controlled URLs passed to next/image remote patterns, redirects or fetch (SSRF).
+- GitHub Actions workflows changed in this diff: pull_request_target, issue_comment or issues triggers that run untrusted input, ${{ github.event.* }} interpolated into run: steps, third-party actions not pinned to a full commit SHA, permissions wider than the job needs, secrets exposed to steps that process untrusted text.
+- Dependencies added in this diff: a new package, a version range loosened to latest or *, install scripts enabled, or a name that looks typosquatted.
+- AI agents and MCP: tools exposed to a model that can write files, run commands or reach the network without a check; model output passed to eval, a shell or a file path; prompts built from untrusted input that also hold secrets.
+- Components that render children or props as HTML, or build a style, href or src attribute from props.
