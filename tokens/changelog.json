@@ -1,8 +1,24 @@
 {
   "meta": {
-    "generatedAt": "2026-10-21"
+    "generatedAt": "2026-10-26"
   },
   "versions": [
+    {
+      "tag": "v1.6.2",
+      "date": "2026-10-21",
+      "sha": "db04b92",
+      "entries": [
+        {
+          "sha": "2a7059d",
+          "type": "fix",
+          "scope": "overlays",
+          "message": "share one layer above the page's sticky layer",
+          "date": "2026-10-21",
+          "breaking": false
+        }
+      ],
+      "entryCount": 1
+    },
     {
       "tag": "v1.6.1",
       "date": "2026-10-21",
@@ -1359,16 +1375,7 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [
-    {
-      "sha": "2a7059d",
-      "type": "fix",
-      "scope": "overlays",
-      "message": "share one layer above the page's sticky layer",
-      "date": "2026-10-21",
-      "breaking": false
-    }
-  ],
+  "unreleased": [],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
