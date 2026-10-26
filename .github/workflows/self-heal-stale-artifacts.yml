@@ -37,6 +37,11 @@ concurrency:
 
 jobs:
   regenerate-and-open-pr:
+    # Not on Dependabot's branches. Dependabot runs get no repository secrets,
+    # so the App token step fails anyway, and the App's private key should not
+    # be handed to Dependabot's context to make it work. A stale artifact on a
+    # Dependabot PR still shows red in chromatic.yml's staleness check.
+    if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
 
     # Deliberately read-only. Every write in this job goes through the GitHub
