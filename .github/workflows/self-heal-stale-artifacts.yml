@@ -67,11 +67,11 @@ jobs:
       # tokens/changelog.json is no longer in SELF_HEAL_PATHS (decisions/0019),
       # so a near-empty changelog from a shallow clone would be thrown away,
       # not committed, but the full history is still the honest input.
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
         with:
           node-version: 24
           cache: npm
