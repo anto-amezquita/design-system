@@ -96,8 +96,8 @@
     "@types/node": "26.1.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitest/browser-playwright": "4.1.12",
-    "@vitest/coverage-v8": "4.1.12",
+    "@vitest/browser-playwright": "5.0.5",
+    "@vitest/coverage-v8": "5.0.5",
     "chromatic": "^18.0.1",
     "glob": "13.0.6",
     "playwright": "1.62.1",
@@ -108,7 +108,7 @@
     "style-dictionary": "^5.4.0",
     "typescript": "^6.0.3",
     "vite": "^6.0.0",
-    "vitest": "4.1.12",
+    "vitest": "5.0.5",
     "zod": "4.6.7"
   }
 }

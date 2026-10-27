@@ -8,6 +8,8 @@ storybook-static/
 # Vitest browser-mode debug output — regenerated per run, not committed
 __screenshots__/
 .vitest-attachments/
+# Vitest 5 writes all reports and attachments here
+.vitest/
 
 # CI script output — generated on each run, not committed
 a11y-report.json
