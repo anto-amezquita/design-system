@@ -48,6 +48,32 @@ const NATIVELY_FOCUSABLE = new Set(['a', 'button', 'input', 'select', 'textarea'
 const keyName = (k: string) => ({ Ctrl: 'Control', Cmd: 'Meta', '⌘': 'Meta', Opt: 'Alt', '⌥': 'Alt', '⇧': 'Shift', Del: 'Delete', Esc: 'Escape' } as Record<string, string>)[k] ?? k
 
 /**
+ * Windows and Linux turn Shift+F10 and the Menu key into a contextmenu event
+ * on the focused element; macOS doesn't, so there the menu couldn't be opened
+ * from the keyboard at all. Handling the keys here gives every platform the
+ * same behaviour. preventDefault stops the native event where it exists, so
+ * the menu doesn't open twice. The menu opens at the area's bottom-left
+ * corner, kept inside the viewport.
+ */
+function openFromKeyboard(disabled: boolean) {
+  return (event: React.KeyboardEvent<HTMLElement>) => {
+    const isShortcut = (event.key === 'F10' && event.shiftKey) || event.key === 'ContextMenu'
+    if (disabled || !isShortcut) return
+    event.preventDefault()
+    const area = event.currentTarget
+    const rect = area.getBoundingClientRect()
+    area.dispatchEvent(
+      new MouseEvent('contextmenu', {
+        bubbles: true,
+        cancelable: true,
+        clientX: Math.max(0, rect.left),
+        clientY: Math.min(rect.bottom, window.innerHeight - 1),
+      }),
+    )
+  }
+}
+
+/**
  * The actions for one thing, opened where the pointer is: right-click, a
  * long press on touch, or Shift+F10 or the Menu key on the focused area.
  * Radix ContextMenu with Menu's look and item shape. A shortcut for the
@@ -57,7 +83,7 @@ export function ContextMenu({ children, groups, onOpenChange, disabled = false, 
   // Content portals to <body>; this keeps a ThemeScope's brand and mode on it (decisions/0021).
   const scope = useThemeScopeAttributes()
 
-  // Shift+F10 and the Menu key fire the contextmenu event on the focused element, so the area must take focus.
+  // Shift+F10 and the Menu key open the menu on the focused area, so the area must take focus.
   const props = isValidElement<{ tabIndex?: number }>(children) ? children.props : {}
   const focusable = typeof children.type === 'string' && NATIVELY_FOCUSABLE.has(children.type)
   const target = !focusable && props.tabIndex === undefined ? cloneElement(children as React.ReactElement<{ tabIndex?: number }>, { tabIndex: 0 }) : children
@@ -66,7 +92,7 @@ export function ContextMenu({ children, groups, onOpenChange, disabled = false, 
     // Non-modal, as Menu: modal mode hides the rest of the page with aria-hidden,
     // which leaves focusable elements inside it (axe: aria-hidden-focus).
     <RadixContextMenu.Root onOpenChange={onOpenChange} modal={false}>
-      <RadixContextMenu.Trigger asChild disabled={disabled}>{target}</RadixContextMenu.Trigger>
+      <RadixContextMenu.Trigger asChild disabled={disabled} onKeyDown={openFromKeyboard(disabled)}>{target}</RadixContextMenu.Trigger>
       <RadixContextMenu.Portal>
         <RadixContextMenu.Content {...scope} className={cn('menu context-menu', className)} aria-label={ariaLabel} collisionPadding={8}>
           {groups.map((group, groupIndex) => (
