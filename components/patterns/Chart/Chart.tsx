@@ -10,6 +10,11 @@ import { VisuallyHidden } from '../../primitives/VisuallyHidden'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../Table'
 import './Chart.css'
 
+// Typed here rather than through @types/node, so a project on TypeScript 6+
+// compiles this shipped source without Node types. Module-scoped, so it never
+// clashes with @types/node; bundlers still replace process.env.NODE_ENV inline.
+declare const process: { env: { NODE_ENV?: string } }
+
 export type ChartDatum = Record<string, string | number | Date | null | undefined>
 
 export type ChartSeries = {

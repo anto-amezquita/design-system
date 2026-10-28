@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 
+// Typed here rather than through @types/node, so a project on TypeScript 6+
+// compiles this shipped source without Node types. Module-scoped, so it never
+// clashes with @types/node; bundlers still replace process.env.NODE_ENV inline.
+declare const process: { env: { NODE_ENV?: string } }
+
 /**
  * Bridges controlled and uncontrolled modes for a single piece of state — text inputs by
  * default, but generic so a dual-mode object value (e.g. DataTable's `filters`) can reuse
