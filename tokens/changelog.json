@@ -1423,7 +1423,16 @@
       "entryCount": 0
     }
   ],
-  "unreleased": [],
+  "unreleased": [
+    {
+      "sha": "cae1a34",
+      "type": "fix",
+      "scope": null,
+      "message": "compile without @types/node on TypeScript 6+ (module-scoped process type) (#197)",
+      "date": "2026-10-28",
+      "breaking": false
+    }
+  ],
   "typeLabels": {
     "feat": "Features",
     "fix": "Fixes",
