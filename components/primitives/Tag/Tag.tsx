@@ -4,6 +4,11 @@ import { XIcon } from '@phosphor-icons/react'
 import { cn } from '../../../lib/cn'
 import './Tag.css'
 
+// Typed here rather than through @types/node, so a project on TypeScript 6+
+// compiles this shipped source without Node types. Module-scoped, so it never
+// clashes with @types/node; bundlers still replace process.env.NODE_ENV inline.
+declare const process: { env: { NODE_ENV?: string } }
+
 type TagProps = {
   variant?: 'default' | 'accent' | 'muted'
   children: React.ReactNode

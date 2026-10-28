@@ -7,6 +7,11 @@ import { cn } from '../../../lib/cn'
 import { useField } from '../../../lib/field'
 import './Input.css'
 
+// Typed here rather than through @types/node, so a project on TypeScript 6+
+// compiles this shipped source without Node types. Module-scoped, so it never
+// clashes with @types/node; bundlers still replace process.env.NODE_ENV inline.
+declare const process: { env: { NODE_ENV?: string } }
+
 // `children` excluded (same latent gap the code review flagged on Textarea,
 // 2026-09-14): part of the native input attributes type via DOMAttributes,
 // but <input> is a void element — passing children through `...rest` onto

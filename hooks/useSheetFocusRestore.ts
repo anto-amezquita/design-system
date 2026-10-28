@@ -1,5 +1,10 @@
 import { useCallback, useRef } from 'react'
 
+// Typed here rather than through @types/node, so a project on TypeScript 6+
+// compiles this shipped source without Node types. Module-scoped, so it never
+// clashes with @types/node; bundlers still replace process.env.NODE_ENV inline.
+declare const process: { env: { NODE_ENV?: string } }
+
 /**
  * Shared focus-restore logic for non-modal sheet-like overlays (Dialog, Drawer).
  *
