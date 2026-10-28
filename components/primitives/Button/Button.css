@@ -44,7 +44,7 @@
   user-select: none;
 }
 
-.button:hover {
+.button:hover:where(:not(:disabled, .button--disabled)) {
   border-color: var(--color-accent-hover);
 }
 
@@ -53,7 +53,7 @@
    and a CSS background would land instantly, ahead of the sweep. They get the
    fill back under reduced motion, where the wipe doesn't run. */
 
-.button:not(.button--expressive):hover {
+.button:not(.button--expressive):hover:where(:not(:disabled, .button--disabled)) {
   background: var(--color-accent-hover);
 }
 
@@ -109,11 +109,11 @@
     color var(--duration-interaction) var(--easing-default);
 }
 
-.button--secondary:hover {
+.button--secondary:hover:where(:not(:disabled, .button--disabled)) {
   border-color: var(--button-secondary-background-hover);
 }
 
-.button--secondary:not(.button--expressive):hover {
+.button--secondary:not(.button--expressive):hover:where(:not(:disabled, .button--disabled)) {
   background: var(--button-secondary-background-hover);
   color: var(--color-accent-foreground);
 }
@@ -133,11 +133,11 @@
 
 /* The base .button:hover darkens the border for primary and secondary; a
    ghost has no border, so it keeps its transparent one on hover too. */
-.button--ghost:hover {
+.button--ghost:hover:where(:not(:disabled, .button--disabled)) {
   border-color: var(--button-ghost-border);
 }
 
-.button--ghost:not(.button--expressive):hover {
+.button--ghost:not(.button--expressive):hover:where(:not(:disabled, .button--disabled)) {
   background: var(--color-surface-secondary);
 }
 
@@ -155,14 +155,14 @@
   overflow: visible;
 }
 
-.button--link:hover {
+.button--link:hover:where(:not(:disabled, .button--disabled)) {
   border-color: transparent;
   text-decoration-color: currentColor;
 }
 
 /* Matches the specificity of the functional fill above, and comes after it,
    so a link button keeps its transparent background on hover. */
-.button--link:not(.button--expressive):hover {
+.button--link:not(.button--expressive):hover:where(:not(:disabled, .button--disabled)) {
   background: none;
 }
 
@@ -227,7 +227,7 @@
   transition: transform var(--duration-interaction) var(--easing-default);
 }
 
-.button:hover .button__arrow {
+.button:hover:where(:not(:disabled, .button--disabled)) .button__arrow {
   transform: translateX(var(--button-arrow-nudge));
 }
 
@@ -312,21 +312,21 @@
   /* The wipe doesn't run here, so an expressive button falls back to the
      functional fill it opted out of above. Functional buttons already have it. */
 
-  .button--expressive:hover {
+  .button--expressive:hover:where(:not(:disabled, .button--disabled)) {
     background: var(--color-accent-hover);
   }
 
-  .button--expressive.button--secondary:hover {
+  .button--expressive.button--secondary:hover:where(:not(:disabled, .button--disabled)) {
     background: var(--button-secondary-background-hover);
     color: var(--color-accent-foreground);
   }
 
-  .button--expressive.button--ghost:hover {
+  .button--expressive.button--ghost:hover:where(:not(:disabled, .button--disabled)) {
     background: var(--color-surface-secondary);
   }
 
   /* Link resets must come after the generic hover rules to win the cascade */
-  .button--expressive.button--link:hover {
+  .button--expressive.button--link:hover:where(:not(:disabled, .button--disabled)) {
     background: none;
   }
 }
