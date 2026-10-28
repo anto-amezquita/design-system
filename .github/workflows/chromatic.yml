@@ -34,6 +34,11 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      # Apps compile this package's raw source with their own `types`; since
+      # TypeScript 6 that excludes Node unless they add it (scripts/check-consumer-types.mjs).
+      - name: Consumer type check (no @types/node)
+        run: npm run typecheck:consumer
+
       - name: Build dependency graph
         run: node scripts/build-dependency-graph.mjs
 

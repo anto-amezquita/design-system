@@ -38,3 +38,6 @@ ds-bundle/
 .design-sync/learnings/
 .design-sync/.cache/
 .design-sync/node_modules
+
+# Written and removed by scripts/check-consumer-types.mjs
+tsconfig.consumer-check.json
