@@ -139,7 +139,7 @@ Read-only tools over the same files this package ships, read live instead of fro
 - `list_components`: List every public component in the design system, optionally filtered by tier (primitives, composition, patterns).
 - `get_component`: Get the compiled documentation for one public component — full prop table with literal unions expanded, its token list, and a usage example.
 - `search_tokens`: Search all design tokens (primitive, semantic, and component-scoped) by a substring match on name or CSS variable, optionally narrowed to one category.
-- `get_token`: Get the full entry for one exact token — raw value, resolved value on each theme axis, and which components use it.
+- `get_token`: Get the full entry for one exact token — raw value, resolved value on each theme axis, which components use it, and whether a project brand may set it (brandSettable, decisions/0028).
 - `validate_token`: Check whether a var(--x) reference or bare token name is real, before using it in CSS.
 - `get_registry_item`: Get the shadcn-spec registry-item.json for one public component — its npm dependency, cross-component registryDependencies, and the CSS custom properties it needs.
 - `get_skill`: Get the current agent skill content (SKILL.md) — the same file served from /.well-known/skills/ for agents that read the skill format instead of calling MCP tools directly.

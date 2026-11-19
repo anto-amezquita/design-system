@@ -6,6 +6,8 @@ Router, not a rulebook. Read this, then follow the links — don't try to hold t
 
 Adding or changing a component? Read its compiled twin first: `docs/components/<slug>.md` (real prop table, real tokens, a real usage example — generated from source, not hand-maintained). If the twin doesn't exist yet, `npm run tokens` regenerates it after you add the component to `docs/components.md`.
 
+Building or changing a brand? A product's brand lives in its own repo; [`docs/brand-contract.md`](docs/brand-contract.md) (generated) lists what it may set, and `npx amezquita-brand check <dir>` checks it — ADR [`0028`](decisions/0028-brand-contract-for-project-brands.md). Making a token settable means adding `"amezquita.brand": "settable"` to its definition, a minor release; taking the marker away is a major.
+
 ## Prefer the MCP tools when connected
 
 If the `amezquita-design-system` MCP server is connected (check `claude mcp list`), its tools are the same data as the files below, one call instead of a path to remember: `list_components`/`get_component` for props and usage, `search_tokens`/`get_token`/`validate_token` for tokens, `get_registry_item` for the shadcn-spec manifest, `get_skill` for this system's agent skill. Not connected? Nothing here is MCP-only — every file pointer in this document still works. Spec: [`specs/mcp-server-spec.md`](specs/mcp-server-spec.md).
@@ -28,7 +30,7 @@ If the `amezquita-design-system` MCP server is connected (check `claude mcp list
 
 ## Do not
 
-- Hand-edit anything generated (`docs/components/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `lib/theme-brands.ts`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, `skills/amezquita-design-system/`) — fix the generator in `scripts/` and run `npm run tokens`.
+- Hand-edit anything generated (`docs/components/`, `docs/brand-contract.md`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `lib/theme-brands.ts`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, `skills/amezquita-design-system/`) — fix the generator in `scripts/` and run `npm run tokens`.
 - Add a component token that's a pass-through or chain-skip to its referent in every brand/mode without a reason — it's a collapse candidate on day one, not free (see the token-architecture backlog in `docs/backlog.md`).
 - Introduce a second full semantic token tier for a new brand — a brand is a thin override skin on `base` (see ADR [`0001`](decisions/0001-white-label-base-portfolio-brand-split.md)), never its own complete color/type/spacing tier.
 - Adopt an external library or convention wholesale for one technique you need from it — see ADR [`0002`](decisions/0002-reject-transitions-dev-library-adopt-audit-technique.md).
@@ -61,7 +63,7 @@ Some ship with sub-components, registered separately (40 in all, listed in `toke
 
 ## Not done until
 
-`npm run validate` exits `0`. It chains the token linter, the token-architecture linter, the contrast checker, the component-registry check, the story-coverage check, `tsc --noEmit`, and the test suite — full detail and rationale in [`docs/quality.md`](docs/quality.md). A non-zero exit on any of them means the change isn't finished — fix the underlying issue, don't route around the check.
+`npm run validate` exits `0`. It chains the token linter, the token-architecture linter, the brand check (contract and contrast), the component-registry check, the story-coverage check, `tsc --noEmit`, and the test suite — full detail and rationale in [`docs/quality.md`](docs/quality.md). A non-zero exit on any of them means the change isn't finished — fix the underlying issue, don't route around the check.
 
 ## Roadmap and backlog
 

@@ -24,20 +24,23 @@ Adapted from the ai-product-starter-kit's `architecture.md` template — section
 
 ```
 components/
-  primitives/     — 16 components: Avatar, Badge, Button, Checkbox, Heading, Input,
-                     Label, Link, Radio, Select, Skeleton, SkipLink, Spinner, Switch,
-                     Tag, Textarea
-  composition/     — 9 components: Alert, AlertDialog, Card, Dialog, Drawer, Menu,
-                     NavigationMenu, Toast, Tooltip
-  patterns/        — 9 components: Accordion, Breadcrumb, DataTable, EmptyState,
-                     Hero, Pagination, SideNav, Table, Tabs
+  primitives/     — 56 component directories
+  composition/     — 16 directories: 15 public components and the internal BaseSheet
+  patterns/        — 26 component directories
+                     (the names are in AGENTS.md and tokens/component-registry.json;
+                     see the note on counts below)
 lib/, hooks/       — shared utilities and hooks (e.g. useUncontrolledValue,
                      breakpoints.ts for the breakpoint tokens in JS, navigation.ts
                      for the NavItem type NavigationMenu and SideNav share)
+brand/             — the brand contract and its check, shipped for projects to run
+                     on their own brand (ADR 0028): contract.mjs reads the markers,
+                     check.mjs is checkBrand(), cli.mjs is the amezquita-brand
+                     command. Node only; no component imports it.
 tokens/
   global.json           — Tier 1: primitives
   brands/<name>/*.json  — Tier 2: semantic, per brand (base, portfolio, demo-*) and mode (light/dark)
   components/<name>.json — Tier 3: component-scoped tokens
+  contrast-pairs.json   — the pairs every brand's contrast is checked on (hand-maintained, shipped)
   component-registry.json, token-reference.json, fonts.json, changelog.json — generated, do not hand-edit
 styles/brands/     — compiled CSS output (generated)
 scripts/           — all build/lint/audit/generator scripts (see §9), plus the
@@ -75,7 +78,7 @@ If a number in one file looks like it contradicts a number in another, check whi
 ### Structure rules
 
 - A token belongs to exactly one tier (§3) — never skip a tier from component CSS to a primitive.
-- Anything in `docs/components/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `lib/theme-brands.ts`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, and `skills/amezquita-design-system/` is **generated**. If it's wrong, fix the generator (`scripts/build-*.mjs`), never hand-edit the output — `npm run tokens` regenerates all of it and CI fails the build if a regenerate produces a diff (staleness check in `chromatic.yml`).
+- Anything in `docs/components/`, `docs/brand-contract.md`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `lib/theme-brands.ts`, `registry/`, `llms.txt`/`llms-full.txt`/`tokens.json`, and `skills/amezquita-design-system/` is **generated**. If it's wrong, fix the generator (`scripts/build-*.mjs`), never hand-edit the output — `npm run tokens` regenerates all of it and CI fails the build if a regenerate produces a diff (staleness check in `chromatic.yml`).
 - A new component gets a `.tsx`, a `.css`, a `.stories.tsx`, and an entry in `docs/components.md` (the hand-maintained index `npm run tokens` reads to build the registry) — not a hand-written `docs/components/<slug>.md` twin.
 
 ## 3. Token architecture
@@ -90,7 +93,9 @@ Three tiers, strictly layered — no skipping:
 
 ## 4. Multi-brand / theming
 
-Every folder in `tokens/brands/` is a brand, each with light (`tokens.json`, or `light.json` for base) + dark (`dark.json`): `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)), `portfolio` (the portfolio site's skin), and `demo-cool`, `demo-warm` and `demo-soft` (demo skins for the docs site's hero, ADR [`0023`](../decisions/0023-demo-brands-and-n-brand-build.md)). Every brand but base is a thin override skin on `base`. `scripts/brands.mjs` lists them, and `sd.config.mjs` outputs `base-light.css` and `base-dark.css` plus three files per brand: `<brand>-light.css`, `<brand>-dark.css`, and `<brand>-scoped.css`, the same overrides scoped to `[data-brand="<brand>"]` instead of `:root`, so one page can show several brands (0001's 2026-10-01 amendment). `base-scoped.css` does the same for base, declaring every token rather than overrides, so a part of a page that wears a brand can go back to base (0023's 2026-10-13 amendment). The `ThemeScope` component sets that attribute, and `data-mode`, on a part of a page, and the overlays that portal to `<body>` carry the same two attributes, so they match the part they were opened from (ADR [`0021`](../decisions/0021-theme-scope.md)). Its `brand` type is generated from the `*-scoped.css` files into `lib/theme-brands.ts`. A new brand follows the same shape — a thin skin, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
+Every folder in `tokens/brands/` is a brand, each with light (`tokens.json`, or `light.json` for base) + dark (`dark.json`): `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)), `portfolio` (the portfolio site's skin), and `demo-cool`, `demo-warm` and `demo-soft` (demo skins for the docs site's hero, ADR [`0023`](../decisions/0023-demo-brands-and-n-brand-build.md)). Every brand but base is a thin override skin on `base`. `scripts/brands.mjs` lists them, and `sd.config.mjs` outputs `base-light.css` and `base-dark.css` plus three files per brand: `<brand>-light.css`, `<brand>-dark.css`, and `<brand>-scoped.css`, the same overrides scoped to `[data-brand="<brand>"]` instead of `:root`, so one page can show several brands (0001's 2026-10-01 amendment). `base-scoped.css` does the same for base, declaring every token rather than overrides, so a part of a page that wears a brand can go back to base (0023's 2026-10-13 amendment). The `ThemeScope` component sets that attribute, and `data-mode`, on a part of a page, and the overlays that portal to `<body>` carry the same two attributes, so they match the part they were opened from (ADR [`0021`](../decisions/0021-theme-scope.md)). Its `brand` type is generated from the `*-scoped.css` files into `lib/theme-brands.ts`.
+
+**A product's brand lives in the product's repo, not here** (ADR [`0028`](../decisions/0028-brand-contract-for-project-brands.md)). The brands in this folder are base and the demos, plus `portfolio` until it moves out (AME-72). A project brand is the same two files, checked against the brand contract: the tokens marked `"amezquita.brand": "settable"` in `tokens/brands/base/light.json` and `tokens/components/*.json`, listed in the generated `docs/brand-contract.md`, plus tokens of its own named `<brand>-*`. `npx amezquita-brand check <dir>` (`brand/`) checks that and the contrast pairs; `npm run tokens:brands` runs the same `checkBrand()` over every brand here. Every brand, here or in a project, is a thin skin on base, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
 
 ## 5. Code conventions
 
@@ -101,7 +106,7 @@ Every folder in `tokens/brands/` is a brand, each with light (`tokens.json`, or 
 
 ## 6. Accessibility
 
-Baseline, enforced by tooling not just review: axe run against every Storybook story (`addon-a11y`, `a11y:stories` script), `no-missing-reduced-motion` lint rule (any file with a transition/animation must have a `prefers-reduced-motion` guard), and contrast checked programmatically across all 4 theme combinations (`tokens:contrast`, `scripts/check-contrast.mjs`) — not eyeballed.
+Baseline, enforced by tooling not just review: axe run against every Storybook story (`addon-a11y`, `a11y:stories` script), `no-missing-reduced-motion` lint rule (any file with a transition/animation must have a `prefers-reduced-motion` guard), and contrast checked programmatically for base and every brand, in light and dark (`tokens:brands`, `scripts/check-brands.mjs`, the same check a project runs on its own brand) — not eyeballed.
 
 ## 7. Testing strategy
 
@@ -132,7 +137,7 @@ This system deliberately ships a compiled, machine-readable layer alongside the 
 
 ## 9. Build pipeline
 
-`npm run tokens` runs, in dependency order: `buildTokenReference` → `buildTokensJson` → `buildFonts` → `buildComponentRegistry` → `buildComponentDocs` → `buildRegistryManifests` → `buildSkill` → `buildChangelog` → `buildLlmsTxt`. Every generated artifact in §2 comes from this one chain (`sd.config.mjs`). CI (`chromatic.yml`) rebuilds and diffs against the committed tree via `scripts/check-generated-sync.mjs` (which does `git add -N` first, so new untracked files count too) — a stale artifact fails the build. That script reads its path list from `scripts/generated-artifacts.mjs`, the one place the generated-artifact list is written down. `self-heal-stale-artifacts.yml` scopes its commit to the same module's `SELF_HEAL_PATHS`, the same list. `tokens/changelog.json` is in neither: it lists commit SHAs, so it can never include the commit that changes it, and branches don't gate on it. `chromatic.yml`'s `update-changelog` job regenerates it on `main` after every push, using `scripts/changelog-sync.mjs --restore-if-unchanged` (the content-only comparison, timestamp nulled) to skip timestamp-only commits. See ADR [`0019`](../decisions/0019-changelog-owned-by-main.md).
+`npm run tokens` runs, in dependency order: `buildThemeBrands` → `buildTokenReference` → `buildBrandContract` → `buildTokensJson` → `buildFonts` → `buildComponentRegistry` → `buildComponentDocs` → `buildRegistryManifests` → `buildSkill` → `buildChangelog` → `buildLlmsTxt`. Every generated artifact in §2 comes from this one chain (`sd.config.mjs`). CI (`chromatic.yml`) rebuilds and diffs against the committed tree via `scripts/check-generated-sync.mjs` (which does `git add -N` first, so new untracked files count too) — a stale artifact fails the build. That script reads its path list from `scripts/generated-artifacts.mjs`, the one place the generated-artifact list is written down. `self-heal-stale-artifacts.yml` scopes its commit to the same module's `SELF_HEAL_PATHS`, the same list. `tokens/changelog.json` is in neither: it lists commit SHAs, so it can never include the commit that changes it, and branches don't gate on it. `chromatic.yml`'s `update-changelog` job regenerates it on `main` after every push, using `scripts/changelog-sync.mjs --restore-if-unchanged` (the content-only comparison, timestamp nulled) to skip timestamp-only commits. See ADR [`0019`](../decisions/0019-changelog-owned-by-main.md).
 
 ## 10. Preferred patterns
 
@@ -144,7 +149,7 @@ This system deliberately ships a compiled, machine-readable layer alongside the 
 
 - A second semantic tier of tokens per brand (ADR 0001 — the original portfolio/base coupling).
 - `var(--token, fallback)` — a token either exists or it doesn't (`no-token-fallback` lint rule).
-- Hand-editing anything under `docs/components/`, `registry/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `lib/theme-brands.ts`, `llms*.txt`, `tokens.json`, or `skills/amezquita-design-system/`.
+- Hand-editing anything under `docs/components/`, `docs/brand-contract.md`, `registry/`, `tokens/token-reference.json`, `tokens/fonts.json`, `tokens/component-registry.json`, `lib/theme-brands.ts`, `llms*.txt`, `tokens.json`, or `skills/amezquita-design-system/`.
 - Installing an external convention/library wholesale when only its *technique* is needed (ADR 0002 — transitions.dev).
 
 ## Not applicable to this repo

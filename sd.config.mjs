@@ -1,43 +1,21 @@
 import StyleDictionary from 'style-dictionary';
 import { readFileSync, writeFileSync, readdirSync } from 'fs';
 import { makeResolver } from './lib/resolve-token.mjs';
+import { MODE_PREFIXES } from './brand/contract.mjs';
 
-// Token axis contract — enforced at build time.
-// Mode axis owns lighting: background, text, border, feedback. Kept separate
-// from the semantic/structural tier so a mode override file can't smuggle in
-// unrelated tokens (typography, spacing, radii) that belong on the base/brand
-// layer instead.
-const TOKEN_CONTRACTS = {
-  mode: [
-    'color-surface-',
-    'color-curtain',
-    'color-text-',
-    'color-border-',
-    'color-feedback-',
-    // Chart series colours are stepped per mode (a lighter step on a dark
-    // surface), so they're lighting too (decisions/0026).
-    'color-chart-',
-    'color-neutral-',
-    'color-accent-',
-    'button-secondary-',
-    'checkbox-',
-    'radio-',
-    'switch-',
-    'textarea-',
-  ],
-};
-
-function validateTokenContract(filePath, axis) {
-  const allowed = TOKEN_CONTRACTS[axis];
+// Dark files set lighting only, so a mode override can't smuggle in type,
+// spacing or radii that belong on the light layer. The prefix list is the
+// brand contract's (brand/contract.mjs, decisions/0028); the brand check
+// applies it to every brand, and this keeps base's own dark file to it too.
+function validateTokenContract(filePath) {
   const tokens = JSON.parse(readFileSync(filePath, 'utf8'));
   const violations = Object.keys(tokens).filter(
-    key => !allowed.some(prefix => key.startsWith(prefix))
+    key => !MODE_PREFIXES.some(prefix => key.startsWith(prefix))
   );
   if (violations.length > 0) {
     throw new Error(
-      `[token contract] "${axis}" axis violation in ${filePath}.\n` +
-      `These tokens are not allowed on this axis: ${violations.join(', ')}\n` +
-      `Mode axis owns: surface, text, border, feedback.`
+      `[token contract] ${filePath} sets tokens that aren't lighting: ${violations.join(', ')}\n` +
+      `A dark file may only set tokens starting with ${MODE_PREFIXES.join(', ')}.`
     );
   }
 }
@@ -180,8 +158,8 @@ function computeChangedTokens(baseMap, overrides) {
 const baseLightMap = { ...componentJsonForDiff, ...baseLightJson }
 const baseDarkChanged = computeChangedTokens(baseLightMap, baseDarkJson)
 
-validateTokenContract('tokens/brands/base/dark.json', 'mode')
-for (const brand of BRANDS) validateTokenContract(`tokens/brands/${brand}/dark.json`, 'mode')
+validateTokenContract('tokens/brands/base/dark.json')
+for (const brand of BRANDS) validateTokenContract(`tokens/brands/${brand}/dark.json`)
 
 // ── base-light: the brand-agnostic foundation. Standalone-usable on its own —
 // every semantic token resolves to a real neutral-gray value with no brand
@@ -465,6 +443,10 @@ buildThemeBrands();
 
 const { buildTokenReference } = await import('./scripts/build-token-reference.mjs');
 buildTokenReference();
+
+// Reads token-reference.json for each settable token's base values.
+const { buildBrandContract } = await import('./scripts/build-brand-contract.mjs');
+buildBrandContract();
 
 const { buildTokensJson } = await import('./scripts/build-tokens-json.mjs');
 buildTokensJson();

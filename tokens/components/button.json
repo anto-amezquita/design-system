@@ -20,7 +20,10 @@
   "button-border-radius": {
     "$value": "{border-radius-pill}",
     "$type": "dimension",
-    "$description": "Corner radius of every Button variant. A pill in base; a brand can set its own shape here without changing other pill-shaped components (Badge, Tag, Avatar)."
+    "$description": "Corner radius of every Button variant. A pill in base; a brand can set its own shape here without changing other pill-shaped components (Badge, Tag, Avatar).",
+    "$extensions": {
+      "amezquita.brand": "settable"
+    }
   },
   "button-outline-border-width": {
     "$value": "{border-width.medium}",
@@ -28,28 +31,41 @@
     "$description": "Border width of the Button variants that draw a border.",
     "$extensions": {
       "amezquita.lint-ignore": ["no-collapsible-token"],
-      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar."
+      "amezquita.reason": "One-off, below decisions/0004's 3+-shared-function bar.",
+      "amezquita.brand": "settable"
     }
   },
   "button-secondary-background": {
     "$value": "transparent",
     "$type": "color",
-    "$description": "Fill of the secondary Button at rest: none."
+    "$description": "Fill of the secondary Button at rest: none.",
+    "$extensions": {
+      "amezquita.brand": "settable"
+    }
   },
   "button-secondary-foreground": {
     "$value": "{color-accent-default}",
     "$type": "color",
-    "$description": "Text colour of the secondary Button."
+    "$description": "Text colour of the secondary Button.",
+    "$extensions": {
+      "amezquita.brand": "settable"
+    }
   },
   "button-secondary-border": {
     "$value": "{color-accent-default}",
     "$type": "color",
-    "$description": "Border colour of the secondary Button."
+    "$description": "Border colour of the secondary Button.",
+    "$extensions": {
+      "amezquita.brand": "settable"
+    }
   },
   "button-secondary-background-hover": {
     "$value": "{color-accent-default}",
     "$type": "color",
-    "$description": "Fill of the secondary Button on hover."
+    "$description": "Fill of the secondary Button on hover.",
+    "$extensions": {
+      "amezquita.brand": "settable"
+    }
   },
   "button-ghost-background": {
     "$value": "transparent",

@@ -11,11 +11,16 @@
   "publishConfig": {
     "access": "public"
   },
+  "bin": {
+    "amezquita-brand": "brand/cli.mjs"
+  },
   "files": [
     "components",
     "lib",
     "hooks",
+    "brand",
     "tokens/global.json",
+    "tokens/contrast-pairs.json",
     "tokens/brands",
     "tokens/components",
     "tokens/component-registry.json",
@@ -30,6 +35,7 @@
     "skills",
     "registry",
     "docs/components",
+    "docs/brand-contract.md",
     "AGENTS.md",
     "CHANGELOG.md",
     "decisions/*.md"
@@ -44,13 +50,13 @@
     "tokens:lint-architecture": "node scripts/lint-token-architecture.mjs",
     "tokens:graph": "node scripts/build-dependency-graph.mjs",
     "tokens:audit": "node scripts/audit-tokens.mjs",
-    "tokens:contrast": "node scripts/check-contrast.mjs",
+    "tokens:brands": "node scripts/check-brands.mjs",
     "tokens:dtcg": "node scripts/migrate-to-dtcg.mjs",
     "figma:status": "node scripts/figma-status.mjs",
     "typecheck": "tsc --noEmit",
     "typecheck:consumer": "node scripts/check-consumer-types.mjs",
     "test": "vitest run",
-    "validate": "npm run tokens:lint && npm run tokens:lint-architecture && npm run tokens:contrast && node scripts/check-components-doc.mjs && node scripts/check-stories.mjs && node scripts/check-client-directives.mjs && npm run typecheck && npm run typecheck:consumer && npm run test",
+    "validate": "npm run tokens:lint && npm run tokens:lint-architecture && npm run tokens:brands && node scripts/check-components-doc.mjs && node scripts/check-stories.mjs && node scripts/check-client-directives.mjs && npm run typecheck && npm run typecheck:consumer && npm run test",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --stats-json",
     "chromatic": "chromatic --build-script-name=build-storybook"

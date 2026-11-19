@@ -23,7 +23,7 @@ No brand sets spacing, sizes, z-index, motion, breakpoints or body text rhythm. 
 
 ### 1. The contract is a marker on each token a brand may set
 
-Every token a brand may set carries `"$extensions": { "com.amezquita.brand": "settable" }` in its source file (`tokens/brands/base/*.json` for semantic tokens, `tokens/components/*.json` for component ones). Anything without the marker is the system's own, and no brand sets it. `npm run tokens` generates `docs/brand-contract.md` from the markers: every settable token, its base value in light and dark, and its description. It also records the marker in `tokens/token-reference.json`, so the MCP server and the skill can answer "can my brand set this?".
+Every token a brand may set carries `"$extensions": { "amezquita.brand": "settable" }` where it's defined: `tokens/brands/base/light.json` for semantic tokens, `tokens/components/*.json` for component ones. `base/dark.json` only overrides those names, so it carries no markers. The key sits in the same `amezquita.*` namespace as the existing `amezquita.lint-ignore`. Anything without the marker is the system's own, and no brand sets it. `npm run tokens` generates `docs/brand-contract.md` from the markers: every settable token, its base value in light and dark, and its description. It also records the marker in `tokens/token-reference.json`, so the MCP server and the skill can answer "can my brand set this?".
 
 The settable set, by family:
 
@@ -63,7 +63,7 @@ One command, shipped in the package and run the same way locally and in CI: `npx
 
 ### 5. The brands here run the same check
 
-The `tokens:contrast` step in `npm run validate` is replaced by the same check, run over every folder in `tokens/brands/`, so this repo's CI is the contract's first test, against real brands. `portfolio`'s four app tokens fail the prefix rule. Until portfolio moves, they're listed as named exceptions in the check, with the ticket that removes them (AME-72). Renaming them now would break the live portfolio site in a release that's meant to be minor.
+The `tokens:contrast` step in `npm run validate` is replaced by the same check, run over every folder in `tokens/brands/`, renamed `tokens:brands` (`scripts/check-brands.mjs`; `scripts/check-contrast.mjs` is gone). That way this repo's CI is the contract's first test, against real brands. `portfolio`'s four app tokens fail the prefix rule. Until portfolio moves, they're listed as named exceptions in the check, with the ticket that removes them (AME-72). Renaming them now would break the live portfolio site in a release that's meant to be minor.
 
 ## Alternatives considered
 
@@ -93,8 +93,9 @@ The `tokens:contrast` step in `npm run validate` is replaced by the same check, 
 
 ## Related files
 
-- `sd.config.mjs` (`TOKEN_CONTRACTS`, moved into the check), `scripts/check-contrast.mjs`, `scripts/brands.mjs`, `tokens/contrast-pairs.json`
-- `tokens/brands/base/light.json`, `tokens/brands/base/dark.json`, `tokens/components/button.json`, `tokens/components/card.json` (where the markers go)
-- `docs/architecture.md` §4 and §6, `docs/quality.md` §2 and §3: rewrite when this ships, to separate package brands from project brands and to name the new check
+- `brand/contract.mjs` (the markers, `MODE_PREFIXES`), `brand/check.mjs` (`checkBrand()`), `brand/cli.mjs` (`amezquita-brand`), `scripts/check-brands.mjs` (replaces `scripts/check-contrast.mjs`), `scripts/build-brand-contract.mjs`, `scripts/brand-check.test.mjs`
+- `sd.config.mjs` (its `TOKEN_CONTRACTS` list moved to `brand/contract.mjs`), `scripts/brands.mjs`, `tokens/contrast-pairs.json` (now shipped)
+- `tokens/brands/base/light.json`, `tokens/components/button.json`, `tokens/components/card.json` (where the markers are)
+- `docs/architecture.md` §2, §4, §6 and §9, `docs/quality.md` §2 and §3
 - Ajar: `decisions/0031-design-system-1x-and-ajar-brand.md`, `src/styles/tokens.css`, `tokens/brands/ajar/tokens.json`
 - Linear: AME-6 (this release), AME-5 (where brands live), AME-72 (portfolio moves out)

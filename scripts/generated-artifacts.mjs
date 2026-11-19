@@ -27,6 +27,7 @@ export const GENERATED_PATHS = [
   'styles/brands/',
   'tokens.json',
   'docs/components/',
+  'docs/brand-contract.md',
   'llms.txt',
   'llms-full.txt',
   'registry/',

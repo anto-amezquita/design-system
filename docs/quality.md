@@ -15,24 +15,25 @@ Work is done when:
 - `npm run validate` exits `0` (see §2 — this is the single gate, not a suggestion).
 - The relevant spec in `/specs` is satisfied, or a new one was written for work big enough to need it.
 - A significant architectural choice made along the way is recorded as an ADR in `/decisions`.
-- Generated artifacts (`docs/components/`, `tokens/token-reference.json`, `tokens/fonts.json`, `lib/theme-brands.ts`, `registry/`, `llms*.txt`, `tokens.json`, `skills/amezquita-design-system/`) were regenerated via `npm run tokens`, not hand-edited.
+- Generated artifacts (`docs/components/`, `docs/brand-contract.md`, `tokens/token-reference.json`, `tokens/fonts.json`, `lib/theme-brands.ts`, `registry/`, `llms*.txt`, `tokens.json`, `skills/amezquita-design-system/`) were regenerated via `npm run tokens`, not hand-edited.
 - No known lint violation is suppressed without a one-line reason in the `lint-ignore` comment.
 
 ## 2. `npm run validate` — the one gate
 
 ```
-npm run validate = tokens:lint && tokens:lint-architecture && tokens:contrast && check-components-doc.mjs && check-stories.mjs && check-client-directives.mjs && typecheck && test
+npm run validate = tokens:lint && tokens:lint-architecture && tokens:brands && check-components-doc.mjs && check-stories.mjs && check-client-directives.mjs && typecheck && typecheck:consumer && test
 ```
 
 | Step | What it checks | Script |
 |---|---|---|
 | `tokens:lint` | 10 rules against component CSS (below) | `scripts/lint-tokens.mjs` |
 | `tokens:lint-architecture` | Component tokens that are pass-throughs or chain-skips to their referent in every brand/mode | `scripts/lint-token-architecture.mjs` |
-| `tokens:contrast` | Color contrast across every brand/mode combination (10 today: base, portfolio and the three demo brands, light and dark) | `scripts/check-contrast.mjs` |
+| `tokens:brands` | Every brand in `tokens/brands/` against the brand contract (only settable or own-prefixed tokens, right types, no light value leaking into dark, heading pairs on the grid), and colour contrast for base and every brand in light and dark (10 modes today: base, portfolio and the three demo brands). The same `checkBrand()` a project runs on its own brand — ADR [`0028`](../decisions/0028-brand-contract-for-project-brands.md) | `scripts/check-brands.mjs`, `brand/` |
 | `check-components-doc.mjs` | Every component in `tokens/component-registry.json` has a `docs/components.md` entry, and its Storybook path matches the `title` in the component's story file | — |
 | `check-stories.mjs` | Every public component has a Storybook story | — |
 | `check-client-directives.mjs` | Every component that uses client-only React (state and effect hooks, context, Radix, inline event handlers) starts with `'use client'`, so a Next.js App Router consumer can render it from a Server Component. Tests and Storybook run in a browser and can't see this | — |
 | `typecheck` | `tsc --noEmit` | — |
+| `typecheck:consumer` | `components/`, `lib/` and `hooks/` compile the way a consumer compiles them, without `@types/node` | `scripts/check-consumer-types.mjs` |
 | `test` | Every story as a browser test + `unit` project contracts (ADR [`0006`](../decisions/0006-add-layered-automated-testing.md)) + `scripts` project tooling tests (ADR [`0009`](../decisions/0009-living-memory-adr-proposals.md)) | `vitest run` — `storybook`/`unit` in real Chromium via Playwright, `scripts` in Node |
 
 `&&`-chained: it stops and exits non-zero at the first failure. Not composition-only in spirit either — read the failing step's own error, it names the fix.
@@ -60,7 +61,7 @@ Enforced, not just reviewed:
 
 - `addon-a11y` (axe) runs against every Storybook story.
 - `npm run a11y` / `a11y:stories` runs `test-storybook` against a built Storybook headlessly.
-- Contrast is checked programmatically across all 4 theme combinations (`tokens:contrast`), not eyeballed.
+- Contrast is checked programmatically for base and every brand, in light and dark (`tokens:brands`), not eyeballed. A project brand outside this repo is checked only if that project runs `amezquita-brand check` in its own CI.
 - `no-missing-reduced-motion` lint rule (§2) — enforced, not a checklist item.
 - Keyboard/focus/semantic-HTML behavior comes largely from Radix primitives; component-specific a11y notes live in each component's `docs/components/<slug>.md` (compiled from `docs/components.md`) where documented.
 
@@ -83,7 +84,7 @@ No unit-test framework for behavior Radix already owns (see `architecture.md` §
 - **Visual regression** — Chromatic, every push.
 - **Story coverage** — `check-stories.mjs`. Every story also runs as a browser test via `@storybook/addon-vitest` (the `storybook` Vitest project, real Chromium via Playwright) — render-without-error for a plain story, real assertions for one with a play function. Replaces `@storybook/test-runner`, deprecated by Storybook in favor of this addon.
 - **Composed-trigger and other owned-behavior contracts** — a second Vitest project, `unit`, for assertions that aren't visual states (e.g. `Button.slot.test.tsx`, asserting Button forwards Radix-injected props). Separate from the `storybook` project so a behavioral contract doesn't become a Chromatic-snapshotted story just to get tested. Same browser-mode requirement as above — several components touch real browser APIs at mount (`window.matchMedia`, etc.) that jsdom can't satisfy.
-- **Node-side tooling contracts** — a third Vitest project, `scripts`, for the build/session tooling in `scripts/` (currently `propose-decision.test.mjs`, `lint-tokens.test.mjs` for the `no-unknown-breakpoint` rule, and `check-client-directives.test.mjs`). Node environment, no browser: this is code that reads the filesystem and parses transcripts, so it needs neither Chromium nor Storybook and shouldn't pay browser startup. Kept separate so a tooling failure reads as a tooling failure. Its safety-contract tests — that the session-transcript harvester runs no mutating git command and can only write inside `decisions/proposed/` — are the gate that makes running it unattended at session exit acceptable (ADR [`0009`](../decisions/0009-living-memory-adr-proposals.md)).
+- **Node-side tooling contracts** — a third Vitest project, `scripts`, for the build/session tooling in `scripts/` and the shipped brand check in `brand/`: every `scripts/*.test.mjs`, among them `propose-decision.test.mjs`, `lint-tokens.test.mjs` for the `no-unknown-breakpoint` rule, `check-client-directives.test.mjs`, and `brand-check.test.mjs` for each rule of the brand contract and the `amezquita-brand` command's exit codes. Node environment, no browser: this is code that reads the filesystem and parses transcripts, so it needs neither Chromium nor Storybook and shouldn't pay browser startup. Kept separate so a tooling failure reads as a tooling failure. Its safety-contract tests — that the session-transcript harvester runs no mutating git command and can only write inside `decisions/proposed/` — are the gate that makes running it unattended at session exit acceptable (ADR [`0009`](../decisions/0009-living-memory-adr-proposals.md)).
 - **Stateful/interaction logic** (sort+filter+selection interplay, etc.) — a throwaway Playwright script against a real dev server, written for that piece of work. Not persisted as a suite; written fresh, run, deleted or kept per the spec's own call. Unchanged by ADR 0006 — DataTable's own interplay is named there as follow-up, not yet moved into the `unit` project.
 - **Agent-facing artifacts** (compiled docs, the skill file, the MCP server) — a cold test: a fresh subagent with zero memory of the session, given only the compiled artifact, attempting a real task. This is the only way doc-generator gaps have actually been found (see `docs/roadmap.md` Phase 4 and Phase 6 findings) — a self-assessment doesn't substitute for it.
 
