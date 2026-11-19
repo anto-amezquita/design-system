@@ -264,12 +264,12 @@ An Input joined to the text and buttons that belong to it: "https://", "kr.", an
 
 ### Item
 
-One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link
+One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link or a button
 
 - Import: `import { Item } from '@amezquita/design-system/components/primitives/Item'`
 - Token prefix: `item-*` (0 tokens)
 - Storybook: Components/Item
-- Stories: Default, Linked, Navigation, DarkMode
+- Stories: Default, Linked, OpensADialog, Navigation, DarkMode
 
 ### Kbd
 

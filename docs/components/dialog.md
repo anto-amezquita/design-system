@@ -62,4 +62,4 @@
 - Focus trap: Radix handles this; do not disable it
 - `Escape` closes the dialog; do not override
 - `RadixDialog.Title` provides the accessible name automatically — always pass `title` prop
-- Return focus to the trigger element on close (Radix default behaviour)
+- Return focus on close: to the trigger, or, for a controlled Dialog with no `trigger` (opened from an Item row, a menu item, a shortcut), to whatever had focus when it opened. Modal or not. Drawer does the same

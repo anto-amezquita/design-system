@@ -338,7 +338,7 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 - Focus trap: Radix handles this; do not disable it
 - `Escape` closes the dialog; do not override
 - `RadixDialog.Title` provides the accessible name automatically — always pass `title` prop
-- Return focus to the trigger element on close (Radix default behaviour)
+- Return focus on close: to the trigger, or, for a controlled Dialog with no `trigger` (opened from an Item row, a menu item, a shortcut), to whatever had focus when it opened. Modal or not. Drawer does the same
 
 **Chromatic stories**
 - `Default`, `WithForm`, `NoDescription`
@@ -1367,7 +1367,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 | Field | Value |
 |---|---|
-| **Purpose** | One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link |
+| **Purpose** | One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link or a button |
 | **Figma name** | `Item` |
 | **Code name** | `Item` |
 | **Storybook path** | `Components/Item` |
@@ -1376,6 +1376,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - `title` (required), `description`
 - `leading`: an Avatar, Icon or thumbnail; `trailing`: a Timestamp, Badge, IconButton or Switch
 - `href`: makes the whole row a link; `current`: marks it as the page you're on
+- `onClick`: makes the whole row a button, for a row that does something (opens a Dialog or Drawer, selects) rather than going somewhere. With `href` too, the row stays a link and `onClick` runs on it
 - `size`: `default` or `compact`
 - `as`: `li` (default) or `div`
 - Native attributes, `className` and `ref` pass through to the row
@@ -1383,6 +1384,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 **Required states**
 - [x] default
 - [x] linked: hover, focus-visible
+- [x] clickable (`onClick`): hover, focus-visible, the same as linked
 - [x] current
 
 **Tokens consumed**
@@ -1392,6 +1394,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 **Accessibility**
 - A linked row is one link, named by its title, stretched over the row; the description doesn't get read as part of the link name. Trailing buttons sit above the stretch, so they're their own targets and their own Tab stops
+- A clickable row is the same, with a `<button type="button">` in place of the link. A row that opens a controlled Dialog or Drawer (no `trigger`) gets focus back when it closes: Dialog and Drawer return focus to whatever opened them
 - The focus ring goes around the whole row, where the click target is
 - `current` sets `aria-current="page"` and draws a bar on the leading edge, so the current row isn't marked by colour alone. The bar uses `accent-text`, tested at 3:1 against the row in every brand and mode (`accent-default` was too pale in demo-soft)
 - Title and description are tested at 4.5:1 at rest, hovered and current, in all five brands, light and dark

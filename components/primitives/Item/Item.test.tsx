@@ -5,7 +5,8 @@
  * readable at rest and on hover in every brand and mode.
  */
 
-import { afterEach, beforeAll, describe, expect, test } from 'vitest'
+import { useState } from 'react'
+import { afterEach, beforeAll, describe, expect, test, vi } from 'vitest'
 import { cleanup, render } from '@testing-library/react'
 import { userEvent } from 'vitest/browser'
 
@@ -16,6 +17,7 @@ import demoCool from '../../../styles/brands/demo-cool-scoped.css?raw'
 import demoWarm from '../../../styles/brands/demo-warm-scoped.css?raw'
 import demoSoft from '../../../styles/brands/demo-soft-scoped.css?raw'
 import { contrastOf } from '../../../lib/contrast-test-utils'
+import { Dialog } from '../../composition/Dialog'
 import { List } from '../List'
 import { Item } from './Item'
 
@@ -114,6 +116,87 @@ describe('Item', () => {
   })
 })
 
+// G3 (Ajar's RightsView and SessionsView rows): a row that opens a Dialog.
+describe('Item with onClick', () => {
+  test('the row is one button, named by its title, and runs onClick', async () => {
+    const onClick = vi.fn()
+    const { getByRole, container } = render(<List><Item onClick={onClick} title="Rights profile" description="3 splits" /></List>)
+    const button = getByRole('button', { name: 'Rights profile' })
+    expect(button.getAttribute('type')).toBe('button')
+    expect(container.querySelector('li')!.classList).toContain('item--interactive')
+    // The stretched button covers the row: a click on the description lands on it.
+    const desc = container.querySelector('.item__description')!.getBoundingClientRect()
+    expect(document.elementFromPoint(desc.left + 2, desc.top + desc.height / 2)).toBe(button)
+    await userEvent.click(button)
+    expect(onClick).toHaveBeenCalledTimes(1)
+  })
+
+  test('trailing controls stay their own targets and Tab stops, and don\'t run the row\'s onClick', async () => {
+    const onClick = vi.fn()
+    const onShare = vi.fn()
+    const { getByRole } = render(
+      <List><Item onClick={onClick} title="Brand brief" trailing={<button type="button" onClick={onShare}>Share</button>} /></List>,
+    )
+    const share = getByRole('button', { name: 'Share' })
+    await userEvent.keyboard('{Tab}')
+    expect(document.activeElement).toBe(getByRole('button', { name: 'Brand brief' }))
+    await userEvent.keyboard('{Tab}')
+    expect(document.activeElement).toBe(share)
+    const r = share.getBoundingClientRect()
+    expect(document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2)).toBe(share)
+    await userEvent.click(share)
+    expect(onShare).toHaveBeenCalledTimes(1)
+    expect(onClick).not.toHaveBeenCalled()
+  })
+
+  test('keyboard focus rings the whole row; Enter and Space run onClick', async () => {
+    const onClick = vi.fn()
+    const { container } = render(<List><Item onClick={onClick} title="A" /></List>)
+    await userEvent.keyboard('{Tab}')
+    expect(getComputedStyle(container.querySelector('.item')!).outlineStyle).toBe('solid')
+    await userEvent.keyboard('{Enter}')
+    await userEvent.keyboard(' ')
+    expect(onClick).toHaveBeenCalledTimes(2)
+  })
+
+  test('the button looks like the title of a plain row', () => {
+    const { container } = render(<List><Item onClick={() => {}} title="Clickable" /><Item title="Plain" /></List>)
+    const [button, plain] = Array.from(container.querySelectorAll('.item__title')).map(el => getComputedStyle(el))
+    for (const prop of ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'color', 'textAlign', 'backgroundColor', 'borderTopWidth', 'paddingTop'] as const) {
+      expect(button[prop], prop).toBe(plain[prop])
+    }
+    expect(button.cursor).toBe('pointer')
+  })
+
+  test('with href too, the row stays a link and onClick runs on it', async () => {
+    const onClick = vi.fn((e: React.MouseEvent) => e.preventDefault())
+    const { getByRole, queryByRole } = render(<List><Item href="#a" onClick={onClick} title="Overview" /></List>)
+    expect(queryByRole('button')).toBeNull()
+    await userEvent.click(getByRole('link', { name: 'Overview' }))
+    expect(onClick).toHaveBeenCalledTimes(1)
+  })
+
+  test('opens a controlled Dialog, and focus comes back to the row when it closes', async () => {
+    function Row() {
+      const [open, setOpen] = useState(false)
+      return (
+        <>
+          <List><Item onClick={() => setOpen(true)} title="Rights profile" /></List>
+          <Dialog open={open} onOpenChange={setOpen} title="Rights profile"><p>content</p></Dialog>
+        </>
+      )
+    }
+    const { getByRole, queryByText } = render(<Row />)
+    const row = getByRole('button', { name: 'Rights profile' })
+    await userEvent.keyboard('{Tab}')
+    await userEvent.keyboard('{Enter}')
+    await expect.poll(() => queryByText('content')).not.toBeNull()
+    await userEvent.keyboard('{Escape}')
+    await expect.poll(() => queryByText('content')).toBeNull()
+    await expect.poll(() => document.activeElement).toBe(row)
+  })
+})
+
 const brands = [undefined, 'portfolio', 'demo-cool', 'demo-warm', 'demo-soft'] as const
 
 const parse = (c: string) => (c.match(/[\d.]+/g) ?? []).map(Number)
@@ -133,11 +216,12 @@ describe('Item follows the brand', () => {
               <Item href="#a" title="At rest" description="Description" data-i="rest" />
               <Item href="#b" title="Hovered" description="Description" data-i="hover" />
               <Item href="#c" title="Current" description="Description" current data-i="current" />
+              <Item onClick={() => {}} title="Button" description="Description" data-i="button" />
             </List>
           </div>,
         )
         await userEvent.hover(container.querySelector('[data-i="hover"] .item__title')!)
-        for (const i of ['rest', 'hover', 'current']) {
+        for (const i of ['rest', 'hover', 'current', 'button']) {
           for (const part of ['.item__title', '.item__description']) {
             expect(contrastOf(container.querySelector(`[data-i="${i}"] ${part}`)!), `${i} ${part}`).toBeGreaterThanOrEqual(4.5)
           }

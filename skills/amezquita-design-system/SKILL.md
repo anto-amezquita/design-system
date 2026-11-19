@@ -63,7 +63,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Image | [image](https://design.amezquita.dk/components/image.md) — An image with a required `alt`, space held before it loads, a quiet fallback if it fails, and an optional caption |
 | Input | [input](https://design.amezquita.dk/components/input.md) — Labelled single-line text entry with hint and error states |
 | InputGroup | [input-group](https://design.amezquita.dk/components/input-group.md) — An Input joined to the text and buttons that belong to it: "https://", "kr.", an Apply button |
-| Item | [item](https://design.amezquita.dk/components/item.md) — One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link |
+| Item | [item](https://design.amezquita.dk/components/item.md) — One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link or a button |
 | Kbd | [kbd](https://design.amezquita.dk/components/kbd.md) — A key the user presses, drawn as a keycap |
 | Label | [label](https://design.amezquita.dk/components/label.md) — Standalone form label element — used when a label must be decoupled from its input |
 | Link | [link](https://design.amezquita.dk/components/link.md) — Navigation to another page or resource; use Link for navigation and Button for actions |

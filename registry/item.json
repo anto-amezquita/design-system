@@ -3,7 +3,7 @@
   "name": "item",
   "type": "registry:component",
   "title": "Item",
-  "description": "One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link",
+  "description": "One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link or a button",
   "dependencies": [
     "@amezquita/design-system"
   ],

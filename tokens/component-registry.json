@@ -561,7 +561,7 @@
       "name": "Item",
       "slug": "item",
       "tier": "primitives",
-      "purpose": "One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link",
+      "purpose": "One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link or a button",
       "storybookPath": "Components/Item",
       "storybookTitleId": "components-item",
       "defaultStoryId": "components-item--default",
@@ -569,6 +569,7 @@
       "stories": [
         "Default",
         "Linked",
+        "OpensADialog",
         "Navigation",
         "DarkMode"
       ],

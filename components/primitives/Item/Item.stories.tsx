@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { useState } from 'react'
+import { expect, userEvent, within } from 'storybook/test'
 import { FileTextIcon, FileCodeIcon, ShareNetworkIcon } from '@phosphor-icons/react'
 import { Item } from './Item'
+import { Dialog } from '../../composition/Dialog'
 import { List } from '../List'
 import { Icon } from '../Icon'
 import { IconButton } from '../IconButton'
@@ -53,6 +56,46 @@ export const Linked: Story = {
       />
     </List>
   ),
+}
+
+function RowsThatOpenADialog() {
+  const [open, setOpen] = useState<string | null>(null)
+  const rows = [
+    { id: 'carmesi', title: 'Carmesí', description: '3 splits · PRS registered' },
+    { id: 'ajar', title: 'Ajar', description: '2 splits · Not registered yet' },
+  ]
+  return (
+    <>
+      <List aria-label="Songs" divided>
+        {rows.map(row => (
+          <Item
+            key={row.id}
+            onClick={() => setOpen(row.id)}
+            title={row.title}
+            description={row.description}
+            trailing={<Badge variant={row.id === 'ajar' ? 'warning' : 'success'}>{row.id === 'ajar' ? 'Draft' : 'Done'}</Badge>}
+          />
+        ))}
+      </List>
+      <Dialog open={open !== null} onOpenChange={o => { if (!o) setOpen(null) }} title={rows.find(r => r.id === open)?.title ?? ''}>
+        <p>Rights profile</p>
+      </Dialog>
+    </>
+  )
+}
+
+/**
+ * `onClick`: the row is one button, named by its title, here opening a
+ * controlled Dialog. Shown with keyboard focus on the first row; closing the
+ * Dialog gives focus back to it.
+ */
+export const OpensADialog: Story = {
+  name: 'Row that opens a dialog',
+  render: () => <RowsThatOpenADialog />,
+  play: async ({ canvasElement }) => {
+    await userEvent.tab()
+    await expect(within(canvasElement).getByRole('button', { name: 'Carmesí' })).toHaveFocus()
+  },
 }
 
 export const Navigation: Story = {
