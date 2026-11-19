@@ -63,7 +63,7 @@
       "name": "Badge",
       "slug": "badge",
       "tier": "primitives",
-      "purpose": "Small status indicator or numeric count overlay attached to another element",
+      "purpose": "Small status indicator or numeric count overlay attached to another element; with `as=\"button\"`, a status pill that does something",
       "storybookPath": "Components/Badge",
       "storybookTitleId": "components-badge",
       "defaultStoryId": "components-badge--default",
@@ -75,6 +75,7 @@
         "AllVariants",
         "AllShapes",
         "AllVariantsAllShapes",
+        "Clickable",
         "DarkMode"
       ],
       "tokenCount": 5,

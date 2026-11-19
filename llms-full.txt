@@ -57,12 +57,12 @@ User profile picture with fallback to initials when no image is provided
 
 ### Badge
 
-Small status indicator or numeric count overlay attached to another element
+Small status indicator or numeric count overlay attached to another element; with `as="button"`, a status pill that does something
 
 - Import: `import { Badge } from '@amezquita/design-system/components/primitives/Badge'`
 - Token prefix: `badge-*` (5 tokens)
 - Storybook: Components/Badge
-- Stories: Default, Count, Dot, AllVariants, AllShapes, AllVariantsAllShapes, DarkMode
+- Stories: Default, Count, Dot, AllVariants, AllShapes, AllVariantsAllShapes, Clickable, DarkMode
 
 ### Blockquote
 

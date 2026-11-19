@@ -7,6 +7,8 @@
 
 
   --badge-count-size, --badge-dot-size
+  as="button": --duration-interaction, --easing-default, --focus-ring-width,
+  --focus-ring-offset, --color-border-focus
   --font-family-base
 
   Passthrough tokens collapsed 2026-09 (decisions/0005) — referenced directly:
@@ -74,4 +76,39 @@
   width: var(--badge-dot-size);
   height: var(--badge-dot-size);
   border: none;
+}
+
+/* Clickable: as="button" renders a real <button>. It keeps the pill's look and
+   adds what says "this does something": a pointer, a border in the text's own
+   colour on hover (4.5:1 in every variant, unlike fading it), and the focus
+   ring every control has. ::after grows the target by --space-tight-gap on
+   each side, past 24px (WCAG 2.5.8), without moving anything around it. */
+
+.badge--button {
+  position: relative;
+  margin: 0;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color var(--duration-interaction) var(--easing-default);
+}
+
+.badge--button::after {
+  position: absolute;
+  inset: calc(var(--space-tight-gap) * -1);
+  content: '';
+}
+
+.badge--button:hover {
+  border-color: currentColor;
+}
+
+.badge--button:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-border-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge--button {
+    transition: none;
+  }
 }

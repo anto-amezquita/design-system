@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { expect, userEvent, within } from 'storybook/test'
 import { Badge } from './Badge'
+import { Dialog } from '../../composition/Dialog'
 import { darkModeDecorator } from '@/lib/storybook'
 
 const meta: Meta<typeof Badge> = {
@@ -70,6 +72,29 @@ export const AllVariantsAllShapes: Story = {
       ))}
     </div>
   ),
+}
+
+/**
+ * `as="button"`: a pill that does something, here a Dialog trigger. At rest
+ * it looks like any Badge; hover turns its border to the text colour, and
+ * keyboard focus, shown here, adds the focus ring.
+ */
+export const Clickable: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: 'var(--space-inline-gap)', alignItems: 'center' }}>
+      <Dialog trigger={<Badge as="button" variant="warning">Ajar</Badge>} title="Door">
+        <p>The door is ajar: the section can still change.</p>
+      </Dialog>
+      <Badge as="button" variant="success">Open</Badge>
+      <Badge as="button" shape="count" aria-label="3 unread messages">3</Badge>
+    </div>
+  ),
+  play: async ({ canvasElement }) => {
+    const trigger = within(canvasElement).getByRole('button', { name: 'Ajar' })
+    await userEvent.tab()
+    await expect(trigger).toHaveFocus()
+    await expect(trigger).toHaveAttribute('aria-haspopup', 'dialog')
+  },
 }
 
 export const DarkMode: Story = {

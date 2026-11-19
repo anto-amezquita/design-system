@@ -40,7 +40,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 |---|---|
 | AspectRatio | [aspect-ratio](https://design.amezquita.dk/components/aspect-ratio.md) — Keeps media at a fixed width-to-height ratio as the width changes, and holds the space before it loads |
 | Avatar | [avatar](https://design.amezquita.dk/components/avatar.md) — User profile picture with fallback to initials when no image is provided |
-| Badge | [badge](https://design.amezquita.dk/components/badge.md) — Small status indicator or numeric count overlay attached to another element |
+| Badge | [badge](https://design.amezquita.dk/components/badge.md) — Small status indicator or numeric count overlay attached to another element; with `as="button"`, a status pill that does something |
 | Blockquote | [blockquote](https://design.amezquita.dk/components/blockquote.md) — A quotation set apart from the text around it, with who said it and where |
 | Button | [button](https://design.amezquita.dk/components/button.md) — Trigger for user actions; renders as `<button>` or `<a>` depending on context |
 | ButtonGroup | [button-group](https://design.amezquita.dk/components/button-group.md) — Related actions kept together: Undo / Redo, zoom out / in, Cancel / Save |

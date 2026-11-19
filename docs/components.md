@@ -568,10 +568,25 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 | Field | Value |
 |---|---|
-| **Purpose** | Small status indicator or numeric count overlay attached to another element |
+| **Purpose** | Small status indicator or numeric count overlay attached to another element; with `as="button"`, a status pill that does something |
 | **Figma name** | `Badge` |
 | **Code name** | `Badge` |
 | **Storybook path** | `Components/Badge` |
+
+**Props / variants**
+- `variant`: `neutral` (default), `success`, `warning`, `error` or `info`
+- `shape`: `status` (default), `count`, or `dot` (needs `aria-label`)
+- `as`: `span` (default) or `button`, a real `<button type="button">` for a pill that opens a Dialog or Drawer as its `trigger`, or acts on click. Not for `dot`: its target is too small
+- Native attributes, `className` and `ref` pass through; `role` doesn't, Badge sets its own
+
+**Required states**
+- [x] default (static)
+- [x] `as="button"`: hover (border in the text colour), keyboard focus (focus ring)
+
+**Accessibility**
+- A plain Badge is a `span`, outside the tab order; with `aria-label` it's `role="img"`. A Badge that does something must be `as="button"`, so the keyboard reaches it: a clickable span opens on click only
+- `as="button"` is named by its text, or `aria-label` for a count. Its target is grown to 24px or more with an invisible margin (WCAG 2.5.8), so it keeps the size of the Badges around it
+- Hover darkens the border to the text colour rather than fading the pill, so the text keeps its contrast
 
 ---
 
