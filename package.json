@@ -63,7 +63,13 @@
   },
   "peerDependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "style-dictionary": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "style-dictionary": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

@@ -23,8 +23,14 @@ import { createContext, useContext } from 'react'
 // Generated from the *-scoped.css files in styles/brands/ (scripts/build-theme-brands.mjs).
 import type { ThemeBrand } from './theme-brands'
 export type { ThemeBrand }
+/**
+ * A brand this package ships, or a project's own built with `amezquita-brand
+ * build` (decisions/0028), whose name this package can't know. `string & {}`
+ * keeps the package's names as suggestions instead of widening them away.
+ */
+export type ThemeScopeBrand = ThemeBrand | (string & {})
 export type ThemeMode = 'light' | 'dark'
-export type ThemeScopeValue = { brand?: ThemeBrand; mode?: ThemeMode }
+export type ThemeScopeValue = { brand?: ThemeScopeBrand; mode?: ThemeMode }
 
 export const ThemeScopeContext = createContext<ThemeScopeValue>({})
 
@@ -33,7 +39,7 @@ export function useThemeScope(): ThemeScopeValue {
 }
 
 /** `data-brand` and `data-mode` for an element portalled out of a ThemeScope; empty outside one. */
-export function useThemeScopeAttributes(): { 'data-brand'?: ThemeBrand; 'data-mode'?: ThemeMode } {
+export function useThemeScopeAttributes(): { 'data-brand'?: ThemeScopeBrand; 'data-mode'?: ThemeMode } {
   const { brand, mode } = useThemeScope()
   return {
     ...(brand && { 'data-brand': brand }),

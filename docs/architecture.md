@@ -13,7 +13,7 @@ Adapted from the ai-product-starter-kit's `architecture.md` template — section
 - **Language:** TypeScript, `tsc --noEmit` as the type-check gate (no build step emits JS for consumers beyond what Vite/Storybook need).
 - **Components:** React 19 (peer dependency), Radix UI primitives (Accordion, AlertDialog, Avatar, Checkbox, Dialog, DropdownMenu, NavigationMenu, RadioGroup, Select, Slot, Switch, Tabs, Toast, Tooltip) for behavior/accessibility; this repo owns styling and composition on top.
 - **Styling:** CSS custom properties driven by a three-tier token system (see §3) — no CSS-in-JS, no Tailwind in component source.
-- **Tokens:** DTCG format (`$value`/`$type`) in `tokens/*.json`, compiled by Style Dictionary (`sd.config.mjs`) into CSS files per brand/mode.
+- **Tokens:** DTCG format (`$value`/`$type`) in `tokens/*.json`, compiled by Style Dictionary (`sd.config.mjs`) into CSS files per brand/mode. Style Dictionary is a dev dependency here and an optional peer for consumers: only `amezquita-brand build` needs it, and loads it with a dynamic `import()` (ADR [`0028`](../decisions/0028-brand-contract-for-project-brands.md)).
 - **Animation:** CSS transitions carry the default behaviour of every component. GSAP is reserved for opt-in expressive motion (Button's `motion="expressive"` wipe), loaded there with a dynamic `import()` so it stays out of the bundles of consumers that never ask for it — see ADR [`0016`](../decisions/0016-functional-button-default-expressive-opt-in.md). It stays a regular dependency rather than an optional peer: this package ships raw source with no build step, so the import specifier is always in the consumer's module graph and an absent package would fail their build.
 - **Docs/dev:** Storybook 10 (stories double as the visual-regression corpus and the "correct usage" source for compiled docs).
 - **Package manager:** npm. **Versioning/publish:** Changesets (`npm run changeset` / `version` / `release`).
@@ -32,10 +32,12 @@ components/
 lib/, hooks/       — shared utilities and hooks (e.g. useUncontrolledValue,
                      breakpoints.ts for the breakpoint tokens in JS, navigation.ts
                      for the NavItem type NavigationMenu and SideNav share)
-brand/             — the brand contract and its check, shipped for projects to run
-                     on their own brand (ADR 0028): contract.mjs reads the markers,
-                     check.mjs is checkBrand(), cli.mjs is the amezquita-brand
-                     command. Node only; no component imports it.
+brand/             — the brand contract, its check and the brand build, shipped for
+                     projects to run on their own brand (ADR 0028): contract.mjs
+                     reads the markers, check.mjs is checkBrand(), build.mjs builds
+                     every brand's CSS (sd.config.mjs's too), fonts.mjs is the
+                     Google Fonts table, cli.mjs is the amezquita-brand command.
+                     Node only; no component imports it.
 tokens/
   global.json           — Tier 1: primitives
   brands/<name>/*.json  — Tier 2: semantic, per brand (base, portfolio, demo-*) and mode (light/dark)
@@ -95,7 +97,7 @@ Three tiers, strictly layered — no skipping:
 
 Every folder in `tokens/brands/` is a brand, each with light (`tokens.json`, or `light.json` for base) + dark (`dark.json`): `base` (brand-agnostic neutral default, ADR [`0001`](../decisions/0001-white-label-base-portfolio-brand-split.md)), `portfolio` (the portfolio site's skin), and `demo-cool`, `demo-warm` and `demo-soft` (demo skins for the docs site's hero, ADR [`0023`](../decisions/0023-demo-brands-and-n-brand-build.md)). Every brand but base is a thin override skin on `base`. `scripts/brands.mjs` lists them, and `sd.config.mjs` outputs `base-light.css` and `base-dark.css` plus three files per brand: `<brand>-light.css`, `<brand>-dark.css`, and `<brand>-scoped.css`, the same overrides scoped to `[data-brand="<brand>"]` instead of `:root`, so one page can show several brands (0001's 2026-10-01 amendment). `base-scoped.css` does the same for base, declaring every token rather than overrides, so a part of a page that wears a brand can go back to base (0023's 2026-10-13 amendment). The `ThemeScope` component sets that attribute, and `data-mode`, on a part of a page, and the overlays that portal to `<body>` carry the same two attributes, so they match the part they were opened from (ADR [`0021`](../decisions/0021-theme-scope.md)). Its `brand` type is generated from the `*-scoped.css` files into `lib/theme-brands.ts`.
 
-**A product's brand lives in the product's repo, not here** (ADR [`0028`](../decisions/0028-brand-contract-for-project-brands.md)). The brands in this folder are base and the demos, plus `portfolio` until it moves out (AME-72). A project brand is the same two files, checked against the brand contract: the tokens marked `"amezquita.brand": "settable"` in `tokens/brands/base/light.json` and `tokens/components/*.json`, listed in the generated `docs/brand-contract.md`, plus tokens of its own named `<brand>-*`. `npx amezquita-brand check <dir>` (`brand/`) checks that and the contrast pairs; `npm run tokens:brands` runs the same `checkBrand()` over every brand here. Every brand, here or in a project, is a thin skin on base, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
+**A product's brand lives in the product's repo, not here** (ADR [`0028`](../decisions/0028-brand-contract-for-project-brands.md)). The brands in this folder are base and the demos, plus `portfolio` until it moves out (AME-72). A project brand is the same two files, checked against the brand contract: the tokens marked `"amezquita.brand": "settable"` in `tokens/brands/base/light.json` and `tokens/components/*.json`, listed in the generated `docs/brand-contract.md`, plus tokens of its own named `<brand>-*`. `npx amezquita-brand check <dir>` (`brand/`) checks that and the contrast pairs; `npm run tokens:brands` runs the same `checkBrand()` over every brand here. `npx amezquita-brand build <dir> --out <dir>` checks, then writes the brand's three CSS files with the same `buildBrandCss()` `sd.config.mjs` uses for the brands here, so a project brand's CSS can't differ in shape from a package brand's (`scripts/brand-build.test.mjs` rebuilds every brand here through it and compares the bytes). `ThemeScope`'s `brand` takes any name, so a project's own brand scopes too. Every brand, here or in a project, is a thin skin on base, never a second full semantic tier (that's the exact anti-pattern ADR 0001 fixed).
 
 ## 5. Code conventions
 

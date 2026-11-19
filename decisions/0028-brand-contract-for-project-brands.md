@@ -57,7 +57,11 @@ One command, shipped in the package and run the same way locally and in CI: `npx
 
 ### 4. A `build` command, so a project gets the same CSS a package brand gets
 
-`npx amezquita-brand build <dir> --out <dir>` runs `check` first, then writes `<brand>-light.css`, `<brand>-dark.css` and `<brand>-scoped.css` with the same Style Dictionary setup `sd.config.mjs` uses for the brands here. The project loads `base-light.css` and `base-dark.css` from the package, then its own files, exactly as it would load a package brand. If its tokens name fonts, it also writes the Google Fonts link that `tokens/fonts.json` gives package brands ([`0020`](./0020-fonts-from-google-fonts-no-font-files.md)).
+`npx amezquita-brand build <dir> --out <dir>` runs `check` first, then writes `<brand>-light.css`, `<brand>-dark.css` and `<brand>-scoped.css`. "The same setup" is literal: the brand build moved out of `sd.config.mjs` into `brand/build.mjs` (`buildBrandCss()`), and `sd.config.mjs` now calls it for the brands here. A test rebuilds every brand here through it and compares the bytes with `styles/brands/`. The project loads `base-light.css` and `base-dark.css` from the package, then its own files, exactly as it would load a package brand.
+
+If its tokens name fonts, `build` also writes `<brand>-fonts.json`, the Google Fonts link that `tokens/fonts.json` gives package brands ([`0020`](./0020-fonts-from-google-fonts-no-font-files.md)). The table of fonts and their ranges moved to `brand/fonts.mjs` for that. A font the table doesn't know fails this repo's build, as before, but only warns in a project's: a project can't add to this package's table, and it can load its own font.
+
+`ThemeScope`'s `brand` prop took only the names of the brands in this package, so `<ThemeScope brand="ajar">` was a type error. It now takes `ThemeBrand | (string & {})`: any name, with the package's still suggested.
 
 `style-dictionary` becomes an optional peer dependency (`peerDependenciesMeta`), and stays a dev dependency for this repo's own build. Only `build` needs it, and only a project that builds a brand installs it. `check` doesn't need it at all. `build` loads it with a dynamic `import()`, and if it isn't installed, it stops with the install command and the major it needs. GSAP is a regular dependency for the opposite reason ([`architecture.md`](../docs/architecture.md) §1): components import it, so it's always in the consumer's module graph. No component imports the brand tools; only the command runs them.
 
@@ -93,7 +97,7 @@ The `tokens:contrast` step in `npm run validate` is replaced by the same check, 
 
 ## Related files
 
-- `brand/contract.mjs` (the markers, `MODE_PREFIXES`), `brand/check.mjs` (`checkBrand()`), `brand/cli.mjs` (`amezquita-brand`), `scripts/check-brands.mjs` (replaces `scripts/check-contrast.mjs`), `scripts/build-brand-contract.mjs`, `scripts/brand-check.test.mjs`
+- `brand/contract.mjs` (the markers, `MODE_PREFIXES`), `brand/check.mjs` (`checkBrand()`), `brand/build.mjs` (`buildBrandCss()`, `buildBrand()`), `brand/fonts.mjs`, `brand/cli.mjs` (`amezquita-brand`), `scripts/check-brands.mjs` (replaces `scripts/check-contrast.mjs`), `scripts/build-brand-contract.mjs`, `scripts/brand-check.test.mjs`, `scripts/brand-build.test.mjs`, `components/composition/ThemeScope/ThemeScope.tsx`
 - `sd.config.mjs` (its `TOKEN_CONTRACTS` list moved to `brand/contract.mjs`), `scripts/brands.mjs`, `tokens/contrast-pairs.json` (now shipped)
 - `tokens/brands/base/light.json`, `tokens/components/button.json`, `tokens/components/card.json` (where the markers are)
 - `docs/architecture.md` §2, §4, §6 and §9, `docs/quality.md` §2 and §3

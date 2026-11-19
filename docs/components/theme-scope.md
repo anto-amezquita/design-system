@@ -10,7 +10,7 @@
 
 | Prop | Type | Description |
 |---|---|---|
-| `brand?` | `'base' \| 'demo-cool' \| 'demo-soft' \| 'demo-warm' \| 'portfolio'` | A brand for this part of the page. Needs that brand's scoped CSS loaded (`styles/brands/<brand>-scoped.css`, e.g. `portfolio-scoped.css`). Left out, the part keeps the brand around it. |
+| `brand?` | `'base' \| 'demo-cool' \| 'demo-soft' \| 'demo-warm' \| 'portfolio' \| (string & {})` | A brand for this part of the page: one this package ships, or a project's own (any other name). Needs that brand's scoped CSS loaded: `styles/brands/<brand>-scoped.css` for a brand this package ships (`portfolio-scoped.css`), or the `<brand>-scoped.css` a project builds with `amezquita-brand build`. Left out, the part keeps the brand around it. Spelled out rather than lib/theme-scope's ThemeScopeBrand, so the compiled docs can expand the package's brand names (they resolve one import deep). |
 | `mode?` | `'light' \| 'dark'` | `light` or `dark` for this part of the page. Left out, the part follows the mode around it. |
 
 Also accepts all props of: `React.ComponentPropsWithoutRef<'div'>`

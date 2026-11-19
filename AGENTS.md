@@ -6,7 +6,7 @@ Router, not a rulebook. Read this, then follow the links — don't try to hold t
 
 Adding or changing a component? Read its compiled twin first: `docs/components/<slug>.md` (real prop table, real tokens, a real usage example — generated from source, not hand-maintained). If the twin doesn't exist yet, `npm run tokens` regenerates it after you add the component to `docs/components.md`.
 
-Building or changing a brand? A product's brand lives in its own repo; [`docs/brand-contract.md`](docs/brand-contract.md) (generated) lists what it may set, and `npx amezquita-brand check <dir>` checks it — ADR [`0028`](decisions/0028-brand-contract-for-project-brands.md). Making a token settable means adding `"amezquita.brand": "settable"` to its definition, a minor release; taking the marker away is a major.
+Building or changing a brand? A product's brand lives in its own repo; [`docs/brand-contract.md`](docs/brand-contract.md) (generated) lists what it may set, `npx amezquita-brand check <dir>` checks it, and `build <dir> --out <dir>` turns it into CSS. Brand CSS is built in `brand/build.mjs` for the brands here too, so change it there, not in `sd.config.mjs` — ADR [`0028`](decisions/0028-brand-contract-for-project-brands.md). Making a token settable means adding `"amezquita.brand": "settable"` to its definition, a minor release; taking the marker away is a major.
 
 ## Prefer the MCP tools when connected
 

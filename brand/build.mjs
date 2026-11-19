@@ -1,0 +1,371 @@
+/**
+ * Builds a brand's CSS, the same way for a brand in this package and a
+ * project's own (decisions/0028). sd.config.mjs calls buildBrandCss() for
+ * every folder in tokens/brands; `amezquita-brand build` calls buildBrand(),
+ * which checks first and adds the font link.
+ *
+ * Each brand gets three files:
+ *   <brand>-light.css   its light overrides on base-light, for a whole page
+ *   <brand>-dark.css    its dark overrides, loaded after base-dark and <brand>-light
+ *   <brand>-scoped.css  the same overrides under [data-brand="<brand>"], so one
+ *                       page can show base and the brand side by side
+ *                       (decisions/0001, 2026-10-01 amendment). A page loads
+ *                       base-light/-dark plus this file, never alongside the
+ *                       brand's -light/-dark (their :root would reskin the page).
+ *
+ * style-dictionary is an optional peer dependency: only building needs it, and
+ * it's loaded with import() so checking a brand never does.
+ */
+
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import path from 'node:path'
+import { makeResolver } from '../lib/resolve-token.mjs'
+import { checkBrand } from './check.mjs'
+import { PACKAGE_ROOT, loadSystem } from './contract.mjs'
+import { fontsForTokens } from './fonts.mjs'
+
+export const BRAND_NAME = /^[a-z][a-z0-9-]*$/
+export const STYLE_DICTIONARY_RANGE = '^5.0.0'
+
+const registered = new WeakSet()
+
+/**
+ * The transform and format every brand file is built with. Registered once per
+ * StyleDictionary class.
+ */
+export function registerBrandFormats(StyleDictionary) {
+  if (registered.has(StyleDictionary)) return
+  registered.add(StyleDictionary)
+
+  // Patch size/rem to skip complex CSS functions (clamp, min, max, calc).
+  // SD5's built-in throws when parseFloat() hits a non-numeric value like clamp().
+  StyleDictionary.registerTransform({
+    name: 'size/rem',
+    type: 'value',
+    filter: (token, options) => {
+      const type = options?.usesDtcg ? token.$type : token.type
+      return type === 'dimension' || type === 'fontSize'
+    },
+    transform: (token, _, options) => {
+      const raw = options?.usesDtcg ? token.$value : token.value
+      const str = String(raw ?? '')
+      if (/^(clamp|min|max|calc|env|var)\(/.test(str)) return str
+      const unitMatch = str.match(/[a-zA-Z%]+$/)
+      const unit = unitMatch?.[0]
+      const num = parseFloat(str)
+      if (isNaN(num)) return str
+      if (num === 0) return '0'
+      return unit ? `${num}${unit}` : `${num}rem`
+    },
+  })
+
+  StyleDictionary.registerFormat({
+    name: 'css/brand-variables',
+    format: ({ dictionary, options }) => {
+      const { brand, selector: selectorOverride, colorScheme, bare, initialUnless } = options
+      const selector = selectorOverride ?? `[data-brand="${brand}"]`
+      const extra = colorScheme ? `  color-scheme: ${colorScheme};\n` : ''
+      const vars = dictionary.allTokens
+        .map(token => {
+          // preserveSemanticRefs: emit `var(--ref)` instead of the resolved value when
+          // the token references another semantic token (kebab ref, no dot). This is
+          // what lets a later layer (a brand over base, dark over light) override
+          // just the primitive it actually changes and have every token that chains
+          // through it pick up the new value via the live CSS cascade, instead of
+          // baking in whichever layer's value happened to build first.
+          const original = options.usesDtcg ? token.original?.$value : token.original?.value
+          if (options.preserveSemanticRefs && typeof original === 'string') {
+            const ref = original.match(/^\{([a-z0-9-]+)\}$/)
+            if (ref && !ref[1].includes('.')) return `  --${token.name}: var(--${ref[1]});`
+          }
+          return `  --${token.name}: ${options.usesDtcg ? token.$value : token.value};`
+        })
+        .join('\n')
+      // initialUnless: names this block must still reset when the dictionary has no
+      // value for them. `initial` on a custom property means "undefined", the
+      // same as a page with no declaration at all (a <brand>-scoped.css light
+      // block, for a token only a dark file defines; none since 1.3.3).
+      const emitted = new Set(dictionary.allTokens.map(token => token.name))
+      const resets = [...(initialUnless ?? [])]
+        .filter(name => !emitted.has(name))
+        .map(name => `  --${name}: initial;`)
+      const body = [vars, ...resets].filter(Boolean).join('\n')
+      return renderBlock({ brand, selector, extra, body, bare })
+    },
+  })
+}
+
+function renderBlock({ brand, selector, extra, body, bare }) {
+  const block = `${selector} {\n${extra}${body}\n}\n`
+  // bare: just the rule, for a file assembled from several blocks (<brand>-scoped.css).
+  if (bare) return block
+  return `/* Auto-generated by Style Dictionary — do not edit directly */\n/* Brand: ${brand} */\n\n${block}`
+}
+
+// What css/brand-variables writes for a file with nothing in it. Style
+// Dictionary skips formatting a file whose filter leaves no tokens, so a
+// brand with no dark overrides would get no <brand>-dark.css at all.
+function emptyFile({ brand, selector, colorScheme, bare, initialUnless }) {
+  const extra = colorScheme ? `  color-scheme: ${colorScheme};\n` : ''
+  const body = [...(initialUnless ?? [])].map(name => `  --${name}: initial;`).join('\n')
+  return renderBlock({ brand, selector: selector ?? `[data-brand="${brand}"]`, extra, body, bare })
+}
+
+// Axis diff — every token whose *resolved* value changes under a layer's
+// overrides must be re-declared inside that layer's CSS scope. var()
+// references in custom properties substitute on the element where the
+// property is declared, so a component token declared on an earlier layer
+// bakes in that layer's values for any nested scope (story wrappers,
+// /design-system demo panels) even when its value is var(--color-text-primary).
+// Re-declaring the changed token on the later layer's selector makes
+// substitution happen against that scope's cascade.
+//
+// Takes the already-merged map a layer builds on top of (`baseMap`) and the
+// raw overrides object for that layer, rather than a fixed light-vs-dark
+// pair — reused for every override layer (base dark over base light, a brand's
+// light over base light, a brand's dark over base dark plus that brand's light).
+export function computeChangedTokens(baseMap, overrides, globalTokens) {
+  const resolveBase = makeResolver(baseMap, globalTokens)
+  const resolveAxis = makeResolver({ ...baseMap, ...overrides }, globalTokens)
+
+  const changed = new Set()
+  for (const name of Object.keys(baseMap)) {
+    if (name in overrides) continue // isSource already emits these
+
+    // Composite/object-valued tokens (a future DTCG shadow or typography
+    // token) resolve to null from makeResolver, which can't diff them — so
+    // rather than silently treat "can't tell" as "unchanged" (which would
+    // reintroduce the exact stale-value-baked-into-a-later-scope bug this
+    // function exists to fix, for that token), always re-declare them.
+    const rawValue = baseMap[name].$value ?? baseMap[name].value
+    if (rawValue && typeof rawValue === 'object') {
+      changed.add(name)
+      continue
+    }
+
+    const base = resolveBase(name)
+    const axis = resolveAxis(name)
+    if (base !== null && axis !== null && base !== axis) changed.add(name)
+  }
+  return changed
+}
+
+// The scoped selectors cover a panel in a page of either mode, a panel with its
+// own data-mode, and a mode switch nested inside a panel. A panel's own
+// data-mode has to win over its page's, which the block order in the file
+// settles.
+export function scopedSelectors(brand) {
+  return {
+    light: [
+      `[data-brand="${brand}"]`,
+      `[data-brand="${brand}"][data-mode="light"]`,
+      `[data-brand="${brand}"] [data-mode="light"]`,
+    ].join(',\n'),
+    dark: [
+      `[data-brand="${brand}"][data-mode="dark"]`,
+      `[data-brand="${brand}"] [data-mode="dark"]`,
+      `[data-mode="dark"] [data-brand="${brand}"]`,
+    ].join(',\n'),
+  }
+}
+
+// Formats every file on the platform, writes all but the scoped one, and
+// returns that one's block for the combined file. Writing it per platform
+// would let the dark build overwrite the light one.
+// A file Style Dictionary skipped for having no tokens is written empty, from
+// its options in the platform config.
+export async function writeExceptScoped(sd, brand) {
+  const files = await sd.formatPlatform('css')
+  const configs = sd.platforms?.css?.files ?? []
+  let scoped = ''
+  for (const { output, destination } of files) {
+    const config = configs.find(f => destination.endsWith(f.destination))
+    const text = output ?? (config ? emptyFile(config.options ?? {}) : '')
+    if (destination.endsWith(`${brand}-scoped.css`)) scoped = text
+    else writeFileSync(destination, text)
+  }
+  return scoped
+}
+
+function readJson(file) {
+  try {
+    return JSON.parse(readFileSync(file, 'utf8'))
+  } catch (err) {
+    throw new Error(`Could not read ${file}: ${err.message}`)
+  }
+}
+
+/**
+ * Writes <name>-light.css, <name>-dark.css and <name>-scoped.css into outDir.
+ * A missing dark file builds as an empty one. Returns the paths written.
+ *
+ * root is the package whose base the brand sits on: this one, always, except
+ * in this package's own tests.
+ */
+export async function buildBrandCss({ StyleDictionary, name, lightPath, darkPath, outDir, root = PACKAGE_ROOT }) {
+  registerBrandFormats(StyleDictionary)
+  const tokens = path.join(root, 'tokens')
+  const globalPath = path.join(tokens, 'global.json')
+  const componentsGlob = path.join(tokens, 'components/*.json')
+  const baseLightPath = path.join(tokens, 'brands/base/light.json')
+  const baseDarkPath = path.join(tokens, 'brands/base/dark.json')
+
+  // Relative to the working directory when it can be, so this package's own
+  // build reads its files by the paths it always has.
+  const rel = p => {
+    const r = path.relative(process.cwd(), p)
+    return r && !r.startsWith('..') && !path.isAbsolute(r) ? r : p
+  }
+
+  const globalTokens = readJson(globalPath)
+  const system = loadSystem(root)
+  const baseLightMap = { ...system.components, ...system.baseLight }
+  const lightJson = readJson(lightPath)
+
+  let tempDir = null
+  if (!existsSync(darkPath)) {
+    tempDir = mkdtempSync(path.join(tmpdir(), 'amezquita-brand-'))
+    darkPath = path.join(tempDir, 'dark.json')
+    writeFileSync(darkPath, '{}\n')
+  }
+  try {
+    const darkJson = readJson(darkPath)
+    const lightChanged = computeChangedTokens(baseLightMap, lightJson, globalTokens)
+    const darkChanged = computeChangedTokens({ ...baseLightMap, ...system.baseDark, ...lightJson }, darkJson, globalTokens)
+    const selectors = scopedSelectors(name)
+    mkdirSync(outDir, { recursive: true })
+    const buildPath = rel(outDir).replace(/\/?$/, '/')
+
+    // Both scoped blocks declare every token either brand file does. A light
+    // panel inside a dark page still matches the dark block through its ancestor
+    // ([data-mode="dark"] [data-brand="<brand>"]), so any token the light block
+    // left out would keep its dark value there. A token only a dark file defines
+    // has no light value, so the light block resets it to `initial`. There are
+    // none since 1.3.3 (scripts/dark-tokens.test.mjs fails on one); the reset
+    // stays as a guard. <brand>-light.css doesn't need any of this: on a whole
+    // page, nothing dark matches a light element.
+    const scopedTokens = new Set([
+      ...Object.keys(lightJson), ...lightChanged,
+      ...Object.keys(darkJson), ...darkChanged,
+    ])
+
+    // Light: the brand's overrides on base-light via cascade order (loaded after
+    // base-light.css). Base tokens sit in `include` so Style Dictionary reads the
+    // brand file as intentional overrides: collision warnings only fire for
+    // source-vs-source conflicts, include-vs-source is expected.
+    const light = new StyleDictionary({
+      usesDtcg: true,
+      // Its per-file log names the scoped file twice (one per block); the
+      // callers say what was written instead.
+      log: { verbosity: 'silent' },
+      include: [rel(globalPath), rel(componentsGlob), rel(baseLightPath)],
+      source: [rel(lightPath)],
+      platforms: {
+        css: {
+          transformGroup: 'css',
+          prefix: '',
+          buildPath,
+          files: [{
+            destination: `${name}-light.css`,
+            format: 'css/brand-variables',
+            filter: token => token.isSource || lightChanged.has(token.name),
+            options: { brand: name, selector: ':root, [data-mode="light"]', preserveSemanticRefs: true },
+          }, {
+            destination: `${name}-scoped.css`,
+            format: 'css/brand-variables',
+            filter: token => scopedTokens.has(token.name),
+            options: { brand: name, selector: selectors.light, colorScheme: 'light', preserveSemanticRefs: true, bare: true, initialUnless: scopedTokens },
+          }],
+        },
+      },
+    })
+    const lightScoped = await writeExceptScoped(light, name)
+
+    // Dark: the brand's dark overrides on top of base-dark (loaded after both
+    // base-dark.css and <brand>-light.css).
+    const dark = new StyleDictionary({
+      usesDtcg: true,
+      log: { verbosity: 'silent' },
+      include: [rel(globalPath), rel(componentsGlob), rel(baseLightPath), rel(baseDarkPath), rel(lightPath)],
+      source: [rel(darkPath)],
+      platforms: {
+        css: {
+          transformGroup: 'css',
+          prefix: '',
+          buildPath,
+          files: [{
+            destination: `${name}-dark.css`,
+            format: 'css/brand-variables',
+            filter: token => token.isSource || darkChanged.has(token.name),
+            options: { brand: name, selector: '[data-mode="dark"]', colorScheme: 'dark', preserveSemanticRefs: true },
+          }, {
+            destination: `${name}-scoped.css`,
+            format: 'css/brand-variables',
+            filter: token => scopedTokens.has(token.name),
+            options: { brand: name, selector: selectors.dark, colorScheme: 'dark', preserveSemanticRefs: true, bare: true },
+          }],
+        },
+      },
+    })
+    const darkScoped = await writeExceptScoped(dark, name)
+
+    // Dark first: the light block's [data-brand][data-mode="light"] ties with
+    // the dark block's [data-mode="dark"] [data-brand] on specificity, and a
+    // panel's own data-mode has to beat its page's.
+    const scopedPath = path.join(outDir, `${name}-scoped.css`)
+    writeFileSync(
+      scopedPath,
+      `/* Auto-generated by Style Dictionary — do not edit directly */\n/* Brand: ${name}, scoped to [data-brand="${name}"] (decisions/0001, 2026-10-01 amendment) */\n\n${darkScoped}\n${lightScoped}`,
+    )
+    return ['light', 'dark', 'scoped'].map(kind => path.join(outDir, `${name}-${kind}.css`))
+  } finally {
+    if (tempDir) rmSync(tempDir, { recursive: true, force: true })
+  }
+}
+
+async function loadStyleDictionary() {
+  try {
+    return (await import('style-dictionary')).default
+  } catch (err) {
+    if (err?.code !== 'ERR_MODULE_NOT_FOUND') throw err
+    return null
+  }
+}
+
+/**
+ * Checks the brand, then builds its CSS and font link into out.
+ * Returns { ok, check, files, fonts, error }:
+ *   check  checkBrand()'s result; nothing is built unless it passed
+ *   files  the paths written: three CSS files and <name>-fonts.json
+ *   fonts  { families, href, preconnect, unknown }; unknown lists fonts the
+ *          link can't load, which the project loads itself
+ *   error  why nothing was built, when it wasn't the check
+ */
+export async function buildBrand(dir, { name, out, pairs, exceptions, StyleDictionary } = {}) {
+  name = name ?? path.basename(path.resolve(dir))
+  if (!BRAND_NAME.test(name)) {
+    return { ok: false, check: null, files: [], fonts: null, error: `"${name}" can't be a brand name: it goes into CSS selectors and file names, so use lowercase letters, digits and hyphens, starting with a letter. Pass --name.` }
+  }
+  if (!out) return { ok: false, check: null, files: [], fonts: null, error: 'Where should the CSS go? Pass --out <dir>.' }
+
+  const system = loadSystem()
+  const check = checkBrand(dir, { name, pairs, exceptions, system })
+  if (!check.ok) return { ok: false, check, files: [], fonts: null, error: null }
+
+  const SD = StyleDictionary ?? (await loadStyleDictionary())
+  if (!SD) {
+    return { ok: false, check, files: [], fonts: null, error: `Building a brand needs style-dictionary ${STYLE_DICTIONARY_RANGE}, an optional peer dependency of @amezquita/design-system. Install it in the project: npm install --save-dev style-dictionary@${STYLE_DICTIONARY_RANGE}` }
+  }
+
+  const lightPath = path.join(dir, 'tokens.json')
+  const darkPath = path.join(dir, 'dark.json')
+  const files = await buildBrandCss({ StyleDictionary: SD, name, lightPath, darkPath, outDir: out })
+
+  const light = readJson(lightPath)
+  const fonts = fontsForTokens({ ...system.components, ...system.baseLight, ...light }, system.global)
+  const fontsPath = path.join(out, `${name}-fonts.json`)
+  writeFileSync(fontsPath, JSON.stringify(fonts, null, 2) + '\n')
+
+  return { ok: true, check, files: [...files, fontsPath], fonts, error: null }
+}

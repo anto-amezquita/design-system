@@ -71,7 +71,22 @@ npx amezquita-brand check tokens/brands/ajar
 npx amezquita-brand check tokens/brands/ajar --pairs tokens/brands/ajar/contrast-pairs.json
 ```
 
-It fails on a token the brand may not set, a misspelt name, a wrong `$type`, a light value that would leak into dark mode, and any contrast pair below its ratio. Each error says how to fix it. `--pairs` adds contrast pairs for the brand's own tokens, in the format of [`tokens/contrast-pairs.json`](tokens/contrast-pairs.json). For the results as data, `import { checkBrand } from '@amezquita/design-system/brand/check.mjs'`. Why brands live in projects: [ADR 0028](decisions/0028-brand-contract-for-project-brands.md).
+It fails on a token the brand may not set, a misspelt name, a wrong `$type`, a light value that would leak into dark mode, and any contrast pair below its ratio. Each error says how to fix it. `--pairs` adds contrast pairs for the brand's own tokens, in the format of [`tokens/contrast-pairs.json`](tokens/contrast-pairs.json). For the results as data, `import { checkBrand } from '@amezquita/design-system/brand/check.mjs'`.
+
+Then build its CSS. `build` runs the check first and builds nothing from a brand that fails. It needs `style-dictionary` ^5 in the project, an optional peer dependency of this package:
+
+```bash
+npm install --save-dev style-dictionary@^5
+npx amezquita-brand build tokens/brands/ajar --out src/styles/brand
+```
+
+It writes the three files a brand in this package gets, plus the font link:
+
+- `ajar-light.css` and `ajar-dark.css`, for a whole page: load them after `base-light.css` and `base-dark.css`.
+- `ajar-scoped.css`, for one part of a page: load it instead of the other two, and wrap the part in `<ThemeScope brand="ajar">`.
+- `ajar-fonts.json`, the Google Fonts `<link>` for the fonts the brand names. A font the link can't cover is printed as a warning, for the project to load itself.
+
+Why brands live in projects: [ADR 0028](decisions/0028-brand-contract-for-project-brands.md).
 
 This package ships source `.tsx`/`.css` directly rather than a pre-built bundle, so your bundler needs to be told to process it — most tools skip transforming `node_modules` by default:
 

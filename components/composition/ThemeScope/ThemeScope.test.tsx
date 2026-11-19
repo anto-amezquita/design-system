@@ -150,6 +150,14 @@ describe('scoping rules', () => {
     expect(tokens(content)).toEqual(probe({ 'data-brand': 'portfolio', 'data-mode': 'dark' }))
   })
 
+  test('a project’s own brand, built with amezquita-brand, reaches the overlays too', async () => {
+    // Type-checked: brand takes a name this package doesn't ship (decisions/0028).
+    render(<ThemeScope brand="acme" mode="dark">{menu}</ThemeScope>)
+    const content = await find('.menu')
+    expect(content.getAttribute('data-brand')).toBe('acme')
+    expect(content.getAttribute('data-mode')).toBe('dark')
+  })
+
   test('the scope itself carries only what it sets, and passes native attributes through', () => {
     const ref = createRef<HTMLDivElement>()
     render(<ThemeScope ref={ref} mode="dark" className="panel" id="p">Hi</ThemeScope>)
