@@ -1,8 +1,10 @@
 'use client'
 
-import { forwardRef, useId } from 'react'
+import { forwardRef, useId, useRef } from 'react'
+import { useAutoResize } from '../../../hooks/useAutoResize'
 import { useUncontrolledValue } from '../../../lib/useUncontrolledValue'
 import { cn } from '../../../lib/cn'
+import { mergeRefs } from '../../../lib/mergeRefs'
 import './Textarea.css'
 
 type TextareaOwnProps = {
@@ -14,6 +16,14 @@ type TextareaOwnProps = {
   hint?: string
   characterCount?: boolean
   'aria-label'?: string
+  /**
+   * Grow with the text instead of scrolling: the field starts at `rows`
+   * lines and gets taller as the text wraps, up to `maxRows`. The manual
+   * resize handle goes, since the field sizes itself.
+   */
+  autoResize?: boolean
+  /** With `autoResize`: grow up to this many lines, then scroll. Left out, the field grows without a cap. */
+  maxRows?: number
 }
 
 // Same shape as Input.tsx: extend the real native element's attributes,
@@ -49,9 +59,12 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
   characterCount = false,
   required = false,
   'aria-label': ariaLabel,
+  autoResize = false,
+  maxRows,
   className,
   ...rest
 }, ref) {
+  const field = useRef<HTMLTextAreaElement>(null)
   const generatedId = useId()
   const id = idProp ?? generatedId
   const hintId = `${id}-hint`
@@ -59,6 +72,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
   const hasHint = Boolean(error || hint)
 
   const [currentValue, isControlled, setInternalValue] = useUncontrolledValue(value, defaultValue)
+  useAutoResize(field, currentValue, { enabled: autoResize, maxRows })
 
   function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     const val = e.target.value
@@ -89,8 +103,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
       <div className={wrapperClass}>
         <textarea
           {...rest}
-          ref={ref}
-          className={cn('textarea-field__textarea', className)}
+          ref={mergeRefs(field, ref)}
+          className={cn('textarea-field__textarea', autoResize && 'textarea-field__textarea--auto', className)}
           id={id}
           rows={rows}
           placeholder={placeholder}

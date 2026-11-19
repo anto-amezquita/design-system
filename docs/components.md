@@ -2106,6 +2106,16 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 | **Code name** | `Textarea` |
 | **Storybook path** | `Components/Textarea` |
 
+**Props / variants**
+- `label`, `hint`, `error`, `required`, `disabled`; `value` + `onChange(value)` (controlled) or `defaultValue`
+- `rows` (default 3); `maxLength` and `characterCount` show a live count
+- `autoResize`: grows with the text from `rows` lines instead of scrolling, and drops the resize handle; `maxRows` caps it, then it scrolls. Shares `hooks/useAutoResize` with ChatComposer
+- Native textarea attributes and `ref` pass through
+
+**Required states**
+- [x] default, with hint, with error, disabled, with character count
+- [x] `autoResize`: grown to fit, capped at `maxRows` and scrolling
+
 ---
 
 ### FileUpload

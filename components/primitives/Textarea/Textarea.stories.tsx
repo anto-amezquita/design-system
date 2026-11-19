@@ -21,6 +21,8 @@ const meta: Meta<typeof Textarea> = {
     error: { control: 'text' },
     hint: { control: 'text' },
     maxLength: { control: 'number' },
+    autoResize: { control: 'boolean' },
+    maxRows: { control: 'number' },
   },
 }
 
@@ -52,6 +54,22 @@ export const WithError: Story = {
     label: 'Message',
     defaultValue: 'Hi',
     error: 'Message must be at least 20 characters.',
+  },
+}
+
+/**
+ * `autoResize`: the field starts at `rows` and grows with the text, here to
+ * fit four lines, up to `maxRows` (6), then scrolls. No resize handle.
+ */
+export const AutoResize: Story = {
+  name: 'Grows with the text',
+  args: {
+    id: 'auto-resize',
+    label: 'Verse',
+    rows: 1,
+    autoResize: true,
+    maxRows: 6,
+    defaultValue: 'I left the door ajar\nso the light could find the hall\nand you could find the light\nif you came back at all',
   },
 }
 

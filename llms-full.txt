@@ -503,7 +503,7 @@ Multi-line text entry with label, hint, and error states — mirrors Input API
 - Import: `import { Textarea } from '@amezquita/design-system/components/primitives/Textarea'`
 - Token prefix: `textarea-*` (0 tokens)
 - Storybook: Components/Textarea
-- Stories: Default, WithHint, WithError, Disabled, WithCharacterCount, AllStates, DarkMode
+- Stories: Default, WithHint, WithError, AutoResize, Disabled, WithCharacterCount, AllStates, DarkMode
 
 ### TimePicker
 

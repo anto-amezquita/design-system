@@ -75,6 +75,12 @@
   line-height: var(--line-height-control);
 }
 
+/* autoResize: the field sizes itself (hooks/useAutoResize), so no handle to
+   fight it. The hook sets the height and, past maxRows, overflow-y. */
+.textarea-field__textarea--auto {
+  resize: none;
+}
+
 .textarea-field__textarea::placeholder {
   color: var(--color-text-secondary);
 }
