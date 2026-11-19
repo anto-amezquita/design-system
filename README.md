@@ -58,6 +58,32 @@ The part follows the page's mode, or its own with `mode="light"` or `mode="dark"
 
 The other way round works too: on a page that wears a brand, `base-scoped.css` and `<ThemeScope brand="base">` bring one part back to base ([ADR 0023](decisions/0023-demo-brands-and-n-brand-build.md), 2026-10-13 amendment).
 
+### Light and dark mode
+
+The dark values apply under `<html data-mode="dark">`, not from `prefers-color-scheme`, so a visitor can pick. `lib/color-mode` sets the attribute from their pick, or from the system setting until they pick. It runs before first paint, so a dark page never flashes light. Put its script in `<head>`, ahead of the stylesheets:
+
+```tsx
+// Next.js App Router, app/layout.tsx (a Server Component)
+import Script from 'next/script'
+import { colorModeScript } from '@amezquita/design-system/lib/color-mode'
+
+<html lang="en" suppressHydrationWarning>
+  <head>
+    <Script id="color-mode" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: colorModeScript() }} />
+  </head>
+```
+
+With Vite, add the same string to `index.html`'s `<head>` with `transformIndexHtml`. The script keeps following the system setting while the visitor hasn't picked. For a switch, `useColorMode()` gives `preference` (`light`, `dark` or `system`), `mode` (what the page is in now) and `setPreference`:
+
+```tsx
+import { useColorMode, type ColorModePreference } from '@amezquita/design-system/hooks/useColorMode'
+
+const { preference, setPreference } = useColorMode()
+<SegmentedControl value={preference} onValueChange={value => setPreference(value as ColorModePreference)} … />
+```
+
+The pick is remembered in `localStorage` under `amezquita-color-mode`. Pass `{ storageKey }` to both `colorModeScript` and `useColorMode` to use your own key.
+
 ### Fonts
 
 The package ships no font files. The `base` theme sets its text in a system font stack and its code in JetBrains Mono; `portfolio` adds Schibsted Grotesk for text; each demo brand names its own fonts. Load them from Google Fonts with the `<link>` tags in [`tokens/fonts.json`](tokens/fonts.json): `brands.<brand>.href` is the stylesheet, `brands.<brand>.preconnect` the origins to preconnect to. The same links are in `llms.txt`. Both are generated from the font tokens, so they change when a font does. Why there are no font files: [ADR 0020](decisions/0020-fonts-from-google-fonts-no-font-files.md).

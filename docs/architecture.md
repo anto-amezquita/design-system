@@ -31,7 +31,9 @@ components/
                      see the note on counts below)
 lib/, hooks/       — shared utilities and hooks (e.g. useUncontrolledValue,
                      breakpoints.ts for the breakpoint tokens in JS, navigation.ts
-                     for the NavItem type NavigationMenu and SideNav share)
+                     for the NavItem type NavigationMenu and SideNav share,
+                     color-mode.ts + hooks/useColorMode.ts for light/dark from
+                     the visitor or the system, set before paint)
 brand/             — the brand contract, its check and the brand build, shipped for
                      projects to run on their own brand (ADR 0028): contract.mjs
                      reads the markers, check.mjs is checkBrand(), build.mjs builds
