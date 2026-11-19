@@ -527,6 +527,14 @@
       "amezquita.brand": "settable"
     }
   },
+  "font-family-reading": {
+    "$value": "{font-family-base}",
+    "$type": "fontFamily",
+    "$description": "Typeface for long-form reading: lyrics, articles, quoted passages. Text uses it with family=\"reading\". The base font in base, so it follows a brand's font-family-base until the brand sets its own.",
+    "$extensions": {
+      "amezquita.brand": "settable"
+    }
+  },
   "font-size-body": {
     "$value": "{font-size.md}",
     "$type": "dimension",

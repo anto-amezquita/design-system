@@ -9,6 +9,7 @@ const meta: Meta<typeof Text> = {
     size: 'body',
     tone: 'primary',
     weight: 'body',
+    family: 'base',
     truncate: false,
     children: 'Every colour, size and space comes from a token, so a brand is a thin skin over the same components.',
   },
@@ -16,6 +17,7 @@ const meta: Meta<typeof Text> = {
     size: { control: 'inline-radio', options: ['body', 'small', 'caption'] },
     tone: { control: 'inline-radio', options: ['primary', 'secondary', 'inherit'] },
     weight: { control: 'inline-radio', options: ['body', 'label'] },
+    family: { control: 'inline-radio', options: ['base', 'mono', 'reading'] },
     truncate: { control: 'number' },
   },
 }

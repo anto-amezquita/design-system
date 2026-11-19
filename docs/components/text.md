@@ -1,6 +1,6 @@
 # Text
 
-> Body text in the brand's type roles (body, small, caption), with a tone and a weight
+> Body text in the brand's type roles (body, small, caption), with a tone, a weight and a typeface
 
 - Tier: primitives
 - Storybook: `Components/Text`
@@ -13,6 +13,7 @@
 | `size?` | `'body' \| 'small' \| 'caption'` | Type role: `body` (default) for running text, `small` for supporting text (hints, metadata), `caption` for the smallest labels (figure captions, timestamps). Each is the brand's own size and line height. |
 | `tone?` | `'primary' \| 'secondary' \| 'inherit'` | `primary` (default), `secondary` for less important text (still 4.5:1 on the page surfaces), or `inherit` to take the colour of the parent, like text inside a Button or Alert. |
 | `weight?` | `'body' \| 'label'` | Weight role: `body` (default) or `label`, a little heavier, for a term or a value that should stand out. |
+| `family?` | `'base' \| 'mono' \| 'reading'` | Typeface role: `base` (default) for interface and running text, `mono` for code-like values, `reading` for long-form text people read rather than scan (lyrics, articles, quoted passages). `reading` is the base font unless the brand sets `font-family-reading`. |
 | `truncate?` | `boolean \| number` | Cut the text off with an ellipsis after this many lines (`true` = 1). The full text stays in the page for screen readers and copying; show it somewhere else too (a tooltip, a detail page) if sighted users need it. |
 | `as?` | `'p' \| 'span' \| 'div' \| 'strong' \| 'em' \| 'small' \| 'figcaption' \| 'li' \| 'dd' \| 'dt'` | Element to render. `p` (default); `span` inside a line; `strong`/`em` when the emphasis is meaning, not style. |
 

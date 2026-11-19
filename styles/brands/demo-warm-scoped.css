@@ -48,6 +48,7 @@
   --font-family-base: 'Instrument Sans', sans-serif;
   --font-family-heading: 'Bricolage Grotesque', sans-serif;
   --font-family-mono: 'JetBrains Mono', monospace;
+  --font-family-reading: var(--font-family-base);
   --font-size-h4: 28px;
   --font-weight-heading: 800;
   --font-weight-display: 800;
@@ -107,6 +108,7 @@
   --font-family-base: 'Instrument Sans', sans-serif;
   --font-family-heading: 'Bricolage Grotesque', sans-serif;
   --font-family-mono: 'JetBrains Mono', monospace;
+  --font-family-reading: var(--font-family-base);
   --font-size-h4: 28px;
   --font-weight-heading: 800;
   --font-weight-display: 800;

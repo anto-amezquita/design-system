@@ -27,7 +27,8 @@
         {
           "family": "Atkinson Hyperlegible Next",
           "tokens": [
-            "font-family-base"
+            "font-family-base",
+            "font-family-reading"
           ],
           "weights": [
             400,
@@ -81,7 +82,8 @@
         {
           "family": "Nunito",
           "tokens": [
-            "font-family-base"
+            "font-family-base",
+            "font-family-reading"
           ],
           "weights": [
             400,
@@ -136,7 +138,8 @@
         {
           "family": "Instrument Sans",
           "tokens": [
-            "font-family-base"
+            "font-family-base",
+            "font-family-reading"
           ],
           "weights": [
             400,
@@ -181,7 +184,8 @@
           "family": "Schibsted Grotesk",
           "tokens": [
             "font-family-base",
-            "font-family-heading"
+            "font-family-heading",
+            "font-family-reading"
           ],
           "weights": [
             400,

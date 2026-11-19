@@ -2308,7 +2308,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 | Field | Value |
 |---|---|
-| **Purpose** | Body text in the brand's type roles (body, small, caption), with a tone and a weight |
+| **Purpose** | Body text in the brand's type roles (body, small, caption), with a tone, a weight and a typeface |
 | **Figma name** | `Text` (text styles `Body`, `Small`, `Caption`) |
 | **Code name** | `Text` |
 | **Storybook path** | `Components/Text` |
@@ -2317,6 +2317,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - `size`: `body` (default), `small` or `caption`, each the brand's `--font-size-*` and `--line-height-*` pair
 - `tone`: `primary` (default), `secondary`, or `inherit` for text inside a coloured component
 - `weight`: `body` (default) or `label`
+- `family`: `base` (default), `mono`, or `reading` for long-form text (lyrics, articles, quoted passages). `reading` is the base font until a brand sets `--font-family-reading`
 - `truncate`: `true` for one line with an ellipsis, or a number of lines
 - `as`: `p` (default), `span`, `div`, `strong`, `em`, `small`, `figcaption`, `li`, `dd` or `dt`
 - Native attributes, `className`, `style` and `ref` pass through
@@ -2326,7 +2327,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - [x] truncated (one line, or clamped to n lines)
 
 **Tokens consumed**
-- `--font-family-base`, `--font-weight-body`, `--font-weight-label`, `--letter-spacing-body`
+- `--font-family-base`, `--font-family-mono`, `--font-family-reading`, `--font-weight-body`, `--font-weight-label`, `--letter-spacing-body`
 - `--font-size-body`, `--line-height-body`, `--font-size-small`, `--line-height-small`, `--font-size-caption`, `--line-height-caption`
 - `--color-text-primary`, `--color-text-secondary` (no component tokens; they would only pass through)
 

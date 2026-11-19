@@ -47,6 +47,7 @@
   --font-family-base: 'Atkinson Hyperlegible Next', sans-serif;
   --font-family-heading: 'Archivo', sans-serif;
   --font-family-mono: 'Atkinson Hyperlegible Mono', monospace;
+  --font-family-reading: var(--font-family-base);
   --letter-spacing-heading: -0.03em;
   --font-variation-heading: 'wdth' 112.5;
   --border-radius-component: 12px;
@@ -99,6 +100,7 @@
   --font-family-base: 'Atkinson Hyperlegible Next', sans-serif;
   --font-family-heading: 'Archivo', sans-serif;
   --font-family-mono: 'Atkinson Hyperlegible Mono', monospace;
+  --font-family-reading: var(--font-family-base);
   --letter-spacing-heading: -0.03em;
   --font-variation-heading: 'wdth' 112.5;
   --border-radius-component: 12px;

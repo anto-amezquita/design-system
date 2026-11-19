@@ -20,6 +20,13 @@ type TextOwnProps = {
   /** Weight role: `body` (default) or `label`, a little heavier, for a term or a value that should stand out. */
   weight?: 'body' | 'label'
   /**
+   * Typeface role: `base` (default) for interface and running text, `mono`
+   * for code-like values, `reading` for long-form text people read rather
+   * than scan (lyrics, articles, quoted passages). `reading` is the base font
+   * unless the brand sets `font-family-reading`.
+   */
+  family?: 'base' | 'mono' | 'reading'
+  /**
    * Cut the text off with an ellipsis after this many lines (`true` = 1).
    * The full text stays in the page for screen readers and copying; show it
    * somewhere else too (a tooltip, a detail page) if sighted users need it.
@@ -33,13 +40,14 @@ type TextOwnProps = {
 type TextProps = React.HTMLAttributes<HTMLElement> & TextOwnProps
 
 /**
- * Body text in the brand's type roles: body, small and caption, with a tone
- * and weight. For headings, use Heading.
+ * Body text in the brand's type roles: body, small and caption, with a tone,
+ * a weight and a typeface. For headings, use Heading.
  */
 export const Text = forwardRef<HTMLElement, TextProps>(function Text({
   size = 'body',
   tone = 'primary',
   weight = 'body',
+  family = 'base',
   truncate = false,
   as: Tag = 'p',
   className,
@@ -57,6 +65,7 @@ export const Text = forwardRef<HTMLElement, TextProps>(function Text({
         `text--${size}`,
         `text--tone-${tone}`,
         weight === 'label' && 'text--weight-label',
+        family !== 'base' && `text--family-${family}`,
         lines === 1 && 'text--truncate',
         lines > 1 && 'text--clamp',
         className,

@@ -1069,7 +1069,7 @@
       "name": "Text",
       "slug": "text",
       "tier": "primitives",
-      "purpose": "Body text in the brand's type roles (body, small, caption), with a tone and a weight",
+      "purpose": "Body text in the brand's type roles (body, small, caption), with a tone, a weight and a typeface",
       "storybookPath": "Components/Text",
       "storybookTitleId": "components-text",
       "defaultStoryId": "components-text--default",

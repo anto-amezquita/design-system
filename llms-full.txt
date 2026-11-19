@@ -20,12 +20,12 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-400 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+401 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
 - component: 123
 - color: 52
-- typography: 40
+- typography: 41
 - spacing: 19
 - size: 13
 - motion: 7
@@ -489,7 +489,7 @@ Free-text values as tags: keywords, email addresses, ingredients
 
 ### Text
 
-Body text in the brand's type roles (body, small, caption), with a tone and a weight
+Body text in the brand's type roles (body, small, caption), with a tone, a weight and a typeface
 
 - Import: `import { Text } from '@amezquita/design-system/components/primitives/Text'`
 - Token prefix: `text-*` (0 tokens)

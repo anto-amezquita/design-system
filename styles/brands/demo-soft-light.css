@@ -40,6 +40,7 @@
   --font-family-base: 'Nunito', sans-serif;
   --font-family-heading: 'Fraunces', serif;
   --font-family-mono: 'JetBrains Mono', monospace;
+  --font-family-reading: var(--font-family-base);
   --font-weight-heading: 500;
   --font-weight-display: 500;
   --font-weight-title: 500;

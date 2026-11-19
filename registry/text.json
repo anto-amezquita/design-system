@@ -3,7 +3,7 @@
   "name": "text",
   "type": "registry:component",
   "title": "Text",
-  "description": "Body text in the brand's type roles (body, small, caption), with a tone and a weight",
+  "description": "Body text in the brand's type roles (body, small, caption), with a tone, a weight and a typeface",
   "dependencies": [
     "@amezquita/design-system"
   ],

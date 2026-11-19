@@ -1,7 +1,8 @@
 /*
   Tokens consumed:
 
-  --font-family-base, --font-weight-body, --font-weight-label,
+  --font-family-base, --font-family-mono, --font-family-reading,
+  --font-weight-body, --font-weight-label,
   --letter-spacing-body, --color-text-primary, --color-text-secondary,
   --font-size-body, --line-height-body,
   --font-size-small, --line-height-small,
@@ -50,6 +51,14 @@
 
 .text.text--weight-label {
   font-weight: var(--font-weight-label);
+}
+
+.text.text--family-mono {
+  font-family: var(--font-family-mono);
+}
+
+.text.text--family-reading {
+  font-family: var(--font-family-reading);
 }
 
 /* em keeps its italics: there the emphasis is the meaning. */

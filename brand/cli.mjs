@@ -77,8 +77,8 @@ if (json) {
   const lines = [...formatResult(result.check), ...result.files.map(f => `✓ Wrote ${f}`)]
   if (result.fonts.href) lines.push(`  Load the fonts with <link rel="stylesheet" href="${result.fonts.href}"> (and preconnect to ${result.fonts.preconnect.join(', ')})`)
   print(lines, true)
-  for (const { family, token } of result.fonts.unknown) {
-    console.warn(`⚠ ${token} names "${family}", which the font link doesn't cover. Load it in the project yourself.`)
+  for (const { family, tokens } of result.fonts.unknown) {
+    console.warn(`⚠ ${tokens.join(', ')} ${tokens.length === 1 ? 'names' : 'name'} "${family}", which the font link doesn't cover. Load it in the project yourself.`)
   }
 }
 process.exit(result.ok ? 0 : 1)

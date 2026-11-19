@@ -88,7 +88,7 @@ Full prop tables, real tokens, and a usage example for every component: `https:/
 | Switch | [switch](https://design.amezquita.dk/components/switch.md) — Binary toggle for on/off settings; renders as a styled checkbox under the hood |
 | Tag | [tag](https://design.amezquita.dk/components/tag.md) — A short label on content: a category, a status word, a chosen value; optionally removable or clickable |
 | TagInput | [tag-input](https://design.amezquita.dk/components/tag-input.md) — Free-text values as tags: keywords, email addresses, ingredients |
-| Text | [text](https://design.amezquita.dk/components/text.md) — Body text in the brand's type roles (body, small, caption), with a tone and a weight |
+| Text | [text](https://design.amezquita.dk/components/text.md) — Body text in the brand's type roles (body, small, caption), with a tone, a weight and a typeface |
 | Textarea | [textarea](https://design.amezquita.dk/components/textarea.md) — Multi-line text entry with label, hint, and error states — mirrors Input API |
 | TimePicker | [time-picker](https://design.amezquita.dk/components/time-picker.md) — One time of day: an appointment, a delivery slot, opening hours |
 | Timestamp | [timestamp](https://design.amezquita.dk/components/timestamp.md) — A moment in time as people say it ("5 minutes ago", "yesterday") or as a date, in a `time` element |
@@ -153,7 +153,7 @@ Every token this system defines, resolved across all four theme axes: https://de
 Real semantic token families:
 
 - **color** (52): `--color-accent-*`, `--color-border-*`, `--color-chart-*`, `--color-curtain-*`, `--color-feedback-*`, `--color-neutral-*`, `--color-skeleton-*`, `--color-surface-*`, `--color-text-*`
-- **typography** (40): `--font-family-*`, `--font-size-*`, `--font-variation-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
+- **typography** (41): `--font-family-*`, `--font-size-*`, `--font-variation-*`, `--font-weight-*`, `--letter-spacing-*`, `--line-height-*`
 - **spacing** (19): `--space-compact-*`, `--space-component-*`, `--space-container-*`, `--space-control-*`, `--space-dialog-*`, `--space-element-*`, `--space-inline-*`, `--space-label-*`, `--space-layout-*`, `--space-prominent-*`, `--space-section-*`, `--space-tight-*`
 - **size** (13): `--focus-ring-*`, `--size-container-*`, `--size-dialog-*`, `--size-icon-*`
 - **motion** (7): `--duration-entrance-*`, `--duration-interaction-*`, `--duration-reveal-*`, `--duration-skeleton-*`, `--duration-spin-*`, `--duration-transition-*`

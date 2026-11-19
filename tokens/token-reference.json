@@ -1,9 +1,9 @@
 {
   "meta": {
     "primitiveCount": 126,
-    "semanticCount": 151,
+    "semanticCount": 152,
     "componentCount": 123,
-    "total": 400
+    "total": 401
   },
   "tokens": [
     {
@@ -5270,7 +5270,33 @@
         "ToolCall",
         "CodeBlock",
         "Kbd",
-        "OtpInput"
+        "OtpInput",
+        "Text"
+      ],
+      "brandSettable": true
+    },
+    {
+      "name": "font-family-reading",
+      "cssVar": "--font-family-reading",
+      "type": "fontFamily",
+      "category": "typography",
+      "description": "Typeface for long-form reading: lyrics, articles, quoted passages. Text uses it with family=\"reading\". The base font in base, so it follows a brand's font-family-base until the brand sets its own.",
+      "rawValue": "{font-family-base}",
+      "resolved": {
+        "base-light": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "base-dark": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "demo-cool-light": "'Atkinson Hyperlegible Next', sans-serif",
+        "demo-cool-dark": "'Atkinson Hyperlegible Next', sans-serif",
+        "demo-soft-light": "'Nunito', sans-serif",
+        "demo-soft-dark": "'Nunito', sans-serif",
+        "demo-warm-light": "'Instrument Sans', sans-serif",
+        "demo-warm-dark": "'Instrument Sans', sans-serif",
+        "portfolio-light": "'Schibsted Grotesk', sans-serif",
+        "portfolio-dark": "'Schibsted Grotesk', sans-serif"
+      },
+      "axisAware": true,
+      "usedBy": [
+        "Text"
       ],
       "brandSettable": true
     },

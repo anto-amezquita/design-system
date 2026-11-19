@@ -57,6 +57,47 @@ describe('Text semantics', () => {
   })
 })
 
+describe('Text family', () => {
+  const fontOf = (el: Element | null) => getComputedStyle(el!).fontFamily
+
+  test('base by default, with no family class', () => {
+    const { container } = render(<div><Text>x</Text><span style={{ fontFamily: 'var(--font-family-base)' }} /></div>)
+    const [el, probe] = Array.from(container.firstElementChild!.children)
+    expect(el.className).not.toContain('text--family')
+    expect(fontOf(el)).toBe(fontOf(probe))
+  })
+
+  test('mono takes the mono font', () => {
+    const { container } = render(<Text family="mono">x</Text>)
+    expect(fontOf(container.firstElementChild)).toContain('JetBrains Mono')
+  })
+
+  test('reading is the base font until a brand sets its own, in base and inside a brand', () => {
+    const { container } = render(
+      <div>
+        <div><Text>a</Text><Text family="reading">b</Text></div>
+        <div data-brand="demo-cool"><Text>a</Text><Text family="reading">b</Text></div>
+      </div>,
+    )
+    const [base, brand] = Array.from(container.firstElementChild!.children)
+    expect(fontOf(base.children[1])).toBe(fontOf(base.children[0]))
+    // demo-cool sets font-family-base, so reading follows it inside the scope.
+    expect(fontOf(brand.children[1])).toContain('Atkinson Hyperlegible Next')
+    expect(fontOf(brand.children[1])).toBe(fontOf(brand.children[0]))
+  })
+
+  test('reading takes a brand\'s own reading font, and leaves base text alone', () => {
+    const { container } = render(
+      <div style={{ '--font-family-reading': 'Georgia, serif' } as React.CSSProperties}>
+        <Text>a</Text><Text family="reading">b</Text>
+      </div>,
+    )
+    const [plain, reading] = Array.from(container.firstElementChild!.children)
+    expect(fontOf(reading)).toBe('Georgia, serif')
+    expect(fontOf(plain)).not.toContain('Georgia')
+  })
+})
+
 describe('Text truncation', () => {
   test('truncate cuts to one line with an ellipsis; the full text stays in the page', () => {
     const { container } = render(<div style={{ inlineSize: '200px' }}><Text truncate>{long}</Text></div>)

@@ -71,7 +71,8 @@ describe('buildBrand', () => {
 
     expect(result.fonts.families.map(f => f.family)).toEqual(['Archivo', 'JetBrains Mono'])
     expect(result.fonts.href).toContain('family=Archivo:')
-    expect(result.fonts.unknown).toEqual([{ family: 'Some Private Sans', token: 'font-family-base' }])
+    // font-family-reading follows font-family-base, so it names the same font.
+    expect(result.fonts.unknown).toEqual([{ family: 'Some Private Sans', tokens: ['font-family-base', 'font-family-reading'] }])
   })
 
   it('builds nothing from a brand that fails the check', async () => {

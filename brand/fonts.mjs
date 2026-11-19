@@ -116,7 +116,10 @@ export function fontsForTokens(tokens, globalTokens) {
   const entries = Object.entries(tokens)
     .filter(([name, def]) => name.startsWith('font-family-') || def?.$type === 'fontWeight')
     .map(([name, def]) => ({ name, type: def.$type, category: 'semantic', resolved: { light: resolve(name) } }))
-  const unknown = []
-  const result = fontsForAxis(entries, 'light', { onUnknown: (family, token) => unknown.push({ family, token }) })
-  return { ...result, unknown }
+  // One entry per family, with every token that names it, like `families`.
+  const unknown = new Map()
+  const result = fontsForAxis(entries, 'light', {
+    onUnknown: (family, token) => unknown.set(family, [...(unknown.get(family) ?? []), token]),
+  })
+  return { ...result, unknown: [...unknown].map(([family, tokens]) => ({ family, tokens })) }
 }
