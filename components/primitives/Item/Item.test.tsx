@@ -149,6 +149,18 @@ describe('Item with onClick', () => {
     expect(onClick).not.toHaveBeenCalled()
   })
 
+  // What changed from onClick on the <li> (named in .changeset/item-onclick.md):
+  // the event's currentTarget is the button, and a handler typed for the <li>
+  // no longer compiles.
+  test('onClick gets the button as currentTarget, not the row', async () => {
+    let target: EventTarget | null = null
+    const { getByRole } = render(<List><Item onClick={e => { target = e.currentTarget }} title="Row" /></List>)
+    await userEvent.click(getByRole('button', { name: 'Row' }))
+    expect(target).toBe(getByRole('button', { name: 'Row' }))
+    // @ts-expect-error a handler for the <li> isn't one for the row's button or link
+    void (<Item onClick={(e: React.MouseEvent<HTMLLIElement>) => e} title="Typed for the li" />)
+  })
+
   test('keyboard focus rings the whole row; Enter and Space run onClick', async () => {
     const onClick = vi.fn()
     const { container } = render(<List><Item onClick={onClick} title="A" /></List>)
