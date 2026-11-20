@@ -14,17 +14,17 @@ npx amezquita-brand build <brand-folder> --out <dir> [--pairs <file>]
 ## The brand folder
 
 - `tokens.json` for light and, if the brand changes anything in dark mode, `dark.json`. Flat token names as keys, DTCG `$value` and `$type`: `"color-neutral-50": { "$value": "#f7f4ee", "$type": "color" }`.
-- A value is hex, another value of the token's type, a reference to a semantic or component token (`{color-accent-default}`), or a reference to a primitive in `tokens/global.json` (`{color.warm-500}`). Write colours as hex: the contrast check skips anything else.
+- A value is hex, another value of the token's type, a reference to a semantic or component token (`{color-accent-default}`), or a reference to a primitive in `tokens/global.json` (`{color.warm-500}`). Write colours as hex: the contrast check can't measure anything else.
 
 ## What the check enforces
 
 - **Only settable tokens.** Every name is in the tables below or starts with `<brand>-`. A misspelt name fails, with the nearest real name.
 - **The right type.** `$type` matches the system's, and every reference resolves to a value, not back to itself.
-- **Colours are hex.** `#rrggbb`, or `#rrggbbaa` with transparency (`#0000` for transparent), so the contrast check can read every one.
+- **Colours are hex.** `#rrggbb`, or `#rrggbbaa` with transparency (`#0000` for transparent). A colour with transparency can't be in a contrast pair: the check can't know what shows through it.
 - **Dark files set lighting only:** names starting with `color-surface-`, `color-curtain`, `color-text-`, `color-border-`, `color-feedback-`, `color-chart-`, `color-neutral-`, `color-accent-`, `color-skeleton-`, `button-secondary-`, `card-border-color`, or the brand's own.
 - **No light value leaks into dark mode.** A literal or primitive set in `tokens.json`, for a token base gives different values in light and dark, has to be set in `dark.json` too. A reference to a semantic token follows the mode by itself.
 - **Heading sizes and line-heights travel together.** Setting `font-size-hN` means setting `line-height-hN`, on the 4px grid.
-- **Contrast.** The 29 pairs in `tokens/contrast-pairs.json`, in light and dark, plus any `--pairs` file for the brand's own tokens.
+- **Contrast.** The 29 pairs in `tokens/contrast-pairs.json`, in light and dark, plus any `--pairs` file for the brand's own tokens. A pair fails if either side isn't a solid hex colour, since it can't be measured.
 
 ## Colour
 

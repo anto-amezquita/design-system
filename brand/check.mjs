@@ -39,10 +39,17 @@ export function contrastRatio(a, b) {
 
 const isHex = v => typeof v === 'string' && /^#([0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/i.test(v)
 
+// Hex you can't see through: no alpha digits, or alpha at full (#rgbf, #rrggbbff).
+const isSolidHex = v => isHex(v) && (v.length === 4 || v.length === 7 || /^#[0-9a-f]{3}f$|^#[0-9a-f]{6}ff$/i.test(v))
+
 /**
- * Every pair in every mode. modes is { name: mergedTokenMap }. A pair whose
- * side doesn't resolve to hex (transparent, rgba(), a missing token) is
- * skipped, as it always has been, so brand colours are written as hex.
+ * Every pair in every mode. modes is { name: mergedTokenMap }.
+ *
+ * A pair is measured only when both sides resolve to solid hex. Anything else
+ * fails with ratio null and `unreadable` naming the side it couldn't read: a
+ * colour with transparency (its contrast depends on what shows through), a
+ * value that isn't hex (rgb(), color-mix()), or a token that resolves to
+ * nothing. Such pairs used to be skipped, or read as solid, and pass.
  */
 export function checkContrast(modes, pairs, global) {
   const results = []
@@ -51,12 +58,24 @@ export function checkContrast(modes, pairs, global) {
     for (const pair of pairs) {
       const bgHex = resolve(pair.bg)
       const fgHex = resolve(pair.fg)
-      if (!isHex(bgHex) || !isHex(fgHex)) continue
+      const base = { mode, role: pair.role, bg: pair.bg, fg: pair.fg, bgHex, fgHex, required: pair.minRatio }
+      if (!isSolidHex(fgHex) || !isSolidHex(bgHex)) {
+        results.push({ ...base, ratio: null, pass: false, unreadable: isSolidHex(fgHex) ? pair.bg : pair.fg })
+        continue
+      }
       const ratio = Math.round(contrastRatio(bgHex, fgHex) * 100) / 100
-      results.push({ mode, role: pair.role, bg: pair.bg, fg: pair.fg, bgHex, fgHex, ratio, required: pair.minRatio, pass: ratio >= pair.minRatio })
+      results.push({ ...base, ratio, pass: ratio >= pair.minRatio })
     }
   }
   return results
+}
+
+/** Why a pair couldn't be measured, for a person reading the failure. */
+export function unreadableReason(r) {
+  const value = r.unreadable === r.fg ? r.fgHex : r.bgHex
+  if (value === null) return `\`${r.unreadable}\` resolves to nothing`
+  if (isHex(value)) return `\`${r.unreadable}\` is ${value}, which has transparency, so its contrast depends on what shows through`
+  return `\`${r.unreadable}\` is ${JSON.stringify(value)}, not a hex colour`
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────
@@ -234,17 +253,23 @@ export function checkBrand(dir, options = {}) {
             ref.includes('.') ? 'A dotted reference names a primitive in tokens/global.json, like {color.warm-500}.' : 'A plain reference names a semantic or component token, like {color-accent-default}, or one of the brand\'s own.'))
         }
       }
-      if (loopsBack(token, modes[mode])) {
-        failures.push(fail('reference-loop', token, file, mode, `\`${token}\` refers back to itself through its references, so in CSS it has no value at all.`,
-          'Point it at a token that ends in a value, or give it a value of its own.'))
+      // A light value is live in dark mode too, unless dark.json sets the
+      // token, and base's references differ there, so a loop can form in
+      // dark only.
+      const loopModes = file === 'tokens.json' && !(token in dark) ? [mode, `${name}-dark`] : [mode]
+      const loopMode = loopModes.find(m => loopsBack(token, modes[m]))
+      if (loopMode) {
+        const onlyDark = loopMode !== mode
+        failures.push(fail('reference-loop', token, file, loopMode, `\`${token}\` refers back to itself through its references${onlyDark ? ' in dark mode' : ''}, so in CSS it has no value at all${onlyDark ? ' there' : ''}.`,
+          onlyDark ? `Set \`${token}\` in dark.json too, or point it at a token that ends in a value in both modes.` : 'Point it at a token that ends in a value, or give it a value of its own.'))
       }
 
-      // Colours are hex, so the contrast check can read them (decisions/0028 §2).
-      // Anything else would make it skip every pair the colour is in.
+      // Colours are hex (decisions/0028 §2). This names the token at fault;
+      // checkContrast fails any pair it reaches either way.
       const type = def.$type ?? settable?.type
       if (type === 'color' && !(typeof def.$value === 'string' && def.$value.includes('{')) && !isHex(def.$value)) {
-        failures.push(fail('not-hex', token, file, mode, `\`${token}\` is ${JSON.stringify(def.$value)}, not a hex colour, so the contrast check can't read it and would skip its pairs.`,
-          'Write it as hex: #rrggbb, or #rrggbbaa for a colour with transparency (#0000 for transparent).'))
+        failures.push(fail('not-hex', token, file, mode, `\`${token}\` is ${JSON.stringify(def.$value)}, not a hex colour, so the contrast check can't measure it.`,
+          "Write it as hex: #rrggbb. A colour with transparency is #rrggbbaa (#0000 for transparent), but it can't be in a contrast pair: the check can't know what shows through it."))
       }
 
       // Dark files set lighting only.
@@ -299,9 +324,16 @@ export function checkBrand(dir, options = {}) {
 
   const results = checkContrast(modes, [...system.pairs, ...extraPairs.filter(p => p && typeof p.minRatio === 'number')], system.global)
   for (const r of results.filter(r => !r.pass)) {
+    const file = r.mode.endsWith('-dark') ? 'dark.json' : 'tokens.json'
+    if (r.unreadable) {
+      failures.push(fail('contrast-unreadable', r.unreadable, null, r.mode,
+        `${r.role}: ${r.fg} on ${r.bg} can't be measured. ${unreadableReason(r)}.`,
+        `Give \`${r.unreadable}\` a solid hex value (#rrggbb) in ${file}, or point it at a token that has one. A colour with transparency can't be in a contrast pair.`))
+      continue
+    }
     failures.push(fail('contrast', r.fg, null, r.mode,
       `${r.role}: ${r.fg} (${r.fgHex}) on ${r.bg} (${r.bgHex}) is ${r.ratio}:1, needs ${r.required}:1.`,
-      `Darken or lighten one of the two in ${r.mode.endsWith('-dark') ? 'dark.json' : 'tokens.json'} until the pair reaches ${r.required}:1.`))
+      `Darken or lighten one of the two in ${file} until the pair reaches ${r.required}:1.`))
   }
 
   return { ok: failures.length === 0, brand: name, failures, contrast: { checked: results.length, modes: Object.keys(modes), results } }

@@ -10,7 +10,7 @@
 
 import { writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import { checkBrand, checkContrast } from '../brand/check.mjs'
+import { checkBrand, checkContrast, unreadableReason } from '../brand/check.mjs'
 import { loadSystem } from '../brand/contract.mjs'
 import { formatResult } from '../brand/report.mjs'
 import { listBrands } from './brands.mjs'
@@ -53,6 +53,11 @@ if (baseFailures.length === 0 && failing.length === 0) {
 }
 
 for (const r of baseFailures) {
+  if (r.unreadable) {
+    console.error(`✗ [${r.mode}] ${r.role}: ${r.fg} on ${r.bg} can't be measured. ${unreadableReason(r)}.`)
+    console.error(`    fix: give ${r.unreadable} a solid hex value in tokens/brands/base/ or its component tokens\n`)
+    continue
+  }
   console.error(`✗ [${r.mode}] ${r.role}: ${r.fg} (${r.fgHex}) on ${r.bg} (${r.bgHex}) is ${r.ratio}:1, needs ${r.required}:1`)
   console.error('    fix: darken or lighten one of the two in tokens/brands/base/\n')
 }

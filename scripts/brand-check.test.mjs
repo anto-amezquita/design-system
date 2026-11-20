@@ -11,8 +11,9 @@ import { join } from 'node:path'
 
 import { afterEach, describe, expect, it } from 'vitest'
 
-import { checkBrand } from '../brand/check.mjs'
+import { checkBrand, checkContrast } from '../brand/check.mjs'
 import { loadSystem } from '../brand/contract.mjs'
+import { makeResolver } from '../lib/resolve-token.mjs'
 import { renderBrandContract } from './build-brand-contract.mjs'
 import { listBrands } from './brands.mjs'
 import { EXCEPTIONS } from './check-brands.mjs'
@@ -77,12 +78,16 @@ describe('checkBrand', () => {
   // The leak rule's fix is "set it in dark.json too". That has to be possible:
   // a token base changes per mode is lighting, so a dark file may set it.
   it('lets dark.json set every settable token that base changes per mode', () => {
+    const changing = []
     for (const token of system.settable.keys()) {
       const leaks = rules(check({ [token]: { $value: '#123456', $type: system.settable.get(token).type } }))
       if (!leaks.includes(`light-leaks-into-dark:${token}`)) continue
+      changing.push(token)
       const both = { [token]: { $value: '#123456', $type: system.settable.get(token).type } }
       expect(rules(check(both, both)), token).not.toContain(`dark-not-lighting:${token}`)
     }
+    // Without this the loop passes on nothing if the leak rule stops firing.
+    expect(changing).toEqual(expect.arrayContaining(['card-border-color', 'color-skeleton-base', 'color-text-primary']))
   })
 
   it('accepts primitive and semantic references', () => {
@@ -109,15 +114,56 @@ describe('checkBrand', () => {
   })
 
   it('lets a light literal through on a token that is the same in both modes', () => {
-    expect(rules(check({ 'color-chart-1': color('#0055aa') }, { 'color-chart-1': color('#4499ee') }))).not.toContain('light-leaks-into-dark:color-chart-1')
+    // Base gives color-border-strong one value in light and dark, so a light
+    // literal has nothing to leak over.
+    const light = makeResolver({ ...system.components, ...system.baseLight }, system.global)
+    const dark = makeResolver({ ...system.components, ...system.baseLight, ...system.baseDark }, system.global)
+    expect(light('color-border-strong')).toBe(dark('color-border-strong'))
+    expect(rules(check({ 'color-border-strong': color('#6b6b6b') }))).not.toContain('light-leaks-into-dark:color-border-strong')
     expect(check({ 'font-family-reading': { $value: "'Fraunces', serif", $type: 'fontFamily' } }).failures).toEqual([])
   })
 
   it('refuses a colour that is not hex, since the contrast check would skip it', () => {
     const light = { 'color-text-primary': color('rgb(240, 240, 240)') }
     const result = check(light, light)
-    expect(rules(result)).toEqual(['not-hex:color-text-primary', 'not-hex:color-text-primary'])
+    expect(rules(result).filter(r => r.startsWith('not-hex'))).toEqual(['not-hex:color-text-primary', 'not-hex:color-text-primary'])
+    expect(result.failures.find(f => f.rule === 'not-hex').fix).toContain("can't be in a contrast pair")
     expect(result.ok).toBe(false)
+  })
+
+  // A pair is checked only when both sides are a solid colour. Transparency
+  // used to be read as solid (#00000030 text measured 20:1 on white), and a
+  // value that wasn't hex skipped the pair and still passed.
+  it('fails a pair whose colour has transparency, instead of reading it as solid', () => {
+    const result = check({ 'color-text-primary': color('#00000030') }, { 'color-text-primary': color('#ffffff30') })
+    const unreadable = result.failures.filter(f => f.rule === 'contrast-unreadable')
+    expect(unreadable.length).toBeGreaterThan(0)
+    expect(new Set(unreadable.map(f => f.token))).toEqual(new Set(['color-text-primary']))
+    expect(new Set(unreadable.map(f => f.mode))).toEqual(new Set(['acme-light', 'acme-dark']))
+    expect(result.failures.filter(f => f.rule === 'contrast')).toEqual([])
+    expect(result.ok).toBe(false)
+  })
+
+  it('reads hex with a solid alpha as solid', () => {
+    expect(check({ 'color-text-primary': color('#111111ff') }, { 'color-text-primary': color('#fafafaff') }).failures).toEqual([])
+  })
+
+  it('fails a pair that a non-hex colour reaches through a reference', () => {
+    const viaMix = check({ 'color-text-primary': color('color-mix(in srgb, {color-accent-default} 20%, white)') }, { 'color-text-primary': color('#fafafa') })
+    expect(rules(viaMix)).toContain('contrast-unreadable:color-text-primary')
+    const viaUntyped = check({ 'acme-x': { $value: 'transparent' }, 'color-text-primary': color('{acme-x}') }, { 'color-text-primary': color('#fafafa') })
+    expect(rules(viaUntyped)).toContain('contrast-unreadable:color-text-primary')
+  })
+
+  it("fails one of the brand's own pairs that names a token it doesn't have", () => {
+    const pairs = [{ bg: 'color-surface-primary', fg: 'acme-sigal', role: 'signal-text', minRatio: 4.5 }]
+    expect(rules(check({ 'acme-signal': color('#1a1a1a') }, undefined, { pairs }))).toEqual(['contrast-unreadable:acme-sigal', 'contrast-unreadable:acme-sigal'])
+  })
+
+  it('reports an unreadable pair from checkContrast as a failure without a ratio', () => {
+    const pair = { bg: 'acme-bg', fg: 'acme-fg', role: 'probe', minRatio: 4.5 }
+    const [result] = checkContrast({ probe: { 'acme-bg': color('#ffffff'), 'acme-fg': color('#00000080') } }, [pair], system.global)
+    expect(result).toMatchObject({ pass: false, ratio: null, unreadable: 'acme-fg' })
   })
 
   it("refuses a non-hex colour among the brand's own tokens too, and allows hex with alpha", () => {
@@ -130,6 +176,20 @@ describe('checkBrand', () => {
     const loop = rules(check({ 'acme-a': color('{acme-b}'), 'acme-b': color('{acme-a}') }))
     expect(loop).toContain('reference-loop:acme-a')
     expect(loop).toContain('reference-loop:acme-b')
+  })
+
+  // A light value stays live in dark mode, where base's references differ.
+  // Base dark has color-text-primary: {color-neutral-900}, so pointing
+  // color-neutral-900 back at it loops only in dark.
+  it('refuses a light reference that loops back only in dark mode', () => {
+    const result = check({ 'color-neutral-900': color('{color-text-primary}') })
+    const loops = result.failures.filter(f => f.rule === 'reference-loop')
+    expect(loops.map(f => `${f.token}:${f.file}:${f.mode}`)).toEqual(['color-neutral-900:tokens.json:acme-dark'])
+  })
+
+  it("doesn't count a light reference as looping in dark when dark.json sets the token", () => {
+    const result = check({ 'color-neutral-900': color('{color-text-primary}') }, { 'color-neutral-900': color('#fafafa') })
+    expect(rules(result)).not.toContain('reference-loop:color-neutral-900')
   })
 
   it('lets a chain of references through when it ends in a value', () => {
@@ -219,5 +279,13 @@ describe('docs/brand-contract.md', () => {
     const listed = [...doc.matchAll(/^\| `([^`]+)` \|/gm)].map(m => m[1]).sort()
     expect(listed).toEqual([...system.settable.keys()].sort())
     expect(listed).not.toContain('space-component-gap')
+  })
+
+  // It used to say #rrggbbaa let the contrast check read every colour. It can't
+  // measure a colour you can see through.
+  it("says a colour with transparency can't be in a contrast pair", () => {
+    const doc = renderBrandContract(system, reference)
+    expect(doc).not.toMatch(/can read every one/)
+    expect(doc).toMatch(/can't be in a contrast pair/)
   })
 })

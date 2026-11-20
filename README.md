@@ -98,7 +98,7 @@ npx amezquita-brand check tokens/brands/ajar
 npx amezquita-brand check tokens/brands/ajar --pairs tokens/brands/ajar/contrast-pairs.json
 ```
 
-It fails on a token the brand may not set, a misspelt name, a wrong `$type`, a reference that loops back on itself, a colour that isn't hex, a light value that would leak into dark mode, and any contrast pair below its ratio. Each error says how to fix it. `--pairs` adds contrast pairs for the brand's own tokens, in the format of [`tokens/contrast-pairs.json`](tokens/contrast-pairs.json). For the results as data, `import { checkBrand } from '@amezquita/design-system/brand/check.mjs'`.
+It fails on a token the brand may not set, a misspelt name, a wrong `$type`, a reference that loops back on itself, a colour that isn't hex, a light value that would leak into dark mode, and any contrast pair below its ratio or with a side it can't measure (a colour with transparency, say). Each error says how to fix it. `--pairs` adds contrast pairs for the brand's own tokens, in the format of [`tokens/contrast-pairs.json`](tokens/contrast-pairs.json). For the results as data, `import { checkBrand } from '@amezquita/design-system/brand/check.mjs'`.
 
 Then build its CSS. `build` runs the check first and builds nothing from a brand that fails. It needs `style-dictionary` ^5 in the project, an optional peer dependency of this package:
 
