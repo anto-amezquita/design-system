@@ -16,6 +16,8 @@ export type BaseSheetProps = {
   contentClassName: string
   /** CSS class for the overlay. Pass undefined to suppress the overlay entirely. */
   overlayClassName?: string
+  /** Called as the content mounts, before Radix moves focus into it. */
+  onOpenAutoFocus?: (e: Event) => void
   onCloseAutoFocus?: (e: Event) => void
   /** Called on pointer-down outside the content — call e.preventDefault() to prevent close. */
   onPointerDownOutside?: (e: Event) => void
@@ -39,6 +41,7 @@ export function BaseSheet({
   triggerRef,
   contentClassName,
   overlayClassName,
+  onOpenAutoFocus,
   onCloseAutoFocus,
   onPointerDownOutside,
   onEscapeKeyDown,
@@ -67,6 +70,7 @@ export function BaseSheet({
           {...scope}
           className={contentClassName}
           {...(!description && { 'aria-describedby': undefined })}
+          onOpenAutoFocus={onOpenAutoFocus}
           onCloseAutoFocus={onCloseAutoFocus}
           onPointerDownOutside={onPointerDownOutside}
           onEscapeKeyDown={onEscapeKeyDown}

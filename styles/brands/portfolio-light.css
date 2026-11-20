@@ -33,6 +33,7 @@
   --color-skeleton-highlight: var(--color-neutral-100);
   --font-family-base: 'Schibsted Grotesk', sans-serif;
   --font-family-heading: 'Schibsted Grotesk', sans-serif;
+  --font-family-reading: var(--font-family-base);
   --color-surface-spotlight: var(--color-neutral-900);
   --color-text-frozen-primary: #1c1917;
   --color-text-frozen-secondary: #57534e;

@@ -72,37 +72,50 @@
   overflow-wrap: anywhere;
 }
 
-/* Linked row: the title is the link, stretched over the whole row with a
-   pseudo-element, so the row is one click target with one name. Trailing
-   controls sit above the stretch so they stay their own targets. */
-.item__link {
+/* Linked or clickable row: the title is the link (href) or the button
+   (onClick), stretched over the whole row with a pseudo-element, so the row
+   is one click target with one name. Trailing controls sit above the stretch
+   so they stay their own targets. */
+.item__action {
   text-decoration: none;
   outline: none;
 }
 
-.item__link::after {
+.item__action::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
 }
 
-.item--link .item__trailing {
+/* The button keeps the title's look: no box, the title's type, start-aligned. */
+.item__button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+  text-align: start;
+  cursor: pointer;
+  appearance: none;
+}
+
+.item--interactive .item__trailing {
   position: relative;
   z-index: 1;
 }
 
-.item--link {
+.item--interactive {
   transition: background-color var(--duration-interaction) var(--easing-default);
 }
 
-.item--link:hover,
+.item--interactive:hover,
 .item--current {
   background: var(--color-surface-secondary);
 }
 
-/* The focus ring goes on the row, where the stretched link is. */
-.item--link:has(.item__link:focus-visible) {
+/* The focus ring goes on the row, where the stretched link or button is. */
+.item--interactive:has(.item__action:focus-visible) {
   outline: var(--focus-ring-width) solid var(--color-border-focus);
 }
 
@@ -118,7 +131,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .item--link {
+  .item--interactive {
     transition: none;
   }
 }

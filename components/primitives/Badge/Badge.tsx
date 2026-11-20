@@ -16,6 +16,14 @@ type OtherBadgeProps = {
   shape?: 'status' | 'count'
   children?: React.ReactNode
   'aria-label'?: string
+  /**
+   * `span` (default) for a label, or `button` for a pill that does
+   * something: a real `<button type="button">`, in the tab order, with hover
+   * and focus states and a target grown to 24px. Use `button` when the Badge
+   * opens a Dialog or Drawer as its `trigger`. A dot can't be a button; its
+   * 8px target is too small.
+   */
+  as?: 'span' | 'button'
 }
 
 // `DotBadgeProps`/`OtherBadgeProps` stay plain object aliases, unchanged —
@@ -32,31 +40,49 @@ type OtherBadgeProps = {
 // JSX after `{...rest}`, so a consumer-supplied `role` was silently
 // discarded when it was admitted through the native-attrs intersection.
 // Badge doesn't support overriding its own role; the type now says so.
-type BadgeProps = (DotBadgeProps | OtherBadgeProps) & Omit<React.HTMLAttributes<HTMLSpanElement>, 'children' | 'aria-label' | 'role'>
+// The ref is HTMLElement since `as="button"` (G2): a `<span>` by default, a
+// `<button>` when asked. A RefObject<HTMLSpanElement> still type-checks.
+type BadgeProps = (DotBadgeProps | OtherBadgeProps) & Omit<React.HTMLAttributes<HTMLElement>, 'children' | 'aria-label' | 'role'>
 
-export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge({
-  variant = 'neutral',
-  shape = 'status',
-  children,
-  'aria-label': ariaLabel,
-  className,
-  ...rest
-}, ref) {
+export const Badge = forwardRef<HTMLElement, BadgeProps>(function Badge(props, ref) {
+  const {
+    variant = 'neutral',
+    shape = 'status',
+    children,
+    'aria-label': ariaLabel,
+    className,
+    ...rest
+  } = props
+  // `as` only exists on the non-dot shape; take it out so it never reaches the DOM.
+  const { as = 'span', ...attributes } = rest as typeof rest & { as?: 'span' | 'button' }
   const classes = cn(
     'badge',
     variant !== 'neutral' && `badge--${variant}`,
     shape !== 'status' && `badge--${shape}`,
+    as === 'button' && shape !== 'dot' && 'badge--button',
     className,
   )
 
   if (shape === 'dot') {
-    return <span {...rest} ref={ref} className={classes} role="img" aria-label={ariaLabel} />
+    return <span {...attributes} ref={ref as React.Ref<HTMLSpanElement>} className={classes} role="img" aria-label={ariaLabel} />
+  }
+
+  // A real button: Dialog's and Drawer's `asChild` trigger props (onClick,
+  // aria-expanded, aria-controls, data-state, the ref) land on it, and the
+  // keyboard reaches it. Its name comes from its text, or aria-label.
+  // type="button" goes last so a Badge inside a form never submits it.
+  if (as === 'button') {
+    return (
+      <button {...attributes} ref={ref as React.Ref<HTMLButtonElement>} className={classes} aria-label={ariaLabel} type="button">
+        {children}
+      </button>
+    )
   }
 
   // aria-label is ignored on role="generic" (plain <span>). Add role="img" when an
   // accessible label is provided so ATs announce it correctly.
   return (
-    <span {...rest} ref={ref} className={classes} role={ariaLabel ? 'img' : undefined} aria-label={ariaLabel}>
+    <span {...attributes} ref={ref as React.Ref<HTMLSpanElement>} className={classes} role={ariaLabel ? 'img' : undefined} aria-label={ariaLabel}>
       {children}
     </span>
   )

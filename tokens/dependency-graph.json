@@ -1,7 +1,7 @@
 {
   "meta": {
     "filesScanned": 95,
-    "tokenCount": 273
+    "tokenCount": 274
   },
   "byToken": {
     "accordion-content-padding-bottom": [
@@ -453,6 +453,7 @@
       "components/patterns/TopNav/TopNav.css",
       "components/patterns/TreeView/TreeView.css",
       "components/primitives/Avatar/Avatar.css",
+      "components/primitives/Badge/Badge.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
@@ -905,6 +906,7 @@
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/Tabs/Tabs.css",
       "components/patterns/TreeView/TreeView.css",
+      "components/primitives/Badge/Badge.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
@@ -964,6 +966,7 @@
       "components/patterns/TableOfContents/TableOfContents.css",
       "components/patterns/Tabs/Tabs.css",
       "components/patterns/TreeView/TreeView.css",
+      "components/primitives/Badge/Badge.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
@@ -1017,6 +1020,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/patterns/TopNav/TopNav.css",
       "components/primitives/Avatar/Avatar.css",
+      "components/primitives/Badge/Badge.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Checkbox/Checkbox.css",
       "components/primitives/Citation/Citation.css",
@@ -1061,6 +1065,7 @@
       "components/patterns/Tabs/Tabs.css",
       "components/patterns/TopNav/TopNav.css",
       "components/patterns/TreeView/TreeView.css",
+      "components/primitives/Badge/Badge.css",
       "components/primitives/Button/Button.css",
       "components/primitives/Calendar/Calendar.css",
       "components/primitives/Checkbox/Checkbox.css",
@@ -1159,7 +1164,11 @@
       "components/patterns/ToolCall/ToolCall.css",
       "components/primitives/CodeBlock/CodeBlock.css",
       "components/primitives/Kbd/Kbd.css",
-      "components/primitives/OtpInput/OtpInput.css"
+      "components/primitives/OtpInput/OtpInput.css",
+      "components/primitives/Text/Text.css"
+    ],
+    "font-family-reading": [
+      "components/primitives/Text/Text.css"
     ],
     "font-size-body": [
       "components/composition/CommandPalette/CommandPalette.css",

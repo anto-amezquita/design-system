@@ -232,7 +232,7 @@ registerTool(
   {
     title: "Get token",
     description:
-      "Get the full entry for one exact token — raw value, resolved value on each theme axis, and which components use it. Call search_tokens first if you don't know the exact name.",
+      "Get the full entry for one exact token — raw value, resolved value on each theme axis, which components use it, and whether a project brand may set it (brandSettable, decisions/0028). Call search_tokens first if you don't know the exact name.",
     inputSchema: {
       name: z.string().describe('Exact token name or CSS variable, e.g. "space-4" or "--space-4".'),
     },

@@ -42,7 +42,7 @@ export function Drawer({
   onPointerDownOutside,
   onEscapeKeyDown,
 }: DrawerProps) {
-  const { triggerRef, onCloseAutoFocus } = useSheetFocusRestore(modal, trigger, 'Drawer')
+  const { triggerRef, onOpenAutoFocus, onCloseAutoFocus } = useSheetFocusRestore(modal, trigger, 'Drawer')
 
   const contentClass = cn(
     'drawer__content',
@@ -67,6 +67,7 @@ export function Drawer({
       footer={footer}
       onPointerDownOutside={onPointerDownOutside}
       onEscapeKeyDown={onEscapeKeyDown}
+      onOpenAutoFocus={onOpenAutoFocus}
       onCloseAutoFocus={onCloseAutoFocus}
     >
       {children}

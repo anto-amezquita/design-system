@@ -30,7 +30,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 - [AspectRatio](https://design.amezquita.dk/components/aspect-ratio.md): Keeps media at a fixed width-to-height ratio as the width changes, and holds the space before it loads
 - [Avatar](https://design.amezquita.dk/components/avatar.md): User profile picture with fallback to initials when no image is provided
-- [Badge](https://design.amezquita.dk/components/badge.md): Small status indicator or numeric count overlay attached to another element
+- [Badge](https://design.amezquita.dk/components/badge.md): Small status indicator or numeric count overlay attached to another element; with `as="button"`, a status pill that does something
 - [Blockquote](https://design.amezquita.dk/components/blockquote.md): A quotation set apart from the text around it, with who said it and where
 - [Button](https://design.amezquita.dk/components/button.md): Trigger for user actions; renders as `<button>` or `<a>` depending on context
 - [ButtonGroup](https://design.amezquita.dk/components/button-group.md): Related actions kept together: Undo / Redo, zoom out / in, Cancel / Save
@@ -53,7 +53,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Image](https://design.amezquita.dk/components/image.md): An image with a required `alt`, space held before it loads, a quiet fallback if it fails, and an optional caption
 - [Input](https://design.amezquita.dk/components/input.md): Labelled single-line text entry with hint and error states
 - [InputGroup](https://design.amezquita.dk/components/input-group.md): An Input joined to the text and buttons that belong to it: "https://", "kr.", an Apply button
-- [Item](https://design.amezquita.dk/components/item.md): One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link
+- [Item](https://design.amezquita.dk/components/item.md): One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link or a button
 - [Kbd](https://design.amezquita.dk/components/kbd.md): A key the user presses, drawn as a keycap
 - [Label](https://design.amezquita.dk/components/label.md): Standalone form label element — used when a label must be decoupled from its input
 - [Link](https://design.amezquita.dk/components/link.md): Navigation to another page or resource; use Link for navigation and Button for actions
@@ -78,7 +78,7 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 - [Switch](https://design.amezquita.dk/components/switch.md): Binary toggle for on/off settings; renders as a styled checkbox under the hood
 - [Tag](https://design.amezquita.dk/components/tag.md): A short label on content: a category, a status word, a chosen value; optionally removable or clickable
 - [TagInput](https://design.amezquita.dk/components/tag-input.md): Free-text values as tags: keywords, email addresses, ingredients
-- [Text](https://design.amezquita.dk/components/text.md): Body text in the brand's type roles (body, small, caption), with a tone and a weight
+- [Text](https://design.amezquita.dk/components/text.md): Body text in the brand's type roles (body, small, caption), with a tone, a weight and a typeface
 - [Textarea](https://design.amezquita.dk/components/textarea.md): Multi-line text entry with label, hint, and error states — mirrors Input API
 - [TimePicker](https://design.amezquita.dk/components/time-picker.md): One time of day: an appointment, a delivery slot, opening hours
 - [Timestamp](https://design.amezquita.dk/components/timestamp.md): A moment in time as people say it ("5 minutes ago", "yesterday") or as a date, in a `time` element
@@ -139,7 +139,7 @@ Read-only tools over the same files this package ships, read live instead of fro
 - `list_components`: List every public component in the design system, optionally filtered by tier (primitives, composition, patterns).
 - `get_component`: Get the compiled documentation for one public component — full prop table with literal unions expanded, its token list, and a usage example.
 - `search_tokens`: Search all design tokens (primitive, semantic, and component-scoped) by a substring match on name or CSS variable, optionally narrowed to one category.
-- `get_token`: Get the full entry for one exact token — raw value, resolved value on each theme axis, and which components use it.
+- `get_token`: Get the full entry for one exact token — raw value, resolved value on each theme axis, which components use it, and whether a project brand may set it (brandSettable, decisions/0028).
 - `validate_token`: Check whether a var(--x) reference or bare token name is real, before using it in CSS.
 - `get_registry_item`: Get the shadcn-spec registry-item.json for one public component — its npm dependency, cross-component registryDependencies, and the CSS custom properties it needs.
 - `get_skill`: Get the current agent skill content (SKILL.md) — the same file served from /.well-known/skills/ for agents that read the skill format instead of calling MCP tools directly.

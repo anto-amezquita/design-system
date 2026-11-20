@@ -6,6 +6,7 @@
   --button-secondary-foreground: var(--color-accent-default);
   --button-secondary-border: var(--color-accent-default);
   --button-secondary-background-hover: var(--color-accent-default);
+  --card-border-color: rgba(0, 0, 0, 0);
   --color-neutral-50: #17122c;
   --color-neutral-100: #26223d;
   --color-neutral-200: #3f3c56;

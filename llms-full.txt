@@ -20,12 +20,12 @@ The package ships no font files. Load the fonts a brand names from Google Fonts;
 
 ## Tokens
 
-400 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
+401 tokens total, resolved across base/portfolio × light/dark. Full values: https://design.amezquita.dk/tokens.json
 
 - primitive: 126
 - component: 123
 - color: 52
-- typography: 40
+- typography: 41
 - spacing: 19
 - size: 13
 - motion: 7
@@ -57,12 +57,12 @@ User profile picture with fallback to initials when no image is provided
 
 ### Badge
 
-Small status indicator or numeric count overlay attached to another element
+Small status indicator or numeric count overlay attached to another element; with `as="button"`, a status pill that does something
 
 - Import: `import { Badge } from '@amezquita/design-system/components/primitives/Badge'`
 - Token prefix: `badge-*` (5 tokens)
 - Storybook: Components/Badge
-- Stories: Default, Count, Dot, AllVariants, AllShapes, AllVariantsAllShapes, DarkMode
+- Stories: Default, Count, Dot, AllVariants, AllShapes, AllVariantsAllShapes, Clickable, DarkMode
 
 ### Blockquote
 
@@ -264,12 +264,12 @@ An Input joined to the text and buttons that belong to it: "https://", "kr.", an
 
 ### Item
 
-One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link
+One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link or a button
 
 - Import: `import { Item } from '@amezquita/design-system/components/primitives/Item'`
 - Token prefix: `item-*` (0 tokens)
 - Storybook: Components/Item
-- Stories: Default, Linked, Navigation, DarkMode
+- Stories: Default, Linked, OpensADialog, Navigation, DarkMode
 
 ### Kbd
 
@@ -489,7 +489,7 @@ Free-text values as tags: keywords, email addresses, ingredients
 
 ### Text
 
-Body text in the brand's type roles (body, small, caption), with a tone and a weight
+Body text in the brand's type roles (body, small, caption), with a tone, a weight and a typeface
 
 - Import: `import { Text } from '@amezquita/design-system/components/primitives/Text'`
 - Token prefix: `text-*` (0 tokens)
@@ -503,7 +503,7 @@ Multi-line text entry with label, hint, and error states — mirrors Input API
 - Import: `import { Textarea } from '@amezquita/design-system/components/primitives/Textarea'`
 - Token prefix: `textarea-*` (0 tokens)
 - Storybook: Components/Textarea
-- Stories: Default, WithHint, WithError, Disabled, WithCharacterCount, AllStates, DarkMode
+- Stories: Default, WithHint, WithError, AutoResize, Disabled, WithCharacterCount, AllStates, DarkMode
 
 ### TimePicker
 
@@ -932,7 +932,7 @@ Search all design tokens (primitive, semantic, and component-scoped) by a substr
 
 ### get_token
 
-Get the full entry for one exact token — raw value, resolved value on each theme axis, and which components use it. Call search_tokens first if you don't know the exact name.
+Get the full entry for one exact token — raw value, resolved value on each theme axis, which components use it, and whether a project brand may set it (brandSettable, decisions/0028). Call search_tokens first if you don't know the exact name.
 
 ### validate_token
 

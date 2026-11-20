@@ -338,7 +338,7 @@ Sub-components render `<div>` except `CardTitle` (polymorphic heading) and `Card
 - Focus trap: Radix handles this; do not disable it
 - `Escape` closes the dialog; do not override
 - `RadixDialog.Title` provides the accessible name automatically — always pass `title` prop
-- Return focus to the trigger element on close (Radix default behaviour)
+- Return focus on close: to the trigger, or, for a controlled Dialog with no `trigger` (opened from an Item row, a menu item, a shortcut), to whatever had focus when it opened. Modal or not. Drawer does the same
 
 **Chromatic stories**
 - `Default`, `WithForm`, `NoDescription`
@@ -568,10 +568,25 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 | Field | Value |
 |---|---|
-| **Purpose** | Small status indicator or numeric count overlay attached to another element |
+| **Purpose** | Small status indicator or numeric count overlay attached to another element; with `as="button"`, a status pill that does something |
 | **Figma name** | `Badge` |
 | **Code name** | `Badge` |
 | **Storybook path** | `Components/Badge` |
+
+**Props / variants**
+- `variant`: `neutral` (default), `success`, `warning`, `error` or `info`
+- `shape`: `status` (default), `count`, or `dot` (needs `aria-label`)
+- `as`: `span` (default) or `button`, a real `<button type="button">` for a pill that opens a Dialog or Drawer as its `trigger`, or acts on click. Not for `dot`: its target is too small
+- Native attributes, `className` and `ref` pass through; `role` doesn't, Badge sets its own
+
+**Required states**
+- [x] default (static)
+- [x] `as="button"`: hover (border in the text colour), keyboard focus (focus ring)
+
+**Accessibility**
+- A plain Badge is a `span`, outside the tab order; with `aria-label` it's `role="img"`. A Badge that does something must be `as="button"`, so the keyboard reaches it: a clickable span opens on click only
+- `as="button"` is named by its text, or `aria-label` for a count. Its target is grown to 24px or more with an invisible margin (WCAG 2.5.8), so it keeps the size of the Badges around it
+- Hover darkens the border to the text colour rather than fading the pill, so the text keeps its contrast
 
 ---
 
@@ -1352,7 +1367,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 | Field | Value |
 |---|---|
-| **Purpose** | One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link |
+| **Purpose** | One row in a List: leading media, a title and description, trailing metadata or actions; optionally the whole row is a link or a button |
 | **Figma name** | `Item` |
 | **Code name** | `Item` |
 | **Storybook path** | `Components/Item` |
@@ -1361,6 +1376,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - `title` (required), `description`
 - `leading`: an Avatar, Icon or thumbnail; `trailing`: a Timestamp, Badge, IconButton or Switch
 - `href`: makes the whole row a link; `current`: marks it as the page you're on
+- `onClick`: makes the whole row a button, for a row that does something (opens a Dialog or Drawer, selects) rather than going somewhere. With `href` too, the row stays a link and `onClick` runs on it
 - `size`: `default` or `compact`
 - `as`: `li` (default) or `div`
 - Native attributes, `className` and `ref` pass through to the row
@@ -1368,6 +1384,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 **Required states**
 - [x] default
 - [x] linked: hover, focus-visible
+- [x] clickable (`onClick`): hover, focus-visible, the same as linked
 - [x] current
 
 **Tokens consumed**
@@ -1377,6 +1394,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 **Accessibility**
 - A linked row is one link, named by its title, stretched over the row; the description doesn't get read as part of the link name. Trailing buttons sit above the stretch, so they're their own targets and their own Tab stops
+- A clickable row is the same, with a `<button type="button">` in place of the link. A row that opens a controlled Dialog or Drawer (no `trigger`) gets focus back when it closes: Dialog and Drawer return focus to whatever opened them
 - The focus ring goes around the whole row, where the click target is
 - `current` sets `aria-current="page"` and draws a bar on the leading edge, so the current row isn't marked by colour alone. The bar uses `accent-text`, tested at 3:1 against the row in every brand and mode (`accent-default` was too pale in demo-soft)
 - Title and description are tested at 4.5:1 at rest, hovered and current, in all five brands, light and dark
@@ -2088,6 +2106,16 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 | **Code name** | `Textarea` |
 | **Storybook path** | `Components/Textarea` |
 
+**Props / variants**
+- `label`, `hint`, `error`, `required`, `disabled`; `value` + `onChange(value)` (controlled) or `defaultValue`
+- `rows` (default 3); `maxLength` and `characterCount` show a live count
+- `autoResize`: grows with the text from `rows` lines instead of scrolling, and drops the resize handle; `maxRows` caps it, then it scrolls. Shares `hooks/useAutoResize` with ChatComposer
+- Native textarea attributes and `ref` pass through
+
+**Required states**
+- [x] default, with hint, with error, disabled, with character count
+- [x] `autoResize`: grown to fit, capped at `maxRows` and scrolling
+
 ---
 
 ### FileUpload
@@ -2308,7 +2336,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 
 | Field | Value |
 |---|---|
-| **Purpose** | Body text in the brand's type roles (body, small, caption), with a tone and a weight |
+| **Purpose** | Body text in the brand's type roles (body, small, caption), with a tone, a weight and a typeface |
 | **Figma name** | `Text` (text styles `Body`, `Small`, `Caption`) |
 | **Code name** | `Text` |
 | **Storybook path** | `Components/Text` |
@@ -2317,6 +2345,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - `size`: `body` (default), `small` or `caption`, each the brand's `--font-size-*` and `--line-height-*` pair
 - `tone`: `primary` (default), `secondary`, or `inherit` for text inside a coloured component
 - `weight`: `body` (default) or `label`
+- `family`: `base` (default), `mono`, or `reading` for long-form text (lyrics, articles, quoted passages). `reading` is the base font until a brand sets `--font-family-reading`
 - `truncate`: `true` for one line with an ellipsis, or a number of lines
 - `as`: `p` (default), `span`, `div`, `strong`, `em`, `small`, `figcaption`, `li`, `dd` or `dt`
 - Native attributes, `className`, `style` and `ref` pass through
@@ -2326,7 +2355,7 @@ Built on `@radix-ui/react-select`. Do not replace the Radix primitive.
 - [x] truncated (one line, or clamped to n lines)
 
 **Tokens consumed**
-- `--font-family-base`, `--font-weight-body`, `--font-weight-label`, `--letter-spacing-body`
+- `--font-family-base`, `--font-family-mono`, `--font-family-reading`, `--font-weight-body`, `--font-weight-label`, `--letter-spacing-body`
 - `--font-size-body`, `--line-height-body`, `--font-size-small`, `--line-height-small`, `--font-size-caption`, `--line-height-caption`
 - `--color-text-primary`, `--color-text-secondary` (no component tokens; they would only pass through)
 

@@ -7,6 +7,9 @@
   "card-border-color": {
     "$value": "{color-border-default}",
     "$type": "color",
-    "$description": "Card's outline. The default border in base; a brand whose cards get their edge from a shadow or a fill sets it to transparent (demo-soft)."
+    "$description": "Card's outline. The default border in base; a brand whose cards get their edge from a shadow or a fill sets it to transparent (demo-soft).",
+    "$extensions": {
+      "amezquita.brand": "settable"
+    }
   }
 }

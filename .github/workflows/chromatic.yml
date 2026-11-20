@@ -58,8 +58,8 @@ jobs:
       # another Chromatic run. main is the one place it has to be right, and
       # the update-changelog job below regenerates it after every push there.
 
-      - name: Contrast check
-        run: node scripts/check-contrast.mjs
+      - name: Brand check (contract and contrast)
+        run: node scripts/check-brands.mjs
 
       - name: Get installed Playwright version
         id: playwright-version

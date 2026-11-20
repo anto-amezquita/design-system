@@ -25,6 +25,7 @@ import { fileURLToPath } from 'url';
 import { makeResolver } from '../lib/resolve-token.mjs';
 import { TOKEN_CATEGORIES } from '../lib/token-categories.mjs';
 import { axisNames, listBrands, loadBrands } from './brands.mjs';
+import { isSettable } from '../brand/contract.mjs';
 
 function loadJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'));
@@ -85,6 +86,7 @@ export function flattenPrimitives(node, groupName, pathSegments = [], axes = axi
         resolved: Object.fromEntries(axes.map(axis => [axis, rawValue])),
         axisAware: false,
         usedBy: [],
+        brandSettable: false,
       });
     } else {
       entries.push(...flattenPrimitives(value, groupName, [...pathSegments, key], axes));
@@ -202,6 +204,9 @@ export function buildTokenReference() {
       resolved,
       axisAware,
       usedBy,
+      // A brand may set it (decisions/0028). Read from the definition, so a
+      // brand's own token is never settable just because a brand sets it.
+      brandSettable: isSettable(baseLightTokens[name] ?? componentTokens[name]),
     };
   });
 

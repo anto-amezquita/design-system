@@ -58,9 +58,62 @@ The part follows the page's mode, or its own with `mode="light"` or `mode="dark"
 
 The other way round works too: on a page that wears a brand, `base-scoped.css` and `<ThemeScope brand="base">` bring one part back to base ([ADR 0023](decisions/0023-demo-brands-and-n-brand-build.md), 2026-10-13 amendment).
 
+### Light and dark mode
+
+The dark values apply under `<html data-mode="dark">`, not from `prefers-color-scheme`, so a visitor can pick. `lib/color-mode` sets the attribute from their pick, or from the system setting until they pick. It runs before first paint, so a dark page never flashes light. Put its script in `<head>`, ahead of the stylesheets:
+
+```tsx
+// Next.js App Router, app/layout.tsx (a Server Component)
+import { colorModeScript } from '@amezquita/design-system/lib/color-mode'
+
+<html lang="en" suppressHydrationWarning>
+  <head>
+    <script dangerouslySetInnerHTML={{ __html: colorModeScript() }} />
+  </head>
+```
+
+Use a plain `<script>`, not `next/script`. In the App Router, `strategy="beforeInteractive"` queues an inline script for Next's runtime, which runs after first paint, so the page flashes light anyway. The script's string is built from constants, never from user input, so the inline HTML is safe.
+
+With Vite, add the same string to `index.html`'s `<head>` with `transformIndexHtml`. The script keeps following the system setting while the visitor hasn't picked. For a switch, `useColorMode()` gives `preference` (`light`, `dark` or `system`), `mode` (what the page is in now) and `setPreference`:
+
+```tsx
+import { useColorMode, type ColorModePreference } from '@amezquita/design-system/hooks/useColorMode'
+
+const { preference, setPreference } = useColorMode()
+<SegmentedControl value={preference} onValueChange={value => setPreference(value as ColorModePreference)} … />
+```
+
+The pick is remembered in `localStorage` under `amezquita-color-mode`. Pass `{ storageKey }` to both `colorModeScript` and `useColorMode` to use your own key.
+
 ### Fonts
 
 The package ships no font files. The `base` theme sets its text in a system font stack and its code in JetBrains Mono; `portfolio` adds Schibsted Grotesk for text; each demo brand names its own fonts. Load them from Google Fonts with the `<link>` tags in [`tokens/fonts.json`](tokens/fonts.json): `brands.<brand>.href` is the stylesheet, `brands.<brand>.preconnect` the origins to preconnect to. The same links are in `llms.txt`. Both are generated from the font tokens, so they change when a font does. Why there are no font files: [ADR 0020](decisions/0020-fonts-from-google-fonts-no-font-files.md).
+
+### Your project's own brand
+
+A product's brand lives in the product's repo: a folder with `tokens.json` (light) and `dark.json`, in the same shape as `tokens/brands/demo-cool/`. [`docs/brand-contract.md`](docs/brand-contract.md) lists the tokens a brand may set. Tokens of the project's own are named after the brand (`ajar-signal-*`). Check the brand, locally or in CI:
+
+```bash
+npx amezquita-brand check tokens/brands/ajar
+npx amezquita-brand check tokens/brands/ajar --pairs tokens/brands/ajar/contrast-pairs.json
+```
+
+It fails on a token the brand may not set, a misspelt name, a wrong `$type`, a reference that loops back on itself, a colour that isn't hex, a light value that would leak into dark mode, and any contrast pair below its ratio or with a side it can't measure (a colour with transparency, say). Each error says how to fix it. `--pairs` adds contrast pairs for the brand's own tokens, in the format of [`tokens/contrast-pairs.json`](tokens/contrast-pairs.json). For the results as data, `import { checkBrand } from '@amezquita/design-system/brand/check.mjs'`.
+
+Then build its CSS. `build` runs the check first and builds nothing from a brand that fails. It needs `style-dictionary` ^5 in the project, an optional peer dependency of this package:
+
+```bash
+npm install --save-dev style-dictionary@^5
+npx amezquita-brand build tokens/brands/ajar --out src/styles/brand
+```
+
+It writes the three files a brand in this package gets, plus the font link:
+
+- `ajar-light.css` and `ajar-dark.css`, for a whole page: load them after `base-light.css` and `base-dark.css`.
+- `ajar-scoped.css`, for one part of a page: load it instead of the other two, and wrap the part in `<ThemeScope brand="ajar">`.
+- `ajar-fonts.json`, the Google Fonts `<link>` for the fonts the brand names. A font the link can't cover is printed as a warning, for the project to load itself.
+
+Why brands live in projects: [ADR 0028](decisions/0028-brand-contract-for-project-brands.md).
 
 This package ships source `.tsx`/`.css` directly rather than a pre-built bundle, so your bundler needs to be told to process it — most tools skip transforming `node_modules` by default:
 
@@ -79,7 +132,7 @@ npm run storybook    # dev server at localhost:6006
 |---|---|
 | `npm run tokens` | Full token build: dependency graph → CSS (Style Dictionary) → token reference, component registry, changelog |
 | `npm run tokens:lint` | Token usage linter over component CSS |
-| `npm run tokens:contrast` | WCAG AA contrast check across every brand in light and dark |
+| `npm run tokens:brands` | Every brand in `tokens/brands/` against the brand contract, and WCAG AA contrast for base and every brand in light and dark |
 | `npm run tokens:graph` | Rebuilds the token → component-file dependency graph |
 | `npm run figma:status` | Reports drift between token sources and the last Figma push |
 | `npm run storybook` | Storybook dev server |

@@ -50,7 +50,7 @@ type DialogProps = (DialogControlledProps | DialogUncontrolledProps) & {
 }
 
 export function Dialog({ open, onOpenChange, defaultOpen, trigger, triggerRef: externalTriggerRef, title, description, children, footer, size = 'md', scrollable = false, modal, onPointerDownOutside, onEscapeKeyDown }: DialogProps) {
-  const { triggerRef: internalTriggerRef, onCloseAutoFocus } = useSheetFocusRestore(modal, trigger, 'Dialog')
+  const { triggerRef: internalTriggerRef, onOpenAutoFocus, onCloseAutoFocus } = useSheetFocusRestore(modal, trigger, 'Dialog')
   const triggerRef = mergeRefs(internalTriggerRef, externalTriggerRef)
 
   const contentClass = cn(
@@ -73,6 +73,7 @@ export function Dialog({ open, onOpenChange, defaultOpen, trigger, triggerRef: e
       closeLabel="Close dialog"
       onPointerDownOutside={onPointerDownOutside}
       onEscapeKeyDown={onEscapeKeyDown}
+      onOpenAutoFocus={onOpenAutoFocus}
       onCloseAutoFocus={onCloseAutoFocus}
       title={title}
       description={description}

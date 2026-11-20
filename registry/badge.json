@@ -3,7 +3,7 @@
   "name": "badge",
   "type": "registry:component",
   "title": "Badge",
-  "description": "Small status indicator or numeric count overlay attached to another element",
+  "description": "Small status indicator or numeric count overlay attached to another element; with `as=\"button\"`, a status pill that does something",
   "dependencies": [
     "@amezquita/design-system"
   ],

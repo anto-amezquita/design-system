@@ -1,6 +1,7 @@
 'use client'
 
-import { forwardRef, useCallback, useId, useLayoutEffect, useRef, useState } from 'react'
+import { forwardRef, useId, useRef, useState } from 'react'
+import { useAutoResize } from '../../../hooks/useAutoResize'
 import { PaperPlaneRightIcon, StopIcon } from '@phosphor-icons/react'
 import { cn } from '../../../lib/cn'
 import { IconButton } from '../../primitives/IconButton'
@@ -76,22 +77,8 @@ export const ChatComposer = forwardRef<HTMLFormElement, ChatComposerProps>(funct
   const streaming = status === 'streaming'
   const empty = value.trim() === ''
 
-  // Grow with the text: measure the content, cap it at maxRows lines, and
-  // scroll beyond that. Runs before paint, so the field never flickers.
-  const resize = useCallback(() => {
-    const el = field.current
-    if (!el) return
-    const style = getComputedStyle(el)
-    const line = parseFloat(style.lineHeight)
-    const padding = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom)
-    const max = line * maxRows + padding
-    el.style.blockSize = 'auto'
-    const height = Math.min(el.scrollHeight, max)
-    el.style.blockSize = `${height}px`
-    el.style.overflowY = el.scrollHeight > max ? 'auto' : 'hidden'
-  }, [maxRows])
-
-  useLayoutEffect(resize, [value, resize])
+  // Grow with the text up to maxRows lines, then scroll (shared with Textarea).
+  useAutoResize(field, value, { maxRows })
 
   const change = (next: string) => {
     if (controlled === undefined) setUncontrolled(next)
