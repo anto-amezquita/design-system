@@ -64,14 +64,15 @@ The dark values apply under `<html data-mode="dark">`, not from `prefers-color-s
 
 ```tsx
 // Next.js App Router, app/layout.tsx (a Server Component)
-import Script from 'next/script'
 import { colorModeScript } from '@amezquita/design-system/lib/color-mode'
 
 <html lang="en" suppressHydrationWarning>
   <head>
-    <Script id="color-mode" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: colorModeScript() }} />
+    <script dangerouslySetInnerHTML={{ __html: colorModeScript() }} />
   </head>
 ```
+
+Use a plain `<script>`, not `next/script`. In the App Router, `strategy="beforeInteractive"` queues an inline script for Next's runtime, which runs after first paint, so the page flashes light anyway. The script's string is built from constants, never from user input, so the inline HTML is safe.
 
 With Vite, add the same string to `index.html`'s `<head>` with `transformIndexHtml`. The script keeps following the system setting while the visitor hasn't picked. For a switch, `useColorMode()` gives `preference` (`light`, `dark` or `system`), `mode` (what the page is in now) and `setPreference`:
 

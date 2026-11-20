@@ -79,9 +79,11 @@ export const COLOR_MODE_CHANGE_EVENT = 'amezquita:color-mode'
  * does, in plain ES5 with no imports, and then follows the system setting
  * while the visitor hasn't picked.
  *
- * Next.js App Router:
- *   <Script id="color-mode" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: colorModeScript() }} />
+ * Next.js App Router, in the root layout's <head>:
+ *   <script dangerouslySetInnerHTML={{ __html: colorModeScript() }} />
  *   and `suppressHydrationWarning` on <html>, since the script changes it.
+ *   A plain <script>, not next/script: the App Router queues an inline
+ *   beforeInteractive script for its runtime, which runs after first paint.
  * Vite: put it in index.html's <head> with transformIndexHtml.
  *
  * The key is a constant from your own code, never from user input. It's
