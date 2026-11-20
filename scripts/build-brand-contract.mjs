@@ -19,8 +19,11 @@ const FAMILIES = [
   ['Component', () => true],
 ]
 
-const cell = value => (value === null || value === undefined || value === '' ? '—' : `\`${String(value).replace(/\|/g, '\\|')}\``)
-const text = value => (value ? value.replace(/\|/g, '\\|').replace(/\n/g, ' ') : '')
+// Backslashes first, then pipes: otherwise a value's own `\|` becomes `\\|`,
+// which a Markdown table reads as an escaped backslash and a cell break.
+const escapeCell = value => String(value).replace(/\\/g, '\\\\').replace(/\|/g, '\\|')
+const cell = value => (value === null || value === undefined || value === '' ? '—' : `\`${escapeCell(value)}\``)
+const text = value => (value ? escapeCell(value).replace(/\n/g, ' ') : '')
 
 export function renderBrandContract(system, reference) {
   const byName = new Map(reference.tokens.map(t => [t.name, t]))

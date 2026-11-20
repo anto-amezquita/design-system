@@ -288,4 +288,25 @@ describe('docs/brand-contract.md', () => {
     expect(doc).not.toMatch(/can read every one/)
     expect(doc).toMatch(/can't be in a contrast pair/)
   })
+
+  // A backslash before a pipe used to come out as `\\|`: an escaped backslash,
+  // then a real cell break, so the row grew a column.
+  it('keeps a row whole when a value or description holds a backslash', () => {
+    const settable = new Map([['color-text-primary', { type: 'color', description: 'a \\| b, and a lone \\' }]])
+    const withBackslash = { tokens: [{ name: 'color-text-primary', resolved: { 'base-light': 'x\\|y', 'base-dark': 'z\\' } }] }
+    const doc = renderBrandContract({ ...system, settable }, withBackslash)
+    const row = doc.split('\n').find(line => line.startsWith('| `color-text-primary`'))
+    const cellBreaks = row => {
+      let count = 0
+      for (let i = 0; i < row.length; i++) {
+        if (row[i] === '\\') i++
+        else if (row[i] === '|') count++
+      }
+      return count
+    }
+    expect(cellBreaks(row)).toBe(6)
+    expect(row).toContain('`x\\\\\\|y`')
+    expect(row).toContain('`z\\\\`')
+    expect(row).toContain('a \\\\\\| b, and a lone \\\\')
+  })
 })
