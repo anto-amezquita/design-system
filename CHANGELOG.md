@@ -1,5 +1,30 @@
 # @amezquita/design-system
 
+## 1.7.0
+
+### Minor Changes
+
+- 1a20ddb: `Badge` takes `as="button"` for a status pill that does something: it renders a real `<button type="button">`, so the keyboard reaches it and a Dialog or Drawer can use it as its `trigger`, with Radix's trigger attributes and ref landing on the button. On hover its border turns the text colour, keyboard focus shows the focus ring, and an invisible margin grows its target past 24px without changing its size. A Badge without `as` is the same `span` as before. A dot can't be a button. Badge's `ref` is now typed `HTMLElement`; a `RefObject<HTMLSpanElement>` still type-checks.
+- 1a20ddb: A project can now keep its brand in its own repo, check it against the same rules as the brands in this package, and build its CSS. `npx amezquita-brand check <dir>` reads the brand's `tokens.json` and `dark.json` and fails on a token a brand may not set, a misspelt name (with the nearest real one), a wrong `$type`, a reference that resolves to nothing or loops back on itself, a colour that isn't hex, a light value that would leak into dark mode, and any contrast pair below its ratio, in light and dark. A pair with a side it can't measure fails too: a colour with transparency, a value that isn't hex, or a token that resolves to nothing. `--pairs <file>` adds pairs for the brand's own tokens, which are named after the brand (`ajar-signal-*`). The function underneath is `checkBrand()` from `@amezquita/design-system/brand/check.mjs`.
+
+  `npx amezquita-brand build <dir> --out <dir>` checks, then writes `<brand>-light.css`, `<brand>-dark.css`, `<brand>-scoped.css` and `<brand>-fonts.json`, built by the same code that builds this package's brands. It needs `style-dictionary` ^5 in the project, now an optional peer dependency; nothing else needs it. `ThemeScope`'s `brand` takes a project's own brand name as well as the package's.
+
+  The tokens a brand may set carry `"amezquita.brand": "settable"` in their definition. `docs/brand-contract.md`, generated from those markers, lists them with their base values, and each entry in `tokens/token-reference.json` has a new `brandSettable` field. `tokens/contrast-pairs.json` now ships with the package. Nothing changes in the package's CSS. See decisions/0028.
+
+- 1a20ddb: `lib/color-mode` sets `<html data-mode>` from the visitor's pick, or from the system setting until they pick, before first paint, so a dark page never flashes light. `colorModeScript()` returns the inline script for `<head>`; it keeps following the system setting while the visitor hasn't picked. `useColorMode()` (`hooks/useColorMode`) gives `preference` (`light`, `dark` or `system`), `mode` and `setPreference` for a switch, and stays in step with other tabs. The pick is remembered in `localStorage` under `amezquita-color-mode`, or a `storageKey` of your own. The script module isn't a client module, so a Next.js root layout can import it. README, "Light and dark mode", shows Next.js and Vite.
+- 1a20ddb: `Item` takes `onClick` for a row that does something rather than going somewhere, like opening a Dialog: the title becomes a `<button type="button">`, named by the title and stretched over the row the way `href`'s link is, with the same hover and focus ring. Buttons in `trailing` stay their own targets and Tab stops. With `href` too, the row stays a link and `onClick` runs on it.
+
+  If you passed `onClick` to an `Item` before, it now behaves differently. It used to land on the `<li>`, where a keyboard couldn't reach it. Now:
+
+  - A click on a control in `trailing` no longer runs the row's `onClick`.
+  - `event.currentTarget` is the row's button (or its link, with `href`), not the `<li>`.
+  - The handler's event is typed `React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>`, so a handler typed for `HTMLLIElement` no longer compiles. Retype it, or use `HTMLElement`.
+
+  A controlled `Dialog` or `Drawer` with no `trigger` now gives focus back to whatever opened it when it closes, modal or not. Focus used to fall to `<body>`, because Radix only returns focus to a trigger.
+
+- 1a20ddb: `Text` takes a `family`: `base` (default), `mono`, or `reading` for long-form text people read rather than scan, like lyrics, articles and quoted passages. `reading` uses a new semantic token, `font-family-reading`, which is the base font in base, so it looks the same as `base` until a brand sets its own. A brand may set it: it's in `docs/brand-contract.md`. Nothing changes for text that doesn't ask for it.
+- 1a20ddb: `Textarea` takes `autoResize`: the field starts at `rows` lines and grows with the text instead of scrolling, up to `maxRows` if you set it, then scrolls. It shrinks back when text goes, re-measures when its width changes, and has no resize handle while it sizes itself. `ChatComposer` uses the same code (`hooks/useAutoResize`), and now also re-measures when its width changes. A Textarea without `autoResize` is unchanged.
+
 ## 1.6.7
 
 ### Patch Changes
