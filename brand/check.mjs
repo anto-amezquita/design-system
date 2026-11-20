@@ -108,6 +108,30 @@ function globalPathExists(ref, global) {
   return node != null && typeof node === 'object' && '$value' in node
 }
 
+// The kebab references in a token's value, wherever they sit in it.
+function semanticRefs(def) {
+  const text = typeof def?.$value === 'string' ? def.$value : JSON.stringify(def?.$value ?? '')
+  return [...text.matchAll(ANY_REF)].map(([, ref]) => ref).filter(ref => !ref.includes('.'))
+}
+
+// Whether following token's references leads back to it. In CSS that's a
+// var() loop: the property becomes invalid and the element falls back to
+// what it inherits.
+function loopsBack(token, tokens) {
+  const seen = new Set()
+  const next = [token]
+  while (next.length) {
+    for (const ref of semanticRefs(tokens[next.pop()])) {
+      if (ref === token) return true
+      if (!seen.has(ref)) {
+        seen.add(ref)
+        next.push(ref)
+      }
+    }
+  }
+  return false
+}
+
 function toPx(value) {
   const m = String(value).match(/^(-?\d*\.?\d+)(px|rem)$/)
   if (!m) return null
@@ -210,6 +234,18 @@ export function checkBrand(dir, options = {}) {
             ref.includes('.') ? 'A dotted reference names a primitive in tokens/global.json, like {color.warm-500}.' : 'A plain reference names a semantic or component token, like {color-accent-default}, or one of the brand\'s own.'))
         }
       }
+      if (loopsBack(token, modes[mode])) {
+        failures.push(fail('reference-loop', token, file, mode, `\`${token}\` refers back to itself through its references, so in CSS it has no value at all.`,
+          'Point it at a token that ends in a value, or give it a value of its own.'))
+      }
+
+      // Colours are hex, so the contrast check can read them (decisions/0028 §2).
+      // Anything else would make it skip every pair the colour is in.
+      const type = def.$type ?? settable?.type
+      if (type === 'color' && !(typeof def.$value === 'string' && def.$value.includes('{')) && !isHex(def.$value)) {
+        failures.push(fail('not-hex', token, file, mode, `\`${token}\` is ${JSON.stringify(def.$value)}, not a hex colour, so the contrast check can't read it and would skip its pairs.`,
+          'Write it as hex: #rrggbb, or #rrggbbaa for a colour with transparency (#0000 for transparent).'))
+      }
 
       // Dark files set lighting only.
       if (file === 'dark.json' && !own && !MODE_PREFIXES.some(p => token.startsWith(p))) {
@@ -218,14 +254,22 @@ export function checkBrand(dir, options = {}) {
     }
   }
 
-  // A literal set in light leaks into dark when base changes that token per mode.
+  // A literal set in light leaks into dark when base changes that token per
+  // mode, either in base/dark.json or through a reference dark changes
+  // (color-skeleton-base is {color-neutral-200} in both files' terms).
+  // Compared resolved; a value the resolver can't follow (a composite shadow)
+  // falls back to comparing base's two raw values.
+  const resolveBaseLight = makeResolver(systemLight, system.global)
+  const resolveBaseDark = makeResolver({ ...systemLight, ...system.baseDark }, system.global)
+  const baseChangesWithMode = token => {
+    const [inLight, inDark] = [resolveBaseLight(token), resolveBaseDark(token)]
+    if (inLight !== null && inDark !== null) return inLight !== inDark
+    return token in system.baseDark && JSON.stringify(systemLight[token]?.$value) !== JSON.stringify(system.baseDark[token].$value)
+  }
   for (const [token, def] of Object.entries(light)) {
     if (!def || typeof def !== 'object' || !('$value' in def)) continue
     if (typeof def.$value === 'string' && SEMANTIC_REF.test(def.$value)) continue
-    if (!(token in system.baseDark) || token in dark) continue
-    const lightValue = JSON.stringify(systemLight[token]?.$value)
-    const darkValue = JSON.stringify(system.baseDark[token].$value)
-    if (lightValue === darkValue) continue
+    if (token in dark || !baseChangesWithMode(token)) continue
     failures.push(fail('light-leaks-into-dark', token, 'tokens.json', `${name}-dark`,
       `\`${token}\` is set in tokens.json, so its light value also wins in dark mode, where base gives it a different value.`,
       `Set \`${token}\` in dark.json too, or point it at a semantic token (like {color-text-primary}) that follows the mode.`))

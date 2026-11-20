@@ -15,8 +15,10 @@ import path from 'node:path'
 export const BRAND_KEY = 'amezquita.brand'
 
 // What a dark file may set: lighting only. The same rule sd.config.mjs has
-// always applied to dark files, narrowed by 0028: checkbox-, radio-, switch-
-// and textarea- went, because no brand sets them and they aren't settable.
+// always applied to dark files, changed by 0028: checkbox-, radio-, switch-
+// and textarea- went, because no brand sets them and they aren't settable;
+// color-skeleton- and card-border-color came in, because base changes them
+// per mode (scripts/brand-check.test.mjs fails on a token that's missing).
 export const MODE_PREFIXES = [
   'color-surface-',
   'color-curtain',
@@ -28,7 +30,11 @@ export const MODE_PREFIXES = [
   'color-chart-',
   'color-neutral-',
   'color-accent-',
+  // Base changes these per mode through a reference, so a brand that sets
+  // one in light has to be able to set it in dark too (the leak rule's fix).
+  'color-skeleton-',
   'button-secondary-',
+  'card-border-color',
 ]
 
 export const PACKAGE_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')

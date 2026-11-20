@@ -71,7 +71,18 @@ describe('checkBrand', () => {
 
   it('refuses references that resolve to nothing', () => {
     const result = check({ 'color-accent-default': color('{color.nope-500}'), 'color-accent-hover': color('{color-nope}') })
-    expect(rules(result)).toEqual(['unresolved-reference:color-accent-default', 'unresolved-reference:color-accent-hover'])
+    expect(rules(result).filter(r => r.startsWith('unresolved-reference'))).toEqual(['unresolved-reference:color-accent-default', 'unresolved-reference:color-accent-hover'])
+  })
+
+  // The leak rule's fix is "set it in dark.json too". That has to be possible:
+  // a token base changes per mode is lighting, so a dark file may set it.
+  it('lets dark.json set every settable token that base changes per mode', () => {
+    for (const token of system.settable.keys()) {
+      const leaks = rules(check({ [token]: { $value: '#123456', $type: system.settable.get(token).type } }))
+      if (!leaks.includes(`light-leaks-into-dark:${token}`)) continue
+      const both = { [token]: { $value: '#123456', $type: system.settable.get(token).type } }
+      expect(rules(check(both, both)), token).not.toContain(`dark-not-lighting:${token}`)
+    }
   })
 
   it('accepts primitive and semantic references', () => {
@@ -85,6 +96,44 @@ describe('checkBrand', () => {
     const contrast = result.failures.filter(f => f.rule === 'contrast')
     expect(contrast.length).toBeGreaterThan(0)
     expect(contrast.every(f => f.mode === 'acme-dark')).toBe(true)
+  })
+
+  // Base changes these between modes through a reference ({color-neutral-200}
+  // and the like), not by setting them in base/dark.json, so comparing raw
+  // values missed them. A light literal still wins in dark mode.
+  it('refuses a light literal on a token base changes per mode through a reference', () => {
+    for (const token of ['color-skeleton-base', 'color-accent-text', 'card-border-color']) {
+      expect(token in system.baseDark).toBe(false)
+      expect(rules(check({ [token]: color('#eeeeee') }))).toContain(`light-leaks-into-dark:${token}`)
+    }
+  })
+
+  it('lets a light literal through on a token that is the same in both modes', () => {
+    expect(rules(check({ 'color-chart-1': color('#0055aa') }, { 'color-chart-1': color('#4499ee') }))).not.toContain('light-leaks-into-dark:color-chart-1')
+    expect(check({ 'font-family-reading': { $value: "'Fraunces', serif", $type: 'fontFamily' } }).failures).toEqual([])
+  })
+
+  it('refuses a colour that is not hex, since the contrast check would skip it', () => {
+    const light = { 'color-text-primary': color('rgb(240, 240, 240)') }
+    const result = check(light, light)
+    expect(rules(result)).toEqual(['not-hex:color-text-primary', 'not-hex:color-text-primary'])
+    expect(result.ok).toBe(false)
+  })
+
+  it("refuses a non-hex colour among the brand's own tokens too, and allows hex with alpha", () => {
+    expect(rules(check({ 'acme-signal': color('oklch(70% 0.1 80)') }))).toEqual(['not-hex:acme-signal'])
+    expect(check({ 'acme-signal': color('#f5a62380') }).failures).toEqual([])
+  })
+
+  it('refuses a reference that loops back on itself', () => {
+    expect(rules(check({ 'color-text-primary': color('{color-text-primary}') }))).toContain('reference-loop:color-text-primary')
+    const loop = rules(check({ 'acme-a': color('{acme-b}'), 'acme-b': color('{acme-a}') }))
+    expect(loop).toContain('reference-loop:acme-a')
+    expect(loop).toContain('reference-loop:acme-b')
+  })
+
+  it('lets a chain of references through when it ends in a value', () => {
+    expect(check({ 'acme-a': color('{acme-b}'), 'acme-b': color('{color-text-primary}') }).failures).toEqual([])
   })
 
   it('lets a light value through when dark sets it too, or when it is a semantic reference', () => {
