@@ -1,8 +1,15 @@
 {
   "meta": {
-    "generatedAt": "2026-10-28"
+    "generatedAt": "2026-11-23"
   },
   "versions": [
+    {
+      "tag": "v1.7.0",
+      "date": "2026-11-23",
+      "sha": "017f577",
+      "entries": [],
+      "entryCount": 0
+    },
     {
       "tag": "v1.6.7",
       "date": "2026-10-28",
